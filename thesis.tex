@@ -6,14 +6,13 @@
 \usepackage{afterpage}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amsfonts}
 \usepackage{listings}
 %\usepackage{theorem}
 %\usepackage{thmtools}
 \usepackage{alltt}
 \usepackage{colortbl}
 \usepackage{afterpage}
-\usepackage{amsmath}
-\usepackage{amssymb}
 % \usepackage{a4wide}
 \usepackage{setspace}
 %\usepackage[T1]{fontenc}
@@ -36,12 +35,16 @@
 %\usepackage{metre}
 %\usepackage{yhmath}
 \usepackage{textcomp}
-
-%%%New commands%%%
-\newcommand{\codiag}{\textit{C-O Diagrams}}
-\newcommand\CL{\ensuremath{\mathcal{CL}}}
-\newcommand\FT{\ensuremath{\mathcal{F}}}
-\newcommand{\EM}[1]{{\color{green}{#1 EM}}}
+\usepackage{tabulary}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+%%New commands%%%
+%\newcommand{\codiag}{\textit{C-O Diagrams}}
+%\newcommand\CL{\ensuremath{\mathcal{CL}}}
+%\newcommand\FT{\ensuremath{\mathcal{F}}}
+%\newcommand{\EM}[1]{{\color{green}{#1 EM}}}
 
 \newtheoremstyle{example}{\topsep}{\topsep}%
      {}%         Body font
@@ -58,36 +61,36 @@
 \newcommand{\pclock}{\cal{P}}
 
 \newtheorem{definition}{Definition}%[chapter]
-\newcommand{\bdfn}{\begin{definition} \begin{rm}}
-\newcommand{\edfn}{\vspace{-2ex}
-{\flushright $\Box$\\
-\mbox{}\vspace{-2ex}
-} \end{rm} \end{definition}}
-\newcommand{\edfnt}{ \end{rm} \end{definition}}
-
-\newcommand{\bthm}{\begin{theorem} \begin{rm}}
-\newcommand{\ethm}{\vspace{-4ex}{\flushright $\Box$\\
-\mbox{}\vspace{-4ex}} \end{rm} \end{theorem}}
-\newcommand{\bprop}{\begin{proposition} \begin{rm}}
-\newcommand{\eprop}{\vspace{-4ex}{\flushright $\Box$\\
-\mbox{}\vspace{-4ex}} \end{rm} \end{proposition}}
-\newcommand{\bcor}{\begin{corollary}\begin{rm}}
-\newcommand{\ecor}{\vspace{-4ex}{\flushright $\Box$\\
-\mbox{}\vspace{-4ex}} \end{rm} \end{corollary}}
-\newcommand{\blem}{\begin{lemma} \begin{rm}}
-\newcommand{\elem}{\vspace{-4ex}{\flushright $\Box$\\
-\mbox{}\vspace{-4ex}} \end{rm} \end{lemma}}
-\newcommand{\bfact}{\begin{fact} \begin{rm}}
-\newcommand{\efact}{\vspace{-4ex}{\flushright $\Box$\\
-\mbox{}\vspace{-4ex}} \end{rm} \end{fact}}
-\newcommand{\bex}{\begin{example} \begin{rm}}
-\newcommand{\eex}{\vspace{-2ex}{\flushright $\Box$\\
-\mbox{}\vspace{-2ex}} \end{rm} \end{example}}
-\newcommand{\narrow}{$\!${\scriptsize N}$\! \longrightarrow$}
-\newcommand{\narrowast}{$\!${\scriptsize N}$\!
- \stackrel{\ast}{\longrightarrow}$}
-\newcommand{\narrowur}{$\!${\scriptsize N}$\!
- \stackrel{<u,r>}{\longrightarrow}$}
+%\newcommand{\bdfn}{\begin{definition} \begin{rm}}
+%\newcommand{\edfn}{\vspace{-2ex}
+%{\flushright $\Box$\\
+%\mbox{}\vspace{-2ex}
+%} \end{rm} \end{definition}}
+%\newcommand{\edfnt}{ \end{rm} \end{definition}}
+%
+%\newcommand{\bthm}{\begin{theorem} \begin{rm}}
+%\newcommand{\ethm}{\vspace{-4ex}{\flushright $\Box$\\
+%\mbox{}\vspace{-4ex}} \end{rm} \end{theorem}}
+%\newcommand{\bprop}{\begin{proposition} \begin{rm}}
+%\newcommand{\eprop}{\vspace{-4ex}{\flushright $\Box$\\
+%\mbox{}\vspace{-4ex}} \end{rm} \end{proposition}}
+%\newcommand{\bcor}{\begin{corollary}\begin{rm}}
+%\newcommand{\ecor}{\vspace{-4ex}{\flushright $\Box$\\
+%\mbox{}\vspace{-4ex}} \end{rm} \end{corollary}}
+%\newcommand{\blem}{\begin{lemma} \begin{rm}}
+%\newcommand{\elem}{\vspace{-4ex}{\flushright $\Box$\\
+%\mbox{}\vspace{-4ex}} \end{rm} \end{lemma}}
+%\newcommand{\bfact}{\begin{fact} \begin{rm}}
+%\newcommand{\efact}{\vspace{-4ex}{\flushright $\Box$\\
+%\mbox{}\vspace{-4ex}} \end{rm} \end{fact}}
+%\newcommand{\bex}{\begin{example} \begin{rm}}
+%\newcommand{\eex}{\vspace{-2ex}{\flushright $\Box$\\
+%\mbox{}\vspace{-2ex}} \end{rm} \end{example}}
+%\newcommand{\narrow}{$\!${\scriptsize N}$\! \longrightarrow$}
+%\newcommand{\narrowast}{$\!${\scriptsize N}$\!
+% \stackrel{\ast}{\longrightarrow}$}
+%\newcommand{\narrowur}{$\!${\scriptsize N}$\!
+% \stackrel{<u,r>}{\longrightarrow}$}
 \newcommand{\impast}{\stackrel{\ast}{\Longrightarrow}}
 \newcommand{\entero}{\mathbb{Z}}
 \newcommand{\bs}{[\![}

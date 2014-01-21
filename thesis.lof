@@ -1,14 +1,40 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Example of systems where formal methods are (can be) used .}}{8}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Cost evolution of fixing a bug.}}{11}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Client-server web architecture}}{13}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Web Service architecture stack.}}{15}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Integration of Web Services using WS-CDL.}}{16}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Actores en un sistema en la nube.}}{22}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Ejemplo de uso de WS-Notification sin broker.}}{35}{figure.2.7}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Web Service architecture stack.}}{40}{figure.2.8}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Part of a shipping service specification in BPEL}}{43}{figure.2.9}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Example of systems where formal methods are (can be) used .\relax }}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Cost evolution of fixing a bug.\relax }}{11}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Client-server web architecture\relax }}{13}{figure.caption.10}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Web Service architecture stack.\relax }}{15}{figure.caption.11}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Integration of Web Services using WS-CDL.\relax }}{16}{figure.caption.12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Actores en un sistema en la nube.\relax }}{25}{figure.caption.13}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Ejemplo de uso de WS-Notification sin broker.\relax }}{38}{figure.caption.20}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Web Service architecture stack.\relax }}{43}{figure.caption.21}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Part of a shipping service specification in BPEL\relax }}{46}{figure.caption.23}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Orchestration Translation}}{68}{figure.3.1}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces While Activity Translation.\relax }}{73}{figure.caption.34}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces CreateResource Activity Translation.\relax }}{74}{figure.caption.35}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Subscribe Activity Translation.\relax }}{74}{figure.caption.36}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces GetProperty Activity Translation.\relax }}{75}{figure.caption.37}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces SetProperty Activity Translation.\relax }}{75}{figure.caption.38}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces SetTimeout Activity Translation.\relax }}{75}{figure.caption.39}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces A simplified PTCPN for the online auction system.\relax }}{78}{figure.caption.40}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Example of systems where formal methods are (can be) used .\relax }}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Cost evolution of fixing a bug.\relax }}{11}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Client-server web architecture\relax }}{13}{figure.caption.10}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Web Service architecture stack.\relax }}{15}{figure.caption.11}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Integration of Web Services using WS-CDL.\relax }}{16}{figure.caption.12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Actores en un sistema en la nube.\relax }}{25}{figure.caption.13}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Ejemplo de uso de WS-Notification sin broker.\relax }}{38}{figure.caption.20}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Web Service architecture stack.\relax }}{43}{figure.caption.21}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Part of a shipping service specification in BPEL\relax }}{46}{figure.caption.23}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Orchestration Translation}}{68}{figure.3.1}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces While Activity Translation.\relax }}{73}{figure.caption.34}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces CreateResource Activity Translation.\relax }}{74}{figure.caption.35}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Subscribe Activity Translation.\relax }}{74}{figure.caption.36}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces GetProperty Activity Translation.\relax }}{75}{figure.caption.37}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces SetProperty Activity Translation.\relax }}{75}{figure.caption.38}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces SetTimeout Activity Translation.\relax }}{75}{figure.caption.39}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces A simplified PTCPN for the online auction system.\relax }}{78}{figure.caption.40}

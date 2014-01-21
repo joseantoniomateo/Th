@@ -262,7 +262,113 @@ We can distinguish two different kinds of \textit{complex activities} inside a c
 
 Different types of exceptions are considered in WS-CDL. Exception workunits can be defined to handle all these exceptions. They may also be used as the mechanism to recover from the exceptions. At least one exception workunit must be defined. The guard of the workunit can be used to specify the particular type of exception we want to handle. Only one exception workunit can match each exception. If multiple exception workunits are defined, the order of evaluating them is based on the order in which the workunits have been defined. When the matching happens, the actions of the matched workunit are executed. If no matching happens and a default exception workunit exists, then the actions of this workunit are executed. Otherwise, the exception is raised in the parent choreography. WS-CDL also allows us to define finalization actions within a choreography that can confirm or cancel the effects of this choreography, so we can use this actions for compensation. 
 
-============================================Hasta aquí==================================================================================
+\subsection {WS-BPEL}
+
+WS-BPEL \cite{BPEL4WS}, for short BPEL, 
+is an OASIS orchestration language for specifying actions within 
+Web service business processes. BPEL is therefore an orchestration
+language in the sense that it is used to define the composition
+of services from a local viewpoint, describing the individual
+behaviour of each participant. 
+BPEL is designed to support the description of both behavioural service interfaces and executable
+service-based processes \cite{OuyangVABDH07}. A behavioural interface (known as abstract process) is a specification of the
+behaviour of a class of services, capturing constraints on the ordering of messages to be sent to and
+received from a service. An executable process defines the execution
+order of a set of activities (mostly communication activities), the partners involved in the process, the
+messages exchanged between partners, and the events and exception handling specifying the behaviour
+when specific events or faults occur.
+
+A WS-BPEL Abstract Process is a partially specified process that is not intended to be executed
+and that must be explicitly declared as ``abstract''. Whereas Executable Processes are fully
+specified and thus can be executed, an abstract process may hide some of the required concrete
+operational details expressed by an executable artifact.
+All the constructs of executables processes are made available to abstract processes;
+consequently, Executable and Abstract WS-BPEL Processes share the same expressive power. In
+addition to the features available in Executable Processes, Abstract Processes provide two
+mechanisms for hiding operational details: (1) the use of explicit opaque tokens and (2) omission.
+Although a particular Abstract Process definition might contain complete information that would
+render it Executable, its Abstract status states that any concrete realizations of it are permitted to
+perform additional processing steps that are not relevant to the audience to which it has been
+given.
+
+Abstract processes serve a descriptive role, with more than one use case. One such use case
+might be to describe the observable behavior of some or all of the services offered by an
+executable process. Another use case would be to define a process template that embodies
+domain-specific best practices. Such a process template would capture essential process logic in
+a manner compatible with a design-time representation, while excluding execution details to be
+completed when mapping to an executable Process.
+Regardless of the specific use case and purpose, all abstract processes share a common syntactic
+base. They have different requirements for the level of opacity and restrictions on which parts of
+a process definition may be omitted or hidden. Tailored uses of abstract Processes have different
+effects on the consistency constraints and on the semantics of that process. 
+
+A common base specifies the features that define the syntactic universe of Abstract Processes.
+Given this common base, a usage profile provides the necessary specializations and semantics
+based on Executable WS-BPEL for a particular use of an Abstract Process.
+As mentioned above it is possible to use WS-BPEL to define an Executable Business Process.
+While a WS-BPEL Abstract Process definition is not required to be fully specified, the language
+effectively defines a portable execution format for business processes that rely exclusively on
+Web Service resources and XML data. Moreover, such processes execute and interact with their
+partners in a consistent way regardless of the supporting platform or programming model used
+by the implementation of the hosting environment.
+The continuity of the basic conceptual model between Abstract and Executable Processes in WS-
+BPEL makes it possible to export and import the public aspects embodied in Abstract Processes
+as process or role templates while maintaining the intent and structure of the observable behavior.
+This applies even where private implementation aspects use platform dependent functionality.
+
+
+This is a key feature for the use of WS-BPEL from the viewpoint of unlocking the potential of
+Web Services because it allows the development of tools and other technologies that greatly
+increase the level of automation and thereby lower the cost in establishing cross enterprise
+automated business processes.
+
+In this specification, the description of Abstract Business Processes is presented after Executable.
+We clearly differentiate concepts required for Abstract Business Process description from the
+concepts for Executable in the section 13. WS-BPEL Abstract Processes.
+WS-BPEL defines a model and a grammar for describing the behavior of a business process
+based on interactions between the process and its partners. The interaction with each partner
+occurs through Web Service interfaces, and the structure of the relationship at the interface level
+is encapsulated in what is called a partnerLink. The WS-BPEL process defines how multiple
+service interactions with these partners are coordinated to achieve a business goal, as well as the
+state and the logic necessary for this coordination. WS-BPEL also introduces systematic
+mechanisms for dealing with business exceptions and processing faults. Moreover, WS-BPEL
+introduces a mechanism to define how individual or composite activities within a unit of work
+are to be compensated in cases where exceptions occur or a partner requests reversal.
+
+A WS-BPEL process is a reusable definition that can be deployed in different ways and in
+different scenarios, while maintaining a uniform application-level behavior across all of them.
+The description of the deployment of a WS-BPEL process is out of scope for this specification.
+
+BPEL processes use {\em variables} to temporarily store 
+data. Variables are therefore declared on a process or on a scope 
+within that process. I
+
+An orchestrator consists of a main activity, representing
+the normal behaviour of this participant. There are also
+event and fault activities, which are executed upon the
+occurrence of some events, or due to some execution failures,
+respectively. BPEL activities 
+can be \emph{basic} or \emph{structured}. 
+\emph{Basic activities} are those which describe the elemental 
+steps of the process behaviour, such as the assignment of
+variables ({\em assign}), empty action ({\em empty}), 
+time delay ({\em wait}), invoke a service ({\em invoke}) and receive
+a message ({\em receive}), reply to a client ({\em reply}),
+and throw an exception ({\em throw}). We also have an action to {\em terminate}
+the process execution at any moment ({\em exit}).
+For technical reasons we have also included a barred form of
+{\em reply} action, which is used when a service invocation
+expects a reply, in order to implement the synchronization with
+the {\em reply} action from the server.  
+
+\emph{Structured activities} encode control-flow logic in a nested
+way. The considered structured activities are the following:
+a {\em sequence} of activities, separated by a semicolon, 
+the parallel composition, represented by two parallel bars ($\|$),
+the conditional repetitive behaviour ({\em while}),
+and a timed extension of the receive activity, which allows to
+receive different types of messages with a time-out associated
+({\em pick}).
 
 \section{Cloud Computing/Grid Computing}
 Gracias a la rápida evolución que ha tenido la sociedad, servicios básicos para el desarrollo de la vida cotidiana son comúnmente suministrados a los ciudadanos, de tal manera, que cualquier persona puede tener acceso inmediato a ellos de forma fácil. Hoy en día, estos servicios, conocidos en el mundo anglosajón como ``utility services'', engloban el suministro de agua, electricidad, gas y teléfono, pero en los últimos tiempos está cobrando fuerza una vieja idea que se intentó llevar a cabo sin éxito a finales de los años 60 y principios de los 70, el ``Utility Computing''. Este nuevo paradigma de computación es normalmente confundido con Cloud o Grid Computing, pero hay ciertos matices que los diferencian. ``Utility Computing'' se puede entender como el modelo de negocio que subyace en una infraestructura Cloud o Grid, es decir, puede ser entendido como el medio de cobro de servicios computacionales similar al que se hace con la electricidad, por lo que el usuario pagará sólo por su consumo, mientras que los costes asociados a la producción y distribución de potencia de cómputo serán sufragados por las compañías suministradoras. Así, las pequeñas y medianas empresas podrían competir en igualdad de condiciones con las grandes empresas, ya que no sería necesario hacer una gran inversión en datacenters para poder ofrecer un determinado servicio y se fomentaría la creación de empresas, ya que estos datacenters suponen una fuerte inversión inicial que muchos emprendedores no pueden acometer. Además, el usuario final de las aplicaciones, servicios o infraestructuras también se beneficiaría porque al reducir costes de producción se reduce el precio de los productos. Por seguir con el símil de la energía, podemos ver el cloud computing como una gran central generadora de energía que da suministro a millones de usuarios y que evita que dichos usuarios tengan que tener su propia central en casa para poder encender sus aparatos eléctricos, mientras que el ``utility computing'' es la forma de tarificar el gasto de los usuarios o, de una forma más abstracta, podemos verlo como el contador que muestra el consumo energético. Al igual que pasa con el software, los protocolos o cualquier paradigma relacionado con la informática, Cloud Computing debe atravesar una serie de etapas para poder comprobar si toda esta publicidad que le están dando las empresas sirve de veras para ahorrar costes y favorecer la competitividad o solo es más una forma de aumentar ingresos o, en el caso de la investigación, obtener nuevos fondos. En este sentido, algunos autores consideran que Cloud Computing no es mas que una nueva forma de nombrar lo que toda la vida se ha llamado Grid o Web Services y que realmente no supone ningún avance en el campo de la informática. Este artículo tratará de presentar más ampliamente la arquitectura y conceptos para comprender un sistema de computación basado en la nube y mostrará las diferencias entre dos enfoques clásicos de computación (Grid y Web Services) y Cloud. Finalmente, se propondrá una serie de ideas que pueden llegar a convertirse en trabajos de investigación en un futuro.         

@@ -7,11 +7,6 @@ S.~Askary C. Barreto B. Bloch F. Curbera M. Ford Y. Goland A. Guízar N. Kartha
 \newblock {Business Process Execution Language for Web Services (version 2.0)}.
 \newblock 2007.
 
-\bibitem{Alur94}
-R.~Alur and D.~Dill.
-\newblock A theory of timed automata.
-\newblock {\em Theoretical Computer Science}, 126:183--235, 1994.
-
 \bibitem{Ban06}
 T.~Banks.
 \newblock {Web Services Resource Framework (WSRF) - Primer}.
@@ -27,11 +22,6 @@ O.~Grumberg E.~Clarke and D.~Peled.
 \newblock {\em {Model Checking}}.
 \newblock MITPress, Cambridge, MA, 1999.
 
-\bibitem{Holz04}
-G.~J. Holzmann.
-\newblock {\em {The SPIN Model Checker: Primer and Reference Manual}}.
-\newblock Addison-Wesley, 2004.
-
 \bibitem{Fost04}
 S.~Graham S. Tuecke K. Czajkowski D. Ferguson F. Leymann M. Nally T. Storey
   W.~Vambenepe I.~Foster, J.~Frey and S.~Weerawarana.
@@ -45,11 +35,11 @@ S.~Schuman J.~R.~Abrial and B.~Meyer.
 \newblock {\em Cambridge University Press, eds. A. M. Macnaghten and R. M.
   McKeag}, 1980.
 
-\bibitem{Larsen97}
-P.~Pettersson K.G.~Larsen and W.~Yi.
-\newblock {UPPAAL in a nutshell}.
-\newblock {\em International Journal on Software Tools for Technology Transfer
-  (STTT)}, 1997.
+\bibitem{OuyangVABDH07}
+Chun Ouyang, Eric Verbeek, Wil M.~P. van~der Aalst, Stephan Breutel, Marlon
+  Dumas, and Arthur H.~M. ter Hofstede.
+\newblock Formal semantics and analysis of control flow in ws-bpel.
+\newblock {\em Sci. Comput. Program.}, 67(2-3):162--198, 2007.
 
 \bibitem{Pnueli77}
 A.~Pnueli.
