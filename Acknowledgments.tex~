@@ -1,0 +1,609 @@
+\chapter[Estado del Arte]{Estado del Arte}
+
+En este capítulo se presenta el estado del arte en el campo de la especificación, formalización y verificación de servicios web, así como los formalismos y herramientas necesarias para la comprensión y elaboración de una futura tesis doctoral. El objetivo es mostrar al lector unas nociones básicas en formalización y servicios web que le facilitarán la tarea de comprensión de la presente memoria.
+
+\section{Introducción/Motivación}
+
+A lo largo de la historia de la computación, los ingenieros han usado diferentes métodos formales para mejorar la calidad del hardware y software. Estos sistemas con el incesante avance tecnológico en técnicas de integración y metodologías de programación crecerán inevitablemente en escalabilidad y complejidad. Debido a esta complejidad, la probabilidad de error es mayor y, además, alguno de estos errores pueden ocasionar incalculables pérdidas económicas, de tiempo o, incluso, la pérdida de vidas humanas. Por tanto, el principal objetivo de los ingenieros es facilitar a los desarrolladores la tarea de construir sistemas que tengan un ínfimo ratio de errores y que entren dentro de los márgenes comerciales de las empresas. Sin embargo, este tarea no es trivial porque necesitamos asegurar la corrección de las especificaciones y necesitamos proporcionar técnicas que ayuden a la detección de errores y a la verificación de los modelos desarrollados. Una de las vías que los ingenieros han venido utilizando para conseguir este objetivo, como se ha comentado anteriormente, es la utilización de técnicas formales, que pueden definirse como el conjunto de procedimientos y herramientas basados en lenguajes matemáticos que aseguran prácticamente la corrección de un sistema \cite{Clarke96} porque aumentan el nivel de conocimiento de un sistema, revelando inconsistencias y ambigüedades que no podrían detectarse con otras técnicas, es decir, los métodos formales ofrecen un mayor grado de refinamiento del modelo que otros métodos. \\
+
+\begin{figure}
+\begin{center}
+  \includegraphics[scale=0.5, width =\columnwidth]{Figures/usos}
+\end{center}
+  \caption{Ejemplos de sistemas donde se usa la formalización.}
+  \label{uso}
+\end{figure}
+
+En el pasado, el uso de técnicas formales en la práctica parecía no tener esperanzas porque las notaciones utilizadas eran demasiado complicadas para los no iniciados en la materia, las técnicas no permitían que el sistema fuese escalable y las herramientas existentes eran demasiado difíciles de manejar o, incluso, no existían herramientas que modelasen una determinada técnica o formalismo. Además, los casos de estudio que existían no convencían a los desarrolladores sobre la utilidad de la formalización. Sin embargo, a principios de los años 90, se empezó a vislumbrar un nuevo camino en este área. Para la especificación de software, la industria empezó a utilizar el lenguaje Z \cite{Abrial80} para obtener especificaciones más rigurosas. Para la verificación del hardware, las principales empresas del sector como Intel o AMD utilizan técnicas como el \emph{model checking} o \emph{theorem proving}  como complemento a las pruebas realizadas en los simuladores. En ambas áreas, tanto investigadores como desarrolladores están describiendo casos de estudio de mayor tamaño, lo que está beneficiando a que otros desarrolladores estén planteándose la posibilidad de implantar el uso de técnicas formales en sus procesos de desarrollo. En la Figura \ref{uso} podemos ver distintos sistemas donde se utilizan actualmente estas técnicas para asegurar el correcto funcionamiento de los mismos. Por ejemplo, las compañías que fabrican aviones utilizan lenguajes formales para especificar los requisitos de los aparatos y las compañías automovilísticas verifican los sistemas más críticos, en cuanto a seguridad se refiere, utilizando \emph{model checking}. \\
+
+Las principales ventajas de utilizar técnicas formales son:
+
+\begin{itemize}
+\item El uso de las matemáticas como base dota a este enfoque de cierto rigor.
+\item Identifica la ambigüedad y las inconsistencias.
+\item Facilita la construcción de sistemas consistentes y libres de \emph{deadlocks}.
+\item Otorga confianza al cliente del sistema.
+\item Existen multitud de herramientas que dan soporte a las distintas técnicas.
+\item Encuentra fallos en etapas tempranas que ahorran mucho dinero.
+\end{itemize} 
+
+\newpage
+
+Las principales desventajas (o creencias) que ralentizan el avance de este área son:
+
+\begin{itemize}
+\item Se cree que el uso de formalismos ralentiza el desarrollo.
+\item Muchos desarrolladores piensan que es difícil trabajar con especificaciones formales.
+\item No garantiza la corrección del código implementado (sólo la del modelo
+en que se basa).
+\item El aumento de la complejidad del sistema provoca un aumento exponencial
+de la complejidad de la verificación.
+\end{itemize}
+
+Una de las partes más importante en el desarrollo de un sistema es la especificación de requisitos. En el área de la ingeniería, una especificación puede verse como un documento técnico donde se describen las características y servicios necesarios para construir un producto, aunque también puede incluir información sobre etapas posteriores como la verificación, validación, etc., por tanto, si queremos desarrollar sistemas correctos y de calidad debemos dedicar el tiempo necesario a la especificación. De todos modos, realizar la especificación no garantiza la ausencia de errores porque la presencia de fallos es una característica intrínseca de los sistemas. En este sentido, el simple hecho de escribir el documento ayuda a los ingenieros a encontrar errores en fases tempranas del desarrollo ahorrando mucho dinero y tiempo al proyecto como puede verse en la Figura \ref{coste}. 
+
+\begin{figure}
+\begin{center}
+  \includegraphics[scale=0.5, width =\columnwidth]{Figures/coste}
+\end{center}
+  \caption{Evolución del coste de reparación de un fallo.}
+  \label{coste}
+\end{figure}
+
+\newpage
+
+ 
+Otra fase del desarrollo donde se utilizan formalismos es en la etapa de \emph{Verificación}. Se puede definir \emph{Verificación} como la etapa donde se comprueba que el producto fabricado cumple con la especificación de requisitos realizada previamente, es decir, en el caso de la informática, que nuestro sistema cumple las propiedades que se describen en la especificación. El objetivo de esta tarea puede resumirse en una de las frases más celebres de uno de los padres de los métodos formales: \\
+\begin{center}
+\emph{``La verificación de un programa sólo muestra la presencia de errores, pero nunca garantiza la ausencia de los mismos''}
+\end{center}
+\vspace{-0.9cm}
+\begin{flushright}
+Edsger Wybe Dijkstra 
+\end{flushright} 
+
+En el ciclo de vida clásico, las fases de verificación y validación se realizan después de la fase de implementación, pero, como hemos visto en la Figura \ref{coste}, es necesario detectar estos errores en las fases tempranas del desarrollo. Como es de esperar, es prácticamente imposible verificar un sistema completo, por lo que el objetivo de los métodos formales y de este trabajo de investigación es comprobar si se cumplen ciertas propiedades en el modelo. Las propiedades de interés que es necesario verificar estarán relacionadas con los problemas clásicos de concurrencia (\emph{deadlock, exclusión mutua, \ldots}), así como algunos aspectos relacionados directamente con el sistema que se está construyendo como puede ser comprobar si se cumplen ciertas restricciones temporales. Por ejemplo, en un sistema bancario es necesario verificar si las transacciones cumplen los tiempos estipulados para su realización, ya que si exceden estas restricciones podrían ocasionarse problemas de seguridad en el sistema, lo que haría perder mucho dinero al banco en cuestión. Otro ejemplo podría ser el sistema de reservas de una aerolínea, ya que no podemos permitir que un usuario reserve un asiento durante un largo período de tiempo porque podría no comprarlo finalmente y evitar que otro lo pudiera adquirir, con el consiguiente perjuicio para la compañía. \\
+
+Asimismo, se pueden seguir dos vías para realizar la verificación de un sistema: \emph{Human-directed proof o Automated proof}. El primer caso se utiliza cuando se quiere afianzar el conocimiento sobre el sistema en lugar de asegurar completamente la corrección del mismo, por lo que es una persona la que realiza de forma manual la verificación. En la segunda aproximación (\emph{automated proof}) tenemos dos variantes: \emph{automated theorem proving y model checking}. El \emph{automated theorem proving} consiste en que un programa trata de producir una prueba formal de un sistema desde el principio, dando una descripción del mismo, un conjunto de axiomas lógicos y una serie de reglas de inferencia. Model checking \cite{Clarke99} es una técnica automática para verificar sistemas reactivos de estados finitos. En esta aproximación, la especificación está expresada en lógica proposicional temporal, normalmente LTL \cite{Pnueli77} o CTL \cite{Henzinger94} o algunas de sus variantes, y el sistema se representa como un grafo de transiciones entre estados conocido como \emph{autómata}. En esta técnica debe utilizarse un eficiente método de búsqueda para determinar si el autómata satisface la especificación. El \emph{model checking} tiene numerosas ventajas sobre \emph{automated theorem proving}, pero la más importante es que el proceso tiene más partes que se pueden automatizar, por lo que la fase de prueba (\emph{testing}) dentro del ciclo de vida del sistema es más rápida. Normalmente, el cliente sólo pone a disposición del ingeniero una representación a alto nivel del sistema (generalmente, en lenguaje natural) y la especificación del mismo, también en lenguaje natural. Así, cualquier \emph{model checker} (Spin \cite{Holz04}, UPPAAL \cite{Larsen97}, etc.) termina el proceso con una respuesta afirmativa si el modelo propuesto satisface la especificación o proporciona un contraejemplo para localizar dónde se ha producido el error.
+ 
+
+\section{Model Checking para Sistemas de Tiempo Real}
+
+Los sistemas donde el tiempo juega un papel crucial para su funcionamiento y evolución son conocidos como ``Sistemas de Tiempo Real (Real-Time Systems)''. Este tipo de sistemas son el núcleo que controla la mayoría de sistemas industriales, financieros y gubernamentales, donde el tiempo de respuesta determina el grado de corrección, la eficiencia, la satisfacción del usuario y otras variables de calidad, por lo que su correcto funcionamiento es vital para evitar errores que pueden ocasionar grandes pérdidas. Sin embargo, dentro de estos sistemas existe otro tipo, donde las restricciones temporales juegan un papel realmente crucial, conocido como ``strong time restrictions''. En este entorno es necesario verificar completamente que el sistema tiene un ratio de error ínfimo porque un simple fallo podría ocasionar que el sistema dejara de funcionar. Otra información útil es la probabilidad de fallo cuando éste no se puede eliminar. Esta medida sirve para dar confianza a los clientes, ya que un sistema con baja probabilidad de error aumenta el grado de satisfacción y confianza en el mismo. Esta información permite medir la necesidad de rediseñar el sistema o de mantenerlo en funcionamiento. En este caso, el fallo se debe a un factor externo que el sistema no puede manejar, como, por ejemplo, el tiempo, las leyes físicas o desastres naturales. Todos estos factores tienen en común que su aparición es incontrolable, pero es posible predecir su aparición con una razonable probabilidad. Así, existen sistemas donde la combinación de ambas características, ``tiempo'' y ``probabilidad'', determinan las características principales del mismo, por lo que las técnicas de verificación no sólo tienen que tener en cuenta las restricciones temporales sino que deben considerar la probabilidad de que ocurran sucesos inesperados.      
+
+
+\section[UPPAAL]{UPPAAL - Una herramienta para la verificación automática de Sistemas de Tiempo Real}
+
+UPPAAL es una herramienta para la verificación automática de dos propiedades cruciales en los sistemas informáticos: \emph{safety} y \emph{liveness}, es decir, debemos asegurar que nuestro sistema es consistente (seguro) ante posible ataques o fallos y que permanecerá funcionando ante estos contratiempos \cite{Alur94}. El motor de UPPAAL transforma una clase de sistemas lineales híbridos en redes de autómatas temporizados e implementa técnicas basadas en la resolución de restricciones. UPPAAL también ofrece valiosa información de diagnóstico en el caso de que la verificación falle. Las siguientes secciones se centrarán en aspectos formales de la herramienta.\\
+
+La versión actual de la herramienta puede encontrarse en \textsf{http://www.uppaal.com}. A pesar de que fue desarrollada en 1995, actualmente cuenta con muchas características (probabilidades, costes, energía, etc.), gracias a la labor de investigación realizada durante estos años. Debido a este alto grado de madurez y a la facilidad para conseguir información por las colaboraciones del grupo ReTiCS con la universidad de Aalborg, se ha seleccionado esta herramienta en lugar de otras. 
+
+\subsection{Sistemas de Tiempo Real}
+
+
+UPPAAL usa sistemas de transición temporizados como modelo semántico básico de los sistemas de tiempo real. El tipo de sistemas que trata la herramienta es un tipo particular de sistemas de transición temporizados que se describen sintácticamente como \emph{redes de autómatas temporizados} \cite{Yi94}\cite{Fran95}. Un sistemas de transición temporizados es un sistema de transiciones etiquetado con dos tipos de etiquetas: acciones atómicas y acciones retardadas, que representan cambios discretos o continuos en sistemas de tiempo real.
+
+
+Sea $Act$ un conjunto finito de acciones que toma valores $a$,$b$, etc., y $P$ un conjunto de proposiciones atómicas  que toma valores $p$,$q$, etc.. Usamos $R$ para representar el conjunto de los números reales, $\Delta$ para el conjunto de acciones retardadas $\{\epsilon (d) | d \in R \}$ y $L$ para la unión $Act \bigcup \Delta$.
+
+\begin{Definicion}
+    \label{def1}
+    Un sistema de transiciones temporizadas para las acciones $Act$ y las proposiciones atómicas $P$ es una tupla $S=\langle S,s_0,\rightarrow , V\rangle$, donde $S$ es un conjunto de estados, $s_0$ es el estado inicial, $\rightarrow\subseteq S\times L\times S$ es una relación de transición, y $V :X \rightarrow 2^P$ es una función de asignación proposicional.
+\end{Definicion}
+
+
+Nótese que la definición descrita arriba es estándar para todos los sistemas de transiciones etiquetados, exceptuando que se introduce una función de asignación proposicional $V$, que para cada estado $s \in S$ asigna un conjunto de proposiciones atómicas $V(s)$ que se cumplen en $s$.\\
+
+Para estudiar problemas composicionales, como pueden ser la composición de servicios web, se introduce la noción de composición paralela entre \emph{sistemas de transiciones temporizadas}. Siguiendo el enfoque presentado en \cite{Wei89},  presentamos una composición parametrizada con una función de sincronización, generalizando así un amplio abanico de notaciones existentes para representar sistemas paralelos composicionales. Una \emph{función de sincronización} $f$ es una función parcial $(Act \bigcup \{0\}) \times (Act \bigcup \{0\}) \hookrightarrow Act$, donde $0$ representa no realizar ninguna acción. Ahora bien, sean $\textbf{S}_i = \langle S_i,s_{i,0} ,\rightarrow_i, V_i\rangle$, $i = 1,2,$  dos sistemas de transiciones temporizados y sea $f$ una función de sincronización. Entonces, la composición paralela de estos dos sistemas $\textbf{S}_1 |_f \textbf{S}_2$ es un sistema de transiciones temporizados $\langle S,s_0,\rightarrow , V\rangle$ donde $s_1 |_f s_2 \in S $ cuando $s_1 \in S_1$ y $s_2 \in S_2$, $s_0 = s_{1,0} |_f s_{2,0} \rightarrow$  se define inductivamente como:
+
+\begin{itemize}
+    \item  $s_1 |_f  s_2  \xrightarrow{c} s{^,}{_1} |_f  s{^1}{_2}\ {\it if}\ s_1 \xrightarrow{a}_1 s{^,}{_1}, s_2  \xrightarrow{b}_2 s{^1}{_2}$ y $f(a,b)=c$
+     \item $s_1 |_f  s_2  \xrightarrow{\in (d)} s{^,}{_1} |_f  s{^1}{_2}\ {\it if}\ s_1 \xrightarrow{\in (d)}_1 s{^,}{_1},\ y\ s_2  \xrightarrow{\in (d)}_2 s{^1}{_2}$
+\end{itemize}
+
+y, finalmente, la función de asignación proposicional $V$ es definida por $V(s_1 |_f s_2) = V_1(s_1) \bigcup V_2(s_2).$
+
+Nótese también que el conjunto de estados y la relación de transición de los sistemas podrían ser infinitas. 
+
+
+\subsection[El modelo de UPPAAL para modelar STRs]{El modelo de UPPAAL para modelar Sistemas de Tiempo Real}
+
+En esta sección, se estudiará el modelo  que utiliza esta herramienta para representar sistemas de tiempo real. El modelo consiste en un conjunto de procesos que se comunican entre sí por medio de canales y que comparte un conjunto de relojes para sincronizarse. Estos sistemas se describen como redes de autómatas temporizados extendidos con variables auxiliares para almacenar datos y con ciertas nociones para realizar composición paralela. En vez de representar la composición paralela como conjunciones lógicas, se usa una variación del lenguaje CSS \cite{Ros98} como notación ( propuesta en \cite{Yi94}), la cual permite comunicaciones uno a uno e interleaving.
+
+
+\subsubsection{Redes de autómatas temporizados}
+
+Por definición, un autómata temporizado es un autómata de estados finitos extendido con un conjunto finito de relojes. Estos relojes se supone que funcionan a la misma velocidad y que sus valores pueden ser comparados con los números reales y/o pueden ser reseteados a 0. Sin embargo, en UPPAAL, se ha ampliado este formalismo con variables enteras que pueden ser comparadas o asignadas a algún valor de la forma $ax+b$ donde $a,b \in \mathbf{Z}$ y $x$ es la variable que ha sido asignada. El modelo no sólo permite resetear los relojes, sino que también es posible asignarles algún valor entero no-negativo.
+
+\begin{Definicion}
+    \label{def2}
+        \emph{(Restricciones atómicas)} Sea $C$ un conjunto de relojes e $I$ un conjunto de variables enteras. Una restricción atómica sobre el reloj $C$ es una restricción de la forma: $x\sim n$, para $x \in C$, $\sim \in \{ \leq, \geq, =\}$ y $n \in \mathbf{N}$. Una restricción atómica sobre $I$ se representa como: $i\sim n$, para $i \in I$, $\sim \in \{ \leq, \geq, =\}$ y $n \in \mathbf{Z}$.
+\end{Definicion}
+
+
+Sea $C_c(C)$ el conjunto de restricciones sobre $C$, y $C_i(I)$ el conjunto de restricciones enteras sobre $I$.
+
+\begin{Definicion}
+    \label{def3}
+        \emph{(Guardas)} Sea $C$ un conjunto de relojes e $I$ un conjunto de variables enteras. Una guarda $g$ sobre $C$ se genera mediante la siguiente sintaxis: $g ::= c | g\wedge g$, donde $c \in (C_c(C)\bigcup C_i(I))$.
+\end{Definicion}
+
+
+
+\begin{Definicion}
+    \label{def4}
+        \emph{(Asignaciones)} Sea $C$ un conjunto de relojes e $I$ un conjunto de variables enteras. Un asignación sobre un reloj es una tupla $\langle v,c \rangle$, donde $v \in C$ y $c \in \mathbf{N}$. Una asignación entera sobre $I$ es una tupla $\langle v,c_1,c_2 \rangle$ que representa la asignación $v=c_1 \cdot v + c_2$, donde $v \in I$ y $c_1, c_2 \in \mathbf{Z}$.
+\end{Definicion}
+
+Se usará $\mathcal{A}(C,I)$ para denotar el conjunto de todas las posibles asignaciones sobre $I$ y $C$.
+
+\begin{Definicion}
+    \label{def5}
+        \emph{(Autómata temporizado)} Un autómata temporizado $A$ sobre un conjunto de acciones $\mathit{Act, relojes}\  C$  y variables enteras $I$ es una tupla $\langle L,l_0,E \rangle$ donde $L$ es un conjunto finito de nodos (nodos de control), $l_0$ es el nodo inicial, y $E\subseteq L\times \mathcal{B}(C,I) \times Act \times \mathcal{A}(C,I) \times L$ representa el conjunto de transiciones posibles. Para representar, $\langle l,g,a,r,l' \rangle \in E$, se utilizará la forma $l \xrightarrow{g,a,r} l' $.
+\end{Definicion}
+
+Para estudiar problemas donde el conjunto de elementos que lo forman pueden agruparse con alguna finalidad es necesario introducir la noción de composición paralela entre autómatas temporizados. Además, con el fin de obtener el tipo de composición paralela que se desea, es conveniente introducir la noción de co-acciones, que se lleva a cabo mediante la definición de una función de sincronización $\mathcal{T}$.
+
+\begin{Definicion}
+    \label{def6}
+        \emph{(Función de sincronización)} Sea $\mathcal{T} \subseteq Act \times
+        Act$ una función tal que: \
+        \begin{center}
+        \begin{math}
+            \langle a_i,a_j \rangle\in \mathcal{T} \Rightarrow \langle a_j,a_i \rangle\in \mathcal{T} \text{, $\forall$} a_i, a_j
+        \end{math}
+        \end{center}
+\end{Definicion}
+
+\begin{Definicion}
+    \label{def7}
+        \emph{(Composición paralela)} Sean $A_1, A_2$ dos autómatas temporizados. Entonces, una composición paralela de ambos $(A_1|A_2)$ es un autómata temporizado 
+        $\langle L, l_0,E \rangle$ 
+        donde $(l_1|l_2) \in L$ 
+        siempre que $l_1 \in L_1$ y $l_2 \in L_2$, $l_0=(l_{1,0}|l_{2,0})$. Las transiciones $E$ se definen como:
+        \begin{itemize}
+            \item $ (l_1|l_2) \xrightarrow{g,\tau,r}(l'_1|l'_2) \text{ si } (l_1 \xrightarrow{g_1,a_1,r_1}l'_1) $
+                    $ \wedge (l_2 \xrightarrow{g_2,a_2,r_2}l'_2) \wedge (g= g_1 \cup g_2) \wedge $
+                    $ (\langle a_1,a_2 \rangle \in \mathcal{T}) \wedge (r=r_1 \cup r_2) $.
+            \item $ (l_1|l_2) \xrightarrow{g,a,r}(l'_1|l_2) \text{ si } (l_1 \xrightarrow{g,a,r}l'_1)$.
+            \item $ (l_1|l_2) \xrightarrow{g,a,r}(l_1|l'_2) \text{ si } (l_2 \xrightarrow{g,a,r}l'_2) $.
+        \end{itemize}
+\end{Definicion}
+
+Nótese que la composición paralela es conmutativa y asociativa.
+
+
+Un estado $A$ es un par $\langle l,u \rangle$ donde $l$ es un nodo de $A$ y $u$ es una asignación que mapea cada reloj en $C$ a un valor en $\mathbf{R}_+$, y cada variable entera de $I$ a un valor en $\mathbf{Z}$. El estado inicial de $A$ es $\langle l_0,u_0 \rangle$, donde $u_0$ es la asignación inicial de todas las variables a 0.\\
+
+
+Un autómata podría tomar dos tipos de transiciones desde un estado a otro:
+
+
+\begin{itemize}
+    \item Transición retardada: $ \langle l,u \rangle \xrightarrow{\in(d)} \langle l,u'
+    \rangle$ siguiendo las reglas de la Definición \ref{def8}.
+    \item Transición de acción: $\langle l,u \rangle \xrightarrow{g,a,r} \langle l',u'
+    \rangle$ siguiendo las reglas de la Definición \ref{def9}.
+\end{itemize}
+
+
+\begin{Definicion}
+    \label{def8}
+        \emph{(Transición retardada)} Sean $\langle l,u \rangle$ y $ \langle l',u' \rangle
+        $ dos estados de un autómata temporizado $A$, y sea $d$ un número real positivo. Entonces, \\
+        \begin{center}
+        \begin{math}
+            \langle l,u \rangle \xrightarrow{\in(d)} \langle l',u'\rangle
+            \begin{cases}
+                l'=l \\
+                u'(x)=u(x)+d & \text{ si } x \in C \\
+                u'(x)=u(x) & \text{ si } x \in I \\
+                d \leq M(l,u)
+            \end{cases}
+        \end{math}
+        \end{center}
+\end{Definicion}
+
+
+    Donde $M(l,u)$ es el máximo retardo de $\langle l,u \rangle$ definido como:
+        \begin{center}
+            \begin{math}
+                M(l,u)=
+                \begin{cases}
+                    sup\{ t | g(u+t) \} & \text{ si } \exists l':l
+                    \xrightarrow{g,a,r} l' \\
+                    \infty & \text{En otro caso}
+                \end{cases}
+            \end{math}
+        \end{center}
+
+Intuitivamente, podemos deducir que un autómata podría no estar en un estado de control el tiempo suficiente para que la última arista de ese estado terminara. Esto se traduce en un comportamiento de progreso máximo de los autómatas. 
+
+\begin{Definicion}
+    \label{def9}
+        \emph{(Transición de acciones)} Sean $\langle l,u \rangle$ y $\langle l',u'
+        \rangle$ dos estados del autómata temporizado $A.$ \ Entonces,
+        \begin{center}
+            \begin{math}
+                \langle l,u \rangle \xrightarrow{g,a,r} \langle l,u' \rangle
+                 \text{ si y sólo si } 
+                     \left(
+                        u'(x) = \begin{cases}
+                                    c_0 & \text{si } x \in C
+                                    \wedge \langle x, c_0 \rangle
+                                    \in r \\
+                                    c_1 u(x)+c_0 & \text{si } x \in I
+                                    \wedge \langle x, c_1 , c_0 \rangle
+                                    \in r \\
+                                    u(x),& En\ otro\ caso
+                                 \end{cases}
+                     \right)
+            \end{math}
+        \end{center}
+\end{Definicion}
+
+
+\section{Services Oriented Computing (SOC)}
+
+Aunque la Web fue inicialmente concebida para el uso exclusivo del ser humano, muchos expertos consideran que tiene que evolucionar (probablemente a través del diseño y construcción de servicios modulares) para soportar mejor la automatización de muchas tareas. El concepto de \emph{servicio} proporciona un mayor nivel de abstracción para organizar las aplicaciones a gran escala y construir entornos más abiertos, ayudando a desarrollar aplicaciones con mejor productividad y calidad que las que podríamos fabricar con otros enfoques. Puesto que los servicios son sólo un medio para la construcción de aplicaciones distribuidas, no podemos hablar de ellos sin hablar de las aplicaciones basadas en servicios, en concreto, cómo se construyen y cómo los servicios deben funcionar conjuntamente dentro de ellas. La Figura \ref{arq} muestra un ejemplo de arquitectura basada en servicios, donde como puede observarse hay tres partes principales: un proveedor, un consumidor y un registro. 
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width =\columnwidth]{Figures/arquitecturaWS}
+\end{center}
+  \caption{Arquitectura cliente-servidor para servicios web.}
+  \label{arq}
+\end{figure}
+
+La función de los proveedores es publicar o anunciar los servicios que ofrece en los registros, donde los consumidores pueden encontrarlos y, posteriormente, invocarlos. Los actuales estándares que sustentan las interacciones entre servicios web proporcionan una base sólida para la arquitectura orientada a servicios, pero no soportan servicios esenciales para su funcionamiento completo. De hecho, aunque los servicios web proporcionan una fuente de ejemplos prácticos, son innecesariamente limitados. La arquitectura web es un marco que puede ser reforzado con representaciones más poderosas y técnicas tomadas de otros enfoques. Muchos profesionales utilizan estas representaciones, a pesar de que se omiten en la mayoría de los libros. 
+
+
+\section{Web Services Resource Framework(WSRF)}
+
+La arquitectura que presentan los servicios web ha sido ampliamente aceptada como medio para estructurar las interacciones existentes entre los servicios que forman parte de un sistema distribuido y que colaborar para conseguir un objetivo común. En la actualidad, los desarrolladores requieren a los entornos una mayor estandarización para facilitar interoperatividad adicional entre dichos servicios, pero hasta mediados de 2004 ningún grupo de investigación o grupo de expertos se había planteado seriamente la idea de proponer un estándar para modelar la comunicación entre servicios web que poseen recursos persistentes asociados. Así, en Enero de ese año, varios miembros de la organización \emph{Globus Alliance} y de la multinacional informática IBM definieron, con la ayuda de expertos de empresas como HP, SAP, Akamai, etc., la especificación de los documentos que deberían producirse en este modelo y la base de una arquitectura inicial. Estos documentos fueron enviados a la organización encargada de su estandarización, OASIS, en Marzo de 2004. En un principio, se formaron dos comités que se encargarían del estudio y desarrollo de ciertas partes de este nuevo estándar. Por un lado, estaba el \emph{WSRF Technical Committee} que gestionaba cuatro especificaciones: \emph{WS-ResourceProperties, WS-ResourceLifetime, WS-ServiceGroup, y WS-BaseFaults}. Por otro lado, el \emph{WSN Technical Committee} se encargaba de las especificaciones: \emph{WS-BaseNotification, WS-Topics, y WS-BrokeredNotification}. \\
+
+WS-Resource Framework está inspirado en el trabajo realizado previamente por el \emph{Global Grid Forum's Open Grid Services Infrastructure (OGSI) Working Group} \cite{Foster03}. Más concretamente, puede ser visto como una sencilla refactorización de los conceptos e interfaces desarrollados en la especificación \emph{OGSI V1.0}, de manera que explota los recientes desarrollos en el área de los servicios web (por ejemplo, WS-Addressing). \\
+
+El objetivo de este trabajo es introducir los conceptos fundamentales para la gestión y destrucción de servicios web persistentes, es decir, servicios web que llevan asociados recursos donde guardar los estados de los mismos, ya que hasta la aparición de esta aproximación, los servicios web eran considerados ``\emph{stateless}'' y, por tanto, no podían almacenar temporalmente datos o resultados de sus operaciones de una manera sencilla para el usuario, ya que era necesario almacenarlos en una base de datos ajena al servicio. En este enfoque, es necesario codificar la relación entre el servicio y el recurso en términos de patrones utilizando una serie de tecnologías ampliamente estudiadas, como, por ejemplo, el WS-Addressing y, también, será necesario hacer sus propiedades accesibles desde el exterior a través de un interfaz. En este sentido, llamaremos \emph{WS-Resource} a la asociación entre un servicio web y un recurso persistente.  
+
+
+\subsection{Introducción}
+
+WS-Resource Framework \cite{Ban06} es una especificación, desarrollada por OASIS y algunas de las empresas informáticas más pioneras, cuyo propósito es definir un marco genérico para el modelado y acceso a recursos asociados a servicios web, así como las relaciones entre dichos recursos en un entorno Grid/Cloud. Esta aproximación está compuesta por un conjunto de especificaciones que definen la representación del WS-Resource en los términos que especifican los mensajes intercambiados y los documentos XML relacionados. Asimismo, incluye mecanismos que describen el medio para consultar el estado de un recurso y la descripción del servicio, que forman conjuntamente la definición de un WS-Resource. Además, definen los pasos necesarios para hacer el estado de un servicio web accesible a través de su interfaz (descrita en WSDL).\\
+
+Normalmente, las interfaces de los servicios web proporcionan al usuario la posibilidad de acceder y manipular el estado del mismo, como, por ejemplo, valores de datos que evolucionan por la interacción entre varios servicios. En otras palabras, los intercambios de mensajes que se implementan en el comportamiento de los servicios tienen como objetivo permitir el acceso a estos recursos persistentes. Sin embargo, la noción de recursos persistentes que subyace en la implementación de los servicios no es tan evidente en la definición de la interfaz \cite{Fost04}. Los mensajes que estos servicios envían y reciben implican (o animan al programador a inferir) la existencia de un tipo de recurso asociado. Por tanto, es deseable que se definan estándares que permitan el descubrimiento, creación, introspección, interacción y destrucción de dichos recursos y que la forma elegida para llevar a cabo esta misión sea lo más interoperable posible. Estas observaciones han motivado la aparición de la propuesta comentada anteriormente, WS-Resource, para modelar estados en el contexto de los servicios web. Un WS-Resource se define como la composición de un servicio web y sus recursos persistentes asociados, esto es, \emph{(i)} expresado como una asociación de un documento XML con un tipo definido con uno o varios \emph{portTypes} (un servicio podrá jugar un determinado rol si implementa todos los \emph{portTypes} que comprenden ese rol) y \emph{(ii)} direccionado y accedido de acuerdo al patrón del recurso implícito, una derivación de las \emph{Endpoint References} del WS-Addressing. Una \emph{Endpoint Reference} estará compuesta por: Uniform Resource Identifier (URI), parámetros del mensaje que se envió para solicitar el envío de la \emph{Endpoint Reference} y datos relativos a la interfaz que se usa. En este intercambio, el identificador del recurso persistente es encapsulado en una \emph{Endpoint Reference} y usado para identificar al recurso en cualquier intercambio de mensajes entre los servicios que formen la coreografía. Así, WSRF permite declarar, acceder, monitorizar y destruir WS-Resources mediante mecanismos convencionales, lo que facilita la tarea de gestión, ya que no es necesario hacer más difícil la lógica de decisión del servicio propietario del recurso para procesar los mensajes de gestión. Estos mecanismos convencionales componen cinco especificaciones técnicas que definen los medios por los cuales:
+
+\begin{itemize}
+\item Se destruye un WS-Resource, ya sea de manera síncrona con respecto a una petición explícita de destrucción o, a través de un mecanismo basado en tiempos (scheduled). Además, es posible declarar unas características específicas  de los recursos (WS-ResourceProperties) que podrían ser utilizadas para inspeccionar y monitorizar el tiempo de vida de dicho WS-Resource (WS-ResourceLifetime).
+\item  Se definen los tipos de WS-Resource, que están compuestos por la interfaz de la descripción del servicio web (WSDL) y por un documento XML de propiedades del recurso. Por otro lado, el estado del WS-Resource puede ser consultado y modificado a través del intercambio de mensajes (WS-ResourceProperties)
+\item Un Endpoint Reference (WS-Addressing) puede ser renovado cuando su información de direccionamiento ha caducado o ha dejado de ser válida por algún error (WS-RenewableReferences).
+\item Además, se define la capacidad de implementar entornos heterogéneos como colecciones de servicios web, sean o no WS-Resources (WS-ServiceGroups).
+\item La notificación de errores puede ser más estandarizada al usar tipos XML Schema para definir los fallos base y definir reglas que muestren cómo esos fallos son usados y extendidos (WS-BaseFaults).
+\end{itemize}   
+
+\subsection{WS-ResourceProperties}
+
+Como se ha comentado anteriormente, WSRF utiliza una especificación concreta para definir las propiedades del WS-Resource. Este recurso estará compuesto por la definición de la interfaz en WSDL y un documento XML (Resource Properties Document) que especifica las propiedades del mismo, por ejemplo, el tamaño de disco, la capacidad del procesador, etc., de tal manera que si queremos acceder, modificar o actualizar este documento debemos utilizar una serie de mensajes preestablecidos en la especificación. Las operaciones que se pueden hacer son las siguientes:
+
+\subsubsection{GetResourceProperty}
+Esta operación como su propio nombre indica permite al servicio web que realiza la petición recuperar el valor de una {\bf única} propiedad del documento de propiedades. Para aclarar más los conceptos se define el siguiente ejemplo. \\
+
+
+Dado el documento de propiedades:
+
+\lstset{language=XML, numbersep=5pt,basicstyle=\small, frame=single}
+\begin{lstlisting}
+...
+<GenericDiskDriveProperties 
+xmlns: tns=``http://example.com/diskDrive'' >
+  <tns:NumberOfBlocks>22</tns:NumberOfBlocks>
+  <tns:BlockSize>1024</tns:BlockSize>
+  <tns:Manufacturer>DrivesRUs</tns:Manufacturer>
+</GenericDiskDriveProperties>
+...
+\end{lstlisting}
+
+Una posible petición puede ser:
+
+\lstset{language=XML, numbersep=5pt,basicstyle=\small, frame=single}
+\begin{lstlisting}
+...
+<s12:Body>
+  <wsrp:GetResourceProperty 
+    xmlns:tns=``http://example.com/diskDrive''>
+     tns:NumberOfBlocks
+  </wsrp: GetResourceProperty>
+</s12:Body>...
+\end{lstlisting}
+
+\subsubsection{GetMultipleResourceProperties}
+Este método es equivalente al anterior, pero para acceder a más de una propiedad del documento en el mismo mensaje, es decir, se utiliza para evitar congestionar la red. El mensaje enviado sería:
+
+
+\lstset{language=XML, numbersep=5pt,basicstyle=\footnotesize ,frame=single}
+\begin{lstlisting}
+...
+<wsrp:GetMultipleResourceProperties
+ xmlns:tns=``http://example.com/diskdrive''>
+ <wsrp:ResourceProperty>tns:NumberOfBlock</wsrp:ResourceProperty>
+ <wsrp:ResourceProperty>tns:BlockSize</wsrp:ResourceProperty>
+</wsrp:GetMultipleResourceProperties>
+...
+\end{lstlisting}
+
+\subsubsection{SetResourceProperties}
+Este método se utiliza para realizar cambios en el documento de propiedades. Existen 3 tipos de cambios:
+
+\begin{itemize}
+\item Insert: Permite añadir nuevas propiedades en el documento.
+\item Update: Se utiliza para actualizar el valor de alguna propiedad.
+\item Delete: Elimina propiedades del documento.
+\end{itemize}
+
+Un posible ejemplo de petición sería:
+
+\lstset{language=XML, numbersep=5pt, basicstyle=\small,frame=single}
+\begin{lstlisting}
+...
+<s12:Body>
+ <wsrpw:SetResourceProperties
+        xmlns:tns=``http://example.com/diskdrive''>
+   <wsrp:Update>
+    <tns:NumberOfBlocks>143</tns:NumberOfBlocks>
+   </wsrp:Update>
+
+   <wsrp:Delete resourceProperty=``tns:Manufacturer''/>
+
+   <wsrp:Insert>
+    <tns:someElement>42</tns:someElement>
+   </wsrp:Insert>
+
+ </wsrp:SetResourceProperties>
+</s12:Body>
+...
+\end{lstlisting}
+
+
+El documento de propiedades quedaría con el siguiente formato:
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<GenericDiskDriveProperties
+  xmlns:tns=``http://example.com/diskDrive''>
+  
+  <tns:NumberOfBlocks>143</tns:NumberOfBlocks>
+  <tns:BlockSize>1024</tns:BlockSize>
+  <tns:someElement>42</tns:someElement>
+
+</GenericDiskDriveProperties>
+...
+\end{lstlisting}
+
+\subsubsection{QueryResourceProperties}
+Como su propio nombre indica, este método se utiliza para realizar consultas sobre propiedades del recurso. Por ejemplo si queremos saber si el número de bloques es mayor que 20 y el tamaño de bloque es 1024 realizaríamos la siguiente consulta:
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<s12:Body>
+ <wsrp:QueryResourceProperties>
+  <wsrp:QueryExpression
+   Dialect=``http://www.w3.org/REC-xpath-19991116''>
+    boolean(/*/NumberOfBlocks>20 and /*/BlockSize=1024)
+  </wsrp:QueryExpression>
+ </wsrp:QueryResourceProperties>
+</s12:Body>
+...
+\end{lstlisting}
+
+\newpage
+La respuesta que envía el otro servicio es:
+
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<s12:Body>
+ <wsrp:QueryResourcePropertiesResponse>
+   true
+ </wsrp:QueryResourcePropertiesResponse>
+</s12:Body>
+...
+\end{lstlisting}
+
+
+\subsection{WS-Base Faults}
+El diseñador de un servicio web normalmente utiliza interfaces definidas por otros, por lo que un método que estandarizase el formato de los mensajes de notificación de errores facilitaría la labor de los desarrollares. Éste es el objetivo de WS-BaseFaults. Los mensajes de fallos en WSRF tienen el siguiente formato:
+
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<BaseFault> 
+  <Timestamp>xsd:dateTime</Timestamp> 
+  <OriginatorReference> 
+    wsa:EndpointReferenceType 
+  </OriginatorReference> ? 
+  <ErrorCode dialect=``anyURI''>xsd:string</ErrorCode>? 
+  <Description>xsd:string</Description> * 
+  <FaultCause>wsbf:BaseFault</FaultCause> * 
+</BaseFault>
+...
+\end{lstlisting}
+donde:
+
+\begin{itemize}
+\item Timestamp: Hora exacta cuando el fallo ha ocurrido.
+\item OriginatorReference: Dirección en formato WS-Addressing del servicio que ha generado el fallo.
+\item ErrorCode: Código de error para ser utilizado por sistemas de información de fallos, por ejemplo, POSIX errno.
+\item Description: Explicación de la causa del fallo (en lenguaje natural).
+\item FaultCause: Causa técnica del fallo. 
+\end{itemize}
+
+\subsection{WS-ServiceGroup}
+Esta especificación permite crear grupos que comparten una serie de propiedades en común, es decir, agrupar diferentes servicios web que tienen comportamientos similares.
+
+\subsection{WS-ResourceLifetime}
+
+El tiempo de vida de un WS-Resource se define como el período que transcurre entre su instanciación y su destrucción. La misión de esta especificación es estandarizar el proceso de destrucción de un recurso y definir mecanismos para monitorizar este ciclo de vida, pero lo que no se define es cómo crear el WS-Resource. Generalmente, en los sistemas distribuidos, los clientes sólo quieren tener un recurso por un determinado intervalo de tiempo, aunque en muchos escenarios es más apropiado para el cliente que se produzca la inmediata destrucción del recurso. Otro ejemplo claro de uso se presenta cuando el cliente quiere suscribirse a un servicio por un cierto tiempo y quiere que después de este tiempo se destruya dicha unión. Como se comentó en la introducción, existen dos formas de destruir un recurso: inmediata, mediante un mensaje explícito o temporizada, mediante un mensaje que activa o gestiona un timer. 
+
+\subsubsection{Destrucción inmediata}
+Para la destrucción inmediata sólo hace falta poner \emph{$<wsrl:Destroy/>$} dentro del cuerpo ($<Body>$) del mensaje SOAP que se envía al servicio que gestiona el recurso y dicho servicio responder con \emph{$<wsrl:DestroyResponse/>$} dentro del cuerpo (\emph{$<Body>$}) del mensaje SOAP de respuesta.
+
+\subsubsection{Destrucción temporizada}
+
+En este caso, el WS-Resource tiene asociado un tiempo de terminación que define el tiempo después del cual se espera que el recurso haya sido destruido y, razonablemente, se espera que antes del mismo el recurso esté disponible. A continuación se muestra un ejemplo de cómo determinar el tiempo de terminación de un recurso:
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+  <s12:Envelope
+     <ex:ResourceDisambiguator>
+      uuid:ba32-8680cace43f9
+     </ex:ResourceDisambiguator>
+     <s12:Body>
+      <wsrl:SetTerminationTime>
+       <wsrl:RequestedTerminationTime>
+        2001-12-31T12:00:00
+       </wsrl:RequestedTerminationTime>
+     </wsrl:SetTerminationTime>
+     </s12:Body>
+  </s12:Envelope>
+...
+\end{lstlisting}
+
+
+
+Como podemos observar el servicio que solicita la destrucción puede indicar la hora de destrucción y la hora actual (para evitar desajustes por la forma de representar la zona horaria). Una vez que CurrentTime alcanza el valor TerminationTime, el recurso se destruye sin ninguna intervención más y se notifica al emisor del mensaje de destrucción que el recurso deja de estar disponible. Existe otro mensaje que se manda desde el receptor al emisor para comunicarle que ha recibido la petición de cambio.  \\
+
+Sin embargo, puede darse la situación de que haya más de un servicio utilizando el recurso que vaya a destruirse por lo que el propietario del recurso puede decidir o no (se deja a libre elección del programador) implementar los mensajes WS-Notification para informar a los interesados que el recurso deja de estar disponible. Para llevar a cabo esta tarea debe crear este Topic: 
+
+\newpage
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<wstop:TopicSpace name=``ResourceLifetime''
+   targetNamespace=
+   http://docs.oasis-open.org/wsrf/2004/06/
+   wsrf-WS-ResourceLifetime-1.2-draft-01.xsd
+ 
+ <wstop:Topic name=``ResourceTermination''>
+   <wstop:MessagePattern>
+     <wsrp:QueryExpression
+       dialect= http://www.w3.org/REC-xpath-19991116 >
+        boolean(/*/TerminationNotification)
+     </wsrp:QueryExpression>
+ </wstop:MessagePattern>
+...
+\end{lstlisting}
+
+
+
+Además, el mensaje de notificación asociado debe contener los siguientes campos: 
+
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<wsrl:TerminationNotification>
+ <wsrl:TerminationTime>xsd:dateTime</wsrl:TerminationTime>
+ <wsrl:TerminationReason>xsd:any</wsrl:TerminationReason>?
+</wsrl:TerminationNotification>
+...
+\end{lstlisting}
+ 
+donde \emph{TerminationTime} informa de la fecha de destrucción y \emph{TerminationReason} contiene la explicación de la destrucción.
+
+\section{WS-Notification}
+
+Esta especificación permite a un \emph{NotificationProducer} enviar un mensaje de notificación a un \emph{NotificationConsumer} de dos maneras diferentes:
+
+\begin{enumerate}
+\item El \emph{NotificationProducer} envía un mensaje de notificación al \emph{NotificationConsumer} sin seguir ningún formalismo.
+\item El \emph{NotificationProducer} utiliza el formalismo que se describe a continuación para enviar las notificaciones. 
+\end{enumerate} 
+
+La opción a utilizar la elegirá el suscriptor cuando mande la petición de suscripción. En este sentido, la segunda opción permite al usuario recibir un amplio rango de mensajes de notificación, ya que la información que se envía en estos mensajes se obtiene de un árbol de Topics (temas) y, por tanto, se permite enviar subárboles en un mismo mensaje para informar de diferentes Topics. En la Figura \ref{12} vemos un ejemplo:
+
+
+\begin{figure}[h!]
+  \center
+    \includegraphics[scale=0.45]{Figuras/12}
+     \caption{Ejemplo de uso de WS-Notification sin broker.}
+  \label{12}
+\end{figure}
+ 
+Este caso muestra un ejemplo de interacción entre un consumidor y un productor de notificaciones, en el caso de que el suscriptor y el consumidor sean la misma entidad. El sistema es simple ya que tenemos un consumidor y un productor que publica 2 topics: SystemLoadHigh y SystemFault. Los pasos necesarios son: 
+
+\begin{enumerate}
+\item En primer lugar, el consumidor se suscribe al topic SystemLoadHigh, por lo que internamente se crea un \emph{Subscription resource} con la información de la suscripción. El productor debe implementar un método \emph{Subscribe} y el consumidor un método \emph{Notify}.  
+\item Después, el productor debe enviar una notificación cuando el sistema sobrepase una determinada carga de trabajo. Por ejemplo, nuestro sistema enviará notificaciones cuando la carga de trabajo sea mayor de 50\%.
+\item Por último, el productor envía la notificación invocando la operación \emph{Notify} en el consumidor.
+\end{enumerate}
+   
+Un ejemplo de mensaje \emph{Notify} es:
+ 
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<wsnt:Notify>
+    <wsntw:NotificationMessage>
+     <wsnt:Topic Dialect= xsd:anyURI >
+       {any}
+     </wsnt:Topic>
+     <wsnt:ProducerReference>?
+      wsa:EndpointReference
+     </wsnt:ProducerReference>
+     <wsnt:Message>xsd:any</wsnt:Message>
+    <wsnt:NotificationMessage>+
+</wsnt:Notify>
+...
+\end{lstlisting}
+
+Como podemos observar el mensaje \emph{Notify} contiene uno o varios mensajes de notificación (\emph{NotificationMessages}). Los campos dentro de éstos son: 
+
+\begin{itemize}
+\item Topic: La información del topic que se envía.
+\item Dialect: El dialecto usado para expresar el topic anterior, es decir, el lenguaje utilizado para expresarlo.
+\item ProducerReference: Dirección del productor.
+\item Message: Una copia de la carga útil (payload) del mensaje actual.
+\end{itemize}
+
+A continuación, se muestra el mensaje que manda el suscriptor para registrar su interés en uno o más topics:
+
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<wsnt:Subscribe>
+  <wsnt:ConsumerReference>
+    wsa:endpointReference
+  </wsnt: ConsumerReference>
+  <wsnt:TopicExpression Dialect = xsd:anyURI >
+    {any}
+  </wsnt:TopicExpression>
+  <wsnt:UseNotify>xsd:boolean</wsnt:UseNotify>?
+  <wsnt:Precondition>wsrp:QueryExpression</Precondition>?
+  <wsnt:Selector>wsrp:QueryExpression</wsnt:Selector>?
+  <wsnt:SubscriptionPolicy>{any}</wsnt:SubscriptionPolicy>?
+  <wsnt:InitialTerminationTime>
+    xsd:dateTime
+  </wsnt:InitialTerminationTime>?
+</wsnt:Subscribe>
+
+...
+\end{lstlisting}
+
+
+Los conceptos importantes en este mensaje son \emph{UseNotify} que se utiliza para decidir si el mensaje de notificación sigue el formalismo WS-Notification o se manda sin formato, \emph{Precondition} que es la condición que genera mensajes de notificación, es decir, si se cumple esta condición se generan mensajes, pero debe cumplirse también la condición \emph{selector} para enviarlos a los destinatarios que es la que se usa para decidir si se transmiten o no los mensajes generados. Además, \emph{SubscriptionPolicy} se podría utilizar para controlar el ratio de envío de mensajes(por ejemplo, no más de 3 por segundo) y \emph{InitialTerminationTime} contiene una sugerencia del tiempo de vida de la suscripción. WSRF también incluye mensajes para detener la suscripción, reanudarla o para que un servicio que acaba de unirse a una suscripción pueda obtener un historial de notificaciones sobre un determinado topic.
+
+
+
+\subsection{WS-BrokeredNotification}
+
+Un \emph{NotificationBroker} es un intermediario que, entre otras cosas, permite el envío de mensajes entre uno o varios \emph{Publishers} y uno o varios \emph{NotificationConsumers}. La misión del \emph{Publisher} es observar ciertas situaciones y crear mensajes de notificación para informar de esas situaciones, mientras que el broker es el encargado de distribuir estos mensajes. \\
+
+En este caso, se pueden dar tres relaciones entre las partes: \emph{simple publishing}, \emph{composable publishing} y \emph{demand-based publishing}. En el primer caso, el \emph{Publisher} es el encargado de observar las situaciones y notificarlas al broker que será el encargado de transmitirlas a los interesados. En el segundo caso, el papel del \emph{Publisher} lo realizará una entidad que implementa una serie de servicios especificados en WS-Notification (NotificationProducer). En este caso, el mensaje de notificación puede llegar a otros consumidores que estuviesen suscritos al productor. En ambos casos, el broker puede pedir al \emph{Publisher} que se registre para poder publicar mensajes sobre un topic determinado. El último enfoque (\emph{demand-based publishing}) requiere que el \emph{Publisher} sea un \emph{NotificationProducer} y, así, acepte mensajes de suscripción. El objetivo es reducir el número de mensajes de notificación haciendo que éstos solo se manden cuando se soliciten expresamente.
+

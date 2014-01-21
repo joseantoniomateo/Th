@@ -1,0 +1,276 @@
+\documentclass[a4paper,12pt,twoside]{Tesis}
+
+%Packages
+\usepackage[nooneline]{subfigure}
+\usepackage{url}
+\usepackage{afterpage}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{listings}
+%\usepackage{theorem}
+%\usepackage{thmtools}
+\usepackage{alltt}
+\usepackage{colortbl}
+\usepackage{afterpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+% \usepackage{a4wide}
+\usepackage{setspace}
+%\usepackage[T1]{fontenc}
+\usepackage{epsfig}
+\usepackage{url}
+%\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{color}
+%\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage{mathcomp}
+\usepackage{fontenc}
+\usepackage{float}
+%\usepackage[hyperindex,bookmarks,ps2pdf,dvips,breaklinks=true,linktocpage]{hyperref}
+\usepackage[hyperindex,bookmarks,dvipdfm,dvips,breaklinks=true,linktocpage]{hyperref}
+\usepackage{breakurl}
+\usepackage{algorithm}
+%\usepackage{algorithmic}
+%\usepackage{metre}
+%\usepackage{yhmath}
+\usepackage{textcomp}
+
+%%%New commands%%%
+\newcommand{\codiag}{\textit{C-O Diagrams}}
+\newcommand\CL{\ensuremath{\mathcal{CL}}}
+\newcommand\FT{\ensuremath{\mathcal{F}}}
+\newcommand{\EM}[1]{{\color{green}{#1 EM}}}
+
+\newtheoremstyle{example}{\topsep}{\topsep}%
+     {}%         Body font
+     {}%         Indent amount (empty = no indent, \parindent = para indent)
+     {\bfseries}% Thm head font
+     {}%        Punctuation after thm head
+     {\newline}%     Space after thm head (\newline = linebreak)
+     {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}%         Thm head spec
+
+   \theoremstyle{example}
+   \newtheorem{example}{Example}[section]
+
+%%%Mathematical definitions%%%
+\newcommand{\pclock}{\cal{P}}
+
+\newtheorem{definition}{Definition}%[chapter]
+\newcommand{\bdfn}{\begin{definition} \begin{rm}}
+\newcommand{\edfn}{\vspace{-2ex}
+{\flushright $\Box$\\
+\mbox{}\vspace{-2ex}
+} \end{rm} \end{definition}}
+\newcommand{\edfnt}{ \end{rm} \end{definition}}
+
+\newcommand{\bthm}{\begin{theorem} \begin{rm}}
+\newcommand{\ethm}{\vspace{-4ex}{\flushright $\Box$\\
+\mbox{}\vspace{-4ex}} \end{rm} \end{theorem}}
+\newcommand{\bprop}{\begin{proposition} \begin{rm}}
+\newcommand{\eprop}{\vspace{-4ex}{\flushright $\Box$\\
+\mbox{}\vspace{-4ex}} \end{rm} \end{proposition}}
+\newcommand{\bcor}{\begin{corollary}\begin{rm}}
+\newcommand{\ecor}{\vspace{-4ex}{\flushright $\Box$\\
+\mbox{}\vspace{-4ex}} \end{rm} \end{corollary}}
+\newcommand{\blem}{\begin{lemma} \begin{rm}}
+\newcommand{\elem}{\vspace{-4ex}{\flushright $\Box$\\
+\mbox{}\vspace{-4ex}} \end{rm} \end{lemma}}
+\newcommand{\bfact}{\begin{fact} \begin{rm}}
+\newcommand{\efact}{\vspace{-4ex}{\flushright $\Box$\\
+\mbox{}\vspace{-4ex}} \end{rm} \end{fact}}
+\newcommand{\bex}{\begin{example} \begin{rm}}
+\newcommand{\eex}{\vspace{-2ex}{\flushright $\Box$\\
+\mbox{}\vspace{-2ex}} \end{rm} \end{example}}
+\newcommand{\narrow}{$\!${\scriptsize N}$\! \longrightarrow$}
+\newcommand{\narrowast}{$\!${\scriptsize N}$\!
+ \stackrel{\ast}{\longrightarrow}$}
+\newcommand{\narrowur}{$\!${\scriptsize N}$\!
+ \stackrel{<u,r>}{\longrightarrow}$}
+\newcommand{\impast}{\stackrel{\ast}{\Longrightarrow}}
+\newcommand{\entero}{\mathbb{Z}}
+\newcommand{\bs}{[\![}
+\newcommand{\es}{]\!]}
+\newcommand{\nat}{{\rm I\! N}}
+\newcommand{\eneg}{\hspace*{-0.15cm}}
+\newcommand{\real}{\rm I\! R}
+\newcommand{\barra}{\, | \,}
+\newcommand{\nbar}{\, \mid \hspace*{-1.25ex} \sim \,}
+\newcommand{\prim}[1]{{\it Ft( #1 )}}
+\newcommand{\interle}{|\hspace*{-0.04cm}\|}
+\long\def\comment#1{}
+\newcommand{\regla}[3]{\renewcommand{\arraystretch}{0.75}
+\begin{array}{c}
+\displaystyle #1\\
+\rule{#3cm}{0.1mm}\\
+\displaystyle #2
+\end{array}\renewcommand{\arraystretch}{1.0}
+}
+\newcommand{\reglaa}[3]{\renewcommand{\arraystretch}{0.5}
+\begin{array}{c}
+\displaystyle #1\\
+\rule{#3cm}{0.1mm}\\
+\displaystyle #2
+\end{array}\renewcommand{\arraystretch}{1.0}
+}
+\newcommand{\separ}{\vspace*{0.1cm}}
+\newcommand{\reglal}[1]{
+\frac{\;\;#1}{\;~~~~~\;}\!\!\!\!\rightarrow}
+\newcommand{\reglasl}[1]{
+\frac{\;\;\scriptstyle #1}{\;~~~~~~~~~~~~~~\;}\!\!\!\rightarrow}
+\newcommand{\Regla}[1]{\stackrel{#1}{\Longrightarrow}}
+\newcommand{\reglad}[2]{\renewcommand{\arraystretch}{0.5}
+\begin{array}[t]{c}
+\rule{#2cm}{0.1mm}\\
+\displaystyle #1
+\end{array}\renewcommand{\arraystretch}{1.0}}
+\newcommand{\maximo}[1]{\renewcommand{\arraystretch}{0.40}
+\begin{array}[t]{c}
+{\it Max}\\
+{\scriptstyle #1}
+\end{array}\renewcommand{\arraystretch}{1.0}}
+\newcommand{\minimo}[1]{\renewcommand{\arraystretch}{0.40}
+\begin{array}[t]{c}
+{\it Min}\\
+{\scriptstyle #1}
+\end{array}\renewcommand{\arraystretch}{1.0}}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\flecha}[1]{\stackrel{#1}{\longrightarrow}}
+\newcommand{\flechad}[2]{
+\renewcommand{\arraystretch}{0.5}
+\begin{array}{c}
+{\scriptstyle #1}\\
+\rightarrow\\
+{\scriptstyle #2}\\
+\end{array}
+\renewcommand{\arraystretch}{1}
+}
+\newcommand{\flechal}[1]{\stackrel{#1}{-\!\!-\!\!\!\longrightarrow}}
+\newcommand{\flechald}[2]{\renewcommand{\arraystretch}{0.5}
+\begin{array}{c}
+{\scriptstyle #1}\\
+\longrightarrow\vspace*{-0.1cm}\\
+{\scriptstyle #2}
+\end{array}
+\renewcommand{\arraystretch}{1}
+}
+\newcommand{\flechalu}[2]{\renewcommand{\arraystretch}{0.5}
+\begin{array}{c}
+{\scriptstyle #1}\\
+\longrightarrow_u\vspace*{-0.1cm}\\
+{\scriptstyle #2}
+\end{array}
+\renewcommand{\arraystretch}{1}
+}
+\newcommand{\menos}{\renewcommand{\arraystretch}{0.0002}
+\begin{array}[b]{c}
+\mbox{\small{.}} \\
+-
+\end{array}\renewcommand{\arraystretch}{1.0}}
+\newcommand{\precond}[1]{\hspace*{-0.4em}~^{\bullet}
+\hspace*{-0.05em}#1}
+\newcommand{\nofalla}{
+\stackrel{{\it fail}}{\longrightarrow}
+\hspace*{-0.35cm}/
+}
+\newcommand{\nofallaa}{
+\stackrel{{\it fail}}{\longrightarrow}
+\hspace*{-0.45cm}/
+}
+\newcommand{\pila}[2]{\renewcommand{\arraystretch}{0.18}
+\begin{array}[t]{c}
+#1\\
+{\scriptstyle #2}
+\end{array}\renewcommand{\arraystretch}{1.0}}
+\newcommand{\reglat}[1]{\pila{\longmapsto}{#1}}
+\newcommand{\Computacion}[1]{\renewcommand{\arraystretch}{0.60}
+\begin{array}[b]{c}
+{\scriptstyle #1}\\
+\Longrightarrow
+\end{array}
+\renewcommand{\arraystretch}{1.0}
+}
+\newcommand{\comentario}[1]{}
+\newcommand{\andabajo}[1]{\renewcommand{\arraystretch}{0.40}
+\begin{array}[t]{c}
+{\Large \wedge}\\
+{\scriptstyle #1}
+\end{array}\renewcommand{\arraystretch}{1.0}}
+
+%Settings
+\clubpenalty=10000
+\widowpenalty=10000
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\autor{Jos\'e Antonio Mateo Cort\'es}
+\titulo{Verification and Validation of Web Services Compositions using Formal Methods}
+\fecha{}
+\tutorA{Dr.~Valent\'in Valero Ruiz}
+\tutorB{Dr.~Ji\v{r}\'{\i} Srba}
+
+\maketitle
+
+\frontmatter
+
+\setstretch {1.5}
+
+\include{ack}
+
+\include{abstract}
+
+\tableofcontents
+\cleardoublepage
+
+\listoffigures
+\cleardoublepage
+
+\listoftables
+\cleardoublepage
+
+%\listofalgorithms
+%\cleardoublepage
+
+\parskip=6pt
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\pagestyle{headings}
+
+\include{chapter1}
+\cleardoublepage
+
+\include{chapter2}
+\include{Acknowledgments}
+\cleardoublepage
+
+%\include{chapter3}
+\cleardoublepage
+
+%\include{chapter4}
+\cleardoublepage
+
+%\include{chapter5}
+\cleardoublepage
+
+\appendix
+
+%\include{apendix1}
+
+\input{bibliography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\markboth{\bibname}{\bibname}
+
+\addcontentsline{toc}{chapter}{\bibname}
+
+\bibliography{bibliography}
+
+\cleardoublepage
+
+\end{document}

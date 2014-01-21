@@ -1,0 +1,233 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: ack.aux
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: chapter1.aux
+A level-1 auxiliary file: chapter2.aux
+A level-1 auxiliary file: Acknowledgments.aux
+A level-1 auxiliary file: chapter3.aux
+The style file: plain.bst
+Illegal, another \bibdata command---line 38 of file thesis.aux
+ : \bibdata
+ :         {bibliography}
+I'm skipping whatever remains of this command
+Database file #1: Bibliography.bib
+Warning--I didn't find a database entry for "Foster2004"
+Warning--I didn't find a database entry for "Czajkowski2004"
+Warning--I didn't find a database entry for "Papazoglou2007"
+Warning--I didn't find a database entry for "Karp2000"
+Warning--I didn't find a database entry for "Sun1999"
+Warning--I didn't find a database entry for "W3C2004"
+Warning--I didn't find a database entry for "W3C2001"
+Warning--I didn't find a database entry for "W3C2007"
+Warning--I didn't find a database entry for "OASIS2004"
+Warning--I didn't find a database entry for "OASIS2007"
+Warning--I didn't find a database entry for "Peltz2003"
+Warning--I didn't find a database entry for "W3C2005"
+Warning--I didn't find a database entry for "Carbone2006"
+Warning--I didn't find a database entry for "Dong2006"
+Warning--I didn't find a database entry for "Foster2007"
+Warning--I didn't find a database entry for "Yang2008"
+Warning--I didn't find a database entry for "Wing1990"
+Warning--I didn't find a database entry for "Peled2001"
+Warning--I didn't find a database entry for "Katoen1998"
+Warning--I didn't find a database entry for "Clarke1999"
+Warning--I didn't find a database entry for "Glabbeek1987"
+Warning--I didn't find a database entry for "Milner1992"
+Warning--I didn't find a database entry for "Petri2008"
+Warning--I didn't find a database entry for "Hamadi2003"
+Warning--I didn't find a database entry for "Linz2006"
+Warning--I didn't find a database entry for "Beek2003"
+Warning--I didn't find a database entry for "Kaynar2006"
+Warning--I didn't find a database entry for "Alur1990"
+Warning--I didn't find a database entry for "Alur1994"
+Warning--I didn't find a database entry for "Bengtsson2003"
+Warning--I didn't find a database entry for "Cleaveland1993"
+Warning--I didn't find a database entry for "Milner1980"
+Warning--I didn't find a database entry for "Bartlett1969"
+Warning--I didn't find a database entry for "Jensen2007"
+Warning--I didn't find a database entry for "Jensen1990"
+Warning--I didn't find a database entry for "Jensen1991"
+Warning--I didn't find a database entry for "Larsen1997"
+Warning--I didn't find a database entry for "Behrmann2004"
+Warning--I didn't find a database entry for "Cambronero2007"
+Warning--I didn't find a database entry for "Lamsweerde1993"
+Warning--I didn't find a database entry for "OMG2003"
+Warning--I didn't find a database entry for "Ambler2005"
+Warning--I didn't find a database entry for "W3C1999"
+Warning--I didn't find a database entry for "OMG1998"
+Warning--I didn't find a database entry for "W3C1999-2"
+Warning--I didn't find a database entry for "Cambronero2009"
+Warning--I didn't find a database entry for "Cambronero2006"
+Warning--I didn't find a database entry for "Cambronero2007-2"
+Warning--I didn't find a database entry for "Nakajima2005"
+Warning--I didn't find a database entry for "Pu2006"
+Warning--I didn't find a database entry for "Qian2007"
+Warning--I didn't find a database entry for "Valero2009"
+Warning--I didn't find a database entry for "Valero2009-2"
+Warning--I didn't find a database entry for "Diaz2009"
+Warning--I didn't find a database entry for "Andres2009"
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1049 of file plain.bst
+Name 1 in "K.G. Larsen, P. Pettersson, and W. Yi" has a comma at the end for entry Larsen97
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
+while executing---line 1090 of file plain.bst
+Warning--empty journal in Andrews2003WSBPEL
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
+while executing---line 1090 of file plain.bst
+Warning--empty year in Fost04
+Name 1 in "K.G. Larsen, P. Pettersson, and W. Yi" has a comma at the end for entry Larsen97
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
+while executing---line 1090 of file plain.bst
+You've used 12 entries,
+            2118 wiz_defined-function locations,
+            684 strings with 7064 characters,
+and the built_in function-call counts, 2953 in all, are:
+= -- 281
+> -- 132
+< -- 0
++ -- 53
+- -- 40
+* -- 156
+:= -- 542
+add.period$ -- 36
+call.type$ -- 12
+change.case$ -- 54
+chr.to.int$ -- 0
+cite$ -- 14
+duplicate$ -- 126
+empty$ -- 234
+format.name$ -- 40
+if$ -- 596
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 14
+newline$ -- 63
+num.names$ -- 24
+pop$ -- 64
+preamble$ -- 1
+purify$ -- 44
+quote$ -- 0
+skip$ -- 88
+stack$ -- 0
+substring$ -- 107
+swap$ -- 11
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 44
+warning$ -- 2
+while$ -- 27
+width$ -- 14
+write$ -- 122
+(There were 61 error messages)

@@ -1,0 +1,35 @@
+1.) Cover and acknowledgements.
+2.) Abstract.
+3.) Contents (Index of Chapters, List of Figures and so on).
+4.) Chapter 1: Introduction
+         4.1) Motivation (Brief introduction of web services and
+soundness and motivation)
+         4.2) Research goal: To be extracted from my master
+thesis.
+         4.3) Dissertation structure.
+5.) Chapter 2: Background
+         5.1) Web Services modelling (choreography and orchestation definition,
+WS-CDL, etc.).
+             5.2.1)   WS-BPEL.
+         5.3) Distributed systems (Brief introduction of Cloud/Grid
+Computing).
+             5.3.1) WS-RF.
+        5.3) Formal models 
+            5.3.1) Process algebras (CSP,CTL,CCS...).
+            5.3.2) Petri nets.
+             5.2.1) Coloured Petri nets. 
+	     5.2.2) Timed-arc Petri nets.
+6.) Chapter 3: BPELRF
+	 6.1) Syntax.	
+         6.2) Operational semantics.
+         6.3) PTCPN semantics.
+	 6.4) Tool support.
+         6.5) Conclusions.
+7.) Chapter 4: Timed-Arc Workflow Nets
+         7.2) Soundness in discrete time.
+         7.3) Soundness in continuous time.
+         7.4) Tool support.
+         7.5) Conclusions.
+8.) Chapter 5: Conclusions
+9.) Bibliography
+10.) Appendix 

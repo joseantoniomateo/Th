@@ -1,0 +1,468 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Title:   Template 'System'.
+%%Creator: UPPAAL 4.0.6 (rev. 2987), March 2007
+%%Pages: 0
+%%BoundingBox: -1 -65 539 284
+%%EndComments
+
+% Basic coordinate transformation.
+0.5 0.5 scale
+
+% Move the origin.
+0 439 translate
+
+% Size of graphical elements.
+/vertex-radius 12 def
+/vertex-urgent-radius 5 def
+/vertex-commit-radius 5 def
+/vertex-init-radius 8 def
+/vertex-lw 1.2 def
+/edge-lw 0.5 def
+
+% Color setting of graphical elements.
+/black { 0 0 0 setrgbcolor } def
+/vertex-fill-col { 0.647 0.686 0.803 setrgbcolor} def
+/vertex-ol-col { black } def
+/urgent-ol-col { black } def
+/commit-ol-col { black } def
+/initial-ol-col { black } def
+/state-name-col { 0.192 0.396 0.549 setrgbcolor } def
+/inv-col { state-name-col } def
+/select-col { 0.541 0.220 0.380 setrgbcolor } def
+/guard-col { select-col } def
+/sync-col { guard-col } def
+/assign-col { guard-col } def
+/trans-col { black } def
+
+% Draw (filled) vertex at given position.
+/vertex { 
+   2 copy
+   vertex-fill-col
+   newpath vertex-lw setlinewidth 
+   /vertex-radius load 0 360 arc fill
+   vertex-ol-col
+   /vertex-radius load 0 360 arc stroke
+} def
+
+% Mark vertex as urgent.
+/urgent { 
+   urgent-ol-col
+   newpath vertex-lw setlinewidth 
+   /vertex-urgent-radius load 150 30 arc stroke 
+} def
+
+% Mark vertex as committed.
+/commit { 
+   commit-ol-col
+   newpath vertex-lw setlinewidth 
+   /vertex-commit-radius load 50 310 arc stroke 
+} def
+
+% Mark vertex as initial.
+/initial { 
+   initial-ol-col
+   newpath vertex-lw setlinewidth 
+   /vertex-init-radius load 0 360 arc stroke 
+} def
+
+% Vertices.
+% Font used for vertex names and invariants.
+/Helvetica-Bold findfont 14 scalefont setfont
+136 -112 vertex
+   56 -102 moveto state-name-col (Exception) show
+   0 -14 moveto inv-col () show
+136 64 vertex
+   136 64 initial
+   96 90 moveto state-name-col (Init_Interaction0_RequestInfo_interaction) show
+   0 -14 moveto inv-col () show
+368 64 vertex
+   240 42 moveto state-name-col (Init_Interaction1_SendInfo_interaction) show
+   0 -14 moveto inv-col () show
+528 64 vertex
+   472 82 moveto state-name-col (Init_Choice0) show
+   0 -14 moveto inv-col () show
+752 96 vertex
+   624 114 moveto state-name-col (End_Interaction2_CorrectPayment_interaction) show
+   0 -14 moveto inv-col () show
+752 40 vertex
+   600 18 moveto state-name-col (End_Interaction3_IncorrectPayment_interaction) show
+   0 -14 moveto inv-col () show
+976 64 vertex
+   936 82 moveto state-name-col (Init_Choice1) show
+   0 -14 moveto inv-col () show
+760 -304 vertex
+   640 -334 moveto state-name-col (Init_Interaction4_PaymentOk_interaction) show
+   0 -14 moveto inv-col () show
+544 -304 vertex
+   440 -286 moveto state-name-col (Init_Interaction5_RequestProduct_interaction) show
+   0 -14 moveto inv-col () show
+360 -304 vertex
+   192 -326 moveto state-name-col (Init_Interaction6_SendProduct_interaction) show
+   280 -286 moveto inv-col (\(Hour <= 49\)) show
+64 -304 vertex
+   0 -286 moveto state-name-col (End_Interaction6_SendProduct_interaction) show
+   0 -14 moveto inv-col () show
+64 -416 vertex
+   94 -424 moveto state-name-col (End_Workunit0) show
+   0 -14 moveto inv-col () show
+976 -528 vertex
+   776 -558 moveto state-name-col (Init_Interaction7_PaymentNoOk_interaction) show
+   0 -14 moveto inv-col () show
+616 -528 vertex
+   440 -558 moveto state-name-col (End_Interaction7_PaymentNoOk_interaction) show
+   0 -14 moveto inv-col () show
+312 -528 vertex
+   264 -566 moveto state-name-col (End_Workunit1) show
+   0 -14 moveto inv-col () show
+64 -528 vertex
+   40 -558 moveto state-name-col (End_Choice1) show
+   0 -14 moveto inv-col () show
+352 -160 vertex
+   192 -190 moveto state-name-col (Init_Interaction8_OutOfStock_interaction) show
+   0 -14 moveto inv-col () show
+624 -160 vertex
+   488 -190 moveto state-name-col (End_Interaction8_OutOfStock_interaction) show
+   0 -14 moveto inv-col () show
+344 -32 vertex
+   184 -14 moveto state-name-col (Init_Interaction9_RefundPayment_interaction) show
+   0 -14 moveto inv-col () show
+616 -32 vertex
+   496 -14 moveto state-name-col (End_Interaction9_RefundPayment_interaction) show
+   0 -14 moveto inv-col () show
+
+% Edges.
+% Font used for selects, guards, syncs and assigns.
+/Helvetica findfont 14 scalefont setfont
+newpath edge-lw setlinewidth
+   trans-col
+   604.0 -528.0   moveto
+   324.0 -528.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   333.6592712402344 -530.5881958007812   moveto
+   324.0 -528.0   lineto
+   333.6592712402344 -525.4118041992188   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   136.0 52.0   moveto
+   136.0 -100.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   138.58819580078125 -90.34074401855469   moveto
+   136.0 -100.0   lineto
+   133.41180419921875 -90.34074401855469   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   24 -22 moveto assign-col (exception_0=true) show
+newpath edge-lw setlinewidth
+   trans-col
+   148.0 64.0   moveto
+   356.0 64.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   346.3407287597656 66.58818817138672   moveto
+   356.0 64.0   lineto
+   346.3407287597656 61.411808013916016   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   380.0 64.0   moveto
+   516.0 64.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   506.3407287597656 66.58818817138672   moveto
+   516.0 64.0   lineto
+   506.3407287597656 61.411808013916016   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   539.87939453125 65.69705963134766   moveto
+   740.12060546875 94.30294036865234   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   730.1923828125 95.49909210205078   moveto
+   740.12060546875 94.30294036865234   lineto
+   730.9244384765625 90.37474060058594   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   568 90 moveto assign-col (ValidPayment=true) show
+newpath edge-lw setlinewidth
+   trans-col
+   763.87939453125 94.30294036865234   moveto
+   964.12060546875 65.69705963134766   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   954.9244384765625 69.62525939941406   moveto
+   964.12060546875 65.69705963134766   lineto
+   954.1923828125 64.50090789794922   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   824 90 moveto sync-col (urgent_chan!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   539.9317016601562 62.72160339355469   moveto
+   740.0682983398438 41.27839660644531   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   730.73974609375 44.880889892578125   moveto
+   740.0682983398438 41.27839660644531   lineto
+   730.1882934570312 39.73396682739258   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   568 34 moveto assign-col (ValidPayment=false) show
+newpath edge-lw setlinewidth
+   trans-col
+   763.9317016601562 41.27839660644531   moveto
+   964.0682983398438 62.72160339355469   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   954.1882934570312 64.26603698730469   moveto
+   964.0682983398438 62.72160339355469   lineto
+   954.73974609375 59.119110107421875   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   824 34 moveto sync-col (urgent_chan!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   969.9255981445312 53.6510124206543   moveto
+   766.0744018554688 -293.6510009765625   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   773.196044921875 -286.630859375   moveto
+   766.0744018554688 -293.6510009765625   lineto
+   768.7318115234375 -284.01055908203125   lineto
+stroke
+   0 -14 moveto select-col () show
+   736 -94 moveto guard-col (\(ValidPayment==true\)) show
+   0 -14 moveto sync-col () show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   748.0 -304.0   moveto
+   556.0 -304.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   565.6592407226562 -306.58819580078125   moveto
+   556.0 -304.0   lineto
+   565.6592407226562 -301.41180419921875   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   532.0 -304.0   moveto
+   372.0 -304.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   381.6592712402344 -306.58819580078125   moveto
+   372.0 -304.0   lineto
+   381.6592712402344 -301.41180419921875   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   472 -318 moveto assign-col (Hour=0) show
+newpath edge-lw setlinewidth
+   trans-col
+   360.0 -292.0  moveto
+   360.0 -266.0 lineto
+   360.0 -256.0 360.0 -256.0 350.0 -256.0 curveto   146.0 -256.0 lineto
+   136.0 -256.0 136.0 -256.0 136.0 -246.0 curveto   136.0 -124.0  lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   133.41180419921875 -133.6592559814453   moveto
+   136.0 -124.0   lineto
+   138.58819580078125 -133.6592559814453   lineto
+stroke
+   0 -14 moveto select-col () show
+   48 -206 moveto guard-col (\(Hour == 49\)) show
+   0 -14 moveto sync-col () show
+   24 -230 moveto assign-col (exception_1=true) show
+newpath edge-lw setlinewidth
+   trans-col
+   348.0 -304.0   moveto
+   76.0 -304.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   85.65925598144531 -306.58819580078125   moveto
+   76.0 -304.0   lineto
+   85.65925598144531 -301.41180419921875   lineto
+stroke
+   0 -14 moveto select-col () show
+   96 -318 moveto guard-col (\(Hour <= 48\)) show
+   0 -14 moveto sync-col () show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   64.0 -316.0   moveto
+   64.0 -404.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   66.58818817138672 -394.3407287597656   moveto
+   64.0 -404.0   lineto
+   61.411808013916016 -394.3407287597656   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   64.0 -428.0   moveto
+   64.0 -516.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   66.58818817138672 -506.3407287597656   moveto
+   64.0 -516.0   lineto
+   61.411808013916016 -506.3407287597656   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   72 -478 moveto sync-col (urgent_chan!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   976.0 52.0   moveto
+   976.0 -516.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   978.5881958007812 -506.3407287597656   moveto
+   976.0 -516.0   lineto
+   973.4118041992188 -506.3407287597656   lineto
+stroke
+   0 -14 moveto select-col () show
+   832 -238 moveto guard-col (\(ValidPayment!=true\)) show
+   0 -14 moveto sync-col () show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   964.0 -528.0   moveto
+   628.0 -528.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   637.6592407226562 -530.5881958007812   moveto
+   628.0 -528.0   lineto
+   637.6592407226562 -525.4118041992188   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   300.0 -528.0   moveto
+   76.0 -528.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   85.65925598144531 -530.5881958007812   moveto
+   76.0 -528.0   lineto
+   85.65925598144531 -525.4118041992188   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   152 -550 moveto sync-col (urgent_chan!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   364.0 -160.0   moveto
+   612.0 -160.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   602.3407592773438 -157.41180419921875   moveto
+   612.0 -160.0   lineto
+   602.3407592773438 -162.58819580078125   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   147.71424865722656 -114.60316467285156   moveto
+   340.2857666015625 -157.39683532714844   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   331.41796875 -152.77488708496094   moveto
+   340.2857666015625 -157.39683532714844   lineto
+   330.2950744628906 -157.8280029296875   lineto
+stroke
+   0 -14 moveto select-col () show
+   144 -166 moveto guard-col (\(exception_0==true\)) show
+   216 -126 moveto sync-col (urgent_chan!) show
+   152 -150 moveto assign-col (exception_0=false) show
+newpath edge-lw setlinewidth
+   trans-col
+   356.0 -32.0   moveto
+   604.0 -32.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   594.3407592773438 -29.41180992126465   moveto
+   604.0 -32.0   lineto
+   594.3407592773438 -34.588191986083984   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   147.2001495361328 -107.69225311279297   moveto
+   332.79986572265625 -36.30774688720703   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   322.8553466796875 -37.35954284667969   moveto
+   332.79986572265625 -36.30774688720703   lineto
+   324.7135314941406 -42.190895080566406   lineto
+stroke
+   0 -14 moveto select-col () show
+   144 -54 moveto guard-col (\(exception_1==true\)) show
+   216 -94 moveto sync-col (urgent_chan!) show
+   152 -38 moveto assign-col (exception_1=false) show
+%%EOF

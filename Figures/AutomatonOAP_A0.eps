@@ -1,0 +1,646 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Title:   Template 'A0'.
+%%Creator: (Academic) UPPAAL 4.0.10 (rev. 4417), September 2009
+%%Pages: 0
+%%BoundingBox: -329 -399 177 0
+%%EndComments
+
+% Basic coordinate transformation.
+0.5 0.5 scale
+
+% Move the origin.
+0 -797 translate
+
+% Size of graphical elements.
+/vertex-radius 12 def
+/vertex-urgent-radius 5 def
+/vertex-commit-radius 5 def
+/vertex-init-radius 8 def
+/vertex-lw 1.2 def
+/edge-lw 1.0 def
+
+% Color setting of graphical elements.
+/black { 0 0 0 setrgbcolor } def
+/vertex-fill-col { 0.647 0.686 0.803 setrgbcolor} def
+/vertex-ol-col { black } def
+/urgent-ol-col { black } def
+/commit-ol-col { black } def
+/initial-ol-col { black } def
+/state-name-col { 0.549 0.2196 0.3882 setrgbcolor } def
+/inv-col { 0.6549 0.2588 0.6588 setrgbcolor } def
+/select-col { 0.6392 0.6588 0.2588 setrgbcolor } def
+/guard-col { 0.2588 0.6588 0.2824 setrgbcolor } def
+/sync-col { 0.2588 0.6275 0.6588 setrgbcolor } def
+/assign-col { 0.2588 0.2588 0.6588 setrgbcolor } def
+/trans-col { black } def
+
+% Draw (filled) vertex at given position.
+/vertex { 
+   2 copy
+   vertex-fill-col
+   newpath vertex-lw setlinewidth 
+   /vertex-radius load 0 360 arc fill
+   vertex-ol-col
+   /vertex-radius load 0 360 arc stroke
+} def
+
+% Mark vertex as urgent.
+/urgent { 
+   urgent-ol-col
+   newpath vertex-lw setlinewidth 
+   /vertex-urgent-radius load 150 30 arc stroke 
+} def
+
+% Mark vertex as committed.
+/commit { 
+   commit-ol-col
+   newpath vertex-lw setlinewidth 
+   /vertex-commit-radius load 50 310 arc stroke 
+} def
+
+% Mark vertex as initial.
+/initial { 
+   initial-ol-col
+   newpath vertex-lw setlinewidth 
+   /vertex-init-radius load 0 360 arc stroke 
+} def
+
+% Vertices.
+% Font used for vertex names and invariants.
+/Helvetica-Bold findfont 14 scalefont setfont
+-184 24 vertex
+   -192 2 moveto state-name-col (n25) show
+   0 -14 moveto inv-col () show
+120 128 vertex
+   112 106 moveto state-name-col (n26) show
+   0 -14 moveto inv-col () show
+-56 128 vertex
+   -72 106 moveto state-name-col (n24) show
+   0 -14 moveto inv-col () show
+-256 128 vertex
+   -272 106 moveto state-name-col (n23) show
+   -280 146 moveto inv-col (t6<=8) show
+-400 128 vertex
+   -408 106 moveto state-name-col (n22) show
+   0 -14 moveto inv-col () show
+-56 232 vertex
+   -64 210 moveto state-name-col (n27) show
+   0 -14 moveto inv-col () show
+-400 232 vertex
+   -408 210 moveto state-name-col (n21) show
+   0 -14 moveto inv-col () show
+-584 176 vertex
+   -600 146 moveto state-name-col (n20) show
+   -632 194 moveto inv-col (t5<=15) show
+-512 432 vertex
+   -528 410 moveto state-name-col (n19) show
+   0 -14 moveto inv-col () show
+-328 432 vertex
+   -344 410 moveto state-name-col (n18) show
+   0 -14 moveto inv-col () show
+-400 336 vertex
+   -408 314 moveto state-name-col (n17) show
+   0 -14 moveto inv-col () show
+-408 512 vertex
+   -416 490 moveto state-name-col (n15) show
+   0 -14 moveto inv-col () show
+-232 336 vertex
+   -240 314 moveto state-name-col (n16) show
+   -248 354 moveto inv-col (t4<=4) show
+-232 512 vertex
+   -240 490 moveto state-name-col (n14) show
+   -224 530 moveto inv-col (t4<=4) show
+40 496 vertex
+   32 474 moveto state-name-col (n13) show
+   0 -14 moveto inv-col () show
+-24 432 vertex
+   -32 410 moveto state-name-col (n12) show
+   0 -14 moveto inv-col () show
+88 432 vertex
+   80 410 moveto state-name-col (n11) show
+   0 -14 moveto inv-col () show
+216 432 vertex
+   208 410 moveto state-name-col (n10) show
+   200 450 moveto inv-col (t3<=8) show
+24 768 vertex
+   8 746 moveto state-name-col (n9) show
+   0 -14 moveto inv-col () show
+200 632 vertex
+   192 610 moveto state-name-col (n8) show
+   0 -14 moveto inv-col () show
+80 632 vertex
+   72 610 moveto state-name-col (n7) show
+   32 650 moveto inv-col (t2<=2) show
+-312 784 vertex
+   -328 762 moveto state-name-col (n5) show
+   0 -14 moveto inv-col () show
+-24 632 vertex
+   -32 610 moveto state-name-col (n6) show
+   0 -14 moveto inv-col () show
+-120 632 vertex
+   -128 610 moveto state-name-col (n4) show
+   0 -14 moveto inv-col () show
+-240 632 vertex
+   -248 610 moveto state-name-col (n3) show
+   -288 642 moveto inv-col (t1<=2) show
+-360 632 vertex
+   -368 610 moveto state-name-col (n2) show
+   0 -14 moveto inv-col () show
+-480 632 vertex
+   -488 610 moveto state-name-col (n1) show
+   0 -14 moveto inv-col () show
+-592 632 vertex
+   -592 632 initial
+   -600 610 moveto state-name-col (n0) show
+   0 -14 moveto inv-col () show
+
+% Edges.
+% Font used for selects, guards, syncs and assigns.
+/Helvetica findfont 14 scalefont setfont
+newpath edge-lw setlinewidth
+   trans-col
+   -249.1694793701172 118.13369750976562   moveto
+   -191.3997344970703 34.688499450683594   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -194.7698974609375 44.10348892211914   moveto
+   -191.3997344970703 34.688499450683594   lineto
+   -199.02587890625 41.15704345703125   lineto
+stroke
+   0 -14 moveto select-col () show
+   -256 58 moveto guard-col (t6==8) show
+   0 -14 moveto sync-col () show
+   -216 74 moveto assign-col (V[Refund_Buyer]=true) show
+newpath edge-lw setlinewidth
+   trans-col
+   120.0 140.0  moveto
+   120.0 222.0 lineto
+   120.0 232.0 120.0 232.0 110.0 232.0 curveto   -43.0 232.0  lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -33.34074401855469 229.41180419921875   moveto
+   -43.0 232.0   lineto
+   -33.34074401855469 234.58819580078125   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   40 242 moveto sync-col (urg_edge!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   -44.0 128.0   moveto
+   107.0 128.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   97.34074401855469 130.58819580078125   moveto
+   107.0 128.0   lineto
+   97.34074401855469 125.41181182861328   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   32 138 moveto sync-col (m2!) show
+   -24 114 moveto assign-col (V[Send_Item]=false) show
+newpath edge-lw setlinewidth
+   trans-col
+   -244.0 128.0   moveto
+   -69.0 128.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -78.65925598144531 130.58819580078125   moveto
+   -69.0 128.0   lineto
+   -78.65925598144531 125.41181182861328   lineto
+stroke
+   0 -14 moveto select-col () show
+   -216 114 moveto guard-col (t6<=7) show
+   0 -14 moveto sync-col () show
+   -224 154 moveto assign-col (AS_a9=true,) show
+   -224 140 moveto assign-col (S[Refund_Buyer]=true) show
+newpath edge-lw setlinewidth
+   trans-col
+   -388.0 128.0   moveto
+   -269.0 128.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -278.6592712402344 130.58819580078125   moveto
+   -269.0 128.0   lineto
+   -278.6592712402344 125.41181182861328   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   -368 138 moveto sync-col (m2!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   -572.3886108398438 172.97093200683594   moveto
+   -412.57904052734375 131.28147888183594   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -421.2721862792969 136.22406005859375   moveto
+   -412.57904052734375 131.28147888183594   lineto
+   -422.5788269042969 131.21531677246094   lineto
+stroke
+   0 -14 moveto select-col () show
+   -480 154 moveto guard-col (t5==15) show
+   0 -14 moveto sync-col () show
+   -560 130 moveto assign-col (V[Send_Item]=true,) show
+   -560 116 moveto assign-col (t6=0) show
+newpath edge-lw setlinewidth
+   trans-col
+   -388.0 232.0   moveto
+   -69.0 232.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -78.65925598144531 234.58819580078125   moveto
+   -69.0 232.0   lineto
+   -78.65925598144531 229.41180419921875   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   -296 242 moveto sync-col (urg_edge!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   -572.5198974609375 179.4939422607422   moveto
+   -412.436767578125 228.21490478515625   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -422.4311218261719 227.87855529785156   moveto
+   -412.436767578125 228.21490478515625   lineto
+   -420.9239501953125 222.92645263671875   lineto
+stroke
+   0 -14 moveto select-col () show
+   -480 194 moveto guard-col (t5<=14) show
+   0 -14 moveto sync-col () show
+   -552 242 moveto assign-col (Seller_a8=true,) show
+   -552 228 moveto assign-col (S[Send_Item]=true) show
+newpath edge-lw setlinewidth
+   trans-col
+   -524.0 432.0  moveto
+   -574.0 432.0 lineto
+   -584.0 432.0 -584.0 432.0 -584.0 422.0 curveto   -584.0 189.0  lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -581.4118041992188 198.6592559814453   moveto
+   -584.0 189.0   lineto
+   -586.5881958007812 198.6592559814453   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   -656 338 moveto sync-col (urg_edge!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   -409.111083984375 343.80950927734375   moveto
+   -502.1296691894531 423.5397033691406   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -496.4801940917969 415.2884521484375   moveto
+   -502.1296691894531 423.5397033691406   lineto
+   -493.1114501953125 419.2186279296875   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   -536 386 moveto sync-col (urg_edge!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   -417.511474609375 504.6834716796875   moveto
+   -501.6958923339844 439.9262390136719   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -492.4617004394531 443.7641296386719   moveto
+   -501.6958923339844 439.9262390136719   lineto
+   -495.6177673339844 447.8670654296875   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   -520 490 moveto sync-col (urg_edge!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   -240.4852752685547 344.48529052734375   moveto
+   -318.8076171875 422.8076171875   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -313.8076171875 414.1473693847656   moveto
+   -318.8076171875 422.8076171875   lineto
+   -310.1473693847656 417.8076171875   lineto
+stroke
+   0 -14 moveto select-col () show
+   -280 394 moveto guard-col (t4==4) show
+   0 -14 moveto sync-col () show
+   -432 378 moveto assign-col (V[Payment_Item]=true) show
+newpath edge-lw setlinewidth
+   trans-col
+   -241.21865844726562 504.3177795410156   moveto
+   -318.01312255859375 440.3223876953125   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -308.9357604980469 444.5177917480469   moveto
+   -318.01312255859375 440.3223876953125   lineto
+   -312.2496032714844 448.494384765625   lineto
+stroke
+   0 -14 moveto select-col () show
+   -272 458 moveto guard-col (t4==4) show
+   0 -14 moveto sync-col () show
+   -432 466 moveto assign-col (V[Payment_Item]=true) show
+newpath edge-lw setlinewidth
+   trans-col
+   -244.0 336.0   moveto
+   -387.0 336.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -377.3407287597656 333.41180419921875   moveto
+   -387.0 336.0   lineto
+   -377.3407287597656 338.58819580078125   lineto
+stroke
+   0 -14 moveto select-col () show
+   -336 346 moveto guard-col (t4<=3) show
+   0 -14 moveto sync-col () show
+   -376 314 moveto assign-col (Buyer_a7=true,) show
+   -376 300 moveto assign-col (S[Payment_Item]=true,) show
+   -376 286 moveto assign-col (t5=0) show
+newpath edge-lw setlinewidth
+   trans-col
+   -244.0 512.0   moveto
+   -395.0 512.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -385.3407287597656 509.41180419921875   moveto
+   -395.0 512.0   lineto
+   -385.3407287597656 514.5881958007812   lineto
+stroke
+   0 -14 moveto select-col () show
+   -336 498 moveto guard-col (t4<=3) show
+   0 -14 moveto sync-col () show
+   -384 554 moveto assign-col (Buyer_a6=true,) show
+   -384 540 moveto assign-col (S[Payment_Item]=true,) show
+   -384 526 moveto assign-col (t5=0) show
+newpath edge-lw setlinewidth
+   trans-col
+   -34.895511627197266 426.9713134765625   moveto
+   -220.196533203125 341.44775390625   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -210.3417205810547 343.14556884765625   moveto
+   -220.196533203125 341.44775390625   lineto
+   -212.51092529296875 347.84552001953125   lineto
+stroke
+   0 -14 moveto select-col () show
+   -128 370 moveto guard-col (g1==true) show
+   -160 402 moveto sync-col (urg_edge!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   -35.20014572143555 436.3077392578125   moveto
+   -219.8665008544922 507.3332824707031   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -211.78018188476562 501.45013427734375   moveto
+   -219.8665008544922 507.3332824707031   lineto
+   -209.92196655273438 506.281494140625   lineto
+stroke
+   0 -14 moveto select-col () show
+   -176 458 moveto guard-col (g1==true) show
+   -136 482 moveto sync-col (urg_edge!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   -15.514719009399414 440.48529052734375   moveto
+   30.807613372802734 486.8076171875   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   22.14735984802246 481.8076171875   moveto
+   30.807613372802734 486.8076171875   lineto
+   25.807613372802734 478.1473693847656   lineto
+stroke
+   0 -14 moveto select-col () show
+   8 450 moveto guard-col (g1==false) show
+   -48 474 moveto sync-col (urg_edge!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   205.26687622070312 437.3665771484375  moveto
+   200.0 440.0 200.0 440.0 192.92893218813452 447.0710678118655 curveto   167.07106781186548 472.9289321881345 lineto
+   160.0 480.0 160.0 480.0 170.0 480.0 curveto   254.0 480.0 lineto
+   264.0 480.0 264.0 480.0 257.7530495244558 472.1913119055697 curveto   238.24695047554425 447.8086880944303 lineto
+   232.0 440.0 232.0 440.0 229.81377410888672 438.9068908691406 curveto   227.62754821777344 437.81378173828125  lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   237.42453002929688 439.8185729980469   moveto
+   227.62754821777344 437.81378173828125   lineto
+   235.1095733642578 444.448486328125   lineto
+stroke
+   0 -14 moveto select-col () show
+   192 466 moveto guard-col (t3<=7) show
+   0 -14 moveto sync-col () show
+   160 522 moveto assign-col (Buyer_a5=true,) show
+   160 508 moveto assign-col (P[Place_Bid]=true,) show
+   160 494 moveto assign-col (g1=true) show
+newpath edge-lw setlinewidth
+   trans-col
+   76.0 432.0   moveto
+   -11.0 432.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -1.3407421112060547 429.41180419921875   moveto
+   -11.0 432.0   lineto
+   -1.3407421112060547 434.58819580078125   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   8 418 moveto sync-col (urg_edge!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   204.0 432.0   moveto
+   101.0 432.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   110.65925598144531 429.41180419921875   moveto
+   101.0 432.0   lineto
+   110.65925598144531 434.58819580078125   lineto
+stroke
+   0 -14 moveto select-col () show
+   144 418 moveto guard-col (t3==8) show
+   0 -14 moveto sync-col () show
+   144 442 moveto assign-col (t4=0) show
+newpath edge-lw setlinewidth
+   trans-col
+   212.0 632.0  moveto
+   270.0 632.0 lineto
+   280.0 632.0 280.0 632.0 280.0 622.0 curveto   280.0 442.0 lineto
+   280.0 432.0 280.0 432.0 270.0 432.0 curveto   229.0 432.0  lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   238.6592559814453 429.41180419921875   moveto
+   229.0 432.0   lineto
+   238.6592559814453 434.58819580078125   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   288 546 moveto sync-col (urg_edge!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   75.43099975585938 643.0961303710938   moveto
+   28.94974708557129 755.9791870117188   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   30.234264373779297 746.06201171875   moveto
+   28.94974708557129 755.9791870117188   lineto
+   35.020751953125 748.032958984375   lineto
+stroke
+   0 -14 moveto select-col () show
+   8 698 moveto guard-col (t2==2) show
+   0 -14 moveto sync-col () show
+   56 730 moveto assign-col (AS_a4=true,) show
+   56 716 moveto assign-col (V[Publish_Item]=true) show
+newpath edge-lw setlinewidth
+   trans-col
+   92.0 632.0   moveto
+   187.0 632.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   177.3407440185547 634.5881958007812   moveto
+   187.0 632.0   lineto
+   177.3407440185547 629.4118041992188   lineto
+stroke
+   0 -14 moveto select-col () show
+   104 610 moveto guard-col (t2<=1) show
+   0 -14 moveto sync-col () show
+   96 658 moveto assign-col (S[Publish_Item]=true,) show
+   96 644 moveto assign-col (t3=0) show
+newpath edge-lw setlinewidth
+   trans-col
+   -12.0 632.0   moveto
+   67.0 632.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   57.34074401855469 634.5881958007812   moveto
+   67.0 632.0   lineto
+   57.34074401855469 629.4118041992188   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   -8 618 moveto sync-col (urg_edge!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   -108.0 632.0   moveto
+   -37.0 632.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -46.65925598144531 634.5881958007812   moveto
+   -37.0 632.0   lineto
+   -46.65925598144531 629.4118041992188   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   -72 642 moveto sync-col (m1!) show
+   -88 618 moveto assign-col (t2=0) show
+newpath edge-lw setlinewidth
+   trans-col
+   -245.1370391845703 642.8448486328125   moveto
+   -306.43487548828125 772.2514038085938   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -304.638916015625 762.4140014648438   moveto
+   -306.43487548828125 772.2514038085938   lineto
+   -299.9608459472656 764.6299438476562   lineto
+stroke
+   0 -14 moveto select-col () show
+   -312 690 moveto guard-col (t1<=1) show
+   0 -14 moveto sync-col () show
+   -288 738 moveto assign-col (V[Inadequate_Item]=true) show
+newpath edge-lw setlinewidth
+   trans-col
+   -228.0 632.0   moveto
+   -133.0 632.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -142.6592559814453 634.5881958007812   moveto
+   -133.0 632.0   lineto
+   -142.6592559814453 629.4118041992188   lineto
+stroke
+   0 -14 moveto select-col () show
+   -208 618 moveto guard-col (t1==2) show
+   0 -14 moveto sync-col () show
+   -232 666 moveto assign-col (Seller_a2=true,) show
+   -232 652 moveto assign-col (S[Inadequate_Item]=true) show
+newpath edge-lw setlinewidth
+   trans-col
+   -348.0 632.0   moveto
+   -253.0 632.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -262.6592712402344 634.5881958007812   moveto
+   -253.0 632.0   lineto
+   -262.6592712402344 629.4118041992188   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   -336 642 moveto sync-col (m1!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   -468.0 632.0   moveto
+   -373.0 632.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -382.6592712402344 634.5881958007812   moveto
+   -373.0 632.0   lineto
+   -382.6592712402344 629.4118041992188   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   -456 618 moveto sync-col (urg_edge!) show
+   0 -14 moveto assign-col () show
+newpath edge-lw setlinewidth
+   trans-col
+   -580.0 632.0   moveto
+   -493.0 632.0   lineto
+stroke
+newpath edge-lw setlinewidth
+   trans-col
+   -502.6592712402344 634.5881958007812   moveto
+   -493.0 632.0   lineto
+   -502.6592712402344 629.4118041992188   lineto
+stroke
+   0 -14 moveto select-col () show
+   0 -14 moveto guard-col () show
+   0 -14 moveto sync-col () show
+   -576 674 moveto assign-col (Seller_a1=true,) show
+   -576 660 moveto assign-col (P[Auction_Item]=true,) show
+   -576 646 moveto assign-col (t1=0) show
+%%EOF

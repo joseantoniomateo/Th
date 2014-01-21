@@ -1,0 +1,39 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}
+\BOOKMARK [1][-]{section.1.1}{Motivation}{chapter.1}
+\BOOKMARK [1][-]{section.1.2}{Objectives}{chapter.1}
+\BOOKMARK [1][-]{section.1.3}{Dissertation Structure}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{State of the Art}{}
+\BOOKMARK [1][-]{section.2.1}{Motivation}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{Web Services modelling}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Cloud Computing/Grid Computing}{chapter.2}
+\BOOKMARK [1][-]{section.2.4}{Introducción}{chapter.2}
+\BOOKMARK [1][-]{section.2.5}{Comparación entre servicios web y Grid computing/Cloud computing}{chapter.2}
+\BOOKMARK [1][-]{section.2.6}{Web Services Resource Framework\(WSRF\)}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.6.1}{Introducción}{section.2.6}
+\BOOKMARK [2][-]{subsection.2.6.2}{WS-ResourceProperties}{section.2.6}
+\BOOKMARK [2][-]{subsection.2.6.3}{WS-Base Faults}{section.2.6}
+\BOOKMARK [2][-]{subsection.2.6.4}{WS-ServiceGroup}{section.2.6}
+\BOOKMARK [2][-]{subsection.2.6.5}{WS-ResourceLifetime}{section.2.6}
+\BOOKMARK [1][-]{section.2.7}{WS-Notification}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.7.1}{WS-BrokeredNotification}{section.2.7}
+\BOOKMARK [1][-]{section.2.8}{Service-Oriented Computing \(SOC\)}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.8.1}{Service-Oriented Architecture \(SOA\)}{section.2.8}
+\BOOKMARK [2][-]{subsection.2.8.2}{Web Services \(WS\)}{section.2.8}
+\BOOKMARK [2][-]{subsection.2.8.3}{Web Service Composition}{section.2.8}
+\BOOKMARK [1][-]{section.2.9}{Formal Analysis of Web Service Compositions}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.9.1}{Specification Formalisms}{section.2.9}
+\BOOKMARK [1][-]{section.2.10}{Summary}{chapter.2}
+\BOOKMARK [0][-]{chapter.3}{BPELRF}{}
+\BOOKMARK [0][-]{chapter.4}{Timed-arc workflow nets}{}
+\BOOKMARK [0][-]{chapter.5}{Conclusions, Contributions and Future Works}{}
+\BOOKMARK [1][-]{section.5.1}{Conclusions}{chapter.5}
+\BOOKMARK [1][-]{section.5.2}{Contributions}{chapter.5}
+\BOOKMARK [1][-]{section.5.3}{Future Works}{chapter.5}
+\BOOKMARK [1][-]{section.5.4}{Publications and Collaborations}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.4.1}{Journal Papers}{section.5.4}
+\BOOKMARK [2][-]{subsection.5.4.2}{International Conference Papers}{section.5.4}
+\BOOKMARK [2][-]{subsection.5.4.3}{National Conference Papers}{section.5.4}
+\BOOKMARK [2][-]{subsection.5.4.4}{Technical Reports}{section.5.4}
+\BOOKMARK [2][-]{subsection.5.4.5}{Collaborations}{section.5.4}
+\BOOKMARK [1][-]{section.5.5}{Funds and Grants}{chapter.5}
+\BOOKMARK [0][-]{appendix*.15}{Bibliography}{}

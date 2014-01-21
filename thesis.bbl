@@ -1,0 +1,71 @@
+\begin{thebibliography}{10}
+
+\bibitem{Andrews2003WSBPEL}
+S.~Askary C. Barreto B. Bloch F. Curbera M. Ford Y. Goland A. Guízar N. Kartha
+  C. K. Liu R. Khalaf D. König M. Marin V. Mehta S. Thatte D. van der Rijn P.
+  Yendluri A.~Yiu A.~Alves, A.~Arkin.
+\newblock {Business Process Execution Language for Web Services (version 2.0)}.
+\newblock 2007.
+
+\bibitem{Alur94}
+R.~Alur and D.~Dill.
+\newblock A theory of timed automata.
+\newblock {\em Theoretical Computer Science}, 126:183--235, 1994.
+
+\bibitem{Ban06}
+T.~Banks.
+\newblock {Web Services Resource Framework (WSRF) - Primer}.
+\newblock {\em OASIS}, 2006.
+
+\bibitem{Clarke96}
+E.~Clarke and J.~Wing.
+\newblock { Formal methods: State of the art and future directions.}
+\newblock {\em ACM Computing Surveys}, 1996.
+
+\bibitem{Clarke99}
+O.~Grumberg E.~Clarke and D.~Peled.
+\newblock {\em {Model Checking}}.
+\newblock MITPress, Cambridge, MA, 1999.
+
+\bibitem{Holz04}
+G.~J. Holzmann.
+\newblock {\em {The SPIN Model Checker: Primer and Reference Manual}}.
+\newblock Addison-Wesley, 2004.
+
+\bibitem{Fost04}
+S.~Graham S. Tuecke K. Czajkowski D. Ferguson F. Leymann M. Nally T. Storey
+  W.~Vambenepe I.~Foster, J.~Frey and S.~Weerawarana.
+\newblock Modeling stateful resources with web services.
+\newblock {\em http://www-106.ibm.com/developerworks/library/wsresource/
+  ws-modelingresources.pdf, Tech. Rep., 2004.}
+
+\bibitem{Abrial80}
+S.~Schuman J.~R.~Abrial and B.~Meyer.
+\newblock { A Specification Language, in On the Construction of Programs}.
+\newblock {\em Cambridge University Press, eds. A. M. Macnaghten and R. M.
+  McKeag}, 1980.
+
+\bibitem{Larsen97}
+P.~Pettersson K.G.~Larsen and W.~Yi.
+\newblock {UPPAAL in a nutshell}.
+\newblock {\em International Journal on Software Tools for Technology Transfer
+  (STTT)}, 1997.
+
+\bibitem{Pnueli77}
+A.~Pnueli.
+\newblock {The temporal logic of programs}.
+\newblock {\em Proc. 18th IEEE Symp. on Foundations of Computer Science}, 1977.
+
+\bibitem{Foster03}
+I.~Foster J. Frey S. Graham C. Kesselman T. Maguire T. Sandholm P.~Vanderbilt
+  S.~Tuecke, K.~Czajkowsk and D.~Snelling.
+\newblock {Open Grid Services Infrastructure (OGSI) Version 1.0. Global Grid
+  Forum Recommendation}.
+\newblock {\em , Global Grid Forum}, 2003.
+
+\bibitem{Henzinger94}
+J.~Sifakis T.~Henzinger, X.~Nicollin and S.~Yovine.
+\newblock {Symbolic model checking for real-time systems}.
+\newblock {\em Information and Computation}, 111(2):193--244, 1994.
+
+\end{thebibliography}

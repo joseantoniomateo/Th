@@ -1,0 +1,1202 @@
+\chapter{State of the Art}\label{c2}
+\markboth{Chapter~\ref{c2}. State of the Art}{}
+In this chapter, it will be introduced the state-of-the-art 
+related to the specification, formalization and verfication
+of web services and their composition. The aim of this chapter is to provide the reader
+with the basic notions about formal methods and web service compositions in order to help he/she in the understanding
+of the thesis. To begin with, a brief introduction of formal methods 
+and why they are needed is presented. Second, a survey about the diffent technologies used to model web services
+and the different approaches to compose them are introduced and, next, the different mechanisms available to provide
+these web services with distributed resources. Finally, the different formal models used in this thesis are defined as well. 
+
+\section{Motivation}
+
+Throughout the history of computing , engineers and researchers have used different formal methods to improve the quality of hardware and software. These systems with continuous technological progress in integration techniques and programming methodologies inevitably grow in scale and complexity. Because of this complexity , the probability of error is higher and, in addition, some of these errors can cause incalculable economic losses, time or even the loss of human lives. Therefore, the main aim of designers should be to provide developers with the required tools to build systems with a negligible error rate and with the lowest cost. However, this task is far from trivial since one needs to ensure the correctness of the specifications and needs to provide techniques that ease error detection and the verification of the developed models without consuming so much time of the development process. One of the ways that engineers have been used to achieve this goal is the use of formal techniques to ensure the correctness of the development process as well as the product under construction. These formal methods can be defined as the set of procedures and tools based on mathematical languages that virtually ensure the correctness of a system \cite{Clarke96} since they increase the level of knowledge that the participants have about the system, revealing inconsistencies and ambiguities that could not be detected using other techniques, i.e., the use of formal methods provides a greater degree of refinement of the model than other methods.
+
+
+\begin{figure}
+\begin{center}
+  \includegraphics[scale=0.5, width =\columnwidth]{Figures/usos}
+\end{center}
+  \caption{Example of systems where formal methods are (can be) used .}
+  \label{fig:uso}
+\end{figure}
+
+In the past, the use of formal techniques in practice seemed to be utopian and unrealizable. Among other causes, the notations used to require a high mathematical background in mathematics and, therefore, they were too complicated for the uninitiated in the topic. The techniques did not allow the system to be scalable and the existing tools were too difficult to use or understand or even there were no tools for a particular technique or formalism. In addition, case studies were not convincing enough and developers could appreciate the usefulness of formalization. However, in the early 90s, it started to glimpse a new way in this area. For the specification of software , the industry began to use the language Z \cite{Abrial80} in order to obtain rigorous specifications. For hardware verification, major companies such as Intel and AMD started to use formal techniques such as \emph{model checking} or \emph{theorem proving} to supplement tests on simulators leading to the description of larger case studies, and which is benefitial since other developers are considering the possibility of introducing the use of formal techniques into their development processes. In Figure \ref{fig:uso}, one can observe different systems in which these techniques are currently used to ensure proper operation. For instance, big companies (e.g Boeing and Airbus) use formal languages to specify the requirements of the equipment as well as they use formal methods to verify the most critical systems in the aircrafts, whereas automotive companies verify the most critical systems ( e.g. brake or airbag systems) using \emph{model checking}. 
+
+The main advantages of using formal methods are:
+
+\begin{itemize}
+\item The use of mathematics as a base gives this approach a certain rigour.
+\item Identify ambiguity and inconsistencies.
+\item Facilitates the construction of consistent and free of \emph{deadlock} systems.
+\item Provides customer confidence in the system.
+\item There are many tools that support the existing techniques.
+\item Find bugs early should save money.
+\end{itemize} 
+
+The main disadvantages (or beliefs) that slow the progress of this area are:
+
+\begin{itemize}
+\item It is believed that the use of formal methods slows the development process.
+\item Many developers think it is difficult to work with formal specifications.
+\item It does not guarantee the correctness of the implemented code (only model
+it is based).
+\item Increasing system complexity causes an exponential increase
+the complexity of the verification.
+\end {itemize}
+
+One of the most important part in the development of a system is the requirements specification. 
+A specification can be seen as a technical document where the features and services needed to build a product, but can also include information on subsequent steps such as verification, validation, etc are described., Therefore, if we incorrect develop quality systems and we devote the necessary time to specification. Anyway, make the specification does not guarantee the absence of errors because the presence of faults is an intrinsic characteristic of the systems. In this sense, the simple act of writing the document helps engineers to find errors early in development saving a lot of money and time to the project as shown in Figure \ref{fig:coste}.
+
+\begin{figure}
+\begin{center}
+  \includegraphics[scale=0.5, width =\columnwidth]{Figures/coste}
+\end{center}
+  \caption{Cost evolution of fixing a bug.}
+  \label{fig:coste}
+\end{figure}
+
+Another development phase where formal models are used is in the \emph{Verification} stage. One can define \emph{Verifcation stage} as the stage where it is found that the product meets the specification requirements made previously, that is, in the case of computers, our system satisfies the properties described in the specification. The aim of this task can be summarized in one of the most famous quotes of a famous scientist in formal methods:
+ 
+\begin{center}
+\emph{``Testing shows the presence, not the absence of bugs.''}
+\end{center}
+\vspace{-0.9cm}
+\begin{flushright}
+Edsger Wybe Dijkstra 
+\end{flushright} 
+
+In the classic life cycle , the verification and validation phases are performed after the implementation phase , but as we have seen in Figure \ ref { cost } , it is necessary to detect these errors in the early stages of development. As expected , it is virtually impossible to verify a complete system , so that the goal of formal methods and this research is to check whether certain properties hold in the model. The properties of interest that must be checked will be related to the classical problems of concurrency ( \ emph { deadlock , mutual exclusion, \ ldots } ) and some aspects directly related to the system being built such as check adherence certain time constraints . For example, in a banking system is necessary to ensure that transactions comply with the stipulated time for completion, because if you exceed these restrictions could be caused security problems in the system , which would lose a lot of money to the bank in question. Another example is the system of an airline reservation , since we can not allow a user to reserve a seat for a long period of time because I could not buy it and finally it could prevent another purchase , with consequent damage to the company. \ \
+
+Also, you can follow two ways to perform the verification of a system: \ emph { Human -directed proof or Automated proof } . The first case is used when you want to strengthen the knowledge of the system rather than completely ensure the correctness of the same , so it is a person who performs the check manually . In the second approach ( \ emph { automated proof } ) we have two variants : \ emph { automated theorem proving and model checking } . The \ emph { automated theorem proving } is a program that tries to produce a formal proof of a system from scratch , giving a description of it , a set of logical axioms and a set of inference rules . Model checking \ cite { Clarke99 } is an automated technique to verify finite state reactive systems . In this approach , the specification is expressed in temporal logic propositional normally LTL \ cite { Pnueli77 } or CTL \ cite { Henzinger94 } or some of its variants , and the system is represented as a graph of transitions between states known as \ emph { PLC } . In this technique should be used in an efficient search method to determine whether the controller satisfies the specification. The \ emph { model checking has numerous advantages over } \ emph { automated theorem proving } , but the most important is that the process has more parts that can be automated , so the test phase ( \ emph { testing} ) within lifecycle of the system is more rapid . Typically , the client only available to the engineer high-level representation of the system (usually in natural language ) and the specification of the same , also in natural language. So any \ emph { model checker } ( Spin \ cite { Holz04 } , UPPAAL \ cite { Larsen97 } , etc . ) Exits with an affirmative answer if the proposed design meets the specification or provides a counterexample to locate where it has the error.
+
+En el ciclo de vida clásico, las fases de verificación y validación se realizan después de la fase de implementación, pero, como hemos visto en la Figura \ref{coste}, es necesario detectar estos errores en las fases tempranas del desarrollo. Como es de esperar, es prácticamente imposible verificar un sistema completo, por lo que el objetivo de los métodos formales y de este trabajo de investigación es comprobar si se cumplen ciertas propiedades en el modelo. Las propiedades de interés que es necesario verificar estarán relacionadas con los problemas clásicos de concurrencia (\emph{deadlock, exclusión mutua, \ldots}), así como algunos aspectos relacionados directamente con el sistema que se está construyendo como puede ser comprobar si se cumplen ciertas restricciones temporales. Por ejemplo, en un sistema bancario es necesario verificar si las transacciones cumplen los tiempos estipulados para su realización, ya que si exceden estas restricciones podrían ocasionarse problemas de seguridad en el sistema, lo que haría perder mucho dinero al banco en cuestión. Otro ejemplo podría ser el sistema de reservas de una aerolínea, ya que no podemos permitir que un usuario reserve un asiento durante un largo período de tiempo porque podría no comprarlo finalmente y evitar que otro lo pudiera adquirir, con el consiguiente perjuicio para la compañía. \\
+
+Asimismo, se pueden seguir dos vías para realizar la verificación de un sistema: \emph{Human-directed proof o Automated proof}. El primer caso se utiliza cuando se quiere afianzar el conocimiento sobre el sistema en lugar de asegurar completamente la corrección del mismo, por lo que es una persona la que realiza de forma manual la verificación. En la segunda aproximación (\emph{automated proof}) tenemos dos variantes: \emph{automated theorem proving y model checking}. El \emph{automated theorem proving} consiste en que un programa trata de producir una prueba formal de un sistema desde el principio, dando una descripción del mismo, un conjunto de axiomas lógicos y una serie de reglas de inferencia. Model checking \cite{Clarke99} es una técnica automática para verificar sistemas reactivos de estados finitos. En esta aproximación, la especificación está expresada en lógica proposicional temporal, normalmente LTL \cite{Pnueli77} o CTL \cite{Henzinger94} o algunas de sus variantes, y el sistema se representa como un grafo de transiciones entre estados conocido como \emph{autómata}. En esta técnica debe utilizarse un eficiente método de búsqueda para determinar si el autómata satisface la especificación. El \emph{model checking} tiene numerosas ventajas sobre \emph{automated theorem proving}, pero la más importante es que el proceso tiene más partes que se pueden automatizar, por lo que la fase de prueba (\emph{testing}) dentro del ciclo de vida del sistema es más rápida. Normalmente, el cliente sólo pone a disposición del ingeniero una representación a alto nivel del sistema (generalmente, en lenguaje natural) y la especificación del mismo, también en lenguaje natural. Así, cualquier \emph{model checker} (Spin \cite{Holz04}, UPPAAL \cite{Larsen97}, etc.) termina el proceso con una respuesta afirmativa si el modelo propuesto satisface la especificación o proporciona un contraejemplo para localizar dónde se ha producido el error.
+ 
+
+\section{Model Checking para Sistemas de Tiempo Real}
+
+Los sistemas donde el tiempo juega un papel crucial para su funcionamiento y evolución son conocidos como ``Sistemas de Tiempo Real (Real-Time Systems)''. Este tipo de sistemas son el núcleo que controla la mayoría de sistemas industriales, financieros y gubernamentales, donde el tiempo de respuesta determina el grado de corrección, la eficiencia, la satisfacción del usuario y otras variables de calidad, por lo que su correcto funcionamiento es vital para evitar errores que pueden ocasionar grandes pérdidas. Sin embargo, dentro de estos sistemas existe otro tipo, donde las restricciones temporales juegan un papel realmente crucial, conocido como ``strong time restrictions''. En este entorno es necesario verificar completamente que el sistema tiene un ratio de error ínfimo porque un simple fallo podría ocasionar que el sistema dejara de funcionar. Otra información útil es la probabilidad de fallo cuando éste no se puede eliminar. Esta medida sirve para dar confianza a los clientes, ya que un sistema con baja probabilidad de error aumenta el grado de satisfacción y confianza en el mismo. Esta información permite medir la necesidad de rediseñar el sistema o de mantenerlo en funcionamiento. En este caso, el fallo se debe a un factor externo que el sistema no puede manejar, como, por ejemplo, el tiempo, las leyes físicas o desastres naturales. Todos estos factores tienen en común que su aparición es incontrolable, pero es posible predecir su aparición con una razonable probabilidad. Así, existen sistemas donde la combinación de ambas características, ``tiempo'' y ``probabilidad'', determinan las características principales del mismo, por lo que las técnicas de verificación no sólo tienen que tener en cuenta las restricciones temporales sino que deben considerar la probabilidad de que ocurran sucesos inesperados.      
+
+
+\section[UPPAAL]{UPPAAL - Una herramienta para la verificación automática de Sistemas de Tiempo Real}
+
+UPPAAL es una herramienta para la verificación automática de dos propiedades cruciales en los sistemas informáticos: \emph{safety} y \emph{liveness}, es decir, debemos asegurar que nuestro sistema es consistente (seguro) ante posible ataques o fallos y que permanecerá funcionando ante estos contratiempos \cite{Alur94}. El motor de UPPAAL transforma una clase de sistemas lineales híbridos en redes de autómatas temporizados e implementa técnicas basadas en la resolución de restricciones. UPPAAL también ofrece valiosa información de diagnóstico en el caso de que la verificación falle. Las siguientes secciones se centrarán en aspectos formales de la herramienta.\\
+
+La versión actual de la herramienta puede encontrarse en \textsf{http://www.uppaal.com}. A pesar de que fue desarrollada en 1995, actualmente cuenta con muchas características (probabilidades, costes, energía, etc.), gracias a la labor de investigación realizada durante estos años. Debido a este alto grado de madurez y a la facilidad para conseguir información por las colaboraciones del grupo ReTiCS con la universidad de Aalborg, se ha seleccionado esta herramienta en lugar de otras. 
+
+
+
+
+\section{Services Oriented Computing (SOC)}
+
+Aunque la Web fue inicialmente concebida para el uso exclusivo del ser humano, muchos expertos consideran que tiene que evolucionar (probablemente a través del diseño y construcción de servicios modulares) para soportar mejor la automatización de muchas tareas. El concepto de \emph{servicio} proporciona un mayor nivel de abstracción para organizar las aplicaciones a gran escala y construir entornos más abiertos, ayudando a desarrollar aplicaciones con mejor productividad y calidad que las que podríamos fabricar con otros enfoques. Puesto que los servicios son sólo un medio para la construcción de aplicaciones distribuidas, no podemos hablar de ellos sin hablar de las aplicaciones basadas en servicios, en concreto, cómo se construyen y cómo los servicios deben funcionar conjuntamente dentro de ellas. La Figura \ref{arq} muestra un ejemplo de arquitectura basada en servicios, donde como puede observarse hay tres partes principales: un proveedor, un consumidor y un registro. 
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width =\columnwidth]{Figures/arquitecturaWS}
+\end{center}
+  \caption{Arquitectura cliente-servidor para servicios web.}
+  \label{arq}
+\end{figure}
+
+La función de los proveedores es publicar o anunciar los servicios que ofrece en los registros, donde los consumidores pueden encontrarlos y, posteriormente, invocarlos. Los actuales estándares que sustentan las interacciones entre servicios web proporcionan una base sólida para la arquitectura orientada a servicios, pero no soportan servicios esenciales para su funcionamiento completo. De hecho, aunque los servicios web proporcionan una fuente de ejemplos prácticos, son innecesariamente limitados. La arquitectura web es un marco que puede ser reforzado con representaciones más poderosas y técnicas tomadas de otros enfoques. Muchos profesionales utilizan estas representaciones, a pesar de que se omiten en la mayoría de los libros. 
+
+\section{Cloud Computing/Grid Computing}
+Gracias a la rápida evolución que ha tenido la sociedad, servicios básicos para el desarrollo de la vida cotidiana son comúnmente suministrados a los ciudadanos, de tal manera, que cualquier persona puede tener acceso inmediato a ellos de forma fácil. Hoy en día, estos servicios, conocidos en el mundo anglosajón como ``utility services'', engloban el suministro de agua, electricidad, gas y teléfono, pero en los últimos tiempos está cobrando fuerza una vieja idea que se intentó llevar a cabo sin éxito a finales de los años 60 y principios de los 70, el ``Utility Computing''. Este nuevo paradigma de computación es normalmente confundido con Cloud o Grid Computing, pero hay ciertos matices que los diferencian. ``Utility Computing'' se puede entender como el modelo de negocio que subyace en una infraestructura Cloud o Grid, es decir, puede ser entendido como el medio de cobro de servicios computacionales similar al que se hace con la electricidad, por lo que el usuario pagará sólo por su consumo, mientras que los costes asociados a la producción y distribución de potencia de cómputo serán sufragados por las compañías suministradoras. Así, las pequeñas y medianas empresas podrían competir en igualdad de condiciones con las grandes empresas, ya que no sería necesario hacer una gran inversión en datacenters para poder ofrecer un determinado servicio y se fomentaría la creación de empresas, ya que estos datacenters suponen una fuerte inversión inicial que muchos emprendedores no pueden acometer. Además, el usuario final de las aplicaciones, servicios o infraestructuras también se beneficiaría porque al reducir costes de producción se reduce el precio de los productos. Por seguir con el símil de la energía, podemos ver el cloud computing como una gran central generadora de energía que da suministro a millones de usuarios y que evita que dichos usuarios tengan que tener su propia central en casa para poder encender sus aparatos eléctricos, mientras que el ``utility computing'' es la forma de tarificar el gasto de los usuarios o, de una forma más abstracta, podemos verlo como el contador que muestra el consumo energético. Al igual que pasa con el software, los protocolos o cualquier paradigma relacionado con la informática, Cloud Computing debe atravesar una serie de etapas para poder comprobar si toda esta publicidad que le están dando las empresas sirve de veras para ahorrar costes y favorecer la competitividad o solo es más una forma de aumentar ingresos o, en el caso de la investigación, obtener nuevos fondos. En este sentido, algunos autores consideran que Cloud Computing no es mas que una nueva forma de nombrar lo que toda la vida se ha llamado Grid o Web Services y que realmente no supone ningún avance en el campo de la informática. Este artículo tratará de presentar más ampliamente la arquitectura y conceptos para comprender un sistema de computación basado en la nube y mostrará las diferencias entre dos enfoques clásicos de computación (Grid y Web Services) y Cloud. Finalmente, se propondrá una serie de ideas que pueden llegar a convertirse en trabajos de investigación en un futuro.         
+
+\section{Introducción}
+
+En 1943, el presidente de IBM, Thomas J. Watson, predijo:
+
+\begin{center}
+``I think there is a world market for about five computers''
+\end{center}
+
+Esta frase, tan comentada en el mundo de la informática en los últimos tiempos, ha pasado de ser una predicción con poco fundamento a ser una realidad en la actualidad.\\
+
+Cloud Computing, el viejo sueño de ofrecer servicios de computación como utilidad, tiene el potencial de transformar gran parte de la industría informática, haciendo el software más atractivo al ofrecerlo como servicio y moldeando la forma en que se diseña y compra el hardware. Con este nuevo enfoque, cualquier emprendedor con buenas ideas para ofrecer servicios a través de Internet no necesitará realizar grandes inversiones en equipamiento para llevar a cabo su proyecto ni necesitará contratar inicialmente mucho personal que gestione y mantenga dicho equipamiento. Además, no tiene que realizar complicados estudios previos para calcular el número de usuarios potenciales y evitar, así, unos de los principales quebraderos de cabeza de los jefes de proyecto: el sobre-aprovisionamiento o el infra-aprovisionamiento. Estos dos conceptos junto con la elasticidad de recursos pueden ser considerados como claves en computación en la nube, ya que el objetivo de reducir costes es directamente proporcional a la correcta estimación de recursos en ``tiempo real'' y esta correcta estimación sólo se puede proporcionar si el sistema cumple la propiedad de elasticidad, es decir, que en un intervalo de tiempo relativamente corto aumentas y disminuyes los recursos dedicados a una tarea con un coste económico bajo. Este enfoque puede hacer que, a primera vista, no se perciba la posibilidad de utilizar métodos formales con este tipo de sistemas, puesto que normalmente se utilizan técnicas formales en el diseño de sistemas con tiempos de respuesta críticos como sistemas de navegación de un avión, transporte de materiales peligrosos, etc. De esta manera, se hace inviable el uso de la computación en la nube cuando se exijan tiempos de respuesta muy bajos, ya que, por ejemplo, un sistema de navegación de un avión no puede esperar varios minutos a que se le asignen nuevos recursos para tomar una decisión. Sin embargo, si que hay otro tipo de sistemas en los que los métodos formales y el cloud computing pueden converger, los sistemas de alta disponibilidad.\\
+
+Así, utilizando técnicas formales se pueden diseñar este tipo de sistemas y verificar la ausencia de fallos en su construcción. Por ejemplo, una tienda de venta online podría pasar de tener cientos de usuarios simultáneamente a miles de ellos en periodos como las vacaciones de Navidad, de manera que necesitaría mucha mayor potencia de computación si quiere satisfacer a todos los clientes y no perder ingresos ni nuevos clientes por no poder atender esa demanda. Para satisfacer esta necesidad, haría un estudio preliminar de cuantas visitas como máximo puede tener en ese período y compraría los datacenters necesarios para no tener problemas de congestión, lo que supone una inversión grande en infraestructura por parte de la compañía, sin embargo, una vez acaba la campaña navideña la demanda de usuarios vuelve a ser de unos cientos y la empresa se encuentra con que tiene una potencia de cómputo que no va a necesitar y, por tanto, no está amortizando económicamente la inversión realizada. En este sentido, si la compañía en lugar de comprar los datacenters hubiese comprado capacidad de cómputo a un proveedor entonces habría amortizado en mayor medida el dinero invertido y no tendría máquinas en sus oficinas que ocupan bastante espacio y que tienen unos niveles de carga de trabajo muy bajos.  \\
+
+
+Cloud Computing se refiere tanto a las aplicaciones que se ofrecen como servicios a través de Internet como al hardware y software que está presente en los datacenters que proveen dichos servicios. Estos servicios se han referido normalmente como Software as a Service (SaaS). El datacenter en sí es lo que se considera la nube (o cloud). Desde el punto de vista del hardware, hay tres aspectos novedosos en Cloud Computing: 
+
+\begin{enumerate}
+\item La ilusión de tener recursos ilimitados bajo demanda eliminando a los usuarios la necesidad de aprovisionarse antes de acometer una tarea.
+\item La eliminación de la inversión inicial en equipamiento permitiendo a las compañías empezar con pocos recursos e ir aumentándolos cuando las necesidades aumenten.
+\item La posibilidad de pagar por el uso de recursos de computación a corto plazo según se necesiten (por ejemplo, procesadores por hora o capacidad de almacenamiento de datos por día) y poder liberarlos cuando no sean necesarios. 
+\end{enumerate}
+
+Cloud Computing podría tener el mismo impacto en la producción de software que el que tuvieron las fundiciones de metal en la industría del hardware. En principio, las compañías fabricantes de hardware necesitaban tener sus propias instalaciones donde fabricar los componentes que componían sus productos, lo que les suponía un gran esfuerzo económico para construir y operar estas instalaciones y, por consiguiente, hacía que el precio de los equipos se doblase en cada nueva generación. Sin embargo, la aparición de compañías que fabricasen componentes favoreció que empresas más pequeñas pudiesen entrar en el mercado del hardware, copado hasta aquel entonces por Intel o Samsung, que eran las únicas que podían hacer frente a este gran esfuerzo económico. De manera similar, la computación en la nube podría jugar el papel que hicieron las fundiciones, favoreciendo la competencia y evitando monopolios de grandes empresas. \\
+
+Debido a que muchas empresas usan servicios software como base para su modelo de negocio, se presentan, a continuación, los actores que formarán parte de este escenario. Los \emph{Services Providers}(SPs) hacen accesibles los servicios a los \emph{Service Users} por medio de interfaces que se comunican a través de Internet. Dado que uno de los objetivos de la nube es externalizar la provisión de servicios, se necesita la aparición de otro actor que ofrezca esta infraestructura como ``servicio'' llamado \emph{Infrastructure Provider}, migrando los recursos desde los SPs al IPs y, así, los SPs pueden ganar flexibilidad y reducir costes como se puede ver en la figura \ref{act}. 
+
+\begin{figure}[bth]
+  \center
+    \includegraphics[scale=0.5]{Figures/actores}
+  \caption{Actores en un sistema en la nube.}
+  \label{act}
+\end{figure}
+
+\section{Comparación entre servicios web y Grid computing/Cloud computing}
+
+Como es sabido, nuestro grupo de investigación ha centrado su investigación en el desarrollo de una metodología que permita construir y verificar sistemas con restricciones temporales mediante el uso de técnicas formales. En los últimos años, se ha aplicado esta metodología en el área de los servicios web, más concretamente, en que estos servicios cumplan la tarea que se les encomienda y que se coordinen automáticamente para conseguir llevar a cabo un trabajo más general. El problema que están teniendo los servicios web es que como tuvieron un gran auge hace pocos años, muchos grupos de investigación centraron sus estudios en este campo y, por tanto, hay muchos investigadores proponiendo nuevas aproximaciones y ésto ha llevado a que existen ciertas partes como BPEL o WS-CDL que están bastante estudiadas. De esta manera, esta surgiendo un sistema donde los métodos formales pueden jugar un papel muy importante y donde nuestro grupo puede beneficiarse de su amplia experiencia tanto en formalización como en servicios web, el cloud computing. Este nuevo paradigma, como se ha expuesto anteriormente, está viviendo su época de plenitud en este momento y grandes empresas como Google, IBM, Microsoft han decidido dar un paso al frente y apostar fuertemente por la computación en la nube. Además, muchos gobiernos están interesados en migrar sus servicios a la nube para abaratar costes y permitirles escalabilidad cuando les sea necesaria. Por ejemplo, hay que preguntarse si es necesario para la Agencia Tributaria tener grandes centros de datos cuando la demanda de servicios por parte de los ciudadanos sólo crece en la época de la declaración de la renta. Probablemente la respuesta sea afirmativa porque sí necesita almacenar todos esos datos y dar cierta confianza de que tus datos fiscales no van a caer en manos de gente con no muy buenas intenciones, pero toda la necesidad de cálculo si que se puede externalizar para ahorrar costes en equipamiento o incluso podrían crear una nube privada entre todos los organismos que colaboren con la agencia pública para compartir recursos e información. En este sentido, este tipo de sistemas donde la seguridad, privacidad y la disponibilidad son un requisito innegociable es donde podemos centrar parte de nuestras investigaciones e intentar mejorar alguno de los componentes de la arquitectura cloud expuesta en el apartado anterior. Por ejemplo, la mayoría de grupos de investigación desarrollan herramientas, pero la fase de pruebas o no existe o se le dedica poco tiempo. La semana pasada nos reunimos con uno de los grandes investigadores en el campo del Grid/Cloud Computing, Karim Djemame, y nos contó que el principal problema que tenía era ese que no sabían concretamente porque funcionaba bien su herramienta y que estaba bastante interesado en la verificación de su herramienta. \\
+
+
+Por otro lado, a continuación se enumeran algunas diferencias entre servicios web y grid/cloud computing para ver donde es posible aplicar nuestra experiencia en este sistema. En primer lugar, podemos considerar que los servicios web son en sí software que se ofrece como servicio (SaaS), aunque existan ciertas diferencias entre ambos enfoques, por ejemplo, la estandarización. Por tanto, este software podría estar compuesto de un conjunto de servicios, probablemente comunicados a través de Internet, y que se coordinan para realizar una determinada tarea. Hasta el momento, nada nuevo, pero la principal diferencia reside en la virtualización, ya que los diferentes servicios que ofrece la nube se realizan en máquinas virtuales en lugar de directamente sobre un servidor como puede ser el caso del servicio web, de manera que la concurrencia en el sistema es mayor. \\
+
+Otra diferencia es la persistencia de los datos. Si queremos coordinar varios servicios web para que realicen sumas la única posibilidad de que éstos puedan almacenar el resultado es guardándolo en la base de datos, sin embargo, existe una aproximación llamada WSRF (Web Services Resources Framework) que ha sido estandarizada y que resuelve este problema. En este framework cada servicio web lleva asociado un recurso o varios del sistema de manera que puedes interactuar con el servicio y decidir a que recurso acceder. La principal ventaja que tiene es que todos los servicios se definen con WSDL (Web Services Description Language) y que la comunicación, direccionamiento, etc. está estandarizado, de manera que la colaboración entre sistemas de este tipo es sencilla. Otra ventaja es que el usuario tiene la posibilidad de decidir con que recursos interactúa. Así, podríamos añadir una capa inferior en nuestra metodología que permitiese la definición de servicios web con recursos y una vez verificado que el sistema es correcto, desplegar estos servicios web en las máquinas físicas. Este enfoque encajaría perfectamente con nuestra investigación, ya que utiliza servicios web con recursos y estos recursos tienen restricciones temporales para evitar que un usuario abarque todo el sistema. \\   
+
+También, podemos observar que cloud computing podría verse como una capa que se colocaría debajo de los servicios web, ya que se puede utilizar éstos para acceder a los recursos, pero hay que resaltar que la nube no es solo ofrecer software como servicio, sino que también hay infraestructura y plataforma como servicio, cosa que los servicios web no pueden abarcar. Es decir, una parte del cloud computing (SaaS) puede compararse directamente con los servicios web, pero las otras dos partes no tienen nada que ver, por lo que sería como comparar el protocolo TCP/IP con la arquitectura de un PC, aunque es necesario que ambas aproximaciones (servicios web y cloud computing) converjan para el crecimiento de ambos paradigmas, igual que grid computing y servicios web convergieron en WSRF. \\
+
+Por último, a modo de curiosidad la principal diferencia entre un sistema grid y uno cloud reside en la virtualización, ya que en grid el usuario no comparte en tiempo real los recursos que tiene asignados, mientras que en cloud es indispensable la virtualización de recursos para conseguir dar servicio a más clientes y conseguir ese ahorro que prometen los proveedores.
+
+\section{Web Services Resource Framework(WSRF)}
+
+La arquitectura que presentan los servicios web ha sido ampliamente aceptada como medio para estructurar las interacciones existentes entre los servicios que forman parte de un sistema distribuido y que colaborar para conseguir un objetivo común. En la actualidad, los desarrolladores requieren a los entornos una mayor estandarización para facilitar interoperatividad adicional entre dichos servicios, pero hasta mediados de 2004 ningún grupo de investigación o grupo de expertos se había planteado seriamente la idea de proponer un estándar para modelar la comunicación entre servicios web que poseen recursos persistentes asociados. Así, en Enero de ese año, varios miembros de la organización \emph{Globus Alliance} y de la multinacional informática IBM definieron, con la ayuda de expertos de empresas como HP, SAP, Akamai, etc., la especificación de los documentos que deberían producirse en este modelo y la base de una arquitectura inicial. Estos documentos fueron enviados a la organización encargada de su estandarización, OASIS, en Marzo de 2004. En un principio, se formaron dos comités que se encargarían del estudio y desarrollo de ciertas partes de este nuevo estándar. Por un lado, estaba el \emph{WSRF Technical Committee} que gestionaba cuatro especificaciones: \emph{WS-ResourceProperties, WS-ResourceLifetime, WS-ServiceGroup, y WS-BaseFaults}. Por otro lado, el \emph{WSN Technical Committee} se encargaba de las especificaciones: \emph{WS-BaseNotification, WS-Topics, y WS-BrokeredNotification}. \\
+
+WS-Resource Framework está inspirado en el trabajo realizado previamente por el \emph{Global Grid Forum's Open Grid Services Infrastructure (OGSI) Working Group} \cite{Foster03}. Más concretamente, puede ser visto como una sencilla refactorización de los conceptos e interfaces desarrollados en la especificación \emph{OGSI V1.0}, de manera que explota los recientes desarrollos en el área de los servicios web (por ejemplo, WS-Addressing). \\
+
+El objetivo de este trabajo es introducir los conceptos fundamentales para la gestión y destrucción de servicios web persistentes, es decir, servicios web que llevan asociados recursos donde guardar los estados de los mismos, ya que hasta la aparición de esta aproximación, los servicios web eran considerados ``\emph{stateless}'' y, por tanto, no podían almacenar temporalmente datos o resultados de sus operaciones de una manera sencilla para el usuario, ya que era necesario almacenarlos en una base de datos ajena al servicio. En este enfoque, es necesario codificar la relación entre el servicio y el recurso en términos de patrones utilizando una serie de tecnologías ampliamente estudiadas, como, por ejemplo, el WS-Addressing y, también, será necesario hacer sus propiedades accesibles desde el exterior a través de un interfaz. En este sentido, llamaremos \emph{WS-Resource} a la asociación entre un servicio web y un recurso persistente.  
+
+
+\subsection{Introducción}
+
+WS-Resource Framework \cite{Ban06} es una especificación, desarrollada por OASIS y algunas de las empresas informáticas más pioneras, cuyo propósito es definir un marco genérico para el modelado y acceso a recursos asociados a servicios web, así como las relaciones entre dichos recursos en un entorno Grid/Cloud. Esta aproximación está compuesta por un conjunto de especificaciones que definen la representación del WS-Resource en los términos que especifican los mensajes intercambiados y los documentos XML relacionados. Asimismo, incluye mecanismos que describen el medio para consultar el estado de un recurso y la descripción del servicio, que forman conjuntamente la definición de un WS-Resource. Además, definen los pasos necesarios para hacer el estado de un servicio web accesible a través de su interfaz (descrita en WSDL).\\
+
+Normalmente, las interfaces de los servicios web proporcionan al usuario la posibilidad de acceder y manipular el estado del mismo, como, por ejemplo, valores de datos que evolucionan por la interacción entre varios servicios. En otras palabras, los intercambios de mensajes que se implementan en el comportamiento de los servicios tienen como objetivo permitir el acceso a estos recursos persistentes. Sin embargo, la noción de recursos persistentes que subyace en la implementación de los servicios no es tan evidente en la definición de la interfaz \cite{Fost04}. Los mensajes que estos servicios envían y reciben implican (o animan al programador a inferir) la existencia de un tipo de recurso asociado. Por tanto, es deseable que se definan estándares que permitan el descubrimiento, creación, introspección, interacción y destrucción de dichos recursos y que la forma elegida para llevar a cabo esta misión sea lo más interoperable posible. Estas observaciones han motivado la aparición de la propuesta comentada anteriormente, WS-Resource, para modelar estados en el contexto de los servicios web. Un WS-Resource se define como la composición de un servicio web y sus recursos persistentes asociados, esto es, \emph{(i)} expresado como una asociación de un documento XML con un tipo definido con uno o varios \emph{portTypes} (un servicio podrá jugar un determinado rol si implementa todos los \emph{portTypes} que comprenden ese rol) y \emph{(ii)} direccionado y accedido de acuerdo al patrón del recurso implícito, una derivación de las \emph{Endpoint References} del WS-Addressing. Una \emph{Endpoint Reference} estará compuesta por: Uniform Resource Identifier (URI), parámetros del mensaje que se envió para solicitar el envío de la \emph{Endpoint Reference} y datos relativos a la interfaz que se usa. En este intercambio, el identificador del recurso persistente es encapsulado en una \emph{Endpoint Reference} y usado para identificar al recurso en cualquier intercambio de mensajes entre los servicios que formen la coreografía. Así, WSRF permite declarar, acceder, monitorizar y destruir WS-Resources mediante mecanismos convencionales, lo que facilita la tarea de gestión, ya que no es necesario hacer más difícil la lógica de decisión del servicio propietario del recurso para procesar los mensajes de gestión. Estos mecanismos convencionales componen cinco especificaciones técnicas que definen los medios por los cuales:
+
+\begin{itemize}
+\item Se destruye un WS-Resource, ya sea de manera síncrona con respecto a una petición explícita de destrucción o, a través de un mecanismo basado en tiempos (scheduled). Además, es posible declarar unas características específicas  de los recursos (WS-ResourceProperties) que podrían ser utilizadas para inspeccionar y monitorizar el tiempo de vida de dicho WS-Resource (WS-ResourceLifetime).
+\item  Se definen los tipos de WS-Resource, que están compuestos por la interfaz de la descripción del servicio web (WSDL) y por un documento XML de propiedades del recurso. Por otro lado, el estado del WS-Resource puede ser consultado y modificado a través del intercambio de mensajes (WS-ResourceProperties)
+\item Un Endpoint Reference (WS-Addressing) puede ser renovado cuando su información de direccionamiento ha caducado o ha dejado de ser válida por algún error (WS-RenewableReferences).
+\item Además, se define la capacidad de implementar entornos heterogéneos como colecciones de servicios web, sean o no WS-Resources (WS-ServiceGroups).
+\item La notificación de errores puede ser más estandarizada al usar tipos XML Schema para definir los fallos base y definir reglas que muestren cómo esos fallos son usados y extendidos (WS-BaseFaults).
+\end{itemize}   
+
+\subsection{WS-ResourceProperties}
+
+Como se ha comentado anteriormente, WSRF utiliza una especificación concreta para definir las propiedades del WS-Resource. Este recurso estará compuesto por la definición de la interfaz en WSDL y un documento XML (Resource Properties Document) que especifica las propiedades del mismo, por ejemplo, el tamaño de disco, la capacidad del procesador, etc., de tal manera que si queremos acceder, modificar o actualizar este documento debemos utilizar una serie de mensajes preestablecidos en la especificación. Las operaciones que se pueden hacer son las siguientes:
+
+\subsubsection{GetResourceProperty}
+Esta operación como su propio nombre indica permite al servicio web que realiza la petición recuperar el valor de una {\bf única} propiedad del documento de propiedades. Para aclarar más los conceptos se define el siguiente ejemplo. \\
+
+
+Dado el documento de propiedades:
+
+\lstset{language=XML, numbersep=5pt,basicstyle=\small, frame=single}
+\begin{lstlisting}
+...
+<GenericDiskDriveProperties 
+xmlns: tns=``http://example.com/diskDrive'' >
+  <tns:NumberOfBlocks>22</tns:NumberOfBlocks>
+  <tns:BlockSize>1024</tns:BlockSize>
+  <tns:Manufacturer>DrivesRUs</tns:Manufacturer>
+</GenericDiskDriveProperties>
+...
+\end{lstlisting}
+
+Una posible petición puede ser:
+
+\lstset{language=XML, numbersep=5pt,basicstyle=\small, frame=single}
+\begin{lstlisting}
+...
+<s12:Body>
+  <wsrp:GetResourceProperty 
+    xmlns:tns=``http://example.com/diskDrive''>
+     tns:NumberOfBlocks
+  </wsrp: GetResourceProperty>
+</s12:Body>...
+\end{lstlisting}
+
+\subsubsection{GetMultipleResourceProperties}
+Este método es equivalente al anterior, pero para acceder a más de una propiedad del documento en el mismo mensaje, es decir, se utiliza para evitar congestionar la red. El mensaje enviado sería:
+
+
+\lstset{language=XML, numbersep=5pt,basicstyle=\footnotesize ,frame=single}
+\begin{lstlisting}
+...
+<wsrp:GetMultipleResourceProperties
+ xmlns:tns=``http://example.com/diskdrive''>
+ <wsrp:ResourceProperty>tns:NumberOfBlock</wsrp:ResourceProperty>
+ <wsrp:ResourceProperty>tns:BlockSize</wsrp:ResourceProperty>
+</wsrp:GetMultipleResourceProperties>
+...
+\end{lstlisting}
+
+\subsubsection{SetResourceProperties}
+Este método se utiliza para realizar cambios en el documento de propiedades. Existen 3 tipos de cambios:
+
+\begin{itemize}
+\item Insert: Permite añadir nuevas propiedades en el documento.
+\item Update: Se utiliza para actualizar el valor de alguna propiedad.
+\item Delete: Elimina propiedades del documento.
+\end{itemize}
+
+Un posible ejemplo de petición sería:
+
+\lstset{language=XML, numbersep=5pt, basicstyle=\small,frame=single}
+\begin{lstlisting}
+...
+<s12:Body>
+ <wsrpw:SetResourceProperties
+        xmlns:tns=``http://example.com/diskdrive''>
+   <wsrp:Update>
+    <tns:NumberOfBlocks>143</tns:NumberOfBlocks>
+   </wsrp:Update>
+
+   <wsrp:Delete resourceProperty=``tns:Manufacturer''/>
+
+   <wsrp:Insert>
+    <tns:someElement>42</tns:someElement>
+   </wsrp:Insert>
+
+ </wsrp:SetResourceProperties>
+</s12:Body>
+...
+\end{lstlisting}
+
+
+El documento de propiedades quedaría con el siguiente formato:
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<GenericDiskDriveProperties
+  xmlns:tns=``http://example.com/diskDrive''>
+  
+  <tns:NumberOfBlocks>143</tns:NumberOfBlocks>
+  <tns:BlockSize>1024</tns:BlockSize>
+  <tns:someElement>42</tns:someElement>
+
+</GenericDiskDriveProperties>
+...
+\end{lstlisting}
+
+\subsubsection{QueryResourceProperties}
+Como su propio nombre indica, este método se utiliza para realizar consultas sobre propiedades del recurso. Por ejemplo si queremos saber si el número de bloques es mayor que 20 y el tamaño de bloque es 1024 realizaríamos la siguiente consulta:
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<s12:Body>
+ <wsrp:QueryResourceProperties>
+  <wsrp:QueryExpression
+   Dialect=``http://www.w3.org/REC-xpath-19991116''>
+    boolean(/*/NumberOfBlocks>20 and /*/BlockSize=1024)
+  </wsrp:QueryExpression>
+ </wsrp:QueryResourceProperties>
+</s12:Body>
+...
+\end{lstlisting}
+
+\newpage
+La respuesta que envía el otro servicio es:
+
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<s12:Body>
+ <wsrp:QueryResourcePropertiesResponse>
+   true
+ </wsrp:QueryResourcePropertiesResponse>
+</s12:Body>
+...
+\end{lstlisting}
+
+
+\subsection{WS-Base Faults}
+El diseñador de un servicio web normalmente utiliza interfaces definidas por otros, por lo que un método que estandarizase el formato de los mensajes de notificación de errores facilitaría la labor de los desarrollares. Éste es el objetivo de WS-BaseFaults. Los mensajes de fallos en WSRF tienen el siguiente formato:
+
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<BaseFault> 
+  <Timestamp>xsd:dateTime</Timestamp> 
+  <OriginatorReference> 
+    wsa:EndpointReferenceType 
+  </OriginatorReference> ? 
+  <ErrorCode dialect=``anyURI''>xsd:string</ErrorCode>? 
+  <Description>xsd:string</Description> * 
+  <FaultCause>wsbf:BaseFault</FaultCause> * 
+</BaseFault>
+...
+\end{lstlisting}
+donde:
+
+\begin{itemize}
+\item Timestamp: Hora exacta cuando el fallo ha ocurrido.
+\item OriginatorReference: Dirección en formato WS-Addressing del servicio que ha generado el fallo.
+\item ErrorCode: Código de error para ser utilizado por sistemas de información de fallos, por ejemplo, POSIX errno.
+\item Description: Explicación de la causa del fallo (en lenguaje natural).
+\item FaultCause: Causa técnica del fallo. 
+\end{itemize}
+
+\subsection{WS-ServiceGroup}
+Esta especificación permite crear grupos que comparten una serie de propiedades en común, es decir, agrupar diferentes servicios web que tienen comportamientos similares.
+
+\subsection{WS-ResourceLifetime}
+
+El tiempo de vida de un WS-Resource se define como el período que transcurre entre su instanciación y su destrucción. La misión de esta especificación es estandarizar el proceso de destrucción de un recurso y definir mecanismos para monitorizar este ciclo de vida, pero lo que no se define es cómo crear el WS-Resource. Generalmente, en los sistemas distribuidos, los clientes sólo quieren tener un recurso por un determinado intervalo de tiempo, aunque en muchos escenarios es más apropiado para el cliente que se produzca la inmediata destrucción del recurso. Otro ejemplo claro de uso se presenta cuando el cliente quiere suscribirse a un servicio por un cierto tiempo y quiere que después de este tiempo se destruya dicha unión. Como se comentó en la introducción, existen dos formas de destruir un recurso: inmediata, mediante un mensaje explícito o temporizada, mediante un mensaje que activa o gestiona un timer. 
+
+\subsubsection{Destrucción inmediata}
+Para la destrucción inmediata sólo hace falta poner \emph{$<wsrl:Destroy/>$} dentro del cuerpo ($<Body>$) del mensaje SOAP que se envía al servicio que gestiona el recurso y dicho servicio responder con \emph{$<wsrl:DestroyResponse/>$} dentro del cuerpo (\emph{$<Body>$}) del mensaje SOAP de respuesta.
+
+\subsubsection{Destrucción temporizada}
+
+En este caso, el WS-Resource tiene asociado un tiempo de terminación que define el tiempo después del cual se espera que el recurso haya sido destruido y, razonablemente, se espera que antes del mismo el recurso esté disponible. A continuación se muestra un ejemplo de cómo determinar el tiempo de terminación de un recurso:
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+  <s12:Envelope
+     <ex:ResourceDisambiguator>
+      uuid:ba32-8680cace43f9
+     </ex:ResourceDisambiguator>
+     <s12:Body>
+      <wsrl:SetTerminationTime>
+       <wsrl:RequestedTerminationTime>
+        2001-12-31T12:00:00
+       </wsrl:RequestedTerminationTime>
+     </wsrl:SetTerminationTime>
+     </s12:Body>
+  </s12:Envelope>
+...
+\end{lstlisting}
+
+
+
+Como podemos observar el servicio que solicita la destrucción puede indicar la hora de destrucción y la hora actual (para evitar desajustes por la forma de representar la zona horaria). Una vez que CurrentTime alcanza el valor TerminationTime, el recurso se destruye sin ninguna intervención más y se notifica al emisor del mensaje de destrucción que el recurso deja de estar disponible. Existe otro mensaje que se manda desde el receptor al emisor para comunicarle que ha recibido la petición de cambio.  \\
+
+Sin embargo, puede darse la situación de que haya más de un servicio utilizando el recurso que vaya a destruirse por lo que el propietario del recurso puede decidir o no (se deja a libre elección del programador) implementar los mensajes WS-Notification para informar a los interesados que el recurso deja de estar disponible. Para llevar a cabo esta tarea debe crear este Topic: 
+
+\newpage
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<wstop:TopicSpace name=``ResourceLifetime''
+   targetNamespace=
+   http://docs.oasis-open.org/wsrf/2004/06/
+   wsrf-WS-ResourceLifetime-1.2-draft-01.xsd
+ 
+ <wstop:Topic name=``ResourceTermination''>
+   <wstop:MessagePattern>
+     <wsrp:QueryExpression
+       dialect= http://www.w3.org/REC-xpath-19991116 >
+        boolean(/*/TerminationNotification)
+     </wsrp:QueryExpression>
+ </wstop:MessagePattern>
+...
+\end{lstlisting}
+
+
+
+Además, el mensaje de notificación asociado debe contener los siguientes campos: 
+
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<wsrl:TerminationNotification>
+ <wsrl:TerminationTime>xsd:dateTime</wsrl:TerminationTime>
+ <wsrl:TerminationReason>xsd:any</wsrl:TerminationReason>?
+</wsrl:TerminationNotification>
+...
+\end{lstlisting}
+ 
+donde \emph{TerminationTime} informa de la fecha de destrucción y \emph{TerminationReason} contiene la explicación de la destrucción.
+
+\section{WS-Notification}
+
+Esta especificación permite a un \emph{NotificationProducer} enviar un mensaje de notificación a un \emph{NotificationConsumer} de dos maneras diferentes:
+
+\begin{enumerate}
+\item El \emph{NotificationProducer} envía un mensaje de notificación al \emph{NotificationConsumer} sin seguir ningún formalismo.
+\item El \emph{NotificationProducer} utiliza el formalismo que se describe a continuación para enviar las notificaciones. 
+\end{enumerate} 
+
+La opción a utilizar la elegirá el suscriptor cuando mande la petición de suscripción. En este sentido, la segunda opción permite al usuario recibir un amplio rango de mensajes de notificación, ya que la información que se envía en estos mensajes se obtiene de un árbol de Topics (temas) y, por tanto, se permite enviar subárboles en un mismo mensaje para informar de diferentes Topics. En la Figura \ref{12} vemos un ejemplo:
+
+
+\begin{figure}[h!]
+  \center
+    \includegraphics[scale=0.45]{Figures/12}
+     \caption{Ejemplo de uso de WS-Notification sin broker.}
+  \label{12}
+\end{figure}
+ 
+Este caso muestra un ejemplo de interacción entre un consumidor y un productor de notificaciones, en el caso de que el suscriptor y el consumidor sean la misma entidad. El sistema es simple ya que tenemos un consumidor y un productor que publica 2 topics: SystemLoadHigh y SystemFault. Los pasos necesarios son: 
+
+\begin{enumerate}
+\item En primer lugar, el consumidor se suscribe al topic SystemLoadHigh, por lo que internamente se crea un \emph{Subscription resource} con la información de la suscripción. El productor debe implementar un método \emph{Subscribe} y el consumidor un método \emph{Notify}.  
+\item Después, el productor debe enviar una notificación cuando el sistema sobrepase una determinada carga de trabajo. Por ejemplo, nuestro sistema enviará notificaciones cuando la carga de trabajo sea mayor de 50\%.
+\item Por último, el productor envía la notificación invocando la operación \emph{Notify} en el consumidor.
+\end{enumerate}
+   
+Un ejemplo de mensaje \emph{Notify} es:
+ 
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<wsnt:Notify>
+    <wsntw:NotificationMessage>
+     <wsnt:Topic Dialect= xsd:anyURI >
+       {any}
+     </wsnt:Topic>
+     <wsnt:ProducerReference>?
+      wsa:EndpointReference
+     </wsnt:ProducerReference>
+     <wsnt:Message>xsd:any</wsnt:Message>
+    <wsnt:NotificationMessage>+
+</wsnt:Notify>
+...
+\end{lstlisting}
+
+Como podemos observar el mensaje \emph{Notify} contiene uno o varios mensajes de notificación (\emph{NotificationMessages}). Los campos dentro de éstos son: 
+
+\begin{itemize}
+\item Topic: La información del topic que se envía.
+\item Dialect: El dialecto usado para expresar el topic anterior, es decir, el lenguaje utilizado para expresarlo.
+\item ProducerReference: Dirección del productor.
+\item Message: Una copia de la carga útil (payload) del mensaje actual.
+\end{itemize}
+
+A continuación, se muestra el mensaje que manda el suscriptor para registrar su interés en uno o más topics:
+
+
+\lstset{language=XML, numbersep=5pt, frame=single}
+\begin{lstlisting}
+...
+<wsnt:Subscribe>
+  <wsnt:ConsumerReference>
+    wsa:endpointReference
+  </wsnt: ConsumerReference>
+  <wsnt:TopicExpression Dialect = xsd:anyURI >
+    {any}
+  </wsnt:TopicExpression>
+  <wsnt:UseNotify>xsd:boolean</wsnt:UseNotify>?
+  <wsnt:Precondition>wsrp:QueryExpression</Precondition>?
+  <wsnt:Selector>wsrp:QueryExpression</wsnt:Selector>?
+  <wsnt:SubscriptionPolicy>{any}</wsnt:SubscriptionPolicy>?
+  <wsnt:InitialTerminationTime>
+    xsd:dateTime
+  </wsnt:InitialTerminationTime>?
+</wsnt:Subscribe>
+
+...
+\end{lstlisting}
+
+
+Los conceptos importantes en este mensaje son \emph{UseNotify} que se utiliza para decidir si el mensaje de notificación sigue el formalismo WS-Notification o se manda sin formato, \emph{Precondition} que es la condición que genera mensajes de notificación, es decir, si se cumple esta condición se generan mensajes, pero debe cumplirse también la condición \emph{selector} para enviarlos a los destinatarios que es la que se usa para decidir si se transmiten o no los mensajes generados. Además, \emph{SubscriptionPolicy} se podría utilizar para controlar el ratio de envío de mensajes(por ejemplo, no más de 3 por segundo) y \emph{InitialTerminationTime} contiene una sugerencia del tiempo de vida de la suscripción. WSRF también incluye mensajes para detener la suscripción, reanudarla o para que un servicio que acaba de unirse a una suscripción pueda obtener un historial de notificaciones sobre un determinado topic.
+
+
+
+\subsection{WS-BrokeredNotification}
+
+Un \emph{NotificationBroker} es un intermediario que, entre otras cosas, permite el envío de mensajes entre uno o varios \emph{Publishers} y uno o varios \emph{NotificationConsumers}. La misión del \emph{Publisher} es observar ciertas situaciones y crear mensajes de notificación para informar de esas situaciones, mientras que el broker es el encargado de distribuir estos mensajes. \\
+
+En este caso, se pueden dar tres relaciones entre las partes: \emph{simple publishing}, \emph{composable publishing} y \emph{demand-based publishing}. En el primer caso, el \emph{Publisher} es el encargado de observar las situaciones y notificarlas al broker que será el encargado de transmitirlas a los interesados. En el segundo caso, el papel del \emph{Publisher} lo realizará una entidad que implementa una serie de servicios especificados en WS-Notification (NotificationProducer). En este caso, el mensaje de notificación puede llegar a otros consumidores que estuviesen suscritos al productor. En ambos casos, el broker puede pedir al \emph{Publisher} que se registre para poder publicar mensajes sobre un topic determinado. El último enfoque (\emph{demand-based publishing}) requiere que el \emph{Publisher} sea un \emph{NotificationProducer} y, así, acepte mensajes de suscripción. El objetivo es reducir el número de mensajes de notificación haciendo que éstos solo se manden cuando se soliciten expresamente.
+
+
+This chapter is about the state of the art of Service-Oriented Computing, the use of formalisms for the analysis of Web Service compositions, and the specification of electronic contracts (e-contract). We specially focus on the application of e-contracts to Web Service compositions, describing some of the existing approaches for that purpose. We also review the related work in the field of formal specification and verification of e-contracts.
+
+%%%Service-Oriented Computing%%%
+\section{Service-Oriented Computing (SOC)}\label{SOC}
+\markright{~\ref{SOC} Service-Oriented Computing (SOC)}
+
+The Service-Oriented Computing (SOC) paradigm promotes the use of services for the development of massively distributed applications, trying to achieve the creation of fast, low-cost, flexible and scalable applications \cite{Papazoglou2007}. Services are the main building block of this paradigm, being these services self-describing and platform-independent. Thanks to the use of standards for description, publication, discovery and invocation, the services can be integrated without taking care of the low-level implementation details of each service. The aim of SOC is to make it possible the creation of dynamic business processes and agile applications by providing an easy way to assemble application components into a loosely coupled network of services.
+
+\subsection{Service-Oriented Architecture (SOA)}\label{SOA}
+
+To reach the goals of SOC, a Service-Oriented Architecture (SOA) is defined. SOA is a software architecture based on the utilization of services, being these services provided to the user of the application or to other services in the network. This is possible by the use of service interfaces that can be published and discovered.
+
+SOA is based on a model of roles where every service can play multiple roles. For example, a service can offer a certain functionality to a user and, at the same time, being the consumer of the functionality provided by some other services. Such model reduces the complexity of applications and increases their flexibility.
+
+Although at the beginning of SOA there were several architectures aspiring to become SOA standards \cite{Karp2000,Sun1999}, the most successful one was the architecture based on Web Services.
+
+\subsection{Web Services (WS)}\label{WS}
+
+W3C defines a Web Service (WS) in the following way \cite{W3C2004}:
+
+\begin{quotation}
+	``A Web Service is a software system designed to support interoperable machine-to-machine interaction over a network. It has
+an interface described in a machine-processable format (specifically WSDL). Other systems interact with the Web Service in a manner prescribed by its description using SOAP-messages, typically conveyed using HTTP with an XML serialization in conjunction with other Web-related standards.''
+\end{quotation}
+
+We can see in this definition that there are two basic standards related to Web Services: Web Service Description Language (WSDL) for the definition of the service functionality and its properties \cite{W3C2001}, and Simple Object Access Protocol (SOAP) for the exchange of XML messages between services \cite{W3C2007}. There is also an additional standard called Universal Description, Discovery and Integration (UDDI) used to create Web Service directories and to search for services in the network \cite{OASIS2004}. The use of these standard protocols is the key point to improve the integration between different parties in a Web Service architecture.
+
+In Figure \ref{Figure1} a possible representation of the Web Service architecture stack is shown. We can see that the three standards described above are only a small part of the stack. We also need protocols to define security aspects (ensuring that exchanges of information are not modified or forged in a verifiable manner and that parties can be authenticated), to provide reliable messaging for the exchange of information between parties, to specify the collaboration between services when we compose them, to individually describe the behaviour of each service in a business process, etc. The problem is that whereas the standards for basic services (WSDL and SOAP) are widely adopted for their respective purposes, the situation is not so clear when we talk about composing services, having multiple protocols aspiring to become a standard in this layer.
+
+\begin{figure}[h]
+\begin{center}
+\psfig{file=Figures/ws-stack.eps,scale=.55}
+\end{center}
+\caption{Web Service architecture stack.}
+\label{Figure1}
+\end{figure}
+
+\subsection{Web Service Composition}\label{WSC}
+
+Two different approaches can be followed when we talk about composing Web Services. They are called \textit{orchestration} and \textit{choreography}. The former describes the individual business process followed by each one of the participants in the composition, while the latter describes the composition from a global viewpoint, defining the interactions (exchange of messages) happening between the parties, that is, how they collaborate in the composition. However, the ideal solution would be fusing both approaches in a single language and environment \cite{Papazoglou2007}.
+
+Anyway, the languages we can use in both cases should accomplish some common goals: (i) the capacity of modelling service interactions, including control flow and data constraints, (ii) the possibility of specifying exceptional behaviour, indicating which errors can happen in the execution of the composition and the way of handling these errors, and (iii) the ability to model Web Service compositions at a high level, without taking care of the implementation details of each one of the services.
+
+\textbf{\subsubsection{Business Process Execution Language (BPEL)}}
+
+Considering the orchestration approach, one of the most used languages for this purpose is Business Process Execution Language (BPEL), also known as BPEL4WS or WSBPEL \cite{OASIS2007}. A BPEL specification models the behaviour of the different services taking part in a business process, defining a BPEL source file for each service. BPEL provides an XML syntax to describe the control logic necessary to coordinate all the services participating in the process. An orchestration engine is responsible for the execution of the processes, coordinating all the activities and compensating any error that could happen. BPEL can be seen as a layer over WSDL, providing this latter language the available functionality while BPEL defines how to sequence the operations \cite{Peltz2003}.
+
+The components of a BPEL specification are the following:
+
+\begin{itemize}
+
+\item \textbf{Events}, which describe the flow execution in an event-driven way.
+
+\item \textbf{Variables},  which are defined by using  WSDL schemes for internal or external purposes, and are used in the message flow.
+
+\item \textbf{Correlations}, which identify the processes interacting by means of messages.
+
+\item \textbf{Fault handling}, defining the behaviour when an exception is thrown.
+
+\item \textbf{Event handling}, defining the behaviour when an event happens.
+
+\item \textbf{Activities}, which are the basic unit of behaviour of a Web Service.
+
+\end{itemize}
+
+For example, in figure \ref{Example1} we can see part of a BPEL specification corresponding to shipping service.
+
+\begin{figure}
+\begin{center}
+\begin{tabular}{|p{11cm}|}
+\hline
+\begin{verbatim}
+
+<process name="shippingService"
+...
+   <sequence>   
+      ...
+      <if>
+         <condition>
+            bpel:getVariableProperty('shipRequest',
+            	'props:shipComplete')
+         </condition>         
+         <sequence>
+            ...
+            <invoke partnerLink="customer"
+               operation="shippingNotice"
+               inputVariable="shipNotice">
+               <correlations>
+                  <correlation set="shipOrder" 
+                  	pattern="request" />
+               </correlations>
+            </invoke>
+         </sequence>
+         <else>
+            <sequence>
+              ...
+              <while>
+                <condition>
+                  $itemsShipped
+                  &lt;
+                  bpel:getVariableProperty(
+                  'shipRequest','props:itemsTotal')
+                </condition>
+                <sequence>
+                  ...
+                  <invoke partnerLink="customer"
+                    operation="shippingNotice"
+                    inputVariable="shipNotice">
+                    <correlations>
+                       <correlation set="shipOrder"
+                          pattern="request" />
+                    </correlations>
+                 </invoke>
+                 ...
+                </sequence>
+              </while>
+            </sequence>
+         </else>
+      </if>
+   </sequence>
+</process>
+\end{verbatim}\\
+\hline
+\end{tabular}
+\caption{Part of a shipping service specification in BPEL} \label{Example1}
+\end{center}
+\end{figure}
+
+\textbf{\subsubsection{Web Services Choreography Description Language (WS-CDL)}}
+
+Regarding the choreography approach, there are several languages that have been designed for that purpose. One of the most used languages is the Web Services Choreography Description Language (WS-CDL), which specifies the common and complementary observable behaviour of all participants in a composition \cite{W3C2005}. It is based on XML and describes the peer-to-peer collaborations between the composite Web Services from a global point of view, that is, the exchange of messages to achieve a common business goal. The aim of this language is allowing the composition of any kind of Web Services, regardless of the platform hosting the service or the implementation language. Figure \ref{Figure2} is an example of how WS-CDL can be useful for the integration of different kinds of Web Service.
+
+\begin{figure}[h]
+\begin{center}
+\psfig{file=Figures/WSCDL.eps,scale=.7}
+\end{center}
+\caption{Integration of Web Services using WS-CDL.}
+\label{Figure2}
+\end{figure}
+
+A WS-CDL document defines a hierarchy of choreographies, where there is only one top-level choreography, marked explicitly as the \textit{root choreography}. The basic building block of a choreography is the \textit{interaction} element. It indicates information exchanges between participants, possibly including the synchronization of some information values. These interactions are performed when one participant sends a message to another participant in the choreography. When the message exchanges complete successfully, the interaction completes normally. The syntax of the interaction is shown in Figure \ref{Example2}.
+
+\begin{figure}
+\begin{center}
+\begin{tabular}{|p{11cm}|}
+\hline
+\begin{verbatim}
+<interaction  name="NCName"
+              channelVariable="QName"
+              operation="NCName"
+              align="true"|"false"?
+              initiate="true"|"false"?>
+
+   <participate  relationshipType="QName"
+                 fromRoleTypeRef="QName" 
+                 toRoleTypeRef="QName"/>
+
+   <exchange  name="NCName"
+              faultName="QName"?
+              informationType="QName"?|
+                  channelType="QName"?
+              action="request"|"respond">
+     <send      variable="XPath-expression"? 
+                recordReference="list of NCName"?   
+                causeException="QName"?/>
+     <receive   variable="XPath-expression"? 
+                recordReference="list of NCName"? 
+                causeException="QName"?/>
+   </exchange>*
+
+   <timeout time-to-complete="XPath-expression"
+            fromRoleTypeRecordRef="list of NCName"?
+            toRoleTypeRecordRef="list of NCName"?/>?
+
+   <record  name="NCName"
+            when="before"|"after"|"timeout"
+            causeException="QName"? >
+     <source  variable="XPath-expression"? | 
+              expression="XPath-expression"?/>
+     <target  variable="XPath-expression"/>
+   </record>*
+</interaction>
+\end{verbatim}\\
+\hline
+\end{tabular}
+\caption{Syntax of an interaction in WS-CDL} \label{Example2}
+\end{center}
+\end{figure}
+
+We can distinguish two different kinds of \textit{complex activities} inside a choreography: the workunit element and the ordering structures. The \textit{workunit} element specifies a condition that must be fulfilled in order to perform some work and/or the repetition of some work. It completes successfully when the set of activities inside completes successfully. \textit{Ordering structures} are used to combine basic activities and other complex activities in a nested way, expressing the order in which actions are performed within the choreography. There are three ordering structures:
+
+\begin{itemize}
+
+\item The \textit{sequence} ordering structure expresses that the set of activities inside must be executed sequentially.
+
+\item The \textit{parallel} ordering structure indicates that the set of activities inside must be executed concurrently. It completes successfully when all the concurrent activities complete successfully.
+
+\item The \textit{choice} ordering structure specifies that only one of multiple activities can be executed. If the choice have workunits inside, only the first one in lexical order with a ``true'' guard condition is selected. If there are other activities, there is no way to know which one is selected; it is considered as a non-observable decision.
+
+\end{itemize}
+
+Different types of exceptions are considered in WS-CDL. The exceptions considered include the following categories:
+
+\begin{itemize}
+
+\item \textbf{Interaction failures}: E.g. the sending of a message fails.
+
+\item \textbf{Protocol based exchange failures}: E.g. no acknowledgement is received as part of the behaviour of a protocol.
+
+\item \textbf{Security failures}: E.g. a message is rejected because it has not valid digital signature.
+
+\item \textbf{Timeout errors}: E.g. an interaction is not completed in the specified amount of time.
+
+\item \textbf{Validation errors}: E.g. an XML message is not well formed.
+
+\item \textbf{Application failures}: E.g. an Internet purchase service is out of stock of a product offered.
+
+\end{itemize}
+
+Exception workunits can be defined to handle all these exceptions. They may also be used as the mechanism to recover from the exceptions. The exception workunits are defined within the \textit{exceptionBlock} element of a choreography. At least one exception workunit must be defined. The guard of the workunit can be used to specify the particular type of exception we want to handle through the use of the \textit{hasExceptionOccurred} function. The exception workunit with no guard condition is called the default exception workunit and only one is allowed within an exception block. Only one exception workunit can match each exception. If multiple exception workunits are defined, the order of evaluating them is based on the order in which the workunits have been defined. When the matching happens, the actions of the matched workunit are executed. If no matching happens and a default exception workunit exists, then the actions of this workunit are executed. Otherwise, the exception is raised in the parent choreography.
+
+WS-CDL also allows us to define finalization actions within a choreography that can confirm or cancel the effects of this choreography, so we can use this actions for compensation. This finalization is done by means of the \textit{finalizerBlock} element. Multiple finalizer blocks can be defined with different \textit{name} attributes, but only one of them is executed when the choreography completes successfully. Finally, if an exception occurs, the choreography completes unsuccessfully and the actions within it are completed abnormally. Furthermore, the finalizer blocks of the choreography are not executed.
+
+
+%%%Formal Analysis of Web Service Compositions%%%
+\section{Formal Analysis of Web Service Compositions}\label{AnalysisWSC}
+
+In last years the formal analysis of Web Service compositions has been recognized as an important problem that needs to be solved \cite{Carbone2006,Dong2006,Foster2007,Yang2008}. A strict analysis is necessary to guarantee the correct composition of the services for multiple reasons: the integration of several independent applications, the possibility of having incomplete specifications of some services, the impossibility of using traditional evaluation techniques such as software testing, \ldots
+
+The analysis of Web Service compositions usually consists of checking its specification correctness by analysing if a set of functional and non-functional requirements are fulfilled. The behavioural requirements are especially interesting, as they specify the properties required to reach a concrete business goal. These requirements can include general properties such as deadlock freeness or correct termination, but they can also be defined explicitly, for example defining the conformance to a concrete model. This formal analysis is usually done by means of formal methods.
+
+Formal methods \cite{Wing1990} are a collection of notations and techniques for describing and analyzing systems \cite{Peled2001}. They are called \textit{formal} because they are based on mathematical theories (logics, automata, sets, \ldots). In formal methods we can distinguish between the \textit{formal specification}, which describes unambiguously a system or its properties, and the \textit{formal analysis} or \textit{formal verification}, which serves to verify if a system satisfies its specification.
+
+Formal methods usually cannot guarantee the correctness of the implementation and, if the specification is not correct, the verification results will also be wrong. Despite these and some other limitations, formal methods are still needed because they increase the confidence on system reliability, minimize the number of errors in the implementation and can find out errors impossible to find with other techniques such as testing.
+
+When we are going to apply a formal method it is very important to choose the right level of abstraction in the specification of the system depending on what we want to analyze or verify. An underspecification can lead to wrong verification results because the specification is incomplete, whereas an overspecification can lead to the \textit{state explosion problem}, making the intended analysis of the system infeasible.
+
+Formal methods can be applied in different stages of the computer system development process, providing different information about the system in each one of these stages. The application of these methods is usually complex, being impossible without some kind of tool support. For this purpose, the language syntax of the specification must be explicit and the language semantics of the specification must be restricted. In this way, formal specifications are amenable to automate analysis and verification.
+
+The choice of using one formal method or another depends on many factors: the problem we want to solve, the type of system, the properties we want to check, and so on. In the case of complex systems, such as distributed concurrent systems, it is needed a combination of several techniques for the analysis.
+
+
+\subsection{Model Checking}\label{Model Checking}
+
+According to \cite{Katoen1998}, the definition of model checking is the following:
+
+\begin{quotation}
+	``Model checking is an automated technique that, given a finite-state model of a system and a formal property, systematically checks whether this property holds for (a given state in) that model.''
+\end{quotation}
+
+Model checking explores all possible system states in a brute force manner. A model checker is the software tool that performs the model checking and it examines all possible system scenarios systematically. Therefore, it is possible to see if a given system model satisfies a concrete property. By using model checking we can check properties such as correctness of the result, deadlock-freeness and timing properties.
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=12cm]{Figures/ModelCheckingSchema.eps}
+  \end{center}
+  \caption{Schematic view of the model checking approach}
+  \label{Figure4}
+\end{figure}
+
+The system model is usually automatically generated from a model description that is specified in some programming languages or hardware description languages. The model checker examines all relevant system states to check whether they satisfy or not the desired property. If a state that violates the property under consideration is found, the model checker provides a counterexample with an execution path leading from the initial state to the state that violates the property. By using a simulator, the user can reproduce the violating scenario, also obtaining some useful information to adapt the model or the property properly. In Figure \ref{Figure4} we can see a schema of the model checking approach.
+
+The application of model checking to the design of a system is divided into the following tasks:
+
+\begin{itemize}
+
+\item The \textbf{modelling} consists of converting the design of the system into the formalism accepted by the model checking tool. Sometimes this translation is straightforward but sometimes it is necessary to use abstractions to get rid of irrelevant stuff.
+
+\item The \textbf{specification} consists of stating the properties that the design of the system must satisfy. \textit{Temporal logic} \cite{Clarke1999}, in which specifiers use special modal operators to refer to past, current, and future states or events, is one of the methods most commonly used for that purpose.
+
+\item The \textbf{verification} of the stated properties over the formal model of the system is the last task. Although ideally this task is completely automatic, in practice some level of human assistance is often necessary. If the property is not satisfied by the system, the model checker usually provides an error trace, helping the system designer find out the design error.
+
+\end{itemize}
+
+One of the main advantages of model checking is that it supports \textit{partial verification}, that is, properties can be checked one by one so it is not needed a complete requirements specification. Another important advantage is that the \textit{integration} of model checking into development cycles is quite easy, increasing the confidence in the developed software.
+
+On the other hand, one of the main drawbacks is that model checking verifies a \textit{system model}, not the real implementation of the system. Therefore, techniques such as testing of the final code are still necessary. Another important drawback is that the feasibility of applying model checking depends on \textit{decidability} issues, this method is in general not effectively computable for infinite state systems.
+
+Considering the advantages and drawbacks of model checking we can conclude that it is an effective technique for the discovery of potential design error.
+
+\subsection{Specification Formalisms for Model Checking}\label{Formalisms}
+
+In this section we are going to briefly describe some of the specification formalisms used in model checking, which have been used for the formal analysis of Web Service compositions. In all these formalisms, the semantics is based on transition systems.
+
+\textbf{\subsubsection{Process Algebras}}
+
+A process algebra is an algebraic approach for the study of concurrent processes. Its tools are algebraical languages for the specification of processes and the formulation of statements about them, together with calculi for the verification of these statements \cite{Glabbeek1987}. Process algebras also allow to carry on bisimulation analysis, that is, to establish whether two processes behave in the same way.
+
+The $\pi$-calculus \cite{Milner1992} is the process algebra in which are based most of the existing Web Service composition languages, such as WS-CDL. The basic entity in $\pi$-calculus is the process, that can be an empty process, a choice between several input and output operations, a parallel composition, a recursive definition, or a recursive invocation. Concerning input and output operations, $x(y)$ is used to denote receiving tuple $y$ on channel $x$, whereas $\overline{x}[y]$ is used to denote sending tuple $y$ on channel $x$. A sequence of actions is specified by means of a dot between the actions and a parallel process composition is denoted by $A|B$, where $A$ and $B$ are processes. In this way, we can model situations where several processes are executing in parallel and communicating using compatible channels. We also have $!P$ to denote an infinite number of copies of process $P$ running in parallel. For example, $\overline{A}[x,y].B(z).\overline{C}(z^{2})$ is a formula describing a process that first sends the tuple with the variables $x$ and $y$ to channel $A$, then receives a tuple bound to variable $z$ on channel $B$, and finally sends the square of variable $z$ to channel $C$.
+
+The problem with process algebras is to determine what to type, that is, the granularity of the model we want to analyze. We cannot verify some properties if we type too little, but typing too much can result in a complexity infeasible for verification. Therefore, the challenge is to choose the right level of abstraction for the system description, depending on what we intend to analyze.
+
+\textbf{\subsubsection{Petri Nets}}
+
+Petri nets are another process modelling approach for the description of distributed systems. A Petri net is a directed, connected and bipartite graph, in which the nodes represent transitions and places \cite{Petri2008}. Arcs run from a place to a transition or vice versa, never between places or between transitions. Places may contain a natural number of tokens and a transition of a Petri net may fire  whenever there is a token at the start of all input arcs. When it fires, it consumes these tokens, and places tokens at the end of all output arcs. Execution of Petri nets is nondeterministic, that is, when multiple transitions are enabled at the same time, any one of them may fire. This makes Petri Nets a well-established approach for modelling the behaviour of distributed systems.
+
+The user-friendly graphical notation of Petri nets, easily understandable by any user, has made them the chosen model for many application. For example, in Figure \ref{Figure5} we can see a Petri net model for double buffering.
+
+\begin{figure}[h]
+\begin{center}
+\psfig{file=Figures/Petri_Net.eps,scale=.50}
+\end{center}
+\caption{Double buffering Petri net.}
+\label{Figure5}
+\end{figure}
+
+There are several approaches based on modelling Web Service compositions using Petri nets. For example, in \cite{Hamadi2003} Petri nets describing the behaviour of each one of the services in the composition are defined and, after that, composition operators are used to perform the composition of these Petri nets, modelling in this way the composition of the corresponding services.
+
+\textbf{\subsubsection{Automata}}
+
+Automata are another well-established model addressing the formal specification of a system. They accept inputs, produces outputs, may have some temporary storage, and can make decisions in transforming the inputs into the outputs \cite{Linz2006}. Informally, an automaton takes a symbol as input and moves from one state to another according to a transition function telling the automaton which state to go next given a current state and a current symbol.
+
+The natural way in which automata model the behaviour of systems has given rise to a wide variety of specification models based on automata, such as team automata \cite{Beek2003}, I/O automata \cite{Kaynar2006}, timed automata \cite{Alur1990,Alur1994}, and so on. Moreover, the formal background of these models allows automatic tool support, so they are used more and more often for formal analysis and verification purposes.
+
+Concerning timed automata, we have that a timed automaton is essentially a finite automaton extended with real-valued variables that can be considered as an abstract model of a timed system \cite{Bengtsson2003}. The variables are used to model the logical clocks we have in our system. They are initialized to zero when the system is started and increase synchronously at the same rate. Clocks constraints are used to restrict the behaviour of the automata, by writing guards on the transitions and invariants on the states, and these clocks can be reset to zero when a transition is taken.
+
+
+\subsection{Tools for Model Checking}\label{Tools}
+
+In this section we present a brief description of three of the tools that have been developed for model checking, which purpose is to facilitate the modelling, specification and verification tasks of the model checking approach. Each one of these tools is based on a different formalism (process algebra, Petri nets and automata).
+
+\textbf{\subsubsection{CWB-NC}}
+
+The Concurrency Workbench of the New Century (\textit{CWB-NC}) \cite{Cleaveland1993} provides users with a number of different process algebras for the specification and verification of finite-state concurrent systems. The tool provides decision procedures for a number of refinement relations and to determine if systems satisfy certain properties. 
+
+The simplest type of verification supported by \textit{CWB-NC} is reachability analysis, where if the system reaches a state that should never reach, a trace of the execution leading to this state is reported. More generally, \textit{CWB-NC} supports the verification of temporal formulas that define a behaviour the system should or should not have. A third type of verification supported by the tool involves using a design language for defining both the system and the specifications, having a more abstract definition in the case of the specifications. Both definitions are compared by defining a behavioural relation.
+
+For example, in Figure \ref{Example5} we can see part the specification in the process algebra CCS \cite{Milner1980} of the \textit{alternating bit protocol (ABP)} \cite{Bartlett1969} This specification is included as a sample in the tool.
+
+\begin{figure}
+\begin{center}
+\begin{tabular}{|p{11cm}|}
+\hline
+\begin{verbatim}
+**********************************************
+*  The definition of the specification
+**********************************************
+proc Spec = send.'receive.Spec
+
+**********************************************
+*  The definition of the sender
+**********************************************
+proc S0 = send.S0'
+proc S0' = 's0.(rack0.S1 + rack1.S0' + t.S0')
+proc S1 = send.S1'
+proc S1' = 's1.(rack1.S0 + rack0.S1' + t.S1')
+
+**********************************************
+*  The definition of the receiver
+**********************************************
+proc R0 = r0.'receive.'sack0.R1 + r1.'sack1.R0 + 
+	t.'sack1.R0
+proc R1 = r1.'receive.'sack1.R0 + r0.'sack0.R1 + 
+	t.'sack0.R1
+
+**********************************************
+*  The definition of the reliable medium
+**********************************************
+proc Msafe =
+  s0.'r0.Msafe + s1.'r1.Msafe + 
+  sack0.'rack0.Msafe + sack1.'rack1.Msafe
+
+**********************************************
+*  The definition of the lossy medium
+**********************************************
+proc Mlossy =
+  s0.('r0.Mlossy + Mlossy) + s1.('r1.Mlossy + Mlossy)   
+  + sack0.('rack0.Mlossy + Mlossy) 
+  + sack1.('rack1.Mlossy + Mlossy)
+
+**********************************************
+*  The Internal actions to be hidden
+**********************************************
+set Internals = {r0,r1,s0,s1,rack0,rack1,sack0,sack1}
+
+**********************************************
+*  The definition of the safe implementation 
+**********************************************
+proc ABP-safe = (R0 | Msafe | S0) \ Internals
+
+**********************************************
+*  The definition of the lossy implementation 
+**********************************************
+proc ABP-lossy = (R0 | Mlossy | S0) \ Internals
+\end{verbatim}\\
+\hline
+\end{tabular}
+\caption{Specification of the \textit{alternating bit protocol (ABP)} in CCS} \label{Example5}
+\end{center}
+\end{figure}
+
+\textbf{\subsubsection{CPN Tools}}
+
+\textit{CPN Tools} \cite{Jensen2007} is a tool for the edition, simulation and analysis of Coloured Petri nets \cite{Jensen1990}. This tool features incremental syntax checking and code generation, which take place while a net is being constructed. Its simulator is able to handle untimed and timed nets. Full and partial state spaces can be generated and analyzed, providing information such as boundedness properties and liveness properties. The last versions of this tool also support the definition of prioritized transitions.
+
+\textit{CPN Tools} was created to replace Design/CPN \cite{Jensen1991}, which was a previous widespread tool with support for the edition and simulation of Coloured Petri nets. The new tool offers a complete redesign of the user interface provided by Design/CPN and all the models created in Design/CPN can be converted and then used in \textit{CPN Tools}.
+
+In Figure \ref{Figure6} we can see an example of how the dining philosophers problem is implemented in \textit{CPN Tools}. 
+
+\begin{figure}[h]
+\begin{center}
+\psfig{file=Figures/dinphilmon.eps,scale=.65}
+\end{center}
+\caption{Coloured Petri net in CPN Tools for the dining philosophers problem.}
+\label{Figure6}
+\end{figure}
+
+\textbf{\subsubsection{UPPAAL}}
+
+\textit{UPPAAL} \cite{Larsen1997} is a tool box for modelling, simulation, validation and verification of real-time systems, based on constraint-solving and on-the-fly techniques, developed jointly by the Uppsala University and the Aalborg University. It is appropriate for systems that can be modelled as a collection of non-deterministic processes with finite control structures and real-valued clocks, communicating through channels and (or) shared variables. Thus, a \textit{UPPAAL} system consists of a set of concurrent processes, each of which being modelled by a timed automaton (Definition \ref{defTA}). To define the behaviour of the system it is possible to define ``invariants'', ``guards'' and ``synchronizations'' in the automata supported by \textit{UPPAAL}:
+
+\begin{itemize}
+\item The ``synchronization'' between processes is done through ``channels''. One of the processes, which is called the initiator of the synchronization, will invoke the channel with the exclamation mark ``!'', while the other process will invoke the channel with the question mark ``?''.
+\item A ``guard'' is a trigger condition of a transition. It expresses a condition over clocks and integer variables, which must be satisfied when the transition is taken.
+\item An ``invariant'' is a condition of progression associated with a node. It indicates the time that the automaton can remain in that node.
+\end{itemize}
+
+For example, in Figure \ref{Figure7} we can see an automaton in \textit{UPPAAL} modelling the behaviour of a train that has to cross a bridge.
+
+\begin{figure}[h]
+\begin{center}
+\psfig{file=Figures/Automatas.eps,scale=.60}
+\end{center}
+\caption{Automaton in \textit{UPPAAL} modelling the behaviour of a train.}
+\label{Figure7}
+\end{figure}
+
+The query language used in UPPAAL, for the specification of the properties to be check in the verification of the system, is a simplified version of CTL logic described in \cite{Behrmann2004}.
+
+%%%Electronic Contracts%%%
+%\section{Electronic Contracts (e-Contracts)}\label{e-Contracts}
+%
+%A \textit{contract} is defined by the \textbf{Compact Oxford English Dictionary} in the following way:
+%
+%\begin{quotation}
+%
+%\textit{1.} A written or spoken agreement intended to be enforceable by law.
+%
+%\end{quotation}
+%
+%A contract also includes the definition of the set of activities that satisfies the specified agreement (\textit{clauses}) and sometimes the compensations that must be enacted if a contract breach occurs (\textit{reparations}).
+%
+%In the field of SOC, a contract is the specification of how the consumer of a Web Service interacts with the provider of that service \cite{Okika2007}. These contracts are called \textit{electronic contracts} (e-contracts) and are used in run-time to guarantee that the agreement between the consumer and the provider of the service is fulfilled. In this way, e-contracts give the users a higher confidence when they use the services offered by an unknown provider.
+%
+%E-contract systems ease the contract enactment and the monitorization process, offering the ability to detect clause violations and appropriate response to solve these violations. However, e-contract systems research is still in its infancy, so much more research is needed to solve the different e-contract issues (negotiation, modelling, validation, etc.) \cite{Krishna2008}.
+%
+%In all the contracts we can distinguish the three following entities:
+%
+%\begin{itemize}
+%
+%\item The \textbf{parties} are the different sides in a contract relationship, that is, the companies or people involved in a business process.
+%
+%\item The \textbf{activities} are the tasks and actions that can be executed.
+%
+%\item The \textbf{clauses} are the restrictions that the execution of activities must fulfil.
+%
+%\end{itemize}
+%
+%The parties involved in the contract satisfy clauses by performing activities. Parties can also specify penalties corresponding to the non-fulfilment of the restriction specified by a clause, for example the no execution of an obligatory activity or the performance of a forbidden activity.
+%
+%The process followed for the creation and application of an e-contract can be divided into three phases:
+%
+%\begin{itemize}
+%
+%\item The \textbf{contract preparation}, consisting of the specification of the way the contract will be fulfilled, that is, its clauses.
+%
+%\item The \textbf{contract negotiation}, consisting of establishing a set of agreements between the parties involved about different aspects (payments, milestones, etc.).
+%
+%\item The \textbf{contract fulfilment}, consisting of the execution of the contract, that is, the performance of specific activities.
+%
+%\end{itemize}
+%
+%At the beginning e-contracts were just legal documents, but in last years the specification and execution of e-contracts have evolved into different approaches:
+%
+%\begin{itemize}
+%
+%\item \textbf{Design by Contract (DBC)}, also called \textbf{programming by contract}, that is a software development methodology that claims the necessity of defining standardized and machine readable specifications.
+%
+%\item \textbf{Service-Level Agreements (SLAs)}, that are used in the context of Web Services to specify what the service providers will furnish, usually by means of an XML-based language like WSLA \cite{IBM2003}.
+%
+%\item \textbf{Behavioural interfaces}, that specify the sequence of interactions that are allowed between the different parties.
+%
+%\item \textbf{Contractual protocols}, that are used to specify the interactions between communicating entities.
+%
+%\item \textbf{Social contracts}, that are specifications of the external visible interaction behaviour in multi-agent systems, describing interchange of events and speech acts among agents.
+%
+%\item \textbf{Deontic e-contracts}, that are inspired from deontic logic, representing obligations, prohibitions, etc. in a formal specification language. 
+%
+%\end{itemize}
+%
+%Nevertheless, there are a set of common requirements that must be fulfilled by all these approaches: the extraction of information from contract documents, the identification of dependencies and inconsistencies between clauses, the management of conflicts, the compliance with the contractual promises, the evolution of the e-contract, \ldots
+%
+%In what follows we described each one of the approaches above-mentioned in more detail.
+%
+%\subsection{Design by Contract (DBC)}\label{DBC}
+%
+%Design by Contract (DBC) methodology was first introduced in \cite{Meyer1992} to facilitate component-based development and it was extended in \cite{Beugnard1999} with a division into four levels: basic contracts, behavioural contracts, synchronization contracts and quality-of-service contracts. This methodology is based on three primary specification elements: pre-conditions, post-conditions and invariants.
+%
+%Pre-conditions are the requirements that a client must satisfy for the correct execution of a component. Post-conditions are the effects that the component produces when the pre-conditions are fulfilled by the client. Invariants are static properties of the components, that is, properties preserved by any operation.
+%
+%On the one hand, the Eiffel Programming Language \cite{Meyer1992-2} is one of the implementations of DBC methodology at service level. It is a programming language object-oriented where each class requires the specification of pre-conditions, post-conditions and invariants. Unlike other DBC implementation languages, contracts are mandatory in Eiffel. For example, the ``GENERAL\_PHILOSOPHER'' class of the dining philosophers problem is implemented in this language as shown in Figure \ref{Example6}. Another implementation of DBC methodology at service level is called iContract \cite{Enseling2001}, that adds pre-conditions, post-conditions and invariants as comments in standard Java classes, but in this case they are not mandatory, so classes can still be compiled without contract. There are also several implementations of DBC methodology at service level for C programming language that can be found in \cite{Mills2004}.
+%
+%\begin{figure}
+%\begin{center}
+%\begin{tabular}{|p{11cm}|}
+%\hline
+%\begin{verbatim}
+%class GENERAL_PHILOSOPHER creation
+%  make
+%feature -- Initialization
+%  make (l, r: separate FORK) is
+%      -- Define l as left and r as right forks.
+%    do
+%      left := l; right := r
+%    end
+%feature {NONE} -- Implementation
+%  left, right: separate FORK;
+%      -- The two required forks
+%  getup is
+%      -- Take any necessary initialization action.
+%    do ... end;
+%  think is
+%      -- Any appropriate action or lack thereof.
+%    do ... end;
+%end -- class GENERAL_PHILOSOPHER
+%\end{verbatim}\\
+%\hline
+%\end{tabular}
+%\caption{Implementation of the dining philosophers problem in Eiffel} \label{Example6}
+%\end{center}
+%\end{figure}
+%
+%On the other hand, the Architecture description languages (ADLs) implement the DBC methodology at architecture level \cite{Medvidovic2000}. They specify the composition of a software application from a high-level point of view, offering state-transition semantics for analysis and verification of the system specification.
+%
+%\subsection{Service-Level Agreements (SLAs)}\label{SLAs}
+%
+%Service-Level Agreements (SLAs) define formally the relationship existing between a service provider and the consumer of this service \cite{Verma1999}. They are contracts which aim is setting the quality of the offered service (availability, security, delivery time, etc.) and the specification of the procedures that must be followed to ensure compliance with the contract. In some SLAs we can also find the specification of the penalties applied in case that some part of the contract is not fulfilled.
+%
+%The information contain in a SLA is usually the following:
+%
+%\begin{itemize}
+%
+%\item The type of service that is provided and any requirement of that type of service that is necessary.
+%
+%\item The availability and responsiveness of the service, that is, the expected performance level.
+%
+%\item The procedure that must be followed to report service problems.
+%
+%\item The time boundaries applied for response and problem resolution.
+%
+%\item The procedure followed to monitor and report the service.
+%
+%\item The penalties apply to the service provider when the contract is not satisfied.
+%
+%\item The conditions under which the SLA is not applied, called escape clauses, and constraints on the behaviour of the service consumer.
+%
+%\end{itemize}
+%
+%The Web Service Level Agreement (WSLA) framework is a framework created for the specification and monitoring of SLAs in the field of Web Services, although it can also be applied in business processes, systems and applications in general \cite{Keller2002}. It is motivated by the necessity we have in SOC of unambiguously define a wide variety of SLAs, specify the parameters of these SLAs and the way how the parameters are measured. The SLAs can be monitored by the service provider, the consumer or even a third-party, and the monitoring services are configured to automatically enforce the SLA.
+%
+%The WSLA framework consists of a flexible XML-based language, which can be easily extended, and an architecture of several monitoring services. In this way, the framework allows service providers and consumers to define the quality-of-service aspects of a (Web) service, how resource metrics are measured and how composite metrics are computed. For instance, the code in Figure \ref{Example7} shows how the availability schedule of a service can be specified in WSLA language.
+%
+%\begin{figure}
+%\begin{center}
+%\begin{tabular}{|p{11cm}|}
+%\hline
+%\begin{verbatim}
+%<ServiceDefinition name="DemoService">
+%	<Schedule name="availabilityschedule">
+%	  <Period>
+%	    <Start>2001-11-30T14:00:00.000-05:00</Start>
+%	    <End>2001-12-31T14:00:00.000-05:00</End>
+%	  </Period>
+%	  <Interval>
+%	    <Minutes>1</Minutes>
+%	  </Interval>
+%	</Schedule>
+%</ServiceDefinition>
+%\end{verbatim}\\
+%\hline
+%\end{tabular}
+%\caption{Specification of the availability schedule of a service in WSLA} \label{Example7}
+%\end{center}
+%\end{figure}
+%
+%\subsection{Behavioural Interface Specification Languages (BISLs)}\label{BISLs}
+%
+%Behavioural Interface Specification Languages (BISLs) allow programmers to specify the intended behaviour of programs, including aspects such as functional behaviour and resource consumption \cite{Hatcliff2009}. These specifications can be useful both for the generation of test cases and for formal program verification. Ideally, a behavioural interface specification describes all the required functional behaviour of a software system and it is a refinement of the requirements specification. However, it is very usual that we have to face systems with an incomplete specification or without any specification at all. In that case we just try to verify that certain errors cannot occur in any possible behaviour of the system.
+%
+%There are many BISLs created to extend specific programming languages such as Java Modeling Language (JML) for Java \cite{Leavens1999}, Pipa for AspectJ \cite{Zhao2003}, ANSI/ISO C Specification Language (ACSL) for C programs \cite{Filliâtre2008}, Spec\# for C\# \cite{Barnett2005}, etc. For example, we can see in Figure \ref{Example8} a contract written in JML.
+%
+%\begin{figure}
+%\begin{center}
+%\begin{tabular}{|p{11cm}|}
+%\hline
+%\begin{verbatim}
+%/*@ public normal_behaviour // Spec. A
+%@ requires a != null && a.length > 0;
+%@ ensures
+%@ (\forall int i, j;
+%@ 0 <= i && i <= j && j < a.length;
+%@ \result <= (\sum int k; i <= k && k <= j; a[k]))
+%@ also
+%@ public normal_behaviour // Spec. B
+%@ requires a != null && a.length > 0;
+%@ ensures
+%@ (\exists int i, j;
+%@ 0 <= i && i <= j && j < a.length;
+%@ \result == (\sum int k; i <= k && k <= j; a[k]))
+%@*/
+%public /*@ pure @*/ int mss (int[] a) {
+%// compute the minimum segment sum of a
+%}
+%\end{verbatim}\\
+%\hline
+%\end{tabular}
+%\caption{Example of a contract written in JML} \label{Example8}
+%\end{center}
+%\end{figure}
+%
+%In the field of SOC, a behavioural interface captures the behavioural dependencies between the multiple interactions in which a service can be engaged to achieve a goal \cite{Barros2005}. It captures dependencies between interactions such as control flow dependencies, data flow dependencies, transactional dependencies, time constraints, etc. The difference between behavioural interfaces and choreography languages such as WS-CDL is that behavioural interfaces specify interactions from the viewpoint of a single party while in choreography languages, as we have seen before, the interactions are specified from a global viewpoint. Anyway, in both cases the internal tasks of each service are not described.
+%
+%\subsection{Contractual Protocols}\label{Contractual Protocols}
+%
+%A contractual protocol specifies certain actions that have to be perform by some communicating entities \cite{Grüner2008}. The difference with a communication protocol is that a contractual protocol involves the enforcement of an agreement while a communication protocol does not. A contractual protocol needs the messages and actions between communicating entities to be verified after happening. A mediator can be used to collect the subsequent messages between entities.
+%
+%\subsection{Social Contracts}\label{Social Contracts}
+%
+%A social contract defines the shared context of agent interactions in a multi-agent system (normative behaviour, common goals, etc.) and specifies classes of exceptions, including prevention and resolution mechanisms \cite{Dellarocas2000}. Intuitively, social contracts specify the interaction of each member with the rest of the society, that is, the rights and obligations of each agent relative to the multi-agent system. These social contracts (social norms) are enforced by means of social control mechanisms (social institutions).
+%
+%In this approach a contract consists of several contract clauses defining general commitments and being applied to all the contracting parties or to a subset of them. Contract state transition graphs are used to connect the contract clauses and the social control. The idea is that we have desirable states, undesirable states and neutral states in these graphs, and social control provides incentives to the participants to keep the contract in desirable states and avoid undesirable states.
+%
+%The elements needed to describe the different aspects of social contracts include beliefs (factual agreements that contracting parties commit to add such as contract expiration time), objectives (outcomes that all contracting parties agree to achieve or maintain such as message response time), organizational values (statements of what is considered important such as preferences between objectives), conversational protocols (descriptions of legal message types), policies (other restrictions on behaviour), \ldots
+%
+%\subsection{Deontic e-Contracts}\label{Deontic e-Contracts}
+%
+%We use the name deontic e-contracts for electronic contracts which specification is based on deontic logic \cite{McNamara2006}. This logic is concerned with moral and normative notions such as permission, obligation, prohibition, duty, power, etc. and it focuses on the logical consistency of these notions. Two approaches can be followed in deontic logic \cite{Wright1999}:
+%
+%\begin{itemize}
+%
+%\item An \textbf{ought-to-do} approach, where the norms are applied over actions.
+%
+%\item An \textbf{ought-to-be} approach, where the norms are applied over state of affairs.
+%
+%\end{itemize}
+%
+%The norms we consider in deontic logic are prescriptions for conduct, that is, they have no truth-value, but they are still subject to a logical view. We can also have conditional norms that are only applied under certain conditions and meta-norms of consistency. The problem of deontic logic is that if we consider all the possible normative notions is very difficult to avoid paradoxes and oddities \cite{Prakken1996}. For that reason, the majority of the approaches for the specification of e-contracts based on deontic logic restrict the considered normative notions to obligations, permissions and, in some cases, prohibitions. In spite of adding this restriction, the formalization of deontic logic is still not easy and extensive research work is devoted to this formalization \cite{Pace2009}.
+%
+%Apart from the notions of obligation, permission and prohibition taken from deontic logic, deontic e-contracts between different entities needs to specify temporal aspects, real-time constraints and exception mechanisms. Concerning the last point, we need to specify what happens when an obligation or a prohibition is violated, that is, the reparation that must be applied in that cases. This reparation can be specified again as a set of obligations, permissions and prohibitions.
+%
+%%%%Formalization of Electronic Contracts%%%
+%\subsection{Formalization of Electronic Contracts}\label{Formalization}
+%
+%The formal specification of e-contracts has been recognized as an important field of research in order to check the correctness of a contract and the conformance of a system with respect to a contract definition. For that purpose, several proposals have been developed during the last years. Next, some of these approaches for the formalization of e-contracts are briefly described:
+%
+%\begin{itemize}
+%
+%\item In \cite{Aktug2007} a language called ConSpec is described. It can be used to define policies and contracts related to some security tasks. A formal semantics for the language is also provided, so formal analysis over the defined specifications can be performed.
+%
+%\item In \cite{Andersen2006} it is presented a declarative language for the compositional specification of contracts governing resources interchange. In this language a contract is considered as a set of event traces, being each one of these traces an alternative for a successful termination of the contract.
+%
+%\item  In \cite{Belhaouari2007} the Tamago platform is described, which provides a set of tools to make the development of contract-oriented software easier. This platform includes a specification language similar to an interface description language, but adding observable properties, first-order logic assertions (preconditions, postconditions and invariants), and descriptions of the interfaces behaviour based on automata. The platform also includes tools for the static analysis to detect inconsistencies in the specification of the contracts.
+%
+%\item In \cite{Bravetti2007} the e-contracts are related to the concept of \textit{choreography conformance}, used to analyze whether a service composition behaves according to a high-level specification of its possible conversations. This work defines a formal procedure that can be used to verify if a service governed by a concrete contract can take part in a choreography playing one of the involved roles correctly.
+%
+%\item  In \cite{Buscemi2008} it is described the language Cc-Pi, which is based on restrictions and used for contracts with service level agreements (SLAs). These contracts specify the requirements of the client and guarantees for the offered service, paying special attention to the quality of the service (QoS). In Cc-Pi the requirements contained in the agreements are translated into restrictions that can be generated by one of the involved parties or by the synchronization of two agents.
+%
+%\item In \cite{Carpineti2006} a formal language for the specification of e-contracts is defined, which is able to handle subcontracts and conformance relations. In this approach the contracts are considered as abstract definitions of conversation protocols between several interacting parties. The language is a fragment of the process algebra CCS \cite{Milner1980} without recursion and including in its syntax elements such as the internal and external choice operators and prefixes to denote input and output messages.
+%
+%\item In \cite{Davulcu2004} a logic called $\cal CTR-S$ is presented. It is used to model both static and dynamic aspects about the contracting of Semantic Web Services \cite{McIlraith2001}, where contracts are represented as formulas specifying the multiple options permitted by the interacting parties. One of the main features of this logic is the ability to model competitive situations between different parties, choosing always the best possible option.
+%
+%\item In \cite{Desai2008} reasoning about the correctness of contracts is automated by representing contracts formally as a set of commitments, with values associated with satisfying or violating commitments. Correctness properties for contracts are defined and a methodology and algorithms for the verification of these properties are presented.
+%
+%\item In \cite{Governatori2006} it is provided a mechanism to check whether business processes are compliant with business contracts. A logic based formalism called FCL is introduced for describing both the semantics of contract and the semantics of compliance checking procedures. This approach is based on deontic logic.
+%
+%\item In \cite{Lomuscio2008} an approach for the verification of contract-regulated service compositions is presented. In this approach services and contracts are specified as WSBPEL behaviours. These behaviours are compiled into the specialised system description language ISPL and then verified using the symbolic model checker MCMAS \cite{Lomuscio2006}. The formalism of temporal-epistemic logic is used to deal with compliance and violation of the contracts.
+%
+%\item In \cite{Prisacariu2008} a formal language called $\cal CL$ for the specification of e-contracts is described. This language is based on the deontic notions of obligation, permission and prohibition apply over actions, and also includes the possibility of specifying reparations for contract violations and preconditions for the application of contract clauses. This work also describes a logic extending the $\mu-calculus$, called $\cal C\mu$, that is able to capture the deontic notions mentioned before and to express concurrent actions. Finally, it is specified how to carry out the translation from the $\cal CL$ language to the $\cal C\mu$ logic.
+%
+%\item In \cite{Solaiman2003} it is shown how relevant parts of electronic contracts can be described by means of Finite State Machines (FSMs), using these FSMs to check the correctness of the contract specification, detecting any undesirable ambiguity. The Promela language and the Spin validator are used for this purpose \cite{Holzmann1997}.
+%
+%\end{itemize}
+
+\section{Summary}\label{sumArt}
+\markright{~\ref{sumArt} Summary}
+
+This chapter has described the state of the art of Service-Oriented Computing (SOC), the formalization of Web Service compositions, and the specification of electronic contracts (e-contracts).
+
+The development of systems based on Web Services allows the creation of fast, low-cost, flexible and scalable applications, where the integration is possible thanks to the definition of multiple standard protocols (WSDL, SOAP, UDDI). However, the correct composition of Web Services is still an open problem, where different approaches can be followed, such as orchestration (BPEL) and choreography (WS-CDL, WSCI, OWL-S). The formal analysis of Web Service compositions by means of formal methods is therefore necessary to guarantee the correct composition.
+
+Several formal techniques can be used for the analysis of Web Service compositions, being model checking one of the most popular. This is an automated technique consisting of the construction of a finite-state model of the system to check if
+some properties are satisfied. Different specification formalisms can be used in model checking (process algebras, Petri nets, automata) and there are several tools supporting each one of these formalisms (CWB-NC, CPN Tools, UPPAAL).
+
+E-contracts are used in the field of Web Service compositions as an agreement specifying how the services can interact, improving in this way the confidence when it is consumed a service provided by another entity. Different approaches can be followed for the specification of e-contracts (Service-Level Agreements, behavioural interfaces, deontic e-contracts), but common goals must be fulfilled by all the approaches, such as the identification of dependencies and inconsistencies between clauses, the management of conflicts, etc.
+
+The formalization of e-contracts is an important research to carry out, in order to check the correctness of the e-contracts and the conformance of systems with respect to contract definitions. Multiple approaches can be found in the literature for this purpose, but additional efforts are still needed to cope with all the different problems that are related to this field.
