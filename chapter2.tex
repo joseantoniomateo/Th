@@ -263,7 +263,184 @@ We can distinguish two different kinds of \textit{complex activities} inside a c
 Different types of exceptions are considered in WS-CDL. Exception workunits can be defined to handle all these exceptions. They may also be used as the mechanism to recover from the exceptions. At least one exception workunit must be defined. The guard of the workunit can be used to specify the particular type of exception we want to handle. Only one exception workunit can match each exception. If multiple exception workunits are defined, the order of evaluating them is based on the order in which the workunits have been defined. When the matching happens, the actions of the matched workunit are executed. If no matching happens and a default exception workunit exists, then the actions of this workunit are executed. Otherwise, the exception is raised in the parent choreography. WS-CDL also allows us to define finalization actions within a choreography that can confirm or cancel the effects of this choreography, so we can use this actions for compensation. 
 
 \subsection {WS-BPEL}
+Traditional methods for integration and business process automation 
+typically involve embedded logic inside of applications designed 
+to meet a specific business need such as ERP, supply chain, or CRM. 
+The development, testing, and deployment efforts required 
+to change these applications make integration and process changes both costly and complex.
 
+To address these issues, proprietary products emerged 
+to abstract integration and process automation into a new layer of software tools. 
+These software products liberated integration and process tasks from 
+the underlying business systems so they could be more effectively changed, managed, and optimized.
+
+The Business Process Execution Language for Web Services (BPEL4WS) 
+was first conceived in July, 2002 with the release of the BPEL4WS 
+1.0 specification, a joint effort by IBM, Microsoft, and BEA. 
+This document proposed an orchestration language inspired 
+by previous variations, such as IBM?s Web Services Flow Language (WSFL) and Microsoft?s XLANG specification.
+
+Joined by other contributors from SAP and Siebel Systems, version 1.1 
+of the BPEL4WS specification was released less than a year later, in May of 2003. 
+This version received more attention and vendor support, 
+leading to a number of commercially available BPEL4WS-compliant 
+orchestration engines. Just prior to this release, 
+the BPEL4WS specification was submitted to an OASIS 
+technical committee so that the specification could be developed into an official, open standard.
+
+The OASIS WS-BPEL Technical Committee was active from April 2003 to May 2007. It was co-chaired by Diane Jordan of IBM and John Evdemon of Microsoft. The Committee's email archives remain publicly accessible.
+
+In April 2007, WS-BPEL version 2.0 was approved as an OASIS Standard. More than 37 organizations collaborated to develop WS-BPEL, including representatives of Active Endpoints, Adobe Systems, BEA Systems, Booz Allen Hamilton, EDS, HP, Hitachi, IBM, IONA, Microsoft, NEC, Nortel, Oracle, Red Hat, Rogue Wave, SAP, Sun Microsystems, TIBCO, webMethods, and other members of OASIS.
+
+In January 2008, OASIS issued a Call for Participation in the BPEL4People Technical Committee. The group works to define a WS-BPEL extension enabling the definition of human interactions ("human tasks") as part of a WS-BPEL process.
+
+\begin{figure}[h]
+\begin{center}
+\psfig{file=Figures/bpelhistory.eps,scale=.7}
+\end{center}
+\caption{Integration of Web Services using WS-CDL.}
+\label{Figure2}
+\end{figure}
+
+There were ten original design goals associated with BPEL:
+
+    Define business processes that interact with external entities through web service operations defined using WSDL 1.1, and that manifest themselves as Web services defined using WSDL 1.1. The interactions are ?abstract? in the sense that the dependence is on portType definitions, not on port definitions.
+    Define business processes using an XML-based language. Do not define a graphical representation of processes or provide any particular design methodology for processes.
+    Define a set of Web service orchestration concepts that are meant to be used by both the external (abstract) and internal (executable) views of a business process. Such a business process defines the behavior of a single autonomous entity, typically operating in interaction with other similar peer entities. It is recognized that each usage pattern (i.e., abstract view and executable view) will require a few specialized extensions, but these extensions are to be kept to a minimum and tested against requirements such as import/export and conformance checking that link the two usage patterns.
+    Provide both hierarchical and graph-like control regimes, and allow their use to be blended as seamlessly as possible. This should reduce the fragmentation of the process modeling space.
+    Provide data manipulation functions for the simple manipulation of data needed to define process data and control flow.
+    Support an identification mechanism for process instances that allows the definition of instance identifiers at the application message level. Instance identifiers should be defined by partners and may change.
+    Support the implicit creation and termination of process instances as the basic lifecycle mechanism. Advanced lifecycle operations such as "suspend" and "resume" may be added in future releases for enhanced lifecycle management.
+    Define a long-running transaction model that is based on proven techniques like compensation actions and scoping to support failure recovery for parts of long-running business processes.
+    Use Web Services as the model for process decomposition and assembly.
+    Build on Web services standards (approved and proposed) as much as possible in a composable and modular manner.
+
+BPEL and Web services now provide a standardized integration interface 
+and a standardized language for integration and process automation. 
+BPEL, in effect, has the potential to commoditize the capabilities 
+provided by proprietary EAI and BPM solutions. As often occurs in a 
+commodity market, the resulting prices for products and services are certain to fall.
+Developing the web services and exposing the functionalities is not sufficient. We also
+need a way to compose these functionalities in the right order ? a way to define
+business processes which will make use of the exposed functionalities. We would
+obviously prefer a relatively simple and straightforward way to define such processes,
+particularly because we know that business processes change often, therefore we
+would like to modify them easily.
+BPEL is thus comparable to general purpose programming language such as Java, but it
+is not as powerful as Java. On the other hand it is simpler and better suited for business
+process definition. Therefore BPEL is not a replacement but rather a supplement to
+modern languages.
+Choreography has not gained support from the
+industry which would be comparable to BPEL.
+This is where the BPEL (Business Process Execution Language for Web Services, also
+WS-BPEL or BPEL4WS) becomes important. BPEL allows composition of web services
+and is thus the top-down approach to SOA ? the process oriented approach to SOA.
+Let us have a closer look at a typical BPEL process. First, the BPEL business process
+receives a request. To fulfill it, the process then invokes the involved web services and
+finally responds to the original caller. Because the BPEL process communicates with
+other web services, it relies heavily on the WSDL description of the web services
+invoked by the composite web service.
+
+%The first version of BPEL has been developed in August 2002 by BEA, IBM, and
+%Microsoft. Since then the majority of vendors have joined which has resulted in several
+%modifications and improvements and adoption of version 1.1 in March 2003. In April
+%2003, BPEL was submitted to OASIS (Organization for the Advancement of Structured
+%Information Standards) for standardization purposes where the WSBPEL TC (Web
+%Services Business Process Execution Language Technical Committee) has been formed
+%since. This
+%has led to even broader acceptance in industry.
+
+The process-oriented approach to SOA requires a language for relatively simple
+description of how web services should be composed into business processes. Of
+course it would be great if such descriptions could also be executed, which would allow
+us not only to define abstract process definitions, but to write exact executable
+specifications of processes. BPEL is such a language. Actually it is the first language
+which:
+
+BPEL Language
+1. Allows us to define abstract and executable processes
+2. Is supported by the majority of companies
+3. Software exists (from several vendors) on which such processes can be executed
+(BPEL servers) and developed (BPEL designers).
+
+
+The idea and motivation behind almost each new technology and platform for
+enterprise application development is to provide an environment where better
+business applications can be developed with less effort ?business applications which
+should closely align to the business processes, which should not be too complex, and
+which can be adapted to the changing nature of business processes without too much
+effort.
+Java has provided an excellent platform for developing such applications, but business
+applications today cannot be isolated. Within companies, business applications have to
+interoperate and integrate - so they have between companies. Integrating different
+applications has always been a difficult task for various functional and technology
+related reasons.
+BPEL builds on top of XML and web services. It is an XML-based language which
+supports the web services technology stack, including SOAP, WSDL, UDDI, WS-Reliable
+Messaging, WS-Addressing, WS-Coordination and WS-Transaction. BPEL represents a
+convergence of two early workflow languages, WSFL (Web Services Flow Language) and
+XLANG. WSFL was designed by IBM and is based on the concept of directed graphs.
+XLANG was designed by Microsoft and is a block-structured language. BPEL combines
+both approaches and provides a rich vocabulary for description of business processes.
+A BPEL process specifies the exact order in which participating web services should be
+invoked. This can be done sequentially or in parallel. With BPEL, we can express
+conditional behavior, for example, a web service invocation can depend on the value of
+a previous invocation. We can also construct loops, declare variables, copy and assign
+values, define fault handlers, and so on. By combining all these constructs, we can
+define complex business processes in an algorithmic manner.
+From the perspective of composing web services to execute business processes,
+orchestration is the more flexible approach compared to choreography:
+We know exactly who is responsible for the execution of the whole business
+process.
+We can incorporate web services, even those that are not aware that they are a
+part of a business process.
+We can also provide alternative scenarios when faults occur.
+Developing the web services and exposing the functionalities is not sufficient. We also
+need a way to compose these functionalities in the right order ? a way to define
+business processes which will make use of the exposed functionalities. We would
+obviously prefer a relatively simple and straightforward way to define such processes,
+particularly because we know that business processes change often, therefore we
+would like to modify them easily.
+BPEL is thus comparable to general purpose programming language such as Java, but it
+is not as powerful as Java. On the other hand it is simpler and better suited for business
+process definition. Therefore BPEL is not a replacement but rather a supplement to
+modern languages such as Java.
+BPEL follows the orchestration paradigm. Choreography is covered by other standards,
+such as WSCI (Web Services choreography Interface) and WS-CDL (Web Services
+Choreography Description Language). Choreography has not gained support from the
+industry which would be comparable to BPEL.
+This is where the BPEL (Business Process Execution Language for Web Services, also
+WS-BPEL or BPEL4WS) becomes important. BPEL allows composition of web services
+and is thus the top-down approach to SOA ? the process oriented approach to SOA.
+Let us have a closer look at a typical BPEL process. First, the BPEL business process
+receives a request. To fulfill it, the process then invokes the involved web services and
+finally responds to the original caller. Because the BPEL process communicates with
+other web services, it relies heavily on the WSDL description of the web services
+invoked by the composite web service.
+
+
+
+Executable processesallow us to specify the exact details of business processes.
+They can be executed by an orchestration engine. In most cases BPEL is used for
+executable processes.
+Abstract business protocols allow us to specify the public message exchange
+between parties only. They do not include the internal details of process flows
+and are not executable.
+Choreography on the other hand does not rely on a central coordinator. Rather, each
+web service involved in the choreography knows exactly when to execute its operations
+and whom to interact with. Choreography is a collaborative effort focused on exchange
+of messages. All participants of the choreography need to be aware of the business
+process, operations to execute, messages to exchange, and the timing of message
+exchanges.
+The most recent answer to the integration challenge is the Service Oriented
+Architecture (SOA) and the web services technologies. The bottom-up view of the SOA
+sees different business applications exposing their functionalities through web services.
+Thus we can now access different functionalities of different legacy and new developed
+applications in a standard way (through web services). Such access to functionalities is
+important because typical companies have a large number of existing applications
+which have to be integrated.
+
+ 
 WS-BPEL \cite{BPEL4WS}, for short BPEL, 
 is an OASIS orchestration language for specifying actions within 
 Web service business processes. BPEL is therefore an orchestration
@@ -278,14 +455,12 @@ order of a set of activities (mostly communication activities), the partners inv
 messages exchanged between partners, and the events and exception handling specifying the behaviour
 when specific events or faults occur.
 
-A WS-BPEL Abstract Process is a partially specified process that is not intended to be executed
-and that must be explicitly declared as ``abstract''. Whereas Executable Processes are fully
-specified and thus can be executed, an abstract process may hide some of the required concrete
+Thus, a WS-BPEL abstract process is a partially specified process that is not intended to be executed
+and it must be explicitly declared as ``abstract''. As its name indicates, 
+an abstract process may hide some of the required 
 operational details expressed by an executable artifact.
-All the constructs of executables processes are made available to abstract processes;
-consequently, Executable and Abstract WS-BPEL Processes share the same expressive power. In
-addition to the features available in Executable Processes, Abstract Processes provide two
-mechanisms for hiding operational details: (1) the use of explicit opaque tokens and (2) omission.
+All the constructs of executables processes are made available to abstract processes
+and, consequently, they share the same expressive power \cite{}. 
 Although a particular Abstract Process definition might contain complete information that would
 render it Executable, its Abstract status states that any concrete realizations of it are permitted to
 perform additional processing steps that are not relevant to the audience to which it has been
@@ -297,37 +472,25 @@ executable process. Another use case would be to define a process template that 
 domain-specific best practices. Such a process template would capture essential process logic in
 a manner compatible with a design-time representation, while excluding execution details to be
 completed when mapping to an executable Process.
-Regardless of the specific use case and purpose, all abstract processes share a common syntactic
-base. They have different requirements for the level of opacity and restrictions on which parts of
-a process definition may be omitted or hidden. Tailored uses of abstract Processes have different
-effects on the consistency constraints and on the semantics of that process. 
 
-A common base specifies the features that define the syntactic universe of Abstract Processes.
-Given this common base, a usage profile provides the necessary specializations and semantics
-based on Executable WS-BPEL for a particular use of an Abstract Process.
-As mentioned above it is possible to use WS-BPEL to define an Executable Business Process.
-While a WS-BPEL Abstract Process definition is not required to be fully specified, the language
-effectively defines a portable execution format for business processes that rely exclusively on
-Web Service resources and XML data. Moreover, such processes execute and interact with their
+
+As mentioned above it is possible to use WS-BPEL to define an executable business process, that is, 
+the language effectively defines a portable execution format for business processes that rely exclusively on
+web Services and XML data. Moreover, such processes execute and interact with their
 partners in a consistent way regardless of the supporting platform or programming model used
 by the implementation of the hosting environment.
 The continuity of the basic conceptual model between Abstract and Executable Processes in WS-
 BPEL makes it possible to export and import the public aspects embodied in Abstract Processes
 as process or role templates while maintaining the intent and structure of the observable behavior.
 This applies even where private implementation aspects use platform dependent functionality.
-
-
 This is a key feature for the use of WS-BPEL from the viewpoint of unlocking the potential of
-Web Services because it allows the development of tools and other technologies that greatly
+web services because it allows the development of tools and other technologies that greatly
 increase the level of automation and thereby lower the cost in establishing cross enterprise
 automated business processes.
 
-In this specification, the description of Abstract Business Processes is presented after Executable.
-We clearly differentiate concepts required for Abstract Business Process description from the
-concepts for Executable in the section 13. WS-BPEL Abstract Processes.
-WS-BPEL defines a model and a grammar for describing the behavior of a business process
+In detail, WS-BPEL defines a model and a grammar for describing the behavior of a business process
 based on interactions between the process and its partners. The interaction with each partner
-occurs through Web Service interfaces, and the structure of the relationship at the interface level
+occurs through web service interfaces, and the structure of the relationship at the interface level
 is encapsulated in what is called a partnerLink. The WS-BPEL process defines how multiple
 service interactions with these partners are coordinated to achieve a business goal, as well as the
 state and the logic necessary for this coordination. WS-BPEL also introduces systematic
@@ -337,17 +500,12 @@ are to be compensated in cases where exceptions occur or a partner requests reve
 
 A WS-BPEL process is a reusable definition that can be deployed in different ways and in
 different scenarios, while maintaining a uniform application-level behavior across all of them.
-The description of the deployment of a WS-BPEL process is out of scope for this specification.
 
 BPEL processes use {\em variables} to temporarily store 
 data. Variables are therefore declared on a process or on a scope 
 within that process. I
 
-An orchestrator consists of a main activity, representing
-the normal behaviour of this participant. There are also
-event and fault activities, which are executed upon the
-occurrence of some events, or due to some execution failures,
-respectively. BPEL activities 
+BPEL activities 
 can be \emph{basic} or \emph{structured}. 
 \emph{Basic activities} are those which describe the elemental 
 steps of the process behaviour, such as the assignment of

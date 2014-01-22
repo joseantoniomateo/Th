@@ -5,36 +5,22 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Client-server web architecture\relax }}{13}{figure.caption.10}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Web Service architecture stack.\relax }}{15}{figure.caption.11}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Integration of Web Services using WS-CDL.\relax }}{16}{figure.caption.12}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Actores en un sistema en la nube.\relax }}{25}{figure.caption.13}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Ejemplo de uso de WS-Notification sin broker.\relax }}{38}{figure.caption.20}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Web Service architecture stack.\relax }}{43}{figure.caption.21}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Part of a shipping service specification in BPEL\relax }}{46}{figure.caption.23}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Integration of Web Services using WS-CDL.\relax }}{19}{figure.caption.13}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Actores en un sistema en la nube.\relax }}{29}{figure.caption.14}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Ejemplo de uso de WS-Notification sin broker.\relax }}{43}{figure.caption.21}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Web Service architecture stack.\relax }}{48}{figure.caption.22}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Part of a shipping service specification in BPEL\relax }}{51}{figure.caption.24}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Orchestration Translation}}{68}{figure.3.1}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces While Activity Translation.\relax }}{73}{figure.caption.34}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces CreateResource Activity Translation.\relax }}{74}{figure.caption.35}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Subscribe Activity Translation.\relax }}{74}{figure.caption.36}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces GetProperty Activity Translation.\relax }}{75}{figure.caption.37}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces SetProperty Activity Translation.\relax }}{75}{figure.caption.38}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces SetTimeout Activity Translation.\relax }}{75}{figure.caption.39}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces A simplified PTCPN for the online auction system.\relax }}{78}{figure.caption.40}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Orchestration Translation\relax }}{74}{figure.caption.31}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Sequence Translation\relax }}{77}{figure.caption.32}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Parallel Activity Translation.\relax }}{78}{figure.caption.33}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Pick Activity Translation.\relax }}{79}{figure.caption.34}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces While Activity Translation.\relax }}{79}{figure.caption.35}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces CreateResource Activity Translation.\relax }}{80}{figure.caption.36}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Subscribe Activity Translation.\relax }}{80}{figure.caption.37}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces GetProperty Activity Translation.\relax }}{81}{figure.caption.38}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces SetProperty Activity Translation.\relax }}{81}{figure.caption.39}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces SetTimeout Activity Translation.\relax }}{81}{figure.caption.40}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces A simplified PTCPN for the online auction system.\relax }}{84}{figure.caption.41}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Example of systems where formal methods are (can be) used .\relax }}{8}{figure.caption.8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Cost evolution of fixing a bug.\relax }}{11}{figure.caption.9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Client-server web architecture\relax }}{13}{figure.caption.10}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Web Service architecture stack.\relax }}{15}{figure.caption.11}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Integration of Web Services using WS-CDL.\relax }}{16}{figure.caption.12}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Actores en un sistema en la nube.\relax }}{25}{figure.caption.13}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Ejemplo de uso de WS-Notification sin broker.\relax }}{38}{figure.caption.20}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Web Service architecture stack.\relax }}{43}{figure.caption.21}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Part of a shipping service specification in BPEL\relax }}{46}{figure.caption.23}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Orchestration Translation}}{68}{figure.3.1}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces While Activity Translation.\relax }}{73}{figure.caption.34}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces CreateResource Activity Translation.\relax }}{74}{figure.caption.35}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Subscribe Activity Translation.\relax }}{74}{figure.caption.36}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces GetProperty Activity Translation.\relax }}{75}{figure.caption.37}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces SetProperty Activity Translation.\relax }}{75}{figure.caption.38}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces SetTimeout Activity Translation.\relax }}{75}{figure.caption.39}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces A simplified PTCPN for the online auction system.\relax }}{78}{figure.caption.40}

@@ -6,85 +6,46 @@
 \contentsline {section}{\numberline {2.1}Motivation}{7}{section.2.1}
 \contentsline {section}{\numberline {2.2}Web Services modelling}{12}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}WS-BPEL}{17}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}Cloud Computing/Grid Computing}{20}{section.2.3}
-\contentsline {section}{\numberline {2.4}Introducción}{21}{section.2.4}
-\contentsline {section}{\numberline {2.5}Comparación entre servicios web y Grid computing/Cloud computing}{24}{section.2.5}
-\contentsline {section}{\numberline {2.6}Web Services Resource Framework(WSRF)}{27}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Introducción}{29}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}WS-ResourceProperties}{30}{subsection.2.6.2}
-\contentsline {subsubsection}{GetResourceProperty}{31}{section*.14}
-\contentsline {subsubsection}{GetMultipleResourceProperties}{32}{section*.15}
-\contentsline {subsubsection}{SetResourceProperties}{32}{section*.16}
-\contentsline {subsubsection}{QueryResourceProperties}{33}{section*.17}
-\contentsline {subsection}{\numberline {2.6.3}WS-Base Faults}{34}{subsection.2.6.3}
-\contentsline {subsection}{\numberline {2.6.4}WS-ServiceGroup}{35}{subsection.2.6.4}
-\contentsline {subsection}{\numberline {2.6.5}WS-ResourceLifetime}{35}{subsection.2.6.5}
-\contentsline {subsubsection}{Destrucción inmediata}{35}{section*.18}
-\contentsline {subsubsection}{Destrucción temporizada}{36}{section*.19}
-\contentsline {section}{\numberline {2.7}WS-Notification}{37}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}WS-BrokeredNotification}{40}{subsection.2.7.1}
-\contentsline {section}{\numberline {2.8}Service-Oriented Computing (SOC)}{41}{section.2.8}
-\contentsline {subsection}{\numberline {2.8.1}Service-Oriented Architecture (SOA)}{42}{subsection.2.8.1}
-\contentsline {subsection}{\numberline {2.8.2}Web Services (WS)}{42}{subsection.2.8.2}
-\contentsline {subsection}{\numberline {2.8.3}Web Service Composition}{43}{subsection.2.8.3}
-\contentsline {subsubsection}{Business Process Execution Language (BPEL)}{44}{section*.22}
-\contentsline {section}{\numberline {2.9}Formal Analysis of Web Service Compositions}{45}{section.2.9}
-\contentsline {subsection}{\numberline {2.9.1}Specification Formalisms}{47}{subsection.2.9.1}
-\contentsline {section}{\numberline {2.10}Summary}{47}{section.2.10}
-\contentsline {chapter}{\numberline {3}BPELRF}{49}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{49}{section.3.1}
-\contentsline {section}{\numberline {3.2}Background and Related Work}{51}{section.3.2}
-\contentsline {section}{\numberline {3.3}Syntax and semantics of BPEL+RF}{55}{section.3.3}
-\contentsline {section}{\numberline {3.4}Case Study: Automatic management system for stock market investments}{62}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Related Work}{63}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Prioritised-Timed Coloured Petri Nets}{64}{section.3.5}
-\contentsline {section}{\numberline {3.6}Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{65}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Prioritised-Timed Coloured Petri Nets}{65}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}PTCPN Semantics for WSRF/BPEL}{67}{subsection.3.6.2}
-\contentsline {section}{\numberline {3.7}Case study: Online auction service}{76}{section.3.7}
-\contentsline {section}{\numberline {3.8}Summary}{78}{section.3.8}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Objectives}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}Dissertation Structure}{4}{section.1.3}
-\contentsline {chapter}{\numberline {2}State of the Art}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Motivation}{7}{section.2.1}
-\contentsline {section}{\numberline {2.2}Web Services modelling}{12}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}WS-BPEL}{17}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}Cloud Computing/Grid Computing}{20}{section.2.3}
-\contentsline {section}{\numberline {2.4}Introducción}{21}{section.2.4}
-\contentsline {section}{\numberline {2.5}Comparación entre servicios web y Grid computing/Cloud computing}{24}{section.2.5}
-\contentsline {section}{\numberline {2.6}Web Services Resource Framework(WSRF)}{27}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Introducción}{29}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}WS-ResourceProperties}{30}{subsection.2.6.2}
-\contentsline {subsubsection}{GetResourceProperty}{31}{section*.14}
-\contentsline {subsubsection}{GetMultipleResourceProperties}{32}{section*.15}
-\contentsline {subsubsection}{SetResourceProperties}{32}{section*.16}
-\contentsline {subsubsection}{QueryResourceProperties}{33}{section*.17}
-\contentsline {subsection}{\numberline {2.6.3}WS-Base Faults}{34}{subsection.2.6.3}
-\contentsline {subsection}{\numberline {2.6.4}WS-ServiceGroup}{35}{subsection.2.6.4}
-\contentsline {subsection}{\numberline {2.6.5}WS-ResourceLifetime}{35}{subsection.2.6.5}
-\contentsline {subsubsection}{Destrucción inmediata}{35}{section*.18}
-\contentsline {subsubsection}{Destrucción temporizada}{36}{section*.19}
-\contentsline {section}{\numberline {2.7}WS-Notification}{37}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}WS-BrokeredNotification}{40}{subsection.2.7.1}
-\contentsline {section}{\numberline {2.8}Service-Oriented Computing (SOC)}{41}{section.2.8}
-\contentsline {subsection}{\numberline {2.8.1}Service-Oriented Architecture (SOA)}{42}{subsection.2.8.1}
-\contentsline {subsection}{\numberline {2.8.2}Web Services (WS)}{42}{subsection.2.8.2}
-\contentsline {subsection}{\numberline {2.8.3}Web Service Composition}{43}{subsection.2.8.3}
-\contentsline {subsubsection}{Business Process Execution Language (BPEL)}{44}{section*.22}
-\contentsline {section}{\numberline {2.9}Formal Analysis of Web Service Compositions}{45}{section.2.9}
-\contentsline {subsection}{\numberline {2.9.1}Specification Formalisms}{47}{subsection.2.9.1}
-\contentsline {section}{\numberline {2.10}Summary}{47}{section.2.10}
-\contentsline {chapter}{\numberline {3}BPELRF}{49}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{49}{section.3.1}
-\contentsline {section}{\numberline {3.2}Background and Related Work}{51}{section.3.2}
-\contentsline {section}{\numberline {3.3}Syntax and semantics of BPEL+RF}{55}{section.3.3}
-\contentsline {section}{\numberline {3.4}Case Study: Automatic management system for stock market investments}{62}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Related Work}{63}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Prioritised-Timed Coloured Petri Nets}{64}{section.3.5}
-\contentsline {section}{\numberline {3.6}Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{65}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Prioritised-Timed Coloured Petri Nets}{65}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}PTCPN Semantics for WSRF/BPEL}{67}{subsection.3.6.2}
-\contentsline {section}{\numberline {3.7}Case study: Online auction service}{76}{section.3.7}
-\contentsline {section}{\numberline {3.8}Summary}{78}{section.3.8}
+\contentsline {section}{\numberline {2.3}Cloud Computing/Grid Computing}{25}{section.2.3}
+\contentsline {section}{\numberline {2.4}Introducción}{26}{section.2.4}
+\contentsline {section}{\numberline {2.5}Comparación entre servicios web y Grid computing/Cloud computing}{29}{section.2.5}
+\contentsline {section}{\numberline {2.6}Web Services Resource Framework(WSRF)}{32}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Introducción}{33}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}WS-ResourceProperties}{35}{subsection.2.6.2}
+\contentsline {subsubsection}{GetResourceProperty}{35}{section*.15}
+\contentsline {subsubsection}{GetMultipleResourceProperties}{36}{section*.16}
+\contentsline {subsubsection}{SetResourceProperties}{36}{section*.17}
+\contentsline {subsubsection}{QueryResourceProperties}{38}{section*.18}
+\contentsline {subsection}{\numberline {2.6.3}WS-Base Faults}{39}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}WS-ServiceGroup}{40}{subsection.2.6.4}
+\contentsline {subsection}{\numberline {2.6.5}WS-ResourceLifetime}{40}{subsection.2.6.5}
+\contentsline {subsubsection}{Destrucción inmediata}{40}{section*.19}
+\contentsline {subsubsection}{Destrucción temporizada}{41}{section*.20}
+\contentsline {section}{\numberline {2.7}WS-Notification}{42}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}WS-BrokeredNotification}{45}{subsection.2.7.1}
+\contentsline {section}{\numberline {2.8}Service-Oriented Computing (SOC)}{46}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Service-Oriented Architecture (SOA)}{47}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}Web Services (WS)}{47}{subsection.2.8.2}
+\contentsline {subsection}{\numberline {2.8.3}Web Service Composition}{48}{subsection.2.8.3}
+\contentsline {subsubsection}{Business Process Execution Language (BPEL)}{49}{section*.23}
+\contentsline {section}{\numberline {2.9}Formal Analysis of Web Service Compositions}{50}{section.2.9}
+\contentsline {subsection}{\numberline {2.9.1}Specification Formalisms}{52}{subsection.2.9.1}
+\contentsline {section}{\numberline {2.10}Summary}{52}{section.2.10}
+\contentsline {chapter}{\numberline {3}BPELRF}{55}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{55}{section.3.1}
+\contentsline {section}{\numberline {3.2}Background and Related Work}{57}{section.3.2}
+\contentsline {section}{\numberline {3.3}Syntax and semantics of BPEL+RF}{61}{section.3.3}
+\contentsline {section}{\numberline {3.4}Case Study: Automatic management system for stock market investments}{68}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Related Work}{69}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Prioritised-Timed Coloured Petri Nets}{70}{section.3.5}
+\contentsline {section}{\numberline {3.6}Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{71}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Prioritised-Timed Coloured Petri Nets}{71}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}PTCPN Semantics for WSRF/BPEL}{73}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Basic activities}{75}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Ordering structures}{76}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.5}WSRF-compliant}{78}{subsection.3.6.5}
+\contentsline {section}{\numberline {3.7}Case study: Online auction service}{82}{section.3.7}
+\contentsline {section}{\numberline {3.8}Summary}{84}{section.3.8}
+\contentsline {chapter}{\numberline {4}Timed-arc workflow nets}{91}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusions, Contributions and Future Works}{93}{chapter.5}
+\contentsline {chapter}{Bibliography}{96}{appendix*.42}
