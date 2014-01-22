@@ -2354,6 +2354,24 @@ We have then simulated and analysed the system, and we have concluded that the s
 \caption{\label{casestudy} A simplified PTCPN for the online auction system.}
 \end{figure}
 
+%%%Formal Analysis of Web Service Compositions%%%
+\section{Formal Analysis of Web Service Compositions}\label{AnalysisWSC}
+
+In last years the formal analysis of Web Service compositions has been recognized as an important problem that needs to be solved \cite{Carbone2006,Dong2006,Foster2007,Yang2008}. A strict analysis is necessary to guarantee the correct composition of the services for multiple reasons: the integration of several independent applications, the possibility of having incomplete specifications of some services, the impossibility of using traditional evaluation techniques such as software testing, \ldots
+
+The analysis of Web Service compositions usually consists of checking its specification correctness by analysing if a set of functional and non-functional requirements are fulfilled. The behavioural requirements are especially interesting, as they specify the properties required to reach a concrete business goal. These requirements can include general properties such as deadlock freeness or correct termination, but they can also be defined explicitly, for example defining the conformance to a concrete model. This formal analysis is usually done by means of formal methods.
+
+Formal methods \cite{Wing1990} are a collection of notations and techniques for describing and analyzing systems \cite{Peled2001}. They are called \textit{formal} because they are based on mathematical theories (logics, automata, sets, \ldots). In formal methods we can distinguish between the \textit{formal specification}, which describes unambiguously a system or its properties, and the \textit{formal analysis} or \textit{formal verification}, which serves to verify if a system satisfies its specification.
+
+Formal methods usually cannot guarantee the correctness of the implementation and, if the specification is not correct, the verification results will also be wrong. Despite these and some other limitations, formal methods are still needed because they increase the confidence on system reliability, minimize the number of errors in the implementation and can find out errors impossible to find with other techniques such as testing.
+
+When we are going to apply a formal method it is very important to choose the right level of abstraction in the specification of the system depending on what we want to analyze or verify. An underspecification can lead to wrong verification results because the specification is incomplete, whereas an overspecification can lead to the \textit{state explosion problem}, making the intended analysis of the system infeasible.
+
+Formal methods can be applied in different stages of the computer system development process, providing different information about the system in each one of these stages. The application of these methods is usually complex, being impossible without some kind of tool support. For this purpose, the language syntax of the specification must be explicit and the language semantics of the specification must be restricted. In this way, formal specifications are amenable to automate analysis and verification.
+
+The choice of using one formal method or another depends on many factors: the problem we want to solve, the type of system, the properties we want to check, and so on. In the case of complex systems, such as distributed concurrent systems, it is needed a combination of several techniques for the analysis.
+
+
 \section{Summary}\label{sumWebServ}
 \markright{~\ref{sumWebServ} Summary}
 

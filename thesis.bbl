@@ -35,6 +35,11 @@ S.~Schuman J.~R.~Abrial and B.~Meyer.
 \newblock {\em Cambridge University Press, eds. A. M. Macnaghten and R. M.
   McKeag}, 1980.
 
+\bibitem{wsbpelstandard}
+Organization for the Advancement of Structured Information Standards (OASIS).
+\newblock {\em Web Services Business Process Execution Language ({WS-BPEL})
+  Version 2.0}, April 2007.
+
 \bibitem{OuyangVABDH07}
 Chun Ouyang, Eric Verbeek, Wil M.~P. van~der Aalst, Stephan Breutel, Marlon
   Dumas, and Arthur H.~M. ter Hofstede.

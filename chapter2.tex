@@ -263,83 +263,91 @@ We can distinguish two different kinds of \textit{complex activities} inside a c
 Different types of exceptions are considered in WS-CDL. Exception workunits can be defined to handle all these exceptions. They may also be used as the mechanism to recover from the exceptions. At least one exception workunit must be defined. The guard of the workunit can be used to specify the particular type of exception we want to handle. Only one exception workunit can match each exception. If multiple exception workunits are defined, the order of evaluating them is based on the order in which the workunits have been defined. When the matching happens, the actions of the matched workunit are executed. If no matching happens and a default exception workunit exists, then the actions of this workunit are executed. Otherwise, the exception is raised in the parent choreography. WS-CDL also allows us to define finalization actions within a choreography that can confirm or cancel the effects of this choreography, so we can use this actions for compensation. 
 
 \subsection {WS-BPEL}
-Traditional methods for integration and business process automation 
+In 2002, researchers and engineers of the main companies of the world (IBM, Microsoft, etc.)
+realised that the new and rapidly emerging process-oriented approach required the definition of 
+a neat and precise language for describing how a set of intecting web services can be included
+in a business process. Traditional methods for integration and business process automation 
 typically involve embedded logic inside of applications designed 
 to meet a specific business need such as ERP, supply chain, or CRM. 
 The development, testing, and deployment efforts required 
-to change these applications make integration and process changes both costly and complex.
-
+to change these applications make integration and process changes both costly and complex \cite{}.
 To address these issues, proprietary products emerged 
 to abstract integration and process automation into a new layer of software tools. 
 These software products liberated integration and process tasks from 
 the underlying business systems so they could be more effectively changed, managed, and optimized.
+The idea and motivation behind almost each new technology and platform for
+enterprise application development is to provide an environment where better
+business applications can be developed with less effort and these business applications
+should closely align to the business processes, which should not be too complex, and
+which can be adapted to the changing nature of business processes without too much
+effort. Within companies, business applications have to
+interoperate and integrate. Integrating different
+applications has always been a difficult task for various functional and technology
+related reasons \cite{}.
 
-The Business Process Execution Language for Web Services (BPEL4WS) 
+The Business Process Execution Language for Web Services (BPEL4WS), for short BPEL, 
 was first conceived in July, 2002 with the release of the BPEL4WS 
-1.0 specification, a joint effort by IBM, Microsoft, and BEA. 
+1.0 specification. This first draft was initially developed by just three companies, IBM, Microsoft, and BEA. 
 This document proposed an orchestration language inspired 
-by previous variations, such as IBM?s Web Services Flow Language (WSFL) and Microsoft?s XLANG specification.
-
-Joined by other contributors from SAP and Siebel Systems, version 1.1 
-of the BPEL4WS specification was released less than a year later, in May of 2003. 
-This version received more attention and vendor support, 
+by previous variations such as Web Services Flow Language (WSFL), developed by IBM and XLANG specification language developed
+by Microsoft. WSFL was designed by IBM and is based on the concept of directed graphs.
+XLANG was designed by Microsoft and is a block-structured language. BPEL combines
+both approaches and provides a rich vocabulary for description of business processes. After this first attempt, other major companies such as SAP and Siebel Systems joined the former ones to write
+the version 1.1 of the BPEL4WS specification that was released less than a year later, in May of 2003. 
+Fortunately, this brand new version received much more attention and vendor support, 
 leading to a number of commercially available BPEL4WS-compliant 
-orchestration engines. Just prior to this release, 
+orchestration engines \cite{}. Before publishing this release, 
 the BPEL4WS specification was submitted to an OASIS 
-technical committee so that the specification could be developed into an official, open standard.
-
-The OASIS WS-BPEL Technical Committee was active from April 2003 to May 2007. It was co-chaired by Diane Jordan of IBM and John Evdemon of Microsoft. The Committee's email archives remain publicly accessible.
-
-In April 2007, WS-BPEL version 2.0 was approved as an OASIS Standard. More than 37 organizations collaborated to develop WS-BPEL, including representatives of Active Endpoints, Adobe Systems, BEA Systems, Booz Allen Hamilton, EDS, HP, Hitachi, IBM, IONA, Microsoft, NEC, Nortel, Oracle, Red Hat, Rogue Wave, SAP, Sun Microsystems, TIBCO, webMethods, and other members of OASIS.
-
-In January 2008, OASIS issued a Call for Participation in the BPEL4People Technical Committee. The group works to define a WS-BPEL extension enabling the definition of human interactions ("human tasks") as part of a WS-BPEL process.
+technical committee in order to be evaluated so that the specification could be developed into an official and open standard.
+This technical committee was active from April 2003 to May 2007, 
+and, during this time, a lot of contributions and improvements were received. 
+In April 2007, WS-BPEL version 2.0 was approved as an OASIS standard. 
+As a proof of maturity, more than 37 organizations collaborated to develop WS-BPEL, including representatives of Active Endpoints, Adobe Systems, BEA Systems, Booz Allen Hamilton, EDS, HP, Hitachi, IBM, IONA, Microsoft, NEC, Nortel, Oracle, Red Hat, Rogue Wave, SAP, Sun Microsystems, TIBCO, webMethods, and other members of OASIS \cite{}.
+Finally, in January 2008, another OASIS technical committee started 
+to define a WS-BPEL extension to emcompass the definition of 
+human interactions (``human tasks'') as part of a WS-BPEL process. Figure \ref{bpelevolution} summarises this evolution-
 
 \begin{figure}[h]
 \begin{center}
 \psfig{file=Figures/bpelhistory.eps,scale=.7}
 \end{center}
-\caption{Integration of Web Services using WS-CDL.}
-\label{Figure2}
+\caption{WS-BPEL evolution.}
+\label{bpelevolution}
 \end{figure}
 
-There were ten original design goals associated with BPEL:
+Moreover, there were established ten original design goals associated with the definition of WS-BPEL \cite{wsbpelstandard}:
+\begin{itemize}
+\item Define business processes that interact with external entities 
+through web service operations defined using WSDL, and that 
+manifest themselves as web services defined using WSDL. 
+\item Define business processes using an XML-based language. 
+Do not define a graphical representation of processes or provide any particular design methodology for processes.
+\item Define a set of web service orchestration concepts that are meant to be used by both the external (abstract) and internal (executable) views of a business process. Such a business process defines the behavior of a single autonomous entity, typically operating in interaction with other similar peer entities. 
+%It is recognized that each usage pattern (i.e., abstract view and executable view) will require a few specialized extensions, but these extensions are to be kept to a minimum and tested against requirements such as import/export and conformance checking that link the two usage patterns.
+\item Provide both hierarchical and graph-like control regimes, and allow their use to be blended as seamlessly as possible. This should reduce the fragmentation of the process modeling space.
+\item Provide data manipulation functions for the simple manipulation of data needed to define process data and control flow.
+\item Support an identification mechanism for process instances that allows the definition of instance identifiers at the application message level. Instance identifiers should be defined by partners and may change.
+\item Support the implicit creation and termination of process instances as the basic lifecycle mechanism. Advanced lifecycle operations such as ``suspend'' and ``resume'' may be added in future releases for enhanced lifecycle management.
+\item Define a long-running transaction model that is based on proven techniques like compensation actions and scoping to support failure recovery for parts of long-running business processes.
+\item Use Web Services as the model for process decomposition and assembly.
+\item  Build on Web services standards (approved and proposed) as much as possible in a composable and modular manner.
+\end{itemize}
 
-    Define business processes that interact with external entities through web service operations defined using WSDL 1.1, and that manifest themselves as Web services defined using WSDL 1.1. The interactions are ?abstract? in the sense that the dependence is on portType definitions, not on port definitions.
-    Define business processes using an XML-based language. Do not define a graphical representation of processes or provide any particular design methodology for processes.
-    Define a set of Web service orchestration concepts that are meant to be used by both the external (abstract) and internal (executable) views of a business process. Such a business process defines the behavior of a single autonomous entity, typically operating in interaction with other similar peer entities. It is recognized that each usage pattern (i.e., abstract view and executable view) will require a few specialized extensions, but these extensions are to be kept to a minimum and tested against requirements such as import/export and conformance checking that link the two usage patterns.
-    Provide both hierarchical and graph-like control regimes, and allow their use to be blended as seamlessly as possible. This should reduce the fragmentation of the process modeling space.
-    Provide data manipulation functions for the simple manipulation of data needed to define process data and control flow.
-    Support an identification mechanism for process instances that allows the definition of instance identifiers at the application message level. Instance identifiers should be defined by partners and may change.
-    Support the implicit creation and termination of process instances as the basic lifecycle mechanism. Advanced lifecycle operations such as "suspend" and "resume" may be added in future releases for enhanced lifecycle management.
-    Define a long-running transaction model that is based on proven techniques like compensation actions and scoping to support failure recovery for parts of long-running business processes.
-    Use Web Services as the model for process decomposition and assembly.
-    Build on Web services standards (approved and proposed) as much as possible in a composable and modular manner.
-
-BPEL and Web services now provide a standardized integration interface 
-and a standardized language for integration and process automation. 
-BPEL, in effect, has the potential to commoditize the capabilities 
-provided by proprietary EAI and BPM solutions. As often occurs in a 
-commodity market, the resulting prices for products and services are certain to fall.
-Developing the web services and exposing the functionalities is not sufficient. We also
+As a result, WS-BPEL along with web services technologies provide now a standardized integration interface 
+and a standardized language for the integration of different services as well as for the automation of some tasks. 
+Nevertheless, scenarios are becoming more and more complex and designers do not need only a way to compose
+a set of services, rather they also
 need a way to compose these functionalities in the right order ? a way to define
-business processes which will make use of the exposed functionalities. We would
-obviously prefer a relatively simple and straightforward way to define such processes,
-particularly because we know that business processes change often, therefore we
-would like to modify them easily.
-BPEL is thus comparable to general purpose programming language such as Java, but it
-is not as powerful as Java. On the other hand it is simpler and better suited for business
-process definition. Therefore BPEL is not a replacement but rather a supplement to
+business processes which will make use of the exposed functionalities and, they would
+obviously prefer a relatively simple and straightforward way to define such processes. Thus, it is
+a folklore that these environments are highly heterogeneous and, in particular, it is known
+that business processes change relatively often. Therefore, designers and developers would like to modify them easily.
+Sometimes, BPEL is thus compared to general purpose programming language, but it
+is not as powerful. On the other hand, it is simpler and better suited for business
+process definition and, therefore, BPEL cannot be considered a replacement but rather a supplement to
 modern languages.
-Choreography has not gained support from the
-industry which would be comparable to BPEL.
-This is where the BPEL (Business Process Execution Language for Web Services, also
-WS-BPEL or BPEL4WS) becomes important. BPEL allows composition of web services
-and is thus the top-down approach to SOA ? the process oriented approach to SOA.
-Let us have a closer look at a typical BPEL process. First, the BPEL business process
-receives a request. To fulfill it, the process then invokes the involved web services and
-finally responds to the original caller. Because the BPEL process communicates with
-other web services, it relies heavily on the WSDL description of the web services
-invoked by the composite web service.
+
+
 
 %The first version of BPEL has been developed in August 2002 by BEA, IBM, and
 %Microsoft. Since then the majority of vendors have joined which has resulted in several
@@ -350,77 +358,42 @@ invoked by the composite web service.
 %since. This
 %has led to even broader acceptance in industry.
 
-The process-oriented approach to SOA requires a language for relatively simple
-description of how web services should be composed into business processes. Of
-course it would be great if such descriptions could also be executed, which would allow
-us not only to define abstract process definitions, but to write exact executable
-specifications of processes. BPEL is such a language. Actually it is the first language
-which:
 
-BPEL Language
-1. Allows us to define abstract and executable processes
-2. Is supported by the majority of companies
-3. Software exists (from several vendors) on which such processes can be executed
-(BPEL servers) and developed (BPEL designers).
+%there are two possible ways to compose a set Choreography has not gained support from the
+%industry which would be comparable to BPEL \cite{}.
+%This is where the BPEL (Business Process Execution Language for Web Services, also
+%WS-BPEL or BPEL4WS) becomes important. BPEL allows composition of web services
+%and is thus the top-down approach to SOA ? the process oriented approach to SOA.
+%Let us have a closer look at a typical BPEL process. First, the BPEL business process
+%receives a request. To fulfill it, the process then invokes the involved web services and
+%finally responds to the original caller. Because the BPEL process communicates with
+%other web services, it relies heavily on the WSDL description of the web services
+%invoked by the composite web service.
 
 
-The idea and motivation behind almost each new technology and platform for
-enterprise application development is to provide an environment where better
-business applications can be developed with less effort ?business applications which
-should closely align to the business processes, which should not be too complex, and
-which can be adapted to the changing nature of business processes without too much
-effort.
-Java has provided an excellent platform for developing such applications, but business
-applications today cannot be isolated. Within companies, business applications have to
-interoperate and integrate - so they have between companies. Integrating different
-applications has always been a difficult task for various functional and technology
-related reasons.
-BPEL builds on top of XML and web services. It is an XML-based language which
-supports the web services technology stack, including SOAP, WSDL, UDDI, WS-Reliable
-Messaging, WS-Addressing, WS-Coordination and WS-Transaction. BPEL represents a
-convergence of two early workflow languages, WSFL (Web Services Flow Language) and
-XLANG. WSFL was designed by IBM and is based on the concept of directed graphs.
-XLANG was designed by Microsoft and is a block-structured language. BPEL combines
-both approaches and provides a rich vocabulary for description of business processes.
-A BPEL process specifies the exact order in which participating web services should be
-invoked. This can be done sequentially or in parallel. With BPEL, we can express
-conditional behavior, for example, a web service invocation can depend on the value of
-a previous invocation. We can also construct loops, declare variables, copy and assign
-values, define fault handlers, and so on. By combining all these constructs, we can
-define complex business processes in an algorithmic manner.
-From the perspective of composing web services to execute business processes,
+BPEL follows the orchestration paradigm. Choreography is covered by other standards,
+such as WSCI (Web Services choreography Interface) and WS-CDL (Web Services
+Choreography Description Language). Choreography has not gained support from the
+industry which would be comparable to BPEL. From the perspective of composing web services to execute business processes,
 orchestration is the more flexible approach compared to choreography:
 We know exactly who is responsible for the execution of the whole business
 process.
 We can incorporate web services, even those that are not aware that they are a
 part of a business process.
 We can also provide alternative scenarios when faults occur.
-Developing the web services and exposing the functionalities is not sufficient. We also
-need a way to compose these functionalities in the right order ? a way to define
-business processes which will make use of the exposed functionalities. We would
-obviously prefer a relatively simple and straightforward way to define such processes,
-particularly because we know that business processes change often, therefore we
-would like to modify them easily.
-BPEL is thus comparable to general purpose programming language such as Java, but it
-is not as powerful as Java. On the other hand it is simpler and better suited for business
-process definition. Therefore BPEL is not a replacement but rather a supplement to
-modern languages such as Java.
-BPEL follows the orchestration paradigm. Choreography is covered by other standards,
-such as WSCI (Web Services choreography Interface) and WS-CDL (Web Services
-Choreography Description Language). Choreography has not gained support from the
-industry which would be comparable to BPEL.
-This is where the BPEL (Business Process Execution Language for Web Services, also
-WS-BPEL or BPEL4WS) becomes important. BPEL allows composition of web services
-and is thus the top-down approach to SOA ? the process oriented approach to SOA.
-Let us have a closer look at a typical BPEL process. First, the BPEL business process
-receives a request. To fulfill it, the process then invokes the involved web services and
-finally responds to the original caller. Because the BPEL process communicates with
-other web services, it relies heavily on the WSDL description of the web services
-invoked by the composite web service.
 
 
+As commented previously, BPEL is an XML-based language which
+supports the web services technology stack, including SOAP, WSDL, UDDI, WS-Reliable
+Messaging, WS-Addressing, WS-Coordination and WS-Transaction. A BPEL process specifies 
+the exact order in which participating web services should be
+invoked. This can be done sequentially or in parallel. With BPEL, we can express
+conditional behavior, for example, a web service invocation can depend on the value of
+a previous invocation. We can also construct loops, declare variables, copy and assign
+values, define fault handlers, and so on. By combining all these constructs, we can
+define complex business processes in an algorithmic manner.
 
-Executable processesallow us to specify the exact details of business processes.
+Executable processes allow us to specify the exact details of business processes.
 They can be executed by an orchestration engine. In most cases BPEL is used for
 executable processes.
 Abstract business protocols allow us to specify the public message exchange
@@ -441,7 +414,7 @@ important because typical companies have a large number of existing applications
 which have to be integrated.
 
  
-WS-BPEL \cite{BPEL4WS}, for short BPEL, 
+WS-BPEL \cite{BPEL4WS},  
 is an OASIS orchestration language for specifying actions within 
 Web service business processes. BPEL is therefore an orchestration
 language in the sense that it is used to define the composition
@@ -928,157 +901,10 @@ Un \emph{NotificationBroker} es un intermediario que, entre otras cosas, permite
 En este caso, se pueden dar tres relaciones entre las partes: \emph{simple publishing}, \emph{composable publishing} y \emph{demand-based publishing}. En el primer caso, el \emph{Publisher} es el encargado de observar las situaciones y notificarlas al broker que será el encargado de transmitirlas a los interesados. En el segundo caso, el papel del \emph{Publisher} lo realizará una entidad que implementa una serie de servicios especificados en WS-Notification (NotificationProducer). En este caso, el mensaje de notificación puede llegar a otros consumidores que estuviesen suscritos al productor. En ambos casos, el broker puede pedir al \emph{Publisher} que se registre para poder publicar mensajes sobre un topic determinado. El último enfoque (\emph{demand-based publishing}) requiere que el \emph{Publisher} sea un \emph{NotificationProducer} y, así, acepte mensajes de suscripción. El objetivo es reducir el número de mensajes de notificación haciendo que éstos solo se manden cuando se soliciten expresamente.
 
 
-This chapter is about the state of the art of Service-Oriented Computing, the use of formalisms for the analysis of Web Service compositions, and the specification of electronic contracts (e-contract). We specially focus on the application of e-contracts to Web Service compositions, describing some of the existing approaches for that purpose. We also review the related work in the field of formal specification and verification of e-contracts.
-
-%%%Service-Oriented Computing%%%
-\section{Service-Oriented Computing (SOC)}\label{SOC}
-\markright{~\ref{SOC} Service-Oriented Computing (SOC)}
-
-The Service-Oriented Computing (SOC) paradigm promotes the use of services for the development of massively distributed applications, trying to achieve the creation of fast, low-cost, flexible and scalable applications \cite{Papazoglou2007}. Services are the main building block of this paradigm, being these services self-describing and platform-independent. Thanks to the use of standards for description, publication, discovery and invocation, the services can be integrated without taking care of the low-level implementation details of each service. The aim of SOC is to make it possible the creation of dynamic business processes and agile applications by providing an easy way to assemble application components into a loosely coupled network of services.
-
-\subsection{Service-Oriented Architecture (SOA)}\label{SOA}
-
-To reach the goals of SOC, a Service-Oriented Architecture (SOA) is defined. SOA is a software architecture based on the utilization of services, being these services provided to the user of the application or to other services in the network. This is possible by the use of service interfaces that can be published and discovered.
-
-SOA is based on a model of roles where every service can play multiple roles. For example, a service can offer a certain functionality to a user and, at the same time, being the consumer of the functionality provided by some other services. Such model reduces the complexity of applications and increases their flexibility.
-
-Although at the beginning of SOA there were several architectures aspiring to become SOA standards \cite{Karp2000,Sun1999}, the most successful one was the architecture based on Web Services.
-
-\subsection{Web Services (WS)}\label{WS}
-
-W3C defines a Web Service (WS) in the following way \cite{W3C2004}:
-
-\begin{quotation}
-	``A Web Service is a software system designed to support interoperable machine-to-machine interaction over a network. It has
-an interface described in a machine-processable format (specifically WSDL). Other systems interact with the Web Service in a manner prescribed by its description using SOAP-messages, typically conveyed using HTTP with an XML serialization in conjunction with other Web-related standards.''
-\end{quotation}
-
-We can see in this definition that there are two basic standards related to Web Services: Web Service Description Language (WSDL) for the definition of the service functionality and its properties \cite{W3C2001}, and Simple Object Access Protocol (SOAP) for the exchange of XML messages between services \cite{W3C2007}. There is also an additional standard called Universal Description, Discovery and Integration (UDDI) used to create Web Service directories and to search for services in the network \cite{OASIS2004}. The use of these standard protocols is the key point to improve the integration between different parties in a Web Service architecture.
-
-In Figure \ref{Figure1} a possible representation of the Web Service architecture stack is shown. We can see that the three standards described above are only a small part of the stack. We also need protocols to define security aspects (ensuring that exchanges of information are not modified or forged in a verifiable manner and that parties can be authenticated), to provide reliable messaging for the exchange of information between parties, to specify the collaboration between services when we compose them, to individually describe the behaviour of each service in a business process, etc. The problem is that whereas the standards for basic services (WSDL and SOAP) are widely adopted for their respective purposes, the situation is not so clear when we talk about composing services, having multiple protocols aspiring to become a standard in this layer.
-
-\begin{figure}[h]
-\begin{center}
-\psfig{file=Figures/ws-stack.eps,scale=.55}
-\end{center}
-\caption{Web Service architecture stack.}
-\label{Figure1}
-\end{figure}
-
-\subsection{Web Service Composition}\label{WSC}
-
-Two different approaches can be followed when we talk about composing Web Services. They are called \textit{orchestration} and \textit{choreography}. The former describes the individual business process followed by each one of the participants in the composition, while the latter describes the composition from a global viewpoint, defining the interactions (exchange of messages) happening between the parties, that is, how they collaborate in the composition. However, the ideal solution would be fusing both approaches in a single language and environment \cite{Papazoglou2007}.
-
-Anyway, the languages we can use in both cases should accomplish some common goals: (i) the capacity of modelling service interactions, including control flow and data constraints, (ii) the possibility of specifying exceptional behaviour, indicating which errors can happen in the execution of the composition and the way of handling these errors, and (iii) the ability to model Web Service compositions at a high level, without taking care of the implementation details of each one of the services.
-
-\textbf{\subsubsection{Business Process Execution Language (BPEL)}}
-
-Considering the orchestration approach, one of the most used languages for this purpose is Business Process Execution Language (BPEL), also known as BPEL4WS or WSBPEL \cite{OASIS2007}. A BPEL specification models the behaviour of the different services taking part in a business process, defining a BPEL source file for each service. BPEL provides an XML syntax to describe the control logic necessary to coordinate all the services participating in the process. An orchestration engine is responsible for the execution of the processes, coordinating all the activities and compensating any error that could happen. BPEL can be seen as a layer over WSDL, providing this latter language the available functionality while BPEL defines how to sequence the operations \cite{Peltz2003}.
-
-The components of a BPEL specification are the following:
-
-\begin{itemize}
-
-\item \textbf{Events}, which describe the flow execution in an event-driven way.
-
-\item \textbf{Variables},  which are defined by using  WSDL schemes for internal or external purposes, and are used in the message flow.
-
-\item \textbf{Correlations}, which identify the processes interacting by means of messages.
-
-\item \textbf{Fault handling}, defining the behaviour when an exception is thrown.
-
-\item \textbf{Event handling}, defining the behaviour when an event happens.
-
-\item \textbf{Activities}, which are the basic unit of behaviour of a Web Service.
-
-\end{itemize}
-
-For example, in figure \ref{Example1} we can see part of a BPEL specification corresponding to shipping service.
-
-\begin{figure}
-\begin{center}
-\begin{tabular}{|p{11cm}|}
-\hline
-\begin{verbatim}
-
-<process name="shippingService"
-...
-   <sequence>   
-      ...
-      <if>
-         <condition>
-            bpel:getVariableProperty('shipRequest',
-            	'props:shipComplete')
-         </condition>         
-         <sequence>
-            ...
-            <invoke partnerLink="customer"
-               operation="shippingNotice"
-               inputVariable="shipNotice">
-               <correlations>
-                  <correlation set="shipOrder" 
-                  	pattern="request" />
-               </correlations>
-            </invoke>
-         </sequence>
-         <else>
-            <sequence>
-              ...
-              <while>
-                <condition>
-                  $itemsShipped
-                  &lt;
-                  bpel:getVariableProperty(
-                  'shipRequest','props:itemsTotal')
-                </condition>
-                <sequence>
-                  ...
-                  <invoke partnerLink="customer"
-                    operation="shippingNotice"
-                    inputVariable="shipNotice">
-                    <correlations>
-                       <correlation set="shipOrder"
-                          pattern="request" />
-                    </correlations>
-                 </invoke>
-                 ...
-                </sequence>
-              </while>
-            </sequence>
-         </else>
-      </if>
-   </sequence>
-</process>
-\end{verbatim}\\
-\hline
-\end{tabular}
-\caption{Part of a shipping service specification in BPEL} \label{Example1}
-\end{center}
-\end{figure}
 
 
 
-
-%%%Formal Analysis of Web Service Compositions%%%
-\section{Formal Analysis of Web Service Compositions}\label{AnalysisWSC}
-
-In last years the formal analysis of Web Service compositions has been recognized as an important problem that needs to be solved \cite{Carbone2006,Dong2006,Foster2007,Yang2008}. A strict analysis is necessary to guarantee the correct composition of the services for multiple reasons: the integration of several independent applications, the possibility of having incomplete specifications of some services, the impossibility of using traditional evaluation techniques such as software testing, \ldots
-
-The analysis of Web Service compositions usually consists of checking its specification correctness by analysing if a set of functional and non-functional requirements are fulfilled. The behavioural requirements are especially interesting, as they specify the properties required to reach a concrete business goal. These requirements can include general properties such as deadlock freeness or correct termination, but they can also be defined explicitly, for example defining the conformance to a concrete model. This formal analysis is usually done by means of formal methods.
-
-Formal methods \cite{Wing1990} are a collection of notations and techniques for describing and analyzing systems \cite{Peled2001}. They are called \textit{formal} because they are based on mathematical theories (logics, automata, sets, \ldots). In formal methods we can distinguish between the \textit{formal specification}, which describes unambiguously a system or its properties, and the \textit{formal analysis} or \textit{formal verification}, which serves to verify if a system satisfies its specification.
-
-Formal methods usually cannot guarantee the correctness of the implementation and, if the specification is not correct, the verification results will also be wrong. Despite these and some other limitations, formal methods are still needed because they increase the confidence on system reliability, minimize the number of errors in the implementation and can find out errors impossible to find with other techniques such as testing.
-
-When we are going to apply a formal method it is very important to choose the right level of abstraction in the specification of the system depending on what we want to analyze or verify. An underspecification can lead to wrong verification results because the specification is incomplete, whereas an overspecification can lead to the \textit{state explosion problem}, making the intended analysis of the system infeasible.
-
-Formal methods can be applied in different stages of the computer system development process, providing different information about the system in each one of these stages. The application of these methods is usually complex, being impossible without some kind of tool support. For this purpose, the language syntax of the specification must be explicit and the language semantics of the specification must be restricted. In this way, formal specifications are amenable to automate analysis and verification.
-
-The choice of using one formal method or another depends on many factors: the problem we want to solve, the type of system, the properties we want to check, and so on. In the case of complex systems, such as distributed concurrent systems, it is needed a combination of several techniques for the analysis.
-
-
-
-\subsection{Specification Formalisms}\label{Formalisms}
+\subsection{Formal models of concurrency}\label{formalmodels}
 
 
 

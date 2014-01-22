@@ -17,13 +17,8 @@
 \BOOKMARK [2][-]{subsection.2.6.5}{WS-ResourceLifetime}{section.2.6}
 \BOOKMARK [1][-]{section.2.7}{WS-Notification}{chapter.2}
 \BOOKMARK [2][-]{subsection.2.7.1}{WS-BrokeredNotification}{section.2.7}
-\BOOKMARK [1][-]{section.2.8}{Service-Oriented Computing \(SOC\)}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.8.1}{Service-Oriented Architecture \(SOA\)}{section.2.8}
-\BOOKMARK [2][-]{subsection.2.8.2}{Web Services \(WS\)}{section.2.8}
-\BOOKMARK [2][-]{subsection.2.8.3}{Web Service Composition}{section.2.8}
-\BOOKMARK [1][-]{section.2.9}{Formal Analysis of Web Service Compositions}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.9.1}{Specification Formalisms}{section.2.9}
-\BOOKMARK [1][-]{section.2.10}{Summary}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.7.2}{Formal models of concurrency}{section.2.7}
+\BOOKMARK [1][-]{section.2.8}{Summary}{chapter.2}
 \BOOKMARK [0][-]{chapter.3}{BPELRF}{}
 \BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}
 \BOOKMARK [1][-]{section.3.2}{Background and Related Work}{chapter.3}
@@ -38,7 +33,8 @@
 \BOOKMARK [2][-]{subsection.3.6.4}{Ordering structures}{section.3.6}
 \BOOKMARK [2][-]{subsection.3.6.5}{WSRF-compliant}{section.3.6}
 \BOOKMARK [1][-]{section.3.7}{Case study: Online auction service}{chapter.3}
-\BOOKMARK [1][-]{section.3.8}{Summary}{chapter.3}
+\BOOKMARK [1][-]{section.3.8}{Formal Analysis of Web Service Compositions}{chapter.3}
+\BOOKMARK [1][-]{section.3.9}{Summary}{chapter.3}
 \BOOKMARK [0][-]{chapter.4}{Timed-arc workflow nets}{}
 \BOOKMARK [0][-]{chapter.5}{Conclusions, Contributions and Future Works}{}
-\BOOKMARK [0][-]{appendix*.42}{Bibliography}{}
+\BOOKMARK [0][-]{appendix*.39}{Bibliography}{}
