@@ -370,63 +370,25 @@ modern languages.
 %other web services, it relies heavily on the WSDL description of the web services
 %invoked by the composite web service.
 
-
-BPEL follows the orchestration paradigm. Choreography is covered by other standards,
-such as WSCI (Web Services choreography Interface) and WS-CDL (Web Services
-Choreography Description Language). Choreography has not gained support from the
-industry which would be comparable to BPEL. From the perspective of composing web services to execute business processes,
-orchestration is the more flexible approach compared to choreography:
-We know exactly who is responsible for the execution of the whole business
-process.
-We can incorporate web services, even those that are not aware that they are a
-part of a business process.
-We can also provide alternative scenarios when faults occur.
-
-
-As commented previously, BPEL is an XML-based language which
-supports the web services technology stack, including SOAP, WSDL, UDDI, WS-Reliable
-Messaging, WS-Addressing, WS-Coordination and WS-Transaction. A BPEL process specifies 
-the exact order in which participating web services should be
-invoked. This can be done sequentially or in parallel. With BPEL, we can express
-conditional behavior, for example, a web service invocation can depend on the value of
-a previous invocation. We can also construct loops, declare variables, copy and assign
-values, define fault handlers, and so on. By combining all these constructs, we can
-define complex business processes in an algorithmic manner.
-
-Executable processes allow us to specify the exact details of business processes.
-They can be executed by an orchestration engine. In most cases BPEL is used for
-executable processes.
-Abstract business protocols allow us to specify the public message exchange
-between parties only. They do not include the internal details of process flows
-and are not executable.
-Choreography on the other hand does not rely on a central coordinator. Rather, each
-web service involved in the choreography knows exactly when to execute its operations
-and whom to interact with. Choreography is a collaborative effort focused on exchange
-of messages. All participants of the choreography need to be aware of the business
-process, operations to execute, messages to exchange, and the timing of message
-exchanges.
-The most recent answer to the integration challenge is the Service Oriented
-Architecture (SOA) and the web services technologies. The bottom-up view of the SOA
-sees different business applications exposing their functionalities through web services.
-Thus we can now access different functionalities of different legacy and new developed
-applications in a standard way (through web services). Such access to functionalities is
-important because typical companies have a large number of existing applications
-which have to be integrated.
-
- 
-WS-BPEL \cite{BPEL4WS},  
-is an OASIS orchestration language for specifying actions within 
-Web service business processes. BPEL is therefore an orchestration
+BPEL is therefore an orchestration
 language in the sense that it is used to define the composition
 of services from a local viewpoint, describing the individual
-behaviour of each participant. 
-BPEL is designed to support the description of both behavioural service interfaces and executable
+behaviour of each participant. Choreography is covered by other standards,
+such as WS-CDL (commented previously). BPEL is designed to support the description of both behavioural service interfaces and executable
 service-based processes \cite{OuyangVABDH07}. A behavioural interface (known as abstract process) is a specification of the
 behaviour of a class of services, capturing constraints on the ordering of messages to be sent to and
 received from a service. An executable process defines the execution
 order of a set of activities (mostly communication activities), the partners involved in the process, the
 messages exchanged between partners, and the events and exception handling specifying the behaviour
 when specific events or faults occur.
+
+\begin{figure}[h]
+\begin{center}
+\psfig{file=Figures/bpelexample.eps,scale=.7}
+\end{center}
+\caption{Example of a business process workflow.}
+\label{bpelevolution}
+\end{figure}
 
 Thus, a WS-BPEL abstract process is a partially specified process that is not intended to be executed
 and it must be explicitly declared as ``abstract''. As its name indicates, 
@@ -437,17 +399,17 @@ and, consequently, they share the same expressive power \cite{}.
 Although a particular Abstract Process definition might contain complete information that would
 render it Executable, its Abstract status states that any concrete realizations of it are permitted to
 perform additional processing steps that are not relevant to the audience to which it has been
-given.
-
-Abstract processes serve a descriptive role, with more than one use case. One such use case
+given. Executable processes allow us to specify the exact details of business processes.
+They can be executed by an orchestration engine. In most cases BPEL is used for
+executable processes.
+Abstract business protocols allow us to specify the public message exchange
+between parties only. They do not include the internal details of process flows
+and are not executable.Abstract processes serve a descriptive role, with more than one use case. One such use case
 might be to describe the observable behavior of some or all of the services offered by an
 executable process. Another use case would be to define a process template that embodies
 domain-specific best practices. Such a process template would capture essential process logic in
 a manner compatible with a design-time representation, while excluding execution details to be
-completed when mapping to an executable Process.
-
-
-As mentioned above it is possible to use WS-BPEL to define an executable business process, that is, 
+completed when mapping to an executable Process. As mentioned above it is possible to use WS-BPEL to define an executable business process, that is, 
 the language effectively defines a portable execution format for business processes that rely exclusively on
 web Services and XML data. Moreover, such processes execute and interact with their
 partners in a consistent way regardless of the supporting platform or programming model used
@@ -461,6 +423,26 @@ web services because it allows the development of tools and other technologies t
 increase the level of automation and thereby lower the cost in establishing cross enterprise
 automated business processes.
 
+
+As commented previously, BPEL is an XML-based language which
+supports the web services technology stack, including SOAP, WSDL, UDDI, WS-Reliable
+Messaging, WS-Addressing, WS-Coordination and WS-Transaction. A BPEL process specifies 
+the exact order in which participating web services should be
+invoked. This can be done sequentially or in parallel. With BPEL, we can express
+conditional behavior, for example, a web service invocation can depend on the value of
+a previous invocation. We can also construct loops, declare variables, copy and assign
+values, define fault handlers, and so on. By combining all these constructs, we can
+define complex business processes in an algorithmic manner.
+
+
+\begin{figure}[h]
+\begin{center}
+\psfig{file=Figures/bpelcode.eps,scale=.5}
+\end{center}
+\caption{WS-BPEL code.}
+\label{bpelevolution}
+\end{figure}
+
 In detail, WS-BPEL defines a model and a grammar for describing the behavior of a business process
 based on interactions between the process and its partners. The interaction with each partner
 occurs through web service interfaces, and the structure of the relationship at the interface level
@@ -470,13 +452,12 @@ state and the logic necessary for this coordination. WS-BPEL also introduces sys
 mechanisms for dealing with business exceptions and processing faults. Moreover, WS-BPEL
 introduces a mechanism to define how individual or composite activities within a unit of work
 are to be compensated in cases where exceptions occur or a partner requests reversal.
-
 A WS-BPEL process is a reusable definition that can be deployed in different ways and in
 different scenarios, while maintaining a uniform application-level behavior across all of them.
-
 BPEL processes use {\em variables} to temporarily store 
 data. Variables are therefore declared on a process or on a scope 
 within that process. I
+
 
 BPEL activities 
 can be \emph{basic} or \emph{structured}. 
@@ -500,6 +481,21 @@ the conditional repetitive behaviour ({\em while}),
 and a timed extension of the receive activity, which allows to
 receive different types of messages with a time-out associated
 ({\em pick}).
+
+{\bf Comment}: Incluir foto orchesta y ventajas y desventajas choreographies and orchestations
+Choreography on the other hand does not rely on a central coordinator. Rather, each
+web service involved in the choreography knows exactly when to execute its operations
+and whom to interact with. Choreography is a collaborative effort focused on exchange
+of messages. All participants of the choreography need to be aware of the business
+process, operations to execute, messages to exchange, and the timing of message
+exchanges.
+The most recent answer to the integration challenge is the Service Oriented
+Architecture (SOA) and the web services technologies. The bottom-up view of the SOA
+sees different business applications exposing their functionalities through web services.
+Thus we can now access different functionalities of different legacy and new developed
+applications in a standard way (through web services). Such access to functionalities is
+important because typical companies have a large number of existing applications
+which have to be integrated.
 
 \section{Cloud Computing/Grid Computing}
 Gracias a la rápida evolución que ha tenido la sociedad, servicios básicos para el desarrollo de la vida cotidiana son comúnmente suministrados a los ciudadanos, de tal manera, que cualquier persona puede tener acceso inmediato a ellos de forma fácil. Hoy en día, estos servicios, conocidos en el mundo anglosajón como ``utility services'', engloban el suministro de agua, electricidad, gas y teléfono, pero en los últimos tiempos está cobrando fuerza una vieja idea que se intentó llevar a cabo sin éxito a finales de los años 60 y principios de los 70, el ``Utility Computing''. Este nuevo paradigma de computación es normalmente confundido con Cloud o Grid Computing, pero hay ciertos matices que los diferencian. ``Utility Computing'' se puede entender como el modelo de negocio que subyace en una infraestructura Cloud o Grid, es decir, puede ser entendido como el medio de cobro de servicios computacionales similar al que se hace con la electricidad, por lo que el usuario pagará sólo por su consumo, mientras que los costes asociados a la producción y distribución de potencia de cómputo serán sufragados por las compañías suministradoras. Así, las pequeñas y medianas empresas podrían competir en igualdad de condiciones con las grandes empresas, ya que no sería necesario hacer una gran inversión en datacenters para poder ofrecer un determinado servicio y se fomentaría la creación de empresas, ya que estos datacenters suponen una fuerte inversión inicial que muchos emprendedores no pueden acometer. Además, el usuario final de las aplicaciones, servicios o infraestructuras también se beneficiaría porque al reducir costes de producción se reduce el precio de los productos. Por seguir con el símil de la energía, podemos ver el cloud computing como una gran central generadora de energía que da suministro a millones de usuarios y que evita que dichos usuarios tengan que tener su propia central en casa para poder encender sus aparatos eléctricos, mientras que el ``utility computing'' es la forma de tarificar el gasto de los usuarios o, de una forma más abstracta, podemos verlo como el contador que muestra el consumo energético. Al igual que pasa con el software, los protocolos o cualquier paradigma relacionado con la informática, Cloud Computing debe atravesar una serie de etapas para poder comprobar si toda esta publicidad que le están dando las empresas sirve de veras para ahorrar costes y favorecer la competitividad o solo es más una forma de aumentar ingresos o, en el caso de la investigación, obtener nuevos fondos. En este sentido, algunos autores consideran que Cloud Computing no es mas que una nueva forma de nombrar lo que toda la vida se ha llamado Grid o Web Services y que realmente no supone ningún avance en el campo de la informática. Este artículo tratará de presentar más ampliamente la arquitectura y conceptos para comprender un sistema de computación basado en la nube y mostrará las diferencias entre dos enfoques clásicos de computación (Grid y Web Services) y Cloud. Finalmente, se propondrá una serie de ideas que pueden llegar a convertirse en trabajos de investigación en un futuro.         

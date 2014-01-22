@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  22 JAN 2014 12:16
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  22 JAN 2014 13:25
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -789,7 +789,14 @@ LaTeX Info: Redefining \subref on input line 127.
 \c@example=\count159
 \c@definition=\count160
  (./thesis.aux
-(./ack.aux) (./abstract.aux) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux
+(./ack.aux) (./abstract.aux) (./chapter1.aux) (./chapter2.aux
+
+LaTeX Warning: Label `bpelevolution' multiply defined.
+
+
+LaTeX Warning: Label `bpelevolution' multiply defined.
+
+) (./chapter3.aux
 
 LaTeX Warning: Label `cs' multiply defined.
 
@@ -1131,17 +1138,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: Figures/bpelhistory.eps Graphic file (type eps)
 
 <Figures/bpelhistory.eps> [19] [20]
-Overfull \hbox (2.1992pt too wide) in paragraph at lines 370--412
-\OT1/pbk/l/n/10 which sup-ports the web ser-vices tech-nol-ogy stack, in-clud-i
-ng SOAP, WSDL, UDDI,
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+File: Figures/bpelexample.eps Graphic file (type eps)
+ <Figures/bpelexample.eps>
+Underfull \vbox (badness 1048) has occurred while \output is active []
 
  [21]
+File: Figures/bpelcode.eps Graphic file (type eps)
 
-LaTeX Warning: Citation `BPEL4WS' on page 22 undefined on input line 436.
+<Figures/bpelcode.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1150,72 +1156,74 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no ú in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no é in font pbkl7t!
+Missing character: There is no ú in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no é in font pbkl7t!
+Missing character: There is no ñ in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no ñ in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no ñ in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no é in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no é in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no é in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no ú in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+
+Underfull \vbox (badness 1377) has occurred while \output is active []
 
  [24]
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ú in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no ú in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no ñ in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ñ in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no ñ in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ú in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[25]
+ [25]
 Missing character: There is no ó in font pagd7t!
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no ú in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--535
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
@@ -1248,7 +1256,7 @@ Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 536--537
+Underfull \hbox (badness 10000) in paragraph at lines 513--514
 
  []
 
@@ -1282,21 +1290,16 @@ Missing character: There is no í in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 538--539
+Underfull \hbox (badness 10000) in paragraph at lines 515--516
 
  []
 
 Missing character: There is no é in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Missing character: There is no ó in font pagk7t!
- [27]
 Missing character: There is no ó in font pbkl7t!
 
-Overfull \hbox (1.40724pt too wide) in paragraph at lines 544--545
+Overfull \hbox (1.40724pt too wide) in paragraph at lines 521--522
 []\OT1/pbk/l/n/10 La ilusin de tener re-cur-sos ilim-i-ta-dos bajo de-manda eli
 m-i-nando a los usuar-
  []
@@ -1306,6 +1309,11 @@ Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ñ in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Missing character: There is no ó in font pagk7t!
+ [27]
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ú in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
@@ -1331,7 +1339,7 @@ Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--550
+Underfull \hbox (badness 10000) in paragraph at lines 526--527
 
  []
 
@@ -1341,9 +1349,8 @@ Missing character: There is no é in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
-[28]
 File: Figures/actores.eps Graphic file (type eps)
- <Figures/actores.eps>
+<Figures/actores.eps>
 Missing character: There is no ó in font pagd7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
@@ -1383,12 +1390,18 @@ Missing character: There is no í in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 562--563
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
 
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+Underfull \vbox (badness 7704) has occurred while \output is active []
+
 Missing character: There is no ó in font pagk7t!
-[29]
+ [29]
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
@@ -1397,7 +1410,29 @@ Missing character: There is no é in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 565--566
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+Missing character: There is no ú in font pbkl7t!
+Missing character: There is no é in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no ú in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no ñ in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--545
 
  []
 
@@ -1405,39 +1440,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 565--566
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [30]
-Missing character: There is no ú in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ú in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
-Missing character: There is no ñ in font pbkl7t!
+Missing character: There is no é in font pbkl7t!
+Missing character: There is no é in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 567--568
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
 
  []
 
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-
- []
-
+Missing character: There is no ú in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1445,10 +1462,6 @@ Missing character: There is no ó in font pagk7t!
  [31]
 Missing character: There is no ú in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ú in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ú in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
@@ -1466,7 +1479,7 @@ Missing character: There is no é in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 575--576
+Underfull \hbox (badness 10000) in paragraph at lines 552--553
 
  []
 
@@ -1476,26 +1489,26 @@ Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 577--578
+Underfull \hbox (badness 10000) in paragraph at lines 554--555
 
  []
 
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
+Missing character: There is no é in font pbkl7t!
+Missing character: There is no í in font pbkl7t!
+Missing character: There is no é in font pbkl7t!
+Missing character: There is no á in font pbkl7t!
+Missing character: There is no é in font pbkl7t!
+Missing character: There is no ó in font pbkl7t!
 
-Underfull \vbox (badness 1377) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [32]
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pagd7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
@@ -1512,7 +1525,7 @@ Missing character: There is no ó in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 584--585
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
 
  []
 
@@ -1548,7 +1561,10 @@ Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
-[33]
+
+Underfull \vbox (badness 1122) has occurred while \output is active []
+
+ [33]
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
@@ -1561,13 +1577,11 @@ Missing character: There is no í in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34]
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no ú in font pbkl7t!
+
+[34]
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
@@ -1579,13 +1593,13 @@ Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ñ in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 LaTeX Font Info:    Font shape `OT1/pag/m/it' in size <10> not available
-(Font)              Font shape `OT1/pag/m/sl' tried instead on input line 600.
+(Font)              Font shape `OT1/pag/m/sl' tried instead on input line 577.
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ú in font pbkd7t!
 Missing character: There is no á in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 601--602
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
 
  []
 
@@ -1596,42 +1610,38 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <9> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 607.
-LaTeX Font Info:    Try loading font information for OML+pbk on input line 609.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 584.
+LaTeX Font Info:    Try loading font information for OML+pbk on input line 586.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omlpbk.fd
 File: omlpbk.fd 
 )
 LaTeX Font Info:    Font shape `OML/pbk/m/n' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 609.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 586.
  [35]
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 636.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 613.
 LaTeX Font Info:    Font shape `OML/pbk/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 638.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 615.
 Missing character: There is no é in font pbkl7t!
 Missing character: There is no ñ in font pbkl7t!
- [36]
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
+ [36]
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
 Missing character: There is no ú in font pbkl7t!
 Missing character: There is no ñ in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
-
-Underfull \vbox (badness 3547) has occurred while \output is active []
-
  [37]
 LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <9> not available
-(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 705.
-
-[38]
+(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 682.
+ [38]
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no ñ in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
@@ -1643,7 +1653,8 @@ Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
- [39]
+
+[39]
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ú in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
@@ -1683,7 +1694,7 @@ Missing character: There is no á in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 790--791
+Underfull \hbox (badness 10000) in paragraph at lines 767--768
 
  []
 
@@ -1714,7 +1725,7 @@ Missing character: There is no í in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 
-Overfull \hbox (5.11713pt too wide) in paragraph at lines 840--841
+Overfull \hbox (5.11713pt too wide) in paragraph at lines 817--818
 []\OT1/pbk/l/n/10 La opcin a uti-lizar la ele-gir el suscrip-tor cuando mande l
 a peticin de suscripcin.
  []
@@ -1737,20 +1748,20 @@ Missing character: There is no ú in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
-LaTeX Font Info:    Try loading font information for OMS+pbk on input line 866.
+LaTeX Font Info:    Try loading font information for OMS+pbk on input line 843.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omspbk.fd
 File: omspbk.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 866.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 843.
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 
-Overfull \hbox (4.43074pt too wide) in paragraph at lines 881--882
+Overfull \hbox (4.43074pt too wide) in paragraph at lines 858--859
 []\OT1/pbk/l/n/10 Dialect: El di-alecto us-ado para ex-pre-sar el topic an-te-r
 ior, es de-cir, el lenguaje
  []
@@ -1779,7 +1790,7 @@ Missing character: There is no í in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 918--919
+Underfull \hbox (badness 10000) in paragraph at lines 895--896
 
  []
 
@@ -2319,12 +2330,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17592 strings out of 495062
- 299380 string characters out of 1182644
- 466320 words of memory out of 3000000
- 20278 multiletter control sequences out of 15000+50000
+ 17595 strings out of 495062
+ 299438 string characters out of 1182644
+ 466325 words of memory out of 3000000
+ 20279 multiletter control sequences out of 15000+50000
  30042 words of font info for 87 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 63i,28n,92p,3178b,1711s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,28n,92p,3178b,1674s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (106 pages, 451300 bytes).
+Output written on thesis.dvi (106 pages, 449448 bytes).

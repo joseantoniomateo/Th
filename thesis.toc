@@ -6,21 +6,21 @@
 \contentsline {section}{\numberline {2.1}Motivation}{7}{section.2.1}
 \contentsline {section}{\numberline {2.2}Web Services modelling}{12}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}WS-BPEL}{17}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}Cloud Computing/Grid Computing}{25}{section.2.3}
+\contentsline {section}{\numberline {2.3}Cloud Computing/Grid Computing}{24}{section.2.3}
 \contentsline {section}{\numberline {2.4}Introducción}{26}{section.2.4}
 \contentsline {section}{\numberline {2.5}Comparación entre servicios web y Grid computing/Cloud computing}{29}{section.2.5}
 \contentsline {section}{\numberline {2.6}Web Services Resource Framework(WSRF)}{32}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}Introducción}{33}{subsection.2.6.1}
 \contentsline {subsection}{\numberline {2.6.2}WS-ResourceProperties}{35}{subsection.2.6.2}
-\contentsline {subsubsection}{GetResourceProperty}{35}{section*.15}
-\contentsline {subsubsection}{GetMultipleResourceProperties}{36}{section*.16}
-\contentsline {subsubsection}{SetResourceProperties}{36}{section*.17}
-\contentsline {subsubsection}{QueryResourceProperties}{38}{section*.18}
+\contentsline {subsubsection}{GetResourceProperty}{35}{section*.17}
+\contentsline {subsubsection}{GetMultipleResourceProperties}{36}{section*.18}
+\contentsline {subsubsection}{SetResourceProperties}{36}{section*.19}
+\contentsline {subsubsection}{QueryResourceProperties}{37}{section*.20}
 \contentsline {subsection}{\numberline {2.6.3}WS-Base Faults}{39}{subsection.2.6.3}
 \contentsline {subsection}{\numberline {2.6.4}WS-ServiceGroup}{40}{subsection.2.6.4}
 \contentsline {subsection}{\numberline {2.6.5}WS-ResourceLifetime}{40}{subsection.2.6.5}
-\contentsline {subsubsection}{Destrucción inmediata}{40}{section*.19}
-\contentsline {subsubsection}{Destrucción temporizada}{41}{section*.20}
+\contentsline {subsubsection}{Destrucción inmediata}{40}{section*.21}
+\contentsline {subsubsection}{Destrucción temporizada}{41}{section*.22}
 \contentsline {section}{\numberline {2.7}WS-Notification}{42}{section.2.7}
 \contentsline {subsection}{\numberline {2.7.1}WS-BrokeredNotification}{45}{subsection.2.7.1}
 \contentsline {subsection}{\numberline {2.7.2}Formal models of concurrency}{46}{subsection.2.7.2}
@@ -43,4 +43,4 @@
 \contentsline {section}{\numberline {3.9}Summary}{80}{section.3.9}
 \contentsline {chapter}{\numberline {4}Timed-arc workflow nets}{85}{chapter.4}
 \contentsline {chapter}{\numberline {5}Conclusions, Contributions and Future Works}{87}{chapter.5}
-\contentsline {chapter}{Bibliography}{90}{appendix*.39}
+\contentsline {chapter}{Bibliography}{90}{appendix*.41}
