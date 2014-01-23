@@ -225,8 +225,17 @@ The former describes the individual business process followed by
 each one of the participants in the composition, 
 while the latter describes the composition from a global viewpoint, 
 defining the interactions (exchange of messages) happening between the parties, that is, 
-how they collaborate in the composition. However, the ideal solution would 
+how they collaborate in the composition. In Figure \ref{orch}, it is depicted graphically what it the role
+of each of them if they are compared with the musicians in an orchestra. Despite these differences, the ideal solution would 
 be fusing both approaches in a single language and environment \cite{Papazoglou2007}.
+
+\begin{figure}[h]
+\begin{center}
+\psfig{file=Figures/orchestra.eps,scale=.5}
+\end{center}
+\caption{Choreography vs. Orchestration}
+\label{orch}
+\end{figure}
 
 Anyway, the languages we can use in both cases should accomplish some common goals: 
 (i) the capacity of modelling service interactions, including control flow and data constraints, 
@@ -423,8 +432,8 @@ The interaction with each partner is performed through web service interfaces,
 and the structure of the relationship at the interface level
 is encapsulated in what is called a partnerLink. WS-BPEL also introduces 
 mechanisms for dealing with business exceptions and faults. Moreover, WS-BPEL
-introduces a mechanism to define how individual or composite activities within a unit of work
-are to be compensated in cases where exceptions occur or a partner requests reversal.
+introduces a mechanism to define how activities have to be compensated in cases 
+where exceptions occur or a partner requests reversal.
 A WS-BPEL process is a reusable definition that can be deployed in different ways and in
 different scenarios, while maintaining a uniform application-level behavior across all of them.
 
@@ -434,35 +443,81 @@ different scenarios, while maintaining a uniform application-level behavior acro
 \psfig{file=Figures/bpelcode.eps,scale=.5}
 \end{center}
 \caption{WS-BPEL code.}
-\label{bpelevolution}
+\label{bpelcode}
 \end{figure}
 
-
+In Figure \ref{bpelcode}, we can observe a piece of the BPEL code for a booking process. 
 BPEL processes use {\em variables} to temporarily store 
 data. Variables are therefore declared on a process or on a scope 
-within that process.
-BPEL activities 
-can be \emph{basic} or \emph{structured}. 
+within that process. Also, 
+it provides \emph{basic} or \emph{structured} to declare the process logic. 
 \emph{Basic activities} are those which describe the elemental 
-steps of the process behaviour, such as the assignment of
-variables ({\em assign}), empty action ({\em empty}), 
-time delay ({\em wait}), invoke a service ({\em invoke}) and receive
-a message ({\em receive}), reply to a client ({\em reply}),
-and throw an exception ({\em throw}). We also have an action to {\em terminate}
-the process execution at any moment ({\em exit}).
-For technical reasons we have also included a barred form of
-{\em reply} action, which is used when a service invocation
-expects a reply, in order to implement the synchronization with
-the {\em reply} action from the server.  
+steps of the process behaviour \cite{}: 
+\begin{itemize}
+\item The activity \emph{assign} is used to assign data to the variables defined in the process. 
+This activity can be used to copy data from one variable to another as well as to
+populate new data in a variable using expressions. As usual, expressions are constructed using 
+variables and constants. 
+\item The activity \emph{empty} is devoted to be used as an activity that does nothing. For instance, one can
+decide to capture an exception and do nothing to handle it. Another use of \emph{empty} is
+to provide a synchronization point in a parallel activity.
+\item The activity \emph{wait} specifies a particular delay or deadline. 
+\item To invoke a web service of service provider, WS-BPEL offers the activity {\em invoke}. 
+Normally, this activity is used to request an operation in a service. This operation is usually 
+a basic activity in the provider. Operations can be of two types: request-response or one-way.
+One-way consist of sending a message (some variables can be enclosed) so that no response is expected
+as part of the operation, whereas a request-response invocation requires a message back. Evidently, this
+response message can be used to notify the sender about a fault during the operation. A more detailed
+explanation will be provided in Chapter \ref{chapter:c3}. 
+\item A \emph{receive} activity is necesary to receive the message sent in the invoke activity.
+messages, the portType (optional) and operation that it expects the partner to invoke. The
+value of the partnerRole in the partnerLink is not used when processing a <receive> activity.
+In addition, it specifies a variable, using the variable attribute, to
+store the message the operation to be requested. In many cases, this activity is the first part of the process.
+\item The \emph{reply} activity is used to respond to a request previously accepted through an
+inbound message activity. For instance, it can be used in conjunction with the receive activity
+to respond to the invocation of a service. Clearly, it is only meaningful
+for request-response interactions, but a one-way ``response'' can be sent by invoking the
+corresponding one-way operation on the sender. Finally, it may specify a
+variable attribute that references the variable that contains the message data to be sent.
+\item The activity \emph{throw} is used to signal an internal fault explicitly.
+\item The activity \emph{exit} is used to immediately end the process instance.
+\item WS-BPEL provides the user with the ability to declare new activities that are
+not contemplated in the specification. This is done using the \emph{extension activities}. This
+extension is not explicitly contemplated in the theory of this Thesis, although they are required
+to implement the theory in an orchestration engine.
+\item Finally, using the activity \emph{rethrow} in a fault handler, it is possible to rethrow a fault.
+For instance, this activity is useful when the situation that causes the fault is not solved after
+the completion of the fault handler and, therefore, it is needed to redo this handler to check if the
+situation has been solved afterwards.
+\end{itemize}  
 
-\emph{Structured activities} encode control-flow logic in a nested
-way. The considered structured activities are the following:
-a {\em sequence} of activities, separated by a semicolon, 
-the parallel composition, represented by two parallel bars ($\|$),
-the conditional repetitive behaviour ({\em while}),
-and a timed extension of the receive activity, which allows to
-receive different types of messages with a time-out associated
-({\em pick}).
+On the other hand, \emph{Structured activities} encode the control-flow logic of the process.
+The set of structured activities defined in the standard are the following:
+\begin{itemize}
+\item The activity \emph{sequence} includes a set of activities that are performed sequentially in the
+order in which they appear in the structure. It ends
+when the last activity in the sequence has finished.
+\item The activity \emph{flow} provides concurrency and synchronization, creating 
+a set of concurrent activities directly nested within the process and it enables
+synchronization dependencies between activities that are nested to it. A more detailed explanation
+of how this activity works is given in Chapter \ref{chapter:c3}.
+\item The activity \emph{if} specifies conditional behavior. As usual, the activity consists of an ordered list of one or
+more conditional branches defined by the ``if'' and optional ``elseif'' elements, followed by an
+optional ``else'' element.
+\item The activity \emph{while} provides conditional repetitive behaviour.
+\item \emph{RepeatUntil} provides the repeated execution of a contained activity. The difference with
+the activity while is that the inner activity is executed at least once.
+\item The activity \emph{pick} waits for the occurrence of exactly one event from a set of events, and then
+executes the activity associated with that event. After an event has been selected, the other events
+are no longer accepted by that ``pick''. Moreover, a deadline for the occurrence of such events can be established
+in such a way if this deadline experies the pick activity ends. This structure has some similarity the choice operator in
+a process algebra althoudh with a predefined timeout. 
+In WS-BPEL, it can be compared with a set of receive activities that run in parallel, where just only one can be executed,
+and a common deadline for the execution of these receive activities is set (to this end, the wait activity can be used).
+\item Lastly, the standard offeres an activity (forEach) to execute the contained activity a predefined number of times that
+is expressed in the definition of the activity.
+\end{itemize}
 
 {\bf Comment}: Incluir foto orchesta y ventajas y desventajas choreographies and orchestations
 Choreography on the other hand does not rely on a central coordinator. Rather, each
