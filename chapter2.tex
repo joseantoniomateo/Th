@@ -335,19 +335,17 @@ Do not define a graphical representation of processes or provide any particular 
 
 As a result, WS-BPEL along with web services technologies provide now a standardized integration interface 
 and a standardized language for the integration of different services as well as for the automation of some tasks. 
-Nevertheless, scenarios are becoming more and more complex and designers do not need only a way to compose
-a set of services, rather they also
-need a way to compose these functionalities in the right order ? a way to define
-business processes which will make use of the exposed functionalities and, they would
-obviously prefer a relatively simple and straightforward way to define such processes. Thus, it is
-a folklore that these environments are highly heterogeneous and, in particular, it is known
-that business processes change relatively often. Therefore, designers and developers would like to modify them easily.
-Sometimes, BPEL is thus compared to general purpose programming language, but it
-is not as powerful. On the other hand, it is simpler and better suited for business
-process definition and, therefore, BPEL cannot be considered a replacement but rather a supplement to
-modern languages.
-
-
+Nevertheless, web scenarios are becoming more and more complex since they highly heterogeneous, that is, a lot of different
+services from different companies interact jointly to perfom a particular task. In particular, it is known
+that business processes change relatively often due to this heterogeneity. Therefore, designers 
+do not need only a way to compose a set of services, rather they also
+need a way to compose and modify them in the right order and in a relatively 
+uncomplicated and straightforward way. Due to this, BPEL is sometimes compared 
+to general purpose programming language, but it
+is not as powerful as one of the well-known programming language \cite{}. However, 
+it is simpler and better suited for business
+process definition and, therefore, BPEL must be considered a supplement to
+modern languages rather a replacement.
 
 %The first version of BPEL has been developed in August 2002 by BEA, IBM, and
 %Microsoft. Since then the majority of vendors have joined which has resulted in several
@@ -370,6 +368,7 @@ modern languages.
 %other web services, it relies heavily on the WSDL description of the web services
 %invoked by the composite web service.
 
+After briefly introduce its history and design goals, we discuss next its technical details. 
 BPEL is therefore an orchestration
 language in the sense that it is used to define the composition
 of services from a local viewpoint, describing the individual
@@ -380,59 +379,54 @@ behaviour of a class of services, capturing constraints on the ordering of messa
 received from a service. An executable process defines the execution
 order of a set of activities (mostly communication activities), the partners involved in the process, the
 messages exchanged between partners, and the events and exception handling specifying the behaviour
-when specific events or faults occur.
+when specific events or faults occur. In Figure \ref{bpelexample}, we can observe an example of the typical business process
+of a travel agency.
 
 \begin{figure}[h]
 \begin{center}
 \psfig{file=Figures/bpelexample.eps,scale=.7}
 \end{center}
 \caption{Example of a business process workflow.}
-\label{bpelevolution}
+\label{bpelexample}
 \end{figure}
 
-Thus, a WS-BPEL abstract process is a partially specified process that is not intended to be executed
+According to the standard of WS-BPEL, an  abstract process is a partially specified process that is not intended to be executed
 and it must be explicitly declared as ``abstract''. As its name indicates, 
 an abstract process may hide some of the required 
 operational details expressed by an executable artifact.
 All the constructs of executables processes are made available to abstract processes
 and, consequently, they share the same expressive power \cite{}. 
-Although a particular Abstract Process definition might contain complete information that would
-render it Executable, its Abstract status states that any concrete realizations of it are permitted to
-perform additional processing steps that are not relevant to the audience to which it has been
-given. Executable processes allow us to specify the exact details of business processes.
-They can be executed by an orchestration engine. In most cases BPEL is used for
-executable processes.
-Abstract business protocols allow us to specify the public message exchange
-between parties only. They do not include the internal details of process flows
-and are not executable.Abstract processes serve a descriptive role, with more than one use case. One such use case
-might be to describe the observable behavior of some or all of the services offered by an
-executable process. Another use case would be to define a process template that embodies
-domain-specific best practices. Such a process template would capture essential process logic in
-a manner compatible with a design-time representation, while excluding execution details to be
-completed when mapping to an executable Process. As mentioned above it is possible to use WS-BPEL to define an executable business process, that is, 
-the language effectively defines a portable execution format for business processes that rely exclusively on
-web Services and XML data. Moreover, such processes execute and interact with their
+Therefore, the main different between an abstract and a executable processes is 
+that the second one contains the exact details of business processes and, consquently,
+it is intended to be executed in an orchestration engine, whereas the first one serve a descriptive role,
+defining the message exchange between the parties involved. Specifically, an abstract process is usually use to 
+describe the observable behavior of some or all of the services offered by an
+executable process and/or to define a process template that contains domain-specific best practices. 
+Such a template can be seen as a design-time representation of the process logic, excluding execution details to be
+completed when mapping to an executable process.
+In most cases BPEL is used for
+executable processes \cite{}.
+Moreover, the definition of conceptual model in which one can define an abstract or an executable
+process is a key feature of WS-BPEL since the processes execute and interact with their
 partners in a consistent way regardless of the supporting platform or programming model used
-by the implementation of the hosting environment.
-The continuity of the basic conceptual model between Abstract and Executable Processes in WS-
-BPEL makes it possible to export and import the public aspects embodied in Abstract Processes
-as process or role templates while maintaining the intent and structure of the observable behavior.
-This applies even where private implementation aspects use platform dependent functionality.
-This is a key feature for the use of WS-BPEL from the viewpoint of unlocking the potential of
+by the implementation of the hosting environment, unlocking the potential of
 web services because it allows the development of tools and other technologies that greatly
 increase the level of automation and thereby lower the cost in establishing cross enterprise
-automated business processes.
+automated business processes. In addition to this, abstract process ensures the level of privacy required by the 
+companies since the implementation of the service is hidden to the other participants. 
 
-
-As commented previously, BPEL is an XML-based language which
-supports the web services technology stack, including SOAP, WSDL, UDDI, WS-Reliable
-Messaging, WS-Addressing, WS-Coordination and WS-Transaction. A BPEL process specifies 
-the exact order in which participating web services should be
-invoked. This can be done sequentially or in parallel. With BPEL, we can express
-conditional behavior, for example, a web service invocation can depend on the value of
-a previous invocation. We can also construct loops, declare variables, copy and assign
-values, define fault handlers, and so on. By combining all these constructs, we can
-define complex business processes in an algorithmic manner.
+In detail, WS-BPEL is an XML-based language which
+supports the web services technology stack, including SOAP, WSDL, UDDI and so on. 
+It defines a model and a grammar for describing the behavior of a business process
+based on interactions between the process and its partners as well as the order of these interactions. 
+The interaction with each partner is performed through web service interfaces, 
+and the structure of the relationship at the interface level
+is encapsulated in what is called a partnerLink. WS-BPEL also introduces 
+mechanisms for dealing with business exceptions and faults. Moreover, WS-BPEL
+introduces a mechanism to define how individual or composite activities within a unit of work
+are to be compensated in cases where exceptions occur or a partner requests reversal.
+A WS-BPEL process is a reusable definition that can be deployed in different ways and in
+different scenarios, while maintaining a uniform application-level behavior across all of them.
 
 
 \begin{figure}[h]
@@ -443,22 +437,10 @@ define complex business processes in an algorithmic manner.
 \label{bpelevolution}
 \end{figure}
 
-In detail, WS-BPEL defines a model and a grammar for describing the behavior of a business process
-based on interactions between the process and its partners. The interaction with each partner
-occurs through web service interfaces, and the structure of the relationship at the interface level
-is encapsulated in what is called a partnerLink. The WS-BPEL process defines how multiple
-service interactions with these partners are coordinated to achieve a business goal, as well as the
-state and the logic necessary for this coordination. WS-BPEL also introduces systematic
-mechanisms for dealing with business exceptions and processing faults. Moreover, WS-BPEL
-introduces a mechanism to define how individual or composite activities within a unit of work
-are to be compensated in cases where exceptions occur or a partner requests reversal.
-A WS-BPEL process is a reusable definition that can be deployed in different ways and in
-different scenarios, while maintaining a uniform application-level behavior across all of them.
+
 BPEL processes use {\em variables} to temporarily store 
 data. Variables are therefore declared on a process or on a scope 
-within that process. I
-
-
+within that process.
 BPEL activities 
 can be \emph{basic} or \emph{structured}. 
 \emph{Basic activities} are those which describe the elemental 
