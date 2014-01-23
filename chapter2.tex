@@ -244,6 +244,20 @@ indicating which errors can happen in the execution of the composition
 and the way of handling these errors, and (iii) the ability to model web service compositions at a high level, 
 without taking care of the implementation details of each one of the services.
 
+{\bf Comment: Concluir ventajas y desventajas de cada uno.} 
+Choreography on the other hand does not rely on a central coordinator. Rather, each
+web service involved in the choreography knows exactly when to execute its operations
+and whom to interact with. Choreography is a collaborative effort focused on exchange
+of messages. All participants of the choreography need to be aware of the business
+process, operations to execute, messages to exchange, and the timing of message
+exchanges.
+The most recent answer to the integration challenge is the Service Oriented
+Architecture (SOA) and the web services technologies. The bottom-up view of the SOA
+sees different business applications exposing their functionalities through web services.
+Thus we can now access different functionalities of different legacy and new developed
+applications in a standard way (through web services). Such access to functionalities is
+important because typical companies have a large number of existing applications
+which have to be integrated.
 Regarding the choreography approach, there are several languages that 
 have been designed for that purpose. One of the most popular languages 
 is Web Services Choreography Description Language (WS-CDL), 
@@ -270,6 +284,8 @@ A WS-CDL document defines a hierarchy of choreographies, where there is only one
 We can distinguish two different kinds of \textit{complex activities} inside a choreography: the workunit element and the ordering structures. The \textit{workunit} element specifies a condition that must be fulfilled in order to perform some work and/or the repetition of some work. It completes successfully when the set of activities inside completes successfully. \textit{Ordering structures} are used to combine basic activities and other complex activities in a nested way, expressing the order in which actions are performed within the choreography. There are three ordering structures: The \textit{sequence} ordering structure expresses that the set of activities inside must be executed sequentially. The \textit{parallel} ordering structure indicates that the set of activities inside must be executed concurrently. It completes successfully when all the concurrent activities complete successfully. And the \textit{choice} ordering structure specifies that only one of multiple activities can be executed. If the choice have workunits inside, only the first one in lexical order with a ``true'' guard condition is selected. If there are other activities, there is no way to know which one is selected; it is considered as a non-observable decision.
 
 Different types of exceptions are considered in WS-CDL. Exception workunits can be defined to handle all these exceptions. They may also be used as the mechanism to recover from the exceptions. At least one exception workunit must be defined. The guard of the workunit can be used to specify the particular type of exception we want to handle. Only one exception workunit can match each exception. If multiple exception workunits are defined, the order of evaluating them is based on the order in which the workunits have been defined. When the matching happens, the actions of the matched workunit are executed. If no matching happens and a default exception workunit exists, then the actions of this workunit are executed. Otherwise, the exception is raised in the parent choreography. WS-CDL also allows us to define finalization actions within a choreography that can confirm or cancel the effects of this choreography, so we can use this actions for compensation. 
+
+Next, we introduce the orchestration approach used in this Thesis.
 
 \subsection {WS-BPEL}
 In 2002, researchers and engineers of the main companies of the world (IBM, Microsoft, etc.)
@@ -519,20 +535,7 @@ and a common deadline for the execution of these receive activities is set (to t
 is expressed in the definition of the activity.
 \end{itemize}
 
-{\bf Comment}: Incluir foto orchesta y ventajas y desventajas choreographies and orchestations
-Choreography on the other hand does not rely on a central coordinator. Rather, each
-web service involved in the choreography knows exactly when to execute its operations
-and whom to interact with. Choreography is a collaborative effort focused on exchange
-of messages. All participants of the choreography need to be aware of the business
-process, operations to execute, messages to exchange, and the timing of message
-exchanges.
-The most recent answer to the integration challenge is the Service Oriented
-Architecture (SOA) and the web services technologies. The bottom-up view of the SOA
-sees different business applications exposing their functionalities through web services.
-Thus we can now access different functionalities of different legacy and new developed
-applications in a standard way (through web services). Such access to functionalities is
-important because typical companies have a large number of existing applications
-which have to be integrated.
+
 
 \section{Cloud Computing/Grid Computing}
 Gracias a la rápida evolución que ha tenido la sociedad, servicios básicos para el desarrollo de la vida cotidiana son comúnmente suministrados a los ciudadanos, de tal manera, que cualquier persona puede tener acceso inmediato a ellos de forma fácil. Hoy en día, estos servicios, conocidos en el mundo anglosajón como ``utility services'', engloban el suministro de agua, electricidad, gas y teléfono, pero en los últimos tiempos está cobrando fuerza una vieja idea que se intentó llevar a cabo sin éxito a finales de los años 60 y principios de los 70, el ``Utility Computing''. Este nuevo paradigma de computación es normalmente confundido con Cloud o Grid Computing, pero hay ciertos matices que los diferencian. ``Utility Computing'' se puede entender como el modelo de negocio que subyace en una infraestructura Cloud o Grid, es decir, puede ser entendido como el medio de cobro de servicios computacionales similar al que se hace con la electricidad, por lo que el usuario pagará sólo por su consumo, mientras que los costes asociados a la producción y distribución de potencia de cómputo serán sufragados por las compañías suministradoras. Así, las pequeñas y medianas empresas podrían competir en igualdad de condiciones con las grandes empresas, ya que no sería necesario hacer una gran inversión en datacenters para poder ofrecer un determinado servicio y se fomentaría la creación de empresas, ya que estos datacenters suponen una fuerte inversión inicial que muchos emprendedores no pueden acometer. Además, el usuario final de las aplicaciones, servicios o infraestructuras también se beneficiaría porque al reducir costes de producción se reduce el precio de los productos. Por seguir con el símil de la energía, podemos ver el cloud computing como una gran central generadora de energía que da suministro a millones de usuarios y que evita que dichos usuarios tengan que tener su propia central en casa para poder encender sus aparatos eléctricos, mientras que el ``utility computing'' es la forma de tarificar el gasto de los usuarios o, de una forma más abstracta, podemos verlo como el contador que muestra el consumo energético. Al igual que pasa con el software, los protocolos o cualquier paradigma relacionado con la informática, Cloud Computing debe atravesar una serie de etapas para poder comprobar si toda esta publicidad que le están dando las empresas sirve de veras para ahorrar costes y favorecer la competitividad o solo es más una forma de aumentar ingresos o, en el caso de la investigación, obtener nuevos fondos. En este sentido, algunos autores consideran que Cloud Computing no es mas que una nueva forma de nombrar lo que toda la vida se ha llamado Grid o Web Services y que realmente no supone ningún avance en el campo de la informática. Este artículo tratará de presentar más ampliamente la arquitectura y conceptos para comprender un sistema de computación basado en la nube y mostrará las diferencias entre dos enfoques clásicos de computación (Grid y Web Services) y Cloud. Finalmente, se propondrá una serie de ideas que pueden llegar a convertirse en trabajos de investigación en un futuro.         
