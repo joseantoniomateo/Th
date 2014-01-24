@@ -553,36 +553,59 @@ are monopolising the world market \cite{}.
 Thanks to the fast development of society, daily basic services such as water, electricity, gas and telephone services 
 are commonly supplied to citizens so that everybody can have 
 immediate access to them in developed countries. Today, these services 
-known as ``utility'' services since customers are charged according to the consumption.  
-This simple and old concept is revolutionising the way computational systems are evolving. 
-Thus, major companies such as Google, Amazon or Microsoft are introducing in their business model
-this new approach known as ``Utility Computing'' and that that was tried without success in the late 60s and early 70s. 
-This new computing paradigm is often confused with Cloud and Grid Computing. Utility Computing 
+known as ``utility'' services since customers are charged according to the consumption. In 1969, Leonard Kleinrock, one of the leading scientists of the American ARPANET agency, said: ``Today, computer networks are in their infancy, but as they grow and become more sophisticated we will see the rise of the \emph { Utility computing}. It is amazing how in 1969 a scientist could already see the usefulness of computers and the advent of a distributed computing model that would be based on providing services and paying for them. What makes this statement more fascinating is that this year is when the Internet was born. The first version only connected 2 computers worldwide, but this person was already thinking that someday the Internet could connect millions of computers into a single network. This vision of computing (based on a model of on demand service provisioning) anticipated the massive transformation of the computer industry in the XXI century. 
+
+Thus, major companies such as Google, Amazon or Microsoft are introducing it in their business model. Moreover, it
+is often confused with Cloud and Grid Computing. Utility Computing 
 is the underlying business model for a Grid or Cloud infrastructure, i.e. it
-can be understood as a mean of charging customers  for computing services so that 
+can be seen as a mean of charging customers  for computing services so that 
 users pay only for the consumption, whereas the costs associated with the production and distribution of computing services 
-will be undertaken by the provider. As happens with the software , protocols or any computer-related paradigm , Cloud Computing must pass through a series of steps to check if all the publicity they are giving really serves companies to save costs and enhance the competitiveness or it's just one more way to increase income or, in the case of research , to obtain new funds. In this sense, some authors believe that Cloud Computing is nothing more than a new way of naming what life has been called Grid or Web Services and does not really involve any advancement in the field of computing. 
+will be undertaken by the provider. As happens with revolutionary software, 
+protocols or any computer-related paradigm, Cloud Computing must undergo 
+a series of steps to check if all benefits 
+that providers are promising really serves companies to save costs and enhance the competitiveness. 
+In this sense, Larry Ellison, founder and CEO of Oracle, believe that Cloud Computing 
+is nothing more than a new way of naming what companies have been doing so far \cite{abovetheclouds}: 
+\begin{quote}
+``The interesting thing about Cloud Computing is that we have redefined Cloud Computing 
+to include everything that we already do\ldots I do not understand what we would do differently in the light of Cloud
+Computing other than change the wording of some of our ads.''
+\hspace{5cm}\emph{Larry Ellison, quoted in the Wall Street Journal, September 26, 2008.}
+\end{quote}
+Many researchers have tried to define the term ``Cloud Computing'' without reaching 
+a standard definition. For instance, Buyya et al. \cite{} define a cloud system as:
+\begin{quote}
+``A cloud is a parallel and distributed system consisting of a collection of 
+virtualized and interconnected computers that have been provisioned dynamically 
+and they are presented as a single computational resource based on service level agreements (SLAs) 
+established by negotiation between the service provider and the consumer.''
+\end{quote} 
 
-{\bf Añadir un parrafo sobre Grid y otro sobre Cloud}.
+In \cite{vaq09} one can find up to 21 different definitions of Cloud computing. For instance, Luis M. Vaquero et al. defines the Cloud as:
+\begin{center}
+\emph{``The Cloud is a large and easy to use container of virtualized resources 
+(such as hardware, services, development platforms \ldots). These resources can be 
+dynamically reconfigured to fit into a variable load (scale), allowing also the optimal use of these resources. 
+This service is exploited through pay-per-use model that is guaranteed by agreements.''}
+\end{center} 
 
-Cloud Computing , the old dream of providing computing services as a utility, has the potential to transform much of the computer industry , making the software more attractive to offer it as a service and shaping the way they are designed and buy the hardware. With this new approach, any entrepreneur with good ideas to offer services over the Internet will not need to invest heavily in equipment to carry out their project or need much initially hire staff to manage and maintain such equipment. Also, do not have to perform complicated previous studies to estimate the number of potential users and thus avoid some of the major headaches of project managers : the over- provisioning or under- provisioning. These two concepts together with the elasticity of resources can be considered as key to cloud computing , as the aim of reducing costs is directly proportional to the correct resource estimate in `` real time '' and this can only be correct estimate provided if the system meets the property of elasticity , ie , that you increase the range of relatively short time and you decrease the resources devoted to a task with a low economic cost . This approach can have , at first glance, the possibility of using formal methods with such systems is not seen , since normally formal techniques are used in the design of systems with time critical response and navigation systems of an aircraft, transportation of hazardous materials , etc. . Thus, it is not feasible to use cloud computing when very low response times are required, as, for example, a navigation system of an aircraft can not wait several minutes for new resources assigned to make a decision. However, if there are other systems where formal methods and can converge cloud computing , high availability systems .
+{\bf Meter un par de párrafos de Grid}
 
-Finally , the main difference between a Cloud-oriented and a Grid-oriented system relies in the virtualisation of resources. 
+Finally, the main difference between a Cloud-oriented and a Grid-oriented system relies in the virtualisation of resources. 
 In a Grid infrastructure, users do not share in real-time the resources allocated to them, 
 whereas in a Cloud infrastructure the virtualisation is essential in order to serve more users,
 thus getting the savings promised by suppliers \cite{}.
-
 
 \section{Web services vs. Grid/Cloud Computing}
 
 As we know , our research group has focused its research on developing a methodology to build and test systems with time constraints using formal techniques . In recent years , this methodology has been applied in the area of ??Web services, more specifically, that these services meet the task entrusted to them and automatically coordinate for conducting a more general work . The problem we are having is that web services as had a boom a few years ago , many research groups focused their studies in this field and therefore there are many researchers proposing new approaches and this has meant that there are certain parts BPEL or WS -CDL are quite studied. Thus, a system is emerging where formal methods can play an important role and where our group can benefit from their vast experience both as formalizing web services , cloud computing . This new paradigm , as discussed above, is living his season correctly right now and big companies like Google , IBM, Microsoft have decided to step forward and bet heavily on cloud computing . In addition , many governments are interested in migrating services to the cloud to reduce costs and enable scalability when they needed. For example , one must ask if it is necessary for the Tax Agency have large data centers where demand for services by citizens grows only at the time of the statement of income. Probably the answer is yes because you do need to store all that data and give some confidence that your tax data will not fall into the hands of people with no good intentions , but all need to calculate whether you can outsource to save costs equipment or could even create a private cloud between all agencies that work with the public agency to share resources and information . In this sense, these systems where security , privacy and availability are a nonnegotiable requirement is where we focus part of our investigations and try to improve any component of the cloud architecture presented in the previous section. For example , most research groups develop tools, but the test phase does not exist or is devoted little time. Last week we met with one of the leading researchers in the field of Grid / Cloud Computing , Karim Djemame , and it told us that the main problem I had was that they did not know specifically that worked well your tool and I was quite interested in the check your tool. \ \
 
 
-On the other hand , here are some differences between web services and grid / cloud computing to see where to apply our expertise in this system are listed . First, we can consider that Web services are themselves software offered as a service ( SaaS ) , although there are some differences between the two approaches , eg standardization. Therefore, this software could be composed of a set of services , probably communicated via the Internet , and which coordinate to perform a certain task. So far , nothing new, but the main difference lies in virtualization, since different services provided by the cloud are performed in virtual machines rather than directly on a server such as the case of the web service , so that the concurrency in the system is higher. \ \
+On the other hand , here are some differences between web services and grid / cloud computing to see where to apply our expertise in this system are listed . First, we can consider that Web services are themselves software offered as a service ( SaaS ) , although there are some differences between the two approaches , eg standardization. Therefore, this software could be composed of a set of services , probably communicated via the Internet , and which coordinate to perform a certain task. So far , nothing new, but the main difference lies in virtualization, since different services provided by the cloud are performed in virtual machines rather than directly on a server such as the case of the web service , so that the concurrency in the system is higher. \\
 
 Another difference is the persistence of the data. If we coordinate multiple web services to perform sums the only way that they can store the result is storing it in the database , however , there is an approach called WSRF (Web Services Resources Framework) has been standardized and that resolves this problem . In this framework each Web service is associated with a resource or more of the system so that you can interact with the service and decide which resource access . The main advantage is that all services are defined in WSDL ( Web Services Description Language ) and communication , addressing, etc. . is standardized , so that the cooperation between such systems is simple . Another advantage is that the user can decide which resources interacts with . So , we could add a bottom layer in our methodology that would allow the definition of web services with resources and once verified that the system is correct, these web services deployed on physical machines. This approach fit perfectly with our research because it uses web services with resources and these resources are time restrictions to prevent a user from system-wide . \\
 
-Also, we can see that cloud computing could be seen as a layer to be placed under the web services , since you can use these to access the resources , but we must emphasize that the cloud is not only providing software as a service, but there are infrastructure and platform as a service , which the web services can not cover . That is, a part of cloud computing (SaaS ) can be compared directly with web services, but the other two parties have nothing to do , so it would be like comparing the TCP / IP protocol with the architecture of a PC , although necessary that both approaches (web services and cloud computing) converge to the growth of both paradigms , like grid computing and web services converged on WSRF . \ \
+Also, we can see that cloud computing could be seen as a layer to be placed under the web services , since you can use these to access the resources , but we must emphasize that the cloud is not only providing software as a service, but there are infrastructure and platform as a service , which the web services can not cover . That is, a part of cloud computing (SaaS ) can be compared directly with web services, but the other two parties have nothing to do , so it would be like comparing the TCP / IP protocol with the architecture of a PC , although necessary that both approaches (web services and cloud computing) converge to the growth of both paradigms , like grid computing and web services converged on WSRF . \\
 
 
 
