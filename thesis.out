@@ -8,16 +8,15 @@
 \BOOKMARK [2][-]{subsection.2.2.1}{WS-BPEL}{section.2.2}
 \BOOKMARK [1][-]{section.2.3}{Heterogeneous Distributed Systems: Grid/Cloud Computing}{chapter.2}
 \BOOKMARK [1][-]{section.2.4}{Web services vs. Grid/Cloud Computing}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.4.1}{Web Services Resource Framework\(WSRF\)}{section.2.4}
-\BOOKMARK [2][-]{subsection.2.4.2}{Introducción}{section.2.4}
-\BOOKMARK [2][-]{subsection.2.4.3}{WS-ResourceProperties}{section.2.4}
-\BOOKMARK [2][-]{subsection.2.4.4}{WS-Base Faults}{section.2.4}
-\BOOKMARK [2][-]{subsection.2.4.5}{WS-ServiceGroup}{section.2.4}
-\BOOKMARK [2][-]{subsection.2.4.6}{WS-ResourceLifetime}{section.2.4}
-\BOOKMARK [1][-]{section.2.5}{WS-Notification}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.5.1}{WS-BrokeredNotification}{section.2.5}
-\BOOKMARK [2][-]{subsection.2.5.2}{Formal models of concurrency}{section.2.5}
-\BOOKMARK [1][-]{section.2.6}{Summary}{chapter.2}
+\BOOKMARK [1][-]{section.2.5}{Web Services Resource Framework}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.5.1}{WS-ResourceProperties}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.2}{WS-Base Faults}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.3}{WS-ServiceGroup}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.4}{WS-ResourceLifetime}{section.2.5}
+\BOOKMARK [1][-]{section.2.6}{WS-Notification}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.6.1}{WS-BrokeredNotification}{section.2.6}
+\BOOKMARK [2][-]{subsection.2.6.2}{Formal models of concurrency}{section.2.6}
+\BOOKMARK [1][-]{section.2.7}{Summary}{chapter.2}
 \BOOKMARK [0][-]{chapter.3}{BPELRF}{}
 \BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}
 \BOOKMARK [1][-]{section.3.2}{Background and Related Work}{chapter.3}
