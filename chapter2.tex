@@ -67,7 +67,7 @@ The main disadvantages (or beliefs) that slow the progress of this area are:
 it is based).
 \item Increasing system complexity causes an exponential increase
 the complexity of the verification.
-\end {itemize}
+\end{itemize}
 
 As commented previously, companies can use formal methods along the entire
 development lifecycle of a system, both hardware and software. 
@@ -675,10 +675,10 @@ the XML documents required to manage the resource.
 A WS-Resource is defined as (i) the combination of an XML document with a type defined
 by one or more \emph{portTypes} (a service may play different roles in the same interaction) and (ii) it must 
 be addressed and accessed according to implied resource pattern. This pattern is a derivation 
-of the \emph{Endpoint References} included in the standard WS -Addressing. A \emph{Endpoint Reference}
-shall consist of: and Uniform Resource Identifier (URI) parameters of the message that was sent to request that the \ emph { and } Endpoint Reference data on the interface used . In this exchange, the identifier of the persistent resource is encapsulated in a \ emph { and } Endpoint Reference used to identify the resource in any exchange of messages between services forming the choreography. So , WSRF to declare , accessing, monitoring and destroy WS -Resources by conventional techniques , which makes it easy to run as it is not necessary to complicate the decision logic of the resource owner to process service management messages .
-It also includes mechanisms 
-to describe how to check the status of a resource and how to make it accessible through its interface (described in WSDL).
+of the \emph{Endpoint References} included in the standard WS-Addressing. 
+WS-Addressing is used to standardise the endpoint reference of a WS-Resource. This endpoint
+reference is the address of the WS-Resource at
+a given network endpoint and it must be used to identify the resource in any exchange of messages. 
 
 Typically, web service interfaces provide users with the ability to access and manipulate its state, e.g. data values
 that evolve by the interaction among various services. In other words, 
@@ -688,47 +688,39 @@ as evident in the definition of the interface \cite{Fost04}. The messages sent a
 by these services involve (or encourage the programmer to infer) the existence of an resource. 
 Therefore, it is desirable the definition of standards that allow the discovery, 
 creation, manipulation and destruction of these resources. These standards should make this 
-complex environment as interoperable as possible. WSRF includes the mechanisms defining the means by which \cite{}:
+complex environment as interoperable as possible. Furthermore, 
+WSRF offers mechanisms to declare, access, monitor and destroy WS-Resources by using conventional techniques, 
+which makes it easy to run in any platform since it is not necessary to take into account the decision logic of the resource owner.
+It also includes mechanisms to describe how to check the status of a resource 
+and how to make it accessible through its interface (described in WSDL). 
+In detail, WSRF includes the mechanisms defining the means by which \cite{}:
 
 \begin{itemize}
-\item a WS-Resource can be destroyed, either synchronously with respect to a
-destroy request or through a mechanism offering time-based (scheduled)
-destruction, and specified resource pr
-operties may be used to inspect and monitor the lifetime of a WS-Resource (WS-ResourceLifetime);
-
-\item the type definition of a WS-Resource can be composed from the interface
-description of a Web service and an
-XML resource prop
-erties document
-, and
-the WS-Resource?s state can be queried and modified via Web services
-message exchanges (WS-ResourceProperties);
-\item a Web service endpoint reference (WS-
-Addressing) can be renewed in the
-event the addressing or policy informat
-ion contained within it becomes invalid
+\item a WS-Resource can be destroyed, either synchronously attending to a
+destroy request or a time-based (scheduled)
+destruction, and specified resource properties may be used to inspect and monitor the lifetime of a WS-Resource (WS-ResourceLifetime);
+\item the state of  a WS-Resource 
+can be queried and modified via Web services
+message exchanges (using the specification WS-ResourceProperties);
+\item an endpoint reference (WS-Addressing) can be renewed in the
+event the information contained becomes invalid
 or stale (WS-RenewableReferences);
-\item heterogeneous by-reference collection
-s of Web services can be defined,
-whether or not the services are WS
--Resources (WS-ServiceGroups); and 
-\item fault reporting can be made more st
-andardized through use of an XML
-Schema type for base faults and rules for how this base fault type is used and
-extended by Web services (WS-BaseFaults). 
+\item a collection of heterogeneous of web services can be defined,
+whether or not the services are WS-Resources (WS-ServiceGroups); and 
+\item fault reporting can be made more standardized through use of predefined XML
+template (WS-BaseFaults). 
 \end{itemize} 
-
-  
 
 \subsection{WS-ResourceProperties}
 
-Como se ha comentado anteriormente, WSRF utiliza una especificación concreta para definir las propiedades del WS-Resource. Este recurso estará compuesto por la definición de la interfaz en WSDL y un documento XML (Resource Properties Document) que especifica las propiedades del mismo, por ejemplo, el tamaño de disco, la capacidad del procesador, etc., de tal manera que si queremos acceder, modificar o actualizar este documento debemos utilizar una serie de mensajes preestablecidos en la especificación. Las operaciones que se pueden hacer son las siguientes:
+As mentioned above, WSRF uses a particular specification 
+for defining the properties (attributes) of a WS-Resource, which is composed of 
+the definition of the interface in WSDL and an XML ocument (Resource Properties Document) 
+that specifies its properties. For example, these properties can be the disk size, processor capacity, etc.
+As usual, there is a number of messages in the specification to update one or more of theses properties or to retrieve this
+information. 
 
-\subsubsection{GetResourceProperty}
-Esta operación como su propio nombre indica permite al servicio web que realiza la petición recuperar el valor de una {\bf única} propiedad del documento de propiedades. Para aclarar más los conceptos se define el siguiente ejemplo. \\
-
-
-Dado el documento de propiedades:
+From now on, we suppose that the Resource Properties Document is:
 
 \lstset{language=XML, numbersep=5pt,basicstyle=\small, frame=single}
 \begin{lstlisting}
@@ -742,7 +734,14 @@ xmlns: tns=``http://example.com/diskDrive'' >
 ...
 \end{lstlisting}
 
-Una posible petición puede ser:
+In WSRF, the operations that can be done are:
+
+\begin{description}
+\item[GetResourceProperty]
+As the name suggests, this operation allows services to request 
+the value of only one property of the document.
+
+For instance, a possible request can be:
 
 \lstset{language=XML, numbersep=5pt,basicstyle=\small, frame=single}
 \begin{lstlisting}
@@ -755,9 +754,10 @@ Una posible petición puede ser:
 </s12:Body>...
 \end{lstlisting}
 
-\subsubsection{GetMultipleResourceProperties}
-Este método es equivalente al anterior, pero para acceder a más de una propiedad del documento en el mismo mensaje, es decir, se utiliza para evitar congestionar la red. El mensaje enviado sería:
-
+\item[GetMultipleResourceProperties]
+This method is equivalent to the last one, but it is intended to retrieve
+more than one property of the document at the same time. 
+It can be used to prevent network congestion. The message would be:
 
 \lstset{language=XML, numbersep=5pt,basicstyle=\footnotesize ,frame=single}
 \begin{lstlisting}
@@ -770,16 +770,16 @@ Este método es equivalente al anterior, pero para acceder a más de una propiedad
 ...
 \end{lstlisting}
 
-\subsubsection{SetResourceProperties}
-Este método se utiliza para realizar cambios en el documento de propiedades. Existen 3 tipos de cambios:
+\item[SetResourceProperties]
+This specification allows to change some properties in the document. There are three kind of changes:
 
 \begin{itemize}
-\item Insert: Permite añadir nuevas propiedades en el documento.
-\item Update: Se utiliza para actualizar el valor de alguna propiedad.
-\item Delete: Elimina propiedades del documento.
+\item Insert: It allows to add new properties to the document.
+\item Update: It is used to update the value of a property.
+\item Delete: To delete a property from the document.
 \end{itemize}
 
-Un posible ejemplo de petición sería:
+A possible request can have the following form:
 
 \lstset{language=XML, numbersep=5pt, basicstyle=\small,frame=single}
 \begin{lstlisting}
@@ -802,8 +802,8 @@ Un posible ejemplo de petición sería:
 ...
 \end{lstlisting}
 
-
-El documento de propiedades quedaría con el siguiente formato:
+As it can be observed, it is possible to concate more than one operation in the same request. 
+After proccesing this request, the document must look like this:
 
 \lstset{language=XML, numbersep=5pt, frame=single}
 \begin{lstlisting}
@@ -819,8 +819,9 @@ El documento de propiedades quedaría con el siguiente formato:
 ...
 \end{lstlisting}
 
-\subsubsection{QueryResourceProperties}
-Como su propio nombre indica, este método se utiliza para realizar consultas sobre propiedades del recurso. Por ejemplo si queremos saber si el número de bloques es mayor que 20 y el tamaño de bloque es 1024 realizaríamos la siguiente consulta:
+\item[QueryResourceProperties]
+This method is used for querying resource properties. For example, if one wants to know if the number of blocks is greater than 20 and the block size is 1024,
+the following query gets this information:
 
 \lstset{language=XML, numbersep=5pt, frame=single}
 \begin{lstlisting}
@@ -836,9 +837,7 @@ Como su propio nombre indica, este método se utiliza para realizar consultas sob
 ...
 \end{lstlisting}
 
-\newpage
-La respuesta que envía el otro servicio es:
-
+The response must look like this:
 
 \lstset{language=XML, numbersep=5pt, frame=single}
 \begin{lstlisting}
@@ -851,10 +850,12 @@ La respuesta que envía el otro servicio es:
 ...
 \end{lstlisting}
 
+\end{description}
 
 \subsection{WS-Base Faults}
-El diseñador de un servicio web normalmente utiliza interfaces definidas por otros, por lo que un método que estandarizase el formato de los mensajes de notificación de errores facilitaría la labor de los desarrollares. Éste es el objetivo de WS-BaseFaults. Los mensajes de fallos en WSRF tienen el siguiente formato:
-
+Normally, a designer uses web service interfaces defined by others, and, therefore,
+a method to standardize the format of error messages would facilitate the work of developers. 
+This is the goal of WS-BaseFaults, where an error message has the following format:
 
 \lstset{language=XML, numbersep=5pt, frame=single}
 \begin{lstlisting}
@@ -870,18 +871,20 @@ El diseñador de un servicio web normalmente utiliza interfaces definidas por otr
 </BaseFault>
 ...
 \end{lstlisting}
-donde:
+where:
 
 \begin{itemize}
-\item Timestamp: Hora exacta cuando el fallo ha ocurrido.
-\item OriginatorReference: Dirección en formato WS-Addressing del servicio que ha generado el fallo.
-\item ErrorCode: Código de error para ser utilizado por sistemas de información de fallos, por ejemplo, POSIX errno.
-\item Description: Explicación de la causa del fallo (en lenguaje natural).
-\item FaultCause: Causa técnica del fallo. 
+\item Timestamp: It is the exact instant where the error happened.
+\item OriginatorReference: This is the endpoint reference of the service that originated the error.
+\item ErrorCode: Error code (e.g. POSIX errno) to be used by error handling systems .
+\item Description: Explanation of the cause of error (in natural language).
+\item FaultCause: Technical cause of the error. 
 \end{itemize}
-
+Finally, note that it is possible to report an error whithout using this format, but WSRF provides it
+to help participants to manage it in a consistent way.
 \subsection{WS-ServiceGroup}
-Esta especificación permite crear grupos que comparten una serie de propiedades en común, es decir, agrupar diferentes servicios web que tienen comportamientos similares.
+This specification allows users to create groups of services 
+that share a number of properties in common, i.e., it is useful to group different web services that have similar behaviours.
 
 \subsection{WS-ResourceLifetime}
 
