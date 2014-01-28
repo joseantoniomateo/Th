@@ -632,31 +632,93 @@ which web services cannot cover.
 
 
 \section{Web Services Resource Framework}
-The architecture presented by web services has been widely accepted as a means of structuring the interactions between services as part of a distributed system and to work together to achieve a common goal . Currently , developers require greater standardization environments to provide additional interoperability between such services, but until mid-2004 any research group or group of experts had seriously considered the idea of ??proposing a standard for modeling communication between services web resources that have associated persistent . So in January of this year, several members of the organization \ emph { } Globus Alliance and IBM computer multinational defined with the help of experts from companies such as HP , SAP, Akamai, etc. . , Specification documents should occur in this model and the basis of an initial architecture . These documents were sent to the organization responsible for standardization , OASIS in March of 2004. Initially, two committees that take care of the study and development of certain parts of this new standard is formed. On the one hand , there was the \ emph { } WSRF Technical Committee which operated four specifications : \ emph { WS- ResourceProperties , WS- ResourceLifetime , WS- Servicegroup , and WS- BaseFaults } . Moreover, the \ emph { } WSN Technical Committee is responsible for the specifications : \ emph { WS- BaseNotification , WS- Topics , and WS- BrokeredNotification } . \ \
 
-WS- Resource Framework is inspired by the work previously done by the \ emph { Global Grid Forum 's Open Grid Services Infrastructure ( OGSI ) Working Group } \ cite { Foster03 } . More specifically, it can be seen as a simple refactoring concepts and interfaces developed in the specification \ emph { OGSI V1.0 } such that exploits recent developments in the area of ??web services (eg , WS -Addressing ) . \ \
+The aim of this section is to introduce the basic concepts for the management 
+and destruction of stateful web services, i.e., web services with 
+a set of resources associated to store the
+state after ending an operation. In this sense, we call \emph{WS-Resource} 
+to the association between a web service and a persistent resource.
+To manage stateful web services, it is required to 
+define the patterns used to create the relationship between the service and the resource. These patterns
+will reuse in most of the cases a series of widely studied technologies, e.g. WS-Addressing. 
+Moreover, it is need to define how the properties of the resources can be accessible 
+from outside. This is usually done through an interface.
 
-The aim of this paper is to introduce the basic concepts for the management and destruction of persistent web services , ie , web services that have associated resources to store the states of the same , as to the appearance of this approach , the web services were considered `` \ emph { stateless }'' and , therefore , they could temporarily store data or results of operations in a simple way for the user, since it was necessary to store them in a database outside the service data. In this approach, it is necessary to codify the relationship between the service and the application in terms of patterns using a series of widely studied technologies , for example, WS -Addressing and also will need to make their properties accessible from the outside through an interface . In this sense , we call \ emph { WS- Resource } to the association between a web service and a persistent resource .
-La arquitectura que presentan los servicios web ha sido ampliamente aceptada como medio para estructurar las interacciones existentes entre los servicios que forman parte de un sistema distribuido y que colaborar para conseguir un objetivo común. En la actualidad, los desarrolladores requieren a los entornos una mayor estandarización para facilitar interoperatividad adicional entre dichos servicios, pero hasta mediados de 2004 ningún grupo de investigación o grupo de expertos se había planteado seriamente la idea de proponer un estándar para modelar la comunicación entre servicios web que poseen recursos persistentes asociados. Así, en Enero de ese año, varios miembros de la organización \emph{Globus Alliance} y de la multinacional informática IBM definieron, con la ayuda de expertos de empresas como HP, SAP, Akamai, etc., la especificación de los documentos que deberían producirse en este modelo y la base de una arquitectura inicial. Estos documentos fueron enviados a la organización encargada de su estandarización, OASIS, en Marzo de 2004. En un principio, se formaron dos comités que se encargarían del estudio y desarrollo de ciertas partes de este nuevo estándar. Por un lado, estaba el \emph{WSRF Technical Committee} que gestionaba cuatro especificaciones: \emph{WS-ResourceProperties, WS-ResourceLifetime, WS-ServiceGroup, y WS-BaseFaults}. Por otro lado, el \emph{WSN Technical Committee} se encargaba de las especificaciones: \emph{WS-BaseNotification, WS-Topics, y WS-BrokeredNotification}. 
+The architecture provided by web services has been widely accepted as a means of 
+structuring the interactions between services that are part of a distributed system 
+and work together to achieve a common goal. Currently, developers require a higher 
+degree of standardization to provide additional interoperability between such services, 
+but until mid-2004 no research group or group of experts had seriously considered the idea of 
+proposing a standard for modelling the communication between stateful services, that is, services
+endowed with an associated persistent resource. 
+Thus, in January of 2004, several members of the organization Globus Alliance and the multinational IBM 
+defined, with the help of experts from companies such as HP, SAP, Akamai, etc., 
+the first specification and the basis of an initial architecture. 
+In March of 2004, these documents were sent to the organization responsible for the standardization, 
+OASIS. Initially, two committees were formed to study and develop 
+certain parts of the recently created standard. 
+On the one hand, it was created the \emph{WSRF Technical Committee}, which worked on four specifications:
+\emph{WS-ResourceProperties, WS-ResourceLifetime, WS-Servicegroup}, 
+and \emph{WS-BaseFaults}. Moreover, the \emph{WSN Technical Committee} 
+was responsible for the rest of the specifications: \emph{WS-BaseNotification, WS-Topics}, and \emph{WS-BrokeredNotification}.
 
-WS-Resource Framework está inspirado en el trabajo realizado previamente por el \emph{Global Grid Forum's Open Grid Services Infrastructure (OGSI) Working Group} \cite{Foster03}. Más concretamente, puede ser visto como una sencilla refactorización de los conceptos e interfaces desarrollados en la especificación \emph{OGSI V1.0}, de manera que explota los recientes desarrollos en el área de los servicios web (por ejemplo, WS-Addressing). 
+WS-Resource Framework is inspired by the work previously done by Global Grid Forum's 
+Open Grid Services Infrastructure (OGSI) Working Group \cite{Foster03}. More specifically,
+WSRF can be seen as a simple refactoring of concepts and interfaces 
+developed in the specification \emph{OGSI V1.0},
+exploiting recent developments in the area of web services (e.g. WS-Addressing). 
+WS- Resource Framework \cite{BAN06} is a specification, whose purpose is to define a 
+generic framework for modelling and accessing WS-Resources and the relationships 
+between them in a Grid/Cloud environment. In detail, WSRF defines 
+the representation of the WS-Resource, specifying the messages exchanged and 
+the XML documents required to manage the resource. 
+A WS-Resource is defined as (i) the combination of an XML document with a type defined
+by one or more \emph{portTypes} (a service may play different roles in the same interaction) and (ii) it must 
+be addressed and accessed according to implied resource pattern. This pattern is a derivation 
+of the \emph{Endpoint References} included in the standard WS -Addressing. A \emph{Endpoint Reference}
+shall consist of: and Uniform Resource Identifier (URI) parameters of the message that was sent to request that the \ emph { and } Endpoint Reference data on the interface used . In this exchange, the identifier of the persistent resource is encapsulated in a \ emph { and } Endpoint Reference used to identify the resource in any exchange of messages between services forming the choreography. So , WSRF to declare , accessing, monitoring and destroy WS -Resources by conventional techniques , which makes it easy to run as it is not necessary to complicate the decision logic of the resource owner to process service management messages .
+It also includes mechanisms 
+to describe how to check the status of a resource and how to make it accessible through its interface (described in WSDL).
 
-El objetivo de este trabajo es introducir los conceptos fundamentales para la gestión y destrucción de servicios web persistentes, es decir, servicios web que llevan asociados recursos donde guardar los estados de los mismos, ya que hasta la aparición de esta aproximación, los servicios web eran considerados ``\emph{stateless}'' y, por tanto, no podían almacenar temporalmente datos o resultados de sus operaciones de una manera sencilla para el usuario, ya que era necesario almacenarlos en una base de datos ajena al servicio. En este enfoque, es necesario codificar la relación entre el servicio y el recurso en términos de patrones utilizando una serie de tecnologías ampliamente estudiadas, como, por ejemplo, el WS-Addressing y, también, será necesario hacer sus propiedades accesibles desde el exterior a través de un interfaz. En este sentido, llamaremos \emph{WS-Resource} a la asociación entre un servicio web y un recurso persistente.  
-
-WS- Resource Framework \ cite { BAN06 } is a specification developed by OASIS and some of the most pioneering IT companies , whose purpose is to define a generic framework for modeling and accessing resources associated with web services and the relationships between these resources in a Grid / Cloud environment. This approach consists of a set of specifications that define the representation of the WS- Resource in the terms that specify the messages exchanged and the XML documents related . It also includes mechanisms to describe the means to check the status of a resource and service description, which together form the definition of a WS- Resource. Also, define the steps needed to make the state of a web service accessible through its interface (described in WSDL) . \ \
-
-Typically, web services interfaces provide users the ability to access and manipulate its condition , for example, data values ??that evolve by the interaction between various services. In other words, the message exchanges that are implemented in the behavior of the services are intended to allow persistent access to these resources. However, the notion of persistent resources underlying the implementation of the services is not as evident in the definition of the interface \ cite { Fost04 } . The messages sent and received these services involve ( or encourage the programmer to infer ) the existence of a type associated resource. It is therefore desirable that standards that allow the discovery , creation, insight , interaction and destruction of these resources are defined and the means chosen to accomplish this mission is as interoperable as possible. These observations have led to the appearance of the proposal discussed above , WS- Resource, to model states in the context of Web services. A WS- Resource is defined as the composition of a web service and its associated persistent resources , ie, \ emph { ( i ) } expressed as a combination of an XML document with a type defined by one or more \ emph { portTypes } ( a service may play a certain role if you implement all the \ emph { } comprising portTypes that role ) and \ emph { ( ii ) } addressed and accessed according to implied resource pattern , a derivation of the \ emph { Endpoint References WS -Addressing } . A \ emph { } Endpoint Reference shall consist of : Uniform Resource Identifier (URI ) parameters of the message that was sent to request that the \ emph { and } Endpoint Reference data on the interface used . In this exchange, the identifier of the persistent resource is encapsulated in a \ emph { and } Endpoint Reference used to identify the resource in any exchange of messages between services forming the choreography. So , WSRF to declare , accessing, monitoring and destroy WS -Resources by conventional techniques , which makes it easy to run as it is not necessary to complicate the decision logic of the resource owner to process service management messages . These conventional mechanisms comprise five technical specifications defining the means by which :
-WS-Resource Framework \cite{Ban06} es una especificación, desarrollada por OASIS y algunas de las empresas informáticas más pioneras, cuyo propósito es definir un marco genérico para el modelado y acceso a recursos asociados a servicios web, así como las relaciones entre dichos recursos en un entorno Grid/Cloud. Esta aproximación está compuesta por un conjunto de especificaciones que definen la representación del WS-Resource en los términos que especifican los mensajes intercambiados y los documentos XML relacionados. Asimismo, incluye mecanismos que describen el medio para consultar el estado de un recurso y la descripción del servicio, que forman conjuntamente la definición de un WS-Resource. Además, definen los pasos necesarios para hacer el estado de un servicio web accesible a través de su interfaz (descrita en WSDL).\\
-
-Normalmente, las interfaces de los servicios web proporcionan al usuario la posibilidad de acceder y manipular el estado del mismo, como, por ejemplo, valores de datos que evolucionan por la interacción entre varios servicios. En otras palabras, los intercambios de mensajes que se implementan en el comportamiento de los servicios tienen como objetivo permitir el acceso a estos recursos persistentes. Sin embargo, la noción de recursos persistentes que subyace en la implementación de los servicios no es tan evidente en la definición de la interfaz \cite{Fost04}. Los mensajes que estos servicios envían y reciben implican (o animan al programador a inferir) la existencia de un tipo de recurso asociado. Por tanto, es deseable que se definan estándares que permitan el descubrimiento, creación, introspección, interacción y destrucción de dichos recursos y que la forma elegida para llevar a cabo esta misión sea lo más interoperable posible. Estas observaciones han motivado la aparición de la propuesta comentada anteriormente, WS-Resource, para modelar estados en el contexto de los servicios web. Un WS-Resource se define como la composición de un servicio web y sus recursos persistentes asociados, esto es, \emph{(i)} expresado como una asociación de un documento XML con un tipo definido con uno o varios \emph{portTypes} (un servicio podrá jugar un determinado rol si implementa todos los \emph{portTypes} que comprenden ese rol) y \emph{(ii)} direccionado y accedido de acuerdo al patrón del recurso implícito, una derivación de las \emph{Endpoint References} del WS-Addressing. Una \emph{Endpoint Reference} estará compuesta por: Uniform Resource Identifier (URI), parámetros del mensaje que se envió para solicitar el envío de la \emph{Endpoint Reference} y datos relativos a la interfaz que se usa. En este intercambio, el identificador del recurso persistente es encapsulado en una \emph{Endpoint Reference} y usado para identificar al recurso en cualquier intercambio de mensajes entre los servicios que formen la coreografía. Así, WSRF permite declarar, acceder, monitorizar y destruir WS-Resources mediante mecanismos convencionales, lo que facilita la tarea de gestión, ya que no es necesario hacer más difícil la lógica de decisión del servicio propietario del recurso para procesar los mensajes de gestión. Estos mecanismos convencionales componen cinco especificaciones técnicas que definen los medios por los cuales:
+Typically, web service interfaces provide users with the ability to access and manipulate its state, e.g. data values
+that evolve by the interaction among various services. In other words, 
+the message exchanges that are implemented in the behavior of the services 
+are intended to allow persistent access to these resources. However, this notion is not 
+as evident in the definition of the interface \cite{Fost04}. The messages sent and received 
+by these services involve (or encourage the programmer to infer) the existence of an resource. 
+Therefore, it is desirable the definition of standards that allow the discovery, 
+creation, manipulation and destruction of these resources. These standards should make this 
+complex environment as interoperable as possible. WSRF includes the mechanisms defining the means by which \cite{}:
 
 \begin{itemize}
-\item Se destruye un WS-Resource, ya sea de manera síncrona con respecto a una petición explícita de destrucción o, a través de un mecanismo basado en tiempos (scheduled). Además, es posible declarar unas características específicas  de los recursos (WS-ResourceProperties) que podrían ser utilizadas para inspeccionar y monitorizar el tiempo de vida de dicho WS-Resource (WS-ResourceLifetime).
-\item  Se definen los tipos de WS-Resource, que están compuestos por la interfaz de la descripción del servicio web (WSDL) y por un documento XML de propiedades del recurso. Por otro lado, el estado del WS-Resource puede ser consultado y modificado a través del intercambio de mensajes (WS-ResourceProperties)
-\item Un Endpoint Reference (WS-Addressing) puede ser renovado cuando su información de direccionamiento ha caducado o ha dejado de ser válida por algún error (WS-RenewableReferences).
-\item Además, se define la capacidad de implementar entornos heterogéneos como colecciones de servicios web, sean o no WS-Resources (WS-ServiceGroups).
-\item La notificación de errores puede ser más estandarizada al usar tipos XML Schema para definir los fallos base y definir reglas que muestren cómo esos fallos son usados y extendidos (WS-BaseFaults).
-\end{itemize}   
+\item a WS-Resource can be destroyed, either synchronously with respect to a
+destroy request or through a mechanism offering time-based (scheduled)
+destruction, and specified resource pr
+operties may be used to inspect and monitor the lifetime of a WS-Resource (WS-ResourceLifetime);
+
+\item the type definition of a WS-Resource can be composed from the interface
+description of a Web service and an
+XML resource prop
+erties document
+, and
+the WS-Resource?s state can be queried and modified via Web services
+message exchanges (WS-ResourceProperties);
+\item a Web service endpoint reference (WS-
+Addressing) can be renewed in the
+event the addressing or policy informat
+ion contained within it becomes invalid
+or stale (WS-RenewableReferences);
+\item heterogeneous by-reference collection
+s of Web services can be defined,
+whether or not the services are WS
+-Resources (WS-ServiceGroups); and 
+\item fault reporting can be made more st
+andardized through use of an XML
+Schema type for base faults and rules for how this base fault type is used and
+extended by Web services (WS-BaseFaults). 
+\end{itemize} 
+
+  
 
 \subsection{WS-ResourceProperties}
 
@@ -983,10 +1045,6 @@ Los conceptos importantes en este mensaje son \emph{UseNotify} que se utiliza pa
 Un \emph{NotificationBroker} es un intermediario que, entre otras cosas, permite el envío de mensajes entre uno o varios \emph{Publishers} y uno o varios \emph{NotificationConsumers}. La misión del \emph{Publisher} es observar ciertas situaciones y crear mensajes de notificación para informar de esas situaciones, mientras que el broker es el encargado de distribuir estos mensajes. \\
 
 En este caso, se pueden dar tres relaciones entre las partes: \emph{simple publishing}, \emph{composable publishing} y \emph{demand-based publishing}. En el primer caso, el \emph{Publisher} es el encargado de observar las situaciones y notificarlas al broker que será el encargado de transmitirlas a los interesados. En el segundo caso, el papel del \emph{Publisher} lo realizará una entidad que implementa una serie de servicios especificados en WS-Notification (NotificationProducer). En este caso, el mensaje de notificación puede llegar a otros consumidores que estuviesen suscritos al productor. En ambos casos, el broker puede pedir al \emph{Publisher} que se registre para poder publicar mensajes sobre un topic determinado. El último enfoque (\emph{demand-based publishing}) requiere que el \emph{Publisher} sea un \emph{NotificationProducer} y, así, acepte mensajes de suscripción. El objetivo es reducir el número de mensajes de notificación haciendo que éstos solo se manden cuando se soliciten expresamente.
-
-
-
-
 
 \subsection{Formal models of concurrency}\label{formalmodels}
 
