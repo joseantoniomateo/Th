@@ -13,10 +13,8 @@
 \BOOKMARK [2][-]{subsection.2.5.2}{WS-Base Faults}{section.2.5}
 \BOOKMARK [2][-]{subsection.2.5.3}{WS-ServiceGroup}{section.2.5}
 \BOOKMARK [2][-]{subsection.2.5.4}{WS-ResourceLifetime}{section.2.5}
-\BOOKMARK [1][-]{section.2.6}{WS-Notification}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.6.1}{WS-BrokeredNotification}{section.2.6}
-\BOOKMARK [2][-]{subsection.2.6.2}{Formal models of concurrency}{section.2.6}
-\BOOKMARK [1][-]{section.2.7}{Summary}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.5.5}{Formal models of concurrency}{section.2.5}
+\BOOKMARK [1][-]{section.2.6}{Summary}{chapter.2}
 \BOOKMARK [0][-]{chapter.3}{BPELRF}{}
 \BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}
 \BOOKMARK [1][-]{section.3.2}{Background and Related Work}{chapter.3}
@@ -35,4 +33,4 @@
 \BOOKMARK [1][-]{section.3.9}{Summary}{chapter.3}
 \BOOKMARK [0][-]{chapter.4}{Timed-arc workflow nets}{}
 \BOOKMARK [0][-]{chapter.5}{Conclusions, Contributions and Future Works}{}
-\BOOKMARK [0][-]{appendix*.35}{Bibliography}{}
+\BOOKMARK [0][-]{appendix*.34}{Bibliography}{}

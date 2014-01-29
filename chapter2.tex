@@ -935,7 +935,6 @@ An example of how to determine the completion time of a resource is:
 \end{lstlisting}
 \end{description}
 
-
 As we can see, the destruction requestor may indicate 
 the exact destruction time as well as the local time (to avoid mismatches in how to represent the time zone). 
 Once the \emph{TerminationTime} is reached, the resource is destroyed
@@ -961,34 +960,55 @@ to inform other services that the resource is unavailable. The notification mess
 where the attribute \emph{TerminationTime} specifies the exact time of destruction
 and in the \emph{TerminationReason} attribute it can be included the reason of the destruction.
 
-\section{WS-Notification}
+The notification-based interaction pattern is a commonly used pattern
+for inter object communications. For example, the well-known
+publish/subscribe architecture uses this approach. In addition, it is increasingly being
+used in a web services context \cite{}.
 
-Esta especificación permite a un \emph{NotificationProducer} enviar un mensaje de notificación a un \emph{NotificationConsumer} de dos maneras diferentes:
+In conjuction with WSRF, Web Services Notification specifications are focused 
+on the description of the mechanism to implement this notification-based pattern
+in web services. As WSRF is based on web services, WSRF creators advocate for the use
+of WS-Notification standard to manage the notifications that could arise due to 
+the normal operation of the resources. 
+Thus, WS-Notification is a family of specifications that uses a topic-based publish/subscribe
+pattern. It includes: standard message exchanges to be implemented by service
+providers that wish to participate in Notifications, standard message exchanges for a
+notification broker service provider (allowing publication of messages from entities that
+are not themselves service providers), operational requirements expected of service providers 
+and requestors that participate in notifications, and an XML model that
+describes the topics susceptible to generate notifications. The WS-Notification family of documents includes
+three normative specifications:
+WS-BaseNotification, WS-BrokeredNotification, and WS-Topics.
+%This document defines a mechanism to organize and categorize items of interest for
+%subscription known as ``topics''. These are used in conjunction with the notification
+%mechanisms defined in WS-Base Notification or in WS-BrokeredNotification. WS-Topics defines three topic expression
+%dialects that can be used as subscription expressions in subscribe request messages
+%and other parts of the WS-Notification system. It further specifies an XML model for 
+%describing metadata associated with topics.
 
+In the notification process, there are three different steps: 
 \begin{enumerate}
-\item El \emph{NotificationProducer} envía un mensaje de notificación al \emph{NotificationConsumer} sin seguir ningún formalismo.
-\item El \emph{NotificationProducer} utiliza el formalismo que se describe a continuación para enviar las notificaciones. 
-\end{enumerate} 
-
-La opción a utilizar la elegirá el suscriptor cuando mande la petición de suscripción. En este sentido, la segunda opción permite al usuario recibir un amplio rango de mensajes de notificación, ya que la información que se envía en estos mensajes se obtiene de un árbol de Topics (temas) y, por tanto, se permite enviar subárboles en un mismo mensaje para informar de diferentes Topics. En la Figura \ref{12} vemos un ejemplo:
-
-
-\begin{figure}[h!]
-  \center
-    \includegraphics[scale=0.45]{Figures/12}
-     \caption{Ejemplo de uso de WS-Notification sin broker.}
-  \label{12}
-\end{figure}
- 
-Este caso muestra un ejemplo de interacción entre un consumidor y un productor de notificaciones, en el caso de que el suscriptor y el consumidor sean la misma entidad. El sistema es simple ya que tenemos un consumidor y un productor que publica 2 topics: SystemLoadHigh y SystemFault. Los pasos necesarios son: 
-
-\begin{enumerate}
-\item En primer lugar, el consumidor se suscribe al topic SystemLoadHigh, por lo que internamente se crea un \emph{Subscription resource} con la información de la suscripción. El productor debe implementar un método \emph{Subscribe} y el consumidor un método \emph{Notify}.  
-\item Después, el productor debe enviar una notificación cuando el sistema sobrepase una determinada carga de trabajo. Por ejemplo, nuestro sistema enviará notificaciones cuando la carga de trabajo sea mayor de 50\%.
-\item Por último, el productor envía la notificación invocando la operación \emph{Notify} en el consumidor.
+\item First, the observation of the situation and its characteristics. This situation represents an event of
+interest for some services.
+\item Second, the creation of notification messages that captures 
+the characteristics of the situation; and
+\item finally, the distribution of these messages to zero or more interested parties (notification consumers).
 \end{enumerate}
-   
-Un ejemplo de mensaje \emph{Notify} es:
+In WS-Notification specification, the steps 1 and 2 are not taken into account 
+since the aim is not to restrict the means by which
+these stages must occur. From now on, the entity in charge of performing the stages 1 and 2 is called Publisher.
+The other issue is how the Publisher can disseminate the notification messages. 
+In this case, two patterns can be followed: direct or brokered.
+
+In the direct case, the publisher implements message exchanges associated with
+the notification producer interface (the details of this interface are out of the scope of this Thesis)
+and it is responsible for accepting suscription messages and
+sending notification messages to interested parties. Moreover, it
+can choose to include in its behavior the required logic or to delegate this task to specialized implementations. 
+This last case is addressed by the WS-BaseNotification
+specification \cite{}.
+
+An example of notification message (can include one or more notification messages) is:
  
 \lstset{language=XML, numbersep=5pt, frame=single}
 \begin{lstlisting}
@@ -1007,51 +1027,72 @@ Un ejemplo de mensaje \emph{Notify} es:
 ...
 \end{lstlisting}
 
-Como podemos observar el mensaje \emph{Notify} contiene uno o varios mensajes de notificación (\emph{NotificationMessages}). Los campos dentro de éstos son: 
+In the brokered case, an intermediary (broker), which is responsible for disseminating
+messages produced by one or more publishers to zero
+or more notification consumers. There exists three types of relationships between the publisher and the
+broker: simple publishing, composable publishing and demand-based publishing.
 
-\begin{itemize}
-\item Topic: La información del topic que se envía.
-\item Dialect: El dialecto usado para expresar el topic anterior, es decir, el lenguaje utilizado para expresarlo.
-\item ProducerReference: Dirección del productor.
-\item Message: Una copia de la carga útil (payload) del mensaje actual.
-\end{itemize}
+In the simple publishing scenario, the publisher entity is responsible only for the core publisher
+functions - observing the situation and formatting
+the notification message artifact that describes
+the situation. The dissemination step occurs 
+when the publisher sends the notification message to the
+broker. In the composable publishing pattern, the publisher
+delegates its function to an external service that it is responsible to send
+the notification messages to the broker. Finally,
+demand-based publication is intended for use in
+cases where observing the situation or formatting the messages is expensive,
+and therefore the notification should be avoided. To this end, the publisher
+will only send notifications to the broker if it is registered as a service
+interested in receiving notifications about a particular situation. Obviously, this
+will reduce the overload of the network \cite{}. 
 
-A continuación, se muestra el mensaje que manda el suscriptor para registrar su interés en uno o más topics:
+In Chapter \ref{chapter:c3}, we will see that the language BPELRF avoids to include the broker role, and
+it is indeed the owner of the resource who sends the notifications. Moreover, the subscribers
+must show interest by sending a subscription message directly to the owner of the resource within
+the corresponding condition, thus reducing the overload of the net since the amount of notifications
+in the network is reduced. More technical details will be extended in that chapter.
 
-
-\lstset{language=XML, numbersep=5pt, frame=single}
-\begin{lstlisting}
-...
-<wsnt:Subscribe>
-  <wsnt:ConsumerReference>
-    wsa:endpointReference
-  </wsnt: ConsumerReference>
-  <wsnt:TopicExpression Dialect = xsd:anyURI >
-    {any}
-  </wsnt:TopicExpression>
-  <wsnt:UseNotify>xsd:boolean</wsnt:UseNotify>?
-  <wsnt:Precondition>wsrp:QueryExpression</Precondition>?
-  <wsnt:Selector>wsrp:QueryExpression</wsnt:Selector>?
-  <wsnt:SubscriptionPolicy>{any}</wsnt:SubscriptionPolicy>?
-  <wsnt:InitialTerminationTime>
-    xsd:dateTime
-  </wsnt:InitialTerminationTime>?
-</wsnt:Subscribe>
-
-...
-\end{lstlisting}
+   
 
 
-Los conceptos importantes en este mensaje son \emph{UseNotify} que se utiliza para decidir si el mensaje de notificación sigue el formalismo WS-Notification o se manda sin formato, \emph{Precondition} que es la condición que genera mensajes de notificación, es decir, si se cumple esta condición se generan mensajes, pero debe cumplirse también la condición \emph{selector} para enviarlos a los destinatarios que es la que se usa para decidir si se transmiten o no los mensajes generados. Además, \emph{SubscriptionPolicy} se podría utilizar para controlar el ratio de envío de mensajes(por ejemplo, no más de 3 por segundo) y \emph{InitialTerminationTime} contiene una sugerencia del tiempo de vida de la suscripción. WSRF también incluye mensajes para detener la suscripción, reanudarla o para que un servicio que acaba de unirse a una suscripción pueda obtener un historial de notificaciones sobre un determinado topic.
-
-
-
-\subsection{WS-BrokeredNotification}
-
-Un \emph{NotificationBroker} es un intermediario que, entre otras cosas, permite el envío de mensajes entre uno o varios \emph{Publishers} y uno o varios \emph{NotificationConsumers}. La misión del \emph{Publisher} es observar ciertas situaciones y crear mensajes de notificación para informar de esas situaciones, mientras que el broker es el encargado de distribuir estos mensajes. \\
-
-En este caso, se pueden dar tres relaciones entre las partes: \emph{simple publishing}, \emph{composable publishing} y \emph{demand-based publishing}. En el primer caso, el \emph{Publisher} es el encargado de observar las situaciones y notificarlas al broker que será el encargado de transmitirlas a los interesados. En el segundo caso, el papel del \emph{Publisher} lo realizará una entidad que implementa una serie de servicios especificados en WS-Notification (NotificationProducer). En este caso, el mensaje de notificación puede llegar a otros consumidores que estuviesen suscritos al productor. En ambos casos, el broker puede pedir al \emph{Publisher} que se registre para poder publicar mensajes sobre un topic determinado. El último enfoque (\emph{demand-based publishing}) requiere que el \emph{Publisher} sea un \emph{NotificationProducer} y, así, acepte mensajes de suscripción. El objetivo es reducir el número de mensajes de notificación haciendo que éstos solo se manden cuando se soliciten expresamente.
-
+%Como podemos observar el mensaje \emph{Notify} contiene uno o varios mensajes de notificación (\emph{NotificationMessages}). Los campos dentro de éstos son: 
+%
+%\begin{itemize}
+%\item Topic: La información del topic que se envía.
+%\item Dialect: El dialecto usado para expresar el topic anterior, es decir, el lenguaje utilizado para expresarlo.
+%\item ProducerReference: Dirección del productor.
+%\item Message: Una copia de la carga útil (payload) del mensaje actual.
+%\end{itemize}
+%
+%A continuación, se muestra el mensaje que manda el suscriptor para registrar su interés en uno o más topics:
+%
+%
+%\lstset{language=XML, numbersep=5pt, frame=single}
+%\begin{lstlisting}
+%...
+%<wsnt:Subscribe>
+%  <wsnt:ConsumerReference>
+%    wsa:endpointReference
+%  </wsnt: ConsumerReference>
+%  <wsnt:TopicExpression Dialect = xsd:anyURI >
+%    {any}
+%  </wsnt:TopicExpression>
+%  <wsnt:UseNotify>xsd:boolean</wsnt:UseNotify>?
+%  <wsnt:Precondition>wsrp:QueryExpression</Precondition>?
+%  <wsnt:Selector>wsrp:QueryExpression</wsnt:Selector>?
+%  <wsnt:SubscriptionPolicy>{any}</wsnt:SubscriptionPolicy>?
+%  <wsnt:InitialTerminationTime>
+%    xsd:dateTime
+%  </wsnt:InitialTerminationTime>?
+%</wsnt:Subscribe>
+%
+%...
+%\end{lstlisting}
+%
+%
+%Los conceptos importantes en este mensaje son \emph{UseNotify} que se utiliza para decidir si el mensaje de notificación sigue el formalismo WS-Notification o se manda sin formato, \emph{Precondition} que es la condición que genera mensajes de notificación, es decir, si se cumple esta condición se generan mensajes, pero debe cumplirse también la condición \emph{selector} para enviarlos a los destinatarios que es la que se usa para decidir si se transmiten o no los mensajes generados. Además, \emph{SubscriptionPolicy} se podría utilizar para controlar el ratio de envío de mensajes(por ejemplo, no más de 3 por segundo) y \emph{InitialTerminationTime} contiene una sugerencia del tiempo de vida de la suscripción. WSRF también incluye mensajes para detener la suscripción, reanudarla o para que un servicio que acaba de unirse a una suscripción pueda obtener un historial de notificaciones sobre un determinado topic.
+%
 \subsection{Formal models of concurrency}\label{formalmodels}
 
 

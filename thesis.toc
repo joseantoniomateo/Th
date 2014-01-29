@@ -13,26 +13,24 @@
 \contentsline {subsection}{\numberline {2.5.2}WS-Base Faults}{35}{subsection.2.5.2}
 \contentsline {subsection}{\numberline {2.5.3}WS-ServiceGroup}{36}{subsection.2.5.3}
 \contentsline {subsection}{\numberline {2.5.4}WS-ResourceLifetime}{36}{subsection.2.5.4}
-\contentsline {section}{\numberline {2.6}WS-Notification}{39}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}WS-BrokeredNotification}{42}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Formal models of concurrency}{42}{subsection.2.6.2}
-\contentsline {section}{\numberline {2.7}Summary}{42}{section.2.7}
-\contentsline {chapter}{\numberline {3}BPELRF}{45}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{45}{section.3.1}
-\contentsline {section}{\numberline {3.2}Background and Related Work}{47}{section.3.2}
-\contentsline {section}{\numberline {3.3}Syntax and semantics of BPEL+RF}{51}{section.3.3}
-\contentsline {section}{\numberline {3.4}Case Study: Automatic management system for stock market investments}{58}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Related Work}{59}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Prioritised-Timed Coloured Petri Nets}{60}{section.3.5}
-\contentsline {section}{\numberline {3.6}Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{61}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Prioritised-Timed Coloured Petri Nets}{61}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}PTCPN Semantics for WSRF/BPEL}{63}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Basic activities}{65}{subsection.3.6.3}
-\contentsline {subsection}{\numberline {3.6.4}Ordering structures}{66}{subsection.3.6.4}
-\contentsline {subsection}{\numberline {3.6.5}WSRF-compliant}{68}{subsection.3.6.5}
-\contentsline {section}{\numberline {3.7}Case study: Online auction service}{72}{section.3.7}
-\contentsline {section}{\numberline {3.8}Formal Analysis of Web Service Compositions}{74}{section.3.8}
-\contentsline {section}{\numberline {3.9}Summary}{76}{section.3.9}
-\contentsline {chapter}{\numberline {4}Timed-arc workflow nets}{81}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusions, Contributions and Future Works}{83}{chapter.5}
-\contentsline {chapter}{Bibliography}{86}{appendix*.35}
+\contentsline {subsection}{\numberline {2.5.5}Formal models of concurrency}{40}{subsection.2.5.5}
+\contentsline {section}{\numberline {2.6}Summary}{40}{section.2.6}
+\contentsline {chapter}{\numberline {3}BPELRF}{43}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{43}{section.3.1}
+\contentsline {section}{\numberline {3.2}Background and Related Work}{45}{section.3.2}
+\contentsline {section}{\numberline {3.3}Syntax and semantics of BPEL+RF}{49}{section.3.3}
+\contentsline {section}{\numberline {3.4}Case Study: Automatic management system for stock market investments}{56}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Related Work}{57}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Prioritised-Timed Coloured Petri Nets}{58}{section.3.5}
+\contentsline {section}{\numberline {3.6}Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{59}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Prioritised-Timed Coloured Petri Nets}{59}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}PTCPN Semantics for WSRF/BPEL}{61}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Basic activities}{63}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Ordering structures}{64}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.5}WSRF-compliant}{66}{subsection.3.6.5}
+\contentsline {section}{\numberline {3.7}Case study: Online auction service}{70}{section.3.7}
+\contentsline {section}{\numberline {3.8}Formal Analysis of Web Service Compositions}{72}{section.3.8}
+\contentsline {section}{\numberline {3.9}Summary}{74}{section.3.9}
+\contentsline {chapter}{\numberline {4}Timed-arc workflow nets}{79}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusions, Contributions and Future Works}{81}{chapter.5}
+\contentsline {chapter}{Bibliography}{84}{appendix*.34}
