@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  28 JAN 2014 16:32
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  29 JAN 2014 11:16
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -1190,25 +1190,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31]
-Overfull \hbox (43.49663pt too wide) in paragraph at lines 700--703
-\OT1/pbk/l/n/10 event the in-for-ma-tion con-tained be-comes in-valid or stale 
-(WS-RenewableReferences); 
- []
-
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ñ in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ú in font pbkd7t!
-Missing character: There is no á in font pbkl7t!
-
-Underfull \hbox (badness 10000) in paragraph at lines 715--716
-
- []
-
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
@@ -1216,113 +1197,45 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <9> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 721.
-LaTeX Font Info:    Try loading font information for OML+pbk on input line 723.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 726.
+LaTeX Font Info:    Try loading font information for OML+pbk on input line 728.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omlpbk.fd
 File: omlpbk.fd 
 )
 LaTeX Font Info:    Font shape `OML/pbk/m/n' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 723.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 728.
  [32]
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 750.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 763.
 LaTeX Font Info:    Font shape `OML/pbk/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 752.
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no ñ in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 765.
  [33]
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no ú in font pbkl7t!
-Missing character: There is no ñ in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
 LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <9> not available
-(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 819.
+(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 834.
  [34] [35]
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no ñ in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no É in font pbkl7t!
-LaTeX Font Info:    Font shape `OML/pbk/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 849.
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-
 [36]
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ú in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-LaTeX Font Info:    Font shape `OT1/pag/m/it' in size <10> not available
-(Font)              Font shape `OT1/pag/m/sl' tried instead on input line 877.
-Missing character: There is no ó in font pagko7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no í in font pbkl7t!
-Missing character: There is no ó in font pagko7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no é in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-
-Underfull \vbox (badness 5607) has occurred while \output is active []
-
  [37]
 Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 904--905
+Underfull \vbox (badness 1755) has occurred while \output is active []
 
- []
-
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-[38]
-Missing character: There is no á in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
-Missing character: There is no ó in font pbkl7t!
+ [38]
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ú in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
- [39]
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
@@ -1334,7 +1247,7 @@ Missing character: There is no í in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 
-Overfull \hbox (5.11713pt too wide) in paragraph at lines 954--955
+Overfull \hbox (5.11713pt too wide) in paragraph at lines 1000--1001
 []\OT1/pbk/l/n/10 La opcin a uti-lizar la ele-gir el suscrip-tor cuando mande l
 a peticin de suscripcin.
  []
@@ -1342,6 +1255,7 @@ a peticin de suscripcin.
 File: Figures/12.eps Graphic file (type eps)
 <Figures/12.eps>
 Missing character: There is no ó in font pbkl7t!
+ [39]
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
@@ -1349,38 +1263,34 @@ Missing character: There is no é in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
-
-Underfull \vbox (badness 7963) has occurred while \output is active []
-
- [40]
 Missing character: There is no ú in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
-LaTeX Font Info:    Try loading font information for OMS+pbk on input line 980.
-
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/omspbk.fd
+LaTeX Font Info:    Try loading font information for OMS+pbk on input line 1026
+.
+ (/usr/share/texmf-texlive/tex/latex/psnfss/omspbk.fd
 File: omspbk.fd 
 )
-LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 980.
+LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1026.
+
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no í in font pbkl7t!
 
-Overfull \hbox (4.43074pt too wide) in paragraph at lines 995--996
+Overfull \hbox (4.43074pt too wide) in paragraph at lines 1041--1042
 []\OT1/pbk/l/n/10 Dialect: El di-alecto us-ado para ex-pre-sar el topic an-te-r
 ior, es de-cir, el lenguaje
  []
 
+[40]
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ú in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
-[41]
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
@@ -1395,15 +1305,15 @@ Missing character: There is no ó in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
+ [41]
 Missing character: There is no í in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1032--1033
+Underfull \hbox (badness 10000) in paragraph at lines 1078--1079
 
  []
 
-[42]
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no á in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
@@ -1413,7 +1323,10 @@ Missing character: There is no ó in font pbkl7t!
 Missing character: There is no ú in font pbkl7t!
 Missing character: There is no ó in font pbkl7t!
 Missing character: There is no é in font pbkl7t!
-) [43] [44]
+) [42] [43] [44
+
+
+]
 \openout2 = `chapter3.aux'.
 
  (./chapter3.tex
@@ -1425,8 +1338,6 @@ LaTeX Warning: Citation `BPEL4WS' on page 45 undefined on input line 20.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [45
-
-
 
 
 ]
@@ -1938,12 +1849,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17599 strings out of 495062
- 299480 string characters out of 1182644
+ 17595 strings out of 495062
+ 299428 string characters out of 1182644
  466262 words of memory out of 3000000
- 20283 multiletter control sequences out of 15000+50000
- 30042 words of font info for 87 fonts, out of 3000000 for 9000
+ 20280 multiletter control sequences out of 15000+50000
+ 29334 words of font info for 86 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 63i,28n,92p,2750b,1859s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,28n,92p,2750b,1835s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (102 pages, 438160 bytes).
+Output written on thesis.dvi (102 pages, 439744 bytes).

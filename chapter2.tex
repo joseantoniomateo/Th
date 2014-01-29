@@ -820,7 +820,8 @@ After proccesing this request, the document must look like this:
 \end{lstlisting}
 
 \item[QueryResourceProperties]
-This method is used for querying resource properties. For example, if one wants to know if the number of blocks is greater than 20 and the block size is 1024,
+This method is used for querying resource properties. 
+For example, if one wants to know if the number of blocks is greater than 20 and the block size is 1024,
 the following query gets this information:
 
 \lstset{language=XML, numbersep=5pt, frame=single}
@@ -887,16 +888,34 @@ This specification allows users to create groups of services
 that share a number of properties in common, i.e., it is useful to group different web services that have similar behaviours.
 
 \subsection{WS-ResourceLifetime}
+The lifetime of a WS-Resource is defined as the period between its instantiation and its destruction. 
+The goal of this specification is to standardise the process of destruction of a 
+resource and define mechanisms to monitor its lifecycle. Surprisingly, the proces to create the WS-Resource
+is not specified. The reason is that WSRF is intended to be used in the interaction and, therefore, the 
+internal details of each participant are hidden. Thus, this specification meets the requirements of SOC
+architecture presented previously and the transition from service-oriented architecture to resource-oriented
+architecture is small. For technical reasons, we have included in our language
+BPELRF a primitive to create the resource. 
 
-El tiempo de vida de un WS-Resource se define como el período que transcurre entre su instanciación y su destrucción. La misión de esta especificación es estandarizar el proceso de destrucción de un recurso y definir mecanismos para monitorizar este ciclo de vida, pero lo que no se define es cómo crear el WS-Resource. Generalmente, en los sistemas distribuidos, los clientes sólo quieren tener un recurso por un determinado intervalo de tiempo, aunque en muchos escenarios es más apropiado para el cliente que se produzca la inmediata destrucción del recurso. Otro ejemplo claro de uso se presenta cuando el cliente quiere suscribirse a un servicio por un cierto tiempo y quiere que después de este tiempo se destruya dicha unión. Como se comentó en la introducción, existen dos formas de destruir un recurso: inmediata, mediante un mensaje explícito o temporizada, mediante un mensaje que activa o gestiona un timer. 
+Generally, in distributed systems, clients just want to use a resource for a given time interval.
+For instance, in subscription systems, users decide normally the duration of the subscription.
+Nevertheless, in many scenarios is most appropriate to provide a manner to immediately destroy 
+the resource. Following the same example, it could happen that the client wants to interrupt its subscription 
+and hence the immediate destruction must be provided. 
+As discussed above, WSRF gives two ways to destroy a 
+WS-Resource: immediate or scheduled.
 
-\subsubsection{Destrucción inmediata}
-Para la destrucción inmediata sólo hace falta poner \emph{$<wsrl:Destroy/>$} dentro del cuerpo ($<Body>$) del mensaje SOAP que se envía al servicio que gestiona el recurso y dicho servicio responder con \emph{$<wsrl:DestroyResponse/>$} dentro del cuerpo (\emph{$<Body>$}) del mensaje SOAP de respuesta.
+\begin{description}
+\item[Immediate destruction] To activate this kind of destruction, it is only required to add the attribute
+\emph{$<wsrl:Destroy/>$} inside the field ($<Body>$) of the SOAP message that will be sent to the service
+To confirm the destruction, the receiver must send the same message including the attribute
+\emph{$<wsrl:DestroyResponse/>$} in the field (\emph{$<Body>$}) of the response SOAP message.
 
-\subsubsection{Destrucción temporizada}
-
-En este caso, el WS-Resource tiene asociado un tiempo de terminación que define el tiempo después del cual se espera que el recurso haya sido destruido y, razonablemente, se espera que antes del mismo el recurso esté disponible. A continuación se muestra un ejemplo de cómo determinar el tiempo de terminación de un recurso:
-
+\item[Scheduled destruction] 
+In this case, the WS-Resource has an associated deadline 
+after which it is expected that the resource has been destroyed. Moreover,
+it is reasonably expected that before this dealine the resource is available. 
+An example of how to determine the completion time of a resource is:
 \lstset{language=XML, numbersep=5pt, frame=single}
 \begin{lstlisting}
 ...
@@ -914,37 +933,21 @@ En este caso, el WS-Resource tiene asociado un tiempo de terminación que define 
   </s12:Envelope>
 ...
 \end{lstlisting}
+\end{description}
 
 
+As we can see, the destruction requestor may indicate 
+the exact destruction time as well as the local time (to avoid mismatches in how to represent the time zone). 
+Once the \emph{TerminationTime} is reached, the resource is destroyed
+without any further intervention and the requestor is reported that 
+the resource is unavailable. WSRF offers another message type to 
+inform the sender that the resource owner has received the destruction request. This option
+is not considered in our language BPELRF.
 
-Como podemos observar el servicio que solicita la destrucción puede indicar la hora de destrucción y la hora actual (para evitar desajustes por la forma de representar la zona horaria). Una vez que CurrentTime alcanza el valor TerminationTime, el recurso se destruye sin ninguna intervención más y se notifica al emisor del mensaje de destrucción que el recurso deja de estar disponible. Existe otro mensaje que se manda desde el receptor al emisor para comunicarle que ha recibido la petición de cambio.  \\
-
-Sin embargo, puede darse la situación de que haya más de un servicio utilizando el recurso que vaya a destruirse por lo que el propietario del recurso puede decidir o no (se deja a libre elección del programador) implementar los mensajes WS-Notification para informar a los interesados que el recurso deja de estar disponible. Para llevar a cabo esta tarea debe crear este Topic: 
-
-\newpage
-
-\lstset{language=XML, numbersep=5pt, frame=single}
-\begin{lstlisting}
-...
-<wstop:TopicSpace name=``ResourceLifetime''
-   targetNamespace=
-   http://docs.oasis-open.org/wsrf/2004/06/
-   wsrf-WS-ResourceLifetime-1.2-draft-01.xsd
- 
- <wstop:Topic name=``ResourceTermination''>
-   <wstop:MessagePattern>
-     <wsrp:QueryExpression
-       dialect= http://www.w3.org/REC-xpath-19991116 >
-        boolean(/*/TerminationNotification)
-     </wsrp:QueryExpression>
- </wstop:MessagePattern>
-...
-\end{lstlisting}
-
-
-
-Además, el mensaje de notificación asociado debe contener los siguientes campos: 
-
+On the contrary, there may be a situation where more than one service 
+is using the resource to be destroyed and, therefore, the resource owner can decide or not 
+(this is optional and it must be develped by the owner) to implement a notification policy
+to inform other services that the resource is unavailable. The notification message must include the following fields: 
 
 \lstset{language=XML, numbersep=5pt, frame=single}
 \begin{lstlisting}
@@ -955,8 +958,8 @@ Además, el mensaje de notificación asociado debe contener los siguientes campos:
 </wsrl:TerminationNotification>
 ...
 \end{lstlisting}
- 
-donde \emph{TerminationTime} informa de la fecha de destrucción y \emph{TerminationReason} contiene la explicación de la destrucción.
+where the attribute \emph{TerminationTime} specifies the exact time of destruction
+and in the \emph{TerminationReason} attribute it can be included the reason of the destruction.
 
 \section{WS-Notification}
 
