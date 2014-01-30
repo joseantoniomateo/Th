@@ -1,11 +1,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Conversion table\relax }}{75}{table.caption.17}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Action transition rules.\relax }}{76}{table.caption.18}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Delay transition rules without notifications.\relax }}{76}{table.caption.19}
-\contentsline {table}{\numberline {3.4}{\ignorespaces Action and delay transition rules for orchestrators.\relax }}{77}{table.caption.20}
-\contentsline {table}{\numberline {3.5}{\ignorespaces Choreography transition rules.\relax }}{77}{table.caption.21}
-\contentsline {table}{\numberline {3.6}{\ignorespaces Conversion table\relax }}{78}{table.caption.22}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Conversion table\relax }}{90}{table.caption.19}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Action transition rules.\relax }}{91}{table.caption.20}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Delay transition rules without notifications.\relax }}{91}{table.caption.21}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Action and delay transition rules for orchestrators.\relax }}{92}{table.caption.22}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Choreography transition rules.\relax }}{92}{table.caption.23}
+\contentsline {table}{\numberline {4.6}{\ignorespaces Conversion table\relax }}{93}{table.caption.24}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

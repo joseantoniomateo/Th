@@ -1220,22 +1220,8 @@ $\reglaa{ % Antecedente
 \caption{\label{tab:coreo}Choreography transition rules.}
 \vspace{-0.7cm}
 \end{table*}
-\newpage
-\begin{definition}[Labelled transition system]
 
-For a choreography $C$, we define the
-semantics of $C$ as the labelled transition system
-obtained by the application of rules in Table \ref{tab:coreo}, starting at the state ${s_0}_c$:
-\[
-  {\it lts}(C) = (\mathcal{Q}, {s_0}_c,  \rightarrow)
-\]
-%
-\noindent
-where $\mathcal{Q}$ is the set of reachable choreography states, ${s_0}_c$ is the initial state where all the variables in $\sigma$ are initialised to 0 and $\rho$ is empty, and
-$\rightarrow \,\,= \,\,\rightarrow_1 \,\cup\, \{ \flecha{a}\,|\,$
-for all basic activity $a$, or $a=\tau \,\}$.
-\vspace{0.1cm}
-\end{definition}
+
 
 %As commented when we defined the types of transitions, our operational semantics evolves at three levels, the internal one corresponds to the evolution of one activity without notifications. In the second one, we state the transitions which yield the evolution of the system in the case that some notifications are triggered, whereas the third level corresponds to the composition of different orchestrators and resources. The former two parts have been covered with the operational semantics described above. Hereby, we are going to explain in the following lines how the system evolves as a whole. In the following we will denote choreography as a composition of orchestrations and their associated web services resources.
 %

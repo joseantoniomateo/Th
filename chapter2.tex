@@ -35,7 +35,7 @@ too difficult to use or understand or even there were no tools for a particular
 technique or formalism. In addition, case studies were not convincing enough and, 
 therefore, developers could not appreciate the usefulness of formalization. 
 However, in the early 90s, it started to glimpse a new way in this area. 
-For the specification of software, the industry began to use the language Z \cite{Abrial80} 
+For the specification of software, the industry began to use the language Z 
 in order to obtain rigorous specifications. For hardware verification, major 
 companies such as Intel and AMD started to use formal techniques such as \emph{model checking} 
 or \emph{theorem proving} to supplement tests on simulators. This led to the description of larger case studies,
@@ -295,7 +295,7 @@ in a business process. Traditional methods for integration and business process 
 typically involve embedded logic inside of applications designed 
 to meet a specific business need such as ERP, supply chain, or CRM. 
 The development, testing, and deployment efforts required 
-to change these applications make integration and process changes both costly and complex \cite{}.
+to change these applications make integration and process changes both costly and complex \cite{bpelsoftcare}.
 To address these issues, proprietary products emerged 
 to abstract integration and process automation into a new layer of software tools. 
 These software products liberated integration and process tasks from 
@@ -321,13 +321,13 @@ both approaches and provides a rich vocabulary for description of business proce
 the version 1.1 of the BPEL4WS specification that was released less than a year later, in May of 2003. 
 Fortunately, this brand new version received much more attention and vendor support, 
 leading to a number of commercially available BPEL4WS-compliant 
-orchestration engines \cite{}. Before publishing this release, 
+orchestration engines \cite{wsbpelstandard}. Before publishing this release, 
 the BPEL4WS specification was submitted to an OASIS 
 technical committee in order to be evaluated so that the specification could be developed into an official and open standard.
 This technical committee was active from April 2003 to May 2007, 
 and, during this time, a lot of contributions and improvements were received. 
 In April 2007, WS-BPEL version 2.0 was approved as an OASIS standard. 
-As a proof of maturity, more than 37 organizations collaborated to develop WS-BPEL, including representatives of Active Endpoints, Adobe Systems, BEA Systems, Booz Allen Hamilton, EDS, HP, Hitachi, IBM, IONA, Microsoft, NEC, Nortel, Oracle, Red Hat, Rogue Wave, SAP, Sun Microsystems, TIBCO, webMethods, and other members of OASIS \cite{}.
+As a proof of maturity, more than 37 organizations collaborated to develop WS-BPEL, including representatives of Active Endpoints, Adobe Systems, BEA Systems, Booz Allen Hamilton, EDS, HP, Hitachi, IBM, IONA, Microsoft, NEC, Nortel, Oracle, Red Hat, Rogue Wave, SAP, Sun Microsystems, TIBCO, webMethods, and other members of OASIS \cite{wsbpelstandard}.
 Finally, in January 2008, another OASIS technical committee started 
 to define a WS-BPEL extension to emcompass the definition of 
 human interactions (``human tasks'') as part of a WS-BPEL process. Figure \ref{bpelevolution} summarises this evolution-
@@ -420,7 +420,7 @@ and it must be explicitly declared as ``abstract''. As its name indicates,
 an abstract process may hide some of the required 
 operational details expressed by an executable artifact.
 All the constructs of executables processes are made available to abstract processes
-and, consequently, they share the same expressive power \cite{}. 
+and, consequently, they share the same expressive power \cite{wsbpelstandard}. 
 Therefore, the main different between an abstract and a executable processes is 
 that the second one contains the exact details of business processes and, consquently,
 it is intended to be executed in an orchestration engine, whereas the first one serve a descriptive role,
@@ -468,7 +468,7 @@ data. Variables are therefore declared on a process or on a scope
 within that process. Also, 
 it provides \emph{basic} or \emph{structured} to declare the process logic. 
 \emph{Basic activities} are those which describe the elemental 
-steps of the process behaviour \cite{}: 
+steps of the process behaviour \cite{wsbpelstandard}: 
 \begin{itemize}
 \item The activity \emph{assign} is used to assign data to the variables defined in the process. 
 This activity can be used to copy data from one variable to another as well as to
@@ -548,7 +548,7 @@ In recent times, this phrase has been widely discussed since some authors
 consider that it is an clear example of failed prediction. Nevertheless, with the advent of new computational 
 such as Grid and Cloud Computing, some authors argue that it will become a reality soon. In addition,
 other authors consider that this phrase is completely true nowadays since there five big companies that
-are monopolising the world market \cite{}.
+are monopolising the world market \cite{Armbrust2009}.
 
 Thanks to the fast development of society, daily basic services such as water, electricity, gas and telephone services 
 are commonly supplied to citizens so that everybody can have 
@@ -565,7 +565,7 @@ protocols or any computer-related paradigm, Cloud Computing must undergo
 a series of steps to check if all benefits 
 that providers are promising really serves companies to save costs and enhance the competitiveness. 
 In this sense, Larry Ellison, founder and CEO of Oracle, believe that Cloud Computing 
-is nothing more than a new way of naming what companies have been doing so far \cite{abovetheclouds}: 
+is nothing more than a new way of naming what companies have been doing so far \cite{Armbrust2009}: 
 \begin{quote}
 ``The interesting thing about Cloud Computing is that we have redefined Cloud Computing 
 to include everything that we already do\ldots I do not understand what we would do differently in the light of Cloud
@@ -573,7 +573,7 @@ Computing other than change the wording of some of our ads.''
 \hspace{5cm}\emph{Larry Ellison, quoted in the Wall Street Journal, September 26, 2008.}
 \end{quote}
 Many researchers have tried to define the term ``Cloud Computing'' without reaching 
-a standard definition. For instance, Buyya et al. \cite{} define a cloud system as:
+a standard definition. For instance, Buyya et al. \cite{Buyya2011} define a cloud system as:
 \begin{quote}
 ``A cloud is a parallel and distributed system consisting of a collection of 
 virtualized and interconnected computers that have been provisioned dynamically 
@@ -581,7 +581,7 @@ and they are presented as a single computational resource based on service level
 established by negotiation between the service provider and the consumer.''
 \end{quote} 
 
-In \cite{vaq09} one can find up to 21 different definitions of Cloud computing. For instance, Luis M. Vaquero et al. defines the Cloud as:
+In \cite{Vaquero2008} one can find up to 21 different definitions of Cloud computing. For instance, Luis M. Vaquero et al. defines the Cloud as:
 \begin{center}
 \emph{``The Cloud is a large and easy to use container of virtualized resources 
 (such as hardware, services, development platforms \ldots). These resources can be 
@@ -1094,7 +1094,7 @@ in the network is reduced. More technical details will be extended in that chapt
 %Los conceptos importantes en este mensaje son \emph{UseNotify} que se utiliza para decidir si el mensaje de notificación sigue el formalismo WS-Notification o se manda sin formato, \emph{Precondition} que es la condición que genera mensajes de notificación, es decir, si se cumple esta condición se generan mensajes, pero debe cumplirse también la condición \emph{selector} para enviarlos a los destinatarios que es la que se usa para decidir si se transmiten o no los mensajes generados. Además, \emph{SubscriptionPolicy} se podría utilizar para controlar el ratio de envío de mensajes(por ejemplo, no más de 3 por segundo) y \emph{InitialTerminationTime} contiene una sugerencia del tiempo de vida de la suscripción. WSRF también incluye mensajes para detener la suscripción, reanudarla o para que un servicio que acaba de unirse a una suscripción pueda obtener un historial de notificaciones sobre un determinado topic.
 %
 \subsection{Formal models of concurrency}\label{formalmodels}
-
+\input{red2.tex}
 
 
 
@@ -1102,25 +1102,25 @@ in the network is reduced. More technical details will be extended in that chapt
 \section{Summary}\label{sumArt}
 \markright{~\ref{sumArt} Summary}
 
-Lately, the research group Real Time and Concurrent Systems (ReTiCS) of the University of Castilla-La Mancha,
-in which I am a member, focused its research on developing a methodology 
-to build and test systems with hard time constraints using formal techniques. 
-In recent years, this methodology has been applied to web services, more specifically, 
-in the area of web service compositions. The problem here is that the study of web services 
-using formal techniques experienced a boom a few years ago and, therefore, many research groups focused their studies 
-in this field, meaning that WS-BPEL or WS -CDL are quite studied. 
-As commented previously, industry is migrating its business from a web service-oriented architecture to
-a cloud/grid-oriented architecturee and, here, we can benefit from our vast experience formalizing web systems. 
-In addition , many governments are interested in migrating 
-services to the cloud to reduce costs and enable scalability when they needed. 
-For example , one must ask if it is necessary for the Tax Agency have large data 
-centers where demand for services by citizens grows only at the time of the statement of income.
-Probably the answer is yes because you do need to store all that data and give 
-some confidence that your tax data will not fall into the hands of people with no good intentions, 
-but all need to calculate whether you can outsource to save costs equipment or 
-could even create a private cloud between all agencies that work with the public agency 
-to share resources and information . In this sense, these systems where security, 
-privacy and availability are a nonnegotiable requirement is where we focus part 
-of our investigations and try to improve any component of the cloud architecture 
-presented in the previous section. For example , most research groups 
-develop tools, but the test phase does not exist or is devoted little time. 
+%Lately, the research group Real Time and Concurrent Systems (ReTiCS) of the University of Castilla-La Mancha,
+%in which I am a member, focused its research on developing a methodology 
+%to build and test systems with hard time constraints using formal techniques. 
+%In recent years, this methodology has been applied to web services, more specifically, 
+%in the area of web service compositions. The problem here is that the study of web services 
+%using formal techniques experienced a boom a few years ago and, therefore, many research groups focused their studies 
+%in this field, meaning that WS-BPEL or WS -CDL are quite studied. 
+%As commented previously, industry is migrating its business from a web service-oriented architecture to
+%a cloud/grid-oriented architecturee and, here, we can benefit from our vast experience formalizing web systems. 
+%In addition , many governments are interested in migrating 
+%services to the cloud to reduce costs and enable scalability when they needed. 
+%For example , one must ask if it is necessary for the Tax Agency have large data 
+%centers where demand for services by citizens grows only at the time of the statement of income.
+%Probably the answer is yes because you do need to store all that data and give 
+%some confidence that your tax data will not fall into the hands of people with no good intentions, 
+%but all need to calculate whether you can outsource to save costs equipment or 
+%could even create a private cloud between all agencies that work with the public agency 
+%to share resources and information . In this sense, these systems where security, 
+%privacy and availability are a nonnegotiable requirement is where we focus part 
+%of our investigations and try to improve any component of the cloud architecture 
+%presented in the previous section. For example , most research groups 
+%develop tools, but the test phase does not exist or is devoted little time. 

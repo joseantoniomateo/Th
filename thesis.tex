@@ -6,6 +6,7 @@
 \usepackage{afterpage}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{listings}
 %\usepackage{theorem}
@@ -95,11 +96,11 @@
 \newcommand{\entero}{\mathbb{Z}}
 \newcommand{\bs}{[\![}
 \newcommand{\es}{]\!]}
-\newcommand{\nat}{{\rm I\! N}}
-\newcommand{\eneg}{\hspace*{-0.15cm}}
-\newcommand{\real}{\rm I\! R}
-\newcommand{\barra}{\, | \,}
-\newcommand{\nbar}{\, \mid \hspace*{-1.25ex} \sim \,}
+%\newcommand{\nat}{{\nnul}
+%\newcommand{\eneg}{\hspace*{-0.15cm}}
+%\newcommand{\real}{\rm I\! R}
+%\newcommand{\barra}{\, | \,}
+%\newcommand{\nbar}{\, \mid \hspace*{-1.25ex} \sim \,}
 \newcommand{\prim}[1]{{\it Ft( #1 )}}
 \newcommand{\interle}{|\hspace*{-0.04cm}\|}
 \long\def\comment#1{}
@@ -200,11 +201,28 @@
 {\Large \wedge}\\
 {\scriptstyle #1}
 \end{array}\renewcommand{\arraystretch}{1.0}}
+\newcommand{\sumas}[1]{\renewcommand{\arraystretch}{0.42}
+\hspace*{-0.1cm}
+\begin{array}[t]{c}
+{\mbox{\Large $\Sigma$}}\\
+{\scriptstyle #1}
+\end{array}\hspace*{-0.1cm}\renewcommand{\arraystretch}{1.0}}
+
+%suma con cosas arriba y debajo
+\newcommand{\suma}[2]{\renewcommand{\arraystretch}{0.42}
+\hspace*{-0.1cm}
+\begin{array}{c}
+{\scriptstyle #2}\\
+{\mbox{\Large $\Sigma$}}\\
+{\scriptstyle #1}
+\end{array}\hspace*{-0.1cm}\renewcommand{\arraystretch}{1.0}}
 
 %Settings
 \clubpenalty=10000
 \widowpenalty=10000
-
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\input{macros}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}

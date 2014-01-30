@@ -1,0 +1,135 @@
+%tapn
+%new macros
+\newcommand{\Turg}{\ensuremath{T_{\mathit{urg}}}}
+\newcommand{\sqrel}[2]{\ensuremath{{#1}\sqsubseteq{#2}}}
+\newcommand{\cutsqrel}[2]{\ensuremath{{#1}\sqsubseteq_{cut}{#2}}}
+\newcommand{\reachmark}[1]{\ensuremath{[#1\rangle}} % [M>
+\newcommand{\itn}[1]{\ensuremath{{\mathit{#1}}}}
+\newcommand{\jindex}{\ensuremath{{\mathit{\{1,\ldots,m\}}}}}
+\newcommand{\iindex}{\ensuremath{{\mathit{\{0,\ldots,n\}}}}}
+\newcommand{\consumei}{\ensuremath{{\mathit{Consume_i}}}}
+\newcommand{\consumeij}[1]{\ensuremath{{\mathit{Consume_{#1}}}}}
+\newcommand{\producei}{\ensuremath{{\mathit{Produce_i}}}}
+\newcommand{\produceij}[1]{\ensuremath{{\mathit{Produce_{#1}}}}}
+\newcommand{\tai}{\ensuremath{{\mathit{T_{y,i}}}}}
+\newcommand{\taif}{\ensuremath{{\mathit{T^{\mathit{flag}}_{y,i}}}}}
+\newcommand{\taip}{\ensuremath{{\mathit{T^{\mathit{place}}_{y,i}}}}}
+\newcommand{\taj}[2]{\ensuremath{{\mathit{T_{#1,#2}}}}}
+\newcommand{\tajp}[2]{\ensuremath{{\mathit{T^{\mathit{place}}_{#1,#2}}}}}
+\newcommand{\tajf}[2]{\ensuremath{{\mathit{T^{\mathit{flag}}_{#1,#2}}}}}
+\newcommand{\agexi}[2]{\ensuremath{{\mathit{age({#1,#2})}}}}
+\newcommand{\fr}[1]{\ensuremath{{\mathit{fract(#1)}}}}
+\newcommand{\inte}[1]{\ensuremath{{\mathit{int(#1)}}}}
+\newcommand{\rankeq}{\ensuremath{{\mathit{\cong}}}}
+\newcommand{\notrankeq}{\ensuremath{{\mathit{\ncong}}}}
+\newcommand{\multiset}[1]{\ensuremath{\mathit{\{\!\!\{#1\}\!\!\}}}}
+\newcommand{\alist}[1]{\ensuremath{\mathit{<\!\!#1\!\!>}}}
+\newcommand{\rank}[2]{\ensuremath{{\mathit{rank_{#1}(#2)}}}}
+\newcommand{\tokens}{\mathcal{T}}
+\newcommand{\abstmarking}{\mathbb{M}}
+\newcommand{\abstinn}{\mathscr{In}}
+\newcommand{\abstout}{\mathscr{Out}}
+\newcommand{\abstmarkingsof}[1]{\ensuremath{\mathscr{A}(#1)}}
+\newcommand{\abstoken}{\ensuremath{{\mathit{(r,p,\ell,c)}}}}
+\newcommand{\absmarktriple}[1]{\ensuremath{{\mathit{#1}}}}
+\newcommand{\cupdiamond}{\mathbin{\mathaccent\diamond\cup}} % Added by Jose to denote the merge
+\newcommand{\cupdot}{\mathbin{\mathaccent\cdot\cup}} % Added by Jose to denote the disjoint operator
+\newcommand{\fire}{\ensuremath{{\mathit{fire((p,t))}}}}
+\newcommand{\enable}{\ensuremath{{\mathit{enable((p,t))}}}}
+\newcommand{\rankM}[1]{\ensuremath{{\mathit{rank(#1)}}}}
+\newcommand{\fireM}{\ensuremath{{\mathscr{F}}}}
+\newcommand{\transM}{\ensuremath{{\mathscr{Trans}}}}
+
+\newcommand{\initstack}{\ensuremath{\mathit{InitStack()}}}
+\newcommand{\noinf}{\ensuremath{\mathit{maxBound}}}
+\newcommand{\sizeofmarking}{\ensuremath{\mathit{size}}}
+\newcommand{\tapntuple}{\ensuremath{(P, T, \Turg, \ia,\allowbreak \oa, \cfunction, \wfunction, \type, \inv)}}
+%\newcommand{\tawfntuple}{\ensuremath{(P_w \cup P_r, T, \ia,\allowbreak \oa, \cfunction, \wfunction)}} % Added by Jose to model Timed-Arc workflow nets
+\newcommand{\rctawfntuple}{\ensuremath{(P, T, \ia,\allowbreak \oa, in, out, \cfunction, \wfunction, \type, \inv)}} % Added by Jose to model Resource Constrained Timed-Arc workflow nets
+%\newcommand{\productiontuple}{\ensuremath{(P_p , T, \ia_p ,\allowbreak \oa_p , \cfunction, \wfunction)}} % Added by Jose to model the production net of Resource Constrained Timed-Arc workflow nets
+\renewcommand{\int}{\ensuremath{\mathcal{I}}}
+\newcommand{\intinv}{\int^{\text{inv}}}
+\newcommand{\outup}[1]{\mathit{Out}^{#1}}
+\newcommand{\inup}[1]{\mathit{In}^{#1}}
+\newcommand{\proc}{\ensuremath{\mathit{S}}}
+%\newcommand{\lab}{\ensuremath{\mathit{Act}}}
+%\newcommand{\act}{\ensuremath{\mathit{Labels}}}
+\newcommand{\act}{\ensuremath{\mathit{Act}}}
+\newcommand{\queryset}{\mathcal{Q}}
+\newcommand{\querytype}{QUERYTYPE}
+\newcommand{\places}{\mathit{Places}}
+\newcommand{\false}{\mathit{ff}}
+\newcommand{\true}{\mathit{tt}}
+\newcommand{\ef}{\mathit{EF}}
+\newcommand{\cut}{\mathit{cut}}
+\newcommand{\caufunc}{\mathit{cau}}
+\newcommand{\typefour}{\mathit{IV}}
+\newcommand{\typeone}{\ensuremath{\mathit{Inv}}}
+\newcommand{\typetwo}{\ensuremath{\mathit{Dead}}}
+\newcommand{\typethree}{\ensuremath{\mathit{Std}}}
+\newcommand{\cat}{\ensuremath{\mathit{cat}}}
+\newcommand{\ia}{\ensuremath{\mathit{IA}}}
+\newcommand{\oa}{\ensuremath{\mathit{OA}}}
+\newcommand{\cfunction}{\ensuremath{\mathit{g}}}
+\newcommand{\wfunction}{\ensuremath{\mathit{w}}}
+\newcommand{\type}{\ensuremath{\mathit{Type}}}
+\newcommand{\smalltype}{\ensuremath{\mathit{type}}}
+\newcommand{\inv}{\ensuremath{\mathit{I}}}
+\newcommand{\types}{\mathbf{{Types}}}
+\newcommand{\inn}{\ensuremath{\mathit{In}}}
+\newcommand{\out}{\ensuremath{\mathit{Out}}}
+\newcommand{\inhib}{\mathit{Inhib}}
+\newcommand{\transporti}{\ensuremath{\mathit{Transport}_j}}
+\newcommand{\transportone}{\ensuremath{\mathit{Transport}_1}}
+\newcommand{\transport}{\mathit{Trans}}
+\newcommand{\eqMarking}{\equiv}
+\newcommand{\gMarking}{>}
+\newcommand{\lMarking}{<} 
+\newcommand{\enablfunc}{\hat{T}_N}
+\newcommand{\nnul}{\mathbb{N}_{0}}
+\newcommand{\rnul}{\mathbb{R}^{\geq 0}}
+\newcommand{\nuptok}[1]{\mathbb{N}_{0}^{#1}}
+\newcommand{\markingsof}{\mathcal{M}}
+%\newcommand{\path}[2]{#1 \Rightarrow^* #2}
+\newcommand{\qquestion}[3]{\framebox{ \minibox{{\bf Problem:}\ #1 \\ {\bf Instance:} #2 \\ {\bf Question: #3}}}}% Added by Jose to make question environment
+\newcommand{\trans}[1]{\stackrel{#1}{\rightarrow}}
+\newcommand{\transbdss}[1]{\stackrel{#1}{\rightarrow}_{\textrm{BDS}}}
+\newcommand{\transbds}{\rightarrow_{\textrm{BDS}}}
+\newcommand{\notrans}{\ensuremath{\nrightarrow}}
+\newcommand{\eqdef}{\stackrel{\textrm{def}}{=}}
+\newcommand{\powerset}{\mathcal{P}}
+\newcommand{\rbigeq}{\mathbb{R}_{\geq 0}}
+\newcommand{\cutmold}{\cut(M)_{>}}
+\newcommand{\cutyoung}{\cut(M)_{\leq}}
+\newcommand{\mold}{M_{>}}
+\newcommand{\myoung}{M_{\leq}}
+\newcommand{\moldone}{{M_{1}}_{>}}
+\newcommand{\moldtwo}{{M_{2}}_{>}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\nbig}{\mathbb{N}}
+\newcommand{\causality}{\ensuremath{\mathit{Causality}}}
+\newcommand{\mc}{\ensuremath{\mathit{MC}}}
+\newcommand{\mcarc}{\ensuremath{\mathit{C}_{arc}}}
+\newcommand{\nextInv}{\ensuremath{\mathit{NextInv}}}
+\newcommand{\mcplace}{\ensuremath{\mathit{C}_{place}}}
+\newcommand{\cmax}{\ensuremath{\mathit{C}_{max}}}
+\newcommand{\normal}{\ensuremath{\mathit{Normal}}}
+\newcommand{\waiting}{\ensuremath{\mathit{Waiting}}}
+\newcommand{\passed}{\ensuremath{\mathit{Passed}}}
+\newcommand{\trace}{\ensuremath{\mathit{Trace}}}
+\newcommand{\addpw}{\ensuremath{\mathit{AddToPW}}}
+\newcommand{\eq}{\ensuremath{_{\mathit{eq}}}}
+%\renewcommand{\top}{\ensuremath{\mathit{top}()}}
+\newcommand{\pop}{\ensuremath{\mathit{pop}()}}
+%\newcommand{\note}[1]{{\color{red} NOTE: #1}}
+\newcommand{\ceq}{:=}
+\newcommand{\push}{\ensuremath{\mathit{push}}}
+\newcommand{\emptystack}{\ensuremath{\mathit{isEmpty}()}}
+\newcommand{\validSuc}{\ensuremath{\mathit{validSuccessors}}}
+\newcommand{\successor}{\ensuremath{\mathit{successors}}}
+\newcommand{\maxrunend}{\ensuremath{\mathit{endOfMaxRun}}}
+\newcommand{\cpp}{C{}\texttt{++}}
+\newcommand{\inmark}{\ensuremath{\mathit{M_{in}}}}
+\newcommand{\outmark}{\ensuremath{\mathit{M_{out}}}}
+%\newcommand{\question}{\framebox{}}
+

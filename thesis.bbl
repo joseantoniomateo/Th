@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{bpelsoftcare}
+What is bpel and why is it so important to my business?
+\newblock Technical report.
+
 \bibitem{Andrews2003WSBPEL}
 S.~Askary C. Barreto B. Bloch F. Curbera M. Ford Y. Goland A. Guízar N. Kartha
   C. K. Liu R. Khalaf D. König M. Marin V. Mehta S. Thatte D. van der Rijn P.
@@ -7,10 +11,23 @@ S.~Askary C. Barreto B. Bloch F. Curbera M. Ford Y. Goland A. Guízar N. Kartha
 \newblock {Business Process Execution Language for Web Services (version 2.0)}.
 \newblock 2007.
 
-\bibitem{Ban06}
+\bibitem{Armbrust2009}
+Michael Armbrust, Armando Fox, Rean Griffith, Anthony~D. Joseph, Randy~H. Katz,
+  Andrew Konwinski, Gunho Lee, David~A. Patterson, Ariel Rabkin, Ion Stoica,
+  and Matei Zaharia.
+\newblock Above the clouds: A berkeley view of cloud computing.
+\newblock Technical Report UCB/EECS-2009-28, EECS Department, University of
+  California, Berkeley, Feb 2009.
+
+\bibitem{BAN06}
 T.~Banks.
 \newblock {Web Services Resource Framework (WSRF) - Primer}.
 \newblock {\em OASIS}, 2006.
+
+\bibitem{Buyya2011}
+Rajkumar Buyya, James Broberg, and Andrzej~M. Goscinski.
+\newblock {\em Cloud Computing Principles and Paradigms}.
+\newblock Wiley Publishing, 2011.
 
 \bibitem{Clarke96}
 E.~Clarke and J.~Wing.
@@ -28,12 +45,6 @@ S.~Graham S. Tuecke K. Czajkowski D. Ferguson F. Leymann M. Nally T. Storey
 \newblock Modeling stateful resources with web services.
 \newblock {\em http://www-106.ibm.com/developerworks/library/wsresource/
   ws-modelingresources.pdf, Tech. Rep., 2004.}
-
-\bibitem{Abrial80}
-S.~Schuman J.~R.~Abrial and B.~Meyer.
-\newblock { A Specification Language, in On the Construction of Programs}.
-\newblock {\em Cambridge University Press, eds. A. M. Macnaghten and R. M.
-  McKeag}, 1980.
 
 \bibitem{wsbpelstandard}
 Organization for the Advancement of Structured Information Standards (OASIS).
@@ -62,5 +73,10 @@ I.~Foster J. Frey S. Graham C. Kesselman T. Maguire T. Sandholm P.~Vanderbilt
 J.~Sifakis T.~Henzinger, X.~Nicollin and S.~Yovine.
 \newblock {Symbolic model checking for real-time systems}.
 \newblock {\em Information and Computation}, 111(2):193--244, 1994.
+
+\bibitem{Vaquero2008}
+Luis~M. Vaquero, Luis Rodero-Merino, Juan Caceres, and Maik Lindner.
+\newblock A break in the clouds: Towards a cloud definition.
+\newblock {\em SIGCOMM Comput. Commun. Rev.}, 39(1):50--55, December 2008.
 
 \end{thebibliography}

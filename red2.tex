@@ -1,0 +1,1254 @@
+\chapter{Generalidades}
+
+En este cap\'{\i}tulo presentamos una revisi\'{o}n de los principales
+conceptos relacionados con las Redes de Petri.
+Por tanto, el objetivo de este cap\'{\i}tulo ser\'{a} proporcionar
+la base de trabajo de los siguientes, as\'{\i} como fijar la
+notaci\'{o}n que va a ser utilizada a lo largo de la tesis.
+Puesto que los
+resultados presentados en este cap\'{\i}tulo son cl\'{a}sicos en la
+teor\'{\i}a sobre Redes de Petri, algunas demostraciones son
+omitidas, indicando \'{u}nicamente las citas bibliogr\'{a}ficas en las que
+pueden encontrarse.
+
+\section{Notaci\'{o}n}
+
+La notaci\'{o}n empleada a lo largo de este trabajo ser\'{a} la siguiente:
+\begin{enumerate}
+\item {\bf N\'{u}meros}\\
+Let $\nnul = \mathbb{N} \cup \{0\}$ and $\rnul$ be the set of the 
+nonnegative integers and nonnegative real numbers, respectively,
+and $\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$. 
+Denotaremos por $\nnul = \mathbb{N} \cup \{0\}$ los n\'{u}meros naturales
+incluyendo el 0, por los naturales excluyendo el 0, y
+denotaremos por $Z$ al conjunto de n\'{u}meros enteros.
+Asimismo, denotaremos por $Q$ los n\'{u}meros racionales, y por
+$Q^{+}$ los n\'{u}meros racionales positivos.
+\item {\bf Conjuntos y Multiconjuntos}\\
+Utilizaremos la notaci\'{o}n usual para trabajar con
+conjuntos. El cardinal de un conjunto $A$
+se denotar\'{a} de la forma $|A|$.
+
+As\'{\i}, diremos
+que $x \in R$, para un multiconjunto $R\,:\,A \longrightarrow \nnul$
+sii $R(x) > 0$; asimismo utilizaremos el s\'{\i}mbolo
+$\emptyset$ para denotar el
+multiconjunto vac\'{\i}o ($R(x)=0,\,\forall x \in A$); mientras que,
+por ejemplo,
+un multiconjunto que consta de dos
+instancias de un elemento $x$ y una instancia de un elemento $y$
+ser\'{a} denotado en la forma $\{2x,1y\}$. Dado un conjunto
+$A$, denotaremos por ${\cal B}(A)$ el conjunto de multiconjuntos
+sobre $A$.
+
+We start with the preliminaries and the definition of timed transition system. 
+We use the delimiters \{\} for sets and $\multiset{}$ for multisets.
+As usual, let $A$ be a set, a multiset or a list, 
+we use $x \in A$ to denote the membership of the element  $x$ in $A$. 
+%We consider only discrete time
+%as for closed intervals the reachability/soundness problems
+%are equivalent with the continuous time variant as discussed in 
+%Section~\ref{sec:cont}.
+Let $\nnul = \mathbb{N} \cup \{0\}$ and $\rnul$ be the set of the 
+nonnegative integers and nonnegative real numbers, respectively,
+and $\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$. 
+\item {\bf Relaciones}\\
+Dado un conjunto $X$, una relaci\'{o}n sobre
+$X$ ser\'{a} un conjunto $R \subseteq X \times X$. Llamaremos
+dominio de $R$ al conjunto $dom(R)$ definido de la forma
+siguiente:
+\[dom(R) = \{ x \in X \,|\, \exists
+y \in X\,:\, (x,y) \in R \}\]
+y codominio de $R$ al conjunto $cod(R)$ definido como sigue:
+\[cod(R) = \{ x \in X \,|\, \exists y \in X\,:\,(y,x) \in R\}\]
+Dada una relaci\'{o}n $R$, se define el {\it cierre reflexivo y transitivo} de
+$R$, $R^*$, como sigue:
+\[ R^* = \{ (x,y)\,|\,x=y \,\vee\,
+\exists x_1,\ldots,x_n,\,\,(x,x_1)\in R,\ldots,(x_n,y) \in R\}\]
+Asimismo, se define el {\it cierre
+transitivo} de $R$, $R^+$, como sigue:
+\[R^+ = \{ (x,y)\,|\,
+\exists x_1,\ldots,x_n,\,\,(x,x_1)\in R,\ldots,(x_n,y) \in R\}\]
+\item {\bf Vectores}\\
+La notaci\'{o}n empleada para representar los vectores
+ser\'{a} la usual, mediante tuplas. En el caso de vectores con componentes
+en $\nnul$, diremos que $v \geq w$ sii todas las componentes de $v$
+son mayores o iguales que las correspondientes de $w$. Adem\'{a}s,
+diremos que $v > w$ si $v \geq w$ y $v \neq w$.
+\end{enumerate}
+
+% % Labelled Transition system
+\begin{definition}[Labelled transition system]
+
+For a choreography $C$, we define the
+semantics of $C$ as the labelled transition system
+obtained by the application of rules in Table \ref{tab:coreo}, starting at the state ${s_0}_c$:
+\[
+  {\it lts}(C) = (\mathcal{Q}, {s_0}_c,  \rightarrow)
+\]
+%
+\noindent
+where $\mathcal{Q}$ is the set of reachable choreography states, ${s_0}_c$ is the initial state where all the variables in $\sigma$ are initialised to 0 and $\rho$ is empty, and
+$\rightarrow \,\,= \,\,\rightarrow_1 \,\cup\, \{ \flecha{a}\,|\,$
+for all basic activity $a$, or $a=\tau \,\}$.
+\vspace{0.1cm}
+\end{definition}
+
+% % Discrete time TTS
+A \emph{discrete timed transition system} (DTTS) 
+is a triple $\left(\proc, \act,\rightarrow\right)$
+where $\proc$ is the set of states, $\act$ is the set of actions
+and $\rightarrow\: \subseteq \proc \times (\act \cup \nnul)  \times \proc$ is the 
+transition relation written as $s \trans{a} s'$ whenever $(s,a,s') \in \rightarrow$.
+If $a \in \act$ then we call it a \emph{switch transition}, if
+$a \in \nnul$ we call it a \emph{delay transition}.
+%By $\rightarrow^{*}$ we denote the reflexive and transitive closure of 
+%the relation
+%$\rightarrow  \eqdef \bigcup_{a \in \act} \trans{a} \; \cup \; \bigcup_{d \in \nnul} \trans{d}$. 
+We also define the set of \emph{well-formed time intervals} as 
+$\int \eqdef \{[a,b] \mid a \in \nnul,b\in \nnul^{\infty}, a\leq b \}$
+and its subset $\intinv \eqdef \{[0,b] \mid b\in \nnul^{\infty} \}$
+used in age invariants. 
+We start with the preliminaries and the definition of timed transition system. 
+We use the delimiters \{\} for sets and $\multiset{}$ for multisets.
+As usual, let $A$ be a set, a multiset or a list, 
+we use $x \in A$ to denote the membership of the element  $x$ in $A$. 
+%We consider only discrete time
+%as for closed intervals the reachability/soundness problems
+%are equivalent with the continuous time variant as discussed in 
+%Section~\ref{sec:cont}.
+
+%Continuous time TTS
+A \emph{timed transition system} (TTS) 
+is a triple $\left(\proc, \act,\rightarrow\right)$
+where $\proc$ is the set of states, $\act$ is the set of actions
+and $\rightarrow\: \subseteq \proc \times (\act \cup \rnul)  \times \proc$ is the 
+transition relation written as $s \trans{a} s'$ whenever $(s,a,s') \in \rightarrow$.
+If $a \in \act$ then we call it a \emph{switch transition}, if
+$a \in \rnul$ we call it a \emph{delay transition}.
+%By $\rightarrow^{*}$ we denote the reflexive and transitive closure of 
+%the relation
+%$\rightarrow  \eqdef \bigcup_{a \in \act} \trans{a} \; \cup \; \bigcup_{d \in \nnul} \trans{d}$. 
+We also define the set of \emph{well-formed time intervals} 
+by: $$\int =\{ [a,a] \;|\; [a,b] \;|\; [a,b) \;|\; (a,b] \;|\; (a,b) \;|\; [a,\infty) \;|\; (a,\infty) \mid a,b \in \nnul,a < b\}$$
+ Moreover, its subset: $$\intinv = \{ [0,0] \;|\; [0,b] \;|\; [0,b) \;|\; [0,\infty) \mid b \in \nnul\}$$
+is used in age invariants. 
+
+We say that a relation $\mathcal{R}$ is an untimed bisimulation for a timed transition system 
+$T=\left(\proc, \act,\rightarrow\right)$ iff whenever $s_1 \mathcal{R} s_2$, $a \in \act$ and $d \in \rnul$:
+\begin{enumerate}
+\item if $s_1\trans{a}s^\prime_1$ then $s_2\trans{a}s^\prime_2$ such that $s^\prime_1 \mathcal{R} s^\prime_2$;
+\item if $s_1\trans{d}s^\prime_1$ then $s_2\trans{d^\prime}s^\prime_2$ for some $d^\prime \in \rnul$ such that $s^\prime_1 \mathcal{R} s^\prime_2$;
+\item if $s_2\trans{t}s^\prime_2$ then $s_1\trans{t}s^\prime_1$ such that $s^\prime_1 \mathcal{R} s^\prime_2$;
+\item if $s_2\trans{d}s^\prime_2$ then $s_1\trans{d^\prime}s^\prime_1$ for some $d^\prime \in \rnul$ such that $s^\prime_1 \mathcal{R} s^\prime_2$.
+\end{enumerate}
+
+\section{Redes de Petri}
+
+\begin{definition} (Redes de Petri Ordinarias)\\
+Una terna $N=(P,T,F)$, formada por dos
+conjuntos $P$ y $T$, y una relaci\'{o}n $F$ definida sobre
+$P \,\cup\,T$, se dice que es una {\em Red de Petri Ordinaria} si
+satisface:
+\begin{enumerate}
+\item $P \,\cap \,T = \emptyset$
+\item $F \subseteq (P \times T) \,\cup\, (T \times P)$
+\item $dom(F) \, \cup \, cod(F) = P \, \cup \, T$
+\end{enumerate}
+
+Al conjunto $P$ se le llama {\it conjunto de lugares}, al
+conjunto $T$ {\it conjunto de transiciones} y a $F$
+{\it relaci\'{o}n de flujo}. $F$ relaciona lugares
+con transiciones en forma de arcos entre lugares y transiciones
+o entre transiciones y lugares.
+Salvo que se indique lo contrario, supondremos que las
+redes con las que trabajaremos son finitas (los conjuntos
+$P$ y $T$ son finitos).
+Las redes de Petri pueden
+representarse gr\'{a}ficamente por medio de grafos bipartitos, que son
+grafos que constan de dos tipos de
+nodos (lugares y transiciones). Los lugares se representan con
+c\'{\i}rculos y las transiciones con rect\'{a}ngulos.
+
+Sea el conjunto $X = P\,\cup\,T$. Entonces, para todo $x \in X$
+se definen los conjuntos siguientes:
+$\precond{x} = \{ y \in X \,|\, (y,x) \in F\}~$ (preconjunto de
+x), $x^{\bullet} = \{ y \in X \,|\, (x,y) \in F\}~$ (postconjunto
+de x).
+
+Se dice que $N$ es $T$-restringida sii $\precond{t} = t^{\bullet} =
+\emptyset\,\,\,\forall t \in T$.
+\end{definition}
+
+\begin{example} Sea $N=(P,T,F)$, siendo:
+\[\begin{array}{l}
+P = \{ p_1,\,p_2,\,p_3\}\\
+T = \{ t_1,\,t_2\}\\
+F = \{ (p_1,t_1),\,(p_2,t_1),\,(t_1,p_3),\,(p_3,t_2)\}
+\end{array}\]
+
+Esta red est\'{a} representada gr\'{a}ficamente en la figura \ref{fig201}.
+\end{example}
+
+\begin{figure}
+\input{fig26}
+\caption{\label{fig201} Ejemplo de Red de Petri}
+\end{figure}
+
+\begin{definition} (Marcajes de Redes de Petri Ordinarias)\\
+Sea $N=(P,T,F)$ una Red de Petri Ordinaria.
+Una funci\'{o}n $M: P \longrightarrow
+\nnul$ se llama un {\it marcaje de N}. Entonces,
+$(P,T,F,M)$ se llama una {\it Red de Petri Ordinaria Marcada}.
+\end{definition}
+
+Los marcajes de las redes de Petri se representan gr\'{a}ficamente
+incluyendo en cada lugar tantos puntos como tokens le corresponden,
+o bien anotando cada lugar con el n\'{u}mero de tokens asociado al mismo.
+
+\begin{example} En la Red de Petri del ejemplo \ref{fig201} podemos
+considerar el siguiente marcaje:
+\[ M(p_1) = 1,\,\,\,M(p_2)=1,\,\,\,M(p_3)=0 \]
+La representaci\'{o}n gr\'{a}fica de la misma, correspondiente a la
+primera variante, puede verse en la figura \ref{fig202}.
+\end{example}
+
+\begin{figure}
+\input{fig27}
+\caption{\label{fig202} Ejemplo de Red de Petri Marcada}
+\end{figure}
+
+La sem\'{a}ntica de una Red de Petri est\'{a} definida mediante la siguiente
+regla de disparo, que define el marcaje alcanzado tras el disparo de una
+transici\'{o}n.
+
+\begin{definition} (Regla de Disparo)\\
+Sea $N=(P,T,F,M)$ una Red de Petri Ordinaria Marcada. Una
+transici\'{o}n $t \in T$
+se dice que {\it est\'{a} permitida bajo el marcaje M},
+lo cual se denota por $M[t\rangle$, si para todo
+lugar $p \in P$ tal que $(p,t) \in F$ se verifica $M(p) > 0$.
+
+El disparo de una transici\'{o}n permitida $t$ bajo el marcaje $M$
+resulta en un nuevo marcaje de la red, $M'$, definido de la forma
+siguiente:
+\[M'(p) = M(p) - W_f(p,t) + W_f(t,p)~~~\forall p \in P\]
+siendo $W_f(x) = 1$ si $x \in F$ y $W_f(x) = 0$, para $x \not\in F$,
+para todo $x \in (T \times P) \, \cup \, (P \times T)$.
+Ello se denota en la forma $M[t\rangle M'$.
+\end{definition}
+
+\begin{example} En el ejemplo \ref{fig202}, el disparo de la transici\'{o}n $t_1$
+conduce la red al marcaje $M'$:
+\[ M'(p_1) = 0,\,\,\,M'(p_2)=0,\,\,\,M'(p_3)=1 \]
+\end{example}
+
+\begin{definition} (Activaci\'{o}n Concurrente de Transiciones)\\
+Sea $N= (P,T,F,M)$ una Red de Petri Ordinaria Marcada. Sea
+$R \subseteq T$ un conjunto de transiciones de la red.
+Se dice que {\it las transiciones de R est\'{a}n permitidas
+concurrentemente}, lo que se denota por $M [ R \rangle$
+sii $M(p) \geq \sum_{t \in R} W_f(p,t),~
+\forall p\in P$, donde
+$W_f(p,t)$ est\'{a} definido de la misma forma que en la definici\'{o}n anterior.
+
+Podemos incluso extender esta definici\'{o}n a multiconjuntos,
+permitiendo as\'{\i} la posibilidad de que varias instancias de una
+misma transici\'{o}n sean disparadas en un solo paso.
+De esta forma, diremos que un multiconjunto de transiciones
+$R$ est\'{a} permitido bajo el marcaje $M$ sii $M(p)
+\geq \sum_{t \in T} W_f(p,t) \cdot R(t)$, $\forall p \in P$.
+
+El disparo de un multiconjunto de transiciones $R$ bajo el
+marcaje $M$ conduce la red a un nuevo marcaje $M'$, dado por:
+\[ M'(p) = M(p) - \sumas{t \in T} (W_f(p,t) - W_f(t,p)) \cdot R(t)\]
+Esta evoluci\'{o}n de la red en un solo paso la denotaremos por
+$M[ R \rangle M'$.
+\end{definition}
+
+\begin{definition} (Redes de Petri Generalizadas)\\
+Una Red de Petri Generalizada (aunque en el futuro nos permitiremos
+eventualmente la licencia de llamarlas simplemente Redes de Petri)
+es una tupla $N=(P,T,F,K,W)$, donde:
+\begin{enumerate}
+\item $(P,T,F)$ es una Red de Petri Ordinaria.
+\item $K\,:\,P \longrightarrow \nat \,\cup\, \{\infty\}$ es una
+funci\'{o}n que indica el n\'{u}mero m\'{a}ximo de tokens que puede haber en
+cada lugar ({\it funci\'{o}n de capacidad}).
+\item $W\,:\,F \longrightarrow \nat^{+}$ es una funci\'{o}n que
+indica la multiplicidad de cada arco ({\it pesos de los arcos}).
+\end{enumerate}
+
+Se suele omitir la funci\'{o}n de capacidad, por innecesaria,
+si \'{e}sta es infinita para todos los lugares. Adem\'{a}s, es
+usual extender la definici\'{o}n de $W$ a todo el universo de
+posibles arcos, haci\'{e}ndola nula para pares
+$(p,t)$ o $(t,p)$ que no est\'{e}n en $F$.
+\end{definition}
+
+\begin{definition} (Regla de Disparo para Redes de Petri Generalizadas)\\
+Sea $N=(P,T,F,K,W)$ una Red de Petri Generalizada.
+\begin{enumerate}
+\item Una funci\'{o}n $M\,:\, P \longrightarrow \nat$ se dice que
+es un {\it marcaje} de $N$ sii $M(p) \leq K(p)$, para todo
+$p \in P$.
+\item Una transici\'{o}n $t \in T$ est\'{a} permitida bajo un marcaje
+$M$, lo que se denota por $M[ t \rangle$
+sii $W(p,t) \leq M(p) \leq K(p) - W(t,p)$, para todo $p \in P$.
+El disparo de $t$ resulta en un nuevo marcaje de la red $M'$, dado por:
+$M'(p) = M(p) - W(p,t) + W(t,p)$, para todo $p \in P$.
+De nuevo, esta evoluci\'{o}n la denotamos por $M[ t \rangle M'$.
+\item Un multiconjunto de transiciones $R$ est\'{a} permitido bajo el
+marcaje $M$, lo que se denota por $M [ R \rangle$, si y s\'{o}lo si
+$M(p) \geq \sum_{t \in T} W(p,t) \cdot R(t)$. El disparo de $R$
+resulta en un nuevo marcaje $M'$, dado por:
+\[ M'(p) = M(p) - \sum_{t \in T} (W(p,t) - W(t,p)) \cdot R(t), \,\,
+\forall p \in P\]
+Lo que se denota por $M [ R \rangle M'$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition} Sea $N=(P,T,F,K,W,M_0)$ una Red de Petri Marcada.
+\begin{enumerate}
+\item Se dice que $\sigma = M_0 t_1 M_1 \ldots t_n M_n$ es una
+secuencia de ocurrencia finita de $N$ si y s\'{o}lo si
+$\forall i \in \{1,\ldots,n\},\,M_{i-1} [ t_i \rangle M_i$.
+En algunas ocasiones denotaremos las secuencias de ocurrencia
+en la forma $t_1 \ldots t_n$, ya que a partir del marcaje de partida
+$M_0$ y a partir de la secuencia de transiciones disparadas a partir de \'{e}l,
+es posible obtener los dem\'{a}s marcajes $M_i$.
+
+Extendemos la notaci\'{o}n habitual a
+secuencias de ocurrencia, obteniendo $M_0 [ \sigma \rangle M_n$.
+Se denota mediante $L(N,M_0)$ al
+conjunto de secuencias de ocu\-rren\-cia de $N$ que parten de $M_0$.
+\item Se dice que $\sigma = M_0 R_1 M_1 \ldots R_n M_n$ es una
+secuencia de pasos finita de $N$ si y s\'{o}lo si
+$\forall i \in \{1,\ldots,n\},\,M_{i-1} [ R_i \rangle M_i$.
+De nuevo se extiende la notaci\'{o}n habitual a secuencias de pasos:
+$M_0 [ \sigma \rangle M_n$.
+Se denota por $P(N,M_0)$ al conjunto de secuencias de pasos de $N$
+que parten de $M_0$.
+\end{enumerate}
+\end{definition}
+
+En lo sucesivo trabajaremos usualmente sobre la sem\'{a}ntica de
+secuencias de ocurrencia, salvo que expl\'{\i}citamente se
+indique lo contrario.
+
+%\bdfn (Matrices de Incidencia)\\
+%Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada.
+%\begin{enumerate}
+%\item Se dice que $N$ es {\it pura} sii $\forall t \in T$,
+%$\forall p \in P$, $W(t,p) \cdot W(p,t) = 0$.
+%\item Si $N$ es una red pura, podemos definir su
+%{\it matriz de incidencia previa}, $C^{-} = (c_{i,j}^{-})$,
+%$i=1,\ldots,|P|\,;\,j=1,\ldots,|T|$, siendo
+%$c_{i,j}^{-} = W(p_i,t_j)$, y su
+%{\it matriz de incidencia posterior}
+%$C^{+} = (c_{i,j}^{+})$,
+%$i=1,\ldots,|P|\,;\,j=1,\ldots,|T|$, siendo
+%$c_{i,j}^{+} = W(t_i,p_j)$.
+%\item Si $N$ es una red pura se define su {\it matriz de
+%incidencia} $C$ por medio de $C = C^+ - C^-$.
+%\end{enumerate}
+%\edfn
+
+%La matriz de incidencia puede ser definida tambi\'{e}n sobre redes
+%que no sean puras, pero en tal caso no caracteriza a las mismas, pues
+%una misma matriz de incidencia corresponde a varias redes diferentes.
+%
+%\bex Es sencillo obtener dos Redes de Petri diferentes con la misma
+%matriz de incidencia. Para ello basta tomar
+%una Red de Petri Ordinaria y elegir un lugar y una transici\'{o}n
+%no conectados inicialmente, y conectarlos formando un loop. Por
+%ejemplo, las dos redes de la figura \ref{fig203} tienen la misma
+%matriz de incidencia. De hecho, si se trabaja con Redes Generalizadas
+%el a\~{n}adido se puede hacer sobre cualquier par.
+%\eex
+%
+%\begin{figure}
+%\input{fig28}
+%\caption{\label{fig203} Dos Redes de Petri con la misma Matriz de Incidencia}
+%\end{figure}
+
+%\bprop (Ecuaci\'{o}n de Estado)\\
+%Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada Pura,
+%$\sigma \in L(N,M_0)$, y $M_0 [ \sigma \rangle M$.
+%Entonces se tiene: $M = M_0 + C \cdot \bar{\sigma}$, siendo
+%$\bar{\sigma}$ el vector de Parikh asociado a la
+%secuencia $\sigma$, que est\'{a} definido como
+%$\bar{\sigma}(i) = $n\'{u}mero de ocurrencias de
+%la transici\'{o}n $t_i$ en la secuencia $\sigma$.
+%
+%\proof Sea la secuencia de marcajes producida a lo
+%largo de la ejecuci\'{o}n de $\sigma$: $M_0 t_{i_{1}} M_1 \ldots t_{i_{n}} M_n$.
+%Entonces, de la regla de disparo se concluye que $M_1 = M_0 +
+%C \cdot U_{i_{1}}$, siendo $U_{i_{1}}$ el vector cuyas componentes son todas
+%nulas, salvo la $i_{1}$-\'{e}sima, que vale 1. En general, se obtiene
+%que $M_k = M_{k-1} + C \cdot U_{i_{k}}$.
+%
+%Por tanto:
+%\[ M_k = M_{k-2} + C \cdot (U_{i_{k-1}} + U_{i_{k}}) = \ldots =
+%M_0 + C \cdot \sum_{j=1}^{k} U_{i_{j}}\]
+%Ahora bien, $\suma{j=1}{k} U_{i_{j}} = \bar{\sigma}$, lo que
+%termina la demostraci\'{o}n.
+%\eprop
+
+\section{An\'{a}lisis de Redes}
+
+Cuando se plantea el dise\~{n}o de un sistema, aparte del inter\'{e}s que
+suscita el tener un modelo gr\'{a}fico del mismo, resulta importante
+disponer de herramientas que nos permitan obtener propiedades
+a partir del modelo considerado. En el caso de los sistemas
+concurrentes, la verificaci\'{o}n del cumplimiento de ciertas
+propiedades se hace m\'{a}s dif\'{\i}cil que en el caso de los sistemas
+secuenciales, por lo que dichas herramientas cobran un particular
+inter\'{e}s. El an\'{a}lisis de la conducta de los sistemas tiene por objeto
+determinar el cumplimiento de ciertas propiedades, como por ejemplo,
+que el n\'{u}mero de procesos en una cierta cola del sistema no excede
+cierta cantidad, que se garantiza la exclusi\'{o}n mutua en el acceso
+a cierto recurso del sistema, etc.
+
+En el caso de las Redes de Petri, junto con su notable inter\'{e}s para
+el modelado de sistemas, por su naturaleza gr\'{a}fica que permite
+tener un modelo f\'{a}cilmente comprensible de un sistema,
+se tiene tambi\'{e}n una herramienta poderosa para analizar formalmente
+el cumplimiento de determinadas propiedades de buena conducta
+de los mismos,
+como la ausencia de bloqueos, la alcanzabilidad de un cierto
+estado, la posibilidad de alcanzar la situaci\'{o}n de partida
+del sistema con independencia de su estado actual, etc.
+
+\medskip
+Habitualmente se dividen las propiedades de los sistemas en dos
+clases:
+
+\subsection{Propiedades de Seguridad}
+
+Garantizan que el sistema no
+alcanzar\'{a} nunca un conjunto de estados no deseados, o
+que nunca ejecutar\'{a} una secuencia de pasos que pertenezca a un
+determinado conjunto.
+
+Son propiedades de Seguridad las
+siguientes:
+\begin{enumerate}
+\item {\bf Propiedad de Alcance}. Un marcaje $M$ de una Red de Petri
+Marcada $N= (P,T,F,W,M_0)$ se dice que es {\it alcanzable} en $N$
+sii existe una secuencia de ocurrencia $\sigma \in L(N,M_0)$
+tal que $M_0 [ \sigma \rangle M$. Denotamos por $[M_0\rangle$ al
+conjunto de marcajes alcanzables en $N$ a partir del marcaje
+inicial $M_0$, y por $[ M \rangle$ al conjunto de marcajes alcanzables
+en $N$ a partir de un marcaje $M$.
+\item {\bf Propiedad de Seguridad}. Una Red de Petri Marcada
+$N=(P,T,F,W,$ \linebreak
+$M_0)$ es {\it n-segura}, para un cierto $n \in \nat$ dado, si todo
+marcaje alcanzable $M$ a partir de $M_0$ cumple la
+propiedad $M(p) \leq n$, para todo $p \in P$. Las redes
+1-seguras se llaman habitualmente {\it seguras}, y en ellas los
+marcajes pueden identificarse con subconjuntos de lugares.
+
+Bajo los mismos requisitos, se dice que un lugar $p \in P$ es
+{\it n-seguro} si $M(p) \leq n$, para todo marcaje alcanzable
+$M$ a partir de $M_0$.
+\item {\bf Propiedad de Limitaci\'{o}n}. Sea
+$N=(P,T,F,W,M_0)$ una Red de Petri Marcada.
+Se dice que un lugar $p \in P$ es limitado si
+existe un n\'{u}mero natural $n \in \nat$ tal que dicho lugar es
+$n$-seguro; y se dice que $N$ es {\it limitada} si todos sus lugares
+son limitados.
+\item {\bf Ausencia de Bloqueos}. Dada una Red de Petri Marcada
+$N=(P,T,F,W,$ \linebreak
+$M_0)$, y un marcaje alcanzable $M$ a partir de $M_0$.
+Se dice que $M$ es un {\it marcaje muerto} si no existe ninguna
+transici\'{o}n permitida bajo dicho marcaje. La red $N$ se dice
+que est\'{a} {\it libre de bloqueos} si no existe ning\'{u}n marcaje
+alcanzable muerto.
+\item {\bf Conservaci\'{o}n Respecto a un Vector de Pesos}.
+Sea una Red de Petri Marcada $N=(P,T,F,W,M_0)$, con
+$P = \{p_1,\ldots,p_n\}$. Se dice que $N$ es
+{\it conservativa respecto a un vector de pesos w}, con
+$w \in \nat^n$, si para todo marcaje alcanzable $M$
+a partir de $M_0$ se cumple:
+\[ \suma{i=1}{n} w_i \cdot M(p_i) =
+\suma{i=1}{n} w_i \cdot M_0(p_i)\]
+\item {\bf Cubrimiento de Marcajes}.
+Sea una Red de Petri Mar\-cada $N=$ \linebreak $(P,T,F,W,
+M_0)$. Dado un marcaje $M$ de $N$, se dice que $N$ cumple la propiedad
+del cubrimiento de marcajes para el marcaje $M$ si existe $M' \in
+[M_0 \rangle$ tal que $M' \geq M$.
+\end{enumerate}
+
+\noindent {\sc NOTA:} Para ser m\'{a}s precisos, la alcanzabilidad no es
+exactamente una propiedad de seguridad, sino la negaci\'{o}n de la propiedad,
+la no alcanzabilidad. An\'{a}logamente ocurre con el cubrimiento de marcajes.
+
+\subsection{Propiedades de Actividad}
+
+Garantizan que el sistema, con independencia de su estado actual,
+podr\'{a} eventualmente alcanzar un determinado estado de un cierto conjunto
+de estados, o podr\'{a} eventualmente ejecutar una cierta secuencia de eventos.
+Son propiedades de actividad las siguientes:
+\begin{enumerate}
+\item {\bf Vivacidad}.
+Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada. Una transici\'{o}n $t \in T$
+se dice que es {\it viva} si para todo marcaje alcanzable $M \in
+[ M_0 \rangle$ existe una secuencia de ocurrencia $\sigma$ que parte
+de $M$ tal que $\sigma = t_1 \ldots t_m$, con $t_m = t$. Se dice que
+$N$ es {\it viva} si todas sus transiciones son vivas.
+\item {\bf Home State}.
+Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada. Se dice que
+un marcaje $M$ de $N$ es un {\it home state} si para todo
+$M' \in [ M_0 \rangle$ se tiene $M \in [ M' \rangle$.
+\item {\bf Home Space}. Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada.
+Se dice que un conjunto de marcajes ${\cal M}$ es un {\it home-space}
+de $N$ si para todo marcaje $M' \in [ M_0 \rangle$ existe un marcaje
+$M'' \in {\cal M}$ tal que $M'' \in [ M' \rangle$.
+\item {\bf Ciclicidad}.
+Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada. Se dice que
+$N$ tiene un {\it comportamiento c\'{\i}clico} si para todo marcaje
+$M \in [ M_0 \rangle$ existe una secuencia de ocurrencia $\sigma$
+que parte de $M$ tal que $M [ \sigma \rangle M_0$.
+\end{enumerate}
+
+\subsection{Decidibilidad del Alcance y la Vivacidad}
+
+Al abordarse el estudio de la decidibilidad de algunas de
+estas propiedades anteriormente citadas, se comprob\'{o} que en absoluto se
+trataba de problemas sencillos, no encontr\'{a}ndose en principio en la
+mayor parte de las ocasiones m\'{a}s que un me\-ca\-nis\-mo
+de reducibilidad que nos permitir\'{\i}a resolver unos problemas
+reduci\'{e}ndolos a otros en apariencia m\'{a}s sencillos.
+De esta forma, la decidibilidad
+de la propiedad de alcance apareci\'{o} como b\'{a}sica para resolver la
+decidibilidad de las dem\'{a}s.
+Sin embargo, pronto se constat\'{o} que la prueba de la decidibilidad del
+alcance no era ni mucho menos sencilla. Por ello, se
+plantearon las siguientes propiedades relacionadas con la
+alcanzabilidad, a las que se consigui\'{o} reducir esta \'{u}ltima.
+\begin{enumerate}
+\item {\bf Propiedad de Alcance de Submarcajes}.
+Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada. Dado $P' \subseteq P$,
+se dice que $N$ cumple la propiedad de Alcance de Submarcajes para $P'$
+si existe un marcaje $M' \in [M_0 \rangle$
+tal que $M'(p) = M(p)$, $\forall p \in P'$.
+\item {\bf Propiedad de Alcance Nulo}.
+Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada.
+$N$ cumple la propiedad de Alcance Nulo sii $0 \in [ M_0 \rangle$, donde
+0 es el vector cuyas componentes son todas nulas.
+\item {\bf Propiedad de Alcance Nulo de un Solo Lugar}.
+Sea $N=(P,T,$ \linebreak $F,W,M_0)$ una Red de Petri Marcada.
+Dado $p_0 \in P$, se dice que $N$ cumple la propiedad de Alcance Nulo
+de un Solo Lugar para $p_0$ si existe un marcaje
+$M \in [ M_0 \rangle$ tal que $M(p_0) = 0$.
+\end{enumerate}
+
+\begin{theorem} En lo que a su decidibilidad se refiere, son
+equivalentes los siguientes problemas.
+\begin{enumerate}
+\item El problema de alcance.
+\item El problema de alcance de submarcajes.
+\item El problema de alcance nulo.
+\item El problema de alcance nulo de un solo lugar.
+\end{enumerate}
+
+\proof Ver \cite{Pet81}.
+\end{theorem}
+
+Sin embargo, a pesar de este resultado, posteriormente se vio que la
+dificultad de resolver cualquiera de los tres nuevos
+problemas introducidos es la misma que la de resolver el
+problema de alcance. En todo caso, aunque no se conoc\'{\i}a si esta
+propiedad era decidible, s\'{\i} se obtuvieron
+resultados que ya dejaban ver que en caso de que fuera decidible,
+la complejidad del algoritmo empleado ser\'{\i}a prohibitiva
+(por ejemplo, Lipton \cite{Lip76}
+demostr\'{o} en 1976 que un algoritmo para resolver el problema de
+alcance requerir\'{\i}a al menos una cantidad exponencial de espacio
+de almacenamiento y de tiempo con respecto al n\'{u}mero de arcos de la red).
+Finalmente, la decidibilidad del pro\-ble\-ma de
+alcance fue resuelta en 1981 por
+Mayr (ver \cite{May81}), y m\'{a}s tarde por Kosaraju (ver
+\cite{Kos82}) que corrigi\'{o} algunos errores de la
+demostraci\'{o}n original. Pueden encontrarse demostraciones m\'{a}s
+legibles en \cite{Lam86,Reu90,Lam92}.
+
+Una vez probada la decidibilidad del problema de
+alcance, se obtuvo inme\-dia\-ta\-men\-te la decidibilidad del
+problema de vivacidad, pues previamente \cite{Pet81} tambi\'{e}n se
+hab\'{\i}a probado que dicho problema era equivalente al problema de alcance.
+Posteriormente pudo hacerse lo propio con otras propiedades. As\'{\i}
+\cite{Fru86} prob\'{o} la decidibilidad de la propiedad de ser {\it
+home-state}, posteriormente extendida a {\it home-spaces} en
+\cite{JoFr91}.
+
+\subsection{T\'{e}cnicas de An\'{a}lisis de Propiedades}
+
+Las t\'{e}cnicas de an\'{a}lisis de propiedades de Redes de Petri suelen
+clasificarse en 4 grupos:
+\begin{itemize}
+\item An\'{a}lisis por enumeraci\'{o}n.
+\item An\'{a}lisis por transformaci\'{o}n.
+\item An\'{a}lisis estructural.
+\item An\'{a}lisis por Simulaci\'{o}n.
+\end{itemize}
+
+%\subsubsection{An\'{a}lisis por enumeraci\'{o}n}
+%
+%En el an\'{a}lisis por enumeraci\'{o}n se
+%construye un \'{a}rbol de marcajes, que
+%expresa las posibles evoluciones de la red.
+%El \'{a}rbol as\'{\i} obtenido se llama
+%{\it \'{a}rbol de accesibilidad}, el cual es en general infinito.
+%Por ello, a\'{u}n a costa de perder cierta informaci\'{o}n, se define
+%el llamado {\it \'{a}rbol de cobertura}, que es siempre finito
+%(para redes finitas), lo que permite estudiar sobre
+%\'{e}l aquellas propiedades
+%para las que dicho \'{a}rbol proporcione la informaci\'{o}n necesaria
+%para establecer su decidibilidad.
+%
+%\bdfn (Arbol de Cobertura)\\
+%Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada. Se define el
+%{\it \'{a}rbol de cobertura} de $N$, $T(N)$, de la forma siguiente:
+%\begin{enumerate}
+%\item La ra\'{\i}z se etiqueta con el marcaje inicial $M_0$.
+%\item Un nodo $x$ etiquetado con un marcaje $M$ es una hoja del
+%\'{a}rbol si ocurre una de las siguientes posibilidades:
+%\begin{enumerate}
+%\item O bien no existe ninguna transici\'{o}n permitida bajo $M$.
+%\item O bien hay un nodo $y$, $y \neq x$,  en el camino que
+%va desde la ra\'{\i}z a $x$, etiquetado tambi\'{e}n con $M$.
+%\end{enumerate}
+%\item Si $x$ es un nodo con etiqueta $M$, y no es una hoja, entonces
+%para cada transici\'{o}n $t$ permitida por $M$ se introduce un nuevo arco
+%en el \'{a}rbol, etiquetado con esa transici\'{o}n $t$,
+%con destino en un nuevo nodo $y$, cuya etiqueta se obtiene en
+%base a los pasos siguientes:
+%\begin{enumerate}
+%\item Para todo lugar $p \in P$ se calcula: $\tilde{M}(p) =
+%M(p) + W(p,t) - W(t,p)$.
+%\item Si en el camino de la ra\'{\i}z a $x$ hay un nodo $z$, $z \neq y$,
+%con etiqueta $M"$ tal que: $\tilde{M}(p) \geq M"(p)$,
+%para todo $p \in P$, entonces se etiqueta el nodo $y$ con $M'$, definido
+%de la forma siguiente:
+%\[M'(p) = \left\{
+%\begin{array}{ll}
+%\tilde{M}(p) & {\rm si~}\tilde{M}(p) = M"(p)\\
+%\omega & {\rm en~caso~contrario}
+%\end{array}
+%\right.
+%\]
+%\item Si la condici\'{o}n anterior resulta falsa, se hace $M'= \tilde{M}$,
+%y el nodo $y$ se etiqueta con $M'$.
+%\end{enumerate}
+%\end{enumerate}
+
+%En esta definici\'{o}n se considera que $n < \omega$, $\forall n \in \nat$,
+%y que $n+ \omega = \omega + n = \omega + \omega = \omega - n = \omega$,
+%$\forall n \in \nat$.
+%\edfn
+%
+%\bthm El \'{a}rbol de cobertura de toda Red de Petri Marcada $N$, $T(N)$,
+%es finito.
+%
+%\proof Ver \cite{Pet81}.
+%\ethm
+%
+%No es posible decidir mediante el \'{a}rbol de cobertura la
+%propiedad de alcance, pues no puede establecerse si un
+%marcaje concreto pertenece o no al alcance de la red.
+%Sin embargo, s\'{\i} es posible decidir el cubrimiento de
+%marcajes, as\'{\i} como la seguridad, limitaci\'{o}n
+%y conservaci\'{o}n (ver \cite{Bes86,BeFe86,Pet81}).
+%
+%\medskip
+%El siguiente teorema, extraido de \cite{Fru86}, establece que
+%para toda red $N$ es posible
+%encontrar un conjunto finito de marcajes accesibles con la
+%propiedad de que cualquier marcaje accesible de $N$ cubre a alguno de los
+%marcajes de este conjunto.
+%
+%\bthm{\label{tfru}} Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada.
+%Existe un conjunto finito
+%de marcajes alcanzables en $N$, $\{ M^1_B,\ldots,M^b_B\}$, tales que
+%$\forall M \in [ M_0 \rangle$ existe $i \in \{1,\ldots,b\}$
+%tal que $M^i_B \subseteq M$.
+%
+%\proof Ver \cite{Fru86}.
+%\ethm
+%
+%\subsubsection{An\'{a}lisis por transformaci\'{o}n}
+%
+%En el an\'{a}lisis por transformaci\'{o}n se aplican diversos mecanismos de
+%reducci\'{o}n de redes que se aplican a una red para
+%obtener redes m\'{a}s sencillas, que
+%preservan algunas propiedades de la red de partida, lo que
+%permite estudiar sobre estas \'{u}ltimas dichas propiedades.
+%Las simplificaciones m\'{a}s usuales consisten en eliminar los
+%lugares impl\'{\i}citos (ver \cite{Sif78,Esp90}), lo que conserva la
+%vivacidad y limitaci\'{o}n de la red de partida, o bien el
+%reemplazamiento de una subred por un \'{u}nico lugar
+%(ver \cite{Bra86}), cuando \'{e}sta cumple ciertas condiciones.
+%De nuevo, esta reducci\'{o}n preserva la limitaci\'{o}n y vivacidad.
+%Otras t\'{e}cnicas de reducci\'{o}n (ver \cite{Ber80,Bra86})
+%se basan en sustituir un lugar
+%por un conjunto de transiciones, o en la eliminaci\'{o}n de
+%algunas transiciones irrelevantes en el funcionamiento de la
+%red, etc.
+%
+%\subsubsection{An\'{a}lisis Estructural Basado en el Algebra Lineal}
+%
+%Los m\'{e}todos de an\'{a}lisis estructural estudian las propiedades de las
+%redes de Petri haciendo uso exclusivamente de su topolog\'{\i}a.
+%Estos m\'{e}todos se dividen en dos grupos, con relaci\'{o}n a las
+%herramientas que utilizan: M\'{e}todos basados en el \'{a}lgebra lineal y
+%m\'{e}todos de cerrojos y trampas.
+%
+%Los m\'{e}todos de an\'{a}lisis estructural basados en el \'{a}lgebra lineal
+%se apoyan en la ecuaci\'{o}n de estado de la red (trabajan por
+%tanto sobre redes puras). Para ello definen los P-invariantes
+%como P-vectores anuladores izquierdos de la matriz de incidencia.
+%
+%\bdfn (P-invariantes)\\
+%Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada Pura.
+%Entonces, a los vectores
+%$V\,:\,P \longrightarrow {\cal Z}$ se les llama {\it P-vectores}.
+%
+%\begin{enumerate}
+%\item Un {\it P-vector} $I$ se llama un {\it P-invariante} de $N$ si
+%$I^T \cdot C = 0$, siendo $0$ el vector cuyas componentes son todas
+%nulas.
+%\item El {\it soporte de un P-vector} $H \in {\cal Z}^P$ se define como
+%sigue:
+%\[P_H = \{ p \in P \,|\, H(p) \neq 0\}\]
+%\item Un {\it P-invariante} $I$ de $N$ se dice que es {\it no-negativo}
+%si todas sus componentes son mayores o iguales que 0.
+%\item Un {\it P-invariante} no-negativo
+%se dice que es {\it mi\-ni\-mal} si no
+%hay otro {\it P-inva\-rian\-te} $I'$ no-negativo tal que $0 < I' <I$.
+%\pagebreak
+%\item Un {\it P-invariante positivo} (todas sus componentes son positivas
+%o nulas, pero al menos una es estrictamente positiva) se llama un
+%{\it P-semiflujo}.
+%\end{enumerate}
+%\edfn
+%
+%La ecuaci\'{o}n $I^T \cdot C = 0$ puede ser resuelta mediante
+%el algoritmo de Farkas (ver \cite{MeVa86}), que proporciona un
+%conjunto de generadores del conjunto de P-semiflujos
+%soluciones. La siguiente proposici\'{o}n demuestra que los
+%{\it P-semiflujos minimales} generan todas las soluciones
+%de $Y^T \cdot C = 0$, con $Y$ un vector con coeficientes
+%en $Q^+ \,\cup \,\{0\}$.
+%
+%\bprop Sea una Red de Petri Marcada Pura $N=(P,T,F,W,M_0)$ y
+%$C$ su matriz de incidencia. Sea $Y$ un vector con
+%coeficientes en $Q^+ \,\cup \,\{0\}$ tal que $Y^T \cdot C=0$.
+%Entonces, $Y = \sumas{i} \lambda_i Y_i$, siendo los $Y_i$
+%{\it P-semiflujos minimales} de $N$.
+%
+%\proof Ver \cite{Esp90}.
+%\eprop
+%
+%La siguiente propiedad de los P-invariantes
+%permite resolver el problema de la conservaci\'{o}n.
+%
+%\bprop Sea una Red de Petri Marcada Pura $N = (P,T,F,W,M_0)$ y
+%sea $I$ un P-invariante suyo. Entonces
+%$\forall M' \in [ M_0 \rangle,\,:\,I^T \cdot M = I^T \cdot M_0$.
+%
+%\proof Basta aplicar la definici\'{o}n de P-invariante y la
+%ecuaci\'{o}n de estado, multiplicando dicha ecuaci\'{o}n por su
+%izquierda por $I^T$.
+%\eprop
+%
+%De esta propiedad se concluye que si $N$ es una Red de Petri
+%Marcada Pura dotada de un P-semiflujo, entonces $N$ es
+%conservativa respecto de dicho P-semiflujo. Adem\'{a}s,
+%aunque dicha propiedad no permite resolver el problema
+%de alcance, s\'{\i} permite demostrar que un determinado marcaje
+%no est\'{a} en el alcance de la red. Es decir, un marcaje
+%determinado $M$ no estar\'{a} en el alcance de $N$ si
+%$I^T \cdot M \neq I^T \cdot M_0$. Otra propiedad que puede
+%ser resuelta mediante el uso de P-semiflujos es la seguridad,
+%pues una consecuencia de que el n\'{u}mero entero $n = I^T \cdot M$
+%sea constante para todos los  marcajes alcanzables es que
+%todos los lugares de $N$ asociados a componentes no nulas
+%de $I$ (lugares del soporte de $I$) son n-seguros.
+%
+%Lamentablemente, la propiedad anterior de invarianza de la
+%cantidad $I^T \cdot M$ no caracteriza plenamente a los
+%{\it P-invariantes}, es decir, el rec\'{\i}proco no es en general
+%cierto. Ello se debe a la posibilidad de que en el marcaje inicial
+%no contemos con suficientes tokens como para poner a prueba todas
+%las transiciones del sistema. Sin embargo, si fortalecemos un poco
+%las condiciones del marcaje de partida, conseguimos un rec\'{\i}proco.
+%
+%\bthm Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada Pura, con
+%$M_0$ un marcaje que cumple la siguiente propiedad: $\forall t \in T
+%\;\exists M_t \in [ M_0 \rangle\,$que permite la activaci\'{o}n de $t$.
+%Sea adem\'{a}s $I$ un {\it P-vector} tal que $I^T \cdot M = I^T \cdot M_0$,
+%para todo $M \in [ M_0 \rangle$. Entonces $I$ es un {\it P-invariante}
+%de $N$.
+%
+%\proof Para cada transici\'{o}n $t$ sea el marcaje $M_t$. El disparo
+%de $t$ bajo dicho marcaje proporciona el marcaje $M'_t$, dado por:
+%\[ M'_t = M_t + C(-,t) \]
+%Ahora bien, por la hip\'{o}tesis efectuada sobre $I$, $I^T \cdot M'_t =
+%I^T \cdot M_t$, lo que implica: $I^T \cdot C(-,t) = 0$. Esto es
+%v\'{a}lido para todo $t$, por tanto $I^T \cdot C = 0$.
+%\ethm
+%
+%De forma totalmente sim\'{e}trica podemos definir los {\it T-invariantes},
+%como anuladores derechos de la matriz de incidencia. Ellos nos
+%permitir\'{a}n resolver tambi\'{e}n algunos de los problemas planteados.
+%
+%\bdfn (T-invariantes)\\
+%Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada Pura. Un vector
+%de la forma $J\,:\, T \longrightarrow {\cal Z}$ se llama un
+%{\it T-vector}.
+%\begin{enumerate}
+%\item Se dice que un {\it T-vector} $J$ es un {\it T-invariante} de $N$ sii
+%$C \cdot J = 0$, siendo $C$ la matriz de incidencia de $N$.
+%\item un {\it T-invariante} de $N$ se dice que es {\it no-negativo}
+%sii todas sus componentes son mayores o iguales que 0.
+%\item Un {\it T-invariante} no-negativo
+%$J$ de $N$ se dice que es {\it minimal}
+%si no existe otro {\it T-invariante} no-negativo $J'$ tal que
+%$0 < J' < J$.
+%\end{enumerate}
+%\edfn
+%
+%El teorema siguiente relaciona los marcajes
+%reproducibles ({\it home-states}) con
+%los {\it T-invariantes}.
+%
+%\bthm Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada Pura, y sea
+%$M$ un {\it home-state} de $N$. Entonces, las transiciones de cada
+%secuencia de ocurrencia $\sigma$ tal que $M [ \sigma \rangle M$
+%constituyen el soporte de un {\it T-invariante} no-negativo de $N$.
+%
+%\proof Inmediata, a partir de la ecuaci\'{o}n de estado.
+%\ethm
+%
+%Su rec\'{\i}proco es igualmente cierto, lo que transforma este teorema
+%en una propiedad caracterizadora de los {\it T-invariantes}.
+%
+%\bthm Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada Pura y
+%sea $J$ un {\it T-invariante} no-negativo de $N$. Entonces existe un
+%marcaje $M_J$, reproducible con el disparo de las
+%transiciones del soporte de $J$, disparadas tantas veces como
+%indique la correspondiente componente en $J$.
+%
+%\proof Basta considerar el marcaje $M_J(p) = \sumas{t \in p^{\bullet}}
+%J(t) \cdot W(p,t)$, $\forall p \in P$. Su definici\'{o}n es correcta, al
+%ser $T$ no-negativo. Basta entonces aplicar la ecuaci\'{o}n de estado para
+%obtener $M_J + C \cdot J = M_J + 0 = M_J$.
+%\ethm
+%
+%No obstante, la ciclicidad de la red no puede ser resuelta mediante
+%el simple uso de {\it T-invariantes}. De hecho, tal cosa no puede
+%garantizarse ni siquiera aunque cada estado alcanzable sea un
+%{\it home-state}.
+%
+%\subsubsection{An\'{a}lisis Estructural Basado en Cerrojos y Trampas}
+%
+%El otro tipo de t\'{e}cnicas estructurales se apoyan en los conceptos de
+%cerrojos y trampas, que son propiedades puramente
+%estructurales, prescindiendo
+%del marcaje de la red en un momento dado. Los cerrojos son conjuntos
+%de lugares, que una vez que han perdido conjuntamente sus tokens permanecen
+%desmarcados por siempre. Sim\'{e}tricamente,
+%las trampas son conjuntos de lugares que
+%permanecen marcados una vez que tienen un token.
+%
+%\bdfn (Cerrojos y Trampas)\\
+%Sea $N=(P,T,F,M_0)$ una Red de Petri Ordinaria Marcada Pura Fuertemente
+%Conexa (es decir, desde cualquier nodo, ya sea transici\'{o}n lugar, se puede
+%ir a cualquier otro nodo).
+%\begin{enumerate}
+%\item $S \subseteq P$ se llama un {\it cerrojo} de $N$ sii
+%$\,\precond{S} \subseteq S^{\bullet}$.
+%\item $S \subseteq P$ se llama una {\it trampa} de $N$ sii
+%$\,S^{\bullet} \subseteq \precond{S}$.
+%\item Un cerrojo (resp. trampa) se dice que es {\it minimal} sii no existe
+%otro cerrojo (resp. trampa) contenido en \'{e}l de forma estricta.
+%\end{enumerate}
+%\edfn
+%
+%El siguiente teorema expresa la interpretaci\'{o}n realizada de los cerrojos
+%y trampas.
+%
+%\bthm Sea $N$ una Red de Petri Ordinaria Marcada Pura Fuer\-te\-men\-te
+%Conexa.
+%\begin{enumerate}
+%\item Sea $S$ un cerrojo de $N$. Entonces:
+%\[ (\forall s \in S\,:\,M(s) = 0) \,\Rightarrow\,
+%\forall M' \in [ M \rangle \,:\,\forall s \in S\,:\,M'(s)=0\]
+%Es decir, si en alg\'{u}n marcaje $M$ el cerrojo se vac\'{\i}a, entonces en todo
+%marcaje posterior permanece vac\'{\i}o.
+%\item Sea $S$ una trampa de $N$. Entonces:
+%\[ (\exists s \in S\,:\,M(s)>0) \,\Rightarrow\,
+%\forall M' \in [ M \rangle\,\exists s \in S\,:\,M'(s) > 0\]
+%Es decir, si en alg\'{u}n marcaje $M$ la trampa adquiere un token, entonces
+%en todo marcaje posterior la trampa permanece marcada.
+%\end{enumerate}
+%
+%\proof Ver \cite{Lau86}.
+%\ethm
+%
+%El teorema siguiente proporciona una condici\'{o}n suficiente para
+%decidir la ausencia de bloqueos.
+%
+%\bthm Sea $N$ una Red de Petri Ordinaria en las condiciones de la
+%definici\'{o}n anterior. Si todo cerrojo
+%no vac\'{\i}o de $N$ contiene una trampa marcada en $M_0$, entonces
+%$N$ no se bloquea.
+%
+%\proof Ver \cite{Lau86}.
+%\ethm
+%
+%Sin embargo, el problema de la vivacidad tampoco puede resolverse en
+%general con el uso de cerrojos y trampas, salvo en casos concretos,
+%como son los grafos marcados, que son redes fuertemente conexas en las
+%que todo lugar tiene una \'{u}nica
+%transici\'{o}n precondici\'{o}n y una \'{u}nica
+%transici\'{o}n postcondici\'{o}n.
+%
+\section{Extended Timed-Arc Petri Nets} \label{sec:def}
+%We shall now give some preliminaries in order to define the model
+%of extended timed-arc Petri nets. 
+%We consider only discrete time
+%as for closed intervals the reachability/soundness problems
+%are equivalent with the continuous time variant as discussed in 
+%Section~\ref{sec:cont}.
+Let $\nnul = \mathbb{N} \cup \{0\}$ and 
+$\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$.
+A \emph{discrete timed transition system} (DTTS) 
+is a triple $\left(\proc, \act,\rightarrow\right)$
+where $\proc$ is the set of states, $\act$ is the set of actions
+and $\rightarrow\: \subseteq \proc \times (\act \cup \nnul)  \times \proc$ is the 
+transition relation written as $s \trans{a} s'$ whenever $(s,a,s') \in \rightarrow$.
+If $a \in \act$ then we call it a \emph{switch transition}, if
+$a \in \nnul$ we call it a \emph{delay transition}.
+%By $\rightarrow^{*}$ we denote the reflexive and transitive closure of 
+%the relation
+%$\rightarrow  \eqdef \bigcup_{a \in \act} \trans{a} \; \cup \; \bigcup_{d \in \nnul} \trans{d}$. 
+We also define the set of \emph{well-formed time intervals} as 
+$\int \eqdef \{[a,b] \mid a \in \nnul,b\in \nnul^{\infty}, a\leq b \}$
+and its subset $\intinv \eqdef \{[0,b] \mid b\in \nnul^{\infty} \}$
+used in age invariants. 
+
+
+\begin{definition}[Extended timed-Arc Petri Net] \label{defetapn}  
+An \emph{extended timed-arc Petri net} 
+(ETAPN) is a 9-tuple $N = \tapntuple$ where 
+\begin{itemize}
+\item $P$ is a finite set of \emph{places},
+\item $T$ is a finite set of \emph{transitions} 
+such that $P \cap T = \emptyset$, 
+\item $\Turg \subseteq T$ is the set of \emph{urgent transitions},
+\item $\ia \subseteq P \times T$ is a finite set of \emph{input arcs},
+\item $\oa \subseteq T \times P$ is a finite set of \emph{output arcs},
+\item $\cfunction : \ia \rightarrow \int$ is a \emph{time constraint function} assigning 
+guards %(time intervals) 
+to input arcs,
+\item $\wfunction : \ia\cup \oa \rightarrow \mathbb{N}$ is a function assigning \emph{weights} to input and output arcs,
+\item $\type : \ia \cup \oa \rightarrow \types$ is a \emph{type function} assigning a type to all arcs where $\types = \{\normal, \inhib\} \cup \{\transporti \mid j \in \mathbb{N} \}$ such that  
+\begin{itemize}
+\item if $\type(a) = \inhib$ then $a \in \ia$ and $\cfunction(a)=[0,\infty]$, 
+\item if $(p,t) \in \ia$ and $t \in \Turg$ then $\cfunction((p,t))=[0,\infty]$,
+\item if $\type((p,t)) = \transporti$ for some $(p,t) \in \ia$ then there is exactly one $(t,p^{\prime}) \in \oa$ such that $\type((t,p^{\prime})) = 
+\transporti$, 
+%and moreover $\wfunction((p,t))=\wfunction((t,p^{\prime}))$,
+\item if $\type((t,p^{\prime})) = \transporti$ for some $(t,p^{\prime}) \in \oa$ then there is exactly one $(p,t) \in \ia$ such that $\type((p,t)) = 
+\transporti$, 
+%and moreover $\wfunction((p,t))=\wfunction((t,p^{\prime}))$,
+\item if $\type((p,t)) = \transporti = \type((t,p^{\prime}))$ 
+then $\wfunction((p,t))=\wfunction((t,p^{\prime}))$,
+\end{itemize}
+\item $\inv : P \rightarrow \int^{inv}$ is a function assigning \emph{age invariants} to places.
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+Note that for transport arcs we assume that they come in pairs (for
+each type $\transporti$) so that their weights match.
+Also for inhibitor arcs and for input arcs to urgent transitions, we
+require that the guards are $[0,\infty]$. This restriction is important
+for some of the results presented in this paper and it also guarantees that 
+we can use DBM-based algorithms in the tool TAPAAL~\cite{DJJJMS:TACAS:12}.
+\end{remark}
+
+The ETAPN model is not monotonic, meaning
+that adding more tokens to markings can disable time delays or
+transition firing.
+Therefore we define a subclass of 
+ETAPN where the monotonicity breaking features are not allowed.
+In the literature such nets are often considered as the standard
+timed-arc Petri net model~\cite{BLT:90,Hanisch:93} but we add the 
+prefix monotonic for clarity reasons. 
+
+\begin{definition}[Monotonic timed-arc Petri net] \label{deftapn}
+A \emph{monotonic timed-arc Petri net} 
+(MTAPN) is an extended timed arc Petri net 
+with no urgent transitions ($\Turg=\emptyset)$, no age invariants
+($\inv(p) = [0,\infty]$ for all $p \in P$) and no 
+inhibitor arcs ($\type(a) \not= \inhib$ for all $a \in \ia$).
+\end{definition}
+
+
+%Let $N = \tapntuple$ be a ETAPN and $P^\prime \subseteq P$, the projection $N|_{P^\prime}$ 
+%is the net \ensuremath{(P^\prime, T, \ia^\prime,\allowbreak \oa^\prime, \cfunction^\prime, 
+%\wfunction^\prime, \type^\prime, \inv^\prime)}, 
+%where $\ia^\prime=\ia \cap (P^\prime \times T)$, $\oa^\prime=\oa \cap (T \times P^\prime)$,
+%$\cfunction^\prime : \ia^\prime \rightarrow \int$, $\wfunction^\prime : \ia^\prime \cup \oa^\prime \rightarrow \mathbb{N}$,
+%$\type^\prime : \ia^\prime \cup \oa^\prime \rightarrow \types$, and $\inv^\prime : P^\prime \rightarrow \int^{inv}$. From now on, we will denote by 
+%$P_s$ the set of places shared by various nets. Then, let $N$, $N^\prime$ be two ETAPNs such that $P \cap P^\prime \subseteq P_s$, the disjoint union of $N$ and $N^\prime$ is a ETAPN \ensuremath{(P^{\prime\prime},T^{\prime\prime},\ia^{\prime\prime}, \oa^{\prime\prime},\cfunction^{\prime\prime},\wfunction^{\prime\prime},\type^{\prime\prime}, \inv^{\prime\prime})}, where $P^{\prime\prime}= P\cupdot P^\prime, T^{\prime\prime}=T\cupdot T^\prime, \ia^{\prime\prime}=\ia\cupdot \ia^\prime,\oa^{\prime\prime}=\oa \cupdot \oa^\prime,\cfunction^{\prime\prime}:\ia^{\prime\prime}\cup \oa^{\prime\prime}\rightarrow \int, \wfunction^{\prime\prime}: \ia^{\prime\prime}\cup \oa^{\prime\prime}\rightarrow \mathbb{N}, 
+%\type^{\prime\prime} : \ia^{\prime\prime} \cup \oa^{\prime\prime} \rightarrow \types, \text{ and } \inv^{\prime\prime} : P^{\prime\prime} \rightarrow \int^{inv}$.
+
+Before we give the formal semantics of the model, let us fix some notation.
+Let $N = \tapntuple$ be an ETAPN. 
+%Let $F\eqdef \ia \cup \oa$. 
+We denote by ${}^\bullet x \eqdef 
+\{y \in P \cup T \mid (y,x) \in (\ia \cup \oa),\ \type((y,x)) \neq \inhib \}$ 
+the preset of a transition or a place $x$.
+Similarly, the postset $x^\bullet$ is defined as 
+$x^\bullet \eqdef \{y \in P \cup T \mid (x,y) \in (\ia \cup \oa) \}$.
+Let $\mathcal{B}(\nnul)$ be the set 
+of all finite multisets over $\nnul$. A \emph{marking} $M$ on $N$ 
+is a function $M : P \longrightarrow \mathcal{B}(\nnul)$ 
+where for every place $p \in P$ and 
+every token $x \in M(p)$ we have $x \in \inv(p)$, in other words
+all tokens have to satisfy the age invariants. 
+%The projection of $P^\prime \subseteq P$ in $M$ is a function 
+%$M|_{P^\prime} : P^\prime \longrightarrow \mathcal{B}(\nnul)$.
+The set of all markings in a net $N$ 
+is denoted by $\mathcal{M}(N)$.
+
+We write $(p,x)$ to denote a token at a place $p$ with the 
+age $x\in \nnul$. Then $M=\{(p_1,x_1),(p_2,x_2),\dots ,(p_n,x_n)\}$ 
+is a multiset representing a marking $M$ with $n$ tokens of 
+ages $x_i$ in places $p_i$. We 
+define the size of a marking as $|M| = \sum_{p\in P}|M(p)|$ where 
+$|M(p)|$ is the number of tokens located in the place $p$.
+
+%A marked ETAPN 
+%$(N,M_0)$ is a TAPN N together with an initial marking $M_0$ with all tokens of age $0$. 
+
+\begin{definition}[Enabledness]
+\label{def:enabledness}
+ Let $N = \tapntuple$ be an ETAPN. 
+We say that a transition $t \in T$ is \emph{enabled} in a marking $M$ by the 
+multisets of tokens
+$\inn = \{(p,x_{p}^1), (p,x_{p}^2), \dots ,(p,x_{p}^{\wfunction ((p,t))})\mid 
+p \in {}^\bullet t\} \subseteq M$ and 
+$\out = \{ (p^{\prime},x_{p^{\prime}}^1),
+           (p^{\prime},x_{p^{\prime}}^2),
+\dots ,\allowbreak
+(p^{\prime},x_{p^{\prime}}^{\wfunction ((t,p^{\prime}))}) 
+\mid p^{\prime} \in t^\bullet \}$ if
+\begin{itemize}
+\item for all input arcs except the inhibitor arcs, the tokens from $\inn$ satisfy the age guards of the arcs, i.e. 
+%$$\forall(p,t) \in \ia, x_p^i \in \cfunction((p,t))\text{ for }1\leq i\leq w((p,t)) $$ 
+$$\forall(p,t) \in \ia. \type((p,t)) \neq \inhib \Rightarrow  x_p^i \in \cfunction((p,t))\text{ for }1\leq i\leq w((p,t)) $$ 
+%\item for each place $p$ in ${}^\bullet t$ there are $\wfunction ((p,t))$ tokens from $p$ in $\inn$, i.e. $$\forall p\in {}^\bullet t. \wfunction ((p,t))= n_{p} $$
+%\item for each place $p^{\prime}$ in $t^\bullet $ there are $\wfunction ((t,p^{\prime}))$ tokens from $p^{\prime}$ in $\out$, i.e. $$\forall p^{\prime}\in t^\bullet . \wfunction ((t,p^{\prime}))= m_{p^{\prime}} $$
+\item for any inhibitor arc pointing from a place $p$ to the
+transition $t$, the number of tokens in $p$ is smaller than the weight of the arc, i.e.
+$$\forall(p,t) \in \ia. \type((p,t)) = \inhib \Rightarrow|M(p)|<\wfunction ((p,t))$$ 
+%$$\forall(p,t) \in \ia. \type((p,t)) = \inhib \Rightarrow \nexists x \in M(p). x \in \cfunction((p,t))$$
+\item for all input arcs and output arcs which constitute a transport arc, 
+the age of the input token must be equal to the age of the output token and satisfy the invariant of the output place, i.e.
+\begin{eqnarray*}
+&\forall(p,t) \in \ia. \forall(t,p^{\prime}) \in \oa.\type((p,t)) = \type((t,p^{\prime})) 
+= \transporti \\
+&\Rightarrow \big( x_p^i = x_{p^{\prime}}^i \wedge x_{p^{\prime}}^i \in 
+\inv(p^{\prime})\big) \text{ for } 1\leq i \leq w((p,t))
+\end{eqnarray*}
+\item for all normal output arcs, the age of the output token is $0$, i.e. $$\forall(t,p^{\prime}) \in \oa. \type((t,p^{\prime})) = \normal \Rightarrow x_{p^{\prime}}^i = 0 \text{ for }1\leq i \leq w((p,t)).$$ 
+\end{itemize}
+\end{definition}
+
+A given ETAPN $N$ %=\tapntuple$ 
+defines a DTTS $T(N)\eqdef (\markingsof(N),T,\rightarrow)$
+where states are the markings and the transitions are as follows. 
+\begin{itemize}
+\item If $t\in T$ is enabled in a marking $M$ by the  multisets of
+tokens $\inn$ and $\out$ then $t$ can \emph{fire} and produce 
+the marking $M^{\prime} = (M \smallsetminus \inn) \uplus \out$ 
+where  $\uplus$ is the multiset sum operator and $\smallsetminus$ is the multiset 
+difference operator; we write $M \trans{t} M^{\prime}$ for this 
+switch transition.
+\item A time \emph{delay} $d \in \nnul$ is allowed in $M$ if
+\begin{itemize}
+\item $(x+d) \in I(p)$ for all $p \in P$ and all $x \in M(p)$, and
+% i.e. by delaying $d$ time units no token violates any of the age invariants, 
+%and
+\item if $M \trans{t} M'$ for some $t \in \Turg$ then $d=0$.
+ %there is at least one urgent transition enabled in $M$ then
+ %     $d=0$, i.e. enabled urgent transitions disallow time passing.
+\end{itemize}
+By delaying $d$ time units in $M$ we reach the marking $M^{\prime}$ defined as
+$M^{\prime}(p) = \{x+d \mid x \in M(p)\}$ for all $p \in P$; 
+we write $M \trans{d} M^{\prime}$ for this delay transition.
+\end{itemize}
+
+%A computation of a net $N$ from the initial marking $M_0$ is
+%$M_0 \rightarrow M_1\rightarrow \cdots \rightarrow M_n$ is 
+%denoted by $\{M_i\}_{i=0}^{n}$ 
+%and we call it a \emph{run}. If the sequence is infinite, we write 
+%$\{M_i\}_{i\geq 0}$. Moreover, we write $M \Rightarrow^* M^{\prime}$ if  
+%$M^{\prime}$ is reachable from $M$ and $[M\rangle$ represents the set of reachable markings of $M$.
+
+\noindent Let 
+$\trans{} \eqdef \bigcup_{t \in T} \trans{t} \cup \bigcup_{d \in \nnul} \trans{d}$.
+The set of all markings reachable %in the net $N$ 
+from a given marking $M$ is denoted by 
+$[M\rangle \eqdef \{ M' \mid M \trans{}^* M' \}$.
+By $M \trans{d,t} M'$ we denote that there is a marking $M''$
+such that $M \trans{d} M'' \trans{t} M'$.
+
+A marking $M$ is a \emph{deadlock} if there is no $d \in \nnul$ and
+no $t \in T$ such that $M \trans{d,t} M'$ 
+for some marking $M'$.
+A marking $M$ is \emph{divergent} if for any $d \in \nnul$
+we have $M \trans{d} M'$ for some $M'$.
+
+
+%\section{Finite Abstractions for Bounded ETAPNs}
+
+In general, ETAPNs are infinite in two dimensions. The number of tokens
+in reachable markings can be unbounded and even for bounded nets
+the ages of tokens can be arbitrarily large. We shall now recall a 
+few results that allow us to make finite abstractions for bounded
+ETAPNs, i.e. for nets where the maximum number of tokens in any
+reachable marking is bounded by a constant.
+
+Let $N=\tapntuple$ be a given ETAPN.
+In~\cite{ALSST:MEMICS:12} 
+the authors provide an algorithm for computing 
+a function $\cmax: P \rightarrow (\nnul \cup \{ -1 \})$ 
+returning for each place $p \in P$ the maximum constant associated
+to this place, meaning that the ages of tokens in place $p$ that
+are strictly greater than $\cmax(p)$ are irrelevant. In particular,
+places where $\cmax(p)=-1$ are the so-called \emph{untimed} places
+where the age of tokens is not relevant at all, implying that all
+the intervals on their ongoing arcs are $[0,\infty]$.
+
+Let $M$ be a marking of $N$. We split it into 
+two markings $\mold$ and $\myoung$ where 
+$\mold (p)=\left\{ x\in M(p) \mid x>\cmax(p) \right\}$ 
+and $\myoung (p)=\allowbreak\left\{ x\in M(p) \mid 
+x\allowbreak\leq\allowbreak \cmax(p) \right\}$
+for all places $p \in P$. Clearly,
+$M = \mold \uplus \myoung$.
+
+We say that two markings $M$ and $M'$ in the net $N$ are equivalent, 
+written $M \eqMarking M^{\prime}$, 
+if $\myoung=\myoung^{\prime}$
+and for all $p \in P$ we have
+$|\mold (p)|=|\mold^{\prime}(p)|$.
+In other words $M$ and $M'$ agree on the tokens with ages below the
+maximum constants and have the same number of tokens above the maximum
+constant.
+% (relevant only for places $p$ with $I(p)=[0,\infty]$ as
+%places with nontrivial age invariants cannot have tokens older that 
+%the maximum constant which is in this case equal to the invariant upper-bound).
+
+The relation $\eqMarking$ is an equivalence relation and it is
+also a timed bisimulation 
+where delays and transition firings on one side can be matched by
+exactly the same delays and transition firings on the other side
+and vice versa. % (see e.g.~\cite{LY:97}).
+
+\begin{theorem}[\cite{ALSST:MEMICS:12}]
+\label{thm:bisim}
+  The relation $\eqMarking$ is a timed bisimulation.
+\end{theorem}
+
+We can now define canonical representatives for each
+equivalence class of $\eqMarking$. 
+
+\begin{definition}[Cut]
+\label{def:cut}
+Let $M$ be a marking.
+We define its canonical marking $\cut(M)$ by 
+$\cut(M)(p)= \myoung(p)\uplus \big\{ \underbrace{ \cmax(p)+1,\dots ,\cmax(p)+1 }_{|\mold(p)| \text{ times}} \big\}$.
+%\begin{equation*}
+%  \cut(M)(p)=
+%\begin{cases}
+%\myoung(p)  \quad \text{if $p$ is invariant or dead-token place,} \\
+%\myoung(p)\uplus \big\{ \underbrace{ \cmax(p)+1,\dots ,\cmax(p)+1 }_{|\mold(p)| \text{ times}} \big\}    \quad \text{if $p$ is a normal place.}
+%\vspace{-.45cm}
+%\end{cases}
+%\vspace{.45cm}
+%\end{equation*}
+\end{definition}
+
+\begin{lemma}[\cite{ALSST:MEMICS:12}]
+\label{lemma:canon}
+Let $M$, $M_1$ and $M_2$ be markings. Then
+(i) $M \eqMarking \cut(M)$, and (ii)
+$M_1 \eqMarking M_2$ if and only if $\cut(M_1)=\cut(M_2)$.
+\end{lemma}
+
+Let $M$ and $M^\prime$ be two markings. We say that $M^\prime$ \emph{covers} 
+$M$, denoted by $M \sqsubseteq M^\prime$, if $M(p) \subseteq M^\prime(p)$ 
+for all $p \in P$. We write $M \sqsubseteq_{cut} M^\prime$ 
+if $cut(M) \sqsubseteq cut(M^\prime)$.
+
+For monotonic timed-arc Petri nets we can now show that adding more tokens
+to the net does not restrict its possible behaviour. 
+
+\begin{lemma}
+\label{lem:mono}
+Let $N$ be an MTAPN and $M,M' \in \mathcal{M}(N)$
+be two of its markings such that $M \sqsubseteq_{\cut} M'$. 
+If $M \trans{d} M_1$ (resp. $M \trans{t} M_1$) then 
+$M' \trans{d} M'_1$ (resp. $M' \trans{t} M'_1$) such that 
+$M_1 \sqsubseteq_{cut} M'_1$ and 
+$|M'|-|M|=|M'_1|-|M_1|$.
+\end{lemma}
+\begin{proof}
+Let $M \trans{d} M_1$, resp. $M \trans{t} M_1$.
+As $M \equiv \cut(M)$ by Lemma~\ref{lemma:canon}(i),
+we can by Theorem~\ref{thm:bisim} conclude that also $\cut(M) \trans{d} M_2$,
+resp. $\cut(M) \trans{t} M_2$,
+such that $M_1 \equiv M_2$. Recall that $\cut(M) \sqsubseteq \cut(M')$
+by the assumption of the lemma.
+\begin{itemize}
+\item Time delay case ($\cut(M) \trans{d} M_2$).
+As the net does not contain any nontrivial age invariants
+and there are no urgent transitions,
+we know that also $\cut(M') \trans{d} M_3$ such that
+$M_2 \sqsubseteq M_3$ as time delay preserves the $\sqsubseteq$-relation.
+\item Transition firing case ($\cut(M) \trans{t} M_2$).
+As the net does not have any inhibitor arcs,
+we can see that also $\cut(M') \trans{t} M_3$ by consuming
+exactly the same tokens in $\cut(M')$ as we did in $\cut(M)$.
+Clearly, $M_2 \sqsubseteq M_3$.
+\end{itemize}
+Because $\cut(M') \equiv M'$ due to Lemma~\ref{lemma:canon}(i),
+we know by Theorem~\ref{thm:bisim}
+that $M' \trans{d} M'_1$, resp. $M' \trans{t} M'_1$, such that $M_3 \equiv M'_1$.
+Hence $M_1 \equiv M_2 \sqsubseteq M_3 \equiv M'_1$.
+By Lemma~\ref{lemma:canon}(ii) we get
+$\cut(M_1)=\cut(M_2)$ and $\cut(M_3)=\cut(M'_1)$.
+Observe now a simple fact that $M_2 \sqsubseteq M_3$ implies that
+$\cut(M_2) \sqsubseteq \cut(M_3)$.
+This all together implies that $\cut(M_1)=\cut(M_2) \sqsubseteq
+\cut(M_3) = \cut(M'_1)$ which is another way of saying that
+$M_1 \sqsubseteq_\cut M'_1$ as required by the lemma.
+As time delays do not change the number of
+tokens in $M$ and $M'$ and transition firing adds or removes an
+equal number of tokens from both $M$ and $M'$,
+we can also conclude that $|M'|-|M|=|M'_1|-|M_1|$.
+\qed
+\end{proof}
+
+
+
+
+
