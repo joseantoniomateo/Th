@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  30 JAN 2014 13:29
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  30 JAN 2014 13:43
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -1244,64 +1244,7 @@ LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <5> not available
  [43] [44] (./fig26.tex) (./fig27.tex) [45]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <14.4> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 264.
- [46]
-! Undefined control sequence.
-l.275 \item $K\,:\,P \longrightarrow \nat
-                                          \,\cup\, \{\infty\}$ es una
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.278 \item $W\,:\,F \longrightarrow \nat
-                                         ^{+}$ es una funci\'{o}n que
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.292 ...unci\'{o}n $M\,:\, P \longrightarrow \nat
-                                                  $ se dice que
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[47] [48]
-! Undefined control sequence.
-l.446 ...\it n-segura}, para un cierto $n \in \nat
-                                                  $ dado, si todo
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.458 existe un n\'{u}mero natural $n \in \nat
-                                              $ tal que dicho lugar es
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[49]
-! Undefined control sequence.
-l.472 $w \in \nat
-                 ^n$, si para todo marcaje alcanzable $M$
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
+ [46] [47] [48] [49]
 Underfull \hbox (badness 1331) in paragraph at lines 476--481
 []\OT1/pbk/db/n/10 Cubrimiento de Mar-ca-jes\OT1/pbk/l/n/10 . Sea una Red de Pe
 tri Mar-cada $\OML/cmm/m/it/10 N \OT1/cmr/m/n/10 =$
@@ -1374,34 +1317,8 @@ ML/cmm/m/it/10 ; []; \OT1/cmr/m/it/10 I\OT1/cmr/m/n/10 )$
 
 [53]
 
-! LaTeX Error: Environment remark undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.975 \begin{remark}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
 LaTeX Warning: Citation `DJJJMS:TACAS:12' on page 54 undefined on input line 98
 1.
-
-
-! LaTeX Error: \begin{document} ended by \end{remark}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.982 \end{remark}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
 
 LaTeX Warning: Citation `BLT:90' on page 54 undefined on input line 990.
@@ -1564,28 +1481,15 @@ LaTeX Warning: Citation `Lapadula2007' on page 63 undefined on input line 157.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [64]
-! Undefined control sequence.
-l.161 ...urce identifiers (${\it EPRS\subseteq\nat
-                                                  }$), and {\it A} is the se...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
 Overfull \hbox (38.44876pt too wide) detected at line 187
 []
  []
 
-! Undefined control sequence.
-l.189 ...,op_{i}}$ ${\it \in OPS, timeout \in \nat
-                                                  }$, {\it  expr} is an arit...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+
+Overfull \hbox (10.0546pt too wide) in paragraph at lines 189--198
+\OT1/pbk/l/n/10 metic ex-pres-sion con-structed by us-ing the vari-ables in \OT
+1/pbk/l/it/10 VAR \OT1/pbk/l/n/10 and in-te-gers; $[]$
+ []
 
 [65]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1746,33 +1650,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Warning: Citation `Jensen2009' on page 74 undefined on input line 1360.
 
 [74]
-! Undefined control sequence.
-l.1442 \item $D\,:\,T \longrightarrow \nat
-                                           \times \nat${\em (delay function)...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.1442 ...D\,:\,T \longrightarrow \nat \times \nat
-                                                  ${\em (delay function)}, w...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.1446 \item $\pi\,:\,T \longrightarrow \nat
-                                            $ is the
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 
 LaTeX Warning: Citation `Jensen2009' on page 75 undefined on input line 1462.
 
@@ -1780,15 +1657,6 @@ LaTeX Warning: Citation `Jensen2009' on page 75 undefined on input line 1462.
 Overfull \hbox (5.0858pt too wide) in paragraph at lines 1497--1755
  [] 
  []
-
-! Undefined control sequence.
-l.1790 ... op,op_{i}}$ ${\it \in OPS, a,b \in \nat
-                                                  ,a\leq b,} \\ {\it  expr}$...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Citation `wsfm2011' on page 76 undefined on input line 1793.
@@ -2002,12 +1870,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17972 strings out of 495062
- 302538 string characters out of 1182644
+ 17970 strings out of 495062
+ 302523 string characters out of 1182644
  469833 words of memory out of 3000000
- 20639 multiletter control sequences out of 15000+50000
+ 20637 multiletter control sequences out of 15000+50000
  31993 words of font info for 95 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,28n,92p,2750b,1835s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (116 pages, 508160 bytes).
+Output written on thesis.dvi (116 pages, 508348 bytes).

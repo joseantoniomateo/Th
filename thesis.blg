@@ -31,6 +31,10 @@ Warning--I didn't find a database entry for "Reu90"
 Warning--I didn't find a database entry for "Lam92"
 Warning--I didn't find a database entry for "Fru86"
 Warning--I didn't find a database entry for "JoFr91"
+Warning--I didn't find a database entry for "DJJJMS:TACAS:12"
+Warning--I didn't find a database entry for "BLT:90"
+Warning--I didn't find a database entry for "Hanisch:93"
+Warning--I didn't find a database entry for "ALSST:MEMICS:12"
 Warning--I didn't find a database entry for "BPEL4WS"
 Warning--I didn't find a database entry for "Banks2006"
 Warning--I didn't find a database entry for "Slomiski:2006"
@@ -180,7 +184,7 @@ Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Gr
 while executing---line 1090 of file plain.bst
 You've used 14 entries,
             2118 wiz_defined-function locations,
-            675 strings with 7512 characters,
+            683 strings with 7604 characters,
 and the built_in function-call counts, 3865 in all, are:
 = -- 355
 > -- 220

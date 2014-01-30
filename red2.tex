@@ -272,10 +272,10 @@ eventualmente la licencia de llamarlas simplemente Redes de Petri)
 es una tupla $N=(P,T,F,K,W)$, donde:
 \begin{enumerate}
 \item $(P,T,F)$ es una Red de Petri Ordinaria.
-\item $K\,:\,P \longrightarrow \nat \,\cup\, \{\infty\}$ es una
+\item $K\,:\,P \longrightarrow \nnul \,\cup\, \{\infty\}$ es una
 funci\'{o}n que indica el n\'{u}mero m\'{a}ximo de tokens que puede haber en
 cada lugar ({\it funci\'{o}n de capacidad}).
-\item $W\,:\,F \longrightarrow \nat^{+}$ es una funci\'{o}n que
+\item $W\,:\,F \longrightarrow \nnul^{\infty}$ es una funci\'{o}n que
 indica la multiplicidad de cada arco ({\it pesos de los arcos}).
 \end{enumerate}
 
@@ -289,7 +289,7 @@ $(p,t)$ o $(t,p)$ que no est\'{e}n en $F$.
 \begin{definition} (Regla de Disparo para Redes de Petri Generalizadas)\\
 Sea $N=(P,T,F,K,W)$ una Red de Petri Generalizada.
 \begin{enumerate}
-\item Una funci\'{o}n $M\,:\, P \longrightarrow \nat$ se dice que
+\item Una funci\'{o}n $M\,:\, P \longrightarrow \nnul$ se dice que
 es un {\it marcaje} de $N$ sii $M(p) \leq K(p)$, para todo
 $p \in P$.
 \item Una transici\'{o}n $t \in T$ est\'{a} permitida bajo un marcaje
@@ -443,7 +443,7 @@ inicial $M_0$, y por $[ M \rangle$ al conjunto de marcajes alcanzables
 en $N$ a partir de un marcaje $M$.
 \item {\bf Propiedad de Seguridad}. Una Red de Petri Marcada
 $N=(P,T,F,W,$ \linebreak
-$M_0)$ es {\it n-segura}, para un cierto $n \in \nat$ dado, si todo
+$M_0)$ es {\it n-segura}, para un cierto $n \in \nnul$ dado, si todo
 marcaje alcanzable $M$ a partir de $M_0$ cumple la
 propiedad $M(p) \leq n$, para todo $p \in P$. Las redes
 1-seguras se llaman habitualmente {\it seguras}, y en ellas los
@@ -455,7 +455,7 @@ $M$ a partir de $M_0$.
 \item {\bf Propiedad de Limitaci\'{o}n}. Sea
 $N=(P,T,F,W,M_0)$ una Red de Petri Marcada.
 Se dice que un lugar $p \in P$ es limitado si
-existe un n\'{u}mero natural $n \in \nat$ tal que dicho lugar es
+existe un n\'{u}mero natural $n \in \nnul$ tal que dicho lugar es
 $n$-seguro; y se dice que $N$ es {\it limitada} si todos sus lugares
 son limitados.
 \item {\bf Ausencia de Bloqueos}. Dada una Red de Petri Marcada
@@ -469,7 +469,7 @@ alcanzable muerto.
 Sea una Red de Petri Marcada $N=(P,T,F,W,M_0)$, con
 $P = \{p_1,\ldots,p_n\}$. Se dice que $N$ es
 {\it conservativa respecto a un vector de pesos w}, con
-$w \in \nat^n$, si para todo marcaje alcanzable $M$
+$w \in \nnul^n$, si para todo marcaje alcanzable $M$
 a partir de $M_0$ se cumple:
 \[ \suma{i=1}{n} w_i \cdot M(p_i) =
 \suma{i=1}{n} w_i \cdot M_0(p_i)\]
@@ -972,14 +972,14 @@ then $\wfunction((p,t))=\wfunction((t,p^{\prime}))$,
 \end{itemize}
 \end{definition}
 
-\begin{remark}
+%\begin{remark}
 Note that for transport arcs we assume that they come in pairs (for
 each type $\transporti$) so that their weights match.
 Also for inhibitor arcs and for input arcs to urgent transitions, we
 require that the guards are $[0,\infty]$. This restriction is important
 for some of the results presented in this paper and it also guarantees that 
 we can use DBM-based algorithms in the tool TAPAAL~\cite{DJJJMS:TACAS:12}.
-\end{remark}
+%\end{remark}
 
 The ETAPN model is not monotonic, meaning
 that adding more tokens to markings can disable time delays or
