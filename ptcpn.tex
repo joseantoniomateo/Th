@@ -75,25 +75,25 @@ true for the binding to be enabled,
 otherwise the binding is disabled and 
 the transition cannot be fired. 
 
-\bdfn (Notation)
+\begin{definition} (Notation)
 
 The following notation will be used henceforth:
 
 \vspace*{-0.2cm}
 
 \begin{itemize}
-\item $\nat$ will denote the set of natural numbers,
-$\nat=\{0,1,2,\ldots\}$ and $\Sigma = \nat \times \nat$.
+%\item $\nnul$ will denote the set of natural numbers,
+%$\nat=\{0,1,2,\ldots\}$ and $\Sigma = \nat \times \nat$.
+%%
+%\item Multisets are defined as functions $C\,:\,X \rightarrow \nnul$,
+%providing us with the number of instances of each element $x\in X$.
+%As usual, we will enumerate the elements of a multiset $C$ as follows:
+%$C = \{ r_1.x_1,\ldots,r_n.x_n \}$, meaning that $C(x_i)=r_i$,
+%for all $i=1,\ldots,n$, and $C(x)=0$, for all $x \neq x_i, \, i=1,\ldots,n$.
 %
-\item Multisets are defined as functions $C\,:\,X \rightarrow \nat$,
-providing us with the number of instances of each element $x\in X$.
-As usual, we will enumerate the elements of a multiset $C$ as follows:
-$C = \{ r_1.x_1,\ldots,r_n.x_n \}$, meaning that $C(x_i)=r_i$,
-for all $i=1,\ldots,n$, and $C(x)=0$, for all $x \neq x_i, \, i=1,\ldots,n$.
-
-The set of multisets over a set $X$ will be denoted by ${\cal B}(X)$.
-For any $x \in X$ and $C\in {\cal B}(X)$ we say that $x \in C$
-if and only if $C(x)>0$.
+%The set of multisets over a set $X$ will be denoted by ${\cal B}(X)$.
+%For any $x \in X$ and $C\in {\cal B}(X)$ we say that $x \in C$
+%if and only if $C(x)>0$.
 %
 %
 \item For any $C_1, C_2 \in {\cal B}(X)$, we define:
@@ -112,12 +112,12 @@ if and only if $C(x)>0$.
 %
 \item For any $C \in {\cal B}(\Sigma)$, 
 we define the first projection
-$\Pi_1(C) \in {\cal B}(\nat)$, 
-as follows: $\forall n \in \nat,\,
-\Pi_1(C)(n) = \sum_{m\in \nat} C(n,m)$.
+$\Pi_1(C) \in {\cal B}(\nnul)$, 
+as follows: $\forall n \in \nnul,\,
+\Pi_1(C)(n) = \sum_{m\in \nnul} C(n,m)$.
 %
 \item For any $C \in {\cal B}(\Sigma)$
-and $n\in \nat$ we define the second projection 
+and $n\in \nnul$ we define the second projection 
 $\Pi_2(C,n)$ as the ordered list that consists of the
 elements $(m_1,m_2,\ldots,m_{\Pi_1(C)(n)})$,
 such that $(n,m_i) \in C$, $\forall i=1,\ldots, \Pi_1(C)(n)$
@@ -130,7 +130,7 @@ $C_1 \preceq C_2$ if and only if the following conditions hold:
   \begin{itemize}
   \item $\Pi_1(C_1) \subseteq \Pi_1(C_2)$.
   %
-  \item \mbox{$\forall n \in \nat$}, taking \mbox{$\Pi_2(C_1,n) = (m^1_1,\ldots,
+  \item \mbox{$\forall n \in \nnul$}, taking \mbox{$\Pi_2(C_1,n) = (m^1_1,\ldots,
         m^1_{\Pi_1(C_1)(n)})$} and
         \mbox{$\Pi_2(C_2,n) = $} \linebreak
         $(m^2_1,\ldots,m^2_{\Pi_1(C_2)(n)})$,
@@ -195,10 +195,9 @@ we define $C_2 \ominus C_1$ in the following (recursive) way:
         \}$.
   \end{itemize} 
 \end{itemize}
-\edfn
+\end{definition}
 
-
-\bdfn (Prioritized-Timed Colored Petri Nets)\\
+\begin{definition} (Prioritized-Timed Colored Petri Nets)\\
 We define a prioritized-timed colored Petri net (PTCPN)
 as a tuple \linebreak 
 $(P,T,A,V,G,E,\lambda,D,\pi)$, where\footnote{
@@ -214,7 +213,7 @@ precondition and postcondition of both places and transitions:
 \begin{itemize}
 \item $P$ is a finite set of {\em places}, with colors
 in the set $\Sigma$. Thus, in our case, colors 
-will be pairs $(n,x)\in \nat \times \nat$, where $n$ is
+will be pairs $(n,x)\in \nnul \times \nnul$, where $n$ is
 the token value and $x$ its timestamp.
 %
 \item $T$ is a finite set of {\em transitions} ($P\cap T = \emptyset$).
@@ -234,7 +233,7 @@ to each transition, i.e. ${\it Type}(G(t))={\it Bool}$.
 %
 \item $E\,:\, A \longrightarrow {\it EXPR}_V$ is the
 {\em arc expression function}, which assigns an expression
-to each arc, such that ${\it Type}(E(a)) = {\cal B}(\nat \times \{0\})$,
+to each arc, such that ${\it Type}(E(a)) = {\cal B}(\nnul \times \{0\})$,
 which corresponds to untimed arcs, since, as mentioned above,
 we only attach time delays to transitions.
 %
@@ -277,14 +276,14 @@ $L$ is the set of basic activities, defined as follows:
 %
 \end{itemize}
 %
-\item $D\,:\,T \longrightarrow \nat \times \nat$, which
+\item $D\,:\,T \longrightarrow \nnul \times \nnul$, which
 is the {\em delay function}, which associates a time
 interval to each transition. For $D(t)=[d_1,d_2]$,
 this means that a uniform probability function will
 be used when $t$ is fired to select the specific discrete
 delay in that time interval.
 %
-\item $\pi\,:\,T \longrightarrow \nat$ is the
+\item $\pi\,:\,T \longrightarrow \nnul$ is the
 {\em priority function}, which assigns a priority level
 to each transition. 
 \end{itemize}
@@ -292,9 +291,9 @@ to each transition.
 In this definition, ${\it EXPR}_V$ denotes the
 expressions constructed using the variables in $V$,
 with the same syntax admitted by CPN Tools.
-\edfn 
+\end{definition}
 
-\bdfn (Markings)\\
+\begin{definition} (Markings)\\
 Given a PTCPN $N=(P,T,A,V,G,E,\lambda,D,\pi)$,
 a marking $M$ is defined as a function
 $M\,:\,P \longrightarrow {\cal B}(\Sigma)$,
@@ -305,17 +304,16 @@ A timed marking of a PTCPN $N$ is a pair $(M,x)$, where
 $M$ is a marking of $N$ and $x$ is the current system time instant.
 %
 %
-\comment{
+
 Initial markings are those markings for which
 the time annotation of every token is $0$,
 and all variable places are marked with a single
 token $(0,0)$.
-}
 A marked prioritized-timed colored Petri net (MPTCPN)
 is then defined as a triple $(N,M,x)$, where
 $N$ is a PTCPN, and $(M,x)$ a timed marking of it.
 %
-\edfn
+\end{definition}
 
 We define the semantics for MPTCPNs in a similar way as in \cite{CPN09}, 
 now taking into account that transitions have associated priorities.
@@ -323,7 +321,7 @@ We first introduce the notion of {\em binding}, then
 the {\em enabling condition} and finally the {\em firing rule}
 for MPTCPNs.
 
-\bdfn (Bindings)\\
+\begin{definition} (Bindings)\\
 Let $N=(P,T,A,V,G,E,\lambda,D,\pi)$ be a PTCPN.
 A {\em binding} of a transition $t \in T$ is a function
 $b$ that maps each variable $v \in {\it Var}(t)$
@@ -341,9 +339,9 @@ binding $b$.
 A {\em binding element} is then defined as a pair
 $(t,b)$, where $t \in T$ and $b \in B(t)$.
 The set of all binding elements is denoted by ${\it BE}$.
-\edfn
+\end{definition}
 
-\bdfn\label{permitidas} (Enabling condition)\\
+\begin{definition}\label{permitidas} (Enabling condition)\\
 Let $N=(P,T,A,V,G,E,\lambda,D,\pi)$ be a PTCPN,
 and $(M,x)$ a timed marking of it.
 We say that a 
@@ -365,7 +363,7 @@ $E(p,t)\langle b \rangle_{x'}$ consists of the same
 colors as $E(p,t)\langle b \rangle$, but 
 replacing their timestamp (which was $0$) by $x'$.
 %
-\comment{
+
 the notation $C_{+x}$ is used to represent the
 color multiset obtained from $C$ by delaying its timestamps
 by $x$ time units:
@@ -378,7 +376,6 @@ C(n,y-x)~~ & {\rm if}\;y \geq  x\\
 \end{array}
 \right.
 \]
-}% FIN DE COMENTARIO
 %
 \item There is no other binding element $(t',b') \in {\it BE}$
 fulfilling the previous conditions  such that $\pi(t') < \pi(t)$.
@@ -391,16 +388,16 @@ a binding element $(t,b)$ fulfilling these conditions.
 %
 \end{enumerate}
 %
-\edfn
+\end{definition}
 
-\bdfn (Firing rule)\\
+\begin{definition} (Firing rule)\\
 Let $N=(P,T,A,V,G,E,\lambda,D,\pi)$ be a PTCPN,
 $(M,x)$ a timed marking of $N$, and an enabled
 binding element $(t,b) \in {\it BE}$ at 
 instant $x'$ in the timed marking $(M,x)$.
 
 The firing of $(t,b)$ at instant $x'$ is non-deterministic,
-depending on the chosen delay $d \in \nat$ for the transition.
+depending on the chosen delay $d \in \nnul$ for the transition.
 This delay is randomly selected in the interval given by $D(t)$. 
 %This delay is chosen according to a uniform probability distribution. 
 Thus, the new timed marking $(M',x')$ is: 
@@ -411,19 +408,19 @@ Thus, the new timed marking $(M',x')$ is:
  \rangle_{d+x'}
 \]
 %
-\edfn
+\end{definition}
 
 \begin{figure}
 
 
 \hspace*{1.0cm}
-\includegraphics[width=11.5cm]{figure2_scp.eps}
+\includegraphics[width=11.5cm]{Figures/figure2_scp.eps}
 % 
 \caption{\label{red1}Graphical view of a PTCPN.}
 \end{figure}
 
 
-\bex Let us consider the marked PTCPN depicted in Figure \ref{red1}, 
+\begin{example} Let us consider the marked PTCPN depicted in Figure \ref{red1}, 
 obtained from CPN Tools. 
 % 
 Observe that timed color tokens in CPN Tools are drawn
@@ -486,10 +483,8 @@ Finally, the remaining token $(6,3)$ on $p_i$
 only allows us to fire $t_3$, generating a new token
 on $p_{\it ok}$, with value $1$ and a timestamp
 depending on the delay chosen for its firing.
-\eex
+\end{example}
 
-
-\comment{ VIEJO
 
 In \cite{Buc03} there is a model that
 extends Merlin's nets by including dynamic priorities and resources.
@@ -513,7 +508,7 @@ used in the case of conflict, when at a given marking two or more
 transitions are simultaneously enabled, then only those with 
 the maximum priority are allowed to be fired at that moment.
 
-\bdfn (Prioritized-Time Colored Petri Nets)\\
+\begin{definition} (Prioritized-Time Colored Petri Nets)\\
 We define a prioritized-time colored Petri net (PTCPN) as a tuple
 \linebreak $N=(P,\,T,\,F,\alpha,\beta,\pi,\lambda,\Sigma, G)$,
 where\footnote{We use the classical notation on Petri nets to denote the
@@ -581,13 +576,13 @@ black}\,.
 %
 \item $\alpha$ and
 $\beta$ define the time intervals that restrict
-the firing of transitions, $\alpha\,:\, T \rightarrow \nat$,
-$\beta\,:\, T \rightarrow \nat\,\cup\,\{\infty\}$, fulfilling
+the firing of transitions, $\alpha\,:\, T \rightarrow \nnul$,
+$\beta\,:\, T \rightarrow \nnul\,\cup\,\{\infty\}$, fulfilling
 $\alpha(t)\leq
 \beta(t), \forall t \in T$. 
 %
 \item $\pi$ is the {\em priority
-function\,},\; $\pi\,:\,T \rightarrow \nat$, which assigns a
+function\,},\; $\pi\,:\,T \rightarrow \nnul$, which assigns a
 priority level to each transition.
 %
 \item $\lambda: T \rightarrow L \cup \{\emptyset\} \cup \{{\it fail}\}$ is a
@@ -601,63 +596,21 @@ inter(r_1,r_2,v_1,v_2)\}}$$
 \item $G$ is a guard function $G: T \rightarrow \mathcal{P^M}$ where $\mathcal{P^M}$ are predicates that are obtained by using the markings on the places and the classical logical and arithmetical operators.  We will denote by $G(M,t)$ the evaluation of the predicate of $t$ under marking $M$. We will omit this function in the graphical representation when it is {\it true}.
 \end{itemize}
 %
-\edfn
+\end{definition}
 
-\bex \label{ex1} In Figure \ref{example1} we can see the graphical
+\begin{example} \label{ex1} In Figure \ref{example1} we can see the graphical
 representation of a PTCPN. Transitions are painted in black, grey
 and white according to their type. In Table \ref{tabla_ex} we
 indicate the guards, priorities and the static time intervals that
-the transitions  have associated.  \eex
+the transitions  have associated.  \end{example}
 
-\begin{figure}[!h]
-%
-\begin{center}
-\includegraphics{fig_Example1.eps}
-\end{center}
-\caption{ Example of a PTCPN} \label{example1}
-\end{figure}
-
-\vspace{1cm}
-
-
-\begin{table}[!h]
-\begin{center}
-\scalebox{0.8}{\begin{tabular}{|c|c|c|c|c|c|} \hline
- $t$& $\lambda (t)$ & $\pi(t)$ & $\alpha(t)$ & $\beta(t)$ & G(t)\\
- \hline
- $t_1$& $\emptyset $ & $0$ & $0$ & $\infty$ & ${\it true}$\\ \hline
- $t_2$& ${\it assign(r_1,v_1,1)}$ & $0$ & $0$ & $\infty$ & $M(p'_{er})=0$\\ \hline
- $t_3$& $\emptyset$ & $3$ & $2$ & $5$ & $M(p'_{er})=0$\\ \hline
-%
- $t_4$& ${\it inter(r_1,v_1,r_2,v_2)}$ & $2$ & $0$ & $4$ & $M(p'_{er})=0\; \wedge \;M(r_1v_1)\neq\varepsilon$\\ \hline
- $t_5$& ${\it fail}$ & $3$ & $0$ & $\infty$ & $M(p'_{er})=0\; \wedge M(r_1v_1)=\varepsilon $\\ \hline
- $t_6$& ${\it fail}$ & $3$ & $5$ & $\infty$ & $M(p'_{er})=0\; $\\ \hline
-  $t_7$& ${\it inter(r_1,v_1,r_2,v_2)}$ & $2$ &
- $0$ & $4$ & $\begin{array}{ll} M(p'_{er})=0 \; \wedge M(r_1v_1)\neq\varepsilon \; \wedge \; M(r_2v_2)=2 \end{array}$  \\
- \hline
- $t_8$& ${\it fail}$ & $3$ & $0$ & $\infty$ & $\begin{array}{ll} M(p'_{er})=0\; \wedge\;M(r_1v_1)=\varepsilon \; \wedge \; M(r_2v_2)=2\end{array}$\\ \hline
-  $t_9$& ${\it fail}$ & $3$ & $5$ & $\infty$ & $M(p'_{er})=0\; \wedge \;
- M(r_2v_2)=2$\\ \hline
-  $t_{10}$& $\emptyset $ & $0$ & $0$ & $\infty$ & $M(p'_{er})=0\; \wedge \; M(r_2v_2)\neq 2$ \\ \hline
- $t_{11}$& ${\it assign(r_2,v_2,2)}$ & $0$ & $0$ & $\infty$ & $M(p'_{er})=0$\\ \hline
-  $t_{12}$& ${\it noaction(r)}$ & $0$ & $0$ & $\infty$ & $M(p'_{er})=0$\\ \hline
-   $t_{13}$& $\emptyset $ & $0$ & $0$ & $\infty$ & ${\it true}$\\ \hline
-\end{tabular}}
-\end{center}
-
-\vspace{0.5cm}
-
-\begin{center}
-\caption{Transition parameters for the PTCPN of Figure \ref{example1} \label{tabla_ex}.} %}
-\end{center}
-\end{table}
 
 The semantics of PTCPNs is captured by the following definitions, which
 extend the firing rule of Merlin's nets by considering the priority
 and color information and the three transition types that we have
 introduced.
 
-\bdfn (Enabling transitions)\\
+\begin{definition} (Enabling transitions)\\
 Given a PTCPN $N=(P,T,F,\alpha,\beta,\pi,\lambda,\Sigma, G)$, a
 marking $M$ of it and a transition $t \in T$, we say that $t$ is
 {\em enabled at $M$\,} if each of its input (uncolored) places
@@ -665,7 +618,7 @@ contains at least one token, i.e. $\forall p \in \precond{t},\,
 p\not\in P_c\,,\, M(p)>0$, i.e. it is enabled in the underlying
 Petri net $(P,T,F)$\footnote{Notice that colored places always have
 one colored token.}. As usual, we denote this by $M[t\rangle$\, and
-the set of transitions enabled at $M$ by $E(N,M)$\,. \edfn
+the set of transitions enabled at $M$ by $E(N,M)$\,. \end{definition}
 
 We restrict our attention to a particular class of PTCPNs, for which
 no transition will be enabled more that once at a time, i.e. it
@@ -674,17 +627,17 @@ transition are enabled at a certain instant. With this restriction
 we avoid the semantic problems that appear in Merlin's nets when
 multiple enabling of transitions are allowed (see \cite{Wan98}).
 
-\bex\label{ex2} In the PTCPN of Fig. \ref{example1}, if we consider
+\begin{example}\label{ex2} In the PTCPN of Fig. \ref{example1}, if we consider
 the marking $M$, where $M(p_2)=1$, $M(p_7)=1$, $M(r_1v_1)=1$,
 $M(r_2v_2)=\varepsilon$,  and the remaining places  unmarked, then, we
 have an only  enabled transition, $t_3$.
-\eex
+\end{example}
 
-\bdfn (States in PTCPNs)\\
+\begin{definition} (States in PTCPNs)\\
 Given a PTCPN $N=(P,T,F,\alpha,\beta,\pi,\lambda,\Sigma, G)$, we
 define a {\em state}\, of it
 as a pair $(M,I)$, where $M$ is a marking and $I$ is a %partial
-function $\,\,I\,:\, E(N,M) \rightarrow \nat \times ( \mathbb{Z }
+function $\,\,I\,:\, E(N,M) \rightarrow \nnul \times ( \mathbb{Z }
 \,\cup\,\{\infty\})$, which is defined for enabled transitions, and
 indicates the lower and upper time bounds that they have to be fired
 with respect to the current instant.
@@ -701,17 +654,17 @@ initial marking $M_0$ and the function $I_0$ defined by $I_0(t) =
 %%
 %\end{array}\right..
 $
-\edfn
+\end{definition}
 
-\bex\label{ex3} For the PTCPN of Fig. \ref{example1}, taking the
+\begin{example}\label{ex3} For the PTCPN of Fig. \ref{example1}, taking the
 marking $M$ of  Example \ref{ex2}, its initial  state is
 \quad \(I(t_3)=(2,5)\).
-\eex
+\end{example}
 
 The firing rule can now be precisely defined, but we first need a
 function capturing time elapsing.
 
-\bdfn (Time elapsing)\\
+\begin{definition} (Time elapsing)\\
 Given a PTCPN $N=(P,T,F,\alpha,\beta,\pi,\lambda,\Sigma, G)$ and a
 state of it $(M,I)$, we say that $x$ units of time can elapse if
 either:
@@ -731,7 +684,7 @@ I'(t) = (x_1\menos x, x_2-x) \]
 %
 taking $I(t)=(x_1, x_2)$ and $x
 \menos y = {\it Max} \{0, x - y\}$.
-\edfn
+\end{definition}
 
 From this definition we can see that {\em white\,} transitions may
 lose their opportunity to fire, if they are not fired when their
@@ -748,12 +701,12 @@ earliest firing time. Thus, our purpose is that black transitions
 must be fired immediately, once all the required conditions for that
 are fulfilled (unless they are involved in a conflict).
 
-\bex\label{ex4} For the PTCPN of Fig. \ref{example1}, taking again
+\begin{example}\label{ex4} For the PTCPN of Fig. \ref{example1}, taking again
 the marking $M$ of  \mbox{Example \ref{ex2},} starting  from the
 initial state\; \(I(t_3)=(2,5)\),  $4$ units of time could elapse,
 thus reaching a new state $(M,I')$, with  \(I'(t_3)=(0,1)\).
 %
-\eex
+\end{example}
 
 The following definition introduces the so-called {\em potentially
 fireable transitions}, which are those that fulfill all the
@@ -771,7 +724,7 @@ priority in this set).
 %%%%%%%%%%%%%%%%%%%%%%%%55
 %Definiciones nuevas
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
-\bdfn(Potentially Fireable Transitions)\\
+\begin{definition}(Potentially Fireable Transitions)\\
 Given a PTCPN $N=(P,T,F,\alpha,\beta,\pi,\lambda,\Sigma, G)$, a
 state $(M,I)$ and an enabled transition $t\in E(N,M)$, we say that
 $t$ is {\it potentially fireable} at that state if and only if the
@@ -784,9 +737,9 @@ $G(M,t)\equiv\, true.$
 and its latest firing time is greater than or equal to 0\,:
 \,$\Pi_1(I(t))=0\; \wedge \; \Pi_2(I(t)) \geq 0$.
 \end{enumerate}
-\edfn
+\end{definition}
 
-\bdfn (Firing rule)\\
+\begin{definition} (Firing rule)\\
 Given a PTCPN $N=(P,T,F,\alpha,\beta,\pi,\lambda,\Sigma, G)$, a
 state of it $(M,I)$, and a set of potentially fireable transitions
 $B$, a transition $t \in B$ {\em can be fired}\, at that state if
@@ -827,7 +780,7 @@ $I'(t) = (\alpha(t),\beta(t))$.
 %
 \end{enumerate}
 
-\edfn
+\end{definition}
 
 Notice that firing a transition takes no time to complete, so we
 keep in the new state the time restrictions of the transitions that
@@ -837,7 +790,7 @@ the new marking, in which case it should be observed
 that its local clock is reset.
 %
 
-\bex\label{ex5} For the PTCPN of Fig. \ref{example1}, taking the
+\begin{example}\label{ex5} For the PTCPN of Fig. \ref{example1}, taking the
 marking $M$ of  Example \ref{ex2},  from the state $(M,I')$ with\;
 \(I'(t_3)=(0,1)\),  $t_3$ is the only potentially fireable
 transition.  We can then fire $t_3$, reaching the marking M'\,:
@@ -845,7 +798,6 @@ transition.  We can then fire $t_3$, reaching the marking M'\,:
 \[M'(p_3)=1, \; M'(p_7)=1, \; M'(r_1v_1)=1, \; M'(r_2v_2)=\varepsilon ,\]
 and the remaining places unmarked.
 %
-\eex
+\end{example}
 
 
-} % FIN DE COMENTARIO

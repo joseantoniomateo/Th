@@ -16,28 +16,28 @@
 \contentsline {subsection}{\numberline {2.5.5}Formal models of concurrency}{40}{subsection.2.5.5}
 \contentsline {subsubsection}{Notation}{40}{section*.18}
 \contentsline {section}{\numberline {2.6}Petri nets}{42}{section.2.6}
-\contentsline {section}{\numberline {2.7}An\'{a}lisis de Redes}{46}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Propiedades de Seguridad}{47}{subsection.2.7.1}
-\contentsline {subsection}{\numberline {2.7.2}Propiedades de Actividad}{48}{subsection.2.7.2}
-\contentsline {subsection}{\numberline {2.7.3}Decidibilidad del Alcance y la Vivacidad}{49}{subsection.2.7.3}
-\contentsline {section}{\numberline {2.8}Extended Timed-Arc Petri Nets}{50}{section.2.8}
-\contentsline {section}{\numberline {2.9}Summary}{55}{section.2.9}
-\contentsline {chapter}{\numberline {3}BPELRF}{57}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{57}{section.3.1}
-\contentsline {section}{\numberline {3.2}Background and Related Work}{59}{section.3.2}
-\contentsline {section}{\numberline {3.3}Syntax and semantics of BPEL+RF}{63}{section.3.3}
-\contentsline {section}{\numberline {3.4}Case Study: Automatic management system for stock market investments}{69}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Related Work}{70}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Prioritised-Timed Coloured Petri Nets}{71}{section.3.5}
-\contentsline {section}{\numberline {3.6}Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{72}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Prioritised-Timed Coloured Petri Nets}{72}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}PTCPN Semantics for WSRF/BPEL}{74}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Basic activities}{76}{subsection.3.6.3}
-\contentsline {subsection}{\numberline {3.6.4}Ordering structures}{77}{subsection.3.6.4}
-\contentsline {subsection}{\numberline {3.6.5}WSRF-compliant}{79}{subsection.3.6.5}
-\contentsline {section}{\numberline {3.7}Case study: Online auction service}{83}{section.3.7}
-\contentsline {section}{\numberline {3.8}Formal Analysis of Web Service Compositions}{85}{section.3.8}
-\contentsline {section}{\numberline {3.9}Summary}{87}{section.3.9}
-\contentsline {chapter}{\numberline {4}Timed-arc workflow nets}{93}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusions, Contributions and Future Works}{95}{chapter.5}
-\contentsline {chapter}{Bibliography}{98}{appendix*.38}
+\contentsline {chapter}{\numberline {3}Extended Petri nets}{47}{chapter.3}
+\contentsline {section}{\numberline {3.1}An\'{a}lisis de Redes}{49}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Propiedades de Seguridad}{49}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Propiedades de Actividad}{51}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Prioritized-Timed Colored Petri Nets}{56}{section.3.2}
+\contentsline {section}{\numberline {3.3}Summary}{69}{section.3.3}
+\contentsline {chapter}{\numberline {4}BPELRF}{71}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{71}{section.4.1}
+\contentsline {section}{\numberline {4.2}Background and Related Work}{73}{section.4.2}
+\contentsline {section}{\numberline {4.3}Syntax and semantics of BPEL+RF}{77}{section.4.3}
+\contentsline {section}{\numberline {4.4}Case Study: Automatic management system for stock market investments}{83}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Related Work}{84}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}Prioritised-Timed Coloured Petri Nets}{85}{section.4.5}
+\contentsline {section}{\numberline {4.6}Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{86}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Prioritised-Timed Coloured Petri Nets}{86}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}PTCPN Semantics for WSRF/BPEL}{88}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Basic activities}{90}{subsection.4.6.3}
+\contentsline {subsection}{\numberline {4.6.4}Ordering structures}{91}{subsection.4.6.4}
+\contentsline {subsection}{\numberline {4.6.5}WSRF-compliant}{93}{subsection.4.6.5}
+\contentsline {section}{\numberline {4.7}Case study: Online auction service}{97}{section.4.7}
+\contentsline {section}{\numberline {4.8}Formal Analysis of Web Service Compositions}{99}{section.4.8}
+\contentsline {section}{\numberline {4.9}Summary}{101}{section.4.9}
+\contentsline {chapter}{\numberline {5}Timed-arc workflow nets}{107}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusions, Contributions and Future Works}{109}{chapter.6}
+\contentsline {chapter}{Bibliography}{112}{appendix*.39}
