@@ -14,32 +14,29 @@
 \BOOKMARK [2][-]{subsection.2.5.3}{WS-ServiceGroup}{section.2.5}
 \BOOKMARK [2][-]{subsection.2.5.4}{WS-ResourceLifetime}{section.2.5}
 \BOOKMARK [2][-]{subsection.2.5.5}{Formal models of concurrency}{section.2.5}
-\BOOKMARK [0][-]{chapter.3}{Generalidades}{}
-\BOOKMARK [1][-]{section.3.1}{Notaci\363n}{chapter.3}
-\BOOKMARK [1][-]{section.3.2}{Redes de Petri}{chapter.3}
-\BOOKMARK [1][-]{section.3.3}{An\341lisis de Redes}{chapter.3}
-\BOOKMARK [2][-]{subsection.3.3.1}{Propiedades de Seguridad}{section.3.3}
-\BOOKMARK [2][-]{subsection.3.3.2}{Propiedades de Actividad}{section.3.3}
-\BOOKMARK [2][-]{subsection.3.3.3}{Decidibilidad del Alcance y la Vivacidad}{section.3.3}
-\BOOKMARK [2][-]{subsection.3.3.4}{T\351cnicas de An\341lisis de Propiedades}{section.3.3}
-\BOOKMARK [1][-]{section.3.4}{Extended Timed-Arc Petri Nets}{chapter.3}
-\BOOKMARK [1][-]{section.3.5}{Summary}{chapter.3}
-\BOOKMARK [0][-]{chapter.4}{BPELRF}{}
-\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}
-\BOOKMARK [1][-]{section.4.2}{Background and Related Work}{chapter.4}
-\BOOKMARK [1][-]{section.4.3}{Syntax and semantics of BPEL+RF}{chapter.4}
-\BOOKMARK [1][-]{section.4.4}{Case Study: Automatic management system for stock market investments}{chapter.4}
-\BOOKMARK [2][-]{subsection.4.4.1}{Related Work}{section.4.4}
-\BOOKMARK [1][-]{section.4.5}{Prioritised-Timed Coloured Petri Nets}{chapter.4}
-\BOOKMARK [1][-]{section.4.6}{Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{chapter.4}
-\BOOKMARK [2][-]{subsection.4.6.1}{Prioritised-Timed Coloured Petri Nets}{section.4.6}
-\BOOKMARK [2][-]{subsection.4.6.2}{PTCPN Semantics for WSRF/BPEL}{section.4.6}
-\BOOKMARK [2][-]{subsection.4.6.3}{Basic activities}{section.4.6}
-\BOOKMARK [2][-]{subsection.4.6.4}{Ordering structures}{section.4.6}
-\BOOKMARK [2][-]{subsection.4.6.5}{WSRF-compliant}{section.4.6}
-\BOOKMARK [1][-]{section.4.7}{Case study: Online auction service}{chapter.4}
-\BOOKMARK [1][-]{section.4.8}{Formal Analysis of Web Service Compositions}{chapter.4}
-\BOOKMARK [1][-]{section.4.9}{Summary}{chapter.4}
-\BOOKMARK [0][-]{chapter.5}{Timed-arc workflow nets}{}
-\BOOKMARK [0][-]{chapter.6}{Conclusions, Contributions and Future Works}{}
-\BOOKMARK [0][-]{appendix*.36}{Bibliography}{}
+\BOOKMARK [1][-]{section.2.6}{Petri nets}{chapter.2}
+\BOOKMARK [1][-]{section.2.7}{An\341lisis de Redes}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.7.1}{Propiedades de Seguridad}{section.2.7}
+\BOOKMARK [2][-]{subsection.2.7.2}{Propiedades de Actividad}{section.2.7}
+\BOOKMARK [2][-]{subsection.2.7.3}{Decidibilidad del Alcance y la Vivacidad}{section.2.7}
+\BOOKMARK [1][-]{section.2.8}{Extended Timed-Arc Petri Nets}{chapter.2}
+\BOOKMARK [1][-]{section.2.9}{Summary}{chapter.2}
+\BOOKMARK [0][-]{chapter.3}{BPELRF}{}
+\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{Background and Related Work}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{Syntax and semantics of BPEL+RF}{chapter.3}
+\BOOKMARK [1][-]{section.3.4}{Case Study: Automatic management system for stock market investments}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.4.1}{Related Work}{section.3.4}
+\BOOKMARK [1][-]{section.3.5}{Prioritised-Timed Coloured Petri Nets}{chapter.3}
+\BOOKMARK [1][-]{section.3.6}{Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.6.1}{Prioritised-Timed Coloured Petri Nets}{section.3.6}
+\BOOKMARK [2][-]{subsection.3.6.2}{PTCPN Semantics for WSRF/BPEL}{section.3.6}
+\BOOKMARK [2][-]{subsection.3.6.3}{Basic activities}{section.3.6}
+\BOOKMARK [2][-]{subsection.3.6.4}{Ordering structures}{section.3.6}
+\BOOKMARK [2][-]{subsection.3.6.5}{WSRF-compliant}{section.3.6}
+\BOOKMARK [1][-]{section.3.7}{Case study: Online auction service}{chapter.3}
+\BOOKMARK [1][-]{section.3.8}{Formal Analysis of Web Service Compositions}{chapter.3}
+\BOOKMARK [1][-]{section.3.9}{Summary}{chapter.3}
+\BOOKMARK [0][-]{chapter.4}{Timed-arc workflow nets}{}
+\BOOKMARK [0][-]{chapter.5}{Conclusions, Contributions and Future Works}{}
+\BOOKMARK [0][-]{appendix*.38}{Bibliography}{}

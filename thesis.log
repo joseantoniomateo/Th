@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  30 JAN 2014 13:43
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  31 JAN 2014 11:34
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -1229,29 +1229,34 @@ LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1019.
 
  [39]
-(./red2.tex [40]
-Chapter 3.
-[41
-
-]
+(./basicdefinitions.tex
+LaTeX Font Info:    Font shape `OT1/pag/m/it' in size <10> not available
+(Font)              Font shape `OT1/pag/m/sl' tried instead on input line 11.
+ [40]
 LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 45.
- [42]
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <7> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 109.
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <5> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 109.
- [43] [44] (./fig26.tex) (./fig27.tex) [45]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
+
+Underfull \vbox (badness 6725) has occurred while \output is active []
+
+ [41]
+(./fig26.tex) [42] (./fig27.tex)
+Underfull \vbox (badness 7308) has occurred while \output is active []
+
+ [43]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <14.4> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 264.
- [46] [47] [48] [49]
-Underfull \hbox (badness 1331) in paragraph at lines 476--481
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 169.
+
+Underfull \vbox (badness 5446) has occurred while \output is active []
+
+ [44]
+[45] [46] [47]
+Underfull \hbox (badness 1331) in paragraph at lines 381--386
 []\OT1/pbk/db/n/10 Cubrimiento de Mar-ca-jes\OT1/pbk/l/n/10 . Sea una Red de Pe
 tri Mar-cada $\OML/cmm/m/it/10 N \OT1/cmr/m/n/10 =$
  []
 
 
-Overfull \hbox (3.12119pt too wide) in paragraph at lines 476--481
+Overfull \hbox (3.12119pt too wide) in paragraph at lines 381--386
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 P; T; F; W; M[]\OT1/cmr/m/n/10 )$\OT1/pbk/l/n
 /10 . Dado un mar-caje $\OML/cmm/m/it/10 M$ \OT1/pbk/l/n/10 de $\OML/cmm/m/it/1
 0 N$\OT1/pbk/l/n/10 , se dice que $\OML/cmm/m/it/10 N$ \OT1/pbk/l/n/10 cumple l
@@ -1259,75 +1264,79 @@ a propiedad
  []
 
 
-Overfull \hbox (3.24852pt too wide) in paragraph at lines 483--486
+Overfull \hbox (3.24852pt too wide) in paragraph at lines 388--391
 \OT1/pbk/l/sc/10 NOTA: \OT1/pbk/l/n/10 Para ser m[]as pre-cisos, la al-can-z-ab
 il-i-dad no es ex-ac-ta-mente una propiedad
  []
 
 
-Overfull \hbox (9.88739pt too wide) in paragraph at lines 483--486
+Overfull \hbox (9.88739pt too wide) in paragraph at lines 388--391
 \OT1/pbk/l/n/10 de se-guri-dad, sino la ne-gaci[]on de la propiedad, la no al-c
 an-z-abil-i-dad. An[]alogamente
  []
 
-[50]
-Underfull \hbox (badness 1087) in paragraph at lines 540--545
+[48]
+Underfull \hbox (badness 1087) in paragraph at lines 445--450
 []\OT1/pbk/db/n/10 Propiedad de Al-cance Nulo de un Solo Lu-gar\OT1/pbk/l/n/10 
 . Sea $\OML/cmm/m/it/10 N \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 P; T;$
  []
 
-[51]
+[49]
 
-LaTeX Warning: Citation `Pet81' on page 52 undefined on input line 556.
-
-
-LaTeX Warning: Citation `Lip76' on page 52 undefined on input line 566.
+LaTeX Warning: Citation `Pet81' on page 50 undefined on input line 461.
 
 
-LaTeX Warning: Citation `May81' on page 52 undefined on input line 572.
+LaTeX Warning: Citation `Lip76' on page 50 undefined on input line 471.
 
 
-LaTeX Warning: Citation `Kos82' on page 52 undefined on input line 573.
+LaTeX Warning: Citation `May81' on page 50 undefined on input line 477.
 
 
-LaTeX Warning: Citation `Lam86' on page 52 undefined on input line 575.
+LaTeX Warning: Citation `Kos82' on page 50 undefined on input line 478.
 
 
-LaTeX Warning: Citation `Reu90' on page 52 undefined on input line 575.
+LaTeX Warning: Citation `Lam86' on page 50 undefined on input line 480.
 
 
-LaTeX Warning: Citation `Lam92' on page 52 undefined on input line 575.
+LaTeX Warning: Citation `Reu90' on page 50 undefined on input line 480.
 
 
-LaTeX Warning: Citation `Pet81' on page 52 undefined on input line 579.
+LaTeX Warning: Citation `Lam92' on page 50 undefined on input line 480.
 
 
-LaTeX Warning: Citation `Fru86' on page 52 undefined on input line 582.
+LaTeX Warning: Citation `Pet81' on page 50 undefined on input line 484.
 
 
-LaTeX Warning: Citation `JoFr91' on page 52 undefined on input line 584.
+LaTeX Warning: Citation `Fru86' on page 50 undefined on input line 487.
 
-[52]
-Overfull \hbox (23.52707pt too wide) in paragraph at lines 945--947
+
+LaTeX Warning: Citation `JoFr91' on page 50 undefined on input line 489.
+
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <7> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 844.
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <5> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 844.
+
+Overfull \hbox (23.52707pt too wide) in paragraph at lines 850--852
 []\OT1/pbk/l/n/10 An \OT1/pbk/l/it/10 ex-tended timed-arc Petri net \OT1/pbk/l/
 n/10 (ETAPN) is a 9-tuple $\OML/cmm/m/it/10 N \OT1/cmr/m/n/10 = (\OML/cmm/m/it/
 10 P; T; T[]; []; []; \OT1/cmr/m/it/10 g\OML/cmm/m/it/10 ; \OT1/cmr/m/it/10 w\O
 ML/cmm/m/it/10 ; []; \OT1/cmr/m/it/10 I\OT1/cmr/m/n/10 )$
  []
 
-[53]
+[50]
 
-LaTeX Warning: Citation `DJJJMS:TACAS:12' on page 54 undefined on input line 98
-1.
-
-
-LaTeX Warning: Citation `BLT:90' on page 54 undefined on input line 990.
+LaTeX Warning: Citation `DJJJMS:TACAS:12' on page 51 undefined on input line 88
+6.
 
 
-LaTeX Warning: Citation `Hanisch:93' on page 54 undefined on input line 990.
+LaTeX Warning: Citation `BLT:90' on page 51 undefined on input line 895.
 
-[54]
-Overfull \hbox (42.33078pt too wide) in paragraph at lines 1042--1052
+
+LaTeX Warning: Citation `Hanisch:93' on page 51 undefined on input line 895.
+
+[51]
+Overfull \hbox (42.33078pt too wide) in paragraph at lines 947--957
 \OML/cmm/m/it/10 T$ \OT1/pbk/l/n/10 is \OT1/pbk/l/it/10 en-abled \OT1/pbk/l/n/1
 0 in a mark-ing $\OML/cmm/m/it/10 M$ \OT1/pbk/l/n/10 by the mul-ti-sets of to-k
 ens $[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p
@@ -1336,59 +1345,63 @@ ens $[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p
  x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j
  []
 
-[55]
 
-LaTeX Warning: Citation `ALSST:MEMICS:12' on page 56 undefined on input line 11
-30.
+Underfull \vbox (badness 2073) has occurred while \output is active []
 
-[56]
+ [52]
+[53]
 
-LaTeX Warning: Citation `ALSST:MEMICS:12' on page 57 undefined on input line 11
-66.
+LaTeX Warning: Citation `ALSST:MEMICS:12' on page 54 undefined on input line 10
+35.
 
 
-LaTeX Warning: Citation `ALSST:MEMICS:12' on page 57 undefined on input line 11
-90.
+LaTeX Warning: Citation `ALSST:MEMICS:12' on page 54 undefined on input line 10
+71.
 
-[57])) [58]
+
+LaTeX Warning: Citation `ALSST:MEMICS:12' on page 54 undefined on input line 10
+95.
+
+[54])) [55] [56
+
+
+]
 \openout2 = `chapter3.aux'.
 
  (./chapter3.tex
-Chapter 4.
+Chapter 3.
 
-LaTeX Warning: Citation `BPEL4WS' on page 59 undefined on input line 20.
+LaTeX Warning: Citation `BPEL4WS' on page 57 undefined on input line 20.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59
-
-
+ [57
 
 
 ]
 
-LaTeX Warning: Citation `Czajkowski2004' on page 60 undefined on input line 41.
+LaTeX Warning: Citation `Czajkowski2004' on page 58 undefined on input line 41.
 
 
 
-LaTeX Warning: Citation `Foster2004' on page 60 undefined on input line 58.
+LaTeX Warning: Citation `Foster2004' on page 58 undefined on input line 58.
 
 LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <10> not available
 (Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 63.
 
-LaTeX Warning: Reference `conclusions' on page 60 undefined on input line 67.
+LaTeX Warning: Reference `conclusions' on page 58 undefined on input line 67.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [60]
+ [58]
 
-LaTeX Warning: Citation `Banks2006' on page 61 undefined on input line 71.
+LaTeX Warning: Citation `Banks2006' on page 59 undefined on input line 71.
 
-[61]
+[59]
 
-LaTeX Warning: Citation `BPEL4WS' on page 62 undefined on input line 80.
+LaTeX Warning: Citation `BPEL4WS' on page 60 undefined on input line 80.
 
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 85.
@@ -1403,20 +1416,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--106
 \OT1/pbk/l/n/10 by the stan-dard are
  []
 
-[62]
+[60]
 
-LaTeX Warning: Citation `Slomiski:2006' on page 63 undefined on input line 136.
-
-
-
-LaTeX Warning: Citation `Leymann:2006' on page 63 undefined on input line 139.
-
-
-LaTeX Warning: Citation `Ezenwoye:2007' on page 63 undefined on input line 139.
+LaTeX Warning: Citation `Slomiski:2006' on page 61 undefined on input line 136.
 
 
 
-LaTeX Warning: Citation `Ezenwoye:2007' on page 63 undefined on input line 141.
+LaTeX Warning: Citation `Leymann:2006' on page 61 undefined on input line 139.
+
+
+LaTeX Warning: Citation `Ezenwoye:2007' on page 61 undefined on input line 139.
+
+
+
+LaTeX Warning: Citation `Ezenwoye:2007' on page 61 undefined on input line 141.
 
 
 
@@ -1426,61 +1439,61 @@ Overfull \hbox (1.10252pt too wide) in paragraph at lines 131--143
  []
 
 
-LaTeX Warning: Citation `Ouyang:2007' on page 63 undefined on input line 144.
+LaTeX Warning: Citation `Ouyang:2007' on page 61 undefined on input line 144.
 
 
-LaTeX Warning: Citation `Dumas:2008' on page 63 undefined on input line 148.
+LaTeX Warning: Citation `Dumas:2008' on page 61 undefined on input line 148.
 
 
-LaTeX Warning: Citation `Dragoni:2009' on page 63 undefined on input line 148.
+LaTeX Warning: Citation `Dragoni:2009' on page 61 undefined on input line 148.
 
 
-LaTeX Warning: Citation `Qiu:2005' on page 63 undefined on input line 154.
+LaTeX Warning: Citation `Qiu:2005' on page 61 undefined on input line 154.
 
 
-LaTeX Warning: Citation `Farahbod:2005' on page 63 undefined on input line 155.
+LaTeX Warning: Citation `Farahbod:2005' on page 61 undefined on input line 155.
 
 
 
-LaTeX Warning: Citation `Busi:2005' on page 63 undefined on input line 155.
+LaTeX Warning: Citation `Busi:2005' on page 61 undefined on input line 155.
 
 
-LaTeX Warning: Citation `Lucchi07' on page 63 undefined on input line 155.
+LaTeX Warning: Citation `Lucchi07' on page 61 undefined on input line 155.
 
 
-LaTeX Warning: Citation `Wirsing2011bis' on page 63 undefined on input line 157
+LaTeX Warning: Citation `Wirsing2011bis' on page 61 undefined on input line 157
 .
 
 
-LaTeX Warning: Citation `Wirsing2011bis' on page 63 undefined on input line 157
+LaTeX Warning: Citation `Wirsing2011bis' on page 61 undefined on input line 157
 .
 
 
-LaTeX Warning: Citation `Bettini2008' on page 63 undefined on input line 157.
+LaTeX Warning: Citation `Bettini2008' on page 61 undefined on input line 157.
 
 
-LaTeX Warning: Citation `Lapadula2007' on page 63 undefined on input line 157.
+LaTeX Warning: Citation `Lapadula2007' on page 61 undefined on input line 157.
 
 
-LaTeX Warning: Citation `Lapadula2008' on page 63 undefined on input line 157.
+LaTeX Warning: Citation `Lapadula2008' on page 61 undefined on input line 157.
 
 
-LaTeX Warning: Citation `Kitchin2009' on page 63 undefined on input line 157.
+LaTeX Warning: Citation `Kitchin2009' on page 61 undefined on input line 157.
 
 
-LaTeX Warning: Citation `Wirsing2011bis' on page 63 undefined on input line 157
+LaTeX Warning: Citation `Wirsing2011bis' on page 61 undefined on input line 157
 .
 
 
-LaTeX Warning: Citation `Bettini2008' on page 63 undefined on input line 157.
+LaTeX Warning: Citation `Bettini2008' on page 61 undefined on input line 157.
 
 
-LaTeX Warning: Citation `Lapadula2007' on page 63 undefined on input line 157.
+LaTeX Warning: Citation `Lapadula2007' on page 61 undefined on input line 157.
 
-[63]
+[61]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [64]
+ [62]
 Overfull \hbox (38.44876pt too wide) detected at line 187
 []
  []
@@ -1491,10 +1504,10 @@ Overfull \hbox (10.0546pt too wide) in paragraph at lines 189--198
 1/pbk/l/it/10 VAR \OT1/pbk/l/n/10 and in-te-gers; $[]$
  []
 
-[65]
+[63]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [66]
+ [64]
 Overfull \hbox (16.34383pt too wide) in paragraph at lines 205--208
 \OT1/pbk/l/n/10 for the eval-u-a-tion of $\OML/cmm/m/it/10 e$\OT1/pbk/l/n/10 , 
 and $[]$, where $[]$
@@ -1523,7 +1536,7 @@ Overfull \hbox (46.44434pt too wide) in paragraph at lines 209--213
 \OT1/pbk/l/n/10 we de-fine the func-tion $[]$ $[]$,
  []
 
-[67] [68]
+[65] [66]
 Overfull \hbox (18.09976pt too wide) in paragraph at lines 495--501
 []|[]| 
  []
@@ -1556,7 +1569,7 @@ Overfull \hbox (65.24408pt too wide) in paragraph at lines 991--994
 [][]
  []
 
-[69]
+[67]
 Overfull \hbox (46.82411pt too wide) in paragraph at lines 1014--1017
 \OT1/pbk/l/n/10 stored in vari-able vEPR, re-sult-ing in the new state $[]$.
  []
@@ -1566,7 +1579,7 @@ Overfull \hbox (65.24408pt too wide) in paragraph at lines 1101--1102
  [][] 
  []
 
-[70]
+[68]
 LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <7> not available
 (Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1219.
 
@@ -1588,7 +1601,7 @@ Overfull \hbox (1.01335pt too wide) in paragraph at lines 1240--1245
 []$[]$\OT1/pbk/l/n/10 . Hence, vari-ables $\OML/cmm/m/it/10 epr; epr[];$
  []
 
-[71]
+[69]
 Overfull \hbox (7.5268pt too wide) in paragraph at lines 1247--1247
 []$  
  []
@@ -1599,83 +1612,83 @@ Overfull \hbox (5.08513pt too wide) in paragraph at lines 1248--1248
  []
 
 
-LaTeX Warning: Citation `Slomiski:2006' on page 72 undefined on input line 1301
+LaTeX Warning: Citation `Slomiski:2006' on page 70 undefined on input line 1301
 .
 
 
-LaTeX Warning: Citation `Leymann:2006' on page 72 undefined on input line 1304.
+LaTeX Warning: Citation `Leymann:2006' on page 70 undefined on input line 1304.
 
 
 
-LaTeX Warning: Citation `Ezenwoye:2007' on page 72 undefined on input line 1304
+LaTeX Warning: Citation `Ezenwoye:2007' on page 70 undefined on input line 1304
 .
 
 
-LaTeX Warning: Citation `Ezenwoye:2007' on page 72 undefined on input line 1306
+LaTeX Warning: Citation `Ezenwoye:2007' on page 70 undefined on input line 1306
 .
 
 
-LaTeX Warning: Citation `Ouyang:2007' on page 72 undefined on input line 1309.
+LaTeX Warning: Citation `Ouyang:2007' on page 70 undefined on input line 1309.
 
 
-LaTeX Warning: Citation `Dumas:2008' on page 72 undefined on input line 1313.
+LaTeX Warning: Citation `Dumas:2008' on page 70 undefined on input line 1313.
 
 
-LaTeX Warning: Citation `Dragoni:2009' on page 72 undefined on input line 1313.
+LaTeX Warning: Citation `Dragoni:2009' on page 70 undefined on input line 1313.
 
 
 
-LaTeX Warning: Citation `Qiu:2005' on page 72 undefined on input line 1319.
+LaTeX Warning: Citation `Qiu:2005' on page 70 undefined on input line 1319.
 
 
-LaTeX Warning: Citation `Farahbod:2005' on page 72 undefined on input line 1320
+LaTeX Warning: Citation `Farahbod:2005' on page 70 undefined on input line 1320
 .
 
 
-LaTeX Warning: Citation `Busi:2005' on page 72 undefined on input line 1320.
+LaTeX Warning: Citation `Busi:2005' on page 70 undefined on input line 1320.
 
-[72]
+[70]
 
-LaTeX Warning: Citation `Wirsing2011bis' on page 73 undefined on input line 132
+LaTeX Warning: Citation `Wirsing2011bis' on page 71 undefined on input line 132
 2.
 
 
-LaTeX Warning: Citation `Jensen2009' on page 73 undefined on input line 1333.
+LaTeX Warning: Citation `Jensen2009' on page 71 undefined on input line 1333.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73]
+ [71]
 
-LaTeX Warning: Citation `Jensen2009' on page 74 undefined on input line 1360.
+LaTeX Warning: Citation `Jensen2009' on page 72 undefined on input line 1360.
 
-[74]
+[72]
 
-LaTeX Warning: Citation `Jensen2009' on page 75 undefined on input line 1462.
+LaTeX Warning: Citation `Jensen2009' on page 73 undefined on input line 1462.
 
-[75]
+[73]
 Overfull \hbox (5.0858pt too wide) in paragraph at lines 1497--1755
  [] 
  []
 
 
-LaTeX Warning: Citation `wsfm2011' on page 76 undefined on input line 1793.
+LaTeX Warning: Citation `wsfm2011' on page 74 undefined on input line 1793.
 
-[76]
+[74]
 File: Figures/orchestration.eps Graphic file (type eps)
- <Figures/orchestration.eps> [77]
+ <Figures/orchestration.eps> [75]
 
-LaTeX Warning: Reference `fig:basicas' on page 78 undefined on input line 1874.
-
-
-
-LaTeX Warning: Reference `fig:comm' on page 78 undefined on input line 1928.
+LaTeX Warning: Reference `fig:basicas' on page 76 undefined on input line 1874.
 
 
-LaTeX Warning: Reference `fig:comm1' on page 78 undefined on input line 1928.
+
+LaTeX Warning: Reference `fig:comm' on page 76 undefined on input line 1928.
 
 
-LaTeX Warning: Reference `fig:comm2' on page 78 undefined on input line 1928.
+LaTeX Warning: Reference `fig:comm1' on page 76 undefined on input line 1928.
+
+
+LaTeX Warning: Reference `fig:comm2' on page 76 undefined on input line 1928.
 
 
 Overfull \hbox (2.2964pt too wide) in paragraph at lines 1928--1929
@@ -1683,27 +1696,27 @@ Overfull \hbox (2.2964pt too wide) in paragraph at lines 1928--1929
  and the reply/$[]$
  []
 
-[78]
+[76]
 
-LaTeX Warning: Citation `BPEL4WS' on page 79 undefined on input line 1949.
+LaTeX Warning: Citation `BPEL4WS' on page 77 undefined on input line 1949.
 
 File: Figures/sequence.eps Graphic file (type eps)
-<Figures/sequence.eps> [79]
+<Figures/sequence.eps> [77]
 File: Figures/paralelo.eps Graphic file (type eps)
- <Figures/paralelo.eps> [80]
+ <Figures/paralelo.eps> [78]
 File: Figures/pick.eps Graphic file (type eps)
  <Figures/pick.eps>
 File: Figures/while.eps Graphic file (type eps)
 
 <Figures/while.eps>
 File: Figures/createResource.eps Graphic file (type eps)
- <Figures/createResource.eps> [81]
+ <Figures/createResource.eps> [79]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [82]
+ [80]
 File: Figures/subscribe.eps Graphic file (type eps)
 
-<Figures/subscribe.eps> [83]
+<Figures/subscribe.eps> [81]
 File: Figures/getProp.eps Graphic file (type eps)
  <Figures/getProp.eps>
 File: Figures/setProp.eps Graphic file (type eps)
@@ -1724,7 +1737,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2250--2256
 
 Underfull \vbox (badness 2608) has occurred while \output is active []
 
- [84]
+ [82]
 Underfull \hbox (badness 10000) in paragraph at lines 2258--2326
 
  []
@@ -1732,7 +1745,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2258--2326
 
 Underfull \vbox (badness 1953) has occurred while \output is active []
 
- [85]
+ [83]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 2328
 .
 
@@ -1740,68 +1753,68 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 2328
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 
-LaTeX Warning: Citation `Jensen2009' on page 86 undefined on input line 2328.
+LaTeX Warning: Citation `Jensen2009' on page 84 undefined on input line 2328.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [84]
+File: Figures/casestudy.eps Graphic file (type eps)
+
+<Figures/casestudy.eps>
+
+LaTeX Warning: Citation `Carbone2006' on page 85 undefined on input line 2346.
+
+
+LaTeX Warning: Citation `Dong2006' on page 85 undefined on input line 2346.
+
+
+LaTeX Warning: Citation `Foster2007' on page 85 undefined on input line 2346.
+
+
+LaTeX Warning: Citation `Yang2008' on page 85 undefined on input line 2346.
+
+[85]
+
+LaTeX Warning: Citation `Wing1990' on page 86 undefined on input line 2350.
+
+
+LaTeX Warning: Citation `Peled2001' on page 86 undefined on input line 2350.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [86]
-File: Figures/casestudy.eps Graphic file (type eps)
 
-<Figures/casestudy.eps>
+LaTeX Warning: Reference `c4' on page 87 undefined on input line 2366.
 
-LaTeX Warning: Citation `Carbone2006' on page 87 undefined on input line 2346.
-
-
-LaTeX Warning: Citation `Dong2006' on page 87 undefined on input line 2346.
-
-
-LaTeX Warning: Citation `Foster2007' on page 87 undefined on input line 2346.
-
-
-LaTeX Warning: Citation `Yang2008' on page 87 undefined on input line 2346.
-
-[87]
-
-LaTeX Warning: Citation `Wing1990' on page 88 undefined on input line 2350.
-
-
-LaTeX Warning: Citation `Peled2001' on page 88 undefined on input line 2350.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [88]
-
-LaTeX Warning: Reference `c4' on page 89 undefined on input line 2366.
-
-) [89] [90] [91] [92] [93] [94
+) [87] [88] [89] [90] [91] [92
 
 
 ]
 \openout2 = `chapter4.aux'.
 
  (./chapter4.tex
-Chapter 5.
-) [95
+Chapter 4.
+) [93
 
 
-] [96
+] [94
 
 
 ]
 \openout2 = `chapter5.aux'.
 
  (./chapter5.tex
-Chapter 6.
-) [97
+Chapter 5.
+) [95
 
 
 ]
 
-LaTeX Warning: Reference `c5' on page 98 undefined on input line 280.
+LaTeX Warning: Reference `c5' on page 96 undefined on input line 280.
 
-[98
+[96
 
 
 ] (./thesis.bbl
@@ -1830,9 +1843,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--48
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
-[99
+[97
 
-]) (./thesis.bbl [100]
+]) (./thesis.bbl [98]
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ­ in font pbkl7t!
 Missing character: There is no Ã in font pbkl7t!
@@ -1858,9 +1871,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--48
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
-[101
+[99
 
-]) [102] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
+]) [100] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
 (./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux))
 
 LaTeX Warning: There were undefined references.
@@ -1871,11 +1884,11 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  17970 strings out of 495062
- 302523 string characters out of 1182644
- 469833 words of memory out of 3000000
- 20637 multiletter control sequences out of 15000+50000
- 31993 words of font info for 95 fonts, out of 3000000 for 9000
+ 302554 string characters out of 1182644
+ 469540 words of memory out of 3000000
+ 20636 multiletter control sequences out of 15000+50000
+ 32701 words of font info for 96 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,28n,92p,2750b,1835s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (116 pages, 508348 bytes).
+Output written on thesis.dvi (114 pages, 499728 bytes).

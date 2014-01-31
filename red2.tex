@@ -1,33 +1,31 @@
-\chapter{Generalidades}
+\subsection*{Preliminaries}
+In this section, we will present the preliminary concepts
+used in this Thesis. The aim of this section is to provide the reader
+with a review of the main notions which are the basis of future sections
+as well as to fix the notion used throughout the Thesis.
+Thus, we will start presenting basic concepts such as the standard definition of Petri
+nets and we will continue with more technical details such as the addition of time features
+to this formal model.
 
-En este cap\'{\i}tulo presentamos una revisi\'{o}n de los principales
-conceptos relacionados con las Redes de Petri.
-Por tanto, el objetivo de este cap\'{\i}tulo ser\'{a} proporcionar
-la base de trabajo de los siguientes, as\'{\i} como fijar la
-notaci\'{o}n que va a ser utilizada a lo largo de la tesis.
-Puesto que los
-resultados presentados en este cap\'{\i}tulo son cl\'{a}sicos en la
-teor\'{\i}a sobre Redes de Petri, algunas demostraciones son
-omitidas, indicando \'{u}nicamente las citas bibliogr\'{a}ficas en las que
-pueden encontrarse.
 
-\section{Notaci\'{o}n}
+\subsubsection{Notation}
+The notation used in this work is the following:
 
-La notaci\'{o}n empleada a lo largo de este trabajo ser\'{a} la siguiente:
 \begin{enumerate}
-\item {\bf N\'{u}meros}\\
-Let $\nnul = \mathbb{N} \cup \{0\}$ and $\rnul$ be the set of the 
-nonnegative integers and nonnegative real numbers, respectively,
-and $\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$. 
-Denotaremos por $\nnul = \mathbb{N} \cup \{0\}$ los n\'{u}meros naturales
-incluyendo el 0, por los naturales excluyendo el 0, y
-denotaremos por $Z$ al conjunto de n\'{u}meros enteros.
-Asimismo, denotaremos por $Q$ los n\'{u}meros racionales, y por
-$Q^{+}$ los n\'{u}meros racionales positivos.
-\item {\bf Conjuntos y Multiconjuntos}\\
-Utilizaremos la notaci\'{o}n usual para trabajar con
-conjuntos. El cardinal de un conjunto $A$
-se denotar\'{a} de la forma $|A|$.
+\item {\bf Numbers}\\
+We will denote by $\nnul = \mathbb{N} \cup \{0\}$ the set of nonnegative integers including 0,
+and $\rnul$ be the nonnegative real numbers including 0. Obviously, $\mathbb{N}$
+and $\mathbb{R}$ mean that zero is excluded from the set. Moreover,
+$\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$ is the set of nonnegative natural numbers including $\infty$. 
+%Asimismo, denotaremos por $Q$ los n\'{u}meros racionales, y por
+%$Q^{+}$ los n\'{u}meros racionales positivos.
+
+\item {\bf Sets and Multisets}\\
+We will use the standard delimiters for sets (\{\}) and multisets(\multiset{}). 
+As usual, let $A$ be a set, we use $x \in A$ to denote the membership of the element  $x$ in $A$.
+Moreover, we abuse the notion using $x \in A$ to represent that $x$ is an element of
+the multiset $A$. The cardinality of the set $A$
+has the following representation $|A|$.
 
 As\'{\i}, diremos
 que $x \in R$, para un multiconjunto $R\,:\,A \longrightarrow \nnul$
@@ -41,17 +39,6 @@ ser\'{a} denotado en la forma $\{2x,1y\}$. Dado un conjunto
 $A$, denotaremos por ${\cal B}(A)$ el conjunto de multiconjuntos
 sobre $A$.
 
-We start with the preliminaries and the definition of timed transition system. 
-We use the delimiters \{\} for sets and $\multiset{}$ for multisets.
-As usual, let $A$ be a set, a multiset or a list, 
-we use $x \in A$ to denote the membership of the element  $x$ in $A$. 
-%We consider only discrete time
-%as for closed intervals the reachability/soundness problems
-%are equivalent with the continuous time variant as discussed in 
-%Section~\ref{sec:cont}.
-Let $\nnul = \mathbb{N} \cup \{0\}$ and $\rnul$ be the set of the 
-nonnegative integers and nonnegative real numbers, respectively,
-and $\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$. 
 \item {\bf Relaciones}\\
 Dado un conjunto $X$, una relaci\'{o}n sobre
 $X$ ser\'{a} un conjunto $R \subseteq X \times X$. Llamaremos
@@ -583,16 +570,16 @@ Posteriormente pudo hacerse lo propio con otras propiedades. As\'{\i}
 home-state}, posteriormente extendida a {\it home-spaces} en
 \cite{JoFr91}.
 
-\subsection{T\'{e}cnicas de An\'{a}lisis de Propiedades}
-
-Las t\'{e}cnicas de an\'{a}lisis de propiedades de Redes de Petri suelen
-clasificarse en 4 grupos:
-\begin{itemize}
-\item An\'{a}lisis por enumeraci\'{o}n.
-\item An\'{a}lisis por transformaci\'{o}n.
-\item An\'{a}lisis estructural.
-\item An\'{a}lisis por Simulaci\'{o}n.
-\end{itemize}
+%\subsection{T\'{e}cnicas de An\'{a}lisis de Propiedades}
+%
+%Las t\'{e}cnicas de an\'{a}lisis de propiedades de Redes de Petri suelen
+%clasificarse en 4 grupos:
+%\begin{itemize}
+%\item An\'{a}lisis por enumeraci\'{o}n.
+%\item An\'{a}lisis por transformaci\'{o}n.
+%\item An\'{a}lisis estructural.
+%\item An\'{a}lisis por Simulaci\'{o}n.
+%\end{itemize}
 
 %\subsubsection{An\'{a}lisis por enumeraci\'{o}n}
 %
