@@ -323,7 +323,7 @@ A safety property asserts that \emph{``nothing bad happens''}.
 Thus, they guarantee that a set of undesirable states are not reached or that
 the system does not execute an unwanted ocurrence sequence.
 
-The safety properties are the following:
+The \emph{safety properties} are the following:
 
 \begin{enumerate}
 \item {\bf Reachability}. A marking $M$ of a marked Petri net
@@ -369,26 +369,25 @@ $M$ is said to be {\it coverable} if there exists $M' \in
 %la no alcanzabilidad. An\'{a}logamente ocurre con el cubrimiento de marcajes.
 
 \subsection{Liveness properties}
+A liveness property asserts that \emph{``something good eventually happens''}.
+Thus, thet guarantee that, independently of the current state of the system,
+a specific state can eventually be reached or that a certain ocurrence sequence can eventually
+be executed in the system.
 
-Garantizan que el sistema, con independencia de su estado actual,
-podr\'{a} eventualmente alcanzar un determinado estado de un cierto conjunto
-de estados, o podr\'{a} eventualmente ejecutar una cierta secuencia de eventos.
-Son propiedades de actividad las siguientes:
+The \emph{liveness properties} are:
 \begin{enumerate}
 \item {\bf Liveness}.
-Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada. Una transici\'{o}n $t \in T$
-se dice que es {\it viva} si para todo marcaje alcanzable $M \in
-[ M_0 \rangle$ existe una secuencia de ocurrencia $\sigma$ que parte
-de $M$ tal que $\sigma = t_1 \ldots t_m$, con $t_m = t$. Se dice que
-$N$ es {\it viva} si todas sus transiciones son vivas.
+Let $N=(P,T,F,W,M_0)$ be a marked Petri net. A transition $t \in T$
+is said to be {\it live} if for all reachable marking $M \in
+[ M_0 \rangle$ there is an occurrence sequence $\sigma$ starting from $M$ such that
+$\sigma = t_1 \ldots t_m$, with $t_m = t$. The $N$ is {\it live} iff all the transitions are live.
 \item {\bf Home State}.
-Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada. Se dice que
-un marcaje $M$ de $N$ es un {\it home state} si para todo
-$M' \in [ M_0 \rangle$ se tiene $M \in [ M' \rangle$.
-\item {\bf Home Space}. Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada.
-Se dice que un conjunto de marcajes ${\cal M}$ es un {\it home-space}
-de $N$ si para todo marcaje $M' \in [ M_0 \rangle$ existe un marcaje
-$M'' \in {\cal M}$ tal que $M'' \in [ M' \rangle$.
+Let $N=(P,T,F,W,M_0)$ be a marked Petri net. A marking $M$ of $N$ is a {\it home state} if for all
+$M' \in [ M_0 \rangle$, $M \in [ M' \rangle$.
+\item {\bf Home Space}. Let $N=(P,T,F,W,M_0)$ be a marked Petri net.
+The set of markings ${\cal M}$ is a {\it home-space}
+of $N$ if for all marking $M' \in [ M_0 \rangle$ there is marking
+$M'' \in {\cal M}$ such that $M'' \in [ M' \rangle$.
 \item {\bf Cyclic}.
 Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada. Se dice que
 $N$ tiene un {\it comportamiento c\'{\i}clico} si para todo marcaje
