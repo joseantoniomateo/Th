@@ -227,19 +227,16 @@ We extend the conventional notation to occurrence sequence,
 obtaining $M_0 [ \sigma \rangle M_n$.
 The set of occurrence sequences starting from $M_0$ are denoted by $L(N,M_0)$.
 
-\item Se dice que $\sigma = M_0 R_1 M_1 \ldots R_n M_n$ es una
-secuencia de pasos finita de $N$ si y s\'{o}lo si
-$\forall i \in \{1,\ldots,n\},\,M_{i-1} [ R_i \rangle M_i$.
-De nuevo se extiende la notaci\'{o}n habitual a secuencias de pasos:
-$M_0 [ \sigma \rangle M_n$.
-Se denota por $P(N,M_0)$ al conjunto de secuencias de pasos de $N$
-que parten de $M_0$.
+\item An ocurrence sequence $\sigma = M_0 R_1 M_1 \ldots R_n M_n$ is finite
+iff $\forall i \in \{1,\ldots,n\},\,M_{i-1} [ R_i \rangle M_i$.
+Again, we extend the notation to ocurrence sequence, $M_0 [ \sigma \rangle M_n$.
+The set of ocurrence sequence of $N$ starting from $M_0$ is denoted by $P(N,M_0)$.
 \end{enumerate}
 \end{definition}
 
-En lo sucesivo trabajaremos usualmente sobre la sem\'{a}ntica de
-secuencias de ocurrencia, salvo que expl\'{\i}citamente se
-indique lo contrario.
+%En lo sucesivo trabajaremos usualmente sobre la sem\'{a}ntica de
+%secuencias de ocurrencia, salvo que expl\'{\i}citamente se
+%indique lo contrario.
 
 %\bdfn (Matrices de Incidencia)\\
 %Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada.
@@ -300,96 +297,78 @@ indique lo contrario.
 %termina la demostraci\'{o}n.
 %\eprop
 
-\section{An\'{a}lisis de Redes}
+\section{Petri nets analysis}
+When designing a new system, the construction of a graphical model of it is always
+helpful since it is interesting to broadly understand how this system works, helping designers to have a
+deeper knowledge about it. Nevertheless, the presence of a graphical model is not enough in many cases
+as the designers want the system to meet some properties of interest. For instance, the system is useless
+if it reaches a dealock in each execution.  To this end, it is important to have tools that allow to
+evaluate properties in the model. In finite sequential systems, it is not particularly challeging to check
+the fulfillment of certain statement, whereas the presence of concurrency complicates this task.
+The analysis of systems behaviour is intened to determe the compliance of 
+certain properties such as the number of processes in a queue does not exceed
+certain threshold or that the mutual exclusion is guaranteed when accessing to a shared resource.
 
-Cuando se plantea el dise\~{n}o de un sistema, aparte del inter\'{e}s que
-suscita el tener un modelo gr\'{a}fico del mismo, resulta importante
-disponer de herramientas que nos permitan obtener propiedades
-a partir del modelo considerado. En el caso de los sistemas
-concurrentes, la verificaci\'{o}n del cumplimiento de ciertas
-propiedades se hace m\'{a}s dif\'{\i}cil que en el caso de los sistemas
-secuenciales, por lo que dichas herramientas cobran un particular
-inter\'{e}s. El an\'{a}lisis de la conducta de los sistemas tiene por objeto
-determinar el cumplimiento de ciertas propiedades, como por ejemplo,
-que el n\'{u}mero de procesos en una cierta cola del sistema no excede
-cierta cantidad, que se garantiza la exclusi\'{o}n mutua en el acceso
-a cierto recurso del sistema, etc.
+In Petri nets , there is a set of powerful tools to formally analyse
+the compliance of such properties. For instance, these properties check
+the absence of deadlocks, the reachability of a certain
+state, the possibility of reaching the situation after performing some computations and so on.
 
-En el caso de las Redes de Petri, junto con su notable inter\'{e}s para
-el modelado de sistemas, por su naturaleza gr\'{a}fica que permite
-tener un modelo f\'{a}cilmente comprensible de un sistema,
-se tiene tambi\'{e}n una herramienta poderosa para analizar formalmente
-el cumplimiento de determinadas propiedades de buena conducta
-de los mismos,
-como la ausencia de bloqueos, la alcanzabilidad de un cierto
-estado, la posibilidad de alcanzar la situaci\'{o}n de partida
-del sistema con independencia de su estado actual, etc.
 
 \medskip
-Habitualmente se dividen las propiedades de los sistemas en dos
-clases:
+Normally, these properties are divided in two categories \cite{citar}:
 
-\subsection{Propiedades de Seguridad}
+\subsection{Safety properties}
+A safety property asserts that \emph{``nothing bad happens''}.
+Thus, they guarantee that a set of undesirable states are not reached or that
+the system does not execute an unwanted ocurrence sequence.
 
-Garantizan que el sistema no
-alcanzar\'{a} nunca un conjunto de estados no deseados, o
-que nunca ejecutar\'{a} una secuencia de pasos que pertenezca a un
-determinado conjunto.
+The safety properties are the following:
 
-Son propiedades de Seguridad las
-siguientes:
 \begin{enumerate}
-\item {\bf Propiedad de Alcance}. Un marcaje $M$ de una Red de Petri
-Marcada $N= (P,T,F,W,M_0)$ se dice que es {\it alcanzable} en $N$
-sii existe una secuencia de ocurrencia $\sigma \in L(N,M_0)$
-tal que $M_0 [ \sigma \rangle M$. Denotamos por $[M_0\rangle$ al
-conjunto de marcajes alcanzables en $N$ a partir del marcaje
-inicial $M_0$, y por $[ M \rangle$ al conjunto de marcajes alcanzables
-en $N$ a partir de un marcaje $M$.
-\item {\bf Propiedad de Seguridad}. Una Red de Petri Marcada
-$N=(P,T,F,W,$ \linebreak
-$M_0)$ es {\it n-segura}, para un cierto $n \in \nnul$ dado, si todo
-marcaje alcanzable $M$ a partir de $M_0$ cumple la
-propiedad $M(p) \leq n$, para todo $p \in P$. Las redes
-1-seguras se llaman habitualmente {\it seguras}, y en ellas los
-marcajes pueden identificarse con subconjuntos de lugares.
+\item {\bf Reachability}. A marking $M$ of a marked Petri net
+$N= (P,T,F,W,M_0)$ is {\it reachable} in $N$
+iff there exists an ocurrence sequence $\sigma \in L(N,M_0)$
+such that $M_0 [ \sigma \rangle M$. We will denote by $[M_0\rangle$ the
+set of reachable markings of $N$ starting from $M_0$, and
+by $[ M \rangle$ the set of reachable markings starting from the marking $M$
 
-Bajo los mismos requisitos, se dice que un lugar $p \in P$ es
-{\it n-seguro} si $M(p) \leq n$, para todo marcaje alcanzable
-$M$ a partir de $M_0$.
-\item {\bf Boundedness}. Sea
-$N=(P,T,F,W,M_0)$ una Red de Petri Marcada.
-Se dice que un lugar $p \in P$ es limitado si
-existe un n\'{u}mero natural $n \in \nnul$ tal que dicho lugar es
-$n$-seguro; y se dice que $N$ es {\it limitada} si todos sus lugares
-son limitados.
-\item {\bf Deadlock-free}. Dada una Red de Petri Marcada
-$N=(P,T,F,W,$ \linebreak
-$M_0)$, y un marcaje alcanzable $M$ a partir de $M_0$.
-Se dice que $M$ es un {\it marcaje muerto} si no existe ninguna
-transici\'{o}n permitida bajo dicho marcaje. La red $N$ se dice
-que est\'{a} {\it libre de bloqueos} si no existe ning\'{u}n marcaje
-alcanzable muerto.
-\item {\bf Conservaci\'{o}n Respecto a un Vector de Pesos}.
-Sea una Red de Petri Marcada $N=(P,T,F,W,M_0)$, con
-$P = \{p_1,\ldots,p_n\}$. Se dice que $N$ es
-{\it conservativa respecto a un vector de pesos w}, con
-$w \in \nnul^n$, si para todo marcaje alcanzable $M$
-a partir de $M_0$ se cumple:
-\[ \suma{i=1}{n} w_i \cdot M(p_i) =
-\suma{i=1}{n} w_i \cdot M_0(p_i)\]
+\item {\bf Boundedness}. A marked Petri net $N=(P,T,F,W,$ \linebreak
+$M_0)$ is {\it k-bounded}, for some $k \in \nnul$, if all reachable marking
+$M$ from $M_0$ hold that $M(p) \leq k$, for all $p \in P$. $N$ is safe if
+it is 1-bounded. A place $p \in P$ is
+{\it n-safe} if $M(p) \leq k$, for all markings $M$ reachable from $M_0$.
+
+%\item {\bf Boundedness}. Sea
+%$N=(P,T,F,W,M_0)$ una Red de Petri Marcada.
+%Se dice que un lugar $p \in P$ es limitado si
+%existe un n\'{u}mero natural $n \in \nnul$ tal que dicho lugar es
+%$n$-seguro; y se dice que $N$ es {\it limitada} si todos sus lugares
+%son limitados.
+\item {\bf Deadlock-free}. Let $N=(P,T,F,W,$ \linebreak
+$M_0)$ a marked Petri net and $M$ be a reachable marking from $M_0$.
+$M$ is a {\it dead marking} if there is no $t \in T$ that is enabled in $M$. 
+The net $N$ is dealock-free iff there are no dead markings.
+
+%\item {\bf Conservaci\'{o}n Respecto a un Vector de Pesos}.
+%Sea una Red de Petri Marcada $N=(P,T,F,W,M_0)$, con
+%$P = \{p_1,\ldots,p_n\}$. Se dice que $N$ es
+%{\it conservativa respecto a un vector de pesos w}, con
+%$w \in \nnul^n$, si para todo marcaje alcanzable $M$
+%a partir de $M_0$ se cumple:
+%\[ \suma{i=1}{n} w_i \cdot M(p_i) =
+%\suma{i=1}{n} w_i \cdot M_0(p_i)\]
 \item {\bf Coverability}.
-Sea una Red de Petri Mar\-cada $N=$ \linebreak $(P,T,F,W,
-M_0)$. Dado un marcaje $M$ de $N$, se dice que $N$ cumple la propiedad
-del cubrimiento de marcajes para el marcaje $M$ si existe $M' \in
-[M_0 \rangle$ tal que $M' \geq M$.
+Let $N=(P,T,F,W,M_0)$ be a marked Petri net and $M$ be a marking of $N$.
+$M$ is said to be {\it coverable} if there exists $M' \in
+[M_0 \rangle$ such that $M' \geq M$.
 \end{enumerate}
 
-\noindent {\sc NOTA:} Para ser m\'{a}s precisos, la alcanzabilidad no es
-exactamente una propiedad de seguridad, sino la negaci\'{o}n de la propiedad,
-la no alcanzabilidad. An\'{a}logamente ocurre con el cubrimiento de marcajes.
+%\noindent {\sc NOTA:} Para ser m\'{a}s precisos, la alcanzabilidad no es
+%exactamente una propiedad de seguridad, sino la negaci\'{o}n de la propiedad,
+%la no alcanzabilidad. An\'{a}logamente ocurre con el cubrimiento de marcajes.
 
-\subsection{Propiedades de Actividad}
+\subsection{Liveness properties}
 
 Garantizan que el sistema, con independencia de su estado actual,
 podr\'{a} eventualmente alcanzar un determinado estado de un cierto conjunto
@@ -417,6 +396,8 @@ $M \in [ M_0 \rangle$ existe una secuencia de ocurrencia $\sigma$
 que parte de $M$ tal que $M [ \sigma \rangle M_0$.
 \end{enumerate}
 
+
+% % %JIRI % % % %
 Let $\nnul = \mathbb{N} \cup \{0\}$ and 
 $\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$.
 A \emph{discrete timed transition system} (DTTS) 
@@ -434,6 +415,9 @@ $\int \eqdef \{[a,b] \mid a \in \nnul,b\in \nnul^{\infty}, a\leq b \}$
 and its subset $\intinv \eqdef \{[0,b] \mid b\in \nnul^{\infty} \}$
 used in age invariants. 
 
+\section{Timed extensions of Petri nets}
+
+Hablar de las redes de Merlin y luego introducir las nuestras
 
 \begin{definition}[timed-Arc Petri Net] \label{defetapn}  
 An \emph{extended timed-arc Petri net} 
