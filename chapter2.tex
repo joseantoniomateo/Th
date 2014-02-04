@@ -288,49 +288,51 @@ Different types of exceptions are considered in WS-CDL. Exception workunits can 
 Next, we introduce the orchestration approach used in this Thesis.
 
 \subsection {WS-BPEL}
-In 2002, researchers and engineers of the main companies of the world (IBM, Microsoft, etc.)
+In 2002, researchers and engineers from the main companies of the world (IBM, Microsoft, etc.)
 realised that the new and rapidly emerging process-oriented approach required the definition of 
 a neat and precise language for describing how a set of intecting web services can be included
 in a business process. Traditional methods for integration and business process automation 
-typically involve embedded logic inside of applications designed 
-to meet a specific business need such as ERP, supply chain, or CRM. 
+typically imply to embed the logic inside of the applications, complicating unnecessarily these applications. designed 
+Moreover, this makes these applications really difficult to migrate to other platforms. 
 The development, testing, and deployment efforts required 
 to change these applications make integration and process changes both costly and complex \cite{bpelsoftcare}.
 To address these issues, proprietary products emerged 
 to abstract integration and process automation into a new layer of software tools. 
 These software products liberated integration and process tasks from 
-the underlying business systems so they could be more effectively changed, managed, and optimized.
-The idea and motivation behind almost each new technology and platform for
+the underlying business systems so that they could be more effectively changed, managed, and optimised.
+The idea and motivation behind almost each new technology for
 enterprise application development is to provide an environment where better
-business applications can be developed with less effort and these business applications
-should closely align to the business processes, which should not be too complex, and
-which can be adapted to the changing nature of business processes without too much
-effort. Within companies, business applications have to
+business applications can be developed, requiring less effor. These business applications
+should closely align to the business processes, which should not be too complex and
+which should be adaptable to the changing nature of business processes without too much
+work. Within companies, business applications have to
 interoperate and integrate. Integrating different
 applications has always been a difficult task for various functional and technology
 related reasons \cite{}.
 
 The Business Process Execution Language for Web Services (BPEL4WS), for short BPEL, 
-was first conceived in July, 2002 with the release of the BPEL4WS 
+was first conceived in July, 2002, with the release of the BPEL4WS 
 1.0 specification. This first draft was initially developed by just three companies, IBM, Microsoft, and BEA. 
 This document proposed an orchestration language inspired 
-by previous variations such as Web Services Flow Language (WSFL), developed by IBM and XLANG specification language developed
-by Microsoft. WSFL was designed by IBM and is based on the concept of directed graphs.
-XLANG was designed by Microsoft and is a block-structured language. BPEL combines
-both approaches and provides a rich vocabulary for description of business processes. After this first attempt, other major companies such as SAP and Siebel Systems joined the former ones to write
-the version 1.1 of the BPEL4WS specification that was released less than a year later, in May of 2003. 
+by previous languages such as Web Services Flow Language (WSFL), developed by IBM and XLANG specification language developed
+by Microsoft. WSFL is based on the concept of directed graphs.
+XLANG is a block-structured language. BPEL combines
+both approaches and provides a rich vocabulary for the description of business processes. 
+After this first attempt, other major companies such as SAP and Siebel Systems joined the former ones to write
+the version 1.1 of the BPEL4WS specification. It was released less than a year later, in May of 2003. 
 Fortunately, this brand new version received much more attention and vendor support, 
 leading to a number of commercially available BPEL4WS-compliant 
-orchestration engines \cite{wsbpelstandard}. Before publishing this release, 
+orchestration engines \cite{wsbpelstandard}. Before publishing it, 
 the BPEL4WS specification was submitted to an OASIS 
-technical committee in order to be evaluated so that the specification could be developed into an official and open standard.
+technical committee in order to be evaluated so that the specification could evolve into an official and open standard.
 This technical committee was active from April 2003 to May 2007, 
 and, during this time, a lot of contributions and improvements were received. 
 In April 2007, WS-BPEL version 2.0 was approved as an OASIS standard. 
+
 As a proof of maturity, more than 37 organizations collaborated to develop WS-BPEL, including representatives of Active Endpoints, Adobe Systems, BEA Systems, Booz Allen Hamilton, EDS, HP, Hitachi, IBM, IONA, Microsoft, NEC, Nortel, Oracle, Red Hat, Rogue Wave, SAP, Sun Microsystems, TIBCO, webMethods, and other members of OASIS \cite{wsbpelstandard}.
 Finally, in January 2008, another OASIS technical committee started 
 to define a WS-BPEL extension to emcompass the definition of 
-human interactions (``human tasks'') as part of a WS-BPEL process. Figure \ref{bpelevolution} summarises this evolution-
+human interactions (``human tasks'') as part of WS-BPEL processes. Figure \ref{bpelevolution} summarises the evolution of WS-BPEL:
 
 \begin{figure}[h]
 \begin{center}
@@ -340,30 +342,30 @@ human interactions (``human tasks'') as part of a WS-BPEL process. Figure \ref{b
 \label{bpelevolution}
 \end{figure}
 
-Moreover, there were established ten original design goals associated with the definition of WS-BPEL \cite{wsbpelstandard}:
+Furthermore, there were established ten original design goals associated with the definition of WS-BPEL \cite{wsbpelstandard}:
 \begin{itemize}
 \item Define business processes that interact with external entities 
 through web service operations defined using WSDL, and that 
-manifest themselves as web services defined using WSDL. 
+manifest themselves as web services using WSDL. 
 \item Define business processes using an XML-based language. 
 Do not define a graphical representation of processes or provide any particular design methodology for processes.
-\item Define a set of web service orchestration concepts that are meant to be used by both the external (abstract) and internal (executable) views of a business process. Such a business process defines the behavior of a single autonomous entity, typically operating in interaction with other similar peer entities. 
+\item Define a set of web service orchestration concepts that are meant to be used by both external (abstract) and internal (executable) views of a business process. Such a business process defines the behavior of a single autonomous entity, typically operating in interaction with other similar entities. 
 %It is recognized that each usage pattern (i.e., abstract view and executable view) will require a few specialized extensions, but these extensions are to be kept to a minimum and tested against requirements such as import/export and conformance checking that link the two usage patterns.
-\item Provide both hierarchical and graph-like control regimes, and allow their use to be blended as seamlessly as possible. This should reduce the fragmentation of the process modeling space.
-\item Provide data manipulation functions for the simple manipulation of data needed to define process data and control flow.
+\item Provide both hierarchical and graph-like control regimes, and allow their use to be blended as seamlessly as possible. This should reduce the fragmentation of the process modelling space.
+\item Provide data manipulation functions for process data and the control flow.
 \item Support an identification mechanism for process instances that allows the definition of instance identifiers at the application message level. Instance identifiers should be defined by partners and may change.
 \item Support the implicit creation and termination of process instances as the basic lifecycle mechanism. Advanced lifecycle operations such as ``suspend'' and ``resume'' may be added in future releases for enhanced lifecycle management.
-\item Define a long-running transaction model that is based on proven techniques like compensation actions and scoping to support failure recovery for parts of long-running business processes.
-\item Use Web Services as the model for process decomposition and assembly.
-\item  Build on Web services standards (approved and proposed) as much as possible in a composable and modular manner.
+\item Define a long-running transaction model, based on mature techniques such as compensation and scoping, to support failure recovery for parts of long-running business processes.
+\item Use web services as the model for process decomposition and assembly.
+\item  Build on web services standards (approved and proposed) as much as possible in a composable and modular manner.
 \end{itemize}
 
-As a result, WS-BPEL along with web services technologies provide now a standardized integration interface 
-and a standardized language for the integration of different services as well as for the automation of some tasks. 
+As a result, WS-BPEL along with web services technologies provide now a standardised integration interface 
+and language for the composition of different services as well as for the automation of some tasks. 
 Nevertheless, web scenarios are becoming more and more complex since they highly heterogeneous, that is, a lot of different
-services from different companies interact jointly to perfom a particular task. In particular, it is known
+services from different companies interact jointly to perfom a particular task. In particular, it is a folklore 
 that business processes change relatively often due to this heterogeneity. Therefore, designers 
-do not need only a way to compose a set of services, rather they also
+do not require only a way to compose a set of services, rather they also
 need a way to compose and modify them in the right order and in a relatively 
 uncomplicated and straightforward way. Due to this, BPEL is sometimes compared 
 to general purpose programming language, but it
@@ -405,7 +407,7 @@ received from a service. An executable process defines the execution
 order of a set of activities (mostly communication activities), the partners involved in the process, the
 messages exchanged between partners, and the events and exception handling specifying the behaviour
 when specific events or faults occur. In Figure \ref{bpelexample}, we can observe an example of the typical business process
-of a travel agency.
+for a travel agency.
 
 \begin{figure}[h]
 \begin{center}
@@ -415,7 +417,7 @@ of a travel agency.
 \label{bpelexample}
 \end{figure}
 
-According to the standard of WS-BPEL, an  abstract process is a partially specified process that is not intended to be executed
+According to the WS-BPEL standard, an  abstract process is a partially specified process that is not intended to be executed
 and it must be explicitly declared as ``abstract''. As its name indicates, 
 an abstract process may hide some of the required 
 operational details expressed by an executable artifact.
@@ -423,24 +425,25 @@ All the constructs of executables processes are made available to abstract proce
 and, consequently, they share the same expressive power \cite{wsbpelstandard}. 
 Therefore, the main different between an abstract and a executable processes is 
 that the second one contains the exact details of business processes and, consquently,
-it is intended to be executed in an orchestration engine, whereas the first one serve a descriptive role,
-defining the message exchange between the parties involved. Specifically, an abstract process is usually use to 
+it is intended to be executed in an orchestration engine, whereas the first one offers a descriptive role,
+defining the message exchange between the parties involved. Specifically, an abstract process is usually used to 
 describe the observable behavior of some or all of the services offered by an
 executable process and/or to define a process template that contains domain-specific best practices. 
 Such a template can be seen as a design-time representation of the process logic, excluding execution details to be
 completed when mapping to an executable process.
 In most cases BPEL is used for
 executable processes \cite{}.
-Moreover, the definition of conceptual model in which one can define an abstract or an executable
+Moreover, the definition of a conceptual model in which one can define an abstract or an executable
 process is a key feature of WS-BPEL since the processes execute and interact with their
 partners in a consistent way regardless of the supporting platform or programming model used
-by the implementation of the hosting environment, unlocking the potential of
-web services because it allows the development of tools and other technologies that greatly
-increase the level of automation and thereby lower the cost in establishing cross enterprise
-automated business processes. In addition to this, abstract process ensures the level of privacy required by the 
-companies since the implementation of the service is hidden to the other participants. 
+by the hosting environment, unlocking the potential of
+web services. This feature allows the development of tools and other technologies that greatly
+increase the level of automation, decreasing the cost in establishing cross enterprise
+business processes. Other benefit of using abstract processes is that they ensure 
+the level of privacy required by some 
+companies since the service implementation is hidden to the other participants. 
 
-In detail, WS-BPEL is an XML-based language which
+Furthermore, WS-BPEL is an XML-based language which
 supports the web services technology stack, including SOAP, WSDL, UDDI and so on. 
 It defines a model and a grammar for describing the behavior of a business process
 based on interactions between the process and its partners as well as the order of these interactions. 
@@ -448,7 +451,7 @@ The interaction with each partner is performed through web service interfaces,
 and the structure of the relationship at the interface level
 is encapsulated in what is called a partnerLink. WS-BPEL also introduces 
 mechanisms for dealing with business exceptions and faults. Moreover, WS-BPEL
-introduces a mechanism to define how activities have to be compensated in cases 
+introduces a mechanism to define how activities have to be compensated in those cases 
 where exceptions occur or a partner requests reversal.
 A WS-BPEL process is a reusable definition that can be deployed in different ways and in
 different scenarios, while maintaining a uniform application-level behavior across all of them.
@@ -470,41 +473,42 @@ it provides \emph{basic} or \emph{structured} to declare the process logic.
 \emph{Basic activities} are those which describe the elemental 
 steps of the process behaviour \cite{wsbpelstandard}: 
 \begin{itemize}
-\item The activity \emph{assign} is used to assign data to the variables defined in the process. 
+\item The activity \emph{assign} is used to store data into the process variables. 
 This activity can be used to copy data from one variable to another as well as to
 populate new data in a variable using expressions. As usual, expressions are constructed using 
 variables and constants. 
-\item The activity \emph{empty} is devoted to be used as an activity that does nothing. For instance, one can
+\item The activity \emph{empty} does nothing. For instance, one can
 decide to capture an exception and do nothing to handle it. Another use of \emph{empty} is
 to provide a synchronization point in a parallel activity.
 \item The activity \emph{wait} specifies a particular delay or deadline. 
-\item To invoke a web service of service provider, WS-BPEL offers the activity {\em invoke}. 
+\item To invoke a service, WS-BPEL offers the activity {\em invoke}. 
 Normally, this activity is used to request an operation in a service. This operation is usually 
 a basic activity in the provider. Operations can be of two types: request-response or one-way.
-One-way consist of sending a message (some variables can be enclosed) so that no response is expected
+One-way activities consist of sending a message (some variables can be enclosed) so that no response is expected
 as part of the operation, whereas a request-response invocation requires a message back. Evidently, this
 response message can be used to notify the sender about a fault during the operation. A more detailed
 explanation will be provided in Chapter \ref{chapter:c3}. 
 \item A \emph{receive} activity is necesary to receive the message sent in the invoke activity.
-messages, the portType (optional) and operation that it expects the partner to invoke. The
-value of the partnerRole in the partnerLink is not used when processing a <receive> activity.
-In addition, it specifies a variable, using the variable attribute, to
-store the message the operation to be requested. In many cases, this activity is the first part of the process.
+%It specifies a variable, using the variable attribute, to
+%store the message the operation to be requested. 
+In many cases, this activity is the first part of the process.
 \item The \emph{reply} activity is used to respond to a request previously accepted through an
 inbound message activity. For instance, it can be used in conjunction with the receive activity
 to respond to the invocation of a service. Clearly, it is only meaningful
 for request-response interactions, but a one-way ``response'' can be sent by invoking the
-corresponding one-way operation on the sender. Finally, it may specify a
-variable attribute that references the variable that contains the message data to be sent.
+corresponding one-way operation on the sender. 
+%Finally, it may specify a
+%variable attribute that references the variable that contains the message data to be sent.
 \item The activity \emph{throw} is used to signal an internal fault explicitly.
 \item The activity \emph{exit} is used to immediately end the process instance.
 \item WS-BPEL provides the user with the ability to declare new activities that are
 not contemplated in the specification. This is done using the \emph{extension activities}. This
-extension is not explicitly contemplated in the theory of this Thesis, although they are required
-to implement the theory in an orchestration engine.
+extension is not explicitly contemplated in the theory of this Thesis.
+%, although they are required
+%to implement the theory in an orchestration engine.
 \item Finally, using the activity \emph{rethrow} in a fault handler, it is possible to rethrow a fault.
 For instance, this activity is useful when the situation that causes the fault is not solved after
-the completion of the fault handler and, therefore, it is needed to redo this handler to check if the
+the completion of the fault handler and, therefore, it is needed to rerun this handler to check if the
 situation has been solved afterwards.
 \end{itemize}  
 
@@ -513,9 +517,9 @@ The set of structured activities defined in the standard are the following:
 \begin{itemize}
 \item The activity \emph{sequence} includes a set of activities that are performed sequentially in the
 order in which they appear in the structure. It ends
-when the last activity in the sequence has finished.
+when the last activity has finished.
 \item The activity \emph{flow} provides concurrency and synchronization, creating 
-a set of concurrent activities directly nested within the process and it enables
+a set of concurrent activities directly nested within the executing process and it enables
 synchronization dependencies between activities that are nested to it. A more detailed explanation
 of how this activity works is given in Chapter \ref{chapter:c3}.
 \item The activity \emph{if} specifies conditional behavior. As usual, the activity consists of an ordered list of one or
@@ -523,16 +527,16 @@ more conditional branches defined by the ``if'' and optional ``elseif'' elements
 optional ``else'' element.
 \item The activity \emph{while} provides conditional repetitive behaviour.
 \item \emph{RepeatUntil} provides the repeated execution of a contained activity. The difference with
-the activity while is that the inner activity is executed at least once.
+the activity \emph{while} is that the inner activity is executed at least once.
 \item The activity \emph{pick} waits for the occurrence of exactly one event from a set of events, and then
 executes the activity associated with that event. After an event has been selected, the other events
 are no longer accepted by that ``pick''. Moreover, a deadline for the occurrence of such events can be established
-in such a way if this deadline experies the pick activity ends. This structure has some similarity the choice operator in
+in such a way if this deadline expires the activity ends. This structure has some similarity the choice operator in
 a process algebra althoudh with a predefined timeout. 
 In WS-BPEL, it can be compared with a set of receive activities that run in parallel, where just only one can be executed,
-and a common deadline for the execution of these receive activities is set (to this end, the wait activity can be used).
-\item Lastly, the standard offeres an activity (forEach) to execute the contained activity a predefined number of times that
-is expressed in the definition of the activity.
+and a common deadline is set (to this end, the wait activity can be used).
+\item Lastly, the standard offers an activity (forEach) to execute the contained activity a predefined number of times. This number
+ is expressed in the definition of the activity.
 \end{itemize}
 
 
@@ -545,32 +549,31 @@ In 1943, the president of IBM, Thomas J. Watson, predicted:
 \end{center}
 
 In recent times, this phrase has been widely discussed since some authors
-consider that it is an clear example of failed prediction. Nevertheless, with the advent of new computational 
+consider that it is a clear example of failed prediction. Nevertheless, with the advent of new computational paradigms
 such as Grid and Cloud Computing, some authors argue that it will become a reality soon. In addition,
-other authors consider that this phrase is completely true nowadays since there five big companies that
-are monopolising the world market \cite{Armbrust2009}.
+other authors consider that this phrase is completely true nowadays since five companies are monopolising the world market \cite{Armbrust2009}.
 
 Thanks to the fast development of society, daily basic services such as water, electricity, gas and telephone services 
 are commonly supplied to citizens so that everybody can have 
-immediate access to them in developed countries. Today, these services 
-known as ``utility'' services since customers are charged according to the consumption. In 1969, Leonard Kleinrock, one of the leading scientists of the American ARPANET agency, said: ``Today, computer networks are in their infancy, but as they grow and become more sophisticated we will see the rise of the \emph { Utility computing}. It is amazing how in 1969 a scientist could already see the usefulness of computers and the advent of a distributed computing model that would be based on providing services and paying for them. What makes this statement more fascinating is that this year is when the Internet was born. The first version only connected 2 computers worldwide, but this person was already thinking that someday the Internet could connect millions of computers into a single network. This vision of computing (based on a model of on demand service provisioning) anticipated the massive transformation of the computer industry in the XXI century. 
+immediate access to them. Today, these services are
+known as ``utility'' services since customers are charged according to the consumption. In 1969, Leonard Kleinrock, one of the leading scientists of the American ARPANET agency, said: ``Today, computer networks are in their infancy, but as they grow and become more sophisticated we will see the rise of the \emph { Utility computing}''. It is amazing how in 1969 a scientist could already see the usefulness of computers and the advent of a distributed computing model 
+based on providing services and paying for them. What makes this statement more fascinating is that this year is when the Internet was born. The first version only connected 2 computers worldwide, but this person was already thinking that someday the Internet could connect millions of computers into a single network. This vision of computing (based on a model of on demand service provisioning) anticipated the massive transformation of the computer industry in the XXI century. Thus, major companies such as Google, Amazon or Microsoft are introducing it in their business model. 
 
-Thus, major companies such as Google, Amazon or Microsoft are introducing it in their business model. Moreover, it
-is often confused with Cloud and Grid Computing. Utility Computing 
+Unfortunately, Utility Computing is often confused with Cloud and Grid Computing. It 
 is the underlying business model for a Grid or Cloud infrastructure, i.e. it
 can be seen as a mean of charging customers  for computing services so that 
 users pay only for the consumption, whereas the costs associated with the production and distribution of computing services 
 will be undertaken by the provider. As happens with revolutionary software, 
 protocols or any computer-related paradigm, Cloud Computing must undergo 
-a series of steps to check if all benefits 
-that providers are promising really serves companies to save costs and enhance the competitiveness. 
-In this sense, Larry Ellison, founder and CEO of Oracle, believe that Cloud Computing 
+a series of steps to check if all the benefits 
+promised by service providers really help companies to save costs and enhance the competitiveness. 
+In this sense, Larry Ellison, founder and CEO of Oracle, believes that Cloud Computing 
 is nothing more than a new way of naming what companies have been doing so far \cite{Armbrust2009}: 
 \begin{quote}
 ``The interesting thing about Cloud Computing is that we have redefined Cloud Computing 
 to include everything that we already do\ldots I do not understand what we would do differently in the light of Cloud
-Computing other than change the wording of some of our ads.''
-\hspace{5cm}\emph{Larry Ellison, quoted in the Wall Street Journal, September 26, 2008.}
+Computing other than change the wording of some of our ads.''\\
+\emph{Larry Ellison, quoted in the Wall Street Journal, September 26, 2008.}
 \end{quote}
 Many researchers have tried to define the term ``Cloud Computing'' without reaching 
 a standard definition. For instance, Buyya et al. \cite{Buyya2011} define a cloud system as:
@@ -586,10 +589,10 @@ In \cite{Vaquero2008} one can find up to 21 different definitions of Cloud compu
 \emph{``The Cloud is a large and easy to use container of virtualized resources 
 (such as hardware, services, development platforms \ldots). These resources can be 
 dynamically reconfigured to fit into a variable load (scale), allowing also the optimal use of these resources. 
-This service is exploited through pay-per-use model that is guaranteed by agreements.''}
+This service is exploited through a pay-per-use model that is guaranteed by agreements.''}
 \end{center} 
 
-{\bf Meter un par de párrafos de Grid}
+{\bf Meter un par de parrafos de Grid}
 
 Finally, the main difference between a Cloud-oriented and a Grid-oriented system relies in the virtualisation of resources. 
 In a Grid infrastructure, users do not share in real-time the resources allocated to them, 
@@ -598,26 +601,27 @@ thus getting the savings promised by suppliers \cite{}.
 
 \section{Web services vs. Grid/Cloud Computing}
 
-In this section it is presented a summary of the main differencies and sinergies between web services and
+In this section it is presented a summary of the main differences and sinergies between web services and
 Grid/Cloud Computing since a formal language to mix both approaches is one of the parts of this
 Thesis. First, one can consider that web services are themselves software offered as a service (SaaS)
-and a system can be seen as a composition of services communicated via the Internet
-that coordinate to perform a certain task. Nevertheless, 
+and a system is a composition of services coordinated via the Internet
+cooperating to perform a certain task. Nevertheless, 
 there are still some differences between both approaches such as standardization. Above,
 we presented two (WS-CDL and WS-BPEL) of the standards to model web services compositions, but
 it is impossible to present a standard that describes the main concepts of Cloud Computing and, to some
 extent, of Grid Computing. One of the reasons is that Cloud and Grid are relatively new and, therefore,
 there has not been time to agree a standard for them. The other reason is related to commercial policies since
 many big companies are competing to impose its services.  
-So far, there is nothing new, but the main difference lies in virtualization, 
-since different services provided by the cloud are performed in virtual 
-machines rather than directly on a server such as the case of a web service, 
-and, therefore, the concurrency in the system is higher. 
+%So far, there is nothing new, but the main difference lies in virtualization, 
+%since different services provided by the cloud are performed in virtual 
+%machines rather than directly on a server such as the case of a web service, 
+%and, therefore, the concurrency in the system is higher. 
 
 Another difference is data persistence. Web services are usually ``stateless'', which means that
-no state is saved in the system after performing a operation invoked in the service. The only way to save
-the state of this operation is to store it in a database. The main disadvantage of this approach is that there is no
-standardization and, therefore, this operation is platform dependent and it will depend of the application scope. 
+no state is saved in the system after performing an operation. The only way to save
+this state is to store it in a database. The main disadvantage of this approach is again the absence of 
+agreement about a standard to do it and, therefore, this operation is completely platform dependent 
+and it depends on the application scope. 
 In this Thesis, we use a standard called Web Services Resources Framework (WSRF) that it is intended to solve this problem. 
 The main advantage of it is that all the steps are standardised so that the cooperation 
 between such systems is simple. Another advantage is that the user can decide which 
@@ -625,37 +629,33 @@ resources can take part in the interaction. WSRF is described in the next sectio
 
 In addition, Cloud/Grid computing could be considered as a layer to be placed on the bottom of the web services, 
 and use them as a mean to access the resources. Thus, new standards must be defined in a similar fashion as in
-WSRF, but taking into account the particularities of the Cloud infrastructure. Here, we must emphasise that Cloud 
-Computing is not only to provide software as a service, but there are infrastructure and platform as a service, 
+WSRF, but taking into account the particularities of the Cloud infrastructure. Here, we must emphasise that Cloud/Grid 
+Computing is not only the act of offering software as a service since companies can provide infrastructure and platform as a service, 
 which web services cannot cover. 
-
-
 
 \section{Web Services Resource Framework}
 
 The aim of this section is to introduce the basic concepts for the management 
 and destruction of stateful web services, i.e., web services with 
 a set of resources associated to store the
-state after ending an operation. In this sense, we call \emph{WS-Resource} 
+state after an operation. In this sense, we call a \emph{WS-Resource} 
 to the association between a web service and a persistent resource.
 To manage stateful web services, it is required to 
 define the patterns used to create the relationship between the service and the resource. These patterns
 will reuse in most of the cases a series of widely studied technologies, e.g. WS-Addressing. 
-Moreover, it is need to define how the properties of the resources can be accessible 
+Moreover, it is important to define how the properties of these resources can be accessible 
 from outside. This is usually done through an interface.
 
 The architecture provided by web services has been widely accepted as a means of 
-structuring the interactions between services that are part of a distributed system 
-and work together to achieve a common goal. Currently, developers require a higher 
+structuring the interactions between services that are part of a distributed system. 
+Currently, developers require a higher 
 degree of standardization to provide additional interoperability between such services, 
 but until mid-2004 no research group or group of experts had seriously considered the idea of 
-proposing a standard for modelling the communication between stateful services, that is, services
-endowed with an associated persistent resource. 
+proposing a standard for modelling the communication between stateful services.
 Thus, in January of 2004, several members of the organization Globus Alliance and the multinational IBM 
 defined, with the help of experts from companies such as HP, SAP, Akamai, etc., 
-the first specification and the basis of an initial architecture. 
-In March of 2004, these documents were sent to the organization responsible for the standardization, 
-OASIS. Initially, two committees were formed to study and develop 
+the first specification and the basis of an initial architecture of WSRF. 
+In March of 2004, these documents were sent to OASIS organization. Initially, two committees were formed to study and develop 
 certain parts of the recently created standard. 
 On the one hand, it was created the \emph{WSRF Technical Committee}, which worked on four specifications:
 \emph{WS-ResourceProperties, WS-ResourceLifetime, WS-Servicegroup}, 
@@ -665,7 +665,7 @@ was responsible for the rest of the specifications: \emph{WS-BaseNotification, W
 WS-Resource Framework is inspired by the work previously done by Global Grid Forum's 
 Open Grid Services Infrastructure (OGSI) Working Group \cite{Foster03}. More specifically,
 WSRF can be seen as a simple refactoring of concepts and interfaces 
-developed in the specification \emph{OGSI V1.0},
+developed in the specification \emph{OGSI V1.0}, but
 exploiting recent developments in the area of web services (e.g. WS-Addressing). 
 WS- Resource Framework \cite{BAN06} is a specification, whose purpose is to define a 
 generic framework for modelling and accessing WS-Resources and the relationships 
@@ -674,11 +674,11 @@ the representation of the WS-Resource, specifying the messages exchanged and
 the XML documents required to manage the resource. 
 A WS-Resource is defined as (i) the combination of an XML document with a type defined
 by one or more \emph{portTypes} (a service may play different roles in the same interaction) and (ii) it must 
-be addressed and accessed according to implied resource pattern. This pattern is a derivation 
+be addressed and accessed according to the implied resource pattern. This pattern is a derivation 
 of the \emph{Endpoint References} included in the standard WS-Addressing. 
-WS-Addressing is used to standardise the endpoint reference of a WS-Resource. This endpoint
-reference is the address of the WS-Resource at
-a given network endpoint and it must be used to identify the resource in any exchange of messages. 
+WS-Addressing is used to standardise the endpoint reference  of a WS-Resource. This endpoint
+reference is the address (identifier) of the WS-Resource at
+a given network and it must be used to identify the resource in any exchange of messages. 
 
 Typically, web service interfaces provide users with the ability to access and manipulate its state, e.g. data values
 that evolve by the interaction among various services. In other words, 
@@ -690,7 +690,7 @@ Therefore, it is desirable the definition of standards that allow the discovery,
 creation, manipulation and destruction of these resources. These standards should make this 
 complex environment as interoperable as possible. Furthermore, 
 WSRF offers mechanisms to declare, access, monitor and destroy WS-Resources by using conventional techniques, 
-which makes it easy to run in any platform since it is not necessary to take into account the decision logic of the resource owner.
+which makes it easy to run in any platform. This is due to it is not necessary to take into account the decision logic of the resource owner.
 It also includes mechanisms to describe how to check the status of a resource 
 and how to make it accessible through its interface (described in WSDL). 
 In detail, WSRF includes the mechanisms defining the means by which \cite{}:
@@ -698,16 +698,16 @@ In detail, WSRF includes the mechanisms defining the means by which \cite{}:
 \begin{itemize}
 \item a WS-Resource can be destroyed, either synchronously attending to a
 destroy request or a time-based (scheduled)
-destruction, and specified resource properties may be used to inspect and monitor the lifetime of a WS-Resource (WS-ResourceLifetime);
+destruction, and the resource properties may be used to inspect and monitor the lifetime of a WS-Resource (WS-ResourceLifetime);
 \item the state of  a WS-Resource 
-can be queried and modified via Web services
+can be queried and modified via web services
 message exchanges (using the specification WS-ResourceProperties);
 \item an endpoint reference (WS-Addressing) can be renewed in the
 event the information contained becomes invalid
 or stale (WS-RenewableReferences);
-\item a collection of heterogeneous of web services can be defined,
+\item a collection of heterogeneous web services can be defined,
 whether or not the services are WS-Resources (WS-ServiceGroups); and 
-\item fault reporting can be made more standardized through use of predefined XML
+\item fault reporting can be made more standardised through use of a predefined XML
 template (WS-BaseFaults). 
 \end{itemize} 
 
@@ -715,9 +715,9 @@ template (WS-BaseFaults).
 
 As mentioned above, WSRF uses a particular specification 
 for defining the properties (attributes) of a WS-Resource, which is composed of 
-the definition of the interface in WSDL and an XML ocument (Resource Properties Document) 
-that specifies its properties. For example, these properties can be the disk size, processor capacity, etc.
-As usual, there is a number of messages in the specification to update one or more of theses properties or to retrieve this
+the definition of the interface in WSDL and an XML document (Resource Properties Document), 
+specifying its properties. For example, these properties can be the disk size, processor capacity, etc.
+As usual, there is a bunch of messages in the specification to update one or more of theses properties or to retrieve this
 information. 
 
 From now on, we suppose that the Resource Properties Document is:
@@ -743,6 +743,7 @@ the value of only one property of the document.
 
 For instance, a possible request can be:
 
+
 \lstset{language=XML, numbersep=5pt,basicstyle=\small, frame=single}
 \begin{lstlisting}
 ...
@@ -756,9 +757,9 @@ For instance, a possible request can be:
 
 \item[GetMultipleResourceProperties]
 This method is equivalent to the last one, but it is intended to retrieve
-more than one property of the document at the same time. 
+more than one property of the document. 
 It can be used to prevent network congestion. The message would be:
-
+\newpage
 \lstset{language=XML, numbersep=5pt,basicstyle=\footnotesize ,frame=single}
 \begin{lstlisting}
 ...
@@ -771,7 +772,7 @@ It can be used to prevent network congestion. The message would be:
 \end{lstlisting}
 
 \item[SetResourceProperties]
-This specification allows to change some properties in the document. There are three kind of changes:
+This specification allows to change some properties in the document. There are three kinds of changes:
 
 \begin{itemize}
 \item Insert: It allows to add new properties to the document.
@@ -854,8 +855,8 @@ The response must look like this:
 \end{description}
 
 \subsection{WS-Base Faults}
-Normally, a designer uses web service interfaces defined by others, and, therefore,
-a method to standardize the format of error messages would facilitate the work of developers. 
+Normally, designers use interfaces defined by others, and, therefore,
+a method to standardise the format of error messages would facilitate the work of developers. 
 This is the goal of WS-BaseFaults, where an error message has the following format:
 
 \lstset{language=XML, numbersep=5pt, frame=single}
@@ -878,29 +879,30 @@ where:
 \item Timestamp: It is the exact instant where the error happened.
 \item OriginatorReference: This is the endpoint reference of the service that originated the error.
 \item ErrorCode: Error code (e.g. POSIX errno) to be used by error handling systems .
-\item Description: Explanation of the cause of error (in natural language).
+\item Description: Explanation of the cause (in natural language).
 \item FaultCause: Technical cause of the error. 
 \end{itemize}
-Finally, note that it is possible to report an error whithout using this format, but WSRF provides it
-to help participants to manage it in a consistent way.
+Finally, note that it is possible to report an error whithout using this format. %, but WSRF provides it
+%to help participants to manage it in a consistent way.
 \subsection{WS-ServiceGroup}
 This specification allows users to create groups of services 
-that share a number of properties in common, i.e., it is useful to group different web services that have similar behaviours.
+that share a number of properties in common, i.e., it is useful to group different web services with similar behaviours.
+This part of WSRf is not taken into account in BPELRF.
 
 \subsection{WS-ResourceLifetime}
 The lifetime of a WS-Resource is defined as the period between its instantiation and its destruction. 
-The goal of this specification is to standardise the process of destruction of a 
-resource and define mechanisms to monitor its lifecycle. Surprisingly, the proces to create the WS-Resource
+The goal of this specification is to standardise the process of resource destruction
+and define mechanisms to monitor its lifecycle. Surprisingly, the proces to create the WS-Resource
 is not specified. The reason is that WSRF is intended to be used in the interaction and, therefore, the 
-internal details of each participant are hidden. Thus, this specification meets the requirements of SOC
+internal details of each participant are hidden. Thus, WSRF meets the requirements of SOC
 architecture presented previously and the transition from service-oriented architecture to resource-oriented
-architecture is small. For technical reasons, we have included in our language
+architecture is short. For technical reasons, we have included in our language
 BPELRF a primitive to create the resource. 
 
 Generally, in distributed systems, clients just want to use a resource for a given time interval.
 For instance, in subscription systems, users decide normally the duration of the subscription.
-Nevertheless, in many scenarios is most appropriate to provide a manner to immediately destroy 
-the resource. Following the same example, it could happen that the client wants to interrupt its subscription 
+Nevertheless, in some scenarios is most appropriate to provide a manner to immediately destroy 
+the resource. Following the last example, it could happen that the client wants to interrupt its subscription 
 and hence the immediate destruction must be provided. 
 As discussed above, WSRF gives two ways to destroy a 
 WS-Resource: immediate or scheduled.
@@ -913,9 +915,12 @@ To confirm the destruction, the receiver must send the same message including th
 
 \item[Scheduled destruction] 
 In this case, the WS-Resource has an associated deadline 
-after which it is expected that the resource has been destroyed. Moreover,
+after which it is expected the resource has been destroyed. Moreover,
 it is reasonably expected that before this dealine the resource is available. 
 An example of how to determine the completion time of a resource is:
+
+\newpage
+
 \lstset{language=XML, numbersep=5pt, frame=single}
 \begin{lstlisting}
 ...
@@ -939,13 +944,13 @@ As we can see, the destruction requestor may indicate
 the exact destruction time as well as the local time (to avoid mismatches in how to represent the time zone). 
 Once the \emph{TerminationTime} is reached, the resource is destroyed
 without any further intervention and the requestor is reported that 
-the resource is unavailable. WSRF offers another message type to 
+the resource is unavailable. WSRF has another message to 
 inform the sender that the resource owner has received the destruction request. This option
 is not considered in our language BPELRF.
 
 On the contrary, there may be a situation where more than one service 
-is using the resource to be destroyed and, therefore, the resource owner can decide or not 
-(this is optional and it must be develped by the owner) to implement a notification policy
+is using the resource and, therefore, the resource owner can decide or not 
+(this is not mandatory in WSRF) to implement a notification policy
 to inform other services that the resource is unavailable. The notification message must include the following fields: 
 
 \lstset{language=XML, numbersep=5pt, frame=single}
@@ -958,25 +963,26 @@ to inform other services that the resource is unavailable. The notification mess
 ...
 \end{lstlisting}
 where the attribute \emph{TerminationTime} specifies the exact time of destruction
-and in the \emph{TerminationReason} attribute it can be included the reason of the destruction.
+and in the \emph{TerminationReason} attribute it can be included the destruction reason.
 
 The notification-based interaction pattern is a commonly used pattern
 for inter object communications. For example, the well-known
 publish/subscribe architecture uses this approach. In addition, it is increasingly being
 used in a web services context \cite{}.
 
-In conjuction with WSRF, Web Services Notification specifications are focused 
-on the description of the mechanism to implement this notification-based pattern
-in web services. As WSRF is based on web services, WSRF creators advocate for the use
-of WS-Notification standard to manage the notifications that could arise due to 
-the normal operation of the resources. 
-Thus, WS-Notification is a family of specifications that uses a topic-based publish/subscribe
+In conjuction with WSRF, Web Services Notification (WSN) specifications are focused 
+on the description of mechanisms to implement this notification-based pattern. 
+As WSRF is based on web services, WSRF creators opted for the use
+of WS-Notification standard since the interoperability of both approaches is supposedly higher (they
+ are based on web services). 
+
+WS-Notification is a family of specifications that uses a topic-based publish/subscribe
 pattern. It includes: standard message exchanges to be implemented by service
 providers that wish to participate in Notifications, standard message exchanges for a
-notification broker service provider (allowing publication of messages from entities that
+notification broker (allowing publication of messages from entities that
 are not themselves service providers), operational requirements expected of service providers 
 and requestors that participate in notifications, and an XML model that
-describes the topics susceptible to generate notifications. The WS-Notification family of documents includes
+describes the topics susceptible to generate notifications. The WS-Notification family includes
 three normative specifications:
 WS-BaseNotification, WS-BrokeredNotification, and WS-Topics.
 %This document defines a mechanism to organize and categorize items of interest for
@@ -990,14 +996,14 @@ In the notification process, there are three different steps:
 \begin{enumerate}
 \item First, the observation of the situation and its characteristics. This situation represents an event of
 interest for some services.
-\item Second, the creation of notification messages that captures 
+\item Second, the creation of notification messages that capture 
 the characteristics of the situation; and
 \item finally, the distribution of these messages to zero or more interested parties (notification consumers).
 \end{enumerate}
-In WS-Notification specification, the steps 1 and 2 are not taken into account 
-since the aim is not to restrict the means by which
+In WS-Notification, steps 1 and 2 are not taken into account 
+since tey did not want to restrict the means by which
 these stages must occur. From now on, the entity in charge of performing the stages 1 and 2 is called Publisher.
-The other issue is how the Publisher can disseminate the notification messages. 
+Other issue is how the publisher can disseminate the notification messages. 
 In this case, two patterns can be followed: direct or brokered.
 
 In the direct case, the publisher implements message exchanges associated with
@@ -1027,7 +1033,7 @@ An example of notification message (can include one or more notification message
 ...
 \end{lstlisting}
 
-In the brokered case, an intermediary (broker), which is responsible for disseminating
+In the brokered case, an intermediary (broker) is responsible for disseminating
 messages produced by one or more publishers to zero
 or more notification consumers. There exists three types of relationships between the publisher and the
 broker: simple publishing, composable publishing and demand-based publishing.
@@ -1049,8 +1055,8 @@ will reduce the overload of the network \cite{}.
 
 In Chapter \ref{chapter:c3}, we will see that the language BPELRF avoids to include the broker role, and
 it is indeed the owner of the resource who sends the notifications. Moreover, the subscribers
-must show interest by sending a subscription message directly to the owner of the resource within
-the corresponding condition, thus reducing the overload of the net since the amount of notifications
+must show interest by sending a subscription message directly to the resource owner within
+the corresponding condition, thus reducing the overload of the net. This is due to the amount of notifications
 in the network is reduced. More technical details will be extended in that chapter.
 
    
