@@ -1,7 +1,7 @@
 \subsection*{Preliminaries}
 In this section, we will present the preliminary concepts
 used in this Thesis. The aim of this section is to provide the reader
-with a review of the main notions which are the basis of future sections
+with a review of the elemental notions used in future sections
 as well as to fix the notion used throughout the Thesis.
 Thus, we will start presenting basic concepts such as the standard definition of Petri
 nets and we will continue with more technical details such as the addition of time features
@@ -9,54 +9,81 @@ to this formal model.
 
 
 \subsubsection{Notation}
-The notation used in this work is the following:
+The notation used here is the following:
 
 \begin{enumerate}
 \item {\bf Numbers}\\
 We will denote by $\nnul = \mathbb{N} \cup \{0\}$ the set of nonnegative integers including 0,
-and $\rnul$ be the nonnegative real numbers including 0. Obviously, $\mathbb{N}$
+and by $\rnul$ the nonnegative real numbers including 0. Obviously, $\mathbb{N}$
 and $\mathbb{R}$ mean that zero is excluded from the set. Moreover,
-$\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$ is the set of nonnegative natural numbers including $\infty$. 
+$\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$ is the set of natural numbers including $\infty$. 
 %Asimismo, denotaremos por $Q$ los n\'{u}meros racionales, y por
 %$Q^{+}$ los n\'{u}meros racionales positivos.
 
 \item {\bf Sets and Multisets}\\
 We will use the standard delimiters for sets (\{\}) and multisets(\multiset{}). 
-As usual, let $A$ be a set and $R\,:\,A \longrightarrow \nnul$, we say 
+As usual, let $A$ be a multiset and $R\,:\,A \longrightarrow \nnul$, we say 
 that $x \in A$ iff $R(x) > 0$.
 Moreover, we abuse the notion using $x \in A$ to represent that $x$ is an element of
-the multiset $A$. The cardinality of the set $A$
+the multiset $A$ and using indistinctly the typical set operators (union, inclusion, etc.). The cardinality of the set (multiset) $A$
 is denoted by $|A|$. Given a set $A$,
 ${\mathcal B}(A)$ is the set of all finite multisets over $A$.
 
+For any $C_1, C_2 \in {\cal B}(A)$, we define:
+\begin{itemize}
+%\item $\nnul$ will denote the set of natural numbers,
+%$\nat=\{0,1,2,\ldots\}$ and $\Sigma = \nat \times \nat$.
+%%
+%\item Multisets are defined as functions $C\,:\,X \rightarrow \nnul$,
+%providing us with the number of instances of each element $x\in X$.
+%As usual, we will enumerate the elements of a multiset $C$ as follows:
+%$C = \{ r_1.x_1,\ldots,r_n.x_n \}$, meaning that $C(x_i)=r_i$,
+%for all $i=1,\ldots,n$, and $C(x)=0$, for all $x \neq x_i, \, i=1,\ldots,n$.
+%
+%The set of multisets over a set $X$ will be denoted by ${\cal B}(X)$.
+%For any $x \in X$ and $C\in {\cal B}(X)$ we say that $x \in C$
+%if and only if $C(x)>0$.
+%
+%
+\item $C_1 + C_2 \in {\cal B}(A)$, where $\forall x \in A\,:\,
+        (C_1+C_2)(x)= C_1(x) + C_2(x)$.
+  %
+\item $C_1 \subseteq C_2$ if and only if $\forall x \in A\,:\,
+        C_1(x) \leq C_2(x)$.
+  %
+\item If $C_2 \subseteq C_1$ we can define the subtraction 
+        $C_1 - C_2 \in {\cal B}(A)$, where $\forall x \in A\,:\,
+        (C_1-C_2)(x)= C_1(x) - C_2(x)$.
+\end{itemize}
+%
 
 \item {\bf Relations}\\
 Let $X$ be a set, a relation over $X$ is a set $R \subseteq X \times X$. 
 The domain (or the set of departure) of $R$, denoted by $dom(R)$, is:
 \[dom(R) = \{ x \in X \,|\, \exists
-and \in X\,:\, (x,y) \in R \}\]
+y \in X\,:\, (x,y) \in R \}\]
 and the codomain (or the set of destination) of $R$, denoted by $cod(R)$, is:
-\[cod(R) = \{ x \in X \,|\, \exists y \in X\,:\,(y,x) \in R\}\]
+\[cod(R) = \{ x \in X \,|\, \exists\ y \in X\,:\,(y,x) \in R\}\]
 Given a relation $R$, the {\it reflexive and transitive closure} of $R$, $R^*$, is defined as follows:
 \[ R^* = \{ (x,y)\,|\,x=y \,\vee\,
-\exists x_1,\ldots,x_n,\,\,(x,x_1)\in R,\ldots,(x_n,y) \in R\}\]
+\exists\ x_1,\ldots,x_n\, \text{s.t.} \,(x,x_1)\in R\ldots(x_n,y) \in R\}\]
 Moreover, the {\it transitive closure} of $R$, $R^+$, is given by:
 \[R^+ = \{ (x,y)\,|\,
-\exists x_1,\ldots,x_n,\,\,(x,x_1)\in R,\ldots,(x_n,y) \in R\}\]
+\exists \ x_1,\ldots,x_n \text{ s.t. } (x,x_1)\in R,\ldots,(x_n,y) \in R\}\]
 
-\item {\bf Vectores}\\
-La notaci\'{o}n empleada para representar los vectores
-ser\'{a} la usual, mediante tuplas. En el caso de vectores con componentes
-en $\nnul$, diremos que $v \geq w$ sii todas las componentes de $v$
-son mayores o iguales que las correspondientes de $w$. Adem\'{a}s,
-diremos que $v > w$ si $v \geq w$ y $v \neq w$.
+%\item {\bf Vectores}\\
+%La notaci\'{o}n empleada para representar los vectores
+%ser\'{a} la usual, mediante tuplas. En el caso de vectores con componentes
+%en $\nnul$, diremos que $v \geq w$ sii todas las componentes de $v$
+%son mayores o iguales que las correspondientes de $w$. Adem\'{a}s,
+%diremos que $v > w$ si $v \geq w$ y $v \neq w$.
 \end{enumerate}
 
 
 \section{Petri nets}
 
 \begin{definition} [(Basic Petri nets)]
-An \emph{basic Petri net} (PN) is a triple $N=(P,T,F)$, where $P$ and $T$
+A \emph{basic Petri net} (PN) is a triple $N=(P,T,F)$, where $P$ and $T$
 are sets and $F$ is a relation defined over $P \,\cup\,T$. Moreover, it has to satisfy
 the following constraints:
 \begin{enumerate}
@@ -78,11 +105,11 @@ the places from which an arc runs from the transition are called the \emph{outpu
 
 Let $X = P\,\cup\,T$ be a set and $x \in X$
 an element of this set. The preset of $x$ is
-$\precond{x} = \{ y \in X \,|\, (y,x) \in F\}~$, whereas the postset of $x$ 
+$\precond{x} = \{ y \in X \,|\, (y,x) \in F\}$, whereas the postset of $x$ 
 is defined as $x^{\bullet} = \{ y \in X \,|\, (x,y) \in F\}~$.
 
 A net $N$ is $T$-restricted iff $\precond{t} = t^{\bullet} =
-\emptyset\,\,\,\forall t \in T$.
+\emptyset\,\,\,\ \text{for all } t \in T$.
 \qed
 \end{definition}
 
@@ -101,12 +128,12 @@ This net is depicted in Figure \ref{fig201}.
 \caption{\label{fig201} Example of a basic Petri net.}
 \end{figure}
 
-Graphically, places in a Petri net may contain a discrete number of marks called tokens. 
+Graphically, places in a Petri net may contain a discrete number of marks called \emph{tokens}. 
 
 \begin{definition} [(Marking on basic Petri nets)]
 Let $N=(P,T,F)$ be a basic Petri net.
 The function $M: P \longrightarrow
-\nnul$ is called {\it marking of $N$}. Then,
+\nnul$ is called {\it the marking of $N$}. Then,
 $(P,T,F,M)$ is called a {\it marked Petri net}.
 \end{definition}
 
@@ -118,7 +145,7 @@ or putting into each place the number of tokens associated with it.
 
 \begin{example} In the net of Figure \ref{fig201}, we can consider the following marking:
 \[ M(p_1) = 1,\,\,\,M(p_2)=1,\,\,\,M(p_3)=0 \]
-Its graphical representation is shown in Figure \ref{fig202}.
+The graphical representation of this marking is shown in Figure \ref{fig202}.
 \end{example}
 
 \begin{figure}
@@ -131,17 +158,16 @@ represents the marking reached after firing a transition.
 
 \begin{definition}[(Enabling rule)]
 Let $N=(P,T,F,M)$ a marked Petri net. A transition $t \in T$
-se dice que {\it est\'{a} permitida bajo el marcaje M},
-lo cual se denota por $M[t\rangle$, si para todo
-lugar $p \in P$ tal que $(p,t) \in F$ se verifica $M(p) > 0$.
+is {\it enabled} by the marking M, denoted by $M[t\rangle$, if for all place
+$p \in P$ such that $(p,t) \in F$, $M(p) > 0$.
 \end{definition}
 
 \begin{definition}[(Firing rule)]
 The \emph{firing} of a transition $t$ enabled by the marking $M$
 produces a new marking on the net, $M'$, defined as:
 \[M'(p) = M(p) - W_f(p,t) + W_f(t,p)~~~\forall p \in P\]
-where $W_f(x) = 1$ if $x \in F$ and $W_f(x) = 0$, $x \not\in F$,
-for all $x \in (T \times P) \, \cup \, (P \times T)$.
+where for all $x \in (T \times P) \, \cup \, (P \times T)$,  
+$W_f(x) = 1$ if $x \in F$ and $W_f(x) = 0$, if $x \not\in F$,.
 This is denoted by $M[t\rangle M'$.
 \end{definition}
 
@@ -171,14 +197,13 @@ $M[ R \rangle M'$.
 \end{definition}
 
 \chapter{Extended Petri nets}\label{chapter:extended}
-After introducing web services (and their composition) and the possible formal models
-that can be used to model and analyse them
-we will focus on this chapter in the introduction of the models used in this Thesis. Thus, we
+After introducing web services (and their composition) and the basic formal models
+that can be used to model and analyse them, we will focus on this chapter in defining the specific models used in this Thesis. Thus, we
 will present the extensions of the basic model of Petri nets stated previously and some properties
-that can be analysed. We will recall some notions (marking, firing, enableness and so on) defined in the preceding chapter
+that can be analysed. We will recall some notions (marking, firing, enabledness and so on) defined in the preceding chapter
 and will adapt them to a particular case. This chapter is mainly divided in two parts. On the one hand,
 we will focus on the definition of Coloured Petri nets since they are used in the definition of the language BPELRF, whereas
-we will define timed-arc Petri nets, in its two variants (discrete and continuous), as they are the basis of the workflow model presented in the
+we will present timed-arc Petri nets, in its two variants (discrete and continuous), as they are the basis of the workflow model presented in the
 second part of this Thesis.
 
 \begin{definition} [(General Petri nets)]
@@ -187,11 +212,11 @@ A general Petri net is a 5-tuple $N=(P,T,F,K,W)$, where:
 \item $(P,T,F)$ is a basic Petri net.
 \item $K\,:\,P \longrightarrow \nnul \,\cup\, \{\infty\}$ is a function that
 indicates the maximum number of tokens in each place.
-\item $W\,:\,F \longrightarrow \nnul^{\infty}$ is a function that indicates
+\item $W\,:\,F \longrightarrow \nnul$ is a function that indicates
 the multiplicity of the arcs ({\it weight of the arcs}).
 \end{enumerate}
 When the context is clear, we will call them Petri nets. The function $K$
-can be ommited if it is infinite for all the places in the net.
+can be omitted if it is infinite for all the places in the net.
 %Adem\'{a}s, es
 %usual extender la definici\'{o}n de $W$ a todo el universo de
 %posibles arcos, haci\'{e}ndola nula para pares
@@ -207,7 +232,7 @@ $p \in P$.
 \item A transition $t \in T$ is enabled in $M$, denoted by $M[ t \rangle$,
 iff $W(p,t) \leq M(p) \leq K(p) - W(t,p)$, for all $p \in P$.
 The firing of $t$ produces the marking $M'$:
-$M'(p) = M(p) - W(p,t) + W(t,p)$, para todo $p \in P$.
+$M'(p) = M(p) - W(p,t) + W(t,p)$, for all $p \in P$.
 Again, this evolution is denoted by $M[ t \rangle M'$.
 \item A multiset of transitions $R$ is enabled in $M$, written $M [ R \rangle$, if and only if
 $M(p) \geq \sum_{t \in T} W(p,t) \cdot R(t)$. The firing of $R$
@@ -217,20 +242,21 @@ produces $M'$:
 \end{enumerate}
 \end{definition}
 
-\begin{definition} Let $N=(P,T,F,K,W,M_0)$ be a marked Petri net.
+\begin{definition} [(Occurrence Sequence)]
+Let $N=(P,T,F,K,W,M_0)$ be a marked Petri net.
 \begin{enumerate}
 \item $\sigma = M_0 t_1 M_1 \ldots t_n M_n$ is a finite occurrence sequence of $N$
 if and only if $\forall i \in \{1,\ldots,n\},\,M_{i-1} [ t_i \rangle M_i$.
-Occasionally, we will write $t_1 \ldots t_n$, ommiting the corresponding markings, since starting from
+Occasionally, we will write $t_1 \ldots t_n$, omitting the corresponding markings, since starting from
 $M_0$ it is easy to obtain the rest of the markings knowing the transitions fired.
 We extend the conventional notation to occurrence sequence, 
 obtaining $M_0 [ \sigma \rangle M_n$.
 The set of occurrence sequences starting from $M_0$ are denoted by $L(N,M_0)$.
 
-\item An ocurrence sequence $\sigma = M_0 R_1 M_1 \ldots R_n M_n$ is finite
+\item An occurrence sequence $\sigma = M_0 R_1 M_1 \ldots R_n M_n$ is finite
 iff $\forall i \in \{1,\ldots,n\},\,M_{i-1} [ R_i \rangle M_i$.
-Again, we extend the notation to ocurrence sequence, $M_0 [ \sigma \rangle M_n$.
-The set of ocurrence sequence of $N$ starting from $M_0$ is denoted by $P(N,M_0)$.
+%Again, we extend the notation to occurrence sequence, $M_0 [ \sigma \rangle M_n$.
+The set of occurrence sequence of $N$ starting from $M_0$ is denoted by $P(N,M_0)$.
 \end{enumerate}
 \end{definition}
 
@@ -298,21 +324,21 @@ The set of ocurrence sequence of $N$ starting from $M_0$ is denoted by $P(N,M_0)
 %\eprop
 
 \section{Petri nets analysis}
-When designing a new system, the construction of a graphical model of it is always
-helpful since it is interesting to broadly understand how this system works, helping designers to have a
+When designing a new system, the construction of a graphical model (e.g. Petri net) of it is always
+helpful since it is interesting to broadly understand how this system works. This also helps designers to have a
 deeper knowledge about it. Nevertheless, the presence of a graphical model is not enough in many cases
 as the designers want the system to meet some properties of interest. For instance, the system is useless
-if it reaches a dealock in each execution.  To this end, it is important to have tools that allow to
-evaluate properties in the model. In finite sequential systems, it is not particularly challeging to check
-the fulfillment of certain statement, whereas the presence of concurrency complicates this task.
-The analysis of systems behaviour is intened to determe the compliance of 
-certain properties such as the number of processes in a queue does not exceed
+if it reaches a deadlock in each execution.  To this end, it is important to have tools that allow to
+evaluate properties in the model. In finite sequential systems, it is not particularly challenging to check
+the fulfilment of certain statement, whereas the presence of concurrency complicates this task.
+The analysis of systems behaviour is intended to determine the compliance of 
+certain properties such as that the number of processes in a queue does not exceed
 certain threshold or that the mutual exclusion is guaranteed when accessing to a shared resource.
 
-In Petri nets , there is a set of powerful tools to formally analyse
-the compliance of such properties. For instance, these properties check
+In Petri nets, one can use a set of powerful tools to formally analyse
+the compliance of such properties. Among these tools, designers can check
 the absence of deadlocks, the reachability of a certain
-state, the possibility of reaching the situation after performing some computations and so on.
+state, the possibility of reaching a concrete situation after performing some computations and so on.
 
 
 \medskip
@@ -321,23 +347,23 @@ Normally, these properties are divided in two categories \cite{citar}:
 \subsection{Safety properties}
 A safety property asserts that \emph{``nothing bad happens''}.
 Thus, they guarantee that a set of undesirable states are not reached or that
-the system does not execute an unwanted ocurrence sequence.
+the system does not execute an unwanted occurrence sequence.
 
 The \emph{safety properties} are the following:
 
 \begin{enumerate}
 \item {\bf Reachability}. A marking $M$ of a marked Petri net
 $N= (P,T,F,W,M_0)$ is {\it reachable} in $N$
-iff there exists an ocurrence sequence $\sigma \in L(N,M_0)$
+iff there exists an occurrence sequence $\sigma \in L(N,M_0)$
 such that $M_0 [ \sigma \rangle M$. We will denote by $[M_0\rangle$ the
 set of reachable markings of $N$ starting from $M_0$, and
-by $[ M \rangle$ the set of reachable markings starting from the marking $M$
+by $[ M \rangle$ the set of reachable markings starting from the marking $M$.
 
-\item {\bf Boundedness}. A marked Petri net $N=(P,T,F,W,$ \linebreak
-$M_0)$ is {\it k-bounded}, for some $k \in \nnul$, if all reachable marking
+\item {\bf Boundedness}. A marked Petri net $N=(P,T,F,W,M_0)$ 
+is {\it k-bounded}, for some $k \in \nnul$, if all reachable marking
 $M$ from $M_0$ hold that $M(p) \leq k$, for all $p \in P$. $N$ is safe if
 it is 1-bounded. A place $p \in P$ is
-{\it n-safe} if $M(p) \leq k$, for all markings $M$ reachable from $M_0$.
+{\it n-safe} if $M(p) \leq n$, for all markings $M$ reachable from $M_0$.
 
 %\item {\bf Boundedness}. Sea
 %$N=(P,T,F,W,M_0)$ una Red de Petri Marcada.
@@ -345,10 +371,9 @@ it is 1-bounded. A place $p \in P$ is
 %existe un n\'{u}mero natural $n \in \nnul$ tal que dicho lugar es
 %$n$-seguro; y se dice que $N$ es {\it limitada} si todos sus lugares
 %son limitados.
-\item {\bf Deadlock-free}. Let $N=(P,T,F,W,$ \linebreak
-$M_0)$ a marked Petri net and $M$ be a reachable marking from $M_0$.
-$M$ is a {\it dead marking} if there is no $t \in T$ that is enabled in $M$. 
-The net $N$ is dealock-free iff there are no dead markings.
+\item {\bf Deadlock-free}. Let $N=(P,T,F,W,M_0)$ a marked Petri net and $M$ be a reachable marking.
+$M$ is a {\it dead marking} if there is no $t \in T$ enabled in $M$. 
+The net $N$ is deadlock-free iff there are no dead markings.
 
 %\item {\bf Conservaci\'{o}n Respecto a un Vector de Pesos}.
 %Sea una Red de Petri Marcada $N=(P,T,F,W,M_0)$, con
@@ -370,8 +395,8 @@ $M$ is said to be {\it coverable} if there exists $M' \in
 
 \subsection{Liveness properties}
 A liveness property asserts that \emph{``something good eventually happens''}.
-Thus, thet guarantee that, independently of the current state of the system,
-a specific state can eventually be reached or that a certain ocurrence sequence can eventually
+For instance, they guarantee that, independently of the current state of the system,
+a specific state can eventually be reached or that a certain occurrence sequence can eventually
 be executed in the system.
 
 The \emph{liveness properties} are:
@@ -397,8 +422,7 @@ que parte de $M$ tal que $M [ \sigma \rangle M_0$.
 
 
 % % %JIRI % % % %
-Let $\nnul = \mathbb{N} \cup \{0\}$ and 
-$\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$.
+
 A \emph{discrete timed transition system} (DTTS) 
 is a triple $\left(\proc, \act,\rightarrow\right)$
 where $\proc$ is the set of states, $\act$ is the set of actions
@@ -416,7 +440,19 @@ used in age invariants.
 
 \section{Timed extensions of Petri nets}
 
-Hablar de las redes de Merlin y luego introducir las nuestras
+In the
+literature on timed extensions of Petri nets we can identify a
+first group of models, which assign time delays to transitions,
+by using either a fixed deterministic value
+\cite{Ram73,Sif77,VFC93} or choosing it from a probability
+distribution \cite{AjCh85}. Other models use time intervals to
+establish the enabling times of transitions \cite{Mer74}. 
+There are also models that introduce time on tokens
+\cite{van93,van95,BLT90}. In \cite{Bow96,Wan98} 
+a description is given of the different approaches 
+to introduce time in Petri nets.
+
+Extender un poco mas esto y luego introducir las nuestras
 
 \begin{definition}[timed-Arc Petri Net] \label{defetapn}  
 An \emph{extended timed-arc Petri net} 

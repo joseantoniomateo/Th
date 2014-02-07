@@ -1,17 +1,17 @@
 \chapter{State of the Art}\label{chapter:c2}
 \markboth{Chapter~\ref{chapter:c2}. State of the Art}{}
 In this chapter, it will be introduced the state-of-the-art 
-related to the specification, formalization and verfication
+related to the specification, formalization and verification
 of stateful web services and their composition as well as the use of formal methods in this topic. The aim of this chapter is to provide the reader
 with the basic notions about formal methods and stateful web service compositions in order to help he/she in the understanding
 of the Thesis. To begin with, a brief introduction of formal methods 
-and why they are needed is presented. Second, a survey about the diffent technologies used to model web services
+and why they are needed is presented. Second, a survey about the different technologies used to model web services
 and the different approaches to compose them are introduced and,
 next, the different mechanisms available to improve
 these web services with distributed resources. 
 Finally, the different formal models used here are defined. 
 On the other hand, we introduce workflow nets
-and why they are useful to model business processess. 
+and why they are useful to model business processes. 
 Some informal definition about the properties can be studied with this formal model is also provided. 
 
 \section{Motivation}
@@ -27,7 +27,7 @@ Throughout the history of computing , engineers and researchers have used differ
   \label{fig:uso}
 \end{figure}
 
-In the past, the use of formal techniques in practice seemed to be utopian and unrealizable. 
+In the past, the use of formal techniques in practice seemed to be utopian and unrealisable. 
 Among other causes, the notations used to require a high mathematical background in
 mathematics and, therefore, they were too complicated for the uninitiated in the topic. 
 The techniques did not allow the system to be scalable and the existing tools were
@@ -39,7 +39,7 @@ For the specification of software, the industry began to use the language Z
 in order to obtain rigorous specifications. For hardware verification, major 
 companies such as Intel and AMD started to use formal techniques such as \emph{model checking} 
 or \emph{theorem proving} to supplement tests on simulators. This led to the description of larger case studies,
-which was benefitial for the advance of this area since other developers started to consider the possibility of 
+which was beneficial for the advance of this area since other developers started to consider the possibility of 
 introducing the use of formal techniques into their development processes.
 In Figure \ref{fig:uso}, one can observe different systems in which these techniques are currently
 used to ensure proper operation. For instance, big companies (e.g Boeing and Airbus)
@@ -80,7 +80,7 @@ to build a product are stated. Nevertheless, it can also include information on
 subsequent steps such as verification, validation, testing, etc. Therefore, 
 this should be the first part in which the participants should apply formal methods, taking the 
 required time to correctly specify the system since a neat and correct specification will influence the 
-rest of the proccess.
+rest of the process.
 Anyway, make a proper specification does not guarantee the absence of errors because the 
 presence of faults is an intrinsic characteristic of the systems. In this sense, 
 the simple act of writing the document helps engineers to find errors in the early stages 
@@ -290,7 +290,7 @@ Next, we introduce the orchestration approach used in this Thesis.
 \subsection {WS-BPEL}
 In 2002, researchers and engineers from the main companies of the world (IBM, Microsoft, etc.)
 realised that the new and rapidly emerging process-oriented approach required the definition of 
-a neat and precise language for describing how a set of intecting web services can be included
+a neat and precise language for describing how a set of interacting web services can be included
 in a business process. Traditional methods for integration and business process automation 
 typically imply to embed the logic inside of the applications, complicating unnecessarily these applications. designed 
 Moreover, this makes these applications really difficult to migrate to other platforms. 
@@ -302,7 +302,7 @@ These software products liberated integration and process tasks from
 the underlying business systems so that they could be more effectively changed, managed, and optimised.
 The idea and motivation behind almost each new technology for
 enterprise application development is to provide an environment where better
-business applications can be developed, requiring less effor. These business applications
+business applications can be developed, requiring less effort. These business applications
 should closely align to the business processes, which should not be too complex and
 which should be adaptable to the changing nature of business processes without too much
 work. Within companies, business applications have to
@@ -331,7 +331,7 @@ In April 2007, WS-BPEL version 2.0 was approved as an OASIS standard.
 
 As a proof of maturity, more than 37 organizations collaborated to develop WS-BPEL, including representatives of Active Endpoints, Adobe Systems, BEA Systems, Booz Allen Hamilton, EDS, HP, Hitachi, IBM, IONA, Microsoft, NEC, Nortel, Oracle, Red Hat, Rogue Wave, SAP, Sun Microsystems, TIBCO, webMethods, and other members of OASIS \cite{wsbpelstandard}.
 Finally, in January 2008, another OASIS technical committee started 
-to define a WS-BPEL extension to emcompass the definition of 
+to define a WS-BPEL extension to encompass the definition of 
 human interactions (``human tasks'') as part of WS-BPEL processes. Figure \ref{bpelevolution} summarises the evolution of WS-BPEL:
 
 \begin{figure}[h]
@@ -349,7 +349,7 @@ through web service operations defined using WSDL, and that
 manifest themselves as web services using WSDL. 
 \item Define business processes using an XML-based language. 
 Do not define a graphical representation of processes or provide any particular design methodology for processes.
-\item Define a set of web service orchestration concepts that are meant to be used by both external (abstract) and internal (executable) views of a business process. Such a business process defines the behavior of a single autonomous entity, typically operating in interaction with other similar entities. 
+\item Define a set of web service orchestration concepts that are meant to be used by both external (abstract) and internal (executable) views of a business process. Such a business process defines the behaviour of a single autonomous entity, typically operating in interaction with other similar entities. 
 %It is recognized that each usage pattern (i.e., abstract view and executable view) will require a few specialized extensions, but these extensions are to be kept to a minimum and tested against requirements such as import/export and conformance checking that link the two usage patterns.
 \item Provide both hierarchical and graph-like control regimes, and allow their use to be blended as seamlessly as possible. This should reduce the fragmentation of the process modelling space.
 \item Provide data manipulation functions for process data and the control flow.
@@ -363,7 +363,7 @@ Do not define a graphical representation of processes or provide any particular 
 As a result, WS-BPEL along with web services technologies provide now a standardised integration interface 
 and language for the composition of different services as well as for the automation of some tasks. 
 Nevertheless, web scenarios are becoming more and more complex since they highly heterogeneous, that is, a lot of different
-services from different companies interact jointly to perfom a particular task. In particular, it is a folklore 
+services from different companies interact jointly to perform a particular task. In particular, it is a folklore 
 that business processes change relatively often due to this heterogeneity. Therefore, designers 
 do not require only a way to compose a set of services, rather they also
 need a way to compose and modify them in the right order and in a relatively 
@@ -424,10 +424,10 @@ operational details expressed by an executable artifact.
 All the constructs of executables processes are made available to abstract processes
 and, consequently, they share the same expressive power \cite{wsbpelstandard}. 
 Therefore, the main different between an abstract and a executable processes is 
-that the second one contains the exact details of business processes and, consquently,
+that the second one contains the exact details of business processes and, consequently,
 it is intended to be executed in an orchestration engine, whereas the first one offers a descriptive role,
 defining the message exchange between the parties involved. Specifically, an abstract process is usually used to 
-describe the observable behavior of some or all of the services offered by an
+describe the observable behaviour of some or all of the services offered by an
 executable process and/or to define a process template that contains domain-specific best practices. 
 Such a template can be seen as a design-time representation of the process logic, excluding execution details to be
 completed when mapping to an executable process.
@@ -445,7 +445,7 @@ companies since the service implementation is hidden to the other participants.
 
 Furthermore, WS-BPEL is an XML-based language which
 supports the web services technology stack, including SOAP, WSDL, UDDI and so on. 
-It defines a model and a grammar for describing the behavior of a business process
+It defines a model and a grammar for describing the behaviour of a business process
 based on interactions between the process and its partners as well as the order of these interactions. 
 The interaction with each partner is performed through web service interfaces, 
 and the structure of the relationship at the interface level
@@ -454,7 +454,7 @@ mechanisms for dealing with business exceptions and faults. Moreover, WS-BPEL
 introduces a mechanism to define how activities have to be compensated in those cases 
 where exceptions occur or a partner requests reversal.
 A WS-BPEL process is a reusable definition that can be deployed in different ways and in
-different scenarios, while maintaining a uniform application-level behavior across all of them.
+different scenarios, while maintaining a uniform application-level behaviour across all of them.
 
 
 \begin{figure}[h]
@@ -488,7 +488,7 @@ One-way activities consist of sending a message (some variables can be enclosed)
 as part of the operation, whereas a request-response invocation requires a message back. Evidently, this
 response message can be used to notify the sender about a fault during the operation. A more detailed
 explanation will be provided in Chapter \ref{chapter:c3}. 
-\item A \emph{receive} activity is necesary to receive the message sent in the invoke activity.
+\item A \emph{receive} activity is necessary to receive the message sent in the invoke activity.
 %It specifies a variable, using the variable attribute, to
 %store the message the operation to be requested. 
 In many cases, this activity is the first part of the process.
@@ -532,7 +532,7 @@ the activity \emph{while} is that the inner activity is executed at least once.
 executes the activity associated with that event. After an event has been selected, the other events
 are no longer accepted by that ``pick''. Moreover, a deadline for the occurrence of such events can be established
 in such a way if this deadline expires the activity ends. This structure has some similarity the choice operator in
-a process algebra althoudh with a predefined timeout. 
+a process algebra although with a predefined timeout. 
 In WS-BPEL, it can be compared with a set of receive activities that run in parallel, where just only one can be executed,
 and a common deadline is set (to this end, the wait activity can be used).
 \item Lastly, the standard offers an activity (forEach) to execute the contained activity a predefined number of times. This number
@@ -579,7 +579,7 @@ Many researchers have tried to define the term ``Cloud Computing'' without reach
 a standard definition. For instance, Buyya et al. \cite{Buyya2011} define a cloud system as:
 \begin{quote}
 ``A cloud is a parallel and distributed system consisting of a collection of 
-virtualized and interconnected computers that have been provisioned dynamically 
+virtualised and interconnected computers that have been provisioned dynamically 
 and they are presented as a single computational resource based on service level agreements (SLAs) 
 established by negotiation between the service provider and the consumer.''
 \end{quote} 
@@ -601,7 +601,7 @@ thus getting the savings promised by suppliers \cite{}.
 
 \section{Web services vs. Grid/Cloud Computing}
 
-In this section it is presented a summary of the main differences and sinergies between web services and
+In this section it is presented a summary of the main differences and synergies between web services and
 Grid/Cloud Computing since a formal language to mix both approaches is one of the parts of this
 Thesis. First, one can consider that web services are themselves software offered as a service (SaaS)
 and a system is a composition of services coordinated via the Internet
@@ -682,7 +682,7 @@ a given network and it must be used to identify the resource in any exchange of 
 
 Typically, web service interfaces provide users with the ability to access and manipulate its state, e.g. data values
 that evolve by the interaction among various services. In other words, 
-the message exchanges that are implemented in the behavior of the services 
+the message exchanges that are implemented in the behaviour of the services 
 are intended to allow persistent access to these resources. However, this notion is not 
 as evident in the definition of the interface \cite{Fost04}. The messages sent and received 
 by these services involve (or encourage the programmer to infer) the existence of an resource. 
@@ -803,8 +803,8 @@ A possible request can have the following form:
 ...
 \end{lstlisting}
 
-As it can be observed, it is possible to concate more than one operation in the same request. 
-After proccesing this request, the document must look like this:
+As it can be observed, it is possible to concatenate more than one operation in the same request. 
+After processing this request, the document must look like this:
 
 \lstset{language=XML, numbersep=5pt, frame=single}
 \begin{lstlisting}
@@ -882,7 +882,7 @@ where:
 \item Description: Explanation of the cause (in natural language).
 \item FaultCause: Technical cause of the error. 
 \end{itemize}
-Finally, note that it is possible to report an error whithout using this format. %, but WSRF provides it
+Finally, note that it is possible to report an error without using this format. %, but WSRF provides it
 %to help participants to manage it in a consistent way.
 \subsection{WS-ServiceGroup}
 This specification allows users to create groups of services 
@@ -892,7 +892,7 @@ This part of WSRf is not taken into account in BPELRF.
 \subsection{WS-ResourceLifetime}
 The lifetime of a WS-Resource is defined as the period between its instantiation and its destruction. 
 The goal of this specification is to standardise the process of resource destruction
-and define mechanisms to monitor its lifecycle. Surprisingly, the proces to create the WS-Resource
+and define mechanisms to monitor its lifecycle. Surprisingly, the process to create the WS-Resource
 is not specified. The reason is that WSRF is intended to be used in the interaction and, therefore, the 
 internal details of each participant are hidden. Thus, WSRF meets the requirements of SOC
 architecture presented previously and the transition from service-oriented architecture to resource-oriented
@@ -916,7 +916,7 @@ To confirm the destruction, the receiver must send the same message including th
 \item[Scheduled destruction] 
 In this case, the WS-Resource has an associated deadline 
 after which it is expected the resource has been destroyed. Moreover,
-it is reasonably expected that before this dealine the resource is available. 
+it is reasonably expected that before this deadline the resource is available. 
 An example of how to determine the completion time of a resource is:
 
 \newpage
@@ -940,10 +940,10 @@ An example of how to determine the completion time of a resource is:
 \end{lstlisting}
 \end{description}
 
-As we can see, the destruction requestor may indicate 
+As we can see, the destruction requester may indicate 
 the exact destruction time as well as the local time (to avoid mismatches in how to represent the time zone). 
 Once the \emph{TerminationTime} is reached, the resource is destroyed
-without any further intervention and the requestor is reported that 
+without any further intervention and the requester is reported that 
 the resource is unavailable. WSRF has another message to 
 inform the sender that the resource owner has received the destruction request. This option
 is not considered in our language BPELRF.
@@ -970,7 +970,7 @@ for inter object communications. For example, the well-known
 publish/subscribe architecture uses this approach. In addition, it is increasingly being
 used in a web services context \cite{}.
 
-In conjuction with WSRF, Web Services Notification (WSN) specifications are focused 
+In conjunction with WSRF, Web Services Notification (WSN) specifications are focused 
 on the description of mechanisms to implement this notification-based pattern. 
 As WSRF is based on web services, WSRF creators opted for the use
 of WS-Notification standard since the interoperability of both approaches is supposedly higher (they
@@ -981,7 +981,7 @@ pattern. It includes: standard message exchanges to be implemented by service
 providers that wish to participate in Notifications, standard message exchanges for a
 notification broker (allowing publication of messages from entities that
 are not themselves service providers), operational requirements expected of service providers 
-and requestors that participate in notifications, and an XML model that
+and requesters that participate in notifications, and an XML model that
 describes the topics susceptible to generate notifications. The WS-Notification family includes
 three normative specifications:
 WS-BaseNotification, WS-BrokeredNotification, and WS-Topics.
@@ -1001,16 +1001,16 @@ the characteristics of the situation; and
 \item finally, the distribution of these messages to zero or more interested parties (notification consumers).
 \end{enumerate}
 In WS-Notification, steps 1 and 2 are not taken into account 
-since tey did not want to restrict the means by which
+since they did not want to restrict the means by which
 these stages must occur. From now on, the entity in charge of performing the stages 1 and 2 is called Publisher.
 Other issue is how the publisher can disseminate the notification messages. 
 In this case, two patterns can be followed: direct or brokered.
 
 In the direct case, the publisher implements message exchanges associated with
 the notification producer interface (the details of this interface are out of the scope of this Thesis)
-and it is responsible for accepting suscription messages and
+and it is responsible for accepting subscription messages and
 sending notification messages to interested parties. Moreover, it
-can choose to include in its behavior the required logic or to delegate this task to specialized implementations. 
+can choose to include in its behaviour the required logic or to delegate this task to specialized implementations. 
 This last case is addressed by the WS-BaseNotification
 specification \cite{}.
 
