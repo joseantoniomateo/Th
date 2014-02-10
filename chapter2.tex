@@ -1090,12 +1090,58 @@ for workflow management. Initially, these systems were called ``WorkFlow Managem
 they are known as ``Business Process Management (BPM) systems''. Both WFM and BPM systems aim at supporting operational
 processes known as ``workflows''.
 
-According to the organization WFMC, a workflow is concerned with the automation of procedures where documents, information or tasks are passed
+According to the organization \emph{WorkFlow Management Coalition} (WFMC), 
+a workflow is concerned with \emph{``the automation of procedures where documents, information or tasks are passed
 between participants according to a defined set of rules to achieve, or contribute to, an overall business goal.
-Whilst workflow may be manually organised, in practice most workflow is normally
+Whilst workflow may be manually organised, in practice most workflows are normally
 organised within the context of an IT system to provide
-computerised support for the procedural automation.
+computerised support for the procedural automation''} \cite{Hollingsworth2004}.
+In detail, a \emph{workflow} is usually considered as ``the computerized facilitation or automation of a
+business process, in whole or in part'' \cite{EllisKeddara2000} and it consists 
+of a coordinated set of activities that are executed to achieve a predefined goal. Workflow is often associated with the assessment,
+analysis, modelling, definition and subsequent operational implementation of the core business processes of an
+organisation (or other business entity). Workflow technology is 
+often an appropriate solution as it provides separation of the business procedure logic
+and its IT operational support, enabling subsequent changes to be incorporated into the procedural rules
+defining the business process \cite{DumasAalst2005}.
 
+To provide users with the appropriate tools for workflow management, 
+it was defined a reference model (see \cite{hollingsworth95}) for the development of workflow (business process) management systems. 
+These systems shall completely define, manage and execute ``workflows'' through the execution of software
+whose order of execution is driven by a computer representation of the workflow, that is, 
+they aim at supporting the routing of activities (i.e., the flow of work) in an organization such
+that the work is efficiently done at the right time by the right person with the right
+software tool. It focuses on the structure of work processes, not on the content of 
+individual tasks. Individual tasks are supported by specific application programs.
+Workflow management links persons (end users, workflow participants, workflow
+agents) to these applications in order to accomplish the required tasks. The relation of these systems with the business process
+definition language presented previously is that they provide procedural automation of a business process (e.g. described in WS-BPEL) by
+managing the sequence of work activities and the invocation of appropriate human and/or IT resources
+associated with the various activity steps \cite{hollingsworth95}. 
+
+In \cite{hollingsworth95}, three functional areas for workflow management system were characterised. Thus, they have to provide:
+
+\begin{itemize}
+\item The functions concerned with defining, and possibly modelling, the workflow process and its
+constituent activities.
+
+\item The control functions concerned with managing the workflow processes in an operational
+environment and sequencing the various activities to be handled as part of each process
+
+\item The interactions with human users and IT application tools for processing the various activity
+steps
+
+\end{itemize}
+
+In Figure \ref{fig:wfms}, we can see these three characteristics and their relationship:
+
+\begin{figure}
+\begin{center}
+  \includegraphics[scale=0.25]{Figures/wfmsarquitectura.eps}
+\end{center}
+  \caption{Workflow System Characteristics.}
+  \label{fig:wfms}
+\end{figure}
 
 \subsection{Formal models of concurrency}\label{formalmodels}
 \input{basicdefinitions.tex}

@@ -34,10 +34,33 @@ E.~Clarke and J.~Wing.
 \newblock { Formal methods: State of the art and future directions.}
 \newblock {\em ACM Computing Surveys}, 1996.
 
+\bibitem{DumasAalst2005}
+Marlon Dumas, Wil M.~P. van~der Aalst, and Arthur H.~M. ter Hofstede.
+\newblock {\em Process-Aware Information Systems: Bridging People and Software
+  Through Process Technology}.
+\newblock Wiley, 2005.
+
 \bibitem{Clarke99}
 O.~Grumberg E.~Clarke and D.~Peled.
 \newblock {\em {Model Checking}}.
 \newblock MITPress, Cambridge, MA, 1999.
+
+\bibitem{EllisKeddara2000}
+Clarence~A. Ellis and Karim Keddara.
+\newblock A workflow change is a workflow.
+\newblock In {\em Business Process Management, Models, Techniques, and
+  Empirical Studies}, pages 201--217, London, UK, UK, 2000. Springer-Verlag.
+
+\bibitem{hollingsworth95}
+D.~Hollingsworth.
+\newblock Workflow management coalition - the workflow reference model.
+\newblock Technical report, Workflow Management Coalition, January 1995.
+
+\bibitem{Hollingsworth2004}
+David Hollingsworth, Fujitsu Services, and United Kingdom.
+\newblock The workflow reference model: 10 years on.
+\newblock In {\em Fujitsu Services, UK; Technical Committee Chair of WfMC},
+  pages 295--312, 2004.
 
 \bibitem{Fost04}
 S.~Graham S. Tuecke K. Czajkowski D. Ferguson F. Leymann M. Nally T. Storey

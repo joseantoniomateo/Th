@@ -13,8 +13,9 @@
 \BOOKMARK [2][-]{subsection.2.5.2}{WS-Base Faults}{section.2.5}
 \BOOKMARK [2][-]{subsection.2.5.3}{WS-ServiceGroup}{section.2.5}
 \BOOKMARK [2][-]{subsection.2.5.4}{WS-ResourceLifetime}{section.2.5}
-\BOOKMARK [2][-]{subsection.2.5.5}{Formal models of concurrency}{section.2.5}
-\BOOKMARK [1][-]{section.2.6}{Petri nets}{chapter.2}
+\BOOKMARK [1][-]{section.2.6}{Workflow management}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.6.1}{Formal models of concurrency}{section.2.6}
+\BOOKMARK [1][-]{section.2.7}{Petri nets}{chapter.2}
 \BOOKMARK [0][-]{chapter.3}{Extended Petri nets}{}
 \BOOKMARK [1][-]{section.3.1}{Petri nets analysis}{chapter.3}
 \BOOKMARK [2][-]{subsection.3.1.1}{Safety properties}{section.3.1}
@@ -41,4 +42,4 @@
 \BOOKMARK [1][-]{section.4.9}{Summary}{chapter.4}
 \BOOKMARK [0][-]{chapter.5}{Timed-arc workflow nets}{}
 \BOOKMARK [0][-]{chapter.6}{Conclusions, Contributions and Future Works}{}
-\BOOKMARK [0][-]{appendix*.39}{Bibliography}{}
+\BOOKMARK [0][-]{appendix*.40}{Bibliography}{}
