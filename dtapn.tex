@@ -5,42 +5,23 @@
 %as for closed intervals the reachability/soundness problems
 %are equivalent with the continuous time variant as discussed in 
 %Section~\ref{sec:cont}.
-Let $\nnul = \mathbb{N} \cup \{0\}$ and 
-$\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$.
 A \emph{discrete timed transition system} (DTTS) 
 is a triple $\left(\proc, \act,\rightarrow\right)$
 where $\proc$ is the set of states, $\act$ is the set of actions
 and $\rightarrow\: \subseteq \proc \times (\act \cup \nnul)  \times \proc$ is the 
-transition relation written as $s \trans{a} s'$ whenever $(s,a,s') \in \rightarrow$.
+transition relation written as $s \trans{a} s'$ whenever $(s,a,s') \in \rightarrow$. In continuous time,
+the transition relation is defined as $\rightarrow\: \subseteq \proc \times (\act \cup \rnul)  \times \proc$.
 If $a \in \act$ then we call it a \emph{switch transition}, if
 $a \in \nnul$ we call it a \emph{delay transition}.
 %By $\rightarrow^{*}$ we denote the reflexive and transitive closure of 
 %the relation
 %$\rightarrow  \eqdef \bigcup_{a \in \act} \trans{a} \; \cup \; \bigcup_{d \in \nnul} \trans{d}$. 
-We also define the set of \emph{well-formed time intervals} as 
-$\int \eqdef \{[a,b] \mid a \in \nnul,b\in \nnul^{\infty}, a\leq b \}$
-and its subset $\intinv \eqdef \{[0,b] \mid b\in \nnul^{\infty} \}$
-used in age invariants. 
+We also define the set of \emph{well-formed time intervals} 
+by: $$\int =\{ [a,a] \;|\; [a,b] \;|\; [a,b) \;|\; (a,b] \;|\; (a,b) \;|\; [a,\infty) \;|\; (a,\infty) \mid a,b \in \nnul,a < b\}$$
+Moreover, its subset: $$\intinv = \{ [0,0] \;|\; [0,b] \;|\; [0,b) \;|\; [0,\infty) \mid b \in \nnul\}$$
+is used in age invariants. Let us note that we use a discrete time semantics in our definitions 
+to avoid the duplication for the case of continuous time. Nevertheless, it is enough to include $\rnul$ instead of $\nnul$ to provide a continuous time semantics.
 
-%%% Nice intro but repeats too much from introduction, do not remove it though
-%We can now introduce the timed-arc Petri net model
-%where each token carries its own
-%age and input arcs to transitions are annotated with time intervals
-%that restrict the ages of tokens usable for transition firing. Newly
-%produced tokens become of age $0$, unless they were produced by
-%a pair of so-called \emph{transport arcs} that describe
-%a path along which the tokens travel from input to output places 
-%while preserving the ages of the tokens moved along the path. In this paper
-%we study an extended model with (i) \emph{age invariants}
-%associated to places that restrict the maximal possible ages of tokens
-%in the given places, (ii) \emph{inhibitor arcs} that as in normal Petri
-%nets inhibit transition firing, and
-%(iii) \emph{urgent transitions} that disable time delay whenever
-%at least one of them is enabled.
-%These additional extensions add a considerable expressive power
-%(as also demonstrated by the decidability and undecidability results
-%proved in this paper) and they are essential for convenient modelling 
-%of systems with timing attributes.
 
 \begin{definition}[Extended timed-Arc Petri Net] \label{defetapn}  
 An \emph{extended timed-arc Petri net} 
@@ -78,7 +59,7 @@ Note that for transport arcs we assume that they come in pairs (for
 each type $\transporti$) so that their weights match.
 Also for inhibitor arcs and for input arcs to urgent transitions, we
 require that the guards are $[0,\infty]$. This restriction is important
-for some of the results presented in this paper and it also guarantees that 
+for some of the results presented in this Thesis and it also guarantees that 
 we can use DBM-based algorithms in the tool TAPAAL~\cite{DJJJMS:TACAS:12}.
 \end{remark}
 
@@ -109,7 +90,9 @@ inhibitor arcs ($\type(a) \not= \inhib$ for all $a \in \ia$).
 %$P_s$ the set of places shared by various nets. Then, let $N$, $N^\prime$ be two ETAPNs such that $P \cap P^\prime \subseteq P_s$, the disjoint union of $N$ and $N^\prime$ is a ETAPN \ensuremath{(P^{\prime\prime},T^{\prime\prime},\ia^{\prime\prime}, \oa^{\prime\prime},\cfunction^{\prime\prime},\wfunction^{\prime\prime},\type^{\prime\prime}, \inv^{\prime\prime})}, where $P^{\prime\prime}= P\cupdot P^\prime, T^{\prime\prime}=T\cupdot T^\prime, \ia^{\prime\prime}=\ia\cupdot \ia^\prime,\oa^{\prime\prime}=\oa \cupdot \oa^\prime,\cfunction^{\prime\prime}:\ia^{\prime\prime}\cup \oa^{\prime\prime}\rightarrow \int, \wfunction^{\prime\prime}: \ia^{\prime\prime}\cup \oa^{\prime\prime}\rightarrow \mathbb{N}, 
 %\type^{\prime\prime} : \ia^{\prime\prime} \cup \oa^{\prime\prime} \rightarrow \types, \text{ and } \inv^{\prime\prime} : P^{\prime\prime} \rightarrow \int^{inv}$.
 
-Before we give the formal semantics of the model, let us fix some notation.
+Before giving the formal semantics of the model, let us fix some notation.
+We will recall some definitions presented previously, although applying them
+to this kind of nets.
 Let $N = \tapntuple$ be an ETAPN. 
 %Let $F\eqdef \ia \cup \oa$. 
 We denote by ${}^\bullet x \eqdef 
@@ -143,13 +126,13 @@ $|M(p)|$ is the number of tokens located in the place $p$.
  Let $N = \tapntuple$ be an ETAPN. 
 We say that a transition $t \in T$ is \emph{enabled} in a marking $M$ by the 
 multisets of tokens
-$\inn = \{(p,x_{p}^1), (p,x_{p}^2), \dots ,(p,x_{p}^{\wfunction ((p,t))})\mid 
-p \in {}^\bullet t\} \subseteq M$ and 
-$\out = \{ (p^{\prime},x_{p^{\prime}}^1),
+$\inn = \multiset{(p,x_{p}^1), (p,x_{p}^2), \dots ,(p,x_{p}^{\wfunction ((p,t))})\mid 
+p \in {}^\bullet t} \subseteq M$ and 
+$\out = \multiset{ (p^{\prime},x_{p^{\prime}}^1),
            (p^{\prime},x_{p^{\prime}}^2),
 \dots ,\allowbreak
 (p^{\prime},x_{p^{\prime}}^{\wfunction ((t,p^{\prime}))}) 
-\mid p^{\prime} \in t^\bullet \}$ if
+\mid p^{\prime} \in t^\bullet }$ if
 \begin{itemize}
 \item for all input arcs except the inhibitor arcs, the tokens from $\inn$ satisfy the age guards of the arcs, i.e. 
 %$$\forall(p,t) \in \ia, x_p^i \in \cfunction((p,t))\text{ for }1\leq i\leq w((p,t)) $$ 
@@ -222,132 +205,5 @@ we have $M \trans{d} M'$ for some $M'$.
 
 In general, ETAPNs are infinite in two dimensions. The number of tokens
 in reachable markings can be unbounded and even for bounded nets
-the ages of tokens can be arbitrarily large. We shall now recall a 
-few results that allow us to make finite abstractions for bounded
-ETAPNs, i.e. for nets where the maximum number of tokens in any
-reachable marking is bounded by a constant.
-
-Let $N=\tapntuple$ be a given ETAPN.
-In~\cite{ALSST:MEMICS:12} 
-the authors provide an algorithm for computing 
-a function $\cmax: P \rightarrow (\nnul \cup \{ -1 \})$ 
-returning for each place $p \in P$ the maximum constant associated
-to this place, meaning that the ages of tokens in place $p$ that
-are strictly greater than $\cmax(p)$ are irrelevant. In particular,
-places where $\cmax(p)=-1$ are the so-called \emph{untimed} places
-where the age of tokens is not relevant at all, implying that all
-the intervals on their ongoing arcs are $[0,\infty]$.
-
-Let $M$ be a marking of $N$. We split it into 
-two markings $\mold$ and $\myoung$ where 
-$\mold (p)=\left\{ x\in M(p) \mid x>\cmax(p) \right\}$ 
-and $\myoung (p)=\allowbreak\left\{ x\in M(p) \mid 
-x\allowbreak\leq\allowbreak \cmax(p) \right\}$
-for all places $p \in P$. Clearly,
-$M = \mold \uplus \myoung$.
-
-We say that two markings $M$ and $M'$ in the net $N$ are equivalent, 
-written $M \eqMarking M^{\prime}$, 
-if $\myoung=\myoung^{\prime}$
-and for all $p \in P$ we have
-$|\mold (p)|=|\mold^{\prime}(p)|$.
-In other words $M$ and $M'$ agree on the tokens with ages below the
-maximum constants and have the same number of tokens above the maximum
-constant.
-% (relevant only for places $p$ with $I(p)=[0,\infty]$ as
-%places with nontrivial age invariants cannot have tokens older that 
-%the maximum constant which is in this case equal to the invariant upper-bound).
-
-The relation $\eqMarking$ is an equivalence relation and it is
-also a timed bisimulation 
-where delays and transition firings on one side can be matched by
-exactly the same delays and transition firings on the other side
-and vice versa. % (see e.g.~\cite{LY:97}).
-
-\begin{theorem}[\cite{ALSST:MEMICS:12}]
-\label{thm:bisim}
-  The relation $\eqMarking$ is a timed bisimulation.
-\end{theorem}
-
-We can now define canonical representatives for each
-equivalence class of $\eqMarking$. 
-
-\begin{definition}[Cut]
-\label{def:cut}
-Let $M$ be a marking.
-We define its canonical marking $\cut(M)$ by 
-$\cut(M)(p)= \myoung(p)\uplus \big\{ \underbrace{ \cmax(p)+1,\dots ,\cmax(p)+1 }_{|\mold(p)| \text{ times}} \big\}$.
-%\begin{equation*}
-%  \cut(M)(p)=
-%\begin{cases}
-%\myoung(p)  \quad \text{if $p$ is invariant or dead-token place,} \\
-%\myoung(p)\uplus \big\{ \underbrace{ \cmax(p)+1,\dots ,\cmax(p)+1 }_{|\mold(p)| \text{ times}} \big\}    \quad \text{if $p$ is a normal place.}
-%\vspace{-.45cm}
-%\end{cases}
-%\vspace{.45cm}
-%\end{equation*}
-\end{definition}
-
-\begin{lemma}[\cite{ALSST:MEMICS:12}]
-\label{lemma:canon}
-Let $M$, $M_1$ and $M_2$ be markings. Then
-(i) $M \eqMarking \cut(M)$, and (ii)
-$M_1 \eqMarking M_2$ if and only if $\cut(M_1)=\cut(M_2)$.
-\end{lemma}
-
-Let $M$ and $M^\prime$ be two markings. We say that $M^\prime$ \emph{covers} 
-$M$, denoted by $M \sqsubseteq M^\prime$, if $M(p) \subseteq M^\prime(p)$ 
-for all $p \in P$. We write $M \sqsubseteq_{cut} M^\prime$ 
-if $cut(M) \sqsubseteq cut(M^\prime)$.
-
-For monotonic timed-arc Petri nets we can now show that adding more tokens
-to the net does not restrict its possible behaviour. 
-
-\begin{lemma}
-\label{lem:mono}
-Let $N$ be an MTAPN and $M,M' \in \mathcal{M}(N)$
-be two of its markings such that $M \sqsubseteq_{\cut} M'$. 
-If $M \trans{d} M_1$ (resp. $M \trans{t} M_1$) then 
-$M' \trans{d} M'_1$ (resp. $M' \trans{t} M'_1$) such that 
-$M_1 \sqsubseteq_{cut} M'_1$ and 
-$|M'|-|M|=|M'_1|-|M_1|$.
-\end{lemma}
-\begin{proof}
-Let $M \trans{d} M_1$, resp. $M \trans{t} M_1$.
-As $M \equiv \cut(M)$ by Lemma~\ref{lemma:canon}(i),
-we can by Theorem~\ref{thm:bisim} conclude that also $\cut(M) \trans{d} M_2$,
-resp. $\cut(M) \trans{t} M_2$,
-such that $M_1 \equiv M_2$. Recall that $\cut(M) \sqsubseteq \cut(M')$
-by the assumption of the lemma.
-\begin{itemize}
-\item Time delay case ($\cut(M) \trans{d} M_2$).
-As the net does not contain any nontrivial age invariants
-and there are no urgent transitions,
-we know that also $\cut(M') \trans{d} M_3$ such that
-$M_2 \sqsubseteq M_3$ as time delay preserves the $\sqsubseteq$-relation.
-\item Transition firing case ($\cut(M) \trans{t} M_2$).
-As the net does not have any inhibitor arcs,
-we can see that also $\cut(M') \trans{t} M_3$ by consuming
-exactly the same tokens in $\cut(M')$ as we did in $\cut(M)$.
-Clearly, $M_2 \sqsubseteq M_3$.
-\end{itemize}
-Because $\cut(M') \equiv M'$ due to Lemma~\ref{lemma:canon}(i),
-we know by Theorem~\ref{thm:bisim}
-that $M' \trans{d} M'_1$, resp. $M' \trans{t} M'_1$, such that $M_3 \equiv M'_1$.
-Hence $M_1 \equiv M_2 \sqsubseteq M_3 \equiv M'_1$.
-By Lemma~\ref{lemma:canon}(ii) we get
-$\cut(M_1)=\cut(M_2)$ and $\cut(M_3)=\cut(M'_1)$.
-Observe now a simple fact that $M_2 \sqsubseteq M_3$ implies that
-$\cut(M_2) \sqsubseteq \cut(M_3)$.
-This all together implies that $\cut(M_1)=\cut(M_2) \sqsubseteq
-\cut(M_3) = \cut(M'_1)$ which is another way of saying that
-$M_1 \sqsubseteq_\cut M'_1$ as required by the lemma.
-As time delays do not change the number of
-tokens in $M$ and $M'$ and transition firing adds or removes an
-equal number of tokens from both $M$ and $M'$,
-we can also conclude that $|M'|-|M|=|M'_1|-|M_1|$.
-\qed
-\end{proof}
-
-
+the ages of tokens can be arbitrarily large. 
 

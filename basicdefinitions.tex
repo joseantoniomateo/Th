@@ -54,8 +54,92 @@ For any $C_1, C_2 \in {\cal B}(A)$, we define:
 \item If $C_2 \subseteq C_1$ we can define the subtraction 
         $C_1 - C_2 \in {\cal B}(A)$, where $\forall x \in A\,:\,
         (C_1-C_2)(x)= C_1(x) - C_2(x)$.
-\end{itemize}
+
+\item For any $C \in {\cal B}(\Sigma)$, 
+we define the first projection
+$\Pi_1(C) \in {\cal B}(\nnul)$, 
+as follows: $\forall n \in \nnul,\,
+\Pi_1(C)(n) = \sum_{m\in \nnul} C(n,m)$.
 %
+\item For any $C \in {\cal B}(\Sigma)$
+and $n\in \nnul$ we define the second projection 
+$\Pi_2(C,n)$ as the ordered list that consists of the
+elements $(m_1,m_2,\ldots,m_{\Pi_1(C)(n)})$,
+such that $(n,m_i) \in C$, $\forall i=1,\ldots, \Pi_1(C)(n)$
+and $m_i \leq m_{i+1}$,
+$\forall i=1,\ldots, \Pi_1(C)(n)-1$.
+%
+\item For any $C_1,C_2 \in {\cal B}(\Sigma)$, we say that
+$C_1 \preceq C_2$ if and only if the following conditions hold:
+  %
+  \begin{itemize}
+  \item $\Pi_1(C_1) \subseteq \Pi_1(C_2)$.
+  %
+  \item \mbox{$\forall n \in \nnul$}, taking \mbox{$\Pi_2(C_1,n) = (m^1_1,\ldots,
+        m^1_{\Pi_1(C_1)(n)})$} and
+        \mbox{$\Pi_2(C_2,n) = $} \linebreak
+        $(m^2_1,\ldots,m^2_{\Pi_1(C_2)(n)})$,
+        we must have  $m^1_i \geq m^2_i$, $\forall i=1,\ldots,
+        \Pi_1(C_1)(n)$.
+  \end{itemize}
+%
+%  
+These conditions state that for every $n$ the total number of
+elements $(n,m)$ (moving $m$) must be lesser in $C_1$ than in $C_2$, and 
+for every element $(n,m)$ in $C_1$ there must be a 
+corresponding (distinct element) $(n,m')$ in $C_2$, with $m\geq m'$.
+%
+\item For any $C_1,C_2 \in {\cal B}(\Sigma)$, with $C_1 \preceq C_2$,
+we define $C_2 \ominus C_1$ in the following (recursive) way: 
+  %
+  \begin{itemize}
+  \item For $C_1 = \emptyset$ we take $C_2 \ominus C_1 = C_2$.
+  %
+  \item For $C_1 \neq \emptyset$, let us consider that 
+
+        \noindent $C_2 = \{ r^1_1.(n_1,m^1_1), \ldots,
+         r^1_{i_{n_{1}}}.(n_1,m^1_{i_{n_{1}}}),
+        \ldots, r^k_1.(n_k,m^k_1),\ldots, r^k_{i_{n_{k}}}.(n_k,m^k_{i_{n_{k}}}) \}$,
+        where $n_l \neq n_j$, $\forall l \neq j$, and
+        $m^l_j < m^l_{j+1}$, $\forall l=1,\ldots,k$ and $\forall
+        j=1,\ldots,i_{n_{l}}$.
+
+        Since $C_1 \preceq C_2$, we can take one element $(n_l,m) \in C_1$, 
+        for some $l\in \{1,\ldots,k\}$, as well as the largest index $j$
+        for which $m^l_{j} \leq m$. We then define recursively:
+       
+        \noindent $C_2 \ominus C_1 = %\begin{array}[t]{l}
+        (
+        \{ r^1_1.(n_1,m^1_1), \ldots, r^1_{i_{n_{1}}}.(n_1,m^1_{i_{n_{1}}}),
+        \ldots,
+        r^l_1.(n_l,m^l_1), \ldots,(r^l_{j} - 1).(n_l,m^l_j),\\
+        \ldots,
+        r^l_{i_{n_{l}}}.(n_l,m^l_{i_{n_{l}}}), 
+        \ldots, r^k_1.(n_k,m^k_1),\ldots, r^k_{i_{n_{k}}}.(n_k,m^k_{i_{n_{k}}}) \}
+        ) 
+        \ominus (C_1 - \{ 1.(n_l,m) \})
+        %\end{array}
+        $.
+
+        %It is immediate that this recursive definition is correct.
+        Thus, $C_2 \ominus C_1$ is obtained by removing from $C_2$ 
+        elements $(n,m)$ that correspond to elements $(n,m')$ of $C_1$,
+        such that $m$ is the largest value with $m\leq m'$.
+
+        % 
+        \vspace*{0.12cm}
+
+        For instance, taking $C_1 = \{
+             1.(2,3), 1.(2,5), 1.(1,4), 1.(7,6)
+        \}$, and $C_2 = $ \linebreak
+        $\{
+             1.(2,0), 1.(2,1), 1.(2,2), 1.(1,3), 2.(7,6), 3.(3,3)
+        \}$ it follows that $C_1 \preceq C_2$. Then,
+        $C_2 \ominus C_1= \{
+            1.(2,0), 1.(7,6), 3.(3,3)
+        \}$.
+  \end{itemize} 
+\end{itemize}
 
 \item {\bf Relations}\\
 Let $X$ be a set, a relation over $X$ is a set $R \subseteq X \times X$. 
@@ -324,7 +408,7 @@ The set of occurrence sequence of $N$ starting from $M_0$ is denoted by $P(N,M_0
 %\eprop
 
 \section{Petri nets analysis}
-When designing a new system, the construction of a graphical model (e.g. Petri net) of it is always
+When designing a new system, the construction of a graphical model (e.g. a Petri net) of it is always
 helpful since it is interesting to broadly understand how this system works. This also helps designers to have a
 deeper knowledge about it. Nevertheless, the presence of a graphical model is not enough in many cases
 as the designers want the system to meet some properties of interest. For instance, the system is useless
@@ -414,29 +498,15 @@ The set of markings ${\cal M}$ is a {\it home-space}
 of $N$ if for all marking $M' \in [ M_0 \rangle$ there is marking
 $M'' \in {\cal M}$ such that $M'' \in [ M' \rangle$.
 \item {\bf Cyclic}.
-Sea $N=(P,T,F,W,M_0)$ una Red de Petri Marcada. Se dice que
-$N$ tiene un {\it comportamiento c\'{\i}clico} si para todo marcaje
-$M \in [ M_0 \rangle$ existe una secuencia de ocurrencia $\sigma$
-que parte de $M$ tal que $M [ \sigma \rangle M_0$.
+Let $N=(P,T,F,W,M_0)$ be a marked Petri net. It is said that
+$N$ is cyclic if for all marking $M \in [ M_0 \rangle$ there exists an occurrence sequence $\sigma$
+starting in $M$ such that $M [ \sigma \rangle M_0$.
 \end{enumerate}
 
 
-% % %JIRI % % % %
+% %JIRI % % % %
 
-A \emph{discrete timed transition system} (DTTS) 
-is a triple $\left(\proc, \act,\rightarrow\right)$
-where $\proc$ is the set of states, $\act$ is the set of actions
-and $\rightarrow\: \subseteq \proc \times (\act \cup \nnul)  \times \proc$ is the 
-transition relation written as $s \trans{a} s'$ whenever $(s,a,s') \in \rightarrow$.
-If $a \in \act$ then we call it a \emph{switch transition}, if
-$a \in \nnul$ we call it a \emph{delay transition}.
-%By $\rightarrow^{*}$ we denote the reflexive and transitive closure of 
-%the relation
-%$\rightarrow  \eqdef \bigcup_{a \in \act} \trans{a} \; \cup \; \bigcup_{d \in \nnul} \trans{d}$. 
-We also define the set of \emph{well-formed time intervals} as 
-$\int \eqdef \{[a,b] \mid a \in \nnul,b\in \nnul^{\infty}, a\leq b \}$
-and its subset $\intinv \eqdef \{[0,b] \mid b\in \nnul^{\infty} \}$
-used in age invariants. 
+
 
 \section{Timed extensions of Petri nets}
 
@@ -453,315 +523,6 @@ a description is given of the different approaches
 to introduce time in Petri nets.
 
 Extender un poco mas esto y luego introducir las nuestras
-
-\begin{definition}[timed-Arc Petri Net] \label{defetapn}  
-An \emph{extended timed-arc Petri net} 
-(ETAPN) is a 9-tuple $N = \tapntuple$ where 
-\begin{itemize}
-\item $P$ is a finite set of \emph{places},
-\item $T$ is a finite set of \emph{transitions} 
-such that $P \cap T = \emptyset$, 
-\item $\Turg \subseteq T$ is the set of \emph{urgent transitions},
-\item $\ia \subseteq P \times T$ is a finite set of \emph{input arcs},
-\item $\oa \subseteq T \times P$ is a finite set of \emph{output arcs},
-\item $\cfunction : \ia \rightarrow \int$ is a \emph{time constraint function} assigning 
-guards %(time intervals) 
-to input arcs,
-\item $\wfunction : \ia\cup \oa \rightarrow \mathbb{N}$ is a function assigning \emph{weights} to input and output arcs,
-\item $\type : \ia \cup \oa \rightarrow \types$ is a \emph{type function} assigning a type to all arcs where $\types = \{\normal, \inhib\} \cup \{\transporti \mid j \in \mathbb{N} \}$ such that  
-\begin{itemize}
-\item if $\type(a) = \inhib$ then $a \in \ia$ and $\cfunction(a)=[0,\infty]$, 
-\item if $(p,t) \in \ia$ and $t \in \Turg$ then $\cfunction((p,t))=[0,\infty]$,
-\item if $\type((p,t)) = \transporti$ for some $(p,t) \in \ia$ then there is exactly one $(t,p^{\prime}) \in \oa$ such that $\type((t,p^{\prime})) = 
-\transporti$, 
-%and moreover $\wfunction((p,t))=\wfunction((t,p^{\prime}))$,
-\item if $\type((t,p^{\prime})) = \transporti$ for some $(t,p^{\prime}) \in \oa$ then there is exactly one $(p,t) \in \ia$ such that $\type((p,t)) = 
-\transporti$, 
-%and moreover $\wfunction((p,t))=\wfunction((t,p^{\prime}))$,
-\item if $\type((p,t)) = \transporti = \type((t,p^{\prime}))$ 
-then $\wfunction((p,t))=\wfunction((t,p^{\prime}))$,
-\end{itemize}
-\item $\inv : P \rightarrow \int^{inv}$ is a function assigning \emph{age invariants} to places.
-\end{itemize}
-\end{definition}
-
-%\begin{remark}
-Note that for transport arcs we assume that they come in pairs (for
-each type $\transporti$) so that their weights match.
-Also for inhibitor arcs and for input arcs to urgent transitions, we
-require that the guards are $[0,\infty]$. This restriction is important
-for some of the results presented in this paper and it also guarantees that 
-we can use DBM-based algorithms in the tool TAPAAL~\cite{DJJJMS:TACAS:12}.
-%\end{remark}
-
-The ETAPN model is not monotonic, meaning
-that adding more tokens to markings can disable time delays or
-transition firing.
-Therefore we define a subclass of 
-ETAPN where the monotonicity breaking features are not allowed.
-In the literature such nets are often considered as the standard
-timed-arc Petri net model~\cite{BLT:90,Hanisch:93} but we add the 
-prefix monotonic for clarity reasons. 
-
-\begin{definition}[Monotonic timed-arc Petri net] \label{deftapn}
-A \emph{monotonic timed-arc Petri net} 
-(MTAPN) is an extended timed arc Petri net 
-with no urgent transitions ($\Turg=\emptyset)$, no age invariants
-($\inv(p) = [0,\infty]$ for all $p \in P$) and no 
-inhibitor arcs ($\type(a) \not= \inhib$ for all $a \in \ia$).
-\end{definition}
-
-
-%Let $N = \tapntuple$ be a ETAPN and $P^\prime \subseteq P$, the projection $N|_{P^\prime}$ 
-%is the net \ensuremath{(P^\prime, T, \ia^\prime,\allowbreak \oa^\prime, \cfunction^\prime, 
-%\wfunction^\prime, \type^\prime, \inv^\prime)}, 
-%where $\ia^\prime=\ia \cap (P^\prime \times T)$, $\oa^\prime=\oa \cap (T \times P^\prime)$,
-%$\cfunction^\prime : \ia^\prime \rightarrow \int$, $\wfunction^\prime : \ia^\prime \cup \oa^\prime \rightarrow \mathbb{N}$,
-%$\type^\prime : \ia^\prime \cup \oa^\prime \rightarrow \types$, and $\inv^\prime : P^\prime \rightarrow \int^{inv}$. From now on, we will denote by 
-%$P_s$ the set of places shared by various nets. Then, let $N$, $N^\prime$ be two ETAPNs such that $P \cap P^\prime \subseteq P_s$, the disjoint union of $N$ and $N^\prime$ is a ETAPN \ensuremath{(P^{\prime\prime},T^{\prime\prime},\ia^{\prime\prime}, \oa^{\prime\prime},\cfunction^{\prime\prime},\wfunction^{\prime\prime},\type^{\prime\prime}, \inv^{\prime\prime})}, where $P^{\prime\prime}= P\cupdot P^\prime, T^{\prime\prime}=T\cupdot T^\prime, \ia^{\prime\prime}=\ia\cupdot \ia^\prime,\oa^{\prime\prime}=\oa \cupdot \oa^\prime,\cfunction^{\prime\prime}:\ia^{\prime\prime}\cup \oa^{\prime\prime}\rightarrow \int, \wfunction^{\prime\prime}: \ia^{\prime\prime}\cup \oa^{\prime\prime}\rightarrow \mathbb{N}, 
-%\type^{\prime\prime} : \ia^{\prime\prime} \cup \oa^{\prime\prime} \rightarrow \types, \text{ and } \inv^{\prime\prime} : P^{\prime\prime} \rightarrow \int^{inv}$.
-
-Before we give the formal semantics of the model, let us fix some notation.
-Let $N = \tapntuple$ be an ETAPN. 
-%Let $F\eqdef \ia \cup \oa$. 
-We denote by ${}^\bullet x \eqdef 
-\{y \in P \cup T \mid (y,x) \in (\ia \cup \oa),\ \type((y,x)) \neq \inhib \}$ 
-the preset of a transition or a place $x$.
-Similarly, the postset $x^\bullet$ is defined as 
-$x^\bullet \eqdef \{y \in P \cup T \mid (x,y) \in (\ia \cup \oa) \}$.
-Let $\mathcal{B}(\nnul)$ be the set 
-of all finite multisets over $\nnul$. A \emph{marking} $M$ on $N$ 
-is a function $M : P \longrightarrow \mathcal{B}(\nnul)$ 
-where for every place $p \in P$ and 
-every token $x \in M(p)$ we have $x \in \inv(p)$, in other words
-all tokens have to satisfy the age invariants. 
-%The projection of $P^\prime \subseteq P$ in $M$ is a function 
-%$M|_{P^\prime} : P^\prime \longrightarrow \mathcal{B}(\nnul)$.
-The set of all markings in a net $N$ 
-is denoted by $\mathcal{M}(N)$.
-
-We write $(p,x)$ to denote a token at a place $p$ with the 
-age $x\in \nnul$. Then $M=\{(p_1,x_1),(p_2,x_2),\dots ,(p_n,x_n)\}$ 
-is a multiset representing a marking $M$ with $n$ tokens of 
-ages $x_i$ in places $p_i$. We 
-define the size of a marking as $|M| = \sum_{p\in P}|M(p)|$ where 
-$|M(p)|$ is the number of tokens located in the place $p$.
-
-%A marked ETAPN 
-%$(N,M_0)$ is a TAPN N together with an initial marking $M_0$ with all tokens of age $0$. 
-
-\begin{definition}[Enabledness]
-\label{def:enabledness}
- Let $N = \tapntuple$ be an ETAPN. 
-We say that a transition $t \in T$ is \emph{enabled} in a marking $M$ by the 
-multisets of tokens
-$\inn = \{(p,x_{p}^1), (p,x_{p}^2), \dots ,(p,x_{p}^{\wfunction ((p,t))})\mid 
-p \in {}^\bullet t\} \subseteq M$ and 
-$\out = \{ (p^{\prime},x_{p^{\prime}}^1),
-           (p^{\prime},x_{p^{\prime}}^2),
-\dots ,\allowbreak
-(p^{\prime},x_{p^{\prime}}^{\wfunction ((t,p^{\prime}))}) 
-\mid p^{\prime} \in t^\bullet \}$ if
-\begin{itemize}
-\item for all input arcs except the inhibitor arcs, the tokens from $\inn$ satisfy the age guards of the arcs, i.e. 
-%$$\forall(p,t) \in \ia, x_p^i \in \cfunction((p,t))\text{ for }1\leq i\leq w((p,t)) $$ 
-$$\forall(p,t) \in \ia. \type((p,t)) \neq \inhib \Rightarrow  x_p^i \in \cfunction((p,t))\text{ for }1\leq i\leq w((p,t)) $$ 
-%\item for each place $p$ in ${}^\bullet t$ there are $\wfunction ((p,t))$ tokens from $p$ in $\inn$, i.e. $$\forall p\in {}^\bullet t. \wfunction ((p,t))= n_{p} $$
-%\item for each place $p^{\prime}$ in $t^\bullet $ there are $\wfunction ((t,p^{\prime}))$ tokens from $p^{\prime}$ in $\out$, i.e. $$\forall p^{\prime}\in t^\bullet . \wfunction ((t,p^{\prime}))= m_{p^{\prime}} $$
-\item for any inhibitor arc pointing from a place $p$ to the
-transition $t$, the number of tokens in $p$ is smaller than the weight of the arc, i.e.
-$$\forall(p,t) \in \ia. \type((p,t)) = \inhib \Rightarrow|M(p)|<\wfunction ((p,t))$$ 
-%$$\forall(p,t) \in \ia. \type((p,t)) = \inhib \Rightarrow \nexists x \in M(p). x \in \cfunction((p,t))$$
-\item for all input arcs and output arcs which constitute a transport arc, 
-the age of the input token must be equal to the age of the output token and satisfy the invariant of the output place, i.e.
-\begin{eqnarray*}
-&\forall(p,t) \in \ia. \forall(t,p^{\prime}) \in \oa.\type((p,t)) = \type((t,p^{\prime})) 
-= \transporti \\
-&\Rightarrow \big( x_p^i = x_{p^{\prime}}^i \wedge x_{p^{\prime}}^i \in 
-\inv(p^{\prime})\big) \text{ for } 1\leq i \leq w((p,t))
-\end{eqnarray*}
-\item for all normal output arcs, the age of the output token is $0$, i.e. $$\forall(t,p^{\prime}) \in \oa. \type((t,p^{\prime})) = \normal \Rightarrow x_{p^{\prime}}^i = 0 \text{ for }1\leq i \leq w((p,t)).$$ 
-\end{itemize}
-\end{definition}
-
-A given ETAPN $N$ %=\tapntuple$ 
-defines a DTTS $T(N)\eqdef (\markingsof(N),T,\rightarrow)$
-where states are the markings and the transitions are as follows. 
-\begin{itemize}
-\item If $t\in T$ is enabled in a marking $M$ by the  multisets of
-tokens $\inn$ and $\out$ then $t$ can \emph{fire} and produce 
-the marking $M^{\prime} = (M \smallsetminus \inn) \uplus \out$ 
-where  $\uplus$ is the multiset sum operator and $\smallsetminus$ is the multiset 
-difference operator; we write $M \trans{t} M^{\prime}$ for this 
-switch transition.
-\item A time \emph{delay} $d \in \nnul$ is allowed in $M$ if
-\begin{itemize}
-\item $(x+d) \in I(p)$ for all $p \in P$ and all $x \in M(p)$, and
-% i.e. by delaying $d$ time units no token violates any of the age invariants, 
-%and
-\item if $M \trans{t} M'$ for some $t \in \Turg$ then $d=0$.
- %there is at least one urgent transition enabled in $M$ then
- %     $d=0$, i.e. enabled urgent transitions disallow time passing.
-\end{itemize}
-By delaying $d$ time units in $M$ we reach the marking $M^{\prime}$ defined as
-$M^{\prime}(p) = \{x+d \mid x \in M(p)\}$ for all $p \in P$; 
-we write $M \trans{d} M^{\prime}$ for this delay transition.
-\end{itemize}
-
-A computation of a net $N$ from the initial marking $M_0$ is
-$M_0 \rightarrow M_1\rightarrow \cdots \rightarrow M_n$ is 
-denoted by $\{M_i\}_{i=0}^{n}$ 
-and we call it a \emph{run}. If the sequence is infinite, we write 
-$\{M_i\}_{i\geq 0}$. Moreover, we write $M \Rightarrow^* M^{\prime}$ if  
-$M^{\prime}$ is reachable from $M$ and $[M\rangle$ represents the set of reachable markings of $M$.
-
-\noindent Let 
-$\trans{} \eqdef \bigcup_{t \in T} \trans{t} \cup \bigcup_{d \in \nnul} \trans{d}$.
-The set of all markings reachable %in the net $N$ 
-from a given marking $M$ is denoted by 
-$[M\rangle \eqdef \{ M' \mid M \trans{}^* M' \}$.
-By $M \trans{d,t} M'$ we denote that there is a marking $M''$
-such that $M \trans{d} M'' \trans{t} M'$.
-
-A marking $M$ is a \emph{deadlock} if there is no $d \in \nnul$ and
-no $t \in T$ such that $M \trans{d,t} M'$ 
-for some marking $M'$.
-A marking $M$ is \emph{divergent} if for any $d \in \nnul$
-we have $M \trans{d} M'$ for some $M'$.
-
-
-%\section{Finite Abstractions for Bounded ETAPNs}
-
-In general, ETAPNs are infinite in two dimensions. The number of tokens
-in reachable markings can be unbounded and even for bounded nets
-the ages of tokens can be arbitrarily large. We shall now recall a 
-few results that allow us to make finite abstractions for bounded
-ETAPNs, i.e. for nets where the maximum number of tokens in any
-reachable marking is bounded by a constant.
-
-Let $N=\tapntuple$ be a given ETAPN.
-In~\cite{ALSST:MEMICS:12} 
-the authors provide an algorithm for computing 
-a function $\cmax: P \rightarrow (\nnul \cup \{ -1 \})$ 
-returning for each place $p \in P$ the maximum constant associated
-to this place, meaning that the ages of tokens in place $p$ that
-are strictly greater than $\cmax(p)$ are irrelevant. In particular,
-places where $\cmax(p)=-1$ are the so-called \emph{untimed} places
-where the age of tokens is not relevant at all, implying that all
-the intervals on their ongoing arcs are $[0,\infty]$.
-
-Let $M$ be a marking of $N$. We split it into 
-two markings $\mold$ and $\myoung$ where 
-$\mold (p)=\left\{ x\in M(p) \mid x>\cmax(p) \right\}$ 
-and $\myoung (p)=\allowbreak\left\{ x\in M(p) \mid 
-x\allowbreak\leq\allowbreak \cmax(p) \right\}$
-for all places $p \in P$. Clearly,
-$M = \mold \uplus \myoung$.
-
-We say that two markings $M$ and $M'$ in the net $N$ are equivalent, 
-written $M \eqMarking M^{\prime}$, 
-if $\myoung=\myoung^{\prime}$
-and for all $p \in P$ we have
-$|\mold (p)|=|\mold^{\prime}(p)|$.
-In other words $M$ and $M'$ agree on the tokens with ages below the
-maximum constants and have the same number of tokens above the maximum
-constant.
-% (relevant only for places $p$ with $I(p)=[0,\infty]$ as
-%places with nontrivial age invariants cannot have tokens older that 
-%the maximum constant which is in this case equal to the invariant upper-bound).
-
-The relation $\eqMarking$ is an equivalence relation and it is
-also a timed bisimulation 
-where delays and transition firings on one side can be matched by
-exactly the same delays and transition firings on the other side
-and vice versa. % (see e.g.~\cite{LY:97}).
-
-\begin{theorem}[\cite{ALSST:MEMICS:12}]
-\label{thm:bisim}
-  The relation $\eqMarking$ is a timed bisimulation.
-\end{theorem}
-
-We can now define canonical representatives for each
-equivalence class of $\eqMarking$. 
-
-\begin{definition}[Cut]
-\label{def:cut}
-Let $M$ be a marking.
-We define its canonical marking $\cut(M)$ by 
-$\cut(M)(p)= \myoung(p)\uplus \big\{ \underbrace{ \cmax(p)+1,\dots ,\cmax(p)+1 }_{|\mold(p)| \text{ times}} \big\}$.
-%\begin{equation*}
-%  \cut(M)(p)=
-%\begin{cases}
-%\myoung(p)  \quad \text{if $p$ is invariant or dead-token place,} \\
-%\myoung(p)\uplus \big\{ \underbrace{ \cmax(p)+1,\dots ,\cmax(p)+1 }_{|\mold(p)| \text{ times}} \big\}    \quad \text{if $p$ is a normal place.}
-%\vspace{-.45cm}
-%\end{cases}
-%\vspace{.45cm}
-%\end{equation*}
-\end{definition}
-
-\begin{lemma}[\cite{ALSST:MEMICS:12}]
-\label{lemma:canon}
-Let $M$, $M_1$ and $M_2$ be markings. Then
-(i) $M \eqMarking \cut(M)$, and (ii)
-$M_1 \eqMarking M_2$ if and only if $\cut(M_1)=\cut(M_2)$.
-\end{lemma}
-
-Let $M$ and $M^\prime$ be two markings. We say that $M^\prime$ \emph{covers} 
-$M$, denoted by $M \sqsubseteq M^\prime$, if $M(p) \subseteq M^\prime(p)$ 
-for all $p \in P$. We write $M \sqsubseteq_{cut} M^\prime$ 
-if $cut(M) \sqsubseteq cut(M^\prime)$.
-
-For monotonic timed-arc Petri nets we can now show that adding more tokens
-to the net does not restrict its possible behaviour. 
-
-\begin{lemma}
-\label{lem:mono}
-Let $N$ be an MTAPN and $M,M' \in \mathcal{M}(N)$
-be two of its markings such that $M \sqsubseteq_{\cut} M'$. 
-If $M \trans{d} M_1$ (resp. $M \trans{t} M_1$) then 
-$M' \trans{d} M'_1$ (resp. $M' \trans{t} M'_1$) such that 
-$M_1 \sqsubseteq_{cut} M'_1$ and 
-$|M'|-|M|=|M'_1|-|M_1|$.
-\end{lemma}
-\begin{proof}
-Let $M \trans{d} M_1$, resp. $M \trans{t} M_1$.
-As $M \equiv \cut(M)$ by Lemma~\ref{lemma:canon}(i),
-we can by Theorem~\ref{thm:bisim} conclude that also $\cut(M) \trans{d} M_2$,
-resp. $\cut(M) \trans{t} M_2$,
-such that $M_1 \equiv M_2$. Recall that $\cut(M) \sqsubseteq \cut(M')$
-by the assumption of the lemma.
-\begin{itemize}
-\item Time delay case ($\cut(M) \trans{d} M_2$).
-As the net does not contain any nontrivial age invariants
-and there are no urgent transitions,
-we know that also $\cut(M') \trans{d} M_3$ such that
-$M_2 \sqsubseteq M_3$ as time delay preserves the $\sqsubseteq$-relation.
-\item Transition firing case ($\cut(M) \trans{t} M_2$).
-As the net does not have any inhibitor arcs,
-we can see that also $\cut(M') \trans{t} M_3$ by consuming
-exactly the same tokens in $\cut(M')$ as we did in $\cut(M)$.
-Clearly, $M_2 \sqsubseteq M_3$.
-\end{itemize}
-Because $\cut(M') \equiv M'$ due to Lemma~\ref{lemma:canon}(i),
-we know by Theorem~\ref{thm:bisim}
-that $M' \trans{d} M'_1$, resp. $M' \trans{t} M'_1$, such that $M_3 \equiv M'_1$.
-Hence $M_1 \equiv M_2 \sqsubseteq M_3 \equiv M'_1$.
-By Lemma~\ref{lemma:canon}(ii) we get
-$\cut(M_1)=\cut(M_2)$ and $\cut(M_3)=\cut(M'_1)$.
-Observe now a simple fact that $M_2 \sqsubseteq M_3$ implies that
-$\cut(M_2) \sqsubseteq \cut(M_3)$.
-This all together implies that $\cut(M_1)=\cut(M_2) \sqsubseteq
-\cut(M_3) = \cut(M'_1)$ which is another way of saying that
-$M_1 \sqsubseteq_\cut M'_1$ as required by the lemma.
-As time delays do not change the number of
-tokens in $M$ and $M'$ and transition firing adds or removes an
-equal number of tokens from both $M$ and $M'$,
-we can also conclude that $|M'|-|M|=|M'_1|-|M_1|$.
-\qed
-\end{proof}
-
-
 
 
 

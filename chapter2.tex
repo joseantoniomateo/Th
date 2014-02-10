@@ -1059,48 +1059,47 @@ must show interest by sending a subscription message directly to the resource ow
 the corresponding condition, thus reducing the overload of the net. This is due to the amount of notifications
 in the network is reduced. More technical details will be extended in that chapter.
 
-   
+
+\section{Workflow management}
+%A major challenge faced by organizations in today environment is to transform
+%ideas and concepts into products and services at an ever-increasing pace. At the
+%same time and following the development and adoption of Internet technologies, 
+%organizations distributed by space, time, and capabilities are increasingly pushed to
+%exploit synergies by integrating their processes in the setting of virtual organizations. 
+%These forces triggered a number of trends that have progressively changed
+%the landscape and nature of enabling technologies for information systems 
+%development.
+
+In parallel with the trend ``from programming to assembling'', another trend
+changed the way information systems were developed. This trend is the shift ``from
+data orientation to process orientation'' \cite{DumasAalst2005}. In the 1970s and 1980s 
+data-driven approaches were dominating
+the applications market and, as a consequence, the way in which data is managed (stored, retrieved and presented) 
+is the most important part in the development process. Thus, data
+modelling was the starting point for building every information system. One advantage was there were arising
+robust technologies for developing data-centric information systems, although 
+business processes modelling was often neglected. As a 
+result, the logic of business processes was spread across multiple software
+applications and manual procedures, thereby hindering their optimization and their
+adaptation to changes. In addition, processes were sometimes structured to fit the
+constraints of the underlying information system, thus introducing inefficiencies.
+Nevertheless, in the last 15 years we have witnessed a shift from ``data-aware'' 
+information systems to ``process-aware'' information systems \cite{DumasAalst2005}.
+During these years, a lot of vendors have migrated their technology in order to provide applications
+for workflow management. Initially, these systems were called ``WorkFlow Management (WFM) systems'', but, nowadays,
+they are known as ``Business Process Management (BPM) systems''. Both WFM and BPM systems aim at supporting operational
+processes known as ``workflows''.
+
+According to the organization WFMC, a workflow is concerned with the automation of procedures where documents, information or tasks are passed
+between participants according to a defined set of rules to achieve, or contribute to, an overall business goal.
+Whilst workflow may be manually organised, in practice most workflow is normally
+organised within the context of an IT system to provide
+computerised support for the procedural automation.
 
 
-%Como podemos observar el mensaje \emph{Notify} contiene uno o varios mensajes de notificación (\emph{NotificationMessages}). Los campos dentro de éstos son: 
-%
-%\begin{itemize}
-%\item Topic: La información del topic que se envía.
-%\item Dialect: El dialecto usado para expresar el topic anterior, es decir, el lenguaje utilizado para expresarlo.
-%\item ProducerReference: Dirección del productor.
-%\item Message: Una copia de la carga útil (payload) del mensaje actual.
-%\end{itemize}
-%
-%A continuación, se muestra el mensaje que manda el suscriptor para registrar su interés en uno o más topics:
-%
-%
-%\lstset{language=XML, numbersep=5pt, frame=single}
-%\begin{lstlisting}
-%...
-%<wsnt:Subscribe>
-%  <wsnt:ConsumerReference>
-%    wsa:endpointReference
-%  </wsnt: ConsumerReference>
-%  <wsnt:TopicExpression Dialect = xsd:anyURI >
-%    {any}
-%  </wsnt:TopicExpression>
-%  <wsnt:UseNotify>xsd:boolean</wsnt:UseNotify>?
-%  <wsnt:Precondition>wsrp:QueryExpression</Precondition>?
-%  <wsnt:Selector>wsrp:QueryExpression</wsnt:Selector>?
-%  <wsnt:SubscriptionPolicy>{any}</wsnt:SubscriptionPolicy>?
-%  <wsnt:InitialTerminationTime>
-%    xsd:dateTime
-%  </wsnt:InitialTerminationTime>?
-%</wsnt:Subscribe>
-%
-%...
-%\end{lstlisting}
-%
-%
-%Los conceptos importantes en este mensaje son \emph{UseNotify} que se utiliza para decidir si el mensaje de notificación sigue el formalismo WS-Notification o se manda sin formato, \emph{Precondition} que es la condición que genera mensajes de notificación, es decir, si se cumple esta condición se generan mensajes, pero debe cumplirse también la condición \emph{selector} para enviarlos a los destinatarios que es la que se usa para decidir si se transmiten o no los mensajes generados. Además, \emph{SubscriptionPolicy} se podría utilizar para controlar el ratio de envío de mensajes(por ejemplo, no más de 3 por segundo) y \emph{InitialTerminationTime} contiene una sugerencia del tiempo de vida de la suscripción. WSRF también incluye mensajes para detener la suscripción, reanudarla o para que un servicio que acaba de unirse a una suscripción pueda obtener un historial de notificaciones sobre un determinado topic.
-%
 \subsection{Formal models of concurrency}\label{formalmodels}
 \input{basicdefinitions.tex}
+\input{dtapn.tex}
 \input{ptcpn.tex}
 %\input{tapn.tex}
 

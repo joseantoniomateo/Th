@@ -20,8 +20,9 @@
 \BOOKMARK [2][-]{subsection.3.1.1}{Safety properties}{section.3.1}
 \BOOKMARK [2][-]{subsection.3.1.2}{Liveness properties}{section.3.1}
 \BOOKMARK [1][-]{section.3.2}{Timed extensions of Petri nets}{chapter.3}
-\BOOKMARK [1][-]{section.3.3}{Prioritized-Timed Colored Petri Nets}{chapter.3}
-\BOOKMARK [1][-]{section.3.4}{Summary}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{Extended Timed-Arc Petri Nets}{chapter.3}
+\BOOKMARK [1][-]{section.3.4}{Prioritized-Timed Colored Petri Nets}{chapter.3}
+\BOOKMARK [1][-]{section.3.5}{Summary}{chapter.3}
 \BOOKMARK [0][-]{chapter.4}{BPELRF}{}
 \BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}
 \BOOKMARK [1][-]{section.4.2}{Background and Related Work}{chapter.4}
