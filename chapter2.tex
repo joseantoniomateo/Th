@@ -1143,6 +1143,86 @@ In Figure \ref{fig:wfms}, we can see these three characteristics and their relat
   \label{fig:wfms}
 \end{figure}
 
+It can be observed that are two well defined parts: \emph{build time} and \emph{run time}. As commented previously, formal methods have a 
+great impact when they are applied in the early stages of the development. Thus, in this Thesis we propose an extension of a well-known formalism (Workflow nets)
+that helps designers in this ``design time'' part. In particular, we cover all the aspects encouraged by the WorkFlow Management Coalition since a formalism to model workflows is provided, some correctness properties (soundness and strong soundness) are studied and a tool to check these properties as well as the model 
+evolution is developed. Notice that the ``run time part'' is out of the scope of the present Thesis and, consequently, the technicalities of it are not shown her.
+As a result, we will focus on the other part and indeed in a particular formal model and its analysis.
+
+In 1997, Workflow nets~\cite{Aalst97,Aalst98} were introduced 
+by the Dutch computer scientist Wil van der Aalst as a formalism
+for modelling, analysis and verification of business workflow processes, that is, as a mean to support
+the \emph{build time part} of a workflow management system.
+%to model, validate and verify business process, \emph{workflow nets} (wf-nets) \cite{Aalst97,Aalst98}. 
+As systems are moving from data-aware to process-aware, workflow nets abstract away most of the data  
+while focusing on the possible flow in the process. The aim of Van der Aalst was to provide practitioners with 
+a formal framework that is capable of representing both the model and the possible properties. With the model, 
+it is easy to check how the system evolves, whereas, with the properties, one can study properties of great interest such as 
+the presence of design errors. Among these errors, one can note the presence of deadlocks, livelocks 
+and other anomalies. To this end, a correctness criterion is described
+via the notion of \emph{soundness} (see~\cite{AalstHHSVVW11}) that
+requires the option to complete the workflow, guarantees proper termination
+and optionally also the absence of redundant tasks. In Chapter \ref{chapter:c4}, we will study in depth the soundness notion and
+our timed extension of it. 
+
+After the seminal work on workflow nets, researchers have 
+invested much effort in defining new soundness criteria and/or 
+improving the expressive power of the original model by adding new features 
+and studying the related decidability and 
+complexity questions
+(see~\cite{AalstHHSVVW11} for a recent overview). Thus, researchers must choose between 
+adding expressiveness to the model, which in many cases leads to undecidability issues, or keeping the model as simple as possible
+in order to obtain decidable algorithms to check the soundness notion. In Chapter \ref{chapter:c4}, we will summarise the main extensions, focusing
+on time extensions since they are the aim of our work.
+
+Finally, note that workflow nets are based on Petri nets since they are an established tool 
+for modelling and analysing processes \cite{Aalst97}. Furthermore, the author presented in \cite{Aalst97} the most important factors
+that influenced in his decision of using Petri nets. These factors are the following:
+
+\begin{itemize}
+\item {\bf Formal semantics.}
+A workflow process specified in terms of a Petri net has a clear and precise
+definition, because the semantics of the classical Petri net and several 
+enhancements (colour, time, hierarchy) have been defined formally.
+
+\item {\bf Graphical nature.}
+Petri nets are a graphical language. As a result, Petri nets are intuitive and
+easy to learn. The graphical nature also supports the communication with
+end-users.
+
+\item {\bf Expressiveness.}
+Petri nets support all the primitives needed to model a workflow process. All
+the routing constructs present in today’s workflow management systems can
+be modelled. Moreover, the fact that states are represented explicitly, allows
+for the modelling of milestones and implicit choices.
+
+\item {\bf Properties.}
+In the last three decades many people have investigated the basic properties
+of Petri nets. The firm mathematical foundation allows for the reasoning
+about these properties. As a result, there is a lot of common knowledge, in
+the form of books and articles, about this modelling technique.
+
+\item {\bf Analysis.}
+Petri nets are marked by the availability of many analysis techniques. Clearly,
+this is a great asset in favour of the use of Petri nets for workflow modelling.
+These techniques can be used to prove properties (safety properties, 
+liveness properties, deadlock, etc.) and to calculate performance measures 
+(response times, waiting times, occupation rates, etc.). In this way it is possible
+to evaluate alternative workflows using standard Petri-net-based analysis
+tools.
+
+\item {\bf Vendor independent.}
+Petri nets provide a tool-independent framework for modelling and analysing
+processes. Petri nets are not based on a software package of a specific vendor
+and do not cease to exist if a new version is released or when one vendor takes
+over another vendor.
+
+\end{itemize}
+
+Notice that most of these arguments have been commented throughout the Thesis, showing that
+Petri nets and their different variants are a mature and suitable formalism to model any kind
+of system.
+
 \subsection{Formal models of concurrency}\label{formalmodels}
 \input{basicdefinitions.tex}
 \input{dtapn.tex}
