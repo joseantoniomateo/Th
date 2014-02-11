@@ -16,6 +16,7 @@
 \BOOKMARK [1][-]{section.2.6}{Workflow management}{chapter.2}
 \BOOKMARK [2][-]{subsection.2.6.1}{Formal models of concurrency}{section.2.6}
 \BOOKMARK [1][-]{section.2.7}{Petri nets}{chapter.2}
+\BOOKMARK [1][-]{section.2.8}{Summary}{chapter.2}
 \BOOKMARK [0][-]{chapter.3}{Extended Petri nets}{}
 \BOOKMARK [1][-]{section.3.1}{Petri nets analysis}{chapter.3}
 \BOOKMARK [2][-]{subsection.3.1.1}{Safety properties}{section.3.1}
@@ -23,7 +24,6 @@
 \BOOKMARK [1][-]{section.3.2}{Timed extensions of Petri nets}{chapter.3}
 \BOOKMARK [1][-]{section.3.3}{Extended Timed-Arc Petri Nets}{chapter.3}
 \BOOKMARK [1][-]{section.3.4}{Prioritized-Timed Colored Petri Nets}{chapter.3}
-\BOOKMARK [1][-]{section.3.5}{Summary}{chapter.3}
 \BOOKMARK [0][-]{chapter.4}{BPELRF}{}
 \BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}
 \BOOKMARK [1][-]{section.4.2}{Background and Related Work}{chapter.4}

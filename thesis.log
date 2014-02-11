@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  11 FEB 2014 11:49
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  11 FEB 2014 13:13
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -796,7 +796,10 @@ LaTeX Info: Redefining \subref on input line 127.
 \c@remark=\count163
  (./macros.tex)
 (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux) (./chapter2.aux)
-(./chapter3.aux
+(./chapter3.aux) (./chapter4.aux
+
+LaTeX Warning: Label `chapter:c3' multiply defined.
+
 
 LaTeX Warning: Label `petrinet' multiply defined.
 
@@ -806,9 +809,12 @@ LaTeX Warning: Label `cs' multiply defined.
 
 LaTeX Warning: Label `BPELsyntax' multiply defined.
 
-) (./chapter4.aux) (./chapter5.aux)
+) (./chapter5.aux) (./Conclusions.aux)
 
 LaTeX Warning: Label `bpelsoftcare' multiply defined.
+
+
+LaTeX Warning: Label `CPNTools' multiply defined.
 
 
 LaTeX Warning: Label `Andrews2003WSBPEL' multiply defined.
@@ -818,6 +824,18 @@ LaTeX Warning: Label `Armbrust2009' multiply defined.
 
 
 LaTeX Warning: Label `BAN06' multiply defined.
+
+
+LaTeX Warning: Label `Bau96' multiply defined.
+
+
+LaTeX Warning: Label `BestK92' multiply defined.
+
+
+LaTeX Warning: Label `BLT90' multiply defined.
+
+
+LaTeX Warning: Label `Bow96' multiply defined.
 
 
 LaTeX Warning: Label `Buyya2011' multiply defined.
@@ -844,22 +862,58 @@ LaTeX Warning: Label `Hollingsworth2004' multiply defined.
 LaTeX Warning: Label `Fost04' multiply defined.
 
 
+LaTeX Warning: Label `Jensen97' multiply defined.
+
+
+LaTeX Warning: Label `AjCh85' multiply defined.
+
+
+LaTeX Warning: Label `Mer74' multiply defined.
+
+
 LaTeX Warning: Label `wsbpelstandard' multiply defined.
 
 
 LaTeX Warning: Label `OuyangVABDH07' multiply defined.
 
 
+LaTeX Warning: Label `Pet81' multiply defined.
+
+
 LaTeX Warning: Label `Pnueli77' multiply defined.
+
+
+LaTeX Warning: Label `Ram74' multiply defined.
+
+
+LaTeX Warning: Label `VFC93' multiply defined.
 
 
 LaTeX Warning: Label `Foster03' multiply defined.
 
 
+LaTeX Warning: Label `Sif77' multiply defined.
+
+
 LaTeX Warning: Label `Henzinger94' multiply defined.
 
 
+LaTeX Warning: Label `van93' multiply defined.
+
+
+LaTeX Warning: Label `Aalst97' multiply defined.
+
+
+LaTeX Warning: Label `Aalst98' multiply defined.
+
+
+LaTeX Warning: Label `van95' multiply defined.
+
+
 LaTeX Warning: Label `Vaquero2008' multiply defined.
+
+
+LaTeX Warning: Label `Wan98' multiply defined.
 
 )
 \openout1 = `thesis.aux'.
@@ -914,10 +968,6 @@ LaTeX Info: Redefining \pageref on input line 229.
 \openout4 = `thesis.out'.
 
 \AtBeginShipoutBox=\box70
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <17.28> not available
@@ -927,7 +977,7 @@ LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <17.28> not available
 LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <17.28> not available
 (Font)              Font shape `OT1/pbk/db/n' tried instead on input line 238.
 File: logo.eps Graphic file (type eps)
-<logo.eps>
+ <logo.eps>
 Overfull \hbox (8.7384pt too wide) in paragraph at lines 238--238
  [][] 
  []
@@ -1252,24 +1302,12 @@ File: Figures/wfmsarquitectura.eps Graphic file (type eps)
 
 <Figures/wfmsarquitectura.eps> [42]
 
-LaTeX Warning: Citation `Aalst97' on page 43 undefined on input line 1152.
-
-
-LaTeX Warning: Citation `Aalst98' on page 43 undefined on input line 1152.
-
-
 LaTeX Warning: Citation `AalstHHSVVW11' on page 43 undefined on input line 1163
 .
 
 
 LaTeX Warning: Citation `AalstHHSVVW11' on page 43 undefined on input line 1173
 .
-
-
-LaTeX Warning: Citation `Aalst97' on page 43 undefined on input line 1179.
-
-
-LaTeX Warning: Citation `Aalst97' on page 43 undefined on input line 1179.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1348,13 +1386,19 @@ Underfull \vbox (badness 2961) has occurred while \output is active []
  [49]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <14.4> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 278.
-
+))
 [50]
+\openout2 = `chapter3.aux'.
+
+ (./chapter3.tex
 Chapter 3.
 [51
 
+
+
+
 ]
-Overfull \hbox (37.92436pt too wide) in paragraph at lines 340--344
+Overfull \hbox (37.92436pt too wide) in paragraph at lines 58--62
 []\OT1/pbk/l/n/10 An oc-cur-rence se-quence $\OML/cmm/m/it/10 ^^[ \OT1/cmr/m/n/
 10 = \OML/cmm/m/it/10 M[]R[]M[] [] R[]M[]$ \OT1/pbk/l/n/10 is fi-nite iff $\OMS
 /cmsy/m/n/10 8\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 f\OT1/cmr/m/n/10 1\OML/cmm/
@@ -1363,7 +1407,7 @@ cmm/m/it/10 R[]\OMS/cmsy/m/n/10 i\OML/cmm/m/it/10 M[]$\OT1/pbk/l/n/10 .
  []
 
 
-Overfull \hbox (4.16812pt too wide) in paragraph at lines 340--344
+Overfull \hbox (4.16812pt too wide) in paragraph at lines 58--62
 \OT1/pbk/l/n/10 The set of oc-cur-rence se-quence of $\OML/cmm/m/it/10 N$ \OT1/
 pbk/l/n/10 start-ing from $\OML/cmm/m/it/10 M[]$ \OT1/pbk/l/n/10 is de-noted by
  $\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 N; M[]\OT1/cmr/m/n/10 )$\
@@ -1372,40 +1416,12 @@ OT1/pbk/l/n/10 .
 
 [52]
 
-LaTeX Warning: Citation `citar' on page 53 undefined on input line 429.
+LaTeX Warning: Citation `citar' on page 53 undefined on input line 147.
 
 [53]
-
-LaTeX Warning: Citation `Ram73' on page 54 undefined on input line 517.
-
-
-LaTeX Warning: Citation `Sif77' on page 54 undefined on input line 517.
-
-
-LaTeX Warning: Citation `VFC93' on page 54 undefined on input line 517.
-
-
-LaTeX Warning: Citation `AjCh85' on page 54 undefined on input line 518.
-
-
-LaTeX Warning: Citation `Mer74' on page 54 undefined on input line 519.
-
-
-LaTeX Warning: Citation `van93' on page 54 undefined on input line 521.
-
-
-LaTeX Warning: Citation `van95' on page 54 undefined on input line 521.
-
-
-LaTeX Warning: Citation `BLT90' on page 54 undefined on input line 521.
-
-
-LaTeX Warning: Citation `Bow96' on page 54 undefined on input line 521.
-
-
-LaTeX Warning: Citation `Wan98' on page 54 undefined on input line 521.
-
-) (./dtapn.tex [54]
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no ³ in font pbkl7t!
+ (./dtapn.tex [54]
 Overfull \hbox (23.52707pt too wide) in paragraph at lines 27--29
 []\OT1/pbk/l/n/10 An \OT1/pbk/l/it/10 ex-tended timed-arc Petri net \OT1/pbk/l/
 n/10 (ETAPN) is a 9-tuple $\OML/cmm/m/it/10 N \OT1/cmr/m/n/10 = (\OML/cmm/m/it/
@@ -1431,23 +1447,7 @@ Overfull \hbox (96.31874pt too wide) in paragraph at lines 126--136
 ens $[] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^^R
  []
 
-[57]) (./ptcpn.tex
-
-LaTeX Warning: Citation `Jensen97' on page 58 undefined on input line 9.
-
-
-LaTeX Warning: Citation `CPNTools' on page 58 undefined on input line 10.
-
-
-LaTeX Warning: Citation `Bau96' on page 58 undefined on input line 13.
-
-
-LaTeX Warning: Citation `Best92' on page 58 undefined on input line 13.
-
-
-LaTeX Warning: Citation `Pet81' on page 58 undefined on input line 13.
-
-[58] [59]
+[57]) (./ptcpn.tex [58] [59]
 
 LaTeX Warning: Citation `CPN09' on page 60 undefined on input line 140.
 
@@ -1460,14 +1460,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Warning: Citation `Buc03' on page 63 undefined on input line 311.
 
-)
+))
 Underfull \vbox (badness 4279) has occurred while \output is active []
 
- [63])
+ [63]
 [64]
-\openout2 = `chapter3.aux'.
+\openout2 = `chapter4.aux'.
 
- (./chapter3.tex
+ (./chapter4.tex
 Chapter 4.
 
 LaTeX Warning: Citation `BPEL4WS' on page 65 undefined on input line 20.
@@ -1893,9 +1893,9 @@ LaTeX Warning: Reference `c4' on page 95 undefined on input line 2366.
 
 
 ]
-\openout2 = `chapter4.aux'.
+\openout2 = `chapter5.aux'.
 
- (./chapter4.tex
+ (./chapter5.tex
 Chapter 5.
 ) [101
 
@@ -1904,16 +1904,16 @@ Chapter 5.
 
 
 ]
-\openout2 = `chapter5.aux'.
+\openout2 = `Conclusions.aux'.
 
- (./chapter5.tex
+ (./Conclusions.tex
 Chapter 6.
 ) [103
 
 
 ]
 
-LaTeX Warning: Reference `c5' on page 104 undefined on input line 281.
+LaTeX Warning: Reference `c5' on page 104 undefined on input line 284.
 
 [104
 
@@ -1926,56 +1926,60 @@ Missing character: There is no ¶ in font pbkl7t!
  [105
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 66--71
+Underfull \hbox (badness 10000) in paragraph at lines 90--95
 []\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 66--71
+Underfull \hbox (badness 3148) in paragraph at lines 90--95
 \OT1/pbk/l/n/10 mann M. Nally T. Storey W. Vam-benepe I. Fos-ter, J. Frey and
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 66--71
+Underfull \hbox (badness 3323) in paragraph at lines 90--95
 \OT1/pbk/l/n/10 S. Weer-awarana.  Mod-el-ing state-ful re-sources with web ser-
 vices.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--71
+Underfull \hbox (badness 10000) in paragraph at lines 90--95
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
-) (./thesis.bbl [106]
+
+LaTeX Warning: Reference `c5' on page 106 undefined on input line 118.
+
+[106] [107]) (./thesis.bbl [108]
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ­ in font pbkl7t!
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ¶ in font pbkl7t!
- [107
+ [109
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 66--71
+Underfull \hbox (badness 10000) in paragraph at lines 90--95
 []\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 66--71
+Underfull \hbox (badness 3148) in paragraph at lines 90--95
 \OT1/pbk/l/n/10 mann M. Nally T. Storey W. Vam-benepe I. Fos-ter, J. Frey and
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 66--71
+Underfull \hbox (badness 3323) in paragraph at lines 90--95
 \OT1/pbk/l/n/10 S. Weer-awarana.  Mod-el-ing state-ful re-sources with web ser-
 vices.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--71
+Underfull \hbox (badness 10000) in paragraph at lines 90--95
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
-) [108] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
-(./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux))
+[110] [111]) [112] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
+(./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux)
+(./Conclusions.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -1984,12 +1988,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18002 strings out of 495062
- 302916 string characters out of 1182644
- 469139 words of memory out of 3000000
+ 18009 strings out of 495062
+ 303020 string characters out of 1182644
+ 470278 words of memory out of 3000000
  20660 multiletter control sequences out of 15000+50000
  32701 words of font info for 96 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,28n,92p,2750b,1837s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (122 pages, 531780 bytes).
+Output written on thesis.dvi (126 pages, 550552 bytes).

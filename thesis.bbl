@@ -4,6 +4,9 @@
 What is bpel and why is it so important to my business?
 \newblock Technical report.
 
+\bibitem{CPNTools}
+Cpntools web site, 2013.
+
 \bibitem{Andrews2003WSBPEL}
 S.~Askary C. Barreto B. Bloch F. Curbera M. Ford Y. Goland A. Guízar N. Kartha
   C. K. Liu R. Khalaf D. König M. Marin V. Mehta S. Thatte D. van der Rijn P.
@@ -23,6 +26,27 @@ Michael Armbrust, Armando Fox, Rean Griffith, Anthony~D. Joseph, Randy~H. Katz,
 T.~Banks.
 \newblock {Web Services Resource Framework (WSRF) - Primer}.
 \newblock {\em OASIS}, 2006.
+
+\bibitem{Bau96}
+Falko Bause.
+\newblock On the analysis of petri nets with static priorities.
+\newblock {\em Acta Informatica}, 33(7):669--685, 1996.
+
+\bibitem{BestK92}
+Eike Best and Maciej Koutny.
+\newblock Petri net semantics of priority systems.
+\newblock {\em Theor. Comput. Sci.}, 96(1):175--174, 1992.
+
+\bibitem{BLT90}
+Tommaso Bolognesi, Ferdinando Lucidi, and Sebastiano Trigila.
+\newblock From timed petri nets to timed lotos.
+\newblock In {\em PSTV}, pages 395--408, 1990.
+
+\bibitem{Bow96}
+F.~D.~J. Bowden.
+\newblock Modelling time in petri nets.
+\newblock In {\em Proceedings of the second Australia-Japan Workshop on
+  Stochastic Models in Engineering, Technology and Management}, Jul, 1996.
 
 \bibitem{Buyya2011}
 Rajkumar Buyya, James Broberg, and Andrzej~M. Goscinski.
@@ -69,6 +93,24 @@ S.~Graham S. Tuecke K. Czajkowski D. Ferguson F. Leymann M. Nally T. Storey
 \newblock {\em http://www-106.ibm.com/developerworks/library/wsresource/
   ws-modelingresources.pdf, Tech. Rep., 2004.}
 
+\bibitem{Jensen97}
+Kurt Jensen.
+\newblock {\em Coloured Petri Nets - Basic Concepts, Analysis Methods and
+  Practical Use - Volume 3}.
+\newblock Monographs in Theoretical Computer Science. An EATCS Series.
+  Springer, 1997.
+
+\bibitem{AjCh85}
+M.~Ajmone Marsan, G.~Balbo, A.~Bobbio, G.~Chiola, G.~Conte, and A.~Cumani.
+\newblock {On Petri Nets with Stochastic Timing}.
+\newblock In {\em Proceedings of the International Workshop on Timed Petri
+  Nets}, pages 80--87. IEEE Computer Society Press, 1985.
+
+\bibitem{Mer74}
+P.~Merlin.
+\newblock {\em A Study of the Recoverability of Communication Protocols}.
+\newblock PhD thesis, University of California, 1974.
+
 \bibitem{wsbpelstandard}
 Organization for the Advancement of Structured Information Standards (OASIS).
 \newblock {\em Web Services Business Process Execution Language ({WS-BPEL})
@@ -80,10 +122,27 @@ Chun Ouyang, Eric Verbeek, Wil M.~P. van~der Aalst, Stephan Breutel, Marlon
 \newblock Formal semantics and analysis of control flow in ws-bpel.
 \newblock {\em Sci. Comput. Program.}, 67(2-3):162--198, 2007.
 
+\bibitem{Pet81}
+{J.L.} Peterson.
+\newblock {\em {Petri net theory and the modeling of systems}}.
+\newblock Prentice-Hall, Englewood Cliffs, 1981.
+
 \bibitem{Pnueli77}
 A.~Pnueli.
 \newblock {The temporal logic of programs}.
 \newblock {\em Proc. 18th IEEE Symp. on Foundations of Computer Science}, 1977.
+
+\bibitem{Ram74}
+C.~Ramchandani.
+\newblock Analysis of asynchronous concurrent systems by timed petri nets.
+\newblock Technical report, Cambridge, MA, USA, 1974.
+
+\bibitem{VFC93}
+V.V. Ruiz, D.~de~Frutos~Escrig, and F.C. Gomez.
+\newblock Decidability of the strict reachability problem for tpn's with
+  rational and real durations.
+\newblock In {\em Petri Nets and Performance Models, 1993. Proceedings., 5th
+  International Workshop on}, pages 56--65, Oct 1993.
 
 \bibitem{Foster03}
 I.~Foster J. Frey S. Graham C. Kesselman T. Maguire T. Sandholm P.~Vanderbilt
@@ -92,14 +151,46 @@ I.~Foster J. Frey S. Graham C. Kesselman T. Maguire T. Sandholm P.~Vanderbilt
   Forum Recommendation}.
 \newblock {\em , Global Grid Forum}, 2003.
 
+\bibitem{Sif77}
+Joseph Sifakis.
+\newblock Use of petri nets for performance evaluation.
+\newblock In {\em Performance}, pages 75--93, 1977.
+
 \bibitem{Henzinger94}
 J.~Sifakis T.~Henzinger, X.~Nicollin and S.~Yovine.
 \newblock {Symbolic model checking for real-time systems}.
 \newblock {\em Information and Computation}, 111(2):193--244, 1994.
 
+\bibitem{van93}
+Wil M.~P. van~der Aalst.
+\newblock Interval timed coloured petri nets and their analysis.
+\newblock In {\em Application and Theory of Petri Nets}, pages 453--472, 1993.
+
+\bibitem{Aalst97}
+Wil M.~P. van~der Aalst.
+\newblock Verification of workflow nets.
+\newblock In {\em ICATPN}, pages 407--426, 1997.
+
+\bibitem{Aalst98}
+Wil M.~P. van~der Aalst.
+\newblock The application of petri nets to workflow management.
+\newblock {\em Journal of Circuits, Systems, and Computers}, 8(1):21--66, 1998.
+
+\bibitem{van95}
+Wil M.~P. van~der Aalst and Michiel~A. Odijk.
+\newblock Analysis of railway stations by means of interval timed coloured
+  petri nets.
+\newblock {\em Real-Time Systems}, 9(3):241--263, 1995.
+
 \bibitem{Vaquero2008}
 Luis~M. Vaquero, Luis Rodero-Merino, Juan Caceres, and Maik Lindner.
 \newblock A break in the clouds: Towards a cloud definition.
 \newblock {\em SIGCOMM Comput. Commun. Rev.}, 39(1):50--55, December 2008.
+
+\bibitem{Wan98}
+J.~Wang.
+\newblock {\em Timed Petri Nets: Theory and Application}, volume~9 of {\em The
+  International Series on Discrete Event Dynamic Systems}.
+\newblock Springer, 1998.
 
 \end{thebibliography}

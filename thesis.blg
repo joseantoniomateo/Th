@@ -7,12 +7,25 @@ A level-1 auxiliary file: chapter2.aux
 A level-1 auxiliary file: chapter3.aux
 A level-1 auxiliary file: chapter4.aux
 A level-1 auxiliary file: chapter5.aux
+A level-1 auxiliary file: Conclusions.aux
 The style file: plain.bst
-Illegal, another \bibdata command---line 44 of file thesis.aux
+Illegal, another \bibdata command---line 63 of file thesis.aux
  : \bibdata
  :         {bibliography}
 I'm skipping whatever remains of this command
 Database file #1: Bibliography.bib
+Warning--entry type for "CPNTools" isn't style-file defined
+--line 979 of file Bibliography.bib
+Warning--string name "april" is undefined
+--line 985 of file Bibliography.bib
+A bad cross reference---entry "Aalst97"
+refers to entry "DBLP:conf/apn/1997", which doesn't exist
+A bad cross reference---entry "Sif77"
+refers to entry "DBLP:conf/performance/1977", which doesn't exist
+A bad cross reference---entry "van93"
+refers to entry "DBLP:conf/apn/1993", which doesn't exist
+A bad cross reference---entry "BLT90"
+refers to entry "DBLP:conf/pstv/1990", which doesn't exist
 Warning--I didn't find a database entry for "Foster2004"
 Warning--I didn't find a database entry for "Czajkowski2004"
 Warning--I didn't find a database entry for "Papazoglou2007"
@@ -22,25 +35,11 @@ Warning--I didn't find a database entry for "W3C2001"
 Warning--I didn't find a database entry for "W3C2007"
 Warning--I didn't find a database entry for "OASIS2004"
 Warning--I didn't find a database entry for "W3C2005"
+Warning--I didn't find a database entry for "AalstHHSVVW11"
 Warning--I didn't find a database entry for "citar"
-Warning--I didn't find a database entry for "Ram73"
-Warning--I didn't find a database entry for "Sif77"
-Warning--I didn't find a database entry for "VFC93"
-Warning--I didn't find a database entry for "AjCh85"
-Warning--I didn't find a database entry for "Mer74"
-Warning--I didn't find a database entry for "van93"
-Warning--I didn't find a database entry for "van95"
-Warning--I didn't find a database entry for "BLT90"
-Warning--I didn't find a database entry for "Bow96"
-Warning--I didn't find a database entry for "Wan98"
 Warning--I didn't find a database entry for "DJJJMS:TACAS:12"
 Warning--I didn't find a database entry for "BLT:90"
 Warning--I didn't find a database entry for "Hanisch:93"
-Warning--I didn't find a database entry for "Jensen97"
-Warning--I didn't find a database entry for "CPNTools"
-Warning--I didn't find a database entry for "Bau96"
-Warning--I didn't find a database entry for "Best92"
-Warning--I didn't find a database entry for "Pet81"
 Warning--I didn't find a database entry for "CPN09"
 Warning--I didn't find a database entry for "Buc03"
 Warning--I didn't find a database entry for "BPEL4WS"
@@ -68,6 +67,10 @@ Warning--I didn't find a database entry for "Foster2007"
 Warning--I didn't find a database entry for "Yang2008"
 Warning--I didn't find a database entry for "Wing1990"
 Warning--I didn't find a database entry for "Peled2001"
+Warning--I didn't find a database entry for "DBLP:conf/apn/1997"
+Warning--I didn't find a database entry for "DBLP:conf/performance/1977"
+Warning--I didn't find a database entry for "DBLP:conf/apn/1993"
+Warning--I didn't find a database entry for "DBLP:conf/pstv/1990"
 Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
@@ -127,6 +130,7 @@ Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajk
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
 while executing---line 1049 of file plain.bst
+Warning--to sort, need author or key in CPNTools
 Warning--empty author in bpelsoftcare
 Warning--empty institution in bpelsoftcare
 Warning--empty year in bpelsoftcare
@@ -178,6 +182,7 @@ while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
 while executing---line 1090 of file plain.bst
 Warning--empty year in Fost04
+Warning--empty institution in Ram74
 Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
@@ -190,45 +195,45 @@ Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Gr
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
 while executing---line 1090 of file plain.bst
-You've used 18 entries,
+You've used 35 entries,
             2118 wiz_defined-function locations,
-            723 strings with 8397 characters,
-and the built_in function-call counts, 5295 in all, are:
-= -- 502
-> -- 276
-< -- 3
-+ -- 113
-- -- 92
-* -- 351
-:= -- 916
-add.period$ -- 53
-call.type$ -- 18
-change.case$ -- 99
+            814 strings with 10654 characters,
+and the built_in function-call counts, 10598 in all, are:
+= -- 1019
+> -- 449
+< -- 10
++ -- 186
+- -- 146
+* -- 658
+:= -- 1743
+add.period$ -- 104
+call.type$ -- 35
+change.case$ -- 174
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 208
-empty$ -- 391
-format.name$ -- 92
-if$ -- 1083
+cite$ -- 43
+duplicate$ -- 459
+empty$ -- 881
+format.name$ -- 146
+if$ -- 2269
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 17
-newline$ -- 91
-num.names$ -- 32
-pop$ -- 116
+int.to.str$ -- 35
+missing$ -- 34
+newline$ -- 174
+num.names$ -- 64
+pop$ -- 220
 preamble$ -- 1
-purify$ -- 83
+purify$ -- 144
 quote$ -- 0
-skip$ -- 142
+skip$ -- 326
 stack$ -- 0
-substring$ -- 219
-swap$ -- 34
-text.length$ -- 3
+substring$ -- 532
+swap$ -- 107
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 66
-warning$ -- 6
-while$ -- 42
-width$ -- 20
-write$ -- 184
-(There were 59 error messages)
+type$ -- 128
+warning$ -- 8
+while$ -- 91
+width$ -- 37
+write$ -- 365
+(There were 63 error messages)
