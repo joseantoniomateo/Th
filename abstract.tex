@@ -1,20 +1,20 @@
 \chapter*{Abstract}\label{c0}
 
-Nowadays, most of the computing systems are based on service-oriented computing (SOC). 
+Nowadays, most computing systems are based on service-oriented computing (SOC). 
 This paradigm aims at replacing complex monolithic systems by a composition of interacting systems
-called services. A service encapsulates self-contained functionality and offers it over
-a well-defined and standardized interface. It allows cross-organizational collaborations 
-in which each participant is in charge of a particular tasks leading to 
+called services. A service encapsulates a self-contained functionality offering it over
+a well-defined and standardised interface. It allows cross-organizational collaborations 
+in which each participant is in charge of a particular task leading to 
 the development of scalable, flexible and low-cost distributed applications. Each service
 works as an autonomous component, performing only the tasks for which it has been implemented. 
 As the development of such services is independent, companies can reuse a considerable amount of components, 
 thus saving money and time. Moreover, these technologies are widely used 
 due to their ability to provide interoperability among services 
-from different companies since all the participants know the services offered by the others as well as how to access them. 
+from different companies, since all the participants know the services offered by the others, as well as how to access them. 
 
 Due to privacy concerns or commercial policy, entities participating in one of 
 these architectures have no access to complete information, that is, 
-he code implementing the services the particpants consume is hidden, 
+the code implementing the consumed services is hidden, 
 thus being impossible to examine or verify the implementation of the consumed services.
 Another issue is that web services are usually \emph{stateless},
 which means that no state is stored from the clients viewpoint. 
@@ -22,12 +22,12 @@ However, some new applications and services have emerged, which
 require to capture the state of some resources. Thus,
 new standards to manage the state of a web service have appeared. For instance,
 Open Grid Services Infrastructure (OGSI) was conceived to allow designers to manage resources when using web services, and
-this standard became Web Services Resource Framework (WSRF) when new improvements were introduced. 
+this standard became Web Services Resource Framework (WSRF), where new improvements were introduced. 
 
 Obviously, in this scenario the probability of making errors is higher than working in a monolithic scenario. Therefore, there is
-a clear need of applying any kind of technique to ensure the correctness of each participant and their composition.
-In this Thesis, we present a formal language called BPELRF and its semantics. The aim of this language is
-to model a set of bussiness processess implemented in the de-facto standard modelling language, WS-BPEL, but
+a clear need of applying any specific techniques to ensure the correctness of each participant and their composition.
+In this Thesis, we first present a formal language called BPELRF and its semantics. The aim of this language is
+to model a set of business processes implemented in the de-facto standard modelling language, WS-BPEL, but
 enriched with the ability to manage distributed resources. These distributed resources are managed according to
 the guidelines provided by the standard WSRF. Moreover, we provide a visual model of this language in terms of 
 coloured Petri nets in order to ease uninitiated people to deal with it, and we use the well-known toolbox, CPNTools,
@@ -41,12 +41,12 @@ Workflow nets were introduced
 by Wil van der Aalst as a formalism
 for the modelling, analysis and verification of business workflow processes.
 %to model, validate and verify business process, \emph{workflow nets} (wf-nets) \cite{Aalst97,Aalst98}. 
-The formalism is based on Petri nets abstracting away most of the data 
-while focusing on the possible flow in the system. 
-Its intended use is in finding design errors 
+The formalism is based on Petri nets, but abstracting away most of the data 
+while focusing on the possible flows in the system. 
+With the purpose of finding early design errors 
 such as the presence of deadlocks, livelocks 
 and other anomalies in workflow processes. Such correctness criteria can
-be described via the notion of \emph{soundness} that
+be described via the notion of \emph{soundness}, which
 requires the option to complete the workflow, guarantees proper termination
 and optionally also the absence of redundant tasks. 
 
@@ -62,13 +62,13 @@ complexity questions.
 %mention that there is a common characteristic in all of this extended models: undecidability. Thus, soundness (or its different variants)
 %is decidable for classical workflow nets \cite{Aalst97}, but, for instance, it is undecidable when we add reset or inhibitor arcs \cite{AalstHHSVVW11}.
 In this Thesis, we define a quantitative extension of workflow 
-nets with timing features called timed-arc Workflow nets. It allows us to argue, among others, 
+nets with timing features, called timed-arc Workflow nets. These allow us to argue, among others, 
 about the execution intervals of tasks, deadlines and urgent behaviour of workflow processes. Our workflow
-model is based on timed-arc Petri nets
+model is based on timed-arc Petri nets,
 where tokens carry timing information
 and arcs are labelled with time intervals restricting the available
 ages of tokens used for transition firing. Here, we consider both discrete and continuous time
-semantics, thus conforming a whole theory of workflow nets. Finally, all the theory presented in 
-this thesis have been introduced in the tool Tapaal, offering researchers a mean to model 
+semantics, thus conforming a whole theory of workflow nets. This timed Petri net extension 
+is currently supported by the tool Tapaal, thus offering to researchers and users a potential mean to model 
 timed-arc workflow nets and to automatically verify (strong) soundness.
 

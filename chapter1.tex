@@ -16,20 +16,19 @@ of recent approaches, as Web service compositions.
 Formal models of concurrency have been widely used for the description and analysis of concurrent and distributed systems. 
 Grid/Cloud environments are characterized by a dynamic environment 
 due to the heterogeneity and volatility of resources. 
-To composite web services, there are two complementary views: Choreography and Orchestration. 
+There are two complementary views in composite web services: Choreography and Orchestration. 
 The choreography view describes the observable interactions among services and can
 be  defined  by  using  specific  languages such as Web  Services
-Choreography  Description  Language  (WS-CDL) %\cite{WSCDL}
+Choreography  Description  Language  (WS-CDL), %\cite{WSCDL}
 or  by
-using more general languages like UML Messages Sequence
+using some more general languages like UML Messages Sequence
 Charts (MSC). On the other hand, orchestration concerns
 the internal behaviour of a Web service in terms of invocations
 to  other  services.  Web Services Business 
 Process Execution Language (WS-BPEL) \cite{Andrews2003WSBPEL} is normally used 
 to describe Web service orchestrations, so this
 is considered the de-facto standard language for describing Web services
-workflows in terms of web service compositions. Later on, a brief introduction of WS-CDL is provided, and
-a deep description of WS-BPEL is introduced since it will be used as part of this work.
+workflows in terms of web service compositions. 
 
 To facilitate additional interoperability among services, more standardization is required to deal with distributed resources. In January of 2004, several members of the \emph{Globus Alliance} organization and the computer multinational \emph{IBM} with the help of experts from companies such as \emph{HP, SAP, Akamai, etc.} defined the basis architecture and the initial specification documents of a new standard for that purpose, Web Services Resource Framework (WSRF)~\cite{Foster2004}. Although the Web service 
 definition does not consider the notion of state, interfaces frequently provide the user with the ability to access and manipulate
@@ -42,8 +41,8 @@ The main motivation of the first part of the Thesis is to provide a formal
 semantics for WS-BPEL+WSRF to manage stateful Web services workflows 
 by using the existing machinery in distributed systems,
 and specifically a well-known formalism, such as prioritised-timed
-coloured Petri nets, which apart of being a graphical model, but they also
-provide us an easier way to simulate and analyse the modelled
+coloured Petri nets, which are not only a graphical model, but they also
+provide us with an easier way to simulate and analyse the modelled
 system. Thus, our aim is not to provide just another WS-BPEL semantics. 
 In order to deal with the integration of BPEL plus WSRF in a proper way, 
 we have realized that it is more convenient 
@@ -55,24 +54,33 @@ there are a bundle of works defining this integration, but
 none of these works define a formal semantics in terms of Petri
 nets.
 
+The aim of the second part of the Thesis is to extend a mature formalism like
+Workflow nets with time features. To this end, we use timed-arc Petri nets, where
+each token has attached a timestamp, allowing to measure, for instance, execution times. 
+Workflow nets are useful when designing how the participants of a business process interact
+and in which order. Thus, it is easy to check bottlenecks or undesirable behaviour in our processes.
+Moreover, we prove the decidability (or undecidability) of a fundamental property for workflow nets, soundness.
+This property is checked using a continuous and a discrete time semantics. To add value to our workflow theory, we have included
+it into a well-known tool, Tapaal.
+ 
 \section{Objectives}\label{objectives}
 
 Next, we describe the general and specific objectives of the Thesis.
 
-\subsection*{Main Objective}
+\subsection*{General Objectives}
 
-The main objective of the Thesis can be splitted into two main objectives. 
-The first one is the definition of a formal language to model Grid/Cloud Computing environments, 
-reusing some of the web technologies presented to date. 
-The second one is to propose a new extension of workflow nets in terms 
-of timed-arc Petri nets, thus providing two formal models in which the time semantics is discrete or continuous. 
+Two main objectives for this Thesis have been considered. The first one is the formal definition (syntax and semantics)
+of a language that encapsulates the main aspects of composite web services (provided with distributed resources) 
+from the orchestration viewpoint.  
+The second objective is to propose a new extension of workflow nets in terms 
+of timed-arc Petri nets, thus providing two formal models in which the time semantics can be discrete or continuous. 
 Obviously, these objectives are too general and, therefore, we list below a set of subobjectives that are
 required to achieve these overall objectives.
 
 
 \subsection*{Specific Objectives}
 
-To meet this overall objectives the following specific objectives should be achieved:
+To meet this overall objectives the following specific objectives are also achieved:
 
 \begin{itemize}
 
@@ -90,22 +98,22 @@ To meet this overall objectives the following specific objectives should be achi
 
 \begin{enumerate}
 
-\item Study of the current techniques for modelling and implementing Web service composition and Grid/Cloud Computing applications.
+\item Study of the current techniques for modelling and implementing web service compositions and Grid/Cloud Computing applications.
 
-\item Analyse the different tools for modelling workflow nets as well as possible target applications of the theory presented in this Thesis.
+\item Analysis of the different tools for modelling workflow nets as well as possible target applications of the theory presented in this Thesis.
 \end{enumerate}
 
 \item \textbf{Objective 3: Development of the proposal}
 
 \begin{enumerate}
 
-\item Define the specific models, either the operational semantics or the PTCPNs semantics of the language BPELRF.
+\item Define the specific models, first the syntax, and, then, the operational semantics and the Petri nets semantics for the language BPELRF.
 
 \item Extend the current definition of workflow nets with a time semantics.
 
 \item Adapt the definition of soundness to this timed scenario.
 
-\item Develop tools within the theory presented here.
+\item Develop tools supporting the theory presented here.
 
 \item Analyse and evaluate both proposals.
 
@@ -115,9 +123,9 @@ To meet this overall objectives the following specific objectives should be achi
 
 \begin{enumerate}
 
-\item Propose a set of simple examples where the main features are displayed.
-\item Study a set of theoretical examples where the power of both proposals and its main aspects is characterized .
-\item Demonstrate the applicability of this work applying it to real (industry-based) case studies.
+\item Propose a set of simple examples where the main features are illustrated.
+\item Study a set of theoretical examples where the power of both proposals and its main aspects are characterized .
+\item Demonstrate the applicability of this work by applying it to real (industry-based) case studies.
 \end{enumerate}
 
 \end{itemize}
@@ -125,18 +133,18 @@ To meet this overall objectives the following specific objectives should be achi
 \section{Dissertation Structure}\label{structure}
 \markright{~\ref{structure} Dissertation Structure}
 
-This Thesis is organised in five different chapters as follows.
+This Thesis is organised in five different chapters, as follows.
 
-\textbf{Chapter~\ref{chapter:c1}} makes a brief introduction of the Thesis, showing the motivation, the main objectives and the scope of it.
+\textbf{Chapter~\ref{chapter:c1}} makes a brief introduction to the Thesis, showing the motivation, the main objectives and the scope of it.
 
-\textbf{Chapter~\ref{chapter:c2}} shows the state of art of the contents included here. This chapter includes a brief description of Service-Oriented Computing (SOC) and distributed computing, e.g. Grid and Cloud computing and the use of formal methods for the analysis of web service compositions and the benefits of using formal techniques in the development of software and hardware. Moreover, a deep introduction of the standards used in this work is presented. Finally, we get into workflow nets and the possible extension of this formal model as well as its main properties.
+\textbf{Chapter~\ref{chapter:c2}} shows the state of art for the contents included here. This chapter includes a brief description of Service-Oriented Computing (SOC) and distributed computing, e.g. Grid and Cloud computing and the use of formal methods for the analysis of web service compositions and the benefits of using formal techniques in the development of software and hardware. Moreover, a comprehensive introduction of the standards used in this work is presented. Finally, we get into workflow nets and the possible time extension of them, as well as its main properties.
 
-\textbf{Chapter~\ref{chapter:c3}} presents a formal specification language called BPELRF, which takes two well-known standards (WS-BPEL and WSRF) as basis, to model synchronous and asynchronous stateful interactions. This language is enriched with a publish-subscribe architecture, service discovery, event and fault handling and time-outs. As usual, an operational semantics for this language is defined. Moreover, we define a visual model of it in terms of coloured Petri nets and a tool to verify some properties of the specifications written in BPELRF.
+\textbf{Chapter~\ref{chapter:c3}} presents a formal specification language called BPELRF, which takes two well-known standards (WS-BPEL and WSRF) as basis, to model synchronous and asynchronous stateful interactions. This language is enriched with a publish-subscribe architecture, service discovery, event and fault handling and time-outs. As usual, an operational semantics for this language is defined. Moreover, we define a visual model of it in terms of coloured Petri nets and a tool to that allows us to get an automatic and easy translation to CPNTools input model, thus permitting us to make simulation and verification of some properties.
 
-In \textbf{Chapter~\ref{chapter:c4}} we suggest a workflow model based on timed-arc Petri nets and study
+In \textbf{Chapter~\ref{chapter:c4}} we suggest a workflow model based on timed-arc Petri nets, and study
 the foundational problems of soundness and strong (time-bounded) soundness.
 We explore the decidability of these problems
 and compare the discrete and continuous semantics of timed-arc
 workflow nets. 
 
-\textbf{Chapter~\ref{chapter:c5}} shows the main conclusions, contributions and future works of this Thesis.
+Finally, the main conclusions, contributions and future works of this Thesis are described in \textbf{Chapter~\ref{chapter:c5}}.

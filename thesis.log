@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  11 FEB 2014 13:13
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  12 FEB 2014 13:51
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -1007,30 +1007,17 @@ LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <10> not available
 ]
 \openout2 = `ack.aux'.
 
- (./ack.tex
-LaTeX Font Info:    Try loading font information for OT1+pag on input line 1.
 
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pag.fd
-File: ot1pag.fd 2001/06/04 font definitions for OT1/pag.
-)
-LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/pag/b/n' tried instead on input line 1.
-LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/pag/db/n' tried instead on input line 1.
-) [1
-
-
-]
+No file ack.tex.
 \openout2 = `abstract.aux'.
 
- (./abstract.tex
-[2
-
-
-
-]
+(./abstract.tex
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <24.88> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1.
+LaTeX Font Info:    Try loading font information for OT1+pag on input line 1.
+ (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pag.fd
+File: ot1pag.fd 2001/06/04 font definitions for OT1/pag.
+)
 LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/pag/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <24.88> not available
@@ -1038,11 +1025,14 @@ LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <24.88> not available
 
 Underfull \vbox (badness 2343) has occurred while \output is active []
 
- [3])
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [1
 
- [4]
-[5] [6
+
+
+
+
+]
+[2]) [3] [4
 
 
 ] (./thesis.toc
@@ -1050,27 +1040,27 @@ LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pbk/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <10> not available
 (Font)              Font shape `OT1/pbk/db/n' tried instead on input line 1.
- [7])
+ [5])
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
- [8] (./thesis.lof)
+ [6] (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [9
+ [7
 
 
-] [10
+] [8
 
 ] (./thesis.lot)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
- [11
 
-]
-[12
+[9
+
+] [10
 
 ]
 \openout2 = `chapter1.aux'.
@@ -1079,6 +1069,16 @@ LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <10> not available
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <20.74> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/pag/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <14.4> not available
+(Font)              Font shape `OT1/pag/db/n' tried instead on input line 4.
+
+LaTeX Warning: Citation `Foster2004' on page 1 undefined on input line 33.
+
+
+LaTeX Warning: Citation `Czajkowski2004' on page 1 undefined on input line 38.
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1087,39 +1087,33 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-
-LaTeX Warning: Citation `Foster2004' on page 2 undefined on input line 34.
-
-
-LaTeX Warning: Citation `Czajkowski2004' on page 2 undefined on input line 39.
-
-LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <12> not available
-(Font)              Font shape `OT1/pag/b/n' tried instead on input line 62.
-LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <12> not available
-(Font)              Font shape `OT1/pag/db/n' tried instead on input line 62.
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-Overfull \hbox (3.78696pt too wide) in paragraph at lines 75--76
-\OT1/pbk/l/n/10 To meet this over-all ob-jec-tives the fol-low-ing spe-cific ob
--jec-tives should be achieved: 
- []
+LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <12> not available
+(Font)              Font shape `OT1/pag/b/n' tried instead on input line 70.
+LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <12> not available
+(Font)              Font shape `OT1/pag/db/n' tried instead on input line 70.
+LaTeX Font Info:    Try loading font information for TS1+pbk on input line 87.
 
-LaTeX Font Info:    Try loading font information for TS1+pbk on input line 79.
 (/usr/share/texmf-texlive/tex/latex/psnfss/ts1pbk.fd
 File: ts1pbk.fd 2001/06/04 font definitions for TS1/pbk.
 )
 LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <10> not available
-(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 79.
- [3]) [4] [5] [6
+(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 87.
+ [3]
+Overfull \hbox (9.70715pt too wide) in paragraph at lines 128--129
+[]\OT1/pbk/l/n/10 Demonstrate the ap-pli-ca-bil-ity of this work by ap-ply-ing 
+it to real (industry-
+ []
+
+[4]) [5] [6
 
 
 ]
 \openout2 = `chapter2.aux'.
 
-
-(./chapter2.tex
+ (./chapter2.tex
 Chapter 2.
 
 Underfull \vbox (badness 1902) has occurred while \output is active []
@@ -1988,12 +1982,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18009 strings out of 495062
- 303020 string characters out of 1182644
- 470278 words of memory out of 3000000
+ 18007 strings out of 495062
+ 303004 string characters out of 1182644
+ 471275 words of memory out of 3000000
  20660 multiletter control sequences out of 15000+50000
  32701 words of font info for 96 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,28n,92p,2750b,1837s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (126 pages, 550552 bytes).
+Output written on thesis.dvi (124 pages, 550312 bytes).

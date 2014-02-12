@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Objectives}{2}{section.1.2}
+\contentsline {section}{\numberline {1.2}Objectives}{3}{section.1.2}
 \contentsline {section}{\numberline {1.3}Dissertation Structure}{4}{section.1.3}
 \contentsline {chapter}{\numberline {2}State of the Art}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}Motivation}{7}{section.2.1}
@@ -15,7 +15,7 @@
 \contentsline {subsection}{\numberline {2.5.4}WS-ResourceLifetime}{36}{subsection.2.5.4}
 \contentsline {section}{\numberline {2.6}Workflow management}{40}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}Formal models of concurrency}{45}{subsection.2.6.1}
-\contentsline {subsubsection}{Notation}{45}{section*.19}
+\contentsline {subsubsection}{Notation}{45}{section*.18}
 \contentsline {section}{\numberline {2.7}Petri nets}{47}{section.2.7}
 \contentsline {section}{\numberline {2.8}Summary}{50}{section.2.8}
 \contentsline {chapter}{\numberline {3}Extended Petri nets}{51}{chapter.3}
@@ -43,4 +43,4 @@
 \contentsline {section}{\numberline {4.9}Summary}{95}{section.4.9}
 \contentsline {chapter}{\numberline {5}Timed-arc workflow nets}{101}{chapter.5}
 \contentsline {chapter}{\numberline {6}Conclusions, Contributions and Future Works}{103}{chapter.6}
-\contentsline {chapter}{Bibliography}{108}{appendix*.40}
+\contentsline {chapter}{Bibliography}{108}{appendix*.39}
