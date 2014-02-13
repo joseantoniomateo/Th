@@ -1,12 +1,12 @@
 \chapter{Extended Petri nets}\label{chapter:c3}
-After introducing web services (and their composition) and the basic formal models
+After introducing web services (and their composition) and the basic formalisms
 that can be used to model and analyse them, we will focus on this chapter in defining the specific models used in this Thesis. Thus, we
-will present the extensions of the basic model of Petri nets stated previously and some properties
+will present some extensions of the basic model of Petri nets and some properties
 that can be analysed. We will recall some notions (marking, firing, enabledness and so on) defined in the preceding chapter
-and will adapt them to a particular case. This chapter is mainly divided in two parts. On the one hand,
-we will focus on the definition of Coloured Petri nets since they are used in the definition of the language BPELRF, whereas
+and we will adapt them to a particular case. This chapter is mainly divided in two parts. On the one hand,
+we will focus first on the definition of Coloured Petri nets since they are used in the definition of the language BPELRF, and, then,
 we will present timed-arc Petri nets, in its two variants (discrete and continuous), as they are the basis of the workflow model presented in the
-second part of this Thesis.
+second part of the present Thesis.
 
 \begin{definition} [(General Petri nets)]
 A general Petri net is a 5-tuple $N=(P,T,F,K,W)$, where:
@@ -37,10 +37,10 @@ The firing of $t$ produces the marking $M'$:
 $M'(p) = M(p) - W(p,t) + W(t,p)$, for all $p \in P$.
 Again, this evolution is denoted by $M[ t \rangle M'$.
 \item A multiset of transitions $R$ is enabled in $M$, written $M [ R \rangle$, if and only if
-$M(p) \geq \sum_{t \in T} W(p,t) \cdot R(t)$. The firing of $R$
+$M(p) \geq \sum_{t \in T} W(p,t) \cdot R(t)$. The firing of $R$,  denoted by $M [ R \rangle M'$,
 produces $M'$:
 \[ M'(p) = M(p) - \sum_{t \in T} (W(p,t) - W(t,p)) \cdot R(t), \,\,
-\forall p \in P\], denoted by $M [ R \rangle M'$.
+\forall p \in P\]
 \end{enumerate}
 \end{definition}
 
@@ -55,8 +55,8 @@ We extend the conventional notation to occurrence sequence,
 obtaining $M_0 [ \sigma \rangle M_n$.
 The set of occurrence sequences starting from $M_0$ are denoted by $L(N,M_0)$.
 
-\item An occurrence sequence $\sigma = M_0 R_1 M_1 \ldots R_n M_n$ is finite
-iff $\forall i \in \{1,\ldots,n\},\,M_{i-1} [ R_i \rangle M_i$.
+\item For multiple transitions, an occurrence sequence $\sigma = M_0 R_1 M_1 \ldots R_n M_n$ is finite
+iff $\forall i \in \{1,\ldots,n\}$, $\,M_{i-1} [ R_i \rangle M_i$.
 %Again, we extend the notation to occurrence sequence, $M_0 [ \sigma \rangle M_n$.
 The set of occurrence sequence of $N$ starting from $M_0$ is denoted by $P(N,M_0)$.
 \end{enumerate}
@@ -127,13 +127,13 @@ The set of occurrence sequence of $N$ starting from $M_0$ is denoted by $P(N,M_0
 
 \section{Petri nets analysis}
 When designing a new system, the construction of a graphical model (e.g. a Petri net) of it is always
-helpful since it is interesting to broadly understand how this system works. This also helps designers to have a
-deeper knowledge about it. Nevertheless, the presence of a graphical model is not enough in many cases
+helpful since it is interesting to broadly understand how this system works before building it. This also helps designers to have a
+deeper knowledge about how it evolves in its different steps. Nevertheless, the presence of a graphical model is not enough in many cases
 as the designers want the system to meet some properties of interest. For instance, the system is useless
-if it reaches a deadlock in each execution.  To this end, it is important to have tools that allow to
-evaluate properties in the model. In finite sequential systems, it is not particularly challenging to check
+if it reaches a deadlock in each execution.  To this end, it is valuable to have tools that allow to
+evaluate properties in the model (and, in extension, in the real system). In finite sequential systems, it is not particularly challenging to check
 the fulfilment of certain statement, whereas the presence of concurrency complicates this task.
-The analysis of systems behaviour is intended to determine the compliance of 
+Thus, the analysis of system behaviour is intended to determine the compliance of 
 certain properties such as that the number of processes in a queue does not exceed
 certain threshold or that the mutual exclusion is guaranteed when accessing to a shared resource.
 
@@ -144,7 +144,7 @@ state, the possibility of reaching a concrete situation after performing some co
 
 
 \medskip
-Normally, these properties are divided in two categories \cite{citar}:
+Normally, these properties are divided in two categories: % Incluir cita si se encuentra
 
 \subsection{Safety properties}
 A safety property asserts that \emph{``nothing bad happens''}.
@@ -163,9 +163,9 @@ by $[ M \rangle$ the set of reachable markings starting from the marking $M$.
 
 \item {\bf Boundedness}. A marked Petri net $N=(P,T,F,W,M_0)$ 
 is {\it k-bounded}, for some $k \in \nnul$, if all reachable marking
-$M$ from $M_0$ hold that $M(p) \leq k$, for all $p \in P$. $N$ is safe if
+$M$ from $M_0$ hold that $M(p) \leq k$, for all $p \in P$. $N$ is said to be safe if
 it is 1-bounded. A place $p \in P$ is
-{\it n-safe} if $M(p) \leq n$, for all markings $M$ reachable from $M_0$.
+{\it n-safe} if $M(p) \leq n$, for all marking $M$ reachable from $M_0$.
 
 %\item {\bf Boundedness}. Sea
 %$N=(P,T,F,W,M_0)$ una Red de Petri Marcada.
@@ -188,7 +188,7 @@ The net $N$ is deadlock-free iff there are no dead markings.
 \item {\bf Coverability}.
 Let $N=(P,T,F,W,M_0)$ be a marked Petri net and $M$ be a marking of $N$.
 $M$ is said to be {\it coverable} if there exists $M' \in
-[M_0 \rangle$ such that $M' \geq M$.
+[M_0 \rangle$ such that $M'(p) \geq M(p)$, for all $p \in P$.
 \end{enumerate}
 
 %\noindent {\sc NOTA:} Para ser m\'{a}s precisos, la alcanzabilidad no es
@@ -207,14 +207,14 @@ The \emph{liveness properties} are:
 Let $N=(P,T,F,W,M_0)$ be a marked Petri net. A transition $t \in T$
 is said to be {\it live} if for all reachable marking $M \in
 [ M_0 \rangle$ there is an occurrence sequence $\sigma$ starting from $M$ such that
-$\sigma = t_1 \ldots t_m$, with $t_m = t$. The $N$ is {\it live} iff all the transitions are live.
+$\sigma = t_1 \ldots t_m$, with $t_m = t$. The net $N$ is {\it live} iff all the transitions are live.
 \item {\bf Home State}.
 Let $N=(P,T,F,W,M_0)$ be a marked Petri net. A marking $M$ of $N$ is a {\it home state} if for all
 $M' \in [ M_0 \rangle$, $M \in [ M' \rangle$.
 \item {\bf Home Space}. Let $N=(P,T,F,W,M_0)$ be a marked Petri net.
 The set of markings ${\cal M}$ is a {\it home-space}
 of $N$ if for all marking $M' \in [ M_0 \rangle$ there is marking
-$M'' \in {\cal M}$ such that $M'' \in [ M' \rangle$.
+a $M'' \in {\cal M}$ such that $M'' \in [ M' \rangle$.
 \item {\bf Cyclic}.
 Let $N=(P,T,F,W,M_0)$ be a marked Petri net. It is said that
 $N$ is cyclic if for all marking $M \in [ M_0 \rangle$ there exists an occurrence sequence $\sigma$
@@ -229,19 +229,17 @@ starting in $M$ such that $M [ \sigma \rangle M_0$.
 \section{Timed extensions of Petri nets}
 
 In the
-literature on timed extensions of Petri nets we can identify a
+literature on timed extensions for Petri nets we can identify a
 first group of models, which assign time delays to transitions,
 by using either a fixed deterministic value
 \cite{Ram74,Sif77,VFC93} or choosing it from a probability
 distribution \cite{AjCh85}. Other models use time intervals to
 establish the enabling times of transitions \cite{Mer74}. 
-There are also models that introduce time on tokens
+There are also models that include time on tokens
 \cite{van93,van95,BLT90}. In \cite{Bow96,Wan98} 
-a description is given of the different approaches 
-to introduce time in Petri nets.
+a summary of time extensions for Petri nets is presented.
 
-Extender un poco mas esto con información de cada paper
+%Nota.- Extender un poco mas esto con información de cada paper
 
-
-\input{dtapn.tex}
 \input{ptcpn.tex}
+\input{dtapn.tex}

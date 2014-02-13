@@ -1,22 +1,23 @@
 \section{Prioritized-Timed Colored Petri Nets}\label{petrinet}
 
-Next we introduce the specific model of prioritized-timed
-coloured Petri net considered as a graphical formalism for the language BPELRF. 
+Next we introduce the particular model of prioritised-timed
+coloured Petri net considered as the graphical formalism for the language BPELRF. 
  
-
-We use prioritized-timed coloured Petri nets (PTCPNs), 
+We use prioritised-timed coloured Petri nets (PTCPNs), 
 which are
-a prioritized-timed extension of coloured Petri nets \cite{Jensen97},
-the well-known model supported by CPN Tools \cite{CPNTools},
-developed by the CPN group at the University of Aarhus.
+a prioritised-timed extension of coloured Petri nets \cite{Jensen97}. PTCPNs 
+are supported by CPN Tools \cite{CPNTools}, which a toolbox
+developed originally by the \emph{CPN group} at the University of Aarhus. The maintenance and extension of CPNTools are now in charge
+of the group \emph{Architecture of Information Systems}, chaired by Wil van der Aalst, at Technische Universiteit Eindhoven.
 Priorities were also introduced in Petri nets to extend the descriptive 
 power of the model \cite{Bau96,BestK92,Pet81}, usually by
 associating priority levels with transitions and modifying the firing
 rule to prevent the firing of a transition when another one with
-higher priority is enabled.
+higher priority is enabled. Note that this feature is really useful  for describing some activities
+in the language BPELRF.
 
 In PTCPNs, places have an associated colour set (data types). 
-Each token then  has  an attached data value
+Each token has then an attached data value
 ({\em token colour}),
 which belongs to the colour to which the token is
 associated. We will use timed colours, for which the first component
@@ -26,13 +27,13 @@ a natural number representing the time at which the
 token will be available.
 
 There is also a discrete global clock that represents
-the total time elapsed in the system model. Arcs also have 
+the total time elapsed in the system model. Moreover, arcs have also 
 an associated inscription ({\em arc expressions}),
 constructed using variables, constants, operators
 and functions. 
 To evaluate an arc expression we need to
-bind the variables, which consists of assigning
-a value to the variables that appear in the
+bind the variables that are part of the expression with their current value, that is, this binding
+consists of assigning a value to the variables that appear in the
 arc inscription. These values are then used to
 select the token colours that must be removed or added when
 firing the corresponding transition.
@@ -59,7 +60,7 @@ otherwise the binding is disabled and
 the transition cannot be fired. 
 
 \begin{definition} [(Prioritised-Timed Coloured Petri Nets)]
-A prioritised-timed coloured Petri net is a tuple $(P,T,A,V,G,E,\lambda,D,\pi)$, where: %\footnote{
+A prioritised-timed coloured Petri net is a tuple \ptcpntuple, where: %\footnote{
 %We use the classical notation on Petri nets to denote the
 %precondition and postcondition of both places and transitions:
 %%
@@ -80,6 +81,11 @@ the token value and $x$ its timestamp.
 \item $A \subseteq (P\times T)\,\cup\,(T \times P)$ is a
 set of directed {\em arcs}.
 %
+\item $\Sigma$ is a finite set of non-empty colour sets. These colour sets can be timed or untimed. For simplicity,
+we only use non-negative integer variables and, therefore, the colour sets are: 
+$\nnul \times \nnul$ for the timed version and $\nnul$ for the untimed version. Thus, in our case, colours 
+will be pairs $(n,x)\in \nnul \times \nnul$ or just $n$, where $n$ is
+the token value and $x$ its timestamp.
 %
 \item $V$ is a finite set of {\em typed variables} in $\Sigma$, 
 i.e. ${\it Type}(v) \in \Sigma$, for all $v \in V$.
@@ -104,20 +110,21 @@ is the {\em delay function}, which associates a time
 interval to each transition. For $D(t)=[d_1,d_2]$,
 this means that a uniform probability function will
 be used when $t$ is fired to select the specific discrete
-delay in that time interval.
+delay in that time interval. This is a particularity of CPNTools \cite{CPNTools}.
 %
 \item $\pi\,:\,T \longrightarrow \nnul$ is the
 {\em priority function}, which assigns a priority level
-to each transition. 
+to each transition. In CPNTools, the lower priority, the higher priority, that is, $0$ is the highest priority.
 \end{itemize}
 
 In this definition, ${\it EXPR}_V$ denotes the
 expressions constructed using the variables in $V$,
-with the same syntax admitted by CPN Tools.
+with the same syntax admitted by CPN Tools. Notice again that we only use here non-negative integer variables for simplicity, but
+our model can be easily extended to other variable types.
 \end{definition}
 
 \begin{definition} [(Markings)]
-Given a PTCPN $N=(P,T,A,V,G,E,\lambda,D,\pi)$,
+Given a PTCPN $N=\ptcpntuple$,
 a marking $M$ is defined as a function
 $M\,:\,P \longrightarrow {\cal B}(\Sigma)$,
 which assigns a multiset of colours to each place
@@ -128,7 +135,7 @@ $M$ is a marking of $N$ and $x$ is the current system time instant.
 %
 %
 Initial markings are those markings for which
-the time annotation of every token is $0$,
+the timestamp of every token is $0$,
 and all variable places are marked with a single
 token $(0,0)$.
 A marked prioritized-timed coloured Petri net (MPTCPN)
@@ -137,22 +144,22 @@ $N$ is a PTCPN, and $(M,x)$ a timed marking of it.
 %
 \end{definition}
 
-We define the semantics for MPTCPNs in a similar way as in \cite{CPN09}, 
+We define the semantics for MPTCPNs in a similar way as in \cite{Jensen2009}, 
 now taking into account that transitions have associated priorities.
 We first introduce the notion of {\em binding}, then
 the {\em enabling condition} and finally the {\em firing rule}
 for MPTCPNs.
 
+The variables of a transition $t$ are denoted $\mathit{Var(t)\subseteq V}$ and consist of the free variables
+appearing in the guard of the transition and in the arc expressions connected to it.
+
 \begin{definition} [(Bindings)]
-Let $N=(P,T,A,V,G,E,\lambda,D,\pi)$ be a PTCPN.
+Let $N=\ptcpntuple$ be a PTCPN.
 A {\em binding} of a transition $t \in T$ is a function
 $b$ that maps each variable $v \in {\it Var}(t)$
-into a value $b(v) \in \Sigma$, where ${\it Var}(t)$
-is defined as the set of variables that appear both
-in the guard of $t$ and
-in the arc expressions of the arcs connected to $t$.
+into a value $b(v) \in \Sigma$.
 We will denote by $B(t)$ the set of all possible bindings
-for $t \in T$. 
+for the transition $t \in T$. 
 
 Given an expression $e \in {\it EXPR}_V$, we will denote 
 by $e\langle b \rangle$ the evaluation of $e$ for the
@@ -160,14 +167,14 @@ binding $b$.
 
 A {\em binding element} is then defined as a pair
 $(t,b)$, where $t \in T$ and $b \in B(t)$.
-The set of all binding elements is denoted by ${\it BE}$.
+The set of all binding elements is denoted by $\mathit{BE}$.
 \end{definition}
 
-\begin{definition}\label{permitidas} [(Enabling condition)]
-Let $N=(P,T,A,V,G,E,\lambda,D,\pi)$ be a PTCPN,
+\begin{definition}[(Enabling condition)]\label{permitidas}
+Let $N=\ptcpntuple$ be a PTCPN,
 and $(M,x)$ a timed marking of it.
 We say that a 
-binding element $(t,b) \in {\it BE}$
+binding element $(t,b) \in \mathit{BE}$
 is {\em enabled} at the time instant $x'$ in the timed marking
 $(M,x)$ if and
 only if the following conditions are fulfilled:
@@ -185,19 +192,18 @@ $E(p,t)\langle b \rangle_{x'}$ consists of the same
 colours as $E(p,t)\langle b \rangle$, but 
 replacing their timestamp (which was $0$) by $x'$.
 %
-
-the notation $C_{+x}$ is used to represent the
-colour multiset obtained from $C$ by delaying its timestamps
-by $x$ time units:
-%
-\[
-C_{+x}(n,y) = \left\{
-\begin{array}{cl}
-C(n,y-x)~~ & {\rm if}\;y \geq  x\\
-0        & {\rm otherwise}
-\end{array}
-\right.
-\]
+%the notation $C_{+x}$ is used to represent the
+%colour multiset obtained from $C$ by delaying its timestamps
+%by $x$ time units:
+%%
+%\[
+%C_{+x}(n,y) = \left\{
+%\begin{array}{cl}
+%C(n,y-x)~~ & {\rm if}\;y \geq  x\\
+%0        & {\rm otherwise}
+%\end{array}
+%\right.
+%\]
 %
 \item There is no other binding element $(t',b') \in {\it BE}$
 fulfilling the previous conditions  such that $\pi(t') < \pi(t)$.
@@ -213,7 +219,7 @@ a binding element $(t,b)$ fulfilling these conditions.
 \end{definition}
 
 \begin{definition} [(Firing rule)]
-Let $N=(P,T,A,V,G,E,\lambda,D,\pi)$ be a PTCPN,
+Let $N=\ptcpntuple$ be a PTCPN,
 $(M,x)$ a timed marking of $N$, and an enabled
 binding element $(t,b) \in {\it BE}$ at 
 instant $x'$ in the timed marking $(M,x)$.
@@ -241,7 +247,7 @@ Thus, the new timed marking $(M',x')$ is:
 \caption{\label{red1}Graphical view of a PTCPN.}
 \end{figure}
 
-
+{\bf Nota para Valentín: No sé si incluir o no este ejemplo. Esta sacado de vuestro paper de SCP y creo que ayuda a clarificar los conceptos de las PTCPNs}
 \begin{example} Let us consider the marked PTCPN depicted in Figure \ref{red1}, 
 obtained from CPN Tools. 
 % 
@@ -308,24 +314,24 @@ depending on the delay chosen for its firing.
 \end{example}
 
 
-In \cite{Buc03} there is a model that
-extends Merlin's nets by including dynamic priorities and resources.
-
-The particular model that we use is also an extension of Merlin's
-nets, 
-% but it is simpler than that considered in \cite{Buc03}.
-including priorities and three transition types ({\em black,\,grey\,} and
-{\em white\,}). All transitions are assigned both a time interval
-and a static priority. The time interval restricts the instants at
-which a transition is allowed to be fired. {\em White}\, transitions
-are not forced to fire when their clock reaches its latest firing
-time, grey transitions must fire once their clock reaches that value, 
-and black  transitions
-must fire immediately, once they fulfil all the required conditions. 
-Of course, in the
-event of a conflict, any transition of those involved in the conflict 
-can be fired (whichever type it has), although we take into account 
-priorities to resolve the conflicts. Thus, priorities are only
-used in the case of conflict, when at a given marking two or more
-transitions are simultaneously enabled, then only those with 
-the maximum priority are allowed to be fired at that moment.
+%In \cite{Buc03} there is a model that
+%extends Merlin's nets by including dynamic priorities and resources.
+%
+%The particular model that we use is also an extension of Merlin's
+%nets, 
+%% but it is simpler than that considered in \cite{Buc03}.
+%including priorities and three transition types ({\em black,\,grey\,} and
+%{\em white\,}). All transitions are assigned both a time interval
+%and a static priority. The time interval restricts the instants at
+%which a transition is allowed to be fired. {\em White}\, transitions
+%are not forced to fire when their clock reaches its latest firing
+%time, grey transitions must fire once their clock reaches that value, 
+%and black  transitions
+%must fire immediately, once they fulfil all the required conditions. 
+%Of course, in the
+%event of a conflict, any transition of those involved in the conflict 
+%can be fired (whichever type it has), although we take into account 
+%priorities to resolve the conflicts. Thus, priorities are only
+%used in the case of conflict, when at a given marking two or more
+%transitions are simultaneously enabled, then only those with 
+%the maximum priority are allowed to be fired at that moment.

@@ -1,5 +1,5 @@
 \subsection*{Preliminaries}
-In this section, we will present the preliminary concepts
+In this section, we will define the preliminary concepts
 used in this Thesis. The aim of this section is to provide the reader
 with a review of the elemental notions used in future sections
 as well as to fix the notion used throughout the Thesis.
@@ -22,10 +22,11 @@ $\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$ is the set of natural numbe
 
 \item {\bf Sets and Multisets}\\
 We will use the standard delimiters for sets (\{\}) and multisets(\multiset{}). 
-As usual, let $A$ be a multiset and $R\,:\,A \longrightarrow \nnul$, we say 
+As usual, let $A$ be a (multi)set and $R\,:\,A \longrightarrow \nnul$, we say 
 that $x \in A$ iff $R(x) > 0$.
-Moreover, we abuse the notion using $x \in A$ to represent that $x$ is an element of
-the multiset $A$ and using indistinctly the typical set operators (union, inclusion, etc.). The cardinality of the set (multiset) $A$
+Note that we abuse the notion using $x \in A$ to represent that $x$ is an element of
+the multiset or the set $A$, and using indistinctly the general set operators (union, inclusion, etc.) for sets and multisets. 
+The cardinality of the set (multiset) $A$
 is denoted by $|A|$. Given a set $A$,
 ${\mathcal B}(A)$ is the set of all finite multisets over $A$.
 
@@ -45,23 +46,23 @@ For any $C_1, C_2 \in {\cal B}(A)$, we define:
 %if and only if $C(x)>0$.
 %
 %
-\item $C_1 + C_2 \in {\cal B}(A)$, where $\forall x \in A\,:\,
-        (C_1+C_2)(x)= C_1(x) + C_2(x)$.
+\item $C_1 \uplus C_2 \in {\cal B}(A)$, where $\forall x \in A\,:\,
+        (C_1 \uplus C_2)(x)= C_1(x) + C_2(x)$.
   %
 \item $C_1 \subseteq C_2$ if and only if $\forall x \in A\,:\,
         C_1(x) \leq C_2(x)$.
   %
 \item If $C_2 \subseteq C_1$ we can define the subtraction 
-        $C_1 - C_2 \in {\cal B}(A)$, where $\forall x \in A\,:\,
-        (C_1-C_2)(x)= C_1(x) - C_2(x)$.
+        $C_1 \smallsetminus C_2 \in {\cal B}(A)$, where $\forall x \in A\,:\,
+        (C_1 \smallsetminus C_2)(x)= C_1(x) - C_2(x)$.
 
-\item For any $C \in {\cal B}(\Sigma)$, 
+\item For any $C \in {\cal B}(A)$, 
 we define the first projection
 $\Pi_1(C) \in {\cal B}(\nnul)$, 
 as follows: $\forall n \in \nnul,\,
 \Pi_1(C)(n) = \sum_{m\in \nnul} C(n,m)$.
 %
-\item For any $C \in {\cal B}(\Sigma)$
+\item For any $C \in {\cal B}(A)$
 and $n\in \nnul$ we define the second projection 
 $\Pi_2(C,n)$ as the ordered list that consists of the
 elements $(m_1,m_2,\ldots,m_{\Pi_1(C)(n)})$,
@@ -69,7 +70,7 @@ such that $(n,m_i) \in C$, $\forall i=1,\ldots, \Pi_1(C)(n)$
 and $m_i \leq m_{i+1}$,
 $\forall i=1,\ldots, \Pi_1(C)(n)-1$.
 %
-\item For any $C_1,C_2 \in {\cal B}(\Sigma)$, we say that
+\item For any $C_1,C_2 \in {\cal B}(A)$, we say that
 $C_1 \preceq C_2$ if and only if the following conditions hold:
   %
   \begin{itemize}
@@ -84,12 +85,12 @@ $C_1 \preceq C_2$ if and only if the following conditions hold:
   \end{itemize}
 %
 %  
-These conditions state that for every $n$ the total number of
+To sum up, these conditions state that for every $n$ the total number of
 elements $(n,m)$ (moving $m$) must be lesser in $C_1$ than in $C_2$, and 
 for every element $(n,m)$ in $C_1$ there must be a 
 corresponding (distinct element) $(n,m')$ in $C_2$, with $m\geq m'$.
 %
-\item For any $C_1,C_2 \in {\cal B}(\Sigma)$, with $C_1 \preceq C_2$,
+\item For any $C_1,C_2 \in {\cal B}(A)$, with $C_1 \preceq C_2$,
 we define $C_2 \ominus C_1$ in the following (recursive) way: 
   %
   \begin{itemize}
@@ -141,6 +142,8 @@ we define $C_2 \ominus C_1$ in the following (recursive) way:
   \end{itemize} 
 \end{itemize}
 
+These timed multiset operations are related with the definition of binding and firing for coloured Petri nets.
+
 \item {\bf Relations}\\
 Let $X$ be a set, a relation over $X$ is a set $R \subseteq X \times X$. 
 The domain (or the set of departure) of $R$, denoted by $dom(R)$, is:
@@ -150,7 +153,7 @@ and the codomain (or the set of destination) of $R$, denoted by $cod(R)$, is:
 \[cod(R) = \{ x \in X \,|\, \exists\ y \in X\,:\,(y,x) \in R\}\]
 Given a relation $R$, the {\it reflexive and transitive closure} of $R$, $R^*$, is defined as follows:
 \[ R^* = \{ (x,y)\,|\,x=y \,\vee\,
-\exists\ x_1,\ldots,x_n\, \text{s.t.} \,(x,x_1)\in R\ldots(x_n,y) \in R\}\]
+\exists\ x_1,\ldots,x_n\, \text{s.t.} \,(x,x_1)\in R,\ldots,(x_n,y) \in R\}\]
 Moreover, the {\it transitive closure} of $R$, $R^+$, is given by:
 \[R^+ = \{ (x,y)\,|\,
 \exists \ x_1,\ldots,x_n \text{ s.t. } (x,x_1)\in R,\ldots,(x_n,y) \in R\}\]
@@ -181,7 +184,7 @@ is the set of {\it transitions} and $F$ is a flow relation between the places in
 and the transitions in $T$. This relation is graphically represented by arcs.
 In this Thesis, we suppose that the sets $P$ and $T$ are finite. Petri nets
 can be graphically represented by means of bipartite graphs (or bigraphs), which
-is a graph whose vertices can be divided into two disjoint sets ($P$ and $T$ in this case) such that 
+are a graph whose vertices can be divided into two disjoint sets ($P$ and $T$ in this case) such that 
 every edge connects an element from $P$ to $T$, and vice versa. In graphical representation, places are drawn
 as circles and transitions as rectangles or boxes.  The places 
 from which an arc runs to a transition are called the \emph{input places} of the transition, whereas
@@ -241,7 +244,7 @@ The semantics of a Petri net is defined by the following \emph{firing rule}, whi
 represents the marking reached after firing a transition.
 
 \begin{definition}[(Enabling rule)]
-Let $N=(P,T,F,M)$ a marked Petri net. A transition $t \in T$
+Let $N=(P,T,F,M)$ be a marked Petri net. A transition $t \in T$
 is {\it enabled} by the marking M, denoted by $M[t\rangle$, if for all place
 $p \in P$ such that $(p,t) \in F$, $M(p) > 0$.
 \end{definition}
@@ -251,7 +254,7 @@ The \emph{firing} of a transition $t$ enabled by the marking $M$
 produces a new marking on the net, $M'$, defined as:
 \[M'(p) = M(p) - W_f(p,t) + W_f(t,p)~~~\forall p \in P\]
 where for all $x \in (T \times P) \, \cup \, (P \times T)$,  
-$W_f(x) = 1$ if $x \in F$ and $W_f(x) = 0$, if $x \not\in F$,.
+$W_f(x) = 1$ if $x \in F$ and $W_f(x) = 0$, if $x \not\in F$.
 This is denoted by $M[t\rangle M'$.
 \end{definition}
 

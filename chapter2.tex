@@ -312,7 +312,7 @@ which should be adaptable to the changing nature of business processes without t
 work. Within companies, business applications have to
 interoperate and integrate. Integrating different
 applications has always been a difficult task for various functional and technology
-related reasons \cite{}.
+related reasons.
 
 The Business Process Execution Language for Web Services (BPEL4WS) \cite{wsbpelstandard}, for short BPEL, 
 was first conceived in July, 2002, with the release of the BPEL4WS 
@@ -373,7 +373,7 @@ do not require only a way to compose a set of services, they rather
 need a way to compose and modify them in the right order and in a relatively 
 uncomplicated and straightforward way. Due to this, BPEL is sometimes compared 
 to general purpose programming languages, but it
-is not as powerful as any of the well-known programming languages \cite{}. However, 
+is not as powerful as any of the well-known programming languages \cite{BPELsoftcare}. However, 
 it is simpler and better suited for business
 process definition and, therefore, BPEL must be considered as a supplement to
 modern languages rather than a replacement.
@@ -597,7 +597,7 @@ This service is exploited through a pay-per-use model that is guaranteed by agre
 Finally, the main difference between a Cloud-oriented and a Grid-oriented system relies in the virtualisation of resources. 
 In a Grid infrastructure, users do not share in real-time the resources allocated to them, 
 whereas in a Cloud infrastructure the virtualisation is essential to serve more users,
-thus getting the savings promised by suppliers \cite{}.
+thus getting the savings promised by providers.
 
 \section{Web services vs. Grid/Cloud Computing}
 
@@ -654,7 +654,7 @@ but until mid-2004 no research group or group of experts had seriously considere
 proposing a standard for modelling the communication between stateful services.
 Thus, in January of 2004, several members of the organization Globus Alliance and the multinational IBM, with 
 the help of experts from companies such as HP, SAP, Akamai, etc., defined
-the first specification and the basis of an initial architecture of WSRF. 
+the first specification and the basis of an initial architecture of WSRF \cite{WSRFstandard}. 
 In March of 2004, these documents were sent to the OASIS organization. Initially, two committees were formed to study and develop 
 certain parts of the recently created standard. 
 On the one hand, it was created the \emph{WSRF Technical Committee}, which worked on four specifications:
@@ -694,7 +694,7 @@ which makes it easy to run in any platform. Due to this standardization,
 it is not necessary to take into account the decision logic of the resource owner since WSRF sets it.
 Furthermore, it also includes mechanisms to describe how to check the status of a resource 
 and how to make it accessible through its interface (described in WSDL). 
-In detail, WSRF includes the mechanisms defining the means by which \cite{}:
+In detail, WSRF includes the mechanisms defining the means by which \cite{WSRFstandard}:
 
 \begin{itemize}
 \item a WS-Resource can be destroyed, either synchronously attending to a
@@ -906,18 +906,16 @@ As discussed above, WSRF gives two ways to destroy a
 WS-Resource: immediate or scheduled.
 
 \begin{description}
-\item[Immediate destruction] To activate this kind of destruction, it is only required to add the attribute
-\emph{$\!\!<\!\!wsrl\!:\!Destroy\!/\!>$} inside the field ($<Body>$) of the SOAP message that will be sent to the service
+\item[Immediate destruction] To activate this kind of destruction, it is only required to add the attribute \
+\emph{$\!\!<\!\!wsrl\!:\!Destroy\!/\!\!>\!\!$}\ inside the field  $<\!\!Body\!\!>$ of the SOAP message that will be sent to the service
 to confirm the destruction, the receiver must send the same message including the attribute
-\emph{$<wsrl:DestroyResponse/>$} in the field (\emph{$<Body>$}) of the response SOAP message.
+\ \emph{$\!\!<\!\!wsrl:DestroyResponse\!/\!\!>\!\!$}\ in the field $<\!\!Body\!\!>$ of the response SOAP message.
 
 \item[Scheduled destruction] 
 In this case, the WS-Resource has an associated deadline 
 after which it is expected the resource has been destroyed. Moreover,
 it is reasonably expected that before this deadline the resource is available. 
 An example of how to determine the completion time of a resource is:
-
-\newpage
 
 \lstset{language=XML, numbersep=5pt, frame=single,basicstyle=\linespread{.94}\ttfamily}
 \begin{lstlisting}
@@ -950,7 +948,7 @@ On the contrary, there may be a situation where more than one service
 is using the resource and, therefore, the resource owner can decide or not 
 (this is not mandatory in WSRF) to implement a notification policy
 to inform other services that the resource is unavailable. The notification message must include the following fields: 
-
+\newpage
 \lstset{language=XML, numbersep=5pt, frame=single,basicstyle=\linespread{.94}\ttfamily}
 \begin{lstlisting}
 ...
@@ -966,9 +964,9 @@ and in the \emph{TerminationReason} attribute it can be included the destruction
 The notification-based interaction pattern is a commonly used pattern
 for inter object communications. For example, the well-known
 publish/subscribe architecture uses this approach. In addition, it is increasingly being
-used in a web services context \cite{}.
+used in a web services context \cite{WSRFstandard}.
 
-In conjunction with WSRF, Web Services Notification (WSN) specifications are focused 
+In conjunction with WSRF, Web Services Notification (WSN) specifications \cite{WSNstandard} are focused 
 on the description of mechanisms to implement this notification-based pattern. 
 As WSRF is based on web services, WSRF creators opted for the use
 of WS-Notification standard since the interoperability of both approaches is supposedly higher (they
@@ -990,7 +988,7 @@ WS-BaseNotification, WS-BrokeredNotification, and WS-Topics.
 %and other parts of the WS-Notification system. It further specifies an XML model for 
 %describing metadata associated with topics.
 
-In the notification process, there are three different steps: 
+In the notification process, there are three different steps \cite{WSNstandard}: 
 \begin{enumerate}
 \item First, the observation of the situation and its characteristics. This situation represents an event of
 interest for some services.
@@ -999,7 +997,7 @@ the characteristics of the situation; and
 \item finally, the distribution of these messages to zero or more interested parties (notification consumers).
 \end{enumerate}
 In WS-Notification, steps 1 and 2 are not taken into account 
-since they did not want to restrict the means by which
+since WSRF designers did not want to restrict the means by which
 these stages must occur. From now on, the entity in charge of performing the stages 1 and 2 is called Publisher.
 Other issue is how the publisher can disseminate the notification messages. 
 In this case, two patterns can be followed: direct or brokered.
@@ -1010,7 +1008,7 @@ and it is responsible for accepting subscription messages and
 sending notification messages to interested parties. Moreover, it
 can choose to include in its behaviour the required logic or to delegate this task to specialized implementations. 
 This last case is addressed by the WS-BaseNotification
-specification \cite{}.
+specification \cite{WSNstandard}.
 
 An example of notification message (can include one or more notification messages) is:
  
@@ -1041,21 +1039,19 @@ functions - observing the situation and formatting
 the notification message artifact that describes
 the situation. The dissemination step occurs 
 when the publisher sends the notification message to the
-broker. In the composable publishing pattern, the publisher
-delegates its function to an external service that it is responsible to send
-the notification messages to the broker. Finally,
+broker. Finally,
 demand-based publication is intended for use in
 cases where observing the situation or formatting the messages is expensive,
 and therefore the notification should be avoided. To this end, the publisher
 will only send notifications to the broker if it is registered as a service
 interested in receiving notifications about a particular situation. Obviously, this
-will reduce the overload of the network \cite{}. 
+will reduce the overload of the network \cite{WSNstandard}. 
 
-In Chapter \ref{chapter:c3}, we will see that the language BPELRF avoids to include the broker role, and
+In Chapter \ref{chapter:c4}, we will see that the language BPELRF avoids to include the broker role, and
 it is indeed the owner of the resource who sends the notifications. Moreover, the subscribers
 must show interest by sending a subscription message directly to the resource owner within
 the corresponding condition, thus reducing the overload of the net. This is due to the amount of notifications
-in the network is reduced. More technical details will be extended in that chapter.
+in the network is reduced. More technical details will be provided in that chapter.
 
 
 \section{Workflow management}
@@ -1073,9 +1069,9 @@ changed the way information systems were developed. This trend is the shift ``fr
 data orientation to process orientation'' \cite{DumasAalst2005}. In the 1970s and 1980s 
 data-driven approaches were dominating
 the applications market and, as a consequence, the way in which data is managed (stored, retrieved and presented) 
-is the most important part in the development process. Thus, data
-modelling was the starting point for building every information system. One advantage was there were arising
-robust technologies for developing data-centric information systems, although 
+was the most important part in the development process. Thus, data
+modelling was the starting point for building every information system. One advantage was that
+robust technologies for developing data-centric information systems were developed during these years, although 
 business processes modelling was often neglected. As a 
 result, the logic of business processes was spread across multiple software
 applications and manual procedures, thereby hindering their optimization and their
@@ -1083,8 +1079,8 @@ adaptation to changes. In addition, processes were sometimes structured to fit t
 constraints of the underlying information system, thus introducing inefficiencies.
 Nevertheless, in the last 15 years we have witnessed a shift from ``data-aware'' 
 information systems to ``process-aware'' information systems \cite{DumasAalst2005}.
-During these years, a lot of vendors have migrated their technology in order to provide applications
-for workflow management. Initially, these systems were called ``WorkFlow Management (WFM) systems'', but, nowadays,
+During these years, a lot of vendors have migrated to new technologies in order to offer customers a set of applications
+for workflow management. Initially, these applications were called ``WorkFlow Management (WFM) systems'', but, nowadays,
 they are known as ``Business Process Management (BPM) systems''. Both WFM and BPM systems aim at supporting operational
 processes known as ``workflows''.
 
@@ -1095,13 +1091,15 @@ Whilst workflow may be manually organised, in practice most workflows are normal
 organised within the context of an IT system to provide
 computerised support for the procedural automation''} \cite{Hollingsworth2004}.
 In detail, a \emph{workflow} is usually considered as ``the computerized facilitation or automation of a
-business process, in whole or in part'' \cite{EllisKeddara2000} and it consists 
-of a coordinated set of activities that are executed to achieve a predefined goal. Workflow is often associated with the assessment,
-analysis, modelling, definition and subsequent operational implementation of the core business processes of an
+business process, in whole or in part'' \cite{EllisKeddara2000}, and it consists 
+of a coordinated set of activities that are executed to achieve a predefined goal. Recalling the main idea for service-oriented computing, 
+it is easy to see the relation between both definitions since both are based on a set of entities, which can be called ``services'', collaborating 
+to achieve a common goal. Furthermore, a workflow is often defined as the assessment,
+analysis, modelling, definition and subsequent operational implementation of the core business processes activities of an
 organisation (or other business entity). Workflow technology is 
 often an appropriate solution as it provides separation of the business procedure logic
 and its IT operational support, enabling subsequent changes to be incorporated into the procedural rules
-defining the business process \cite{DumasAalst2005}.
+defining the business process \cite{DumasAalst2005}. This adaptability fits again in the service-oriented philosophy.
 
 To provide users with the appropriate tools for workflow management, 
 it was defined a reference model (see \cite{hollingsworth95}) for the development of workflow (business process) management systems. 
@@ -1110,28 +1108,28 @@ whose order of execution is driven by a computer representation of the workflow,
 they aim at supporting the routing of activities (i.e., the flow of work) in an organization such
 that the work is efficiently done at the right time by the right person with the right
 software tool. It focuses on the structure of work processes, not on the content of 
-individual tasks. Individual tasks are supported by specific application programs.
+individual tasks. Individual tasks are supported by specific programs.
 Workflow management links persons (end users, workflow participants, workflow
 agents) to these applications in order to accomplish the required tasks. The relation of these systems with the business process
 definition language presented previously is that they provide procedural automation of a business process (e.g. described in WS-BPEL) by
-managing the sequence of work activities and the invocation of appropriate human and/or IT resources
+managing the sequence of activities and the invocation of appropriate human and/or IT resources
 associated with the various activity steps \cite{hollingsworth95}. 
 
-In \cite{hollingsworth95}, three functional areas for workflow management system were characterised. Thus, they have to provide:
+In \cite{hollingsworth95}, the fundamental functional areas of a workflow management system were characterised. Thus, a workflow 
+management system has to provide:
 
 \begin{itemize}
-\item The functions concerned with defining, and possibly modelling, the workflow process and its
+\item The functions concerned with the definition, and possibly the modelling, of the workflow process and its
 constituent activities.
 
 \item The control functions concerned with managing the workflow processes in an operational
 environment and sequencing the various activities to be handled as part of each process
 
-\item The interactions with human users and IT application tools for processing the various activity
-steps
+\item The means by which the participants (human users and/or IT application tools) should interact.
 
 \end{itemize}
 
-In Figure \ref{fig:wfms}, we can see these three characteristics and their relationship:
+
 
 \begin{figure}
 \begin{center}
@@ -1141,41 +1139,42 @@ In Figure \ref{fig:wfms}, we can see these three characteristics and their relat
   \label{fig:wfms}
 \end{figure}
 
-It can be observed that are two well defined parts: \emph{build time} and \emph{run time}. As commented previously, formal methods have a 
-great impact when they are applied in the early stages of the development. Thus, in this Thesis we propose an extension of a well-known formalism (Workflow nets)
-that helps designers in this ``design time'' part. In particular, we cover all the aspects encouraged by the WorkFlow Management Coalition since a formalism to model workflows is provided, some correctness properties (soundness and strong soundness) are studied and a tool to check these properties as well as the model 
-evolution is developed. Notice that the ``run time part'' is out of the scope of the present Thesis and, consequently, the technicalities of it are not shown her.
-As a result, we will focus on the other part and indeed in a particular formal model and its analysis.
+In Figure \ref{fig:wfms}, we can see these three characteristics and their relationship. Here, 
+it can be observed two well defined parts: \emph{build time} and \emph{run time}. As commented previously, formal methods have a 
+great impact when they are applied in the early stages of the development process. Thus, 
+in this Thesis we propose an extension of a well-known formalism (Workflow nets)
+that helps designers in this ``design time'' phase. In particular, we cover the three fundamental areas encouraged by the WorkFlow Management Coalition since a we provide a formalism to model workflows, some correctness properties (soundness and strong soundness) and a tool to check these properties, as well as the model 
+evolution. Notice that the ``run time part'' is out of the scope of the present Thesis and, consequently, its technical details are not shown here.
 
 In 1997, Workflow nets~\cite{Aalst97,Aalst98} were introduced 
 by the Dutch computer scientist Wil van der Aalst as a formalism
 for modelling, analysis and verification of business workflow processes, that is, as a mean to support
 the \emph{build time part} of a workflow management system.
 %to model, validate and verify business process, \emph{workflow nets} (wf-nets) \cite{Aalst97,Aalst98}. 
-As systems are moving from data-aware to process-aware, workflow nets abstract away most of the data  
-while focusing on the possible flow in the process. The aim of Van der Aalst was to provide practitioners with 
+As systems are moving from data-aware to process-aware, workflow nets abstract away most of the data  presented in the process
+while focusing only on its possible flow. The aim of Van der Aalst was to provide practitioners with 
 a formal framework that is capable of representing both the model and the possible properties. With the model, 
-it is easy to check how the system evolves, whereas, with the properties, one can study properties of great interest such as 
-the presence of design errors. Among these errors, one can note the presence of deadlocks, livelocks 
+it is easy to check how the system evolves, whereas, with the properties, one can study aspects of great interest such as 
+the presence of design errors. Among these errors, one can check the presence of deadlocks, livelocks 
 and other anomalies. To this end, a correctness criterion is described
-via the notion of \emph{soundness} (see~\cite{AalstHHSVVW11}) that
+via the notion of \emph{soundness} (see~\cite{AalstHHSVVW11} for a summary of different soundness definitions) that
 requires the option to complete the workflow, guarantees proper termination
 and optionally also the absence of redundant tasks. In Chapter \ref{chapter:c4}, we will study in depth the soundness notion and
 our timed extension of it. 
 
-After the seminal work on workflow nets, researchers have 
+After this seminal work on workflow nets, researchers have 
 invested much effort in defining new soundness criteria and/or 
 improving the expressive power of the original model by adding new features 
 and studying the related decidability and 
 complexity questions
 (see~\cite{AalstHHSVVW11} for a recent overview). Thus, researchers must choose between 
 adding expressiveness to the model, which in many cases leads to undecidability issues, or keeping the model as simple as possible
-in order to obtain decidable algorithms to check the soundness notion. In Chapter \ref{chapter:c4}, we will summarise the main extensions, focusing
-on time extensions since they are the aim of our work.
+in order to preserve the decidability of soundness checking algorithms. In Chapter \ref{chapter:c4}, we will summarise the main extensions one can find in the literature, focusing
+on time extensions as they are the aim of our work.
 
 Finally, note that workflow nets are based on Petri nets since they are an established tool 
 for modelling and analysing processes \cite{Aalst97}. Furthermore, the author presented in \cite{Aalst97} the most important factors
-that influenced in his decision of using Petri nets. These factors are the following:
+that influenced him in his decision of using Petri nets. These factors are the following:
 
 \begin{itemize}
 \item {\bf Formal semantics.}
@@ -1217,7 +1216,7 @@ over another vendor.
 
 \end{itemize}
 
-Notice that most of these arguments have been commented throughout the Thesis, showing that
+Notice that most of these arguments have been commented throughout this Thesis, reaffirming that
 Petri nets and their different variants are a mature and suitable formalism to model any kind
 of system.
 
@@ -1230,6 +1229,8 @@ of system.
 
 \section{Summary}\label{sumArt}
 \markright{~\ref{sumArt} Summary}
+
+To be added.
 
 %Lately, the research group Real Time and Concurrent Systems (ReTiCS) of the University of Castilla-La Mancha,
 %in which I am a member, focused its research on developing a methodology 

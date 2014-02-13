@@ -23,7 +23,7 @@ is used in age invariants. Let us note that we use a discrete time semantics in 
 to avoid the duplication for the case of continuous time. Nevertheless, it is enough to include $\rnul$ instead of $\nnul$ to provide a continuous time semantics.
 
 
-\begin{definition}[Extended timed-Arc Petri Net] \label{defetapn}  
+\begin{definition}[(Extended timed-Arc Petri Net)] \label{defetapn}  
 An \emph{extended timed-arc Petri net} 
 (ETAPN) is a 9-tuple $N = \tapntuple$ where 
 \begin{itemize}
@@ -72,7 +72,7 @@ In the literature such nets are often considered as the standard
 timed-arc Petri net model~\cite{BLT:90,Hanisch:93} but we add the 
 prefix monotonic for clarity reasons. 
 
-\begin{definition}[Monotonic timed-arc Petri net] \label{deftapn}
+\begin{definition}[(Monotonic timed-arc Petri net)] \label{deftapn}
 A \emph{monotonic timed-arc Petri net} 
 (MTAPN) is an extended timed arc Petri net 
 with no urgent transitions ($\Turg=\emptyset)$, no age invariants
@@ -104,15 +104,15 @@ Let $\mathcal{B}(\nnul)$ be the set
 of all finite multisets over $\nnul$. A \emph{marking} $M$ on $N$ 
 is a function $M : P \longrightarrow \mathcal{B}(\nnul)$ 
 where for every place $p \in P$ and 
-every token $x \in M(p)$ we have $x \in \inv(p)$, in other words
+every token $x \in M(p)$ we have $x \in \inv(p)$. In other words
 all tokens have to satisfy the age invariants. 
 %The projection of $P^\prime \subseteq P$ in $M$ is a function 
 %$M|_{P^\prime} : P^\prime \longrightarrow \mathcal{B}(\nnul)$.
-The set of all markings in a net $N$ 
+The set of all markings in the net $N$ 
 is denoted by $\mathcal{M}(N)$.
 
 We write $(p,x)$ to denote a token at a place $p$ with the 
-age $x\in \nnul$. Then $M=\{(p_1,x_1),(p_2,x_2),\dots ,(p_n,x_n)\}$ 
+age $x\in \nnul$. Then $M=\multiset{(p_1,x_1),(p_2,x_2),\dots ,(p_n,x_n)}$ 
 is a multiset representing a marking $M$ with $n$ tokens of 
 ages $x_i$ in places $p_i$. We 
 define the size of a marking as $|M| = \sum_{p\in P}|M(p)|$ where 
@@ -125,9 +125,9 @@ $|M(p)|$ is the number of tokens located in the place $p$.
 \label{def:enabledness}
  Let $N = \tapntuple$ be an ETAPN. 
 We say that a transition $t \in T$ is \emph{enabled} in a marking $M$ by the 
-multisets of tokens
+multiset of timed tokens \newline 
 $\inn = \multiset{(p,x_{p}^1), (p,x_{p}^2), \dots ,(p,x_{p}^{\wfunction ((p,t))})\mid 
-p \in {}^\bullet t} \subseteq M$ and 
+p \in {}^\bullet t} \subseteq M$ and by the multiset of tokens
 $\out = \multiset{ (p^{\prime},x_{p^{\prime}}^1),
            (p^{\prime},x_{p^{\prime}}^2),
 \dots ,\allowbreak
@@ -157,7 +157,7 @@ the age of the input token must be equal to the age of the output token and sati
 
 A given ETAPN $N$ %=\tapntuple$ 
 defines a DTTS $T(N)\eqdef (\markingsof(N),T,\rightarrow)$
-where states are the markings and the transitions are as follows. 
+where states are the markings and the transitions are as follows: 
 \begin{itemize}
 \item If $t\in T$ is enabled in a marking $M$ by the  multisets of
 tokens $\inn$ and $\out$ then $t$ can \emph{fire} and produce 
@@ -167,7 +167,7 @@ difference operator; we write $M \trans{t} M^{\prime}$ for this
 switch transition.
 \item A time \emph{delay} $d \in \nnul$ is allowed in $M$ if
 \begin{itemize}
-\item $(x+d) \in I(p)$ for all $p \in P$ and all $x \in M(p)$, and
+\item $(x+d) \in I(p)$ for all $p \in P$ and for all $x \in M(p)$, and
 % i.e. by delaying $d$ time units no token violates any of the age invariants, 
 %and
 \item if $M \trans{t} M'$ for some $t \in \Turg$ then $d=0$.
@@ -175,7 +175,7 @@ switch transition.
  %     $d=0$, i.e. enabled urgent transitions disallow time passing.
 \end{itemize}
 By delaying $d$ time units in $M$ we reach the marking $M^{\prime}$ defined as
-$M^{\prime}(p) = \{x+d \mid x \in M(p)\}$ for all $p \in P$; 
+$M^{\prime}(p) = \multiset{x+d \mid x \in M(p)}$ for all $p \in P$; 
 we write $M \trans{d} M^{\prime}$ for this delay transition.
 \end{itemize}
 
@@ -188,7 +188,7 @@ we write $M \trans{d} M^{\prime}$ for this delay transition.
 
 \noindent Let 
 $\trans{} \eqdef \bigcup_{t \in T} \trans{t} \cup \bigcup_{d \in \nnul} \trans{d}$.
-The set of all markings reachable %in the net $N$ 
+Again, the set of all markings reachable %in the net $N$ 
 from a given marking $M$ is denoted by 
 $[M\rangle \eqdef \{ M' \mid M \trans{}^* M' \}$.
 By $M \trans{d,t} M'$ we denote that there is a marking $M''$

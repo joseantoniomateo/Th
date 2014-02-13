@@ -4,6 +4,18 @@
 What is bpel and why is it so important to my business?
 \newblock Technical report.
 
+\bibitem{WSNstandard}
+Oasis standard for web services notification (wsn) v1.3.
+\newblock {\em
+  \url{https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=wsn}},
+  October 2006.
+
+\bibitem{WSRFstandard}
+Oasis standard for web services resource framework (wsrf) v1.2.
+\newblock {\em
+  \url{http://docs.oasis-open.org/wsrf/wsrf-primer-1.2-primer-cd-02.pdf}},
+  April 2006.
+
 \bibitem{CPNTools}
 Cpntools web site, 2013.
 
@@ -37,6 +49,11 @@ Eike Best and Maciej Koutny.
 \newblock Petri net semantics of priority systems.
 \newblock {\em Theor. Comput. Sci.}, 96(1):175--174, 1992.
 
+\bibitem{BLT:90}
+T.~Bolognesi, F.~Lucidi, and S.~Trigila.
+\newblock From timed {P}etri nets to timed {LOTOS}.
+\newblock In {\em {PSTV}'90}, pages 1--14. North-Holland, Amsterdam, 1990.
+
 \bibitem{BLT90}
 Tommaso Bolognesi, Ferdinando Lucidi, and Sebastiano Trigila.
 \newblock From timed petri nets to timed lotos.
@@ -58,6 +75,14 @@ E.~Clarke and J.~Wing.
 \newblock { Formal methods: State of the art and future directions.}
 \newblock {\em ACM Computing Surveys}, 1996.
 
+\bibitem{DJJJMS:TACAS:12}
+A.~David, L.~Jacobsen, M.~Jacobsen, K.Y. J{\o}rgensen, M.H. M{\o}ller, and
+  J.~Srba.
+\newblock {TAPAAL 2.0}: Integrated development environment for timed-arc
+  {P}etri nets.
+\newblock In {\em {TACAS}'12}, volume 7214 of {\em LNCS}, pages 492--497.
+  Springer-Verlag, 2012.
+
 \bibitem{DumasAalst2005}
 Marlon Dumas, Wil M.~P. van~der Aalst, and Arthur H.~M. ter Hofstede.
 \newblock {\em Process-Aware Information Systems: Bridging People and Software
@@ -74,6 +99,13 @@ Clarence~A. Ellis and Karim Keddara.
 \newblock A workflow change is a workflow.
 \newblock In {\em Business Process Management, Models, Techniques, and
   Empirical Studies}, pages 201--217, London, UK, UK, 2000. Springer-Verlag.
+
+\bibitem{Hanisch:93}
+H.M. Hanisch.
+\newblock Analysis of place/transition nets with timed-arcs and its application
+  to batch process control.
+\newblock In {\em {ICATPN}'93}, volume 691 of {\em LNCS}, pages 282--299.
+  Springer, 1993.
 
 \bibitem{hollingsworth95}
 D.~Hollingsworth.
@@ -99,6 +131,12 @@ Kurt Jensen.
   Practical Use - Volume 3}.
 \newblock Monographs in Theoretical Computer Science. An EATCS Series.
   Springer, 1997.
+
+\bibitem{Jensen2009}
+Kurt Jensen and Lars~Michael Kristensen.
+\newblock {\em Coloured Petri Nets - Modelling and Validation of Concurrent
+  Systems}.
+\newblock Springer, 2009.
 
 \bibitem{AjCh85}
 M.~Ajmone Marsan, G.~Balbo, A.~Bobbio, G.~Chiola, G.~Conte, and A.~Cumani.
@@ -181,6 +219,13 @@ Wil M.~P. van~der Aalst and Michiel~A. Odijk.
 \newblock Analysis of railway stations by means of interval timed coloured
   petri nets.
 \newblock {\em Real-Time Systems}, 9(3):241--263, 1995.
+
+\bibitem{AalstHHSVVW11}
+Wil M.~P. van~der Aalst, Kees~M. van Hee, Arthur H.~M. ter Hofstede, Natalia
+  Sidorova, H.~M.~W. Verbeek, Marc Voorhoeve, and Moe~Thandar Wynn.
+\newblock Soundness of workflow nets: classification, decidability, and
+  analysis.
+\newblock {\em Formal Asp. Comput.}, 23(3):333--363, 2011.
 
 \bibitem{Vaquero2008}
 Luis~M. Vaquero, Luis Rodero-Merino, Juan Caceres, and Maik Lindner.
