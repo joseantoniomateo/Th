@@ -9,21 +9,21 @@
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Example of a business process workflow.\relax }}{20}{figure.caption.13}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces WS-BPEL code.\relax }}{22}{figure.caption.14}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Workflow System Characteristics.\relax }}{39}{figure.caption.15}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Example of a basic Petri net.\relax }}{45}{figure.caption.18}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Example of a marked Petri net.\relax }}{46}{figure.caption.19}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Example of a basic Petri net.\relax }}{53}{figure.caption.18}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Example of a marked Petri net.\relax }}{54}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Graphical view of a PTCPN.\relax }}{57}{figure.caption.20}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Graphical view of a PTCPN.\relax }}{65}{figure.caption.20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Orchestration Translation\relax }}{81}{figure.caption.27}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Sequence Translation\relax }}{84}{figure.caption.28}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Parallel Activity Translation.\relax }}{85}{figure.caption.29}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Pick Activity Translation.\relax }}{86}{figure.caption.30}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces While Activity Translation.\relax }}{86}{figure.caption.31}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces CreateResource Activity Translation.\relax }}{87}{figure.caption.32}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Subscribe Activity Translation.\relax }}{87}{figure.caption.33}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces GetProperty Activity Translation.\relax }}{88}{figure.caption.34}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces SetProperty Activity Translation.\relax }}{88}{figure.caption.35}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces SetTimeout Activity Translation.\relax }}{88}{figure.caption.36}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces A simplified PTCPN for the online auction system.\relax }}{91}{figure.caption.37}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Orchestration Translation\relax }}{87}{figure.caption.27}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Sequence Translation\relax }}{90}{figure.caption.28}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Parallel Activity Translation.\relax }}{91}{figure.caption.29}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Pick Activity Translation.\relax }}{92}{figure.caption.30}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces While Activity Translation.\relax }}{92}{figure.caption.31}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces CreateResource Activity Translation.\relax }}{93}{figure.caption.32}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Subscribe Activity Translation.\relax }}{93}{figure.caption.33}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces GetProperty Activity Translation.\relax }}{94}{figure.caption.34}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces SetProperty Activity Translation.\relax }}{94}{figure.caption.35}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces SetTimeout Activity Translation.\relax }}{94}{figure.caption.36}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces A simplified PTCPN for the online auction system.\relax }}{97}{figure.caption.37}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

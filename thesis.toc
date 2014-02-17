@@ -15,32 +15,31 @@
 \contentsline {subsection}{\numberline {2.5.4}WS-ResourceLifetime}{33}{subsection.2.5.4}
 \contentsline {section}{\numberline {2.6}Workflow management}{37}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}Formal models of concurrency}{42}{subsection.2.6.1}
-\contentsline {subsubsection}{Notation}{42}{section*.17}
-\contentsline {section}{\numberline {2.7}Petri nets}{44}{section.2.7}
-\contentsline {section}{\numberline {2.8}Summary}{47}{section.2.8}
-\contentsline {chapter}{\numberline {3}Extended Petri nets}{49}{chapter.3}
-\contentsline {section}{\numberline {3.1}Petri nets analysis}{50}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Safety properties}{51}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Liveness properties}{52}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Timed extensions of Petri nets}{52}{section.3.2}
-\contentsline {section}{\numberline {3.3}Prioritized-Timed Colored Petri Nets}{53}{section.3.3}
-\contentsline {section}{\numberline {3.4}Extended Timed-Arc Petri Nets}{58}{section.3.4}
-\contentsline {chapter}{\numberline {4}BPELRF}{63}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{63}{section.4.1}
-\contentsline {section}{\numberline {4.2}Background and Related Work}{65}{section.4.2}
-\contentsline {section}{\numberline {4.3}Syntax and semantics of BPEL+RF}{69}{section.4.3}
-\contentsline {section}{\numberline {4.4}Case Study: Automatic management system for stock market investments}{75}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Related Work}{76}{subsection.4.4.1}
-\contentsline {section}{\numberline {4.5}Prioritised-Timed Coloured Petri Nets}{77}{section.4.5}
-\contentsline {section}{\numberline {4.6}Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{78}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Prioritised-Timed Coloured Petri Nets}{78}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}PTCPN Semantics for WSRF/BPEL}{80}{subsection.4.6.2}
-\contentsline {subsection}{\numberline {4.6.3}Basic activities}{82}{subsection.4.6.3}
-\contentsline {subsection}{\numberline {4.6.4}Ordering structures}{83}{subsection.4.6.4}
-\contentsline {subsection}{\numberline {4.6.5}WSRF-compliant}{85}{subsection.4.6.5}
-\contentsline {section}{\numberline {4.7}Case study: Online auction service}{89}{section.4.7}
-\contentsline {section}{\numberline {4.8}Formal Analysis of Web Service Compositions}{91}{section.4.8}
-\contentsline {section}{\numberline {4.9}Summary}{93}{section.4.9}
-\contentsline {chapter}{\numberline {5}Timed-arc workflow nets}{99}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusions, Contributions and Future Works}{101}{chapter.6}
-\contentsline {chapter}{Bibliography}{106}{appendix*.38}
+\contentsline {subsubsection}{Notation}{49}{section*.17}
+\contentsline {section}{\numberline {2.7}Petri nets}{52}{section.2.7}
+\contentsline {section}{\numberline {2.8}Summary}{55}{section.2.8}
+\contentsline {chapter}{\numberline {3}Extended Petri nets}{57}{chapter.3}
+\contentsline {section}{\numberline {3.1}Petri nets analysis}{58}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Safety properties}{59}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Liveness properties}{60}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Timed extensions of Petri nets}{60}{section.3.2}
+\contentsline {section}{\numberline {3.3}Prioritized-Timed Colored Petri Nets}{61}{section.3.3}
+\contentsline {section}{\numberline {3.4}Extended Timed-Arc Petri Nets}{66}{section.3.4}
+\contentsline {chapter}{\numberline {4}BPELRF}{71}{chapter.4}
+\contentsline {section}{\numberline {4.1}Background and Related Work}{72}{section.4.1}
+\contentsline {section}{\numberline {4.2}Syntax and semantics of BPEL+RF}{76}{section.4.2}
+\contentsline {section}{\numberline {4.3}Case Study: Automatic management system for stock market investments}{81}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Related Work}{82}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Prioritised-Timed Coloured Petri Nets}{83}{section.4.4}
+\contentsline {section}{\numberline {4.5}Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{84}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Prioritised-Timed Coloured Petri Nets}{84}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}PTCPN Semantics for WSRF/BPEL}{86}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Basic activities}{88}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Ordering structures}{89}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.5}WSRF-compliant}{91}{subsection.4.5.5}
+\contentsline {section}{\numberline {4.6}Case study: Online auction service}{95}{section.4.6}
+\contentsline {section}{\numberline {4.7}Formal Analysis of Web Service Compositions}{97}{section.4.7}
+\contentsline {section}{\numberline {4.8}Summary}{99}{section.4.8}
+\contentsline {chapter}{\numberline {5}Timed-arc workflow nets}{105}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusions, Contributions and Future Works}{107}{chapter.6}
+\contentsline {chapter}{Bibliography}{112}{appendix*.38}

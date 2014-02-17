@@ -1,63 +1,7 @@
 \chapter{BPELRF}\label{chapter:c4}
 \markboth{Chapter~\ref{chapter:c4}. Design and Verification of Web Service Compositions}{}
-%
-%This chapter presents a methodology called \textit{Correct-WS} for the creation of correct Web Service compositions including time constraints. Some of the model translations needed among the different phases of this methodology are described in detail and a tool that we have developed to automate these translations of the methodology is also introduced. Next, a case study showing a Web Service composition for an Internet purchase process is presented, where the tool is applied for the development of a correct composition. Finally, the remaining translations of the methodology and other parallel works are briefly referenced.
-%
-\section{Introduction}
-The development of software systems is becoming more complex with the 
-appearance
-of new computational paradigms such as Service-Oriented  Computing  (SOC), 
-Grid Computing and Cloud Computing. Grid/Cloud environments are characterized by a dynamic environment due to the heterogeneity and volatility of resources. In these systems, the service provider needs to ensure some levels of 
-quality and privacy to the final
-user in a way that had never been raised. It is therefore necessary to develop new techniques to benefit from the advantages 
-of recent approaches, such as Web service compositions. %Formal models of concurrency have been widely used for the description and analysis of concurrent and distributed systems. SI LO PONGO SERIA CON CITAS
- There are two complementary views to composite Web services: Choreography and Orchestration. The choreography view describes the observable interactions among services and it can
-be  defined  by  using  specific  languages such as Web  Services
-Choreography  Description  Language  (WS-CDL) %\cite{WSCDL}
-or  by using more general languages like UML Messages Sequence
-Charts (MSC). On the other hand, orchestration concerns
-the internal behaviour of a Web service in terms of invocations
-to  other  services.  Web Services Business Process Execution Language (WS-BPEL) \cite{BPEL4WS} is in general used 
-to describe Web service orchestrations, and, consequently, this
-is considered the de-facto standard language for describing Web services
-in terms of Web service compositions.
 
-In addition, complex Web systems are composed by smaller services where each one carries out different tasks. Thus, to model such systems, specification languages should offer designers the constructions required to compose and discovery those basic services. Web service compositions could be modelled by using one of the two standards previously presented (WS-CDL or WS-BPEL). Service discovery is the process of finding a suitable Web service for a given task, and, normally, its definition is implementation-dependent. %In this work, we have formalised some constructions to represent the discovery and composition of services.
-
-While Web service implementations are typically stateless, 
-their interfaces frequently provide users with the ability
-to access and manipulate states, i.e., data values that persist
-across, and evolve as a result of Web service interactions. In
-other words, the message exchanges that Web services implement
-are frequently intended to enable access to stateful
-resources. Besides, the messages that the services send
-and receive imply (or programmers infer) the existence of
-an associated resource type. Therefore, it is desirable to define Web
-service conventions to enable the discovery of, introspection on, 
-and interaction with stateful resources in standard
-and interoperable ways. Most important, such an approach
-improves the robustness of design time selection of services
-during application assembly, and runtime binding to specific
-resource instances \cite{Czajkowski2004}.
-%This commonality of purpose
-%has motivated the Open Grid Services Architecture
-%to identify state modeling and
-%management as a fundamental requirement for
-%service-oriented architectures.
-%Such considerations have led to the development
-%of four specifications known collectively as the Web
-%Services Resource Framework (WSRF [2]) which
-%define conventional interfaces and behaviors for
-%representing, abstracting, and manipulating state in a
-%Web services framework. Three related WS-
-%Notification 
-%specifications define interfaces
-%and behaviours that allow clients to subscribe to
-%changes in state, thus providing for push-mode access
-%to state components.
-To facilitate additional interoperability among services, more standardization is required to deal with distributed resources. In January of 2004, several members of the \emph{Globus Alliance} organization and the computer multinational \emph{IBM} with the help of experts from companies such as \emph{HP, SAP, Akamai, etc.} defined the basis architecture and the initial specification documents of a new standard for that purpose, Web Services Resource Framework (WSRF)~\cite{Foster2004}.
-
-Likewise, it is important to define a mechanism to state how the users are notified when important situations occur. To this end, a publish/subscribe architecture might be implemented, which is based on information preferences expressed in advance. Thus, whenever new content is available on one resource, the publisher would send that information to the subscriber. As far as this work is concerned, services might express its disposition to receive notifications when certain conditions hold. As WSRF specifications encourage, the present work utilizes WS-Notification as basis to cope with publish-subscribe architecture.
+Poner de que va el capitulo y algo de rollo. Contribuciones y objetivos.
 
 After introducing the relevant concepts, let us remark the main contributions of this work. The integration of WS-BPEL and WSRF is not new, since, in the literature, one can find some works defining this integration from a technical point of view. Some of these works will be presented in the Related Work section. Surprisingly, to the best of our knowledge, this is the first work, which taking as a starting point WSRF and WS-BPEL, defines a complete and formal language to model and analyse stateful Web service compositions. In addition to this, the necessary formal machinery to build a publish-subscribe architecture is also provided here improving the expressiveness of the language, and a formal primitive to discover new services is defined. It is worthwhile to mention that the aim of this paper is not to provide yet another WS-BPEL semantics since WS-BPEL has received much attention in recent years when many operational semantics for it have arisen. As opposed to this, the main aim here is to gather the benefits of putting together WS-BPEL and WSRF to manage stateful Web services workflows by using existing formalisms in distributed systems. Additionally, in order to deal with WSRF in a proper way, we have realised that it would be better to consider a semantic model with the appropriate ``tools'' to cope with all the relevant aspects of WSRF such as notifications and resources time-outs. To particularise and motivate our approach, we introduce now an ideal scenario.
 The scenario, where our approach might be applicable, is a \textsl{group buying}, also known as collective buying.
@@ -162,27 +106,27 @@ We use the following notation: {\it ORCH} is the set of orchestrators in the sys
 for the activities is defined by the following BNF-notation:
 %
 \[\begin{array}{l}
-  A ::=  {\it throw} \;|\;           % go to the exception block
-         {\it receive}(pl,op,v) \;|\;  % receive basic activity,
-         {\it invoke}(pl,op,v_1) \;|\;
-         {\it exit}\;|\;
-         {\it reply}(pl,op,v)\;|\;\\  % reply basic activity
-         {\it \overline{reply}(pl,op,v_2)}\;|\;
-         {\it assign}(expr,v_1) \;|\;
+  A ::=  {\mathit throw} \;|\;           % go to the exception block
+         {\mathit receive(pl,op,v)} \;|\;  % receive basic activity,
+         {\mathit invoke(pl,op,v_1)} \;|\;
+         {\mathit reply(pl,op,v)}\;|\;  % reply basic activity
+         {\mathit \overline{reply(pl,op,v_2)}}\hspace{-0.1cm}\;|\;\\
+         {\mathit assign(expr,v_1)} \;|\;
                 %~~~~~~~
-         {\it empty}\;|\;
+         {\mathit empty}\;|\;
+         {\mathit exit}\;|\;
          \,\,A \,; A \,\, \;|\, % Sequence
          \;A \,\| \, A \;\,|\,   % parallel
-         {\it while}(cond,A)\;|\ \\
-         {\it wait}(timeout)\hspace{-0.1cm}\;|\;
-         {\it pick}(\{(pl_i,op_i,v_i,A_i)\}_{i=1}^n,A,timeout)\;|\;
-         {\it getProp}(vEPR,v_1)\hspace{-0.1cm}\;|\;\\
-         {\it getTimeout}(vEPR,v_1)\;|\;
-         {\it publishResource}(O,val,timeout,tag,vEPR,A)\;|\;
-         {\it discover}(tag,vEPR)\;|\;\\
-         {\it setProp}(vEPR,expr)\;|\;
-         {\it setTimeout}(vEPR,timeout)\;|\;
-         {\it subscribe}(O,vEPR,cond',A)
+         {\mathit while(cond,A)}\;|\ 
+         {\it wait(timeout)}\hspace{-0.1cm}\;|\;\\
+         {\it pick(\{(pl_i,op_i,v_i,A_i)\}_{i=1}^n,A,timeout)}\;|\;
+         {\it getProp(vEPR,v_1)}\;|\;
+         {\it getTimeout(vEPR,v_1)}\;|\;\\
+         {\it publishResource(O,val,timeout,tag,vEPR,A)}\;|\;
+         {\it discover(tag,vEPR)}\;|\;\\
+         {\it setProp(vEPR,expr)}\;|\;
+         {\it setTimeout(vEPR,timeout)}\;|\;
+         {\it subscribe(O,vEPR,cond',A)}
 \end{array}
 \]
 

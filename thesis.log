@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  13 FEB 2014 12:46
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  17 FEB 2014 10:31
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -1075,12 +1075,41 @@ LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <10> not available
 
 ] [8
 
-] (./thesis.lot)
+] (./thesis.lot
+Overfull \hbox (3.09982pt too wide) detected at line 5
+ [][]\OT1/pbk/l/n/10 100[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 6
+ [][]\OT1/pbk/l/n/10 101[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 7
+ [][]\OT1/pbk/l/n/10 101[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 8
+ [][]\OT1/pbk/l/n/10 102[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 9
+ [][]\OT1/pbk/l/n/10 102[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 10
+ [][]\OT1/pbk/l/n/10 103[][]
+ []
+
+)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
-
-[9
+ [9
 
 ] [10
 
@@ -1303,9 +1332,353 @@ Missing character: There is no ‚ in font pbkl7t!
 Missing character: There is no Ä in font pbkl7t!
 Missing character: There is no ô in font pbkl7t!
 
-(./basicdefinitions.tex [41]
+[41]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44]
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45]
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no ƒ in font pbkl7t!
+Missing character: There is no ± in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no œ in font pbkl7t!
+Missing character: There is no Ñ in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46]
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47]
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no √ in font pbkl7t!
+Missing character: There is no ± in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no Å in font pbkl7t!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
+(./basicdefinitions.tex
 LaTeX Font Info:    Font shape `OT1/pag/m/it' in size <10> not available
 (Font)              Font shape `OT1/pag/m/sl' tried instead on input line 11.
+ [49]
 LaTeX Font Info:    Try loading font information for OMS+pbk on input line 24.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omspbk.fd
@@ -1313,7 +1686,7 @@ File: omspbk.fd
 )
 LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
- [42]
+
 Overfull \hbox (28.54219pt too wide) in paragraph at lines 65--73
 \OT1/pbk/l/n/10 such that $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; m[]\OT1/cmr/m/n
 /10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 C$\OT1/pbk/l/n/10 , $\OMS/cmsy/m/n/10
@@ -1330,7 +1703,7 @@ Underfull \hbox (badness 3375) in paragraph at lines 79--85
 [][]\OT1/pbk/l/n/10 , tak-ing [] and []
  []
 
-
+[50]
 Overfull \hbox (5.37164pt too wide) in paragraph at lines 101--107
 $\OML/cmm/m/it/10 C[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 r[]:
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n[]; m[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; [
@@ -1363,17 +1736,23 @@ T1/cmr/m/n/10 (\OML/cmm/m/it/10 C[] \OMS/cmsy/m/n/10 ^^@ f\OT1/cmr/m/n/10 1\OML
 y/m/n/10 g\OT1/cmr/m/n/10 )$\OT1/pbk/l/n/10 . 
  []
 
-[43]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <5> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 156.
- [44] (./fig26.tex)
+
+Underfull \vbox (badness 1748) has occurred while \output is active []
+
+ [51]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45]
-(./fig27.tex) [46]
+ [52]
+(./fig26.tex) (./fig27.tex) [53]
+Underfull \vbox (badness 4981) has occurred while \output is active []
+
+ [54]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <14.4> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 281.
-)) [47] [48
+))
+[55] [56
 
 
 ]
@@ -1381,10 +1760,10 @@ LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <14.4> not available
 
  (./chapter3.tex
 Chapter 3.
-[49
+[57
 
 
-] [50] [51] (./ptcpn.tex [52]
+] [58] [59] (./ptcpn.tex [60]
 Overfull \hbox (0.19876pt too wide) in paragraph at lines 6--18
 []\OT1/pbk/l/n/10 We use prioritised-timed coloured Petri nets (PTCPNs), which 
 are a prioritised-
@@ -1393,18 +1772,18 @@ are a prioritised-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53]
-[54] [55]
+ [61]
+[62] [63]
 File: Figures/figure2_scp.eps Graphic file (type eps)
  <Figures/figure2_scp.eps>
 Missing character: There is no √ in font pbkd7t!
 Missing character: There is no ≠ in font pbkd7t!
 Missing character: There is no √ in font pbkd7t!
 Missing character: There is no © in font pbkd7t!
- [56]
+ [64]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57])
+ [65])
 (./dtapn.tex
 Overfull \hbox (23.52707pt too wide) in paragraph at lines 27--29
 []\OT1/pbk/l/n/10 An \OT1/pbk/l/it/10 ex-tended timed-arc Petri net \OT1/pbk/l/
@@ -1413,7 +1792,7 @@ n/10 (ETAPN) is a 9-tuple $\OML/cmm/m/it/10 N \OT1/cmr/m/n/10 = (\OML/cmm/m/it/
 ML/cmm/m/it/10 ; []; \OT1/cmr/m/it/10 I\OT1/cmr/m/n/10 )$
  []
 
-[58] [59] [60])) [61] [62
+[66] [67] [68])) [69] [70
 
 
 ]
@@ -1421,196 +1800,173 @@ ML/cmm/m/it/10 ; []; \OT1/cmr/m/it/10 I\OT1/cmr/m/n/10 )$
 
  (./chapter4.tex
 Chapter 4.
+LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <10> not available
+(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 7.
 
-LaTeX Warning: Citation `BPEL4WS' on page 63 undefined on input line 20.
+LaTeX Warning: Reference `conclusions' on page 71 undefined on input line 11.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63
+ [71
 
 
 ]
 
-LaTeX Warning: Citation `Czajkowski2004' on page 64 undefined on input line 41.
+LaTeX Warning: Citation `Banks2006' on page 72 undefined on input line 15.
 
 
+LaTeX Warning: Citation `BPEL4WS' on page 72 undefined on input line 24.
 
-LaTeX Warning: Citation `Foster2004' on page 64 undefined on input line 58.
-
-LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 63.
-
-LaTeX Warning: Reference `conclusions' on page 64 undefined on input line 67.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [64]
-
-LaTeX Warning: Citation `Banks2006' on page 65 undefined on input line 71.
-
-[65]
-
-LaTeX Warning: Citation `BPEL4WS' on page 66 undefined on input line 80.
-
+[72]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 85.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 85.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 29.
 
-Overfull \hbox (5.60872pt too wide) in paragraph at lines 88--106
+Overfull \hbox (5.60872pt too wide) in paragraph at lines 32--50
 \OT1/pbk/l/n/10 Resource prop-er-ties, based on a Re-source Prop-er-ties Doc-u-
 ment (RPD), which
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--106
+Underfull \hbox (badness 10000) in paragraph at lines 32--50
 \OT1/pbk/l/n/10 by the stan-dard are
  []
 
-[66]
+[73]
 
-LaTeX Warning: Citation `Slomiski:2006' on page 67 undefined on input line 136.
-
-
-
-LaTeX Warning: Citation `Leymann:2006' on page 67 undefined on input line 139.
+LaTeX Warning: Citation `Slomiski:2006' on page 74 undefined on input line 80.
 
 
-LaTeX Warning: Citation `Ezenwoye:2007' on page 67 undefined on input line 139.
+LaTeX Warning: Citation `Leymann:2006' on page 74 undefined on input line 83.
 
 
-
-LaTeX Warning: Citation `Ezenwoye:2007' on page 67 undefined on input line 141.
-
+LaTeX Warning: Citation `Ezenwoye:2007' on page 74 undefined on input line 83.
 
 
-Overfull \hbox (1.10252pt too wide) in paragraph at lines 131--143
+LaTeX Warning: Citation `Ezenwoye:2007' on page 74 undefined on input line 85.
+
+
+Overfull \hbox (1.10252pt too wide) in paragraph at lines 75--87
 []\OT1/pbk/db/n/10 Related Work. \OT1/pbk/l/n/10 WS-BPEL has been ex-ten-sively
  stud-ied with many for-malisms,
  []
 
 
-LaTeX Warning: Citation `Ouyang:2007' on page 67 undefined on input line 144.
+LaTeX Warning: Citation `Ouyang:2007' on page 74 undefined on input line 88.
 
 
-LaTeX Warning: Citation `Dumas:2008' on page 67 undefined on input line 148.
+LaTeX Warning: Citation `Dumas:2008' on page 74 undefined on input line 92.
 
 
-LaTeX Warning: Citation `Dragoni:2009' on page 67 undefined on input line 148.
+LaTeX Warning: Citation `Dragoni:2009' on page 74 undefined on input line 92.
 
 
-LaTeX Warning: Citation `Qiu:2005' on page 67 undefined on input line 154.
+LaTeX Warning: Citation `Qiu:2005' on page 74 undefined on input line 98.
 
 
-LaTeX Warning: Citation `Farahbod:2005' on page 67 undefined on input line 155.
+LaTeX Warning: Citation `Farahbod:2005' on page 74 undefined on input line 99.
 
 
-
-LaTeX Warning: Citation `Busi:2005' on page 67 undefined on input line 155.
-
-
-LaTeX Warning: Citation `Lucchi07' on page 67 undefined on input line 155.
+LaTeX Warning: Citation `Busi:2005' on page 74 undefined on input line 99.
 
 
-LaTeX Warning: Citation `Wirsing2011bis' on page 67 undefined on input line 157
+LaTeX Warning: Citation `Lucchi07' on page 74 undefined on input line 99.
+
+
+LaTeX Warning: Citation `Wirsing2011bis' on page 74 undefined on input line 101
 .
 
 
-LaTeX Warning: Citation `Wirsing2011bis' on page 67 undefined on input line 157
+LaTeX Warning: Citation `Wirsing2011bis' on page 74 undefined on input line 101
 .
 
 
-LaTeX Warning: Citation `Bettini2008' on page 67 undefined on input line 157.
+LaTeX Warning: Citation `Bettini2008' on page 74 undefined on input line 101.
 
 
-LaTeX Warning: Citation `Lapadula2007' on page 67 undefined on input line 157.
+LaTeX Warning: Citation `Lapadula2007' on page 74 undefined on input line 101.
 
 
-LaTeX Warning: Citation `Lapadula2008' on page 67 undefined on input line 157.
+LaTeX Warning: Citation `Lapadula2008' on page 74 undefined on input line 101.
 
 
-LaTeX Warning: Citation `Kitchin2009' on page 67 undefined on input line 157.
+LaTeX Warning: Citation `Kitchin2009' on page 74 undefined on input line 101.
 
 
-LaTeX Warning: Citation `Wirsing2011bis' on page 67 undefined on input line 157
+LaTeX Warning: Citation `Wirsing2011bis' on page 74 undefined on input line 101
 .
 
 
-LaTeX Warning: Citation `Bettini2008' on page 67 undefined on input line 157.
+LaTeX Warning: Citation `Bettini2008' on page 74 undefined on input line 101.
 
 
-LaTeX Warning: Citation `Lapadula2007' on page 67 undefined on input line 157.
+LaTeX Warning: Citation `Lapadula2007' on page 74 undefined on input line 101.
 
-[67]
+[74]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [68]
-Overfull \hbox (38.44876pt too wide) detected at line 187
-[]
- []
-
-
-Overfull \hbox (10.0546pt too wide) in paragraph at lines 189--198
+ [75]
+Overfull \hbox (10.0546pt too wide) in paragraph at lines 133--142
 \OT1/pbk/l/n/10 metic ex-pres-sion con-structed by us-ing the vari-ables in \OT
 1/pbk/l/it/10 VAR \OT1/pbk/l/n/10 and in-te-gers; $[]$
  []
 
-[69]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [70]
-Overfull \hbox (16.34383pt too wide) in paragraph at lines 205--208
+ [76]
+Overfull \hbox (16.34383pt too wide) in paragraph at lines 149--152
 \OT1/pbk/l/n/10 for the eval-u-a-tion of $\OML/cmm/m/it/10 e$\OT1/pbk/l/n/10 , 
 and $[]$, where $[]$
  []
 
-
-Overfull \hbox (22.09734pt too wide) in paragraph at lines 209--213
+[77]
+Overfull \hbox (22.09734pt too wide) in paragraph at lines 153--157
 \OT1/pbk/l/n/10 de-note that there is a tu-ple $[]$ $[]$, where $[]$.
  []
 
 
-Overfull \hbox (41.16537pt too wide) in paragraph at lines 209--213
+Overfull \hbox (41.16537pt too wide) in paragraph at lines 153--157
 \OT1/pbk/l/n/10 notes a change of the re-source life-time, and the func-tion $[
 ]$
  []
 
 
-Overfull \hbox (90.76521pt too wide) in paragraph at lines 209--213
+Overfull \hbox (90.76521pt too wide) in paragraph at lines 153--157
 \OT1/pbk/l/n/10 scriber con-di-tion holds at the cur-rent state $\OT1/cmr/m/it/
 10 s$\OT1/pbk/l/n/10 . Let s=($\OML/cmm/m/it/10 ^^[; ^^Z$\OT1/pbk/l/n/10 ) with
  $[]$,
  []
 
 
-Overfull \hbox (46.44434pt too wide) in paragraph at lines 209--213
+Overfull \hbox (46.44434pt too wide) in paragraph at lines 153--157
 \OT1/pbk/l/n/10 we de-fine the func-tion $[]$ $[]$,
  []
 
-[71] [72]
-Overfull \hbox (18.09976pt too wide) in paragraph at lines 495--501
+[78]
+Overfull \hbox (18.09976pt too wide) in paragraph at lines 439--445
 []|[]| 
  []
 
 
-Overfull \hbox (33.53856pt too wide) in paragraph at lines 227--508
+Overfull \hbox (33.53856pt too wide) in paragraph at lines 171--452
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 32.70499pt on input line 513.
+LaTeX Warning: Float too large for page by 32.70499pt on input line 457.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <7> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 889.
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 833.
 LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <7> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 889.
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 833.
 
-Overfull \hbox (76.62502pt too wide) in paragraph at lines 889--892
+Overfull \hbox (76.62502pt too wide) in paragraph at lines 833--836
 [][]
  []
 
@@ -1618,151 +1974,151 @@ Overfull \hbox (76.62502pt too wide) in paragraph at lines 889--892
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (65.24408pt too wide) in paragraph at lines 991--994
+Overfull \hbox (65.24408pt too wide) in paragraph at lines 935--938
 [][]
  []
 
-[73]
-Overfull \hbox (46.82411pt too wide) in paragraph at lines 1014--1017
+[79]
+Overfull \hbox (46.82411pt too wide) in paragraph at lines 958--961
 \OT1/pbk/l/n/10 stored in vari-able vEPR, re-sult-ing in the new state $[]$.
  []
 
 
-Overfull \hbox (65.24408pt too wide) in paragraph at lines 1101--1102
+Overfull \hbox (65.24408pt too wide) in paragraph at lines 1045--1046
  [][] 
  []
 
-[74]
+[80]
 LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <7> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1219.
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1163.
 
 LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <5> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1219.
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1163.
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 1219--1220
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1163--1164
  [][] 
  []
 
 
-Overfull \hbox (14.18213pt too wide) in paragraph at lines 1239--1239
+Overfull \hbox (14.18213pt too wide) in paragraph at lines 1183--1183
 []\OT1/pag/db/n/14.4 Case Study: Au-to-matic man-age-ment sys-tem for stock
  []
 
 
-Overfull \hbox (1.01335pt too wide) in paragraph at lines 1240--1245
+Overfull \hbox (1.01335pt too wide) in paragraph at lines 1184--1189
 []$[]$\OT1/pbk/l/n/10 . Hence, vari-ables $\OML/cmm/m/it/10 epr; epr[];$
  []
 
-[75]
+[81]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <9> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1246.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1190.
 
-Overfull \hbox (7.5268pt too wide) in paragraph at lines 1247--1247
+Overfull \hbox (7.5268pt too wide) in paragraph at lines 1191--1191
 []$  
  []
 
 
-Overfull \hbox (5.08513pt too wide) in paragraph at lines 1248--1248
+Overfull \hbox (5.08513pt too wide) in paragraph at lines 1192--1192
 []$[]$  
  []
 
 
-LaTeX Warning: Citation `Slomiski:2006' on page 76 undefined on input line 1301
+LaTeX Warning: Citation `Slomiski:2006' on page 82 undefined on input line 1245
 .
 
 
-LaTeX Warning: Citation `Leymann:2006' on page 76 undefined on input line 1304.
+LaTeX Warning: Citation `Leymann:2006' on page 82 undefined on input line 1248.
 
 
 
-LaTeX Warning: Citation `Ezenwoye:2007' on page 76 undefined on input line 1304
+LaTeX Warning: Citation `Ezenwoye:2007' on page 82 undefined on input line 1248
 .
 
 
-LaTeX Warning: Citation `Ezenwoye:2007' on page 76 undefined on input line 1306
+LaTeX Warning: Citation `Ezenwoye:2007' on page 82 undefined on input line 1250
 .
 
 
-LaTeX Warning: Citation `Ouyang:2007' on page 76 undefined on input line 1309.
+LaTeX Warning: Citation `Ouyang:2007' on page 82 undefined on input line 1253.
 
 
-LaTeX Warning: Citation `Dumas:2008' on page 76 undefined on input line 1313.
+LaTeX Warning: Citation `Dumas:2008' on page 82 undefined on input line 1257.
 
 
-LaTeX Warning: Citation `Dragoni:2009' on page 76 undefined on input line 1313.
+LaTeX Warning: Citation `Dragoni:2009' on page 82 undefined on input line 1257.
 
 
 
-LaTeX Warning: Citation `Qiu:2005' on page 76 undefined on input line 1319.
+LaTeX Warning: Citation `Qiu:2005' on page 82 undefined on input line 1263.
 
 
-LaTeX Warning: Citation `Farahbod:2005' on page 76 undefined on input line 1320
+LaTeX Warning: Citation `Farahbod:2005' on page 82 undefined on input line 1264
 .
 
 
-LaTeX Warning: Citation `Busi:2005' on page 76 undefined on input line 1320.
+LaTeX Warning: Citation `Busi:2005' on page 82 undefined on input line 1264.
 
-[76]
+[82]
 
-LaTeX Warning: Citation `Wirsing2011bis' on page 77 undefined on input line 132
-2.
+LaTeX Warning: Citation `Wirsing2011bis' on page 83 undefined on input line 126
+6.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [77]
-[78] [79]
-Overfull \hbox (5.0858pt too wide) in paragraph at lines 1497--1755
+ [83]
+[84] [85]
+Overfull \hbox (5.0858pt too wide) in paragraph at lines 1441--1699
  [] 
  []
 
 
-LaTeX Warning: Citation `wsfm2011' on page 80 undefined on input line 1793.
+LaTeX Warning: Citation `wsfm2011' on page 86 undefined on input line 1737.
 
-[80]
+[86]
 File: Figures/orchestration.eps Graphic file (type eps)
- <Figures/orchestration.eps> [81]
+ <Figures/orchestration.eps> [87]
 
-LaTeX Warning: Reference `fig:basicas' on page 82 undefined on input line 1874.
-
-
-
-LaTeX Warning: Reference `fig:comm' on page 82 undefined on input line 1928.
+LaTeX Warning: Reference `fig:basicas' on page 88 undefined on input line 1818.
 
 
-LaTeX Warning: Reference `fig:comm1' on page 82 undefined on input line 1928.
+
+LaTeX Warning: Reference `fig:comm' on page 88 undefined on input line 1872.
 
 
-LaTeX Warning: Reference `fig:comm2' on page 82 undefined on input line 1928.
+LaTeX Warning: Reference `fig:comm1' on page 88 undefined on input line 1872.
 
 
-Overfull \hbox (2.2964pt too wide) in paragraph at lines 1928--1929
+LaTeX Warning: Reference `fig:comm2' on page 88 undefined on input line 1872.
+
+
+Overfull \hbox (2.2964pt too wide) in paragraph at lines 1872--1873
 []\OT1/pbk/l/n/10 Fig. [] shows the trans-la-tion for both the in-voke/re-ceive
  and the reply/$[]$
  []
 
-[82]
+[88]
 
-LaTeX Warning: Citation `BPEL4WS' on page 83 undefined on input line 1949.
+LaTeX Warning: Citation `BPEL4WS' on page 89 undefined on input line 1893.
 
 File: Figures/sequence.eps Graphic file (type eps)
-<Figures/sequence.eps> [83]
+<Figures/sequence.eps> [89]
 File: Figures/paralelo.eps Graphic file (type eps)
- <Figures/paralelo.eps> [84]
+ <Figures/paralelo.eps> [90]
 File: Figures/pick.eps Graphic file (type eps)
  <Figures/pick.eps>
 File: Figures/while.eps Graphic file (type eps)
 
 <Figures/while.eps>
 File: Figures/createResource.eps Graphic file (type eps)
- <Figures/createResource.eps> [85]
+ <Figures/createResource.eps> [91]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [86]
+ [92]
 File: Figures/subscribe.eps Graphic file (type eps)
 
-<Figures/subscribe.eps> [87]
+<Figures/subscribe.eps> [93]
 File: Figures/getProp.eps Graphic file (type eps)
  <Figures/getProp.eps>
 File: Figures/setProp.eps Graphic file (type eps)
@@ -1770,61 +2126,61 @@ File: Figures/setProp.eps Graphic file (type eps)
 File: Figures/setTime.eps Graphic file (type eps)
 
 <Figures/setTime.eps>
-Overfull \hbox (1.11844pt too wide) in paragraph at lines 2250--2256
+Overfull \hbox (1.11844pt too wide) in paragraph at lines 2194--2200
 []$ \OT1/pbk/l/n/10 and $[]$. Vari-able $\OML/cmm/m/it/10 v[]$ \OT1/pbk/l/n/10 
 serves
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2250--2256
+Underfull \hbox (badness 10000) in paragraph at lines 2194--2200
 
  []
 
 
 Underfull \vbox (badness 2608) has occurred while \output is active []
 
- [88]
-Underfull \hbox (badness 10000) in paragraph at lines 2258--2326
+ [94]
+Underfull \hbox (badness 10000) in paragraph at lines 2202--2270
 
  []
 
 
 Underfull \vbox (badness 1953) has occurred while \output is active []
 
- [89]
+ [95]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [90]
+ [96]
 File: Figures/casestudy.eps Graphic file (type eps)
 
 <Figures/casestudy.eps>
 
-LaTeX Warning: Citation `Carbone2006' on page 91 undefined on input line 2346.
+LaTeX Warning: Citation `Carbone2006' on page 97 undefined on input line 2290.
 
 
-LaTeX Warning: Citation `Dong2006' on page 91 undefined on input line 2346.
+LaTeX Warning: Citation `Dong2006' on page 97 undefined on input line 2290.
 
 
-LaTeX Warning: Citation `Foster2007' on page 91 undefined on input line 2346.
+LaTeX Warning: Citation `Foster2007' on page 97 undefined on input line 2290.
 
 
-LaTeX Warning: Citation `Yang2008' on page 91 undefined on input line 2346.
+LaTeX Warning: Citation `Yang2008' on page 97 undefined on input line 2290.
 
-[91]
+[97]
 
-LaTeX Warning: Citation `Wing1990' on page 92 undefined on input line 2350.
+LaTeX Warning: Citation `Wing1990' on page 98 undefined on input line 2294.
 
 
-LaTeX Warning: Citation `Peled2001' on page 92 undefined on input line 2350.
+LaTeX Warning: Citation `Peled2001' on page 98 undefined on input line 2294.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [92]
+ [98]
 
-LaTeX Warning: Reference `c4' on page 93 undefined on input line 2366.
+LaTeX Warning: Reference `c4' on page 99 undefined on input line 2310.
 
-) [93] [94] [95] [96] [97] [98
+) [99] [100] [101] [102] [103] [104
 
 
 ]
@@ -1832,10 +2188,10 @@ LaTeX Warning: Reference `c4' on page 93 undefined on input line 2366.
 
  (./chapter5.tex
 Chapter 5.
-) [99
+) [105
 
 
-] [100
+] [106
 
 
 ]
@@ -1843,14 +2199,14 @@ Chapter 5.
 
  (./Conclusions.tex
 Chapter 6.
-) [101
+) [107
 
 
 ]
 
-LaTeX Warning: Reference `c5' on page 102 undefined on input line 285.
+LaTeX Warning: Reference `c5' on page 108 undefined on input line 285.
 
-[102
+[108
 
 
 ] (./thesis.bbl
@@ -1873,7 +2229,7 @@ Missing character: There is no √ in font pbkl7t!
 Missing character: There is no ≠ in font pbkl7t!
 Missing character: There is no √ in font pbkl7t!
 Missing character: There is no ∂ in font pbkl7t!
-[103
+[109
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 122--127
@@ -1897,9 +2253,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--127
  []
 
 
-LaTeX Warning: Reference `c5' on page 104 undefined on input line 127.
+LaTeX Warning: Reference `c5' on page 110 undefined on input line 127.
 
-[104] [105]) (./thesis.bbl [106]
+[110] [111]) (./thesis.bbl [112]
 Underfull \hbox (badness 1377) in paragraph at lines 8--12
 []\OT1/pbk/l/n/10 Oasis stan-dard for web ser-vices no-ti-fi-ca-tion (wsn) v1.3
 .  [][][][]$\OT1/pcr/m/sl/10 https : //$[][]
@@ -1916,7 +2272,7 @@ Missing character: There is no √ in font pbkl7t!
 Missing character: There is no ≠ in font pbkl7t!
 Missing character: There is no √ in font pbkl7t!
 Missing character: There is no ∂ in font pbkl7t!
-[107
+[113
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 122--127
@@ -1939,7 +2295,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--127
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
-[108] [109]) [110] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
+[114] [115]) [116] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
 (./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux)
 (./Conclusions.aux))
 
@@ -1950,12 +2306,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18003 strings out of 495062
- 302960 string characters out of 1182644
- 471457 words of memory out of 3000000
- 20656 multiletter control sequences out of 15000+50000
+ 18002 strings out of 495062
+ 302947 string characters out of 1182644
+ 471376 words of memory out of 3000000
+ 20655 multiletter control sequences out of 15000+50000
  32639 words of font info for 96 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,28n,92p,2750b,1667s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (122 pages, 562860 bytes).
+Output written on thesis.dvi (128 pages, 586088 bytes).

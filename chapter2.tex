@@ -1221,6 +1221,299 @@ Petri nets and their different variants are a mature and suitable formalism to m
 of system.
 
 \subsection{Formal models of concurrency}\label{formalmodels}
+In this section we present the formalism on which we will base
+throughout this Thesis to develop our specification languages. We start by presenting
+some notions about process algebras and some examples. Next, we introduce the basic definition of
+Petri nets, as well as important definitions that will help the reader to understand intuitively this work.
+In the next chapter, we will introduce time extensions of Petri nets as well other formal models to represent
+system behaviour such as labelled transition systems or timed transition systems.
+All these formalisms share the same characteristic, they serve as 
+specification languages, presenting all the advantages and disadvantages presented above. 
+The use of these specification languages allows us to perform system analysis before implementing it. 
+Indeed, such analysis could be independent of the practical realization 
+of the corresponding system. Moreover, they also allow to 
+perform the analysis of a system based on
+the comparison between the behaviour of the final system 
+and the behaviour provided by the semantics of the specification language. This is known as \emph{conformance checking}.
+This conformance checking is out of the scope of this Thesis, but it could be considered as future work.
+
+The application of specification languages for the study of systems
+can be divided into two steps. The first one is the \emph{representation}
+of the relevant system features. This representation is done using the syntax 
+of the specification language. Notice that specification languages are usually of higher level
+in comparison with the languages used to develop the system. Thus,
+some implementation aspects are ignored. This is known as \emph{abstraction}.
+Such abstraction is one of the strengths that provide these languages. Thus, abstracting away irrelevant aspects,
+the automatic or systematic analysis of relevant system properties can be done. In contrast, this is 
+impracticable in we consider all the details modelled in the implementation or in the informal specification.
+The second step in the application of specification languages
+involves the manipulation of the formal specification, obtained in the previous step, to
+extract relevant system properties. Such manipulation
+is generally supported by the wide knowledge about the system provided by the semantics. 
+This allows us to study in advance properties such as the future system evolution, the
+compliance with certain invariants, or the appearance of certain undesirable properties. 
+Again, this study can consider only the properties of the obtained formal model or the comparison
+between specification and implementation properties.
+
+It is worthwhile to mention that neither of the two previous steps would be, in general, fully automated.
+Obviously, this shall depend on the relevant features considered in the first
+step or in the properties to analyse in the second. However, even in case that the full automation is not possible, 
+the power of these languages makes them an indispensable tool for the formal study of any kind of computer system. 
+As commented previously, their power lies in the features (properties) we want to study, and, therefore, it is really
+important to fix first these features. For instance, in our language, we will study the communication features of the language 
+WS-BPEL and how resource management can be conducted by using WS-BPEL and WSRF. In addition, we will study the presence of errors such as deadlocks
+as well as the evolution of the system in the case of error. 
+
+The most important feature of these models is that intrinsic to this type of systems:
+communication between processes, indispensable for the functioning
+any concurrent system.
+Consequently , specification languages 
+focused on the description
+of concurrent systems would have intended the detailed modeling
+of communication between processes in the system . In this line
+will try to abstract , to a greater or lesser extent, all other aspects
+such systems. This implies that the internal behavior of each
+process , ie , the set of actions executed by the process that
+represent a communication with other processes, so that there will abstract
+will be represented in the models.
+
+In web services, one of the most important feature is the communication between services. In concurrent systems,
+it is modelled as the communication between processes and it is indispensable for any concurrent system.
+Consequently , specification languages shall pay attention to the detailed description
+of the communication between processes in the system. When modelling the communication, 
+some kind of abstraction is required, implying that the internal behaviour of each
+process is hidden, i.e., the set of actions executed by the process is unknown. This perfectly fits again in the service-oriented
+philosophy commented above. In BPELRF, we will pay attention to the communication between WS-BPEL processes, implementing a client-server
+model by using the activities receive, reply, invoke and a barred version of the reply activity created for the language. Moreover, as we are modelling
+an orchestration language, each participant hides its implementation to the other participants.  
+
+However, the abstraction of the internal details of each participant will affect 
+the communication between the processes. This is due to the actions internally performed by these processes will determine when 
+the interaction occurs. In this way, the abstraction of not interesting details 
+leads inevitably to the loss of some information that could be
+relevant for the interesting aspects we want to capture.
+Thus, it can be observed that in every specification language 
+that includes special interest in modelling the communications between concurrent processes must deal
+with uncertainty. Specifically , communication choices
+occurring internally in the process result in the appearance of indeterminacy. Normally, most of the process
+algebras provide a special operator to deal with these choices.
+
+As in Chapter \ref{chapter:c4} we define a specification language for web service composition, we introduce next
+the most relevant \emph{ingredients} that these language must include. 
+Despite the differences between them, the fundamental concepts
+are very similar, and, therefore, the basic ingredients
+in all of them are more or less the same. This allows us to provide a more general description
+in this section, although sometimes we will pay more attention to
+some relevant concepts.
+In general, every language has, at least, its syntax and its operational semantics. 
+The first one describes the set of expressions that are permitted by the 
+language and, as a consequence, they are susceptible to have a specific meaning. On the other hand, the
+operational semantics gives us the set of rules that determine how these expressions, defined according to the syntax, 
+evolve to other expressions. In the case of specification languages
+for concurrent systems, this evolution must be interpreted as a change of state
+due to the execution of the system, that is, the application of a
+operational semantics rule represents the evolution of the system over the time.
+Thus, system behaviour is represented by the 
+state evolutions that may occur in it, where these evolutions 
+are the result of the application of the rules given by the operational semantics.
+
+The key feature of this kind of languages is that they provide a neat way to model complex global behaviours as the composition of 
+simple behaviours of each party. This feature is fairly related with the definition of choreography and orchestration, making them 
+a suitable artifact to model these systems. In addition, it seems reasonable that the definition of
+the operational semantics for such languages is therefore defined in different levels. Hence, 
+the operational semantics should be able to describe individually the
+behaviour of each participant in the system and, from these individual behaviours, build the whole system. 
+To make possible this hierarchical description of the operational semantics,
+the behaviour of each process has to be defined without referencing the global behaviour of the process. 
+Thus, the behaviour of each hierarchical level can be defined from the behaviour 
+of the lower levels. When following this approach, we say that the operational semantics is compositional. 
+In our language BPELRF, we have defined three levels, two for describing
+the particular behaviour of each participant and the other one for defining the composition of these participants 
+to conform the whole system.
+
+In the case of process algebras, an operational semantics is usually defined as a set of rules 
+that governs the evolution of the system. In this Thesis, we will follow the approach presented by G. Plotkin
+in \cite{Plotkin81}. In that work, Plotkin introduces the \emph{structural operational semantics}.
+Structural Operational Semantics(SOS)
+provides a framework to give an operational
+semantics to programming and specification languages,
+which, because of its intuitive appeal and flexibility,
+has found considerable application in the theory of concurrent
+processes. Even though SOS is widely used in programming language semantics
+at large, some of its most interesting theoretical developments have taken place
+within concurrency theory. In particular, SOS has been successfully applied
+as a formal tool to establish result that hold for whole classes of process description
+languages. The concept of rule format has
+played a major role in the development of
+this general theory of process description
+languages, and several such formats
+have been proposed in the research literature \cite{aceto1999}. As a proof of maturity, let us comment that
+the original paper, where Plotkin introduced structural operational semantics, 
+has more than 3600 citations according to Google scholar or more than 1250 according to
+Citeseer. The rules in Plotkin-style operational semantics describe the single-step capabilities of systems 
+and each rule has the form $H/\alpha$, where $H$ is a set of premises and $\alpha$ is a set of conclusions.
+Each rule can be interpreted as follows: `` When the participants hold the premises, 
+the global evolution, defined by the conclusion, can be done''. 
+
+The basic behaviour of each participant that can be expressed in an operational semantics
+is known as \emph{actions}, and, then, we will call \emph{action}  to the most
+basic execution in the system. With the aim of maintaining a set
+manageable basic actions, sometimes several communication actions are grouped
+in a single action. This action can be 
+labelled with one or more parameters to
+identify each specific communication. Process algebras are normally enriched
+with a kind of special actions called ``internal actions''. These
+internal actions abstract normally an internal decision of the process that 
+do not want to be represented explicitly in the model. Usually, a single symbol is used to represent 
+all internal actions since it is irrelevant to distinguish between internal actions
+of various types. In process algebras, such
+internal actions are usually represented by $\tau$.
+
+
+As commented previously, the abstraction of some parts of the process introduces nondeterminism in the system.
+This is due to all the unpredictable factors have a direct repercussion on the
+system. For instance, this nondeterminism can be used to represent the freedom of concurrent processes
+to run asynchronously. In web service composition, a model could represent the fact
+that two services ready to send to send the messages $a$ and $b$, respectively, could
+evolve as a whole sending first the message $a$ and, then, the message $b$ , or, on the contrary, they can send first the message $b$
+and, after that, the message $a$. This will depend on the
+freedom of such processes in that particular moment. Nevertheless, 
+if we want the message $a$ to be sent before the message $b$, then the first process will synchronize with
+the action b the second , then both actions would have to occur
+necessarily at the same time and that freedom would disappear to Indeterminism
+system level also represents the uncertainty caused by the fact
+they allow two processes synchronize by means of two pairs of
+Equity given the same situation .
+Indeterminism system level shown in algebras
+processes through one (or several ) specific syntactic constructors ,
+generally called parallel operators ( for example ) . In this case
+the same operator governs both indeterminism due to the evolution
+asynchronous processes as synchronous evolution thereof ( due
+usually communications between them) .
+In the case of finite state machines or systems labelled
+transitions , or provide specific syntactic constructors
+or composition rules that allow the machine are applied to obtain
+Descriptive of a system from the corresponding machines
+processes , such that said left shown in nondeterminism
+composite machine.
+
+ Este indeterminismo 
+representa, por ejemplo, la libertad de los procesos concurrentes de
+ejecutarse de manera asincrona. Asi un modelo podria representar el hecho
+de que dos procesos dispuestos a ejecutar respectivamente a y b podrian
+elucionar de forma que el sistema globalmente mostrara una a y después una
+b, o bien mostrara una b y después una a, siempre y cuando el modelo desee
+proporcionar tal libertad a los procesos en dicho momento concreto. De esta
+manera, si deseáramos que la acción a del primer proceso se sincronizará con
+la acción b del segundo, entonces ambas acciones tendrian que producirse
+necesariamente a la vez y dicha libertad desapareceria El indeterminismo a
+nivel de sistema representa también la incertidumbre producida por el hecho 
+de que se permita a dos procesos sincronizar por medio de dos pares de
+acciones diferentes en una misma situacion dada.
+El indeterminismo a nivel de sistema se representa en las álgebras de
+procesos por medio de uno (o varios) constructores sintácticos especificos,
+denominados en general operadores de paralelo (por ejemplo ). En este caso 
+el mismo operador rige tanto el indeterminismo debido a la evolucion 
+asincrona de los procesos como la evolución sincrona de los mismos (debida
+habitualmente a las comunicaciones entre ellos).
+En el caso de las máquinas de estados finitos o de los sistemas etiquetados
+de transiciones, o bien se proveen constructores sintácticos especificos
+o bien se aplican reglas de composición que permitan obtener la maquina
+representativa de un sistema a partir de las máquinas de los correspondientes
+procesos, de forma que dicho indeterminismo quede representado en la
+máquina compuesta.
+
+In addition to the operations introduced above, some
+process algebras provide another operators to increase their expressive power.
+Thus, complex scenarios can be modelled with these operators. Such is the case of the operators
+of recursion in process algebras , for defining processes
+function themselves , giving them the ability to denote patterns
+repetitive behavior . In the case of finite state machines and
+labeled transition system, such behavior patterns
+can be partially achieved through the introduction of cycles. without
+However , in the case of recursion algebras facilitates greater expressiveness
+it allows , for example , express a process and a system consisting of
+one and the same process . This allows the creation of new hierarchical levels
+( potentially infinite ) as a result of the evolution of the system. of
+Thus, the description of the system itself changes as the system
+evolves , to the extent that forms are conceivable future infinite
+possible from a given . In contrast, the number of configurations
+possible in a finite state machine from an initial configuration is
+finite, which gives a lower expression (specifically, that of languages
+regular ) .
+Además de los tipos de operaciones vistos anteriormente, algunos 
+lenguajes proveen operadores adicionales para aumentar la complejidad de los
+escenarios que se pueden describir con ellos. Tal es el caso de los operadores
+de recursión en las álgebras de procesos, que permiten definir los procesos en
+función de sí mismos, lo que les confiere la capacidad de denotar patrones de
+comportamiento repetitivos. En el caso de las máquinas de estados finitos y
+los sistemas etiquetados de transiciones, tales patrones de comportamiento
+se pueden lograr parcialmente por medio de la introducción de ciclos. Sin 
+embargo, en el caso de las álgebras la recursión facilita una mayor expresividad
+pues permite, por ejemplo, expresar un proceso como un sistema formado por
+otro proceso y  ́el mismo. Esto permite la creación de nuevos niveles jerárquicos 
+(potencialmente infinitos) como resultado de la evolución del sistema. De
+esta forma, la propia descripción del sistema cambia a medida que el sistema
+evoluciona, hasta el punto de que son concebibles infinitas formas futuras
+posibles a partir de una dada. Por contra, el número de configuraciones 
+posibles en una máquina de estados finita a partir de una configuración inicial es
+finita, lo que le da una menor expresividad (en concreto, la de los lenguajes
+regulares).
+
+
+%CSP es un lenguaje algebraico utilizado para describir sistemas compues-
+%tos por procesos que evolucionan de forma concurrente. Fue introducido por
+%Hoare en 1978 [Hoa78]. Posteriormente, el mismo autor publico un texto so-
+%bre CSP [Hoa85], donde se estudia la semántica del modelo. La idea básica en
+%que se apoya CSP consiste en considerar que los procesos evolucionan de una
+%forma independiente, hasta que deban ejecutar acciones comunes a varios de
+%ellos, para lo cual habr ́n de sincronizar. Este mecanismo de sincronizacion
+%permite además modelar la comunicación entre procesos. En el modelo, como
+%sucede en general en todos aquellos campos en los que se aplican técnicas de
+%abstracción, se ignoran todas aquellas caracteristicas que resultan irrelevantes 
+%para el estudio de la cuestión en la que hemos fijado nuestro interés, que
+%en este caso es la concurrencia. En consecuencia se abstrae el significado 
+%concreto de las acciones ejecutadas por los procesos, que en consecuencia quedan
+%exclusivamente representadas por el identificador que las denota.
+%La sintaxis del lenguaje CSP viene dada por una signatura sobre un
+%unico género de procesos, que incluye operadores para representar todos los
+%elementos fundamentales de la concurrencia, unos explicitamente, y otros por
+%medio de combinaciones de dichas operaciones. El punto de partida sobre
+%el que se definen los procesos de CSP es el conjunto de acciones que los
+%mismos pueden ejecutar y que representan la realización de eventos por el
+%mismo. Como ya hemos precisado, en CSP no nos importa el significado de
+%las acciones; éstas pueden representar intuitivamente cuestiones tan diversas
+%como asignaciones en un lenguaje de programación, la introducción de una
+%moneda en la ranura de una máquina, el funcionamiento de un reloj, el envio
+%de una señal telefónica, etc.
+%
+%El conjunto de acciones que un proceso puede realizar se denomina su
+%alfabeto. Dentro del mecanismo de abstracción de las caracteristicas de las
+%acciones que se consideran irrelevantes para nuestro estudio, entendemos que
+%las acciones no llevan asociada una duración concreta, si bien asumimos que
+%la misma es siempre finita. Dicha abstracción nos lleva a considerar la ejecución 
+%de las acciones como un proceso instantáneo. En consecuencia, el factor
+%tiempo, en lo que de cuantitativo tiene, no será tenido en cuenta al realizar
+%la descripción de procesos mediante este lenguaje (en esta primera versión),
+%ni por tanto podrá ser estudiado en el marco del modelo. Ello por supuesto
+%no implica que el tiempo no se refleje en términos cualitativos, pues como
+%veremos es precisamente la ordenación temporal (relativa) de las acciones
+%ejecutadas por un proceso, la que nos proporciona la semántica del mismo.
+%Otra consecuencia de la visión de un proceso como un agente capaz de
+%ejecutar una serie de acciones (totalmente) ordenadas temporalmente es que
+%en CSP, al menos en tanto nos quedemos con su semántica de 
+%entrelazamiento (interleaving) clásica, no es posible describir la ejecución simultánea
+%de acciones, o más exactamente la necesidad o imposibilidad de que tal 
+%cosa suceda. Asi cuando no exista relación de causalidad entre dos acciones,
+%tendremos la posibilidad de ejecutar las mismas en un orden cualquiera.
+%Podriamos en cambio considerar que cuando aparece la necesidad de 
+%sincronizar para ejecutar una cierta acción, justamente se esta imponiendo la
+%ejecución simultánea de las distintas acciones que sincronizan. Ello seriá admisible desde el punto de vista intuitivo, 
+%pero no asi a nivel formal, pues
+%cuando se produce la ejecución de una acción por medio de una cierta sincronización, 
+%se entiende que dicha acción es una sola, si bien de cara a su
+%ejecución deben colaborar los distintos procesos que se sincronizan.
+
 \input{basicdefinitions.tex}
 
 %\input{tapn.tex}
