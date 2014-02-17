@@ -14,7 +14,7 @@ A level-1 auxiliary file: chapter4.aux
 A level-1 auxiliary file: chapter5.aux
 A level-1 auxiliary file: Conclusions.aux
 The style file: plain.bst
-Illegal, another \bibdata command---line 70 of file thesis.aux
+Illegal, another \bibdata command---line 72 of file thesis.aux
  : \bibdata
  :         {bibliography}
 I'm skipping whatever remains of this command
@@ -209,45 +209,45 @@ Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Gr
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
 while executing---line 1090 of file plain.bst
-You've used 42 entries,
+You've used 44 entries,
             2118 wiz_defined-function locations,
-            843 strings with 11759 characters,
-and the built_in function-call counts, 13142 in all, are:
-= -- 1271
-> -- 560
+            851 strings with 11954 characters,
+and the built_in function-call counts, 13623 in all, are:
+= -- 1312
+> -- 585
 < -- 15
-+ -- 231
-- -- 184
-* -- 846
-:= -- 2128
-add.period$ -- 126
-call.type$ -- 42
-change.case$ -- 213
++ -- 242
+- -- 192
+* -- 869
+:= -- 2210
+add.period$ -- 131
+call.type$ -- 44
+change.case$ -- 222
 chr.to.int$ -- 0
-cite$ -- 54
-duplicate$ -- 569
-empty$ -- 1086
-format.name$ -- 184
-if$ -- 2826
+cite$ -- 56
+duplicate$ -- 588
+empty$ -- 1130
+format.name$ -- 192
+if$ -- 2927
 int.to.chr$ -- 0
-int.to.str$ -- 42
-missing$ -- 42
-newline$ -- 207
-num.names$ -- 74
-pop$ -- 268
+int.to.str$ -- 44
+missing$ -- 44
+newline$ -- 216
+num.names$ -- 78
+pop$ -- 287
 preamble$ -- 1
-purify$ -- 177
+purify$ -- 185
 quote$ -- 0
-skip$ -- 405
+skip$ -- 419
 stack$ -- 0
-substring$ -- 671
-swap$ -- 144
+substring$ -- 682
+swap$ -- 146
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 154
+type$ -- 160
 warning$ -- 12
-while$ -- 111
-width$ -- 44
-write$ -- 440
+while$ -- 115
+width$ -- 46
+write$ -- 458
 (There were 67 error messages)

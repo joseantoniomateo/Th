@@ -1378,87 +1378,37 @@ that two services ready to send to send the messages $a$ and $b$, respectively, 
 evolve as a whole sending first the message $a$ and, then, the message $b$ , or, on the contrary, they can send first the message $b$
 and, after that, the message $a$. This will depend on the
 freedom of such processes in that particular moment. Nevertheless, 
-if we want the message $a$ to be sent before the message $b$, then the first process will synchronize with
-the action b the second , then both actions would have to occur
-necessarily at the same time and that freedom would disappear to Indeterminism
-system level also represents the uncertainty caused by the fact
-they allow two processes synchronize by means of two pairs of
-Equity given the same situation .
-Indeterminism system level shown in algebras
-processes through one (or several ) specific syntactic constructors ,
-generally called parallel operators ( for example ) . In this case
-the same operator governs both indeterminism due to the evolution
-asynchronous processes as synchronous evolution thereof ( due
-usually communications between them) .
-In the case of finite state machines or systems labelled
-transitions , or provide specific syntactic constructors
-or composition rules that allow the machine are applied to obtain
-Descriptive of a system from the corresponding machines
-processes , such that said left shown in nondeterminism
-composite machine.
+if we want the message $a$ to be sent before the message $b$, then the first process shall synchronise with
+the sending of the message $b$ by the second service, and, then, both actions would occur
+necessarily at the same time, disappearing the freedom commented above. 
+Nondeterminism is usually provided in process algebras by means of
+one (or several) specific syntactic operators, generally called parallel operators. 
+In this case, the same operator governs both nondeterminism (due to the asynchronous evolution
+of the processes) and the synchronous evolution of processes (usually due to the interactions between them).
+In the case of finite state machines or labelled
+transition systems, this nondeterminism can be provided by using specific syntactic operators
+or by using composition rules that allow to represent the machine as a whole. This whole system is the composition
+of the individual machine of each participant as well as the interactions between them.
 
- Este indeterminismo 
-representa, por ejemplo, la libertad de los procesos concurrentes de
-ejecutarse de manera asincrona. Asi un modelo podria representar el hecho
-de que dos procesos dispuestos a ejecutar respectivamente a y b podrian
-elucionar de forma que el sistema globalmente mostrara una a y después una
-b, o bien mostrara una b y después una a, siempre y cuando el modelo desee
-proporcionar tal libertad a los procesos en dicho momento concreto. De esta
-manera, si deseáramos que la acción a del primer proceso se sincronizará con
-la acción b del segundo, entonces ambas acciones tendrian que producirse
-necesariamente a la vez y dicha libertad desapareceria El indeterminismo a
-nivel de sistema representa también la incertidumbre producida por el hecho 
-de que se permita a dos procesos sincronizar por medio de dos pares de
-acciones diferentes en una misma situacion dada.
-El indeterminismo a nivel de sistema se representa en las álgebras de
-procesos por medio de uno (o varios) constructores sintácticos especificos,
-denominados en general operadores de paralelo (por ejemplo ). En este caso 
-el mismo operador rige tanto el indeterminismo debido a la evolucion 
-asincrona de los procesos como la evolución sincrona de los mismos (debida
-habitualmente a las comunicaciones entre ellos).
-En el caso de las máquinas de estados finitos o de los sistemas etiquetados
-de transiciones, o bien se proveen constructores sintácticos especificos
-o bien se aplican reglas de composición que permitan obtener la maquina
-representativa de un sistema a partir de las máquinas de los correspondientes
-procesos, de forma que dicho indeterminismo quede representado en la
-máquina compuesta.
 
 In addition to the operations introduced above, some
-process algebras provide another operators to increase their expressive power.
-Thus, complex scenarios can be modelled with these operators. Such is the case of the operators
-of recursion in process algebras , for defining processes
-function themselves , giving them the ability to denote patterns
-repetitive behavior . In the case of finite state machines and
-labeled transition system, such behavior patterns
-can be partially achieved through the introduction of cycles. without
-However , in the case of recursion algebras facilitates greater expressiveness
-it allows , for example , express a process and a system consisting of
-one and the same process . This allows the creation of new hierarchical levels
-( potentially infinite ) as a result of the evolution of the system. of
-Thus, the description of the system itself changes as the system
-evolves , to the extent that forms are conceivable future infinite
-possible from a given . In contrast, the number of configurations
-possible in a finite state machine from an initial configuration is
-finite, which gives a lower expression (specifically, that of languages
-regular ) .
-Además de los tipos de operaciones vistos anteriormente, algunos 
-lenguajes proveen operadores adicionales para aumentar la complejidad de los
-escenarios que se pueden describir con ellos. Tal es el caso de los operadores
-de recursión en las álgebras de procesos, que permiten definir los procesos en
-función de sí mismos, lo que les confiere la capacidad de denotar patrones de
-comportamiento repetitivos. En el caso de las máquinas de estados finitos y
-los sistemas etiquetados de transiciones, tales patrones de comportamiento
-se pueden lograr parcialmente por medio de la introducción de ciclos. Sin 
-embargo, en el caso de las álgebras la recursión facilita una mayor expresividad
-pues permite, por ejemplo, expresar un proceso como un sistema formado por
-otro proceso y  ́el mismo. Esto permite la creación de nuevos niveles jerárquicos 
-(potencialmente infinitos) como resultado de la evolución del sistema. De
-esta forma, la propia descripción del sistema cambia a medida que el sistema
-evoluciona, hasta el punto de que son concebibles infinitas formas futuras
-posibles a partir de una dada. Por contra, el número de configuraciones 
-posibles en una máquina de estados finita a partir de una configuración inicial es
-finita, lo que le da una menor expresividad (en concreto, la de los lenguajes
-regulares).
+process algebras define another operators to increase the expressive power they provide.
+Thus, complex scenarios can be modelled with these extension operators. For instance, most of the process algebras 
+include a recursion operator to capture infinite behaviour. 
+In the case of finite state machines and
+labelled transition system, such behaviour patterns
+can be partially achieved through the introduction of cycles. 
+%However, process algebras facilitates greater expressiveness
+%it allows , for example , express a process and a system consisting of
+%one and the same process . This allows the creation of new hierarchical levels
+%(potentially infinite) as a result of the evolution of the system. of
+%Thus, the description of the system itself changes as the system
+%evolves , to the extent that forms are conceivable future infinite
+%possible from a given . In contrast, the number of configurations
+%possible in a finite state machine from an initial configuration is
+%finite, which gives a lower expression (specifically, that of languages
+%regular ) .
+
 
 
 %CSP es un lenguaje algebraico utilizado para describir sistemas compues-

@@ -26,6 +26,11 @@ S.~Askary C. Barreto B. Bloch F. Curbera M. Ford Y. Goland A. Guízar N. Kartha
 \newblock {Business Process Execution Language for Web Services (version 2.0)}.
 \newblock 2007.
 
+\bibitem{aceto1999}
+Luca Aceto, Wan Fokkink, and Chris Verhoef.
+\newblock {\em Structural operational semantics}.
+\newblock Citeseer, 1999.
+
 \bibitem{Armbrust2009}
 Michael Armbrust, Armando Fox, Rean Griffith, Anthony~D. Joseph, Randy~H. Katz,
   Andrew Konwinski, Gunho Lee, David~A. Patterson, Ariel Rabkin, Ion Stoica,
@@ -164,6 +169,11 @@ Chun Ouyang, Eric Verbeek, Wil M.~P. van~der Aalst, Stephan Breutel, Marlon
 {J.L.} Peterson.
 \newblock {\em {Petri net theory and the modeling of systems}}.
 \newblock Prentice-Hall, Englewood Cliffs, 1981.
+
+\bibitem{Plotkin81}
+G.~D. Plotkin.
+\newblock A structural approach to operational semantics, university of aarhus,
+  1981.
 
 \bibitem{Pnueli77}
 A.~Pnueli.
