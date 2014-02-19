@@ -2,7 +2,7 @@
 In this section, we will define the preliminary concepts
 used in this Thesis. The aim of this section is to provide the reader
 with a review of the elemental notions used in future sections
-as well as to fix the notion used throughout the Thesis.
+as well as to fix the notations used throughout the Thesis.
 Thus, we will start presenting basic concepts such as the standard definition of Petri
 nets and we will continue with more technical details such as the addition of time features
 to this formal model.
@@ -24,9 +24,9 @@ $\nnul^{\infty} = \nnul \cup \left\{\infty \right\}$ is the set of natural numbe
 We will use the standard delimiters for sets (\{\}) and multisets(\multiset{}). 
 As usual, let $A$ be a (multi)set and $R\,:\,A \longrightarrow \nnul$, we say 
 that $x \in A$ iff $R(x) > 0$.
-Note that we abuse the notion using $x \in A$ to represent that $x$ is an element of
+Note that we abuse the notation using $x \in A$ to represent that $x$ is an element of
 the multiset or the set $A$, and using indistinctly the general set operators (union, inclusion, etc.) for sets and multisets. 
-The cardinality of the set (multiset) $A$
+The cardinality of a set (multiset) $A$
 is denoted by $|A|$. Given a set $A$,
 ${\mathcal B}(A)$ is the set of all finite multisets over $A$.
 
@@ -142,7 +142,7 @@ we define $C_2 \ominus C_1$ in the following (recursive) way:
   \end{itemize} 
 \end{itemize}
 
-These timed multiset operations are related with the definition of binding and firing for coloured Petri nets.
+The last multiset operations are related with the definition of binding and firing for coloured Petri nets.
 
 \item {\bf Relations}\\
 Let $X$ be a set, a relation over $X$ is a set $R \subseteq X \times X$. 
@@ -167,25 +167,25 @@ Moreover, the {\it transitive closure} of $R$, $R^+$, is given by:
 \end{enumerate}
 
 
-\section{Petri nets}
+\section*{Petri nets}
 
 \begin{definition} [(Basic Petri nets)]
 A \emph{basic Petri net} (PN) is a triple $N=(P,T,F)$, where $P$ and $T$
 are sets and $F$ is a relation defined over $P \,\cup\,T$. Moreover, it has to satisfy
 the following constraints:
 \begin{enumerate}
-\item $P \,\cap \,T = \emptyset$
-\item $F \subseteq (P \times T) \,\cup\, (T \times P)$
-\item $dom(F) \, \cup \, cod(F) = P \, \cup \, T$
+\item $P \,\cap \,T = \emptyset$ ($P$ and $T$ are disjoint)
+\item $F \subseteq (P \times T) \,\cup\, (T \times P)$ (arcs from places to transitions and vice versa)
+\item $dom(F) \, \cup \, cod(F) = P \, \cup \, T$ (no isolated places or transitions)
 \end{enumerate}
 
 In a Petri net, $P$ is known as the set of \emph{places} of $N$, $T$ 
 is the set of {\it transitions} and $F$ is a flow relation between the places in $P$
 and the transitions in $T$. This relation is graphically represented by arcs.
-In this Thesis, we suppose that the sets $P$ and $T$ are finite. Petri nets
+In this Thesis, we suppose that $P$ and $T$ are finite. Petri nets
 can be graphically represented by means of bipartite graphs (or bigraphs), which
-are a graph whose vertices can be divided into two disjoint sets ($P$ and $T$ in this case) such that 
-every edge connects an element from $P$ to $T$, and vice versa. In graphical representation, places are drawn
+are graphs whose vertices can be divided into two disjoint sets ($P$ and $T$ in this case) such that 
+every edge connects an element from $P$ to $T$, and vice versa. In the graphical representation, places are drawn
 as circles and transitions as rectangles or boxes.  The places 
 from which an arc runs to a transition are called the \emph{input places} of the transition, whereas
 the places from which an arc runs from the transition are called the \emph{output places}.

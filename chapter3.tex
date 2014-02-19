@@ -13,7 +13,7 @@ A general Petri net is a 5-tuple $N=(P,T,F,K,W)$, where:
 \begin{enumerate}
 \item $(P,T,F)$ is a basic Petri net.
 \item $K\,:\,P \longrightarrow \nnul \,\cup\, \{\infty\}$ is a function that
-indicates the maximum number of tokens in each place.
+indicates the maximum number of tokens in each place (capacity function).
 \item $W\,:\,F \longrightarrow \nnul$ is a function that indicates
 the multiplicity of the arcs ({\it weight of the arcs}).
 \end{enumerate}
@@ -32,7 +32,7 @@ Let $N=(P,T,F,K,W)$ be a general Petri net.
 $N$ iff $M(p) \leq K(p)$, for all
 $p \in P$.
 \item A transition $t \in T$ is enabled in $M$, denoted by $M[ t \rangle$,
-iff $W(p,t) \leq M(p) \leq K(p) - W(t,p)$, for all $p \in P$.
+iff $W(p,t) \leq M(p)$ and  $K(p) \leq M(p)-W(p,t)+W(t,p)$, for all $p \in P$.
 The firing of $t$ produces the marking $M'$:
 $M'(p) = M(p) - W(p,t) + W(t,p)$, for all $p \in P$.
 Again, this evolution is denoted by $M[ t \rangle M'$.
@@ -51,14 +51,14 @@ Let $N=(P,T,F,K,W,M_0)$ be a marked Petri net.
 if and only if $\forall i \in \{1,\ldots,n\},\,M_{i-1} [ t_i \rangle M_i$.
 Occasionally, we will write $t_1 \ldots t_n$, omitting the corresponding markings, since starting from
 $M_0$ it is easy to obtain the rest of the markings knowing the transitions fired.
-We extend the conventional notation to occurrence sequence, 
+We extend the conventional notation to occurrence sequences, 
 obtaining $M_0 [ \sigma \rangle M_n$.
 The set of occurrence sequences starting from $M_0$ are denoted by $L(N,M_0)$.
 
-\item For multiple transitions, an occurrence sequence $\sigma = M_0 R_1 M_1 \ldots R_n M_n$ is finite
+\item For multiple transitions, $\sigma = M_0 R_1 M_1 \ldots R_n M_n$ is a finite step sequence
 iff $\forall i \in \{1,\ldots,n\}$, $\,M_{i-1} [ R_i \rangle M_i$.
 %Again, we extend the notation to occurrence sequence, $M_0 [ \sigma \rangle M_n$.
-The set of occurrence sequence of $N$ starting from $M_0$ is denoted by $P(N,M_0)$.
+The set of finite step sequences of $N$ starting from $M_0$ is denoted by $P(N,M_0)$.
 \end{enumerate}
 \end{definition}
 
@@ -129,19 +129,20 @@ The set of occurrence sequence of $N$ starting from $M_0$ is denoted by $P(N,M_0
 When designing a new system, the construction of a graphical model (e.g. a Petri net) of it is always
 helpful since it is interesting to broadly understand how this system works before building it. This also helps designers to have a
 deeper knowledge about how it evolves in its different steps. Nevertheless, the presence of a graphical model is not enough in many cases
-as the designers want the system to meet some properties of interest. For instance, the system is useless
-if it reaches a deadlock in each execution.  To this end, it is valuable to have tools that allow to
-evaluate properties in the model (and, in extension, in the real system). In finite sequential systems, it is not particularly challenging to check
+as the designers want the system to meet some properties of interest. For instance, the system can be useless
+if it can become deadlocked in some executions. To this end, it is valuable to have tools that allow to
+evaluate properties in the model (and, in extension, in the real system). In finite sequential systems, 
+it is not particularly challenging to check
 the fulfilment of certain statement, whereas the presence of concurrency complicates this task.
 Thus, the analysis of system behaviour is intended to determine the compliance of 
 certain properties such as that the number of processes in a queue does not exceed
 certain threshold or that the mutual exclusion is guaranteed when accessing to a shared resource.
 
 In Petri nets, one can use a set of powerful tools to formally analyse
-the compliance of such properties. Among these tools, designers can check
+the compliance of such properties. With these tools, designers can check
 the absence of deadlocks, the reachability of a certain
 state, the possibility of reaching a concrete situation after performing some computations and so on.
-
+Some examples of these tools are TINA \cite{TINA}, CPNTools, \cite{CPNTools}, Snoopy \cite{Snoopy} and GreatSPN \cite{GreatSPN}.
 
 \medskip
 Normally, these properties are divided in two categories: % Incluir cita si se encuentra
@@ -162,8 +163,8 @@ set of reachable markings of $N$ starting from $M_0$, and
 by $[ M \rangle$ the set of reachable markings starting from the marking $M$.
 
 \item {\bf Boundedness}. A marked Petri net $N=(P,T,F,W,M_0)$ 
-is {\it k-bounded}, for some $k \in \nnul$, if all reachable marking
-$M$ from $M_0$ hold that $M(p) \leq k$, for all $p \in P$. $N$ is said to be safe if
+is {\it k-bounded}, for some $k \in \nnul$, if for all reachable marking
+$M$ from $M_0$, it holds $M(p) \leq k$, for all $p \in P$. $N$ is said to be safe if
 it is 1-bounded. A place $p \in P$ is
 {\it n-safe} if $M(p) \leq n$, for all marking $M$ reachable from $M_0$.
 
@@ -174,7 +175,7 @@ it is 1-bounded. A place $p \in P$ is
 %$n$-seguro; y se dice que $N$ es {\it limitada} si todos sus lugares
 %son limitados.
 \item {\bf Deadlock-free}. Let $N=(P,T,F,W,M_0)$ a marked Petri net and $M$ be a reachable marking.
-$M$ is a {\it dead marking} if there is no $t \in T$ enabled in $M$. 
+$M$ is a {\it dead marking} if there is no $t \in T$ enabled at $M$. 
 The net $N$ is deadlock-free iff there are no dead markings.
 
 %\item {\bf Conservaci\'{o}n Respecto a un Vector de Pesos}.
@@ -213,12 +214,12 @@ Let $N=(P,T,F,W,M_0)$ be a marked Petri net. A marking $M$ of $N$ is a {\it home
 $M' \in [ M_0 \rangle$, $M \in [ M' \rangle$.
 \item {\bf Home Space}. Let $N=(P,T,F,W,M_0)$ be a marked Petri net.
 The set of markings ${\cal M}$ is a {\it home-space}
-of $N$ if for all marking $M' \in [ M_0 \rangle$ there is marking
-a $M'' \in {\cal M}$ such that $M'' \in [ M' \rangle$.
+of $N$ if for all marking $M' \in [ M_0 \rangle$ there is a marking
+$M'' \in {\cal M}$ such that $M'' \in [ M' \rangle$.
 \item {\bf Cyclic}.
 Let $N=(P,T,F,W,M_0)$ be a marked Petri net. It is said that
 $N$ is cyclic if for all marking $M \in [ M_0 \rangle$ there exists an occurrence sequence $\sigma$
-starting in $M$ such that $M [ \sigma \rangle M_0$.
+starting at $M$ such that $M [ \sigma \rangle M_0$.
 \end{enumerate}
 
 

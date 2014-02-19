@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  17 FEB 2014 16:42
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  19 FEB 2014 14:01
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -815,6 +815,9 @@ LaTeX Warning: Label `chapter:c5' multiply defined.
 LaTeX Warning: Label `bpelsoftcare' multiply defined.
 
 
+LaTeX Warning: Label `UDDI' multiply defined.
+
+
 LaTeX Warning: Label `WSNstandard' multiply defined.
 
 
@@ -833,10 +836,13 @@ LaTeX Warning: Label `aceto1999' multiply defined.
 LaTeX Warning: Label `Armbrust2009' multiply defined.
 
 
-LaTeX Warning: Label `BAN06' multiply defined.
+LaTeX Warning: Label `Ban06' multiply defined.
 
 
 LaTeX Warning: Label `Bau96' multiply defined.
+
+
+LaTeX Warning: Label `TINA' multiply defined.
 
 
 LaTeX Warning: Label `BestK92' multiply defined.
@@ -851,7 +857,16 @@ LaTeX Warning: Label `BLT90' multiply defined.
 LaTeX Warning: Label `Bow96' multiply defined.
 
 
+LaTeX Warning: Label `SOAP' multiply defined.
+
+
 LaTeX Warning: Label `Buyya2011' multiply defined.
+
+
+LaTeX Warning: Label `wsdl' multiply defined.
+
+
+LaTeX Warning: Label `GreatSPN' multiply defined.
 
 
 LaTeX Warning: Label `Clarke96' multiply defined.
@@ -869,7 +884,13 @@ LaTeX Warning: Label `Clarke99' multiply defined.
 LaTeX Warning: Label `EllisKeddara2000' multiply defined.
 
 
+LaTeX Warning: Label `foster2004' multiply defined.
+
+
 LaTeX Warning: Label `Hanisch:93' multiply defined.
+
+
+LaTeX Warning: Label `Snoopy' multiply defined.
 
 
 LaTeX Warning: Label `hollingsworth95' multiply defined.
@@ -897,6 +918,9 @@ LaTeX Warning: Label `wsbpelstandard' multiply defined.
 
 
 LaTeX Warning: Label `OuyangVABDH07' multiply defined.
+
+
+LaTeX Warning: Label `Papazoglou2007' multiply defined.
 
 
 LaTeX Warning: Label `Pet81' multiply defined.
@@ -939,6 +963,9 @@ LaTeX Warning: Label `AalstHHSVVW11' multiply defined.
 
 
 LaTeX Warning: Label `Vaquero2008' multiply defined.
+
+
+LaTeX Warning: Label `WSCDL' multiply defined.
 
 
 LaTeX Warning: Label `Wan98' multiply defined.
@@ -1102,12 +1129,6 @@ LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <14.4> not available
 (Font)              Font shape `OT1/pag/db/n' tried instead on input line 4.
 
-LaTeX Warning: Citation `Foster2004' on page 1 undefined on input line 33.
-
-
-LaTeX Warning: Citation `Czajkowski2004' on page 1 undefined on input line 38.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
@@ -1135,7 +1156,13 @@ Overfull \hbox (9.70715pt too wide) in paragraph at lines 128--129
 it to real (industry-
  []
 
-[4]) [5] [6
+[4]
+Overfull \hbox (12.70876pt too wide) in paragraph at lines 150--155
+\OT1/pbk/l/n/10 nets, and study the foun-da-tional prob-lems of sound-ness and 
+strong (time-bounded)
+ []
+
+) [5] [6
 
 
 ]
@@ -1164,19 +1191,7 @@ Underfull \vbox (badness 6978) has occurred while \output is active []
  [11]
 File: Figures/clientserver.eps Graphic file (type eps)
 
-<Figures/clientserver.eps>
-
-LaTeX Warning: Citation `Papazoglou2007' on page 12 undefined on input line 169
-.
-
-[12]
-
-LaTeX Warning: Citation `Karp2000' on page 13 undefined on input line 186.
-
-
-LaTeX Warning: Citation `Sun1999' on page 13 undefined on input line 186.
-
-
+<Figures/clientserver.eps> [12]
 Overfull \hbox (5.06921pt too wide) in paragraph at lines 191--193
 \OT1/pbk/l/n/10 by its de-scrip-tion us-ing SOAP-messages, typ-i-cally con-veye
 d us-ing HTTP
@@ -1186,23 +1201,11 @@ d us-ing HTTP
 Underfull \vbox (badness 2846) has occurred while \output is active []
 
  [13]
-
-LaTeX Warning: Citation `W3C2001' on page 14 undefined on input line 197.
-
-
-LaTeX Warning: Citation `W3C2007' on page 14 undefined on input line 199.
-
-
-LaTeX Warning: Citation `OASIS2004' on page 14 undefined on input line 202.
-
 File: Figures/ws-stack.eps Graphic file (type eps)
+
 <Figures/ws-stack.eps>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Citation `Papazoglou2007' on page 14 undefined on input line 233
-.
 
 File: Figures/orchestra.eps Graphic file (type eps)
 <Figures/orchestra.eps>
@@ -1211,9 +1214,6 @@ Underfull \vbox (badness 4927) has occurred while \output is active []
  [14]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Citation `W3C2005' on page 15 undefined on input line 267.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1260,6 +1260,10 @@ Overfull \hbox (17.19106pt too wide) in paragraph at lines 545--545
 Underfull \vbox (badness 1377) has occurred while \output is active []
 
  [27]
+
+LaTeX Warning: Citation `BAN06' on page 28 undefined on input line 670.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
@@ -1322,20 +1326,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [45]
+(./basicdefinitions.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [46]
-(./basicdefinitions.tex
 LaTeX Font Info:    Font shape `OT1/pag/m/it' in size <10> not available
 (Font)              Font shape `OT1/pag/m/sl' tried instead on input line 11.
 LaTeX Font Info:    Try loading font information for OMS+pbk on input line 24.
- (/usr/share/texmf-texlive/tex/latex/psnfss/omspbk.fd
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omspbk.fd
 File: omspbk.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
 
-[47]
 Overfull \hbox (28.54219pt too wide) in paragraph at lines 65--73
 \OT1/pbk/l/n/10 such that $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; m[]\OT1/cmr/m/n
 /10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 C$\OT1/pbk/l/n/10 , $\OMS/cmsy/m/n/10
@@ -1347,7 +1351,7 @@ Overfull \hbox (28.54219pt too wide) in paragraph at lines 65--73
 10 )(\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@
  []
 
-
+[47]
 Underfull \hbox (badness 3375) in paragraph at lines 79--85
 [][]\OT1/pbk/l/n/10 , tak-ing [] and []
  []
@@ -1385,14 +1389,14 @@ T1/cmr/m/n/10 (\OML/cmm/m/it/10 C[] \OMS/cmsy/m/n/10 ^^@ f\OT1/cmr/m/n/10 1\OML
 y/m/n/10 g\OT1/cmr/m/n/10 )$\OT1/pbk/l/n/10 . 
  []
 
-
-Underfull \vbox (badness 1817) has occurred while \output is active []
-
- [48]
+[48]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <5> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 156.
+ [49] (./fig26.tex)
+Underfull \vbox (badness 2608) has occurred while \output is active []
 
-[49] (./fig26.tex) [50] (./fig27.tex) [51]
+ [50]
+(./fig27.tex) [51]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <14.4> not available
 (Font)              Font shape `OT1/pbk/l/n' tried instead on input line 281.
 )) [52]
@@ -1405,7 +1409,11 @@ Chapter 3.
 
 
 
-] [54] [55] (./ptcpn.tex [56]
+] [54]
+Underfull \vbox (badness 2443) has occurred while \output is active []
+
+ [55]
+[56] (./ptcpn.tex
 Overfull \hbox (0.19876pt too wide) in paragraph at lines 6--18
 []\OT1/pbk/l/n/10 We use prioritised-timed coloured Petri nets (PTCPNs), which 
 are a prioritised-
@@ -1417,12 +1425,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [57]
 [58] [59]
 File: Figures/figure2_scp.eps Graphic file (type eps)
- <Figures/figure2_scp.eps>
-Missing character: There is no Ã in font pbkd7t!
-Missing character: There is no ­ in font pbkd7t!
-Missing character: There is no Ã in font pbkd7t!
-Missing character: There is no © in font pbkd7t!
- [60]
+ <Figures/figure2_scp.eps> [60]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61])
@@ -1434,7 +1437,11 @@ n/10 (ETAPN) is a 9-tuple $\OML/cmm/m/it/10 N \OT1/cmr/m/n/10 = (\OML/cmm/m/it/
 ML/cmm/m/it/10 ; []; \OT1/cmr/m/it/10 I\OT1/cmr/m/n/10 )$
  []
 
-[62] [63] [64])) [65] [66
+[62] [63]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [64]))
+[65] [66
 
 
 ]
@@ -1853,15 +1860,15 @@ LaTeX Warning: Reference `c5' on page 104 undefined on input line 285.
 
 ] (./thesis.bbl
 LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <10> not available
-(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 10.
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 14.
 
-Underfull \hbox (badness 1377) in paragraph at lines 8--12
+Underfull \hbox (badness 1377) in paragraph at lines 12--16
 []\OT1/pbk/l/n/10 Oasis stan-dard for web ser-vices no-ti-fi-ca-tion (wsn) v1.3
 .  [][][][]$\OT1/pcr/m/sl/10 https : //$[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--22
 [][][][]$\OT1/pcr/m/sl/10 docs.$[][][][][][]$oasis-[]open.$[][][][][][]$org/$[]
 [][][][][]$wsrf/$[][][][][][]$wsrf-[]primer-[]1.$[][][][][][]$2-[]primer-[]cd-[
 ]02.$[][][][][][]$pdf$[][][]\OT1/pbk/l/n/10 ,
@@ -1874,44 +1881,54 @@ Missing character: There is no ¶ in font pbkl7t!
 [105
 
 ]
+Missing character: There is no â in font pbkl7t!
+Missing character: There is no € in font pbkl7t!
+Missing character: There is no “ in font pbkl7t!
 
-LaTeX Warning: Reference `c5' on page 106 undefined on input line 125.
+
+LaTeX Warning: Reference `c5' on page 106 undefined on input line 121.
 
 [106]
-Underfull \hbox (badness 10000) in paragraph at lines 127--132
+Underfull \hbox (badness 10000) in paragraph at lines 167--172
 []\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 127--132
+Underfull \hbox (badness 3148) in paragraph at lines 167--172
 \OT1/pbk/l/n/10 mann M. Nally T. Storey W. Vam-benepe I. Fos-ter, J. Frey and
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 127--132
+Underfull \hbox (badness 3323) in paragraph at lines 167--172
 \OT1/pbk/l/n/10 S. Weer-awarana.  Mod-el-ing state-ful re-sources with web ser-
 vices.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--132
+Underfull \hbox (badness 10000) in paragraph at lines 167--172
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
 [107]
 
-LaTeX Warning: Reference `c5' on page 108 undefined on input line 251.
+LaTeX Warning: Reference `c5' on page 108 undefined on input line 240.
 
-[108]) (./thesis.bbl [109] [110
+[108]
+Underfull \hbox (badness 4846) in paragraph at lines 291--294
+[]\OT1/pbk/l/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
+2004.
+ []
+
+) (./thesis.bbl [109] [110
 
 ]
-Underfull \hbox (badness 1377) in paragraph at lines 8--12
+Underfull \hbox (badness 1377) in paragraph at lines 12--16
 []\OT1/pbk/l/n/10 Oasis stan-dard for web ser-vices no-ti-fi-ca-tion (wsn) v1.3
 .  [][][][]$\OT1/pcr/m/sl/10 https : //$[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--22
 [][][][]$\OT1/pcr/m/sl/10 docs.$[][][][][][]$oasis-[]open.$[][][][][][]$org/$[]
 [][][][][]$wsrf/$[][][][][][]$wsrf-[]primer-[]1.$[][][][][][]$2-[]primer-[]cd-[
 ]02.$[][][][][][]$pdf$[][][]\OT1/pbk/l/n/10 ,
@@ -1921,32 +1938,42 @@ Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ­ in font pbkl7t!
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ¶ in font pbkl7t!
-[111] [112]
-Underfull \hbox (badness 10000) in paragraph at lines 127--132
+[111]
+Missing character: There is no â in font pbkl7t!
+Missing character: There is no € in font pbkl7t!
+Missing character: There is no “ in font pbkl7t!
+ [112]
+Underfull \hbox (badness 10000) in paragraph at lines 167--172
 []\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 127--132
+Underfull \hbox (badness 3148) in paragraph at lines 167--172
 \OT1/pbk/l/n/10 mann M. Nally T. Storey W. Vam-benepe I. Fos-ter, J. Frey and
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 127--132
+Underfull \hbox (badness 3323) in paragraph at lines 167--172
 \OT1/pbk/l/n/10 S. Weer-awarana.  Mod-el-ing state-ful re-sources with web ser-
 vices.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--132
+Underfull \hbox (badness 10000) in paragraph at lines 167--172
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
-[113] [114]) [115] [116
+[113] [114]
+Underfull \hbox (badness 4846) in paragraph at lines 291--294
+[]\OT1/pbk/l/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
+2004.
+ []
 
-] (./thesis.aux (./ack.aux) (./abstract.aux)
-(./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux)
-(./chapter5.aux) (./Conclusions.aux))
+) [115] [116
+
+] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
+(./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux)
+(./Conclusions.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -1955,12 +1982,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18004 strings out of 495062
- 302969 string characters out of 1182644
- 470435 words of memory out of 3000000
- 20657 multiletter control sequences out of 15000+50000
+ 17999 strings out of 495062
+ 302859 string characters out of 1182644
+ 471117 words of memory out of 3000000
+ 20652 multiletter control sequences out of 15000+50000
  32639 words of font info for 96 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,28n,92p,2750b,1667s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (128 pages, 579612 bytes).
+Output written on thesis.dvi (128 pages, 588864 bytes).

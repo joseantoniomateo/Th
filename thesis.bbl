@@ -4,6 +4,10 @@
 What is bpel and why is it so important to my business?
 \newblock Technical report.
 
+\bibitem{UDDI}
+Uddi spec technical committee draft 3.0.2.
+\newblock Oasis committee draft, 2004.
+
 \bibitem{WSNstandard}
 Oasis standard for web services notification (wsn) v1.3.
 \newblock {\em
@@ -39,7 +43,7 @@ Michael Armbrust, Armando Fox, Rean Griffith, Anthony~D. Joseph, Randy~H. Katz,
 \newblock Technical Report UCB/EECS-2009-28, EECS Department, University of
   California, Berkeley, Feb 2009.
 
-\bibitem{BAN06}
+\bibitem{Ban06}
 T.~Banks.
 \newblock {Web Services Resource Framework (WSRF) - Primer}.
 \newblock {\em OASIS}, 2006.
@@ -48,6 +52,13 @@ T.~Banks.
 Falko Bause.
 \newblock On the analysis of petri nets with static priorities.
 \newblock {\em Acta Informatica}, 33(7):669--685, 1996.
+
+\bibitem{TINA}
+B.~Berthomieu, P.-O. Ribet, and F.~Vernadat.
+\newblock The tool tina – construction of abstract state spaces for petri
+  nets and time petri nets.
+\newblock {\em International Journal of Production Research},
+  42(14):2741--2756, 2004.
 
 \bibitem{BestK92}
 Eike Best and Maciej Koutny.
@@ -70,10 +81,30 @@ F.~D.~J. Bowden.
 \newblock In {\em Proceedings of the second Australia-Japan Workshop on
   Stochastic Models in Engineering, Technology and Management}, Jul, 1996.
 
+\bibitem{SOAP}
+Don Box, David Ehnebuske, Gopal Kakivaya, Andrew Layman, Noah Mendelsohn,
+  Henrik~Frystyk Nielsen, Satish Thatte, and Dave Winer.
+\newblock {Simple Object Access Protocol (SOAP) 1.1}.
+\newblock W3c note, World Wide Web Consortium, May 2000.
+\newblock See \url{http://www.w3.org/TR/SOAP/}.
+
 \bibitem{Buyya2011}
 Rajkumar Buyya, James Broberg, and Andrzej~M. Goscinski.
 \newblock {\em Cloud Computing Principles and Paradigms}.
 \newblock Wiley Publishing, 2011.
+
+\bibitem{wsdl}
+Roberto Chinnici, Jean-Jacques Moreau, Arthur Ryman, and Sanjiva Weerawarana.
+\newblock Web services description language (wsdl) version 2.0 part 1: Core
+  language.
+\newblock World Wide Web Consortium, Recommendation REC-wsdl20-20070626, June
+  2007.
+
+\bibitem{GreatSPN}
+G.~Chiola, G.~Franceschinis, R.~Gaeta, and M.~Ribaudo.
+\newblock Greatspn 1.7: Graphical editor and analyzer for timed and stochastic
+  petri nets.
+\newblock {\em Perform. Eval.}, 24(1-2):47--68, November 1995.
 
 \bibitem{Clarke96}
 E.~Clarke and J.~Wing.
@@ -105,12 +136,21 @@ Clarence~A. Ellis and Karim Keddara.
 \newblock In {\em Business Process Management, Models, Techniques, and
   Empirical Studies}, pages 201--217, London, UK, UK, 2000. Springer-Verlag.
 
+\bibitem{foster2004}
+Ian~Foster et~al.
+\newblock Modeling stateful resources with web services.
+
 \bibitem{Hanisch:93}
 H.M. Hanisch.
 \newblock Analysis of place/transition nets with timed-arcs and its application
   to batch process control.
 \newblock In {\em {ICATPN}'93}, volume 691 of {\em LNCS}, pages 282--299.
   Springer, 1993.
+
+\bibitem{Snoopy}
+Monika Heiner, Mostafa Herajy, Fei Liu, Christian Rohr, and Martin Schwarick.
+\newblock Snoopy - a unifying petri net tool.
+\newblock In {\em Petri Nets}, pages 398--407, 2012.
 
 \bibitem{hollingsworth95}
 D.~Hollingsworth.
@@ -164,6 +204,11 @@ Chun Ouyang, Eric Verbeek, Wil M.~P. van~der Aalst, Stephan Breutel, Marlon
   Dumas, and Arthur H.~M. ter Hofstede.
 \newblock Formal semantics and analysis of control flow in ws-bpel.
 \newblock {\em Sci. Comput. Program.}, 67(2-3):162--198, 2007.
+
+\bibitem{Papazoglou2007}
+Mike~P. Papazoglou, Paolo Traverso, Schahram Dustdar, and Frank Leymann.
+\newblock Service-oriented computing: State of the art and research challenges.
+\newblock {\em IEEE Computer}, 40(11):38--45, 2007.
 
 \bibitem{Pet81}
 {J.L.} Peterson.
@@ -241,6 +286,11 @@ Wil M.~P. van~der Aalst, Kees~M. van Hee, Arthur H.~M. ter Hofstede, Natalia
 Luis~M. Vaquero, Luis Rodero-Merino, Juan Caceres, and Maik Lindner.
 \newblock A break in the clouds: Towards a cloud definition.
 \newblock {\em SIGCOMM Comput. Commun. Rev.}, 39(1):50--55, December 2008.
+
+\bibitem{WSCDL}
+{W3C}.
+\newblock {W}eb {S}ervices {C}horeography {D}escription {L}anguage, 2004.
+\newblock {\tt http://www.w3.org/TR/ws-cdl-10/}.
 
 \bibitem{Wan98}
 J.~Wang.

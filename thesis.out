@@ -7,23 +7,17 @@
 \BOOKMARK [1][-]{section.2.2}{Web Services Modelling}{chapter.2}
 \BOOKMARK [2][-]{subsection.2.2.1}{WS-BPEL}{section.2.2}
 \BOOKMARK [1][-]{section.2.3}{Heterogeneous Distributed Systems: Grid/Cloud Computing}{chapter.2}
-\BOOKMARK [1][-]{section.2.4}{Web services vs. Grid/Cloud Computing}{chapter.2}
-\BOOKMARK [1][-]{section.2.5}{Web Services Resource Framework}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.5.1}{WS-ResourceProperties}{section.2.5}
-\BOOKMARK [2][-]{subsection.2.5.2}{WS-Base Faults}{section.2.5}
-\BOOKMARK [2][-]{subsection.2.5.3}{WS-ServiceGroup}{section.2.5}
-\BOOKMARK [2][-]{subsection.2.5.4}{WS-ResourceLifetime}{section.2.5}
-\BOOKMARK [1][-]{section.2.6}{Workflow management}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.6.1}{Formal models of concurrency}{section.2.6}
-\BOOKMARK [1][-]{section.2.7}{Petri nets}{chapter.2}
-\BOOKMARK [1][-]{section.2.8}{Summary}{chapter.2}
+\BOOKMARK [1][-]{section.2.4}{Web Services Resource Framework}{chapter.2}
+\BOOKMARK [1][-]{section.2.5}{Workflow management}{chapter.2}
+\BOOKMARK [1][-]{section.2.6}{Formal models of concurrency}{chapter.2}
+\BOOKMARK [1][-]{section.2.7}{Summary}{chapter.2}
 \BOOKMARK [0][-]{chapter.3}{Extended Petri nets}{}
 \BOOKMARK [1][-]{section.3.1}{Petri nets analysis}{chapter.3}
 \BOOKMARK [2][-]{subsection.3.1.1}{Safety properties}{section.3.1}
 \BOOKMARK [2][-]{subsection.3.1.2}{Liveness properties}{section.3.1}
 \BOOKMARK [1][-]{section.3.2}{Timed extensions of Petri nets}{chapter.3}
-\BOOKMARK [1][-]{section.3.3}{Prioritized-Timed Colored Petri Nets}{chapter.3}
-\BOOKMARK [1][-]{section.3.4}{Extended Timed-Arc Petri Nets}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.2.1}{Prioritized-Timed Colored Petri Nets}{section.3.2}
+\BOOKMARK [2][-]{subsection.3.2.2}{Extended Timed-Arc Petri Nets}{section.3.2}
 \BOOKMARK [0][-]{chapter.4}{BPELRF}{}
 \BOOKMARK [1][-]{section.4.1}{Background and Related Work}{chapter.4}
 \BOOKMARK [1][-]{section.4.2}{Syntax and semantics of BPEL+RF}{chapter.4}
@@ -41,4 +35,4 @@
 \BOOKMARK [1][-]{section.4.8}{Summary}{chapter.4}
 \BOOKMARK [0][-]{chapter.5}{Timed-arc workflow nets}{}
 \BOOKMARK [0][-]{chapter.6}{Conclusions, Contributions and Future Works}{}
-\BOOKMARK [0][-]{appendix*.38}{Bibliography}{}
+\BOOKMARK [0][-]{appendix*.44}{Bibliography}{}

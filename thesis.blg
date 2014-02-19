@@ -5,16 +5,21 @@ A level-1 auxiliary file: abstract.aux
 A level-1 auxiliary file: chapter1.aux
 A level-1 auxiliary file: chapter2.aux
 Case mismatch error between cite keys BPELsoftcare and bpelsoftcare
----line 39 of file chapter2.aux
+---line 37 of file chapter2.aux
  : \citation{BPELsoftcare
  :                       }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys BAN06 and Ban06
+---line 54 of file chapter2.aux
+ : \citation{BAN06
+ :                }
 I'm skipping whatever remains of this command
 A level-1 auxiliary file: chapter3.aux
 A level-1 auxiliary file: chapter4.aux
 A level-1 auxiliary file: chapter5.aux
 A level-1 auxiliary file: Conclusions.aux
 The style file: plain.bst
-Illegal, another \bibdata command---line 72 of file thesis.aux
+Illegal, another \bibdata command---line 81 of file thesis.aux
  : \bibdata
  :         {bibliography}
 I'm skipping whatever remains of this command
@@ -24,6 +29,10 @@ Warning--entry type for "CPNTools" isn't style-file defined
 Warning--string name "april" is undefined
 --line 983 of file Bibliography.bib
 Database file #2: bibliography.bib
+Repeated entry---line 387 of file bibliography.bib
+ : @inproceedings{tina
+ :                    ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 455 of file bibliography.bib
  : @inproceedings{Aalst97
  :                       ,
@@ -38,21 +47,14 @@ Repeated entry---line 480 of file bibliography.bib
 I'm skipping whatever remains of this entry
 A bad cross reference---entry "Aalst97"
 refers to entry "DBLP:conf/apn/1997", which doesn't exist
+A bad cross reference---entry "Snoopy"
+refers to entry "DBLP:conf/apn/2012", which doesn't exist
 A bad cross reference---entry "Sif77"
 refers to entry "DBLP:conf/performance/1977", which doesn't exist
 A bad cross reference---entry "van93"
 refers to entry "DBLP:conf/apn/1993", which doesn't exist
 A bad cross reference---entry "BLT90"
 refers to entry "DBLP:conf/pstv/1990", which doesn't exist
-Warning--I didn't find a database entry for "Foster2004"
-Warning--I didn't find a database entry for "Czajkowski2004"
-Warning--I didn't find a database entry for "Papazoglou2007"
-Warning--I didn't find a database entry for "Karp2000"
-Warning--I didn't find a database entry for "Sun1999"
-Warning--I didn't find a database entry for "W3C2001"
-Warning--I didn't find a database entry for "W3C2007"
-Warning--I didn't find a database entry for "OASIS2004"
-Warning--I didn't find a database entry for "W3C2005"
 Warning--I didn't find a database entry for "Banks2006"
 Warning--I didn't find a database entry for "BPEL4WS"
 Warning--I didn't find a database entry for "Slomiski:2006"
@@ -81,6 +83,7 @@ Warning--I didn't find a database entry for "DBLP:conf/apn/1997"
 Warning--I didn't find a database entry for "DBLP:conf/performance/1977"
 Warning--I didn't find a database entry for "DBLP:conf/apn/1993"
 Warning--I didn't find a database entry for "DBLP:conf/pstv/1990"
+Warning--I didn't find a database entry for "DBLP:conf/apn/2012"
 Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
@@ -113,6 +116,7 @@ Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloc
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
 while executing---line 1049 of file plain.bst
+Warning--to sort, need author or key in UDDI
 Warning--to sort, need author or key in bpelsoftcare
 Warning--to sort, need author or key in WSRFstandard
 Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
@@ -146,6 +150,8 @@ Warning--to sort, need author or key in CPNTools
 Warning--empty author in bpelsoftcare
 Warning--empty institution in bpelsoftcare
 Warning--empty year in bpelsoftcare
+Warning--empty author in UDDI
+Warning--empty institution in UDDI
 Warning--empty author in WSNstandard
 Warning--empty author in WSRFstandard
 Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
@@ -181,6 +187,8 @@ while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
 while executing---line 1090 of file plain.bst
 Warning--empty journal in Andrews2003WSBPEL
+Warning--empty journal in foster2004
+Warning--empty year in foster2004
 Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajkowski, D. Ferguson, F. Leymann, M. Nally, T. Storey, W. Vambenepe and S. Weerawarana." for entry Fost04
@@ -209,45 +217,45 @@ Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Gr
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
 while executing---line 1090 of file plain.bst
-You've used 44 entries,
+You've used 53 entries,
             2118 wiz_defined-function locations,
-            851 strings with 11954 characters,
-and the built_in function-call counts, 13623 in all, are:
-= -- 1312
-> -- 585
-< -- 15
-+ -- 242
-- -- 192
-* -- 869
-:= -- 2210
-add.period$ -- 131
-call.type$ -- 44
-change.case$ -- 222
+            891 strings with 13441 characters,
+and the built_in function-call counts, 16576 in all, are:
+= -- 1586
+> -- 758
+< -- 16
++ -- 312
+- -- 252
+* -- 1092
+:= -- 2708
+add.period$ -- 157
+call.type$ -- 53
+change.case$ -- 281
 chr.to.int$ -- 0
-cite$ -- 56
-duplicate$ -- 588
-empty$ -- 1130
-format.name$ -- 192
-if$ -- 2927
+cite$ -- 70
+duplicate$ -- 684
+empty$ -- 1342
+format.name$ -- 252
+if$ -- 3530
 int.to.chr$ -- 0
-int.to.str$ -- 44
-missing$ -- 44
-newline$ -- 216
-num.names$ -- 78
-pop$ -- 287
+int.to.str$ -- 53
+missing$ -- 49
+newline$ -- 260
+num.names$ -- 94
+pop$ -- 353
 preamble$ -- 1
-purify$ -- 185
+purify$ -- 233
 quote$ -- 0
-skip$ -- 419
+skip$ -- 490
 stack$ -- 0
-substring$ -- 682
-swap$ -- 146
-text.length$ -- 15
+substring$ -- 817
+swap$ -- 162
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 160
-warning$ -- 12
-while$ -- 115
-width$ -- 46
-write$ -- 458
-(There were 67 error messages)
+type$ -- 196
+warning$ -- 17
+while$ -- 137
+width$ -- 55
+write$ -- 550
+(There were 70 error messages)

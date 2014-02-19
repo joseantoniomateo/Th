@@ -1,4 +1,4 @@
-\section{Prioritized-Timed Colored Petri Nets}\label{petrinet}
+\subsection{Prioritized-Timed Colored Petri Nets}\label{petrinet}
 
 Next we introduce the particular model of prioritised-timed
 coloured Petri net considered as the graphical formalism for the language BPELRF. 
@@ -6,7 +6,7 @@ coloured Petri net considered as the graphical formalism for the language BPELRF
 We use prioritised-timed coloured Petri nets (PTCPNs), 
 which are
 a prioritised-timed extension of coloured Petri nets \cite{Jensen97}. PTCPNs 
-are supported by CPN Tools \cite{CPNTools}, which a toolbox
+are supported by CPN Tools \cite{CPNTools}, which is a toolbox
 developed originally by the \emph{CPN group} at the University of Aarhus. The maintenance and extension of CPNTools are now in charge
 of the group \emph{Architecture of Information Systems}, chaired by Wil van der Aalst, at Technische Universiteit Eindhoven.
 Priorities were also introduced in Petri nets to extend the descriptive 
@@ -114,7 +114,7 @@ delay in that time interval. This is a particularity of CPNTools \cite{CPNTools}
 %
 \item $\pi\,:\,T \longrightarrow \nnul$ is the
 {\em priority function}, which assigns a priority level
-to each transition. In CPNTools, the lower priority, the higher priority, that is, $0$ is the highest priority.
+to each transition. In CPNTools, the lower value, the higher priority, that is, $0$ is the highest priority.
 \end{itemize}
 
 In this definition, ${\it EXPR}_V$ denotes the
@@ -247,9 +247,8 @@ Thus, the new timed marking $(M',x')$ is:
 \caption{\label{red1}Graphical view of a PTCPN.}
 \end{figure}
 
-{\bf Nota para Valentín: No sé si incluir o no este ejemplo. Esta sacado de vuestro paper de SCP y creo que ayuda a clarificar los conceptos de las PTCPNs}
 \begin{example} Let us consider the marked PTCPN depicted in Figure \ref{red1}, 
-obtained from CPN Tools. 
+obtained from CPNTools examples. 
 % 
 Observe that timed colour tokens in CPN Tools are drawn
 using the notation $n`v@x$,

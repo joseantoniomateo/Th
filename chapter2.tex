@@ -183,7 +183,7 @@ For example, a service can offer certain functionality to a user and, at the sam
 being the consumer of the functionality provided by some other services. 
 Such model reduces the complexity of applications and increases their flexibility. 
 Although at the beginning of SOA there were several architectures aspiring 
-to become SOA standards \cite{Karp2000,Sun1999}, the most successful one was the architecture based on Web Services.
+to become SOA standards, the most successful one was the architecture based on Web Services.
 
 W3C defines a Web Service (WS) in the following way:
 
@@ -194,12 +194,12 @@ an interface described in a machine-processable format (specifically WSDL). Othe
 
 We can see in this definition that there are two basic standards 
 related to Web Services: Web Service Description Language (WSDL) for the definition 
-of the service functionality and its properties \cite{W3C2001}, 
+of the service functionality and its properties \cite{wsdl}, 
 and Simple Object Access Protocol (SOAP) for the exchange of 
-XML messages between services \cite{W3C2007}. 
+XML messages between services \cite{SOAP}. 
 There is also an additional standard called Universal Description, Discovery and Integration (UDDI) 
 used to create Web Service directories and to search for services 
-in it \cite{OASIS2004}. The use of these standard protocols is 
+in it \cite{UDDI}. The use of these standard protocols is 
 the key point to improve the integration between different parties in a web service architecture.
 
 In Figure \ref{Figure1} a possible representation of the web service architecture stack is shown. 
@@ -264,7 +264,7 @@ Regarding the choreography approach, there are several languages that
 have been designed for that purpose. One of the most popular languages 
 is Web Services Choreography Description Language (WS-CDL), 
 which specifies the common and complementary observable behaviour of 
-all participants in a composition \cite{W3C2005}. 
+all participants in a composition \cite{WSCDL}. 
 It is based on XML and describes the peer-to-peer collaborations 
 between the composite web services from a global point of view, that is, 
 the exchange of messages to achieve a common business goal. 
@@ -291,7 +291,7 @@ in the orchestration approach, as it is used in the present Thesis.
 
 
 
-\subsection {WS-BPEL}
+\subsection{WS-BPEL}
 In 2002, researchers and engineers from companies such as IBM, Microsoft, etc.
 realised that the new and rapidly emerging service-oriented approach (SOC) required the definition of 
 a neat and precise language for describing how a set of interacting web services can be included
@@ -599,7 +599,7 @@ In a Grid infrastructure, users do not share in real-time the resources allocate
 whereas in a Cloud infrastructure the virtualisation is essential to serve more users,
 thus getting the savings promised by providers.
 
-\section{Web services vs. Grid/Cloud Computing}
+\section*{Web services vs. Grid/Cloud Computing}
 
 In this section, a summary of the main differences and synergies between web services and
 Grid/Cloud Computing is presented since a formal language to mix both approaches is one of the parts of this
@@ -712,7 +712,7 @@ whether or not the services are WS-Resources (WS-ServiceGroups);
 template (WS-BaseFaults). 
 \end{itemize} 
 
-\subsection{WS-ResourceProperties}
+\subsection*{WS-ResourceProperties}
 
 As mentioned above, WSRF uses a particular specification language 
 for defining the properties (attributes) of a WS-Resource. It consists of 
@@ -852,7 +852,7 @@ The response must look like this:
 
 \end{description}
 
-\subsection{WS-Base Faults}
+\subsection*{WS-Base Faults}
 Normally, designers use interfaces defined by others, and, therefore,
 a method to standardise the format of error messages would facilitate the work of developers. 
 This is the goal of WS-BaseFaults, where an error message has the following format:
@@ -882,12 +882,12 @@ where:
 \end{itemize}
 Finally, note that it is possible to report an error without using this format. %, but WSRF provides it
 %to help participants to manage it in a consistent way.
-\subsection{WS-ServiceGroup}
+\subsection*{WS-ServiceGroup}
 This specification allows users to create groups of services 
 that share a number of properties in common, i.e., it is useful to group different web services with similar behaviours.
 This part of WSRF is not taken into account in BPELRF.
 
-\subsection{WS-ResourceLifetime}
+\subsection*{WS-ResourceLifetime}
 The lifetime of a WS-Resource is defined as the period between its instantiation and its destruction. 
 The goal of this specification is to standardise the process of resource destruction
 and define mechanisms to monitor its lifecycle. Surprisingly, the process to create the WS-Resource
@@ -1123,7 +1123,7 @@ management system has to provide:
 constituent activities.
 
 \item The control functions concerned with managing the workflow processes in an operational
-environment and sequencing the various activities to be handled as part of each process
+environment and sequencing the various activities to be handled as part of each process.
 
 \item The means by which the participants (human users and/or IT application tools) should interact.
 
@@ -1143,7 +1143,8 @@ In Figure \ref{fig:wfms}, we can see these three characteristics and their relat
 it can be observed two well defined parts: \emph{build time} and \emph{run time}. As commented previously, formal methods have a 
 great impact when they are applied in the early stages of the development process. Thus, 
 in this Thesis we propose an extension of a well-known formalism (Workflow nets)
-that helps designers in this ``design time'' phase. In particular, we cover the three fundamental areas encouraged by the WorkFlow Management Coalition since a we provide a formalism to model workflows, some correctness properties (soundness and strong soundness) and a tool to check these properties, as well as the model 
+that helps designers in this ``design time'' phase. In particular, we cover the three fundamental areas encouraged by the WorkFlow Management Coalition 
+by providing a formalism to model workflows, some correctness properties (soundness and strong soundness) and a tool to check these properties, as well as the model 
 evolution. Notice that the ``run time part'' is out of the scope of the present Thesis and, consequently, its technical details are not shown here.
 
 In 1997, Workflow nets~\cite{Aalst97,Aalst98} were introduced 
@@ -1220,7 +1221,7 @@ Notice that most of these arguments have been commented throughout this Thesis, 
 Petri nets and their different variants are a mature and suitable formalism to model any kind
 of system.
 
-\subsection{Formal models of concurrency}\label{formalmodels}
+\section{Formal models of concurrency}\label{formalmodels}
 In this section we present the formalism on which we will base
 throughout this Thesis to develop our specification languages. We start by presenting
 some notions about process algebras and some examples. Next, we introduce the basic definition of
@@ -1263,19 +1264,6 @@ As commented previously, their power lies in the features (properties) we want t
 important to fix first these features. For instance, in our language, we will study the communication features of the language 
 WS-BPEL and how resource management can be conducted by using WS-BPEL and WSRF. In addition, we will study the presence of errors such as deadlocks
 as well as the evolution of the system in the case of error. 
-
-The most important feature of these models is that intrinsic to this type of systems:
-communication between processes, indispensable for the functioning
-any concurrent system.
-Consequently , specification languages 
-focused on the description
-of concurrent systems would have intended the detailed modeling
-of communication between processes in the system . In this line
-will try to abstract , to a greater or lesser extent, all other aspects
-such systems. This implies that the internal behavior of each
-process , ie , the set of actions executed by the process that
-represent a communication with other processes, so that there will abstract
-will be represented in the models.
 
 In web services, one of the most important feature is the communication between services. In concurrent systems,
 it is modelled as the communication between processes and it is indispensable for any concurrent system.

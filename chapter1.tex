@@ -30,12 +30,12 @@ to describe Web service orchestrations, so this
 is considered the de-facto standard language for describing Web services
 workflows in terms of web service compositions. 
 
-To facilitate additional interoperability among services, more standardization is required to deal with distributed resources. In January of 2004, several members of the \emph{Globus Alliance} organization and the computer multinational \emph{IBM} with the help of experts from companies such as \emph{HP, SAP, Akamai, etc.} defined the basis architecture and the initial specification documents of a new standard for that purpose, Web Services Resource Framework (WSRF)~\cite{Foster2004}. Although the Web service 
+To facilitate additional interoperability among services, more standardization is required to deal with distributed resources. In January of 2004, several members of the \emph{Globus Alliance} organization and the computer multinational \emph{IBM} with the help of experts from companies such as \emph{HP, SAP, Akamai, etc.} defined the basis architecture and the initial specification documents of a new standard for that purpose, Web Services Resource Framework (WSRF)~\cite{Ban06,foster2004}. Although the Web service 
 definition does not consider the notion of state, interfaces frequently provide the user with the ability to access and manipulate
 states, that is, data values that persist across, and evolve as a result of Web service interactions. The messages that the services 
 send and receive imply (or encourage programmers to infer) the existence of an associated stateful resource. It is then desirable 
 to define Web service conventions to enable the discovery of, introspection on, and interaction with stateful resources in standard 
-and interoperable ways~\cite{Czajkowski2004}. 
+and interoperable ways~\cite{foster2004}. 
 
 The main motivation of the first part of the Thesis is to provide a formal 
 semantics for WS-BPEL+WSRF to manage stateful Web services workflows 
@@ -137,11 +137,17 @@ This Thesis is organised in five different chapters, as follows.
 
 \textbf{Chapter~\ref{chapter:c1}} makes a brief introduction to the Thesis, showing the motivation, the main objectives and the scope of it.
 
-\textbf{Chapter~\ref{chapter:c2}} shows the state of art for the contents included here. This chapter includes a brief description of Service-Oriented Computing (SOC) and distributed computing, e.g. Grid and Cloud computing and the use of formal methods for the analysis of web service compositions and the benefits of using formal techniques in the development of software and hardware. Moreover, a comprehensive introduction of the standards used in this work is presented. Finally, we get into workflow nets and the possible time extension of them, as well as its main properties.
+\textbf{Chapter~\ref{chapter:c2}} shows the state of art for the contents included here. This chapter includes a brief description of Service-Oriented Computing (SOC) and distributed computing, e.g. Grid and Cloud computing and the use of formal methods for the analysis of web service compositions and the benefits of using formal techniques in the development of software and hardware. Moreover, a comprehensive introduction of the standards used in this work is presented. Next, we get into workflow nets and the possible time extension of them, as well as its main properties. Finally, we describe the basic notions of the formal models of concurrency used in the Thesis.
 
-\textbf{Chapter~\ref{chapter:c3}} presents a formal specification language called BPELRF, which takes two well-known standards (WS-BPEL and WSRF) as basis, to model synchronous and asynchronous stateful interactions. This language is enriched with a publish-subscribe architecture, service discovery, event and fault handling and time-outs. As usual, an operational semantics for this language is defined. Moreover, we define a visual model of it in terms of coloured Petri nets and a tool to that allows us to get an automatic and easy translation to CPNTools input model, thus permitting us to make simulation and verification of some properties.
+In \textbf{Chapter~\ref{chapter:c3}}, we define the extended models of concurrency used in this work. We start defining a 
+general extension of basic Petri nets and, then, we present two extensions of them. Some properties for the study of concurrent systems are also described. 
+First, we introduce prioritised-timed Petri nets as they are used in 
+the Chapter \ref{chapter:c4} as the visual formal model for the language BPELRF and, second, we define timed-arc Petri nets as they will be used as formalism
+to define our timed extension of workflow nets. 
 
-In \textbf{Chapter~\ref{chapter:c4}} we suggest a workflow model based on timed-arc Petri nets, and study
+\textbf{Chapter~\ref{chapter:c4}} presents a formal specification language called BPELRF, which takes two well-known standards (WS-BPEL and WSRF) as basis, to model synchronous and asynchronous stateful interactions. This language is enriched with a publish-subscribe architecture, service discovery, event and fault handling and time-outs. As usual, an operational semantics for this language is defined. Moreover, we define a visual model of it in terms of coloured Petri nets and a tool to that allows us to get an automatic and easy translation to CPNTools input model, thus permitting us to make simulation and verification of some properties.
+
+In \textbf{Chapter~\ref{chapter:c5}} we suggest a timed workflow model based on timed-arc Petri nets, and study
 the foundational problems of soundness and strong (time-bounded) soundness.
 We explore the decidability of these problems
 and compare the discrete and continuous semantics of timed-arc
