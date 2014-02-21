@@ -19,7 +19,7 @@
 \BOOKMARK [2][-]{subsection.3.2.1}{Prioritized-Timed Colored Petri Nets}{section.3.2}
 \BOOKMARK [2][-]{subsection.3.2.2}{Extended Timed-Arc Petri Nets}{section.3.2}
 \BOOKMARK [0][-]{chapter.4}{BPELRF}{}
-\BOOKMARK [1][-]{section.4.1}{Background and Related Work}{chapter.4}
+\BOOKMARK [1][-]{section.4.1}{Related Work}{chapter.4}
 \BOOKMARK [1][-]{section.4.2}{Syntax and semantics of BPEL+RF}{chapter.4}
 \BOOKMARK [1][-]{section.4.3}{Case Study: Automatic management system for stock market investments}{chapter.4}
 \BOOKMARK [2][-]{subsection.4.3.1}{Related Work}{section.4.3}
@@ -35,4 +35,4 @@
 \BOOKMARK [1][-]{section.4.8}{Summary}{chapter.4}
 \BOOKMARK [0][-]{chapter.5}{Timed-arc workflow nets}{}
 \BOOKMARK [0][-]{chapter.6}{Conclusions, Contributions and Future Works}{}
-\BOOKMARK [0][-]{appendix*.44}{Bibliography}{}
+\BOOKMARK [0][-]{appendix*.45}{Bibliography}{}

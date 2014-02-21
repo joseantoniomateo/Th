@@ -117,7 +117,6 @@ while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
 while executing---line 1049 of file plain.bst
 Warning--to sort, need author or key in UDDI
-Warning--to sort, need author or key in bpelsoftcare
 Warning--to sort, need author or key in WSRFstandard
 Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
 while executing---line 1049 of file plain.bst
@@ -147,9 +146,6 @@ Too many commas in name 1 of "I. Foster, J. Frey, S. Graham, S. Tuecke, K. Czajk
 while executing---line 1049 of file plain.bst
 Warning--to sort, need author or key in WSNstandard
 Warning--to sort, need author or key in CPNTools
-Warning--empty author in bpelsoftcare
-Warning--empty institution in bpelsoftcare
-Warning--empty year in bpelsoftcare
 Warning--empty author in UDDI
 Warning--empty institution in UDDI
 Warning--empty author in WSNstandard
@@ -219,34 +215,34 @@ Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Gr
 while executing---line 1090 of file plain.bst
 You've used 53 entries,
             2118 wiz_defined-function locations,
-            891 strings with 13441 characters,
-and the built_in function-call counts, 16576 in all, are:
-= -- 1586
-> -- 758
+            894 strings with 13468 characters,
+and the built_in function-call counts, 16616 in all, are:
+= -- 1592
+> -- 764
 < -- 16
-+ -- 312
-- -- 252
-* -- 1092
-:= -- 2708
-add.period$ -- 157
++ -- 314
+- -- 254
+* -- 1087
+:= -- 2727
+add.period$ -- 158
 call.type$ -- 53
-change.case$ -- 281
+change.case$ -- 282
 chr.to.int$ -- 0
-cite$ -- 70
+cite$ -- 66
 duplicate$ -- 684
-empty$ -- 1342
-format.name$ -- 252
-if$ -- 3530
+empty$ -- 1341
+format.name$ -- 254
+if$ -- 3537
 int.to.chr$ -- 0
 int.to.str$ -- 53
 missing$ -- 49
-newline$ -- 260
-num.names$ -- 94
-pop$ -- 353
+newline$ -- 261
+num.names$ -- 96
+pop$ -- 350
 preamble$ -- 1
-purify$ -- 233
+purify$ -- 234
 quote$ -- 0
-skip$ -- 490
+skip$ -- 491
 stack$ -- 0
 substring$ -- 817
 swap$ -- 162
@@ -254,8 +250,8 @@ text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 196
-warning$ -- 17
-while$ -- 137
+warning$ -- 13
+while$ -- 139
 width$ -- 55
-write$ -- 550
+write$ -- 554
 (There were 70 error messages)

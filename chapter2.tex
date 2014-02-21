@@ -372,8 +372,8 @@ that business processes change relatively often due to this heterogeneity. There
 do not require only a way to compose a set of services, they rather
 need a way to compose and modify them in the right order and in a relatively 
 uncomplicated and straightforward way. Due to this, BPEL is sometimes compared 
-to general purpose programming languages, but it
-is not as powerful as any of the well-known programming languages \cite{BPELsoftcare}. However, 
+to general purpose programming languages, although it
+is not as powerful as any of the well-known programming languages \cite{bpelsoftcare}. However, 
 it is simpler and better suited for business
 process definition and, therefore, BPEL must be considered as a supplement to
 modern languages rather than a replacement.
@@ -667,7 +667,7 @@ Open Grid Services Infrastructure (OGSI) Working Group \cite{Foster03}. More spe
 WSRF can be seen as a simple refactoring of concepts and interfaces 
 developed in the specification \emph{OGSI V1.0}, but
 exploiting recent developments in the area of web services (e.g. WS-Addressing). 
-WS- Resource Framework \cite{BAN06} is a specification, whose purpose is to define a 
+WSRF is a specification, whose purpose is to define a 
 generic framework for modelling and accessing WS-Resources and the relationships 
 between them in a Grid/Cloud environment. In detail, WSRF defines 
 the representation of the WS-Resource, specifying the messages exchanged and 
@@ -757,7 +757,7 @@ For instance, a possible request can be:
 This method is equivalent to the last one, but it is intended to retrieve
 more than one property of the document. 
 It can be used to prevent network congestion. The message would be:
-\newpage
+
 \lstset{language=XML, numbersep=5pt,basicstyle=\scriptsize ,frame=single}
 \begin{lstlisting}
 ...
@@ -821,7 +821,7 @@ After processing this request, we get the following document:
 \item[QueryResourceProperties]
 This method is used for querying resource properties. 
 For example, to know if the number of blocks is greater than 20 and the block size is 1024,
-we use the following query:
+we use the following query: \\
 
 \lstset{language=XML, numbersep=5pt, frame=single, basicstyle=\linespread{.94}\ttfamily}
 \begin{lstlisting}
@@ -836,6 +836,7 @@ we use the following query:
 </s12:Body>
 ...
 \end{lstlisting}
+\newpage
 
 The response must look like this:
 
@@ -948,7 +949,7 @@ On the contrary, there may be a situation where more than one service
 is using the resource and, therefore, the resource owner can decide or not 
 (this is not mandatory in WSRF) to implement a notification policy
 to inform other services that the resource is unavailable. The notification message must include the following fields: 
-\newpage
+
 \lstset{language=XML, numbersep=5pt, frame=single,basicstyle=\linespread{.94}\ttfamily}
 \begin{lstlisting}
 ...
@@ -1160,7 +1161,7 @@ the presence of design errors. Among these errors, one can check the presence of
 and other anomalies. To this end, a correctness criterion is described
 via the notion of \emph{soundness} (see~\cite{AalstHHSVVW11} for a summary of different soundness definitions) that
 requires the option to complete the workflow, guarantees proper termination
-and optionally also the absence of redundant tasks. In Chapter \ref{chapter:c4}, we will study in depth the soundness notion and
+and optionally also the absence of redundant tasks. In Chapter \ref{chapter:c5}, we will study in depth the soundness notion and
 our timed extension of it. 
 
 After this seminal work on workflow nets, researchers have 
@@ -1170,7 +1171,7 @@ and studying the related decidability and
 complexity questions
 (see~\cite{AalstHHSVVW11} for a recent overview). Thus, researchers must choose between 
 adding expressiveness to the model, which in many cases leads to undecidability issues, or keeping the model as simple as possible
-in order to preserve the decidability of soundness checking algorithms. In Chapter \ref{chapter:c4}, we will summarise the main extensions one can find in the literature, focusing
+in order to preserve the decidability of soundness checking algorithms. In Chapter~\ref{chapter:c4}, we will summarise the main extensions one can find in the literature, focusing
 on time extensions as they are the aim of our work.
 
 Finally, note that workflow nets are based on Petri nets since they are an established tool 

@@ -10,69 +10,8 @@ meet their expectations. This simple scenario will allow us to show readers how 
 with what we consider a very simple and succinct language.
 The rest of the paper is organised as follows. In Section \ref{rWork}, we present the basic concepts for a better understanding of this paper and some related works. In Section \ref{ops}, we define the language itself and its operational semantics, whereas, in Section \ref{cs}, we illustrate by means of a case study how it works. Finally, Section \ref{conclusions} presents some conclusions and possible future directions to improve the present work.
 
-\section{Background and Related Work}\label{rWork}
-
-{\bf Overview of BPEL/WSRF.} WSRF~\cite{Banks2006} is a resource specification language developed by OASIS and some of the most pioneering computer companies, whose purpose is to define a generic framework for modelling Web services with stateful resources (WS-Resource), as well as the relationships among these services in a Grid/Cloud environment. This approach consists of a set of specifications that define the representation of the WS-Resource in the terms that specify the messages exchanged and the related XML documents. These specifications allow the programmer to declare and implement the association between a service and one or more resources. It also includes mechanisms to describe the means to check the status and the service description of a resource, which together form the definition of a WS-Resource. This WS-Resource is accessible through its unique identifier, 
-\emph{EndPoint Reference (EPR)}, which is defined by using WS-Addressing.
-
-On the other hand, Web services are becoming more and more important as a platform
-for Business-to-Business integration.  Web service compositions have appeared
-as a natural and elegant way to provide new value-added services
-as a combination of several established Web services.
-Services provided by different suppliers can act together
-to provide another service; in fact, they can be written in different
-languages and can be executed on different platforms. As we noticed in the introduction, we can use Web service compositions as a way to construct Web service systems where each service is an autonomous entity which can offer a series of operations to the other services conforming a whole system. In this way, it is fairly necessary to establish a consistent manner to coordinate the system participants since each of them may use a different approach, and, consequently, it is common to use specific languages such as WS-BPEL to manage the system workflow. WS-BPEL, for short BPEL, is an OASIS orchestration language to specify actions within Web service business processes. These actions are represented by the execution of two types of activities (\emph{basic} and \emph{structured}) that perform the process logic. \emph{Basic activities} are those which describe elemental steps of the process behaviour and \emph{structured activities} encode control-flow logic, and can therefore contain other basic and/or structured activities recursively~\cite{BPEL4WS}.
-
-The WSRF elements considered in our language are\footnote{In WSRF there are some additional technical elements to 
-increase the modelling
-power that due to its technical nature
-are not considered in our framework.}:
-
-\begin{itemize}
-\item {\bf WS-ResourceProperties}: There is a explicit specification 
-to define WS-Resource properties, based on 
-a Resource Properties Document (RPD),  which
-defines the properties of the associated resource
-(disk size, processor capacity, etc.).
-Nevertheless, for simplicity, we only consider a single property
-for each resource, which is an integer value.
-Among the operations allowed by the standard are \linebreak
-\emph{GetResourceProperty} 
-and \emph{SetResourceProperty}, which are used to manipulate 
-the resource property values.
-%
-%The developer 
-%typically uses a Web service interface defined by others, so a 
-%method to standardise the format for reporting error messages 
-%facilitates the work.
-%
-%
-\item {\bf WS-ResourceLifetime}: The WSRF specification does not 
-provide a standard way to create resources. However,
-resources have an associated lifetime, which means that once
-this time has elapsed, the resource is considered to be destroyed,
-and the subscribers are correspondingly notified.
-%
-We have then included, for completeness, an operation to publish
-resources, {\em publishResource}, in which the initial value
-of the resource, its lifetime, a textual identifier in order to allow
-users to discover it, and the activity that must
-be launched upon its destruction are indicated. We also have
-an operation in order to modify the current resource lifetime,
-{\em setTimeout}. 
-
-\item {\bf WS-Notification}: Clients can subscribe to WSRF
-resources in order to be notified about some topics (resource
-conditions). We therefore include the {\em subscribe} operator 
-for a customer to subscribe to a resource, indicating the
-condition under which it must be notified, and the activity that
-must be executed 
-upon that event.
-
-
-\end{itemize}
-
-{\bf Related Work.} WS-BPEL has been extensively studied with many formalisms, such as
+\section{Related Work}\label{rWork}
+WS-BPEL has been extensively studied with many formalisms, such as
 Petri nets, Finite State Machines and process algebras, but
 there are only a few works considering WS-BPEL enriched with
 WSRF, and they only show a description of this union,
@@ -161,14 +100,14 @@ ${\it O_{i}=O, cond'_{i_{j}}(s)=true\}_{i=1}^r}$, with $j \in \{1,...,s_i\}$.
 The operational semantics for this language is defined at three levels, the internal one corresponds to the evolution of one activity as a single entity. In the second one, we define
 the transition rules which establish the orchestrator evolution, whereas the third level corresponds to the composition
 of different orchestrators and resources to conform a choreography.
-\newpage
+
 {\renewcommand{\arraystretch}{0.85}
 \begin{table}[!h]
 {
 \tiny
 
 \begin{center}
-\begin{tabular}{|p{9cm}|p{5cm}|}
+\begin{tabular}{|p{7cm}|p{5cm}|}
 \hline
 \cellcolor[gray]{.9}~ & \cellcolor[gray]{.9}~ \\
 %\rowcolor[gray]{.9}
@@ -349,6 +288,33 @@ $<$/pick$>$\\
 & \begin{center}\vspace{-0.3cm}pick($\{(pl_i,op_i,v_i,A_i)\}_{i=1}^n,A$,timeout)\end{center}\\
 \hline
 
+
+\hline
+\end{tabular}
+\end{center}
+}
+%}% Fin de fbox
+\vspace{-0.3cm}
+\caption{\label{BPELsyntax}Conversion table}
+\end{table}}
+
+% % % NOTA.- Divido la tabla en las de BPEL y en las de WSRF
+
+{\renewcommand{\arraystretch}{0.85}
+\begin{table}[!h]
+{
+\tiny
+
+\begin{center}
+\begin{tabular}{|p{7cm}|p{5cm}|}
+\hline
+\cellcolor[gray]{.9}~ & \cellcolor[gray]{.9}~ \\
+%\rowcolor[gray]{.9}
+%\multicolumn{1}{>{\rowcolor[gray]{.9}}c|}{WS-CDL Syntax} & Metamodel\\
+\cellcolor[gray]{.9}\hspace*{3.3cm}WS-BPEL/WSRF/WS-Notification Syntax & \cellcolor[gray]{.9}\hspace*{1.7cm}Model\\
+\cellcolor[gray]{.9}~ & \cellcolor[gray]{.9}~ \\
+\hline
+
 \begin{tabular}{l}
 ~\\
 $<$invoke partnerLink=``Factory''operation=``CreateResource''\\
@@ -455,7 +421,7 @@ discover(tag,vEPR)
 \vspace{-0.3cm}
 \caption{\label{BPELsyntax}Conversion table}
 \end{table}}
-\newpage
+
 
 
 %\newpage

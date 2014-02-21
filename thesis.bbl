@@ -1,9 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{bpelsoftcare}
-What is bpel and why is it so important to my business?
-\newblock Technical report.
-
 \bibitem{UDDI}
 Uddi spec technical committee draft 3.0.2.
 \newblock Oasis committee draft, 2004.
@@ -110,6 +106,11 @@ G.~Chiola, G.~Franceschinis, R.~Gaeta, and M.~Ribaudo.
 E.~Clarke and J.~Wing.
 \newblock { Formal methods: State of the art and future directions.}
 \newblock {\em ACM Computing Surveys}, 1996.
+
+\bibitem{bpelsoftcare}
+Michael Cobban.
+\newblock What is bpel and why is it so important to my business?
+\newblock Technical report, SoftCare EC, 01 2005.
 
 \bibitem{DJJJMS:TACAS:12}
 A.~David, L.~Jacobsen, M.~Jacobsen, K.Y. J{\o}rgensen, M.H. M{\o}ller, and
