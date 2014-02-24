@@ -73,33 +73,6 @@ for the activities is defined by the following BNF-notation:
 %Notice that \emph{getProp} contains a parameter {\it prop}, $prop \in \{\textrm{``value'',``timeout''}\}$, in order to distinguish between the two properties of the resource (its value and its termination time). On the contrary, the activity \emph{setProp} does not contain such a property since, as the WSRF specification says, the only way to change the termination time is by using the activity \emph{setTimeout}.
 %We therefore use its EPR as representative of this property, as
 %we already observed in the introduction.
-BPEL basic activities leveraged in our model are: \emph{invoke} to request services offered by service providers, \emph{receive} and \emph{reply} to provide services to partners, \emph{throw} to signal an internal fault explicitly, \emph{wait} to specify a delay, \emph{empty} to do nothing, \emph{exit} to end the business process and \emph{assign}, which is used to assign a variable value. The \emph{structured activities} are: \emph{sequence} (represented here as ;), which contains two activities that are performed sequentially, \emph{while} to provide a (conditional) repeated execution of one activity, \emph{pick} that waits for the occurrence of exactly one event from a set of events (including an alarm event) executing then the activity associated with that event, and, finally, \emph{flow} ($\|$ operator in our syntax) to express concurrency. Another family of control flow constructs in BPEL includes event, fault and compensation handlers. An event handler is enabled when
-its associated event occurs, being executed concurrently with the main orchestrator activity. Fault handlers are performed when some failure has occurred, so the control is transferred to them. In this work, we only cover the fault and event handling, leaving compensation as a matter of future research. Besides, we do not take into consideration other advanced constructions such as correlation sets, dynamic partnerlinks or instance creation. However, an important aspect in current services technology is that of publishing and discovering of resources, which is considered in our framework. The correspondence among the syntax of WS-BPEL, WSRF, WS-Notification and our model is shown in Table \ref{BPELsyntax}.
-%ell as with the inclusion of structured variables, instead of just considering
-%all variables as integers.
-An orchestration is here defined as a pair ${\it O= (A,A_f)}$, where $A$ and $A_f$ are activities defined by the previous syntax. Specifically, $A$ represents the normal workflow (and possible event handling activities which run in parallel with it), and $A_f$ is the orchestrator fault handling activity.
-
-Before we begin, we introduce some notations and definitions needed to describe the operational semantics.
-\begin{definition}[State] %\label{states}
-We define a state as a pair s=($\sigma, \rho$), where $\sigma$ represents the variable values in the system and $\rho$ captures the global resource state. We characterise $\sigma$ as a global function in ${\it \entero^\textrm{VAR}}$, but, in practice, each orchestrator will manage its own local variables. Furthermore, $\it{ \rho=\{(O_i,EPR_i,v_i,Subs_i,}$ $\it{ t_i,tag_i,A_{e{_i}})\}_{i=1}^r}$, where $r$ is the number of resources in the system. Each resource has an owner (publisher), ${\it O_i}$, a unique identifier, ${\it EPR_i}$, and, at each state, a particular value, $v_i$, and a lifetime, $t_i$, initialized with the activity {\it publishResource}, which can be changed by using the function {\it setTimeout}. $A_{e{_i}}$ is the activity that must be run when it expires, whereas ${\it tag_i}$ is used as a textual description for discovery purposes. The resources in $\rho$ are therefore published by means of the {\em publishResource} activity, and potential subscribers must discover the resource identifier (EPR) by using the {\it discover} activity. %This identifier will be stored temporarily in a variable $v$ that will be used to access such a resource.  %whereas the resource information ($\rho$) will be shared by all the orchestrators, i.e., any change introduced in $\rho$ by any orchestrator will be visible to others.
-Moreover, $\it{Subs_i=\{(O_{i_{j}},cond'_{i_{j}},A_{e{_{_i{_{_j}}}}})\}_{j=1}^{{s_i}}}$, $i \in \{1,...,r\}$, is the set of resource subscribers, their associated delivery conditions and the event handling activity ${\it A_{e{_{_i{_{_j}}}}}}$ that must be thrown in the case that ${\it cond'_{i_{j}}}$ holds; $s_i$ is the number of orchestrators currently subscribed to this resource and ${\it O_{i_{j}} \in ORCH}$ are the subscriber identifiers.
-\end{definition}
-
-{\bf Notation.} Along the following lines, we introduce some notation used in the operational semantics. Given a state $s=(\sigma,\rho)$, a variable $v$ and an expression $e$, we denote by $s'=(\sigma[e/v],\rho)$ the state obtained from $s$
-by changing the value of $v$ for the evaluation of $e$, and ${\it s{^+}=(\sigma,\rho')}$, where ${\it \rho'=\{(O_i,EPR_i,v_i,Subs_i,t_i-1,tag_i,A_{e{_i}})|}$ ${\it t_i>1\}_{i=1}^r}$. Let the function {\it Subs(s)}, which return the state {\it s} removing from each ${\it Subs_i}$ those subscriptions whose associated condition has held at {\it s}. %, then $s''=s' \setminus Subs(N(O,s))$, being the operator $\setminus$ the typical set subtraction operator. Note that this function avoids infinite executions over the same subscription even though a service could subscribe again with the same condition. 
-We omit its formal definition since it is straightforward.
-
-A partnerlink is here considered as a pair $(O_i,O_j)$ representing the two roles in communication: sender and receiver. Furthermore, $\it{\sigma(vEPR_i) \in \rho}$ and $\it{tag_i \in \rho}$ will denote that there is a tuple $\it{(O_i,EPR_i,}$ ${\it v_i,Subs_i,t_i,tag_i,A_{e{_i}}) \in \rho}$, where $\it{\sigma(vEPR_i)=EPR_i}$. Given a predicate $\it{cond}$, we use the function $\it{cond(s)}$ to mean the resulting value of this predicate at the current state {\it s}, {\it $sel(\rho,tag)$} to return a randomly selected ${\it EPR \in \rho}$ among those whose tag attribute is {\em tag} , ${\it val(\rho,tag)}$ to return the current value of the resource, ${\it time(\rho,vEPR)}$ to return its lifetime and, finally, {\it getEPR()} to generate non-repeated resource identifiers. Let ${\it \sigma(vEPR)=EPR}$, ${\it \rho[w/vEPR]_1}$ is used to denote that the new value in $\rho$ of the resource $\it{EPR}$ is $\it{w}$, $\it{\rho[t/vEPR]_2}$ denotes a change of the resource lifetime, and the function $\it{Add\_subs(\rho,vEPR_i,O_{i_{j}},cond'_{i_{j}},A_{e{_i{_{_j}}}})}$ denotes that $\it{(O_{i_{j}},cond'_{i_{j}},A_{e{_i{_{_j}}}})}$ is added to the subscribers of the resource $\it{EPR_i \in \rho}$ or ${\it cond'=cond'_{i_{j}}}$ in the case that $\it{O_{i_{j}}}$ was already in ${\it Subs_i}$.
-At the same time, we need an additional function to launch the corresponding activities %in parallel with the normal workflow
-when the subscriber condition holds at the current state ${\it s}$. Let s=($\sigma, \rho$) with $\it{ \rho=\{(O,EPR_i,v_i,Subs_i,t_i,tag_i,A_{e{_i}})\}_{i=1}^r}$, we define the function ${\it N(O,s)=||\{A_{e{_i{_{_j}}}}|(O_{i{_j}},cond'_{i_{j}},A_{e{_i{_{_j}}}}) \in Subs_i,}$
-${\it O_{i}=O, cond'_{i_{j}}(s)=true\}_{i=1}^r}$, with $j \in \{1,...,s_i\}$.
-
-% % %Hemos eliminado por simplicidad el que cuando se elimine el recurso se notifique al dueÃ±o
-%\\ The other function is used to launch the event handling activities when the resource lifetime expires:\\ {\scriptsize ${\it T(O,s)=\{ A_{e{_{_i}}}|(EPR_i,v_i,O,Subs_i,1,tag_i,A_{e{_{_i}}}) \in \rho\}_{i=1}^r}$}.
-%\vspace{0.1cm}
-The operational semantics for this language is defined at three levels, the internal one corresponds to the evolution of one activity as a single entity. In the second one, we define
-the transition rules which establish the orchestrator evolution, whereas the third level corresponds to the composition
-of different orchestrators and resources to conform a choreography.
 
 {\renewcommand{\arraystretch}{0.85}
 \begin{table}[!h]
@@ -112,7 +85,7 @@ of different orchestrators and resources to conform a choreography.
 \cellcolor[gray]{.9}~ & \cellcolor[gray]{.9}~ \\
 %\rowcolor[gray]{.9}
 %\multicolumn{1}{>{\rowcolor[gray]{.9}}c|}{WS-CDL Syntax} & Metamodel\\
-\cellcolor[gray]{.9}\hspace*{3.3cm}WS-BPEL/WSRF/WS-Notification Syntax & \cellcolor[gray]{.9}\hspace*{1.7cm}Model\\
+\cellcolor[gray]{.9}\hspace*{3.3cm}WS-BPEL Syntax & \cellcolor[gray]{.9}\hspace*{1.7cm}Model\\
 \cellcolor[gray]{.9}~ & \cellcolor[gray]{.9}~ \\
 \hline
 
@@ -150,7 +123,7 @@ throw
 $<$receive partnerLink=``pl''
 operation=``op''
 variable=``v''
-createInstance=``no''$>$
+createInstance=``no''$>$\\
 $<$/receive$>$\\
 ~\end{tabular}
 &
@@ -207,7 +180,8 @@ $<$exit$>$~\ldots~$<$/exit$>$\\
 
 \begin{tabular}{l}
 ~\\
-$<$assign$>$$<$copy$>$$<$from$>$expr$<$/from$>$$<$to$>$v$_1$$<$/to$>$$<$/copy$>$$<$/assign$>$\\
+$<$assign$>$$<$copy$>$$<$from$>$expr$<$/from$>$$<$to$>$v$_1$$<$/to$>$$<$/copy$>$\\
+$<$/assign$>$\\
 ~\\
 \end{tabular}
 &
@@ -295,8 +269,17 @@ $<$/pick$>$\\
 }
 %}% Fin de fbox
 \vspace{-0.3cm}
-\caption{\label{BPELsyntax}Conversion table}
+\caption{\label{BPELsyntax}WS-BPEL Syntax Conversion table}
 \end{table}}
+
+BPEL basic activities leveraged in our model are: \emph{invoke} to request services offered by service providers, \emph{receive} and \emph{reply} to provide services to partners, \emph{throw} to signal an internal fault explicitly, \emph{wait} to specify a delay, \emph{empty} to do nothing, \emph{exit} to end the business process and \emph{assign}, which is used to assign a variable value. The \emph{structured activities} are: \emph{sequence} (represented here as ;), which contains two activities that are performed sequentially, \emph{while} to provide a (conditional) repeated execution of one activity, \emph{pick} that waits for the occurrence of exactly one event from a set of events (including an alarm event) executing then the activity associated with that event, and, finally, \emph{flow} ($\|$ operator in our syntax) to express concurrency. Another family of control flow constructs in BPEL includes event, fault and compensation handlers. An event handler is enabled when
+its associated event occurs, being executed concurrently with the main orchestrator activity. Fault handlers are performed when some failure has occurred, so the control is transferred to them. In this work, we only cover the fault and event handling, leaving compensation as a matter of future research. Besides, we do not take into consideration other advanced constructions such as correlation sets, dynamic partnerlinks or instance creation. However, an important aspect in current services technology is that of publishing and discovering of resources, which is considered in our framework. The correspondence among the syntax of WS-BPEL 
+and our model is shown in Table \ref{BPELsyntax}, whereas the correspondence between our model and WSRF/WSN Notification syntax is depicted 
+in Table \ref{WSRFsyntax}.
+
+%ell as with the inclusion of structured variables, instead of just considering
+%all variables as integers.
+An orchestration is here defined as a pair ${\it O= (A,A_f)}$, where $A$ and $A_f$ are activities defined by the previous syntax. Specifically, $A$ represents the normal workflow (and possible event handling activities which run in parallel with it), and $A_f$ is the orchestrator fault handling activity.
 
 % % % NOTA.- Divido la tabla en las de BPEL y en las de WSRF
 
@@ -311,7 +294,7 @@ $<$/pick$>$\\
 \cellcolor[gray]{.9}~ & \cellcolor[gray]{.9}~ \\
 %\rowcolor[gray]{.9}
 %\multicolumn{1}{>{\rowcolor[gray]{.9}}c|}{WS-CDL Syntax} & Metamodel\\
-\cellcolor[gray]{.9}\hspace*{3.3cm}WS-BPEL/WSRF/WS-Notification Syntax & \cellcolor[gray]{.9}\hspace*{1.7cm}Model\\
+\cellcolor[gray]{.9}\hspace*{3.3cm}WSRF/WS-Notification Syntax & \cellcolor[gray]{.9}\hspace*{1.7cm}Model\\
 \cellcolor[gray]{.9}~ & \cellcolor[gray]{.9}~ \\
 \hline
 
@@ -419,8 +402,34 @@ discover(tag,vEPR)
 }
 %}% Fin de fbox
 \vspace{-0.3cm}
-\caption{\label{BPELsyntax}Conversion table}
+\caption{\label{WSRFsyntax}WSRF/WSN Notification Conversion table}
 \end{table}}
+
+
+
+Before we begin, we introduce some notations and definitions needed to describe the operational semantics.
+\begin{definition}[State] %\label{states}
+We define a state as a pair s=($\sigma, \rho$), where $\sigma$ represents the variable values in the system and $\rho$ captures the global resource state. We characterise $\sigma$ as a global function in ${\it \entero^\textrm{VAR}}$, but, in practice, each orchestrator will manage its own local variables. Furthermore, $\it{ \rho=\{(O_i,EPR_i,v_i,Subs_i,}$ $\it{ t_i,tag_i,A_{e{_i}})\}_{i=1}^r}$, where $r$ is the number of resources in the system. Each resource has an owner (publisher), ${\it O_i}$, a unique identifier, ${\it EPR_i}$, and, at each state, a particular value, $v_i$, and a lifetime, $t_i$, initialized with the activity {\it publishResource}, which can be changed by using the function {\it setTimeout}. $A_{e{_i}}$ is the activity that must be run when it expires, whereas ${\it tag_i}$ is used as a textual description for discovery purposes. The resources in $\rho$ are therefore published by means of the {\em publishResource} activity, and potential subscribers must discover the resource identifier (EPR) by using the {\it discover} activity. %This identifier will be stored temporarily in a variable $v$ that will be used to access such a resource.  %whereas the resource information ($\rho$) will be shared by all the orchestrators, i.e., any change introduced in $\rho$ by any orchestrator will be visible to others.
+Moreover, $\it{Subs_i=\{(O_{i_{j}},cond'_{i_{j}},A_{e{_{_i{_{_j}}}}})\}_{j=1}^{{s_i}}}$, $i \in \{1,...,r\}$, is the set of resource subscribers, their associated delivery conditions and the event handling activity ${\it A_{e{_{_i{_{_j}}}}}}$ that must be thrown in the case that ${\it cond'_{i_{j}}}$ holds; $s_i$ is the number of orchestrators currently subscribed to this resource and ${\it O_{i_{j}} \in ORCH}$ are the subscriber identifiers.
+\qed
+\end{definition}
+
+{\bf Notation.} Along the following lines, we introduce some notation used only in the operational semantics. Given a state $s=(\sigma,\rho)$, a variable $v$ and an expression $e$, we denote by $s'=(\sigma[e/v],\rho)$ the state obtained from $s$
+by changing the value of $v$ for the evaluation of $e$, and we denote the elapse of one time unit by ${\it s{^+}=(\sigma,\rho')}$, where ${\it \rho'=\{(O_i,EPR_i,v_i,Subs_i,t_i-1,tag_i,A_{e{_i}})|}$ ${\it t_i>1\}_{i=1}^r}$. Let the function {\it Subs(s)}, which return the state {\it s} removing from each ${\it Subs_i}$ those subscriptions whose associated condition has held at {\it s}. %, then $s''=s' \setminus Subs(N(O,s))$, being the operator $\setminus$ the typical set subtraction operator. Note that this function avoids infinite executions over the same subscription even though a service could subscribe again with the same condition. 
+We omit its formal definition since it is straightforward.
+
+A partnerlink is here considered as a pair $(O_i,O_j)$ representing the two roles in communication: sender and receiver. Furthermore, $\it{\sigma(vEPR_i) \in \rho}$ and $\it{tag_i \in \rho}$ will denote that there is a tuple $\it{(O_i,EPR_i,}$ ${\it v_i,Subs_i,t_i,tag_i,A_{e{_i}}) \in \rho}$ such that $\it{\sigma(vEPR_i)=EPR_i}$. Given a predicate $\it{cond}$, we use the function $\it{cond(s)}$ to mean the resulting value of this predicate at the current state {\it s}, {\it $sel(\rho,tag)$} to return a randomly selected ${\it EPR \in \rho}$ among those whose tag attribute is {\em tag} , ${\it val(\rho,tag)}$ to return the current value of the resource, ${\it time(\rho,vEPR)}$ to return its lifetime and, finally, {\it getEPR()} to generate non-repeated resource identifiers. Let ${\it \sigma(vEPR)=EPR}$, ${\it \rho[w/vEPR]_1}$ is used to denote that the new value in $\rho$ of the resource $\it{EPR}$ is $\it{w}$, $\it{\rho[t/vEPR]_2}$ denotes a change of the resource lifetime, and the function $\it{Add\_subs(\rho,vEPR_i,O_{i_{j}},cond'_{i_{j}},A_{e{_i{_{_j}}}})}$ denotes that $\it{(O_{i_{j}},cond'_{i_{j}},A_{e{_i{_{_j}}}})}$ is added to the subscribers of the resource $\it{EPR_i \in \rho}$ or ${\it cond'=cond'_{i_{j}}}$ in the case that $\it{O_{i_{j}}}$ was already in ${\it Subs_i}$.
+At the same time, we need an additional function to launch the corresponding activities %in parallel with the normal workflow
+when the subscriber condition holds at the current state ${\it s}$. Let s=($\sigma, \rho$) with $\it{ \rho=\{(O,EPR_i,v_i,Subs_i,t_i,tag_i,A_{e{_i}})\}_{i=1}^r}$, we define the function ${\it N(O,s)=||\{A_{e{_i{_{_j}}}}|(O_{i{_j}},cond'_{i_{j}},A_{e{_i{_{_j}}}}) \in Subs_i,}$
+${\it O_{i}=O, cond'_{i_{j}}(s)=true\}_{i=1}^r}$, with $j \in \{1,...,s_i\}$.
+
+% % %Hemos eliminado por simplicidad el que cuando se elimine el recurso se notifique al dueÃ±o
+%\\ The other function is used to launch the event handling activities when the resource lifetime expires:\\ {\scriptsize ${\it T(O,s)=\{ A_{e{_{_i}}}|(EPR_i,v_i,O,Subs_i,1,tag_i,A_{e{_{_i}}}) \in \rho\}_{i=1}^r}$}.
+%\vspace{0.1cm}
+The operational semantics for this language is defined at three levels, the internal one corresponds to the evolution of one activity as a single entity. In the second one, we define
+the transition rules which establish the orchestrator evolution, whereas the third level corresponds to the composition
+of different orchestrators and resources to conform a choreography.
+
 
 
 
@@ -449,10 +458,10 @@ the response from the client.
 
 \begin{table}[!h]
 {\scriptsize
-\framebox[16.4cm]{
-\begin{tabular}{l}
+\framebox[\textwidth]{
+\begin{tabular}{c}
 
-\hspace{1.5cm}\textbf{(Throw)}
+\hspace{0cm}\textbf{(Throw)}
 ${ % Consecuente
 (throw,s)
 \xrightarrow{throw}
@@ -460,7 +469,7 @@ ${ % Consecuente
 }$
 
 
-\hspace{4.6cm}\textbf{(Exit)}
+\hspace{2.5cm}\textbf{(Exit)}
 $ % Consecuente
 (exit,s)
 \xrightarrow{exit}
@@ -470,7 +479,7 @@ $
 
 %[0.2cm]
 
-\textbf{(Invoke)}
+\textbf{(Iv)}
 $
 { % Consecuente
 (invoke(pl,op,v_1),s)
@@ -480,25 +489,25 @@ $
 %where ${\it v_1, v_2 \in Var, op \in OPS}$, and $\it{pl \in PL}$.
 
 %\\%[0.2cm]
+\textbf{(Re)}
+${ % Consecuente
+(receive(pl,op,v),s)
+\xrightarrow{receive(pl,op,m)}
+(empty, s')
+}$\\
+\hspace{7cm}{\tiny where  ${\it v \in VAR, m \in \entero, op \in OPS, pl \in PL}$, and ${\it s'=(\sigma[m/v],\rho)}$}
+\\
 
-\hspace{1.5cm}${\bf (\overline{Reply})}$
+
+\textbf{($\overline{\textbf{Reply}}$)}
 $
 { % Consecuente
 (\overline{reply}(pl,op,v_2),s)
 \xrightarrow{\overline{reply}(pl,op,m)}
 (empty,s')
-}$\\
-\hspace{9.2cm}{\tiny where  ${\it v_2 \in VAR, m \in \entero, pl \in PL, op \in OPS}$}, and {\tiny ${\it s'=(\sigma[m/v_2],\rho)}$}.
-\\
-
-\textbf{(Receive)}
-${ % Consecuente
-(receive(pl,op,v),s)
-\xrightarrow{receive(pl,op,m)}
-(empty, s')
 }$
 
-\hspace{1.8cm}\textbf{(Reply)}
+\textbf{(Reply)}
 $
 { % Consecuente
 (reply(pl,op,v), s)
@@ -506,9 +515,10 @@ $
 (empty,s)
 }$
 \\
-\hspace{0.1cm}{\tiny where  ${\it v \in VAR, m \in \entero, op \in OPS, pl \in PL}$, and ${\it s'=(\sigma[m/v],\rho)}$}
+\hspace{-6.6cm}{\tiny where  ${\it v_2 \in VAR, m \in \entero, pl \in PL, op \in OPS}$}, and {\tiny ${\it s'=(\sigma[m/v_2],\rho)}$}.
 \\
-\textbf{(Assign)}
+
+\hspace{-0.2cm}\textbf{(Assign)}\hspace{-0.0cm}
 $
 { % Consecuente
 (assign(expr,v_1),s)
@@ -516,7 +526,7 @@ $
 (empty,s')
 }$
 
-\hspace{2cm}\textbf{(Seq1)}
+\textbf{(Seq1)}\hspace{-0.2cm}
 $\reglaa{ % Antecedente
 (A_1,s)\xrightarrow{a}(A'_1,s'), a\neq exit, a\neq throw
 }
@@ -526,12 +536,12 @@ $\reglaa{ % Antecedente
 (A'_1;A_2,s')
 }{5}$
 \\[-0.3cm]
-\hspace{0.1cm}{\tiny where ${\it v_1 \in VAR, expr}$ is an arithmetic expression, and ${\it s'=(\sigma[expr/v_1],\rho)}$.}
+\hspace{-6.5cm}{\tiny where ${\it v_1 \in VAR, expr}$ is an arithmetic expression, and ${\it s'=(\sigma[expr/v_1],\rho)}$.}
 
 
 \\[0.2cm]
 
-\textbf{(Seq2)}
+\textbf{(Seq2)}\hspace{-0.2cm}
 $\reglaa{ % Antecedente
 (A_1,s)\xrightarrow{a}(empty,s'), a\neq exit,  a\neq throw
 }
@@ -544,7 +554,7 @@ $\reglaa{ % Antecedente
 %where ${\it s'=(\sigma',\rho)}$ or ${\it s'=(\sigma,\rho')}$.\\
 
 
-\hspace{2.4cm}\textbf{(Seq3)}
+\textbf{(Seq3)}\hspace{-0.2cm}
 $\reglaa{ % Antecedente
 (A_1,s)\xrightarrow{a}(empty,s), (a=throw \vee a=exit)
 }
@@ -556,7 +566,7 @@ $\reglaa{ % Antecedente
 
 \\[0.4cm]
 
-\textbf{(Par1)}
+\hspace{-0.1cm}\textbf{(Par1)}\hspace{-0.2cm}
 $\reglaa{ % Antecedente
 (A_1,s)\xrightarrow{a}(A'_1,s'), a\neq exit, a\neq throw
 }
@@ -568,7 +578,7 @@ $\reglaa{ % Antecedente
 
 %where ${\it s'=(\sigma',\rho)}$ or ${\it s'=(\sigma,\rho')}$.\\
 
-\hspace{3cm}\textbf{(Par2)}
+\hspace{1.05cm}\textbf{(Par2)}\hspace{-0.2cm}
 $\reglaa{ % Antecedente
 (A_2,s)\xrightarrow{a}(A'_2,s'), a\neq exit, a\neq throw
 }
@@ -582,7 +592,7 @@ $\reglaa{ % Antecedente
 
 \\[0.4cm]
 
-\textbf{(Par3)}
+\hspace{0.25cm}\textbf{(Par3)}\hspace{-0.2cm}
 $\reglaa{ % Antecedente
 (A_1,s)\xrightarrow{a}(empty,s), (a=throw \vee a=exit)
 }
@@ -590,11 +600,11 @@ $\reglaa{ % Antecedente
 (A_1||A_2,s)
 \xrightarrow{a}
 (empty,s)
-}{6}$
+}{5.8}$
 
 
 
-\hspace{2cm}\textbf{(Par4)}
+\hspace{0.0cm}\textbf{(Par4)}\hspace{-0.2cm}
 $\reglaa{ % Antecedente
 (A_2,s)\xrightarrow{a}(empty,s), (a=throw \vee a=exit)
 }
@@ -602,11 +612,11 @@ $\reglaa{ % Antecedente
 (A_1||A_2,s)
 \xrightarrow{a}
 (empty,s)
-}{5.7}$
+}{5.6}$
 
 
 \\[0.4cm]
-\textbf{(Par5)}
+\hspace{0.2cm}\textbf{(Par5)}\hspace{-0.0cm}
 ${ % Consecuente
 (empty||empty,s)
 \xrightarrow{\tau}
@@ -614,7 +624,7 @@ ${ % Consecuente
 }$
 
 
-\hspace{4cm}\textbf{(While1)}
+\hspace{2.1cm}\textbf{(Wh1)}\hspace{-0.2cm}
 $\reglaa{ % Antecedente
 cond(s)
 }
@@ -626,7 +636,7 @@ cond(s)
 
 \\[0.3cm]
 
-\textbf{(While2)}
+\hspace{0.1cm}\textbf{(Wh2)}\hspace{-0.2cm}
 $\reglaa{ % Antecedente
 \neg cond(s)
 }
@@ -636,25 +646,40 @@ $\reglaa{ % Antecedente
 (empty,s)
 }{4}$
 
-\hspace{2cm}\textbf{(Pick)}
+\hspace{-0.1cm}\textbf{(Pick)}\hspace{-0.0cm}
 $(pick(\{(pl_i,op_i,v_i,A_i)\}_{i=1}^n ,A,t),s)
 \xrightarrow{pick(pl_i,op_i,m,A_i)}
 (A_i,s')$
 
 \\[-0.2cm]
-\hspace{8cm}{\tiny $\textrm{where}\ {\it t \geq 1, v_i \in VAR, m \in \entero, pl_i \in PL,}\ \textrm{and} \ {\it s'=(\sigma[m/v_i],\rho), \forall i \in \{1..n\}}.$}
+\hspace{5.8cm}{\tiny $\textrm{where}\ {\it t \geq 1, v_i \in VAR, m \in \entero, pl_i \in PL,}\ \textrm{and} \ {\it s'=(\sigma[m/v_i],\rho), \forall i \in \{1..n\}}.$}
 \\[0.2cm]
 
-\hspace{2cm}\textbf{(PublishResource)}
+\end{tabular}
+}
+}
+
+\vspace{-0.3cm}
+\caption{\label{tran1}Action transition rules.}
+\end{table}
+
+% Divido otra vez las reglas en WS-BPEL y WSRF
+
+\begin{table}[!h]
+{\scriptsize
+\framebox[\textwidth]{
+\begin{tabular}{c}
+
+\textbf{(PublishResource)}
 $(publishResource(O,val,t,tag,vEPR,A),s)
 \xrightarrow{publishResource(O,val,t,tag,e,A)}
 (empty,s')
 $\\
-\hspace{2.4cm}{\tiny $\textrm{where}\ {\it t\geq 1, O \in ORCH, val \in \entero, vEPR \in VAR, e=getEPR()}\ \textrm{and}\ \it{s'=(\sigma[e/vEPR], \rho \cup \{O,e,val,\emptyset,t,tag,A\})}$.}
+\tiny{$\textrm{where}\ {\it t\geq 1, O \in ORCH, val \in \entero, vEPR \in VAR, e=getEPR()}\ \textrm{and}\ \it{s'=(\sigma[e/vEPR], \rho \cup \{O,e,val,\emptyset,t,tag,A\})}$.}
 
-\\[0.2cm]
+\\[0.5cm]
 
-\textbf{(GetP)}\hspace{-0.3cm}
+\textbf{(GetProperty)}
 $\reglaa{ % Antecedente
 {\it s=(\sigma,\rho), \sigma(vEPR) \in \rho}
 }
@@ -662,30 +687,12 @@ $\reglaa{ % Antecedente
 (getProp(vEPR,v_1),s)
 \xrightarrow{getProp(\sigma(vEPR),val(\rho,vEPR))}
 (empty,s')
-}{7.7}$
-\hspace{-0.3cm}\textbf{(GetT2)}\hspace{-0.2cm}
-$\reglaa{ % Antecedente
-{\it s=(\sigma,\rho), \sigma(vEPR) \notin \rho}
-}
-{ % Consecuente
-(getTimeout(vEPR,v_1),s)
-\xrightarrow{throw}
-(empty,s)
-}{5.8}$\\
-\hspace{0.1cm}{\tiny where  ${\it vEPR,v_1 \in VAR}$ and ${\it s'=(\sigma[val(\rho,vEPR)/v_1],\rho)}$.}
+}{9}$
 
-\\[0.2cm]
+\\[0.5cm]
 
-\textbf{(GetT)}\hspace{-0.7cm}
-$\reglaa{ % Antecedente
-{\it s=(\sigma,\rho), \sigma(vEPR) \in \rho}
-}
-{ % Consecuente
-(getTimeout(vEPR,v_1),s)
-\xrightarrow{getTimeout(\sigma(vEPR),time(\rho,vEPR))}
-(empty,s')
-}{8.2}$
-\hspace{-0.3cm}\textbf{(GetP2)}\hspace{-0.3cm}
+
+\textbf{(GetProperty2)}
 $\reglaa{ % Antecedente
 {\it s=(\sigma,\rho), \sigma(vEPR) \notin \rho}
 }
@@ -693,12 +700,38 @@ $\reglaa{ % Antecedente
 (getProp(vEPR,v_1),s)
 \xrightarrow{throw}
 (empty,s)
-}{5}$
-\\
-\hspace{0.1cm}{\tiny where  ${\it vEPR,v_1 \in VAR}$ and ${\it s'=(\sigma[time(\rho,vEPR)/v_1],\rho)}$.}
-\\[0.2cm]
+}{9}$
+\\[0.4cm]
+where  ${\it vEPR,v_1 \in VAR}$ and ${\it s'=(\sigma[time(\rho,vEPR)/v_1],\rho)}$.
 
-\textbf{(SetP)}\hspace{-0.2cm}
+\\[0.5cm]
+
+\textbf{(GetTimeout)}\hspace{-0.2cm}
+$\reglaa{ % Antecedente
+{\it s=(\sigma,\rho), \sigma(vEPR) \in \rho}
+}
+{ % Consecuente
+(getTimeout(vEPR,v_1),s)
+\xrightarrow{getTimeout(\sigma(vEPR),time(\rho,vEPR))}
+(empty,s')
+}{9.5}$
+
+\\[0.5cm]
+
+\textbf{(GetTimeout2)}
+$\reglaa{ % Antecedente
+{\it s=(\sigma,\rho), \sigma(vEPR) \notin \rho}
+}
+{ % Consecuente
+(getTimeout(vEPR,v_1),s)
+\xrightarrow{throw}
+(empty,s)
+}{9}$\\[0.4cm]
+where  ${\it vEPR,v_1 \in VAR}$ and ${\it s'=(\sigma[val(\rho,vEPR)/v_1],\rho)}$.
+
+\\[0.5cm]
+
+\textbf{(SetProperty)}
 $\reglaa{ % Antecedente
 {\it s=(\sigma,\rho), \sigma(vEPR) \in \rho}
 }
@@ -706,9 +739,11 @@ $\reglaa{ % Antecedente
 (setProp(vEPR,expr),s)
 \xrightarrow{setProp(\sigma(vEPR),expr)}
 (empty,s')
-}{8}$
+}{9}$
 
-\hspace{0.1cm}\textbf{(SetP2)}\hspace{-0.2cm}
+\\[0.5cm]
+
+\textbf{(SetProperty2)}
 $\reglaa{ % Antecedente
 {\it s=(\sigma,\rho), \sigma(vEPR) \notin \rho}
 }
@@ -716,10 +751,13 @@ $\reglaa{ % Antecedente
 (setProp(vEPR,expr),s)
 \xrightarrow{throw}
 (empty,s)
-}{5.5}$
-\\
-\hspace{0.1cm}{\tiny where  ${\it vEPR \in VAR}$ and ${\it s'=(\sigma,\rho[expr/vEPR]_1)}$.}\\[0.2cm]
-\textbf{(SetT)}\hspace{-0.2cm}
+}{9}$
+\\[0.4cm]
+where  ${\it vEPR \in VAR}$ and ${\it s'=(\sigma,\rho[expr/vEPR]_1)}$.
+
+\\[0.5cm]
+
+\textbf{(SetTimeout)}
 $\reglaa{ % Antecedente
 {\it s=(\sigma,\rho), \sigma(vEPR) \in \rho}
 }
@@ -727,8 +765,37 @@ $\reglaa{ % Antecedente
 (setTimeout(vEPR,t), s)
 \xrightarrow{setTimeout(\sigma(vEPR),t)}
 (empty,s')
-}{7.5}$
-\hspace{-0.1cm}\textbf{(Subs2)}\hspace{-0.4cm}
+}{9}$
+
+\\[0.5cm]
+
+\textbf{(SetTimeout2)}
+$\reglaa{ % Antecedente
+{\it s=(\sigma,\rho), \sigma(vEPR)\notin \rho}
+}
+{ % Consecuente
+(setTimeout(vEPR,t), s)
+\xrightarrow{throw}
+(empty,s)
+}{9}$
+\\[0.4cm]
+where ${\it s'=(\sigma,Add\_subs(\rho,vEPR,O,cond',A))}$
+
+\\[0.5cm]
+
+\textbf{(Subscribe)}
+$\reglaa{ % Antecedente
+{\it s=(\sigma,\rho), \sigma(vEPR) \in \rho}
+}
+{ % Consecuente
+(subscribe(O,vEPR,cond',A),s)
+\xrightarrow{subscribe(O,\sigma(vEPR),cond',A)}
+(empty,s')
+}{9}$
+
+\\[0.5cm]
+
+\textbf{(Subscribe2)}
 $\reglaa{ % Antecedente
 {\it s=(\sigma,\rho), \sigma(vEPR) \notin \rho}
 }
@@ -736,9 +803,10 @@ $\reglaa{ % Antecedente
 (subscribe(O,vEPR,cond',A),s)
 \xrightarrow{throw}
 (empty,s')
-}{6}$\\
-\hspace{0.1cm}{\tiny where  ${\it t\geq1}$,$\ {\it s'=(\sigma,\rho[t/vEPR]_2)}$.}
-\\[0.2cm]
+}{9}$\\[0.4cm]
+where  ${\it t\geq1}$,$\ {\it s'=(\sigma,\rho[t/vEPR]_2)}$.
+
+\\[0.5cm]
 
 %\textbf{(SetTime3)}
 %$\reglaa{ % Antecedente
@@ -750,29 +818,7 @@ $\reglaa{ % Antecedente
 %(empty,s)
 %}{5}$
 
-\textbf{(Subs)}\hspace{-0.6cm}
-$\reglaa{ % Antecedente
-{\it s=(\sigma,\rho), \sigma(vEPR) \in \rho}
-}
-{ % Consecuente
-(subscribe(O,vEPR,cond',A),s)
-\xrightarrow{subscribe(O,\sigma(vEPR),cond',A)}
-(empty,s')
-}{8.5}$
-\hspace{-0.3cm}\textbf{(SetT2)}\hspace{-0.5cm}
-$\reglaa{ % Antecedente
-{\it s=(\sigma,\rho), \sigma(vEPR)\notin \rho}
-}
-{ % Consecuente
-(setTimeout(vEPR,t), s)
-\xrightarrow{throw}
-(empty,s)
-}{5}$
-\\
-\hspace{0.1cm}{\tiny where ${\it s'=(\sigma,Add\_subs(\rho,vEPR,O,cond',A))}$}
-\\[0.2cm]
-
-\textbf{(D1)}\hspace{-0.3cm}
+\textbf{(Discover1)}
 $\reglaa{ % Antecedente
 {\it s=(\sigma,\rho), tag \in \rho}
 }
@@ -780,9 +826,12 @@ $\reglaa{ % Antecedente
 (discover(tag,vEPR),s)
 \xrightarrow{discover(tag,sel(\rho,tag))}
 (empty,s')
-}{7}$
+}{9}$\\[0.4cm]
+where ${\it vEPR \in VAR, s'=(\sigma[sel(\rho,tag)/vEPR],\rho))}$ 
 
-\hspace{0cm}\textbf{(D2)}\hspace{-0.2cm}
+\\[0.5cm]
+
+\textbf{(Discover2)}
 $\reglaa{ % Antecedente
 {\it s=(\sigma,\rho), tag \notin \rho}
 }
@@ -790,17 +839,16 @@ $\reglaa{ % Antecedente
 (discover(tag,vEPR),s)
 \xrightarrow{discover(tag,-1)}
 (empty,s')
-}{7}$
-\\
-\hspace{0.1cm}{\tiny where ${\it vEPR \in VAR, s'=(\sigma[sel(\rho,tag)/vEPR],\rho))}$} \hspace{4cm}
-{\tiny where ${\it vEPR \in VAR, s'=(\sigma[-1/vEPR],\rho))}$}
+}{9}$\\[0.4cm]
+
+where ${\it vEPR \in VAR, s'=(\sigma[-1/vEPR],\rho))}$
 
 \end{tabular}
 }
 }
 \vspace{-0.3cm}
 \caption{\label{tran1}Action transition rules.}
-\vspace{-0.5cm}
+
 \end{table}
 %\vspace{-0.6cm}
 
@@ -808,8 +856,8 @@ $\reglaa{ % Antecedente
 \begin{table}[!ht]
 {\scriptsize
 
-\framebox[16cm]{
-\begin{tabular}{ll}
+\framebox[\textwidth]{
+\begin{tabular}{cc}
 
 \textbf{(Wait1D)}
 $\reglaa{ % Antecedente
@@ -822,7 +870,7 @@ t>1
 }{4}$
 
 
-\hspace{3.5cm}\textbf{(Wait2D)}
+\hspace{2cm}\textbf{(Wait2D)}
 $
 { % Consecuente
 (wait(1),s)
@@ -831,7 +879,7 @@ $
 }$
 
 \\[0.4cm]
-\textbf{(SequenceD)}
+\textbf{(SeqD)}
 $\reglaa{ % Antecedente
 (A_1,s)\xrightarrow{}_1(A'_1,s^{+})
 }
@@ -841,7 +889,7 @@ $\reglaa{ % Antecedente
 (A_1';A_2,s^{+})
 }{4}$
 
-\hspace{3.1cm}\textbf{(EmptyD)}
+\hspace{2.3cm}\textbf{(EmptyD)}
 $
 { % Consecuente
 (empty,s)
@@ -851,7 +899,7 @@ $
 
 \\[0.4cm]
 
-\textbf{(ParallelD)}
+\textbf{(ParD)}\hspace{-0.2cm}
 $\reglaa{ % Antecedente
 (A_1,s)\xrightarrow{}_1(A'_1,s^{+}) \wedge  (A_2,s)\xrightarrow{}_1(A'_2,s^{+})
 }
@@ -859,12 +907,12 @@ $\reglaa{ % Antecedente
 (A_1||A_2,s)
 \xrightarrow{}_1
 (A'_1||A'_2,s^{+})
-}{5}$
+}{5.5}$
 
 
 %\multicolumn{2}{c}{
 %}
-\hspace{1.3cm}\textbf{(InvokeD)}
+\hspace{0.2cm}\textbf{(InvD)}
 $
 { % Consecuente
 (invoke(pl,op,v_1),s)
@@ -873,13 +921,13 @@ $
 }$
 \\[0.4cm]
 
-\textbf{(ReceiveD)}
+\textbf{(RecD)}\hspace{-0.05cm}
 ${
 (receive(pl,op,v),s)
 \xrightarrow{}_1
 (receive(pl,op,v), s^{+})
 }$
-\hspace{1.3cm}\textbf{(PickD)}
+\hspace{0cm}\textbf{(PickD)}\hspace{-0.05cm}
 $
 { % Consecuente
 (pick(\{(pl_i,op_i,v_i,A_i)\}_{i=1}^n ,A,1),s)
@@ -888,7 +936,7 @@ $
 }$
 \\[0.3cm]
 
-\hspace{1.7cm}\textbf{(Pick2D)}
+\textbf{(Pick2D)}
 $\reglaa{ % Antecedente
 t>1
 }
@@ -906,7 +954,7 @@ t>1
 
 We have therefore introduced this last activity
 in our semantics to deal with the synchronous or asynchronous nature of
-the invoke activity (one-way or request-response operation, respectively), so the
+the invoke activity (one-way or request-response operation, respectively), and, therefore, the
 reply activity is optional in the syntax depicted in Table \ref{BPELsyntax}. Below, a toy example 
 is depicted to explain how it works.
 \begin{example}\label{ex1} 
@@ -923,7 +971,7 @@ According to rules {\bf invoke}, {\bf receive}, {\bf reply} and {\bf $\overline{
 
 Rules for the sequence and parallel operators are straightforward, but notice that when one of the
 arguments performs either the \emph{throw} action or the \emph{exit} action, the composite
-activity also performs this action conducting the workflow to the empty activity (rules {\bf Seq3}, {\bf Par3} and {\bf Par4}). As regards resource, rule {\bf publishResource} states that the resource and its information is added to the resource set, whereas the resource identifier (e) for this newly created resource is stored in variable vEPR, resulting in the new state $\it{s'=(\sigma[e/vEPR], \rho \cup \{O,e,val,\emptyset,t,tag,A\})}$. Time elapsing is captured by rules in Table \ref{tran2}, notice that the activities for which the passage of time is allowed are {\em wait, empty, receive, invoke} and {\em pick}.
+activity also performs this action conducting the workflow to the empty activity (rules {\bf Seq3}, {\bf Par3} and {\bf Par4}). As regards resource, rule {\bf publishResource} states that the resource and its information is added to the resource set, whereas the resource identifier (e) for this newly created resource is stored in the variable vEPR. This results in the new state $\it{s'=(\sigma[e/vEPR], \rho \cup \{O,e,val,\emptyset,t,tag,A\})}$. Time elapsing is captured by rules in Table \ref{tran2}, notice that the activities for which the passage of time is allowed are {\em wait, empty, receive, invoke} and {\em pick}.
 
 % but if $(A || (A_{ej1} ( \ldots || A_{ejm})))$ then, those event handling activities that were already in $A$ will not be spawned twice.
 %We therefore introduce the rules by using the following syntax for the activities in execution: $\it{(A,\mathcal{A}_e)}$, where ${\it A}$ represents the normal orchestrator workflow, and ${\it \mathcal{A}_e=\{A_{e_{i}}\}_{i=0}^m}$ are the handling activities in execution. Given any activity ${\it A}$, we write for short ${\it A||\mathcal{A}_e}$ to denote ${\it (A || (A_{e{_1}} ||( \ldots || A_{e{_m}})))}$. Important to note that when an event handling activity is executed the subscription condition is removed so as to avoid infinite executions on the same condition. This does not affect the expressiveness of the language since the orchestrator, which is notified, can subscribe again with the same condition
@@ -951,7 +999,7 @@ where ${\it O= (A,A_f)}$.
 \begin{table*}[!ht]
 \centering
 {\scriptsize
-\framebox[16cm]{
+\framebox[\textwidth]{
 \begin{tabular}{l}
 
 \textbf{(ORCH1)}
@@ -1010,9 +1058,8 @@ $\reglaa{ % Antecedente
 \end{tabular}
 }}
 \caption{\label{tab:noti}Action and delay transition rules for orchestrators.}
-\vspace{-0.8cm}
 \end{table*}
-\newpage
+
 
 Finally, the outermost semantic level corresponds to the choreography level, which is defined upon the two previously levels. In Table \ref{tab:coreo}, we define the corresponding transition rules for the choreography semantics. Observe that Table \ref{tab:coreo} includes rules with negatives premises, which, in principle, could pose decidability problems. Nevertheless, these premises are all observable from the syntax of the involved terms.
 
@@ -1128,79 +1175,67 @@ $\reglaa{ % Antecedente
 \end{tabular}
 }}
 \caption{\label{tab:coreo}Choreography transition rules.}
-\vspace{-0.7cm}
 \end{table*}
+As commented when we defined the types of transitions, our operational semantics evolves at three levels, the internal one corresponds to the evolution of one activity without notifications. In the second one, we state the transitions which yield the evolution of the system in the case that some notifications are triggered, whereas the third level corresponds to the composition of different orchestrators and resources. The former two parts have been covered with the operational semantics described above. Hereby, we are going to explain in the following lines how the system evolves as a whole. In the following we will denote choreography as a composition of orchestrations and their associated web services resources.
+he rule {\it Cor1}\ allows the passage of time on the
+orchestration activity in execution and in the event handling activity, whereas
+{\it Cor2-3}\, allow the evolution of the activity in execution,
+except in the case of failure. In that case, rule {\it Cor4}\,
+are used to activate the fault handling activity.
 
 
+\section{Case study: Online auction service}\label{cs}
+The case study concerns a typical online auction process, which consists of three participants:
+the online auction system and two buyers, A$_1$ and A$_2$. A seller owes a good that wants to sell to the highest possible price. Therefore, he introduces the product
+in an auction system for a certain time. Then, buyers (or bidders) may place bids for the product and, when time runs out, the highest bid wins. In our case, we suppose the resource is the product for auction, the value of the resource property is the current price (only the auction system can modify it), the resource subscribers will be the buyers, their subscription conditions hold when the current product value is higher than their bid, and the resource lifetime will be the time in which the auction is active. Finally, when the lifetime has expired, the auction system sends a notification to the buyers with the result of the process (the identifier of the winner, $v_w$) and, after that, all the processes finish. Let us consider the choreography ${\it C=(O_{sys},O_1,O_2)}$, where
+${\it O_i=(PL_i,Var_i,A_i,A_{f{_i}},\mathcal{A}_{e{_i}})}$,~i=1,2,~${\it Var_{sys}=\{v_w,v_{EPR},}$
+${\it end\_bid\}}$,~${\it Var_1=\{v_1,}$ ${\it v_{w{_1}}\},\ Var_2=\{v_2,v_{w_{2}}\},\ A_{f{_1}}=exit,}$ and
+${\it A_{f{_2}}=exit}$. Variable $v_{EPR}$ serves to temporarily store the value of the resource property before being sent; $v_1$, $v_2$, $v_{w_{}}$, $v_{w_{1}}$, $v_{w_{2}}$ are variables used for the interaction among participants, and, finally, $end\_bid$ is used to terminate the auction. Suppose ${\it s_{0{_{sys}}}, s_{0{_1}}}$ and ${\it s_{0{_2}}}$ are the initial states of $O_{sys}$, $O_1$ and $O_2$, respectively, and all the variables are initially $0$: \\[-0.2cm]
 
-%As commented when we defined the types of transitions, our operational semantics evolves at three levels, the internal one corresponds to the evolution of one activity without notifications. In the second one, we state the transitions which yield the evolution of the system in the case that some notifications are triggered, whereas the third level corresponds to the composition of different orchestrators and resources. The former two parts have been covered with the operational semantics described above. Hereby, we are going to explain in the following lines how the system evolves as a whole. In the following we will denote choreography as a composition of orchestrations and their associated web services resources.
-%
+\vspace{-0.201cm}
 
+\small
 
-%\newpage
+\noindent ${\it A_{sys}=assign(1,end\_bid);createResource(EPR,25,48,O_{sys},A_{not});}$ \\ \indent \hspace{0.35cm} ${\it while(end\_bid > 0,A_{bid})}$\\
+${\it A_1=subscribe(O_1,EPR,EPR>=0,A_{cond_{1}});while(v_{w{_1}}==0,A_{pick_{1}})}$\\
+%${\it pick((pl_1,bid\_up,v_1,reply(pl_1,v_1+rand())),(pl_1,bid\_finish,v_w,empty),empty,timeout))}$\\ and
+${\it A_2=subscribe(O_2,EPR,EPR>=0,A_{cond_{2}});while(v_{w{_2}}==0,A_{pick_{2}})}$, being:\\
+${\it A_{not}=assign(0,end\_bid);getProp(EPR,v_w);}$\\
+\indent \hspace{0.35cm} ${\it((invoke(pl_3,bid\_finish_1,v_w)||invoke(pl_4,bid\_finish_2,v_w))}$\\
+${\it A_{bid}=getProp(EPR,v_{EPR});}$ \\
+\indent  \hspace{0.35cm} ${\it  pick((pl_1,cmp,v_1,while(v_1>v_{EPR},assign(v1,v_{EPR});setProp(EPR,v_{EPR}))),}$ \\ \indent ${\it (pl_2,cmp,v_2,while(v_2>v_{EPR},assign(v2,v_{EPR}),setProp(EPR,v_{EPR}))),%}$\\\indent \hspace{0.6cm}${\it
+empty,48)}$\\
+${\it A_{cond_{1}}=getProp(EPR,v_{EPR});invoke(pl_1,{bid\_up}_1,v_{EPR})}$\\
+${\it A_{cond_{2}}=getProp(EPR,v_{EPR});invoke(pl_2,{bid\_up}_2,v_{EPR})}$\\
+${\it A_{pick_{1}}= pick((pl_1,bid\_up_1,v_1,assign(v_1,v_1+random());invoke(pl_1,cmp,v_1);}$ \\\indent \hspace{0.35cm}${\it subscribe(O_1,EPR,EPR>=v_1,A_{cond_{1}})),}$
+${\it(pl_3,bid\_finish_1,v_{w_1},empty),empty,48)}$\\
+${\it A_{pick_{2}}= pick((pl_2,bid\_up_2,v_2,assign(v_2,v_2+random());invoke(pl_2,cmp,v_2);} $\\\indent \hspace{0.35cm}${\it  subscribe(O_2,EPR,EPR>=v_2,A_{cond_{2}})),}$
+${\it(pl_4,bid\_finish_2,v_{w_2},empty),empty,48)}$\\
+%${\it A_{pick_{2}}= pick((pl_2,bid\_up_2,v_2,reply(pl_2,v_2)),}$\\
+%\indent \hspace{1cm}${\it (pl_2,bid\_finish_2,v_2,empty),empty,48)}$\\
+\\
 
-%The rule {\it Cor1}\ allows the passage of time on the
-%orchestration activity in execution and in the event handling activity, whereas
-%{\it Cor2-3}\, allow the evolution of the activity in execution,
-%except in the case of failure. In that case, rule {\it Cor4}\,
-%are used to activate the fault handling activity.
+\normalsize
+\vspace{-0.7cm}
 
-\vspace{-0.5cm}
-\section{Case Study: Automatic management system for stock market investments}\label{cs}
-The case study concerns a typical automatic management system for stock market investments, which consists of {\em 3} participants:
-the online stock market system and {\em 2} interested investors, A$_1$ and A$_2$. Here, the resource will be the stocks of a company (a bank, for instance) that the investors want to buy just in case the price falls below an established limit. This threshold is fixed previously by means of subscriptions, i.e., an investor subscribes to the resource (the stocks) with a certain guard (the value of the stocks he/she want to pay for it). The lifetime {\em lft} will be determined by the stock market system and the resource price will be fluctuating to simulate the rises/drops of the stocks. We do not take into account the stock buy process since our aim is to model an investors' information system. Thus, the participants will be notified either when their bids hold or the resource lifetime expires.
-Let us consider the choreography ${\it C=(O_{sys},O_1,O_2)}$, where
-\mbox{${\it O_k=(PL_k,Var_k,A_k,A_{f{_k}},\mathcal{A}_{e{_k}}),A_{f{_k}}=exit}$,~k=sys,~1,~2;}\\~\mbox{${\it Var_{sys}=}$}${\it \{at,vEPR,epr\}, Var_i= \{epr_i,vEPR_i,at_i\}, i=1,2}$. Hence, variables $epr,epr_1,$ $epr_2$ are used to store the identifier of the resource in each of the participants, whereas variables $vEPR,vEPR_1,vEPR_2$ contain its value. Obviously, $epr$ is initialized internally when the resource is \emph{published}, and $epr_1$ and $epr_2$ are \emph{discovered} by the buyers. Finally, $at,at_1,at_2$ control the period of time in which the auction is active. Suppose that all the variables are initially $0$:
-%\vspace{-0.3cm}
-\begin{flushleft}
-\small{
-${\it Asys=assign(24,at);publishResource(1000,24,\textrm{``bank''},empty);while(actualTime()<=at,Abid)}$\\
-${\it Abid=getProp(epr,\textrm{``value''},vEPR);assign(vEPR+bid(),vEPR);setProp(epr,vEPR);wait(1,2)}$\\% Este wait es para forzar que pase el tiempo si no el while se queda en un bucle infinito
-${\it A_1=discover(\textrm{``bank''},epr_1);getProp(epr_1,\text{``timeout''},at_1);subscribe(O_1,epr_1,value<980,}$\\% En Ws-Notification seria la condicion epr_1:value<980
-\hspace{0.9cm}${\it invoke(pl_1,buy,vEPR));pick((pl_1,buy,vEPR_1,empty),empty,at_1)}$\\
-${\it A_2=discover(\textrm{``bank''},epr_2);getProp(epr_2,\textrm{``timeout''},at_2);subscribe(O_2,epr_2,value<990,}$\\% En Ws-Notification seria la condicion epr_1:value<980
-\hspace{0.9cm}${\it invoke(pl_2,buy,vEPR));pick((pl_2,buy,vEPR_2,empty),empty,at_2)}$\\}
-\end{flushleft}
+Let us note that the operations $bid\_up_{1}$ and $bid\_up_{2}$ are used to increase the current bid by means of a random function, the operations $bid\_finish_{1}$, $bid\_finish_{2}$ update the value of $v_w$ to finish both buyers. Finally, $cmp$ is an auction system operation that receives the bids, $v_i$, and if the variable value is greater than the current value of $v_{EPR}$, then $v_{EPR}$ is updated. As well, by means of the activity $setProp(EPR,v_{EPR})$, we update the resource property.
 
-Here, the function {\it bid} is used to increase/decrease the stocks value simulating the fluctuation of the stocks price.
-%\section{Case study: Online auction service}\label{cs}
-%The case study concerns a typical online auction process, which consists of three participants:
-%the online auction system and two buyers, A$_1$ and A$_2$. A seller owes a good that wants to sell to the highest possible price. Therefore, he introduces the product
-%in an auction system for a certain time. Then, buyers (or bidders) may place bids for the product and, when time runs out, the highest bid wins. In our case, we suppose the resource is the product for auction, the value of the resource property is the current price (only the auction system can modify it), the resource subscribers will be the buyers, their subscription conditions hold when the current product value is higher than their bid, and the resource lifetime will be the time in which the auction is active. Finally, when the lifetime has expired, the auction system sends a notification to the buyers with the result of the process (the identifier of the winner, $v_w$) and, after that, all the processes finish. Let us consider the choreography ${\it C=(O_{sys},O_1,O_2)}$, where
-%${\it O_i=(PL_i,Var_i,A_i,A_{f{_i}},\mathcal{A}_{e{_i}})}$,~i=1,2,~${\it Var_{sys}=\{v_w,v_{EPR},}$
-%${\it end\_bid\}}$,~${\it Var_1=\{v_1,}$ ${\it v_{w{_1}}\},\ Var_2=\{v_2,v_{w_{2}}\},\ A_{f{_1}}=exit,}$ and
-%${\it A_{f{_2}}=exit}$. Variable $v_{EPR}$ serves to temporarily store the value of the resource property before being sent; $v_1$, $v_2$, $v_{w_{}}$, $v_{w_{1}}$, $v_{w_{2}}$ are variables used for the interaction among participants, and, finally, $end\_bid$ is used to terminate the auction. Suppose ${\it s_{0{_{sys}}}, s_{0{_1}}}$ and ${\it s_{0{_2}}}$ are the initial states of $O_{sys}$, $O_1$ and $O_2$, respectively, and all the variables are initially $0$: \\[-0.2cm]
-%
-%\vspace{-0.201cm}
-%
-%\small
-%
-%\noindent ${\it A_{sys}=assign(1,end\_bid);createResource(EPR,25,48,O_{sys},A_{not});}$ \\ \indent \hspace{0.35cm} ${\it while(end\_bid > 0,A_{bid})}$\\
-%${\it A_1=subscribe(O_1,EPR,EPR>=0,A_{cond_{1}});while(v_{w{_1}}==0,A_{pick_{1}})}$\\
-%%${\it pick((pl_1,bid\_up,v_1,reply(pl_1,v_1+rand())),(pl_1,bid\_finish,v_w,empty),empty,timeout))}$\\ and
-%${\it A_2=subscribe(O_2,EPR,EPR>=0,A_{cond_{2}});while(v_{w{_2}}==0,A_{pick_{2}})}$, being:\\
-%${\it A_{not}=assign(0,end\_bid);getProp(EPR,v_w);}$\\
-%\indent \hspace{0.35cm} ${\it((invoke(pl_3,bid\_finish_1,v_w)||invoke(pl_4,bid\_finish_2,v_w))}$\\
-%${\it A_{bid}=getProp(EPR,v_{EPR});}$ \\
-%\indent  \hspace{0.35cm} ${\it  pick((pl_1,cmp,v_1,while(v_1>v_{EPR},assign(v1,v_{EPR});setProp(EPR,v_{EPR}))),}$ \\ \indent ${\it (pl_2,cmp,v_2,while(v_2>v_{EPR},assign(v2,v_{EPR}),setProp(EPR,v_{EPR}))),%}$\\\indent \hspace{0.6cm}${\it
-%empty,48)}$\\
-%${\it A_{cond_{1}}=getProp(EPR,v_{EPR});invoke(pl_1,{bid\_up}_1,v_{EPR})}$\\
-%${\it A_{cond_{2}}=getProp(EPR,v_{EPR});invoke(pl_2,{bid\_up}_2,v_{EPR})}$\\
-%${\it A_{pick_{1}}= pick((pl_1,bid\_up_1,v_1,assign(v_1,v_1+random());invoke(pl_1,cmp,v_1);}$ \\\indent \hspace{0.35cm}${\it subscribe(O_1,EPR,EPR>=v_1,A_{cond_{1}})),}$
-%${\it(pl_3,bid\_finish_1,v_{w_1},empty),empty,48)}$\\
-%${\it A_{pick_{2}}= pick((pl_2,bid\_up_2,v_2,assign(v_2,v_2+random());invoke(pl_2,cmp,v_2);} $\\\indent \hspace{0.35cm}${\it  subscribe(O_2,EPR,EPR>=v_2,A_{cond_{2}})),}$
-%${\it(pl_4,bid\_finish_2,v_{w_2},empty),empty,48)}$\\
-%%${\it A_{pick_{2}}= pick((pl_2,bid\_up_2,v_2,reply(pl_2,v_2)),}$\\
-%%\indent \hspace{1cm}${\it (pl_2,bid\_finish_2,v_2,empty),empty,48)}$\\
-%\\
-%
-%\normalsize
-%\vspace{-0.7cm}
-%
-%Let us note that the operations $bid\_up_{1}$ and $bid\_up_{2}$ are used to increase the current bid by means of a random function, the operations $bid\_finish_{1}$, $bid\_finish_{2}$ update the value of $v_w$ to finish both buyers. Finally, $cmp$ is an auction system operation that receives the bids, $v_i$, and if the variable value is greater than the current value of $v_{EPR}$, then $v_{EPR}$ is updated. As well, by means of the activity $setProp(EPR,v_{EPR})$, we update the resource property.
-%
-%In the appendix Fig. \ref{auct} shows a part of the labeled transition system of $C$. This figure shows a trace sample where after creating the resource EPR both bidders $O_1$ and $O_2$ subscribe to this resource. Afterwards, both bidders are able to increase theirs bids by means of $bid\_up_i$ operations and therefore the auction starts. The auction process is depicted here by the states $Chor_{5}^{+n}$, $Chor_{6}^{+n}$, $Chor_{7}^{+n}$, $Chor_{8}$, $Chor_{9}$ and $Chor_{10}$. In these states, there are several actions running in parallel: $A_{bid}$, $A_{pick1}$ and $A_{pick2}$ representing the communication over the partnerlinks, $A_{cond1}$ and $A_{cond2}$ representing the bidding and $A_{not}$ to finalize the auction. The states indexed by $+n$ have a self-loop to symbolize the passage of time, whereas the transitions labeled with condition expressions control whether the timeout has expired finishing the auction with $A_{not}$.
-\subsection{Related Work}
+In Fig. \ref{auct} shows a part of the labeled transition system of $C$. This figure shows a trace sample where after creating the resource EPR both bidders $O_1$ and $O_2$ subscribe to this resource. Afterwards, both bidders are able to increase theirs bids by means of $bid\_up_i$ operations and therefore the auction starts. The auction process is depicted here by the states $Chor_{5}^{+n}$, $Chor_{6}^{+n}$, $Chor_{7}^{+n}$, $Chor_{8}$, $Chor_{9}$ and $Chor_{10}$. In these states, there are several actions running in parallel: $A_{bid}$, $A_{pick1}$ and $A_{pick2}$ representing the communication over the partnerlinks, $A_{cond1}$ and $A_{cond2}$ representing the bidding and $A_{not}$ to finalize the auction. The states indexed by $+n$ have a self-loop to symbolize the passage of time, whereas the transitions labelled with condition expressions control whether the timeout has expired finishing the auction with $A_{not}$.
+
+\begin{figure}
+\begin{center}
+    \includegraphics[angle=-90,scale=0.7]{Figures/ecows.eps}
+ %\hspace{2cm}
+  \caption{A piece of ${\it lts}(C)$ for the online auction service.}
+  \label{auct}
+\end{center}
+\end{figure}
+
+\section{Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}\label{semantics}
+
+bla bla bla
+
+{\bf Related Work}
 
 %LLL PENDIENTE
 WS-BPEL has been extensively studied with many formalisms, such as
@@ -1230,18 +1265,12 @@ recovery framework is \cite{Qiu:2005}. Although this is more focused in the comp
 that manage a Web service composition. Our work is therefore quite complete as we define rules for nearly all possible activities. In addition, we also consider time constraints. Finally, we would like to highlight the works of Farahbod et al.~\cite{Farahbod:2005} and Busi et al. \cite{Busi:2005}. In the first one, the authors extract an abstract operational semantics for BPEL based on abstract state machines (ASM) defining the framework BPEL$_{AM}$ to manage the agents who perform the workflow activities. In this approach time constraints are considered, but they do not formalize the timed model. On the other hand, the goal of the latter one is fairly similar to ours. They also define a $\pi$-calculus operational semantics for BPEL and describe a conformance notion. They present all the machinery to model Web service compositions (choreographies and orchestrations). The main difference with our work is that we deal with distributed resources. %In a similar fashion Luchi and Mazzara in \cite{Lucchi07} presents other $\pi$-calculus operational semantic, \textit{Web}$\pi_{\infty}$, which is focused on the idea of event notification as the unique error handling mechanism. It is clear that this proposal differs from ours since they focus their attention in the error handling mechanism, however their claiming of simplifying the error handling using only the notification mechanism can be performed in our proposal since this is the mechanism used in the resource framework and therefore a technique shared by WS-BPEL and WS-RF.
 
 For further details about the formalization of service oriented languages we would like to encourage the reader to review the works presented at the SENSORIA project in \cite{Wirsing2011bis}. Here, an extensive work is presented from different international research groups aimed by the common goal of providing a rigorous software engineering view point for service-oriented system using as a cornerstone the formal specification of Web Services and WS-BPEL in particular.% Works such as SOCK \cite{Wirsing2011bis}, CaSPiS \cite{Bettini2008}, COWS \cite{Lapadula2007}, B-lite \cite{Lapadula2008} or Orc \cite{Kitchin2009} are either presented or reviewed. The first one, SOCK (Service Oriented Computing Kernel \cite{Wirsing2011bis}), is a formal calculus which aims at characterizing the basic features of Service Oriented Computing and takes its inspiration from WS-BPEL, considered by the authors as the ``de facto" standard for Web Service technology. The second one, CaSPiS (Calculus of Services with Pipelines and Sessions \cite{Bettini2008}) uses the Java framework IMC. Authors take advantage of the already built-in IMC features such us session oriented and pattern matching communication mechanisms easing the task of implementing in Java all CaSPiS abstractions. Other one, COWS (Calculus for Orchestration of Web Services \cite{Lapadula2007}), is a new foundational language for SOC whose design has been influenced by WS-BPEL. COWS combines a number of elements from process calculi, e.g. asynchronous communication, polyadic synchronization, pattern matching, protection, delimited receiving and killing activities. Other one reviewed also in this book is B lite \cite{Lapadula2008}. This is a lightweight language for Web services orchestration designed around some of WS-BPEL peculiar features like partner links, process termination, message correlation, long-running business transactions and compensation handlers aiding to clarify some ambiguous aspects of the WS-BPEL specification. The last one, Orc \cite{Kitchin2009}, is not influenced by any other language used for orchestration purposes like WS-BPEL. The authors define the language as a novel language for distributed and concurrent programming which provides uniform access to computational services, including distributed communication and data manipulation, through sites. Using four simple concurrency primitives, the programmer orchestrates the invocation of sites to achieve a goal, while managing timeouts, priorities, and failures. This language uses as a basic activity the information published by a site and therefore each site invocation always finishes with one or more either nested or parallel publications.
-\section{Prioritised-Timed Coloured Petri Nets}\label{petrinet}
 
-In this section we introduce the specific model of prioritised-timed
-coloured Petri net that we consider for the translation. 
-\section{Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}\label{semantics}
 
-\subsection{Prioritised-Timed Coloured Petri Nets}
 
-We use prioritised-timed coloured Petri nets, 
-which are
+As commented in Chapter~\ref{chapter:c3}, we use prioritised-timed coloured Petri nets, 
 a prioritised-timed extension of coloured Petri nets~\cite{Jensen2009},
-the well-known model supported by CPN Tools\footnote{Official web page: http://cpntools.org/}.
+supported by the well-known toolbox CPNTools\cite{CPNTools}.
 %In this model, places have an associated colour set (data types). 
 %Each token then  has  an attached data value
 %({\em token colour}),

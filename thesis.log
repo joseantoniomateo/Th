@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  21 FEB 2014 13:12
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  24 FEB 2014 13:34
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -798,7 +798,7 @@ LaTeX Info: Redefining \subref on input line 127.
 (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux) (./chapter2.aux)
 (./chapter3.aux) (./chapter4.aux
 
-LaTeX Warning: Label `petrinet' multiply defined.
+LaTeX Warning: Label `tran1' multiply defined.
 
 
 LaTeX Warning: Label `BPELsyntax' multiply defined.
@@ -1091,7 +1091,12 @@ LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pbk/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <10> not available
 (Font)              Font shape `OT1/pbk/db/n' tried instead on input line 1.
- [5])
+ [5]
+Overfull \hbox (3.09982pt too wide) detected at line 33
+ [][]\OT1/pbk/l/n/10 100[][]
+ []
+
+)
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
@@ -1108,8 +1113,7 @@ LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <10> not available
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
-
-[9
+ [9
 
 ] [10
 
@@ -1516,224 +1520,193 @@ LaTeX Warning: Citation `Lapadula2007' on page 68 undefined on input line 40.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [69]
-Overfull \hbox (10.0546pt too wide) in paragraph at lines 72--81
+Overfull \hbox (10.0546pt too wide) in paragraph at lines 72--76
 \OT1/pbk/l/n/10 metic ex-pres-sion con-structed by us-ing the vari-ables in \OT
 1/pbk/l/it/10 VAR \OT1/pbk/l/n/10 and in-te-gers; $[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--76
+
+ []
+
+
+Overfull \hbox (1.23213pt too wide) in paragraph at lines 121--129
+[]|[]| 
  []
 
 
 Underfull \vbox (badness 1472) has occurred while \output is active []
 
  [70]
-Underfull \vbox (badness 4279) has occurred while \output is active []
-
- [71]
-Overfull \hbox (16.34383pt too wide) in paragraph at lines 88--91
-\OT1/pbk/l/n/10 for the eval-u-a-tion of $\OML/cmm/m/it/10 e$\OT1/pbk/l/n/10 , 
-and $[]$, where $[]$
- []
-
-
-Overfull \hbox (22.09734pt too wide) in paragraph at lines 92--96
-\OT1/pbk/l/n/10 de-note that there is a tu-ple $[]$ $[]$, where $[]$.
- []
-
-
-Overfull \hbox (41.16537pt too wide) in paragraph at lines 92--96
-\OT1/pbk/l/n/10 notes a change of the re-source life-time, and the func-tion $[
-]$
- []
-
-
-Overfull \hbox (90.76521pt too wide) in paragraph at lines 92--96
-\OT1/pbk/l/n/10 scriber con-di-tion holds at the cur-rent state $\OT1/cmr/m/it/
-10 s$\OT1/pbk/l/n/10 . Let s=($\OML/cmm/m/it/10 ^^[; ^^Z$\OT1/pbk/l/n/10 ) with
- $[]$,
- []
-
-
-Overfull \hbox (46.44434pt too wide) in paragraph at lines 92--96
-\OT1/pbk/l/n/10 we de-fine the func-tion $[]$ $[]$,
+[71]
+Overfull \hbox (75.00528pt too wide) in paragraph at lines 388--394
+[]|[]| 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [72]
-Overfull \hbox (33.40027pt too wide) in paragraph at lines 148--156
-[]|[]| 
- []
-
-
-Overfull \hbox (14.37999pt too wide) in paragraph at lines 208--213
-[]|[]| 
- []
-
-
-Overfull \hbox (75.00528pt too wide) in paragraph at lines 405--411
-[]|[]| 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [73]
 LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <7> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 799.
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 659.
 LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <7> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 799.
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 659.
+LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <5> not available
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 659.
+LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <5> not available
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 659.
 
-Overfull \hbox (76.62502pt too wide) in paragraph at lines 799--802
-[][]
- []
+Underfull \hbox (badness 10000) in paragraph at lines 659--661
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (65.24408pt too wide) in paragraph at lines 901--904
-[][]
  []
 
 [74]
 
-LaTeX Warning: Text page 75 contains only floats.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [75]
-Overfull \hbox (46.82411pt too wide) in paragraph at lines 924--927
-\OT1/pbk/l/n/10 stored in vari-able vEPR, re-sult-ing in the new state $[]$.
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[76]
-Overfull \hbox (65.24408pt too wide) in paragraph at lines 1011--1012
- [][] 
- []
-
+ [76]
 [77]
 LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <7> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1129.
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1176.
 
 LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <5> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1129.
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1176.
 
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 1129--1130
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1176--1177
  [][] 
  []
 
 
-Overfull \hbox (14.18213pt too wide) in paragraph at lines 1149--1149
-[]\OT1/pag/db/n/14.4 Case Study: Au-to-matic man-age-ment sys-tem for stock
+Underfull \hbox (badness 10000) in paragraph at lines 1188--1194
+
  []
-
-
-Overfull \hbox (1.01335pt too wide) in paragraph at lines 1150--1155
-[]$[]$\OT1/pbk/l/n/10 . Hence, vari-ables $\OML/cmm/m/it/10 epr; epr[];$
- []
-
-
-Underfull \vbox (badness 1231) has occurred while \output is active []
-
- [78]
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <9> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1156.
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1157.
-
-Overfull \hbox (7.5268pt too wide) in paragraph at lines 1157--1157
-[]$  
- []
-
-
-Overfull \hbox (5.08513pt too wide) in paragraph at lines 1158--1158
-[]$[]$  
- []
-
-
-LaTeX Warning: Citation `Slomiski:2006' on page 79 undefined on input line 1211
-.
-
-
-LaTeX Warning: Citation `Leymann:2006' on page 79 undefined on input line 1214.
-
-
-
-LaTeX Warning: Citation `Ezenwoye:2007' on page 79 undefined on input line 1214
-.
-
-
-LaTeX Warning: Citation `Ezenwoye:2007' on page 79 undefined on input line 1216
-.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [78]
+Underfull \vbox (badness 1412) has occurred while \output is active []
+
  [79]
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <9> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1197.
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1199.
 
-LaTeX Warning: Citation `Ouyang:2007' on page 80 undefined on input line 1219.
+Underfull \hbox (badness 10000) in paragraph at lines 1199--1217
 
-
-LaTeX Warning: Citation `Dumas:2008' on page 80 undefined on input line 1223.
-
-
-LaTeX Warning: Citation `Dragoni:2009' on page 80 undefined on input line 1223.
-
-
-
-LaTeX Warning: Citation `Qiu:2005' on page 80 undefined on input line 1229.
+ []
 
 
-LaTeX Warning: Citation `Farahbod:2005' on page 80 undefined on input line 1230
+Underfull \hbox (badness 10000) in paragraph at lines 1199--1217
+
+ []
+
+
+Overfull \hbox (0.29509pt too wide) in paragraph at lines 1221--1222
+\OT1/pbk/l/n/10 cur-rent bid by means of a ran-dom func-tion, the op-er-a-tions
+ $\OML/cmm/m/it/10 bid[]finish[]$\OT1/pbk/l/n/10 , $\OML/cmm/m/it/10 bid[]finis
+h[]$
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [80]
+File: Figures/ecows.eps Graphic file (type eps)
+
+<Figures/ecows.eps>
+
+LaTeX Warning: Citation `Slomiski:2006' on page 81 undefined on input line 1246
 .
 
 
-LaTeX Warning: Citation `Busi:2005' on page 80 undefined on input line 1230.
+LaTeX Warning: Citation `Leymann:2006' on page 81 undefined on input line 1249.
 
-[80]
 
-LaTeX Warning: Citation `Wirsing2011bis' on page 81 undefined on input line 123
-2.
 
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1244.
+LaTeX Warning: Citation `Ezenwoye:2007' on page 81 undefined on input line 1249
+.
 
-Underfull \vbox (badness 1540) has occurred while \output is active []
+
+LaTeX Warning: Citation `Ezenwoye:2007' on page 81 undefined on input line 1251
+.
+
+
+LaTeX Warning: Citation `Ouyang:2007' on page 81 undefined on input line 1254.
+
+
+LaTeX Warning: Citation `Dumas:2008' on page 81 undefined on input line 1258.
+
+
+LaTeX Warning: Citation `Dragoni:2009' on page 81 undefined on input line 1258.
+
+
+
+LaTeX Warning: Citation `Qiu:2005' on page 81 undefined on input line 1264.
+
+
+LaTeX Warning: Citation `Farahbod:2005' on page 81 undefined on input line 1265
+.
+
+
+LaTeX Warning: Citation `Busi:2005' on page 81 undefined on input line 1265.
+
+
+Underfull \vbox (badness 2469) has occurred while \output is active []
 
  [81]
-[82] [83]
-Overfull \hbox (5.0858pt too wide) in paragraph at lines 1407--1665
+[82]
+
+LaTeX Warning: Citation `Wirsing2011bis' on page 83 undefined on input line 126
+7.
+
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1291.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [83]
+[84] [85]
+Overfull \hbox (5.0858pt too wide) in paragraph at lines 1436--1694
  [] 
  []
 
 
-LaTeX Warning: Citation `wsfm2011' on page 84 undefined on input line 1703.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [84]
-[85]
-File: Figures/orchestration.eps Graphic file (type eps)
- <Figures/orchestration.eps>
-
-LaTeX Warning: Reference `fig:basicas' on page 86 undefined on input line 1784.
-
+LaTeX Warning: Citation `wsfm2011' on page 86 undefined on input line 1732.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [86]
+[87]
+File: Figures/orchestration.eps Graphic file (type eps)
+ <Figures/orchestration.eps>
 
-LaTeX Warning: Reference `fig:comm' on page 87 undefined on input line 1838.
-
-
-LaTeX Warning: Reference `fig:comm1' on page 87 undefined on input line 1838.
-
-
-LaTeX Warning: Reference `fig:comm2' on page 87 undefined on input line 1838.
+LaTeX Warning: Reference `fig:basicas' on page 88 undefined on input line 1813.
 
 
-Overfull \hbox (2.2964pt too wide) in paragraph at lines 1838--1839
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [88]
+
+LaTeX Warning: Reference `fig:comm' on page 89 undefined on input line 1867.
+
+
+LaTeX Warning: Reference `fig:comm1' on page 89 undefined on input line 1867.
+
+
+LaTeX Warning: Reference `fig:comm2' on page 89 undefined on input line 1867.
+
+
+Overfull \hbox (2.2964pt too wide) in paragraph at lines 1867--1868
 []\OT1/pbk/l/n/10 Fig. [] shows the trans-la-tion for both the in-voke/re-ceive
  and the reply/$[]$
  []
@@ -1741,31 +1714,31 @@ Overfull \hbox (2.2964pt too wide) in paragraph at lines 1838--1839
 
 Underfull \vbox (badness 5519) has occurred while \output is active []
 
- [87]
+ [89]
 
-LaTeX Warning: Citation `BPEL4WS' on page 88 undefined on input line 1859.
+LaTeX Warning: Citation `BPEL4WS' on page 90 undefined on input line 1888.
 
 File: Figures/sequence.eps Graphic file (type eps)
-<Figures/sequence.eps> [88]
+<Figures/sequence.eps> [90]
 File: Figures/paralelo.eps Graphic file (type eps)
  <Figures/paralelo.eps>
 File: Figures/pick.eps Graphic file (type eps)
  <Figures/pick.eps>
 File: Figures/while.eps Graphic file (type eps)
 
-<Figures/while.eps> [89]
+<Figures/while.eps> [91]
 
-LaTeX Warning: Text page 90 contains only floats.
+LaTeX Warning: Text page 92 contains only floats.
 
 
 Overfull \vbox (1.94916pt too high) has occurred while \output is active []
 
 
-[90]
+[92]
 File: Figures/createResource.eps Graphic file (type eps)
- <Figures/createResource.eps> [91]
+ <Figures/createResource.eps> [93]
 File: Figures/subscribe.eps Graphic file (type eps)
- <Figures/subscribe.eps> [92]
+ <Figures/subscribe.eps> [94]
 File: Figures/getProp.eps Graphic file (type eps)
 
 <Figures/getProp.eps>
@@ -1773,71 +1746,71 @@ File: Figures/setProp.eps Graphic file (type eps)
  <Figures/setProp.eps>
 File: Figures/setTime.eps Graphic file (type eps)
  <Figures/setTime.eps>
-Overfull \hbox (1.11844pt too wide) in paragraph at lines 2160--2166
+Overfull \hbox (1.11844pt too wide) in paragraph at lines 2189--2195
 []$ \OT1/pbk/l/n/10 and $[]$. Vari-able $\OML/cmm/m/it/10 v[]$ \OT1/pbk/l/n/10 
 serves
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2160--2166
+Underfull \hbox (badness 10000) in paragraph at lines 2189--2195
 
  []
 
 
 Underfull \vbox (badness 2608) has occurred while \output is active []
 
- [93]
-Underfull \hbox (badness 10000) in paragraph at lines 2168--2236
+ [95]
+Underfull \hbox (badness 10000) in paragraph at lines 2197--2265
 
  []
 
 
 Underfull \vbox (badness 1953) has occurred while \output is active []
 
- [94]
+ [96]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [95]
+ [97]
 File: Figures/casestudy.eps Graphic file (type eps)
 
 <Figures/casestudy.eps>
 
-LaTeX Warning: Citation `Carbone2006' on page 96 undefined on input line 2256.
+LaTeX Warning: Citation `Carbone2006' on page 98 undefined on input line 2285.
 
 
-LaTeX Warning: Citation `Dong2006' on page 96 undefined on input line 2256.
+LaTeX Warning: Citation `Dong2006' on page 98 undefined on input line 2285.
 
 
-LaTeX Warning: Citation `Foster2007' on page 96 undefined on input line 2256.
+LaTeX Warning: Citation `Foster2007' on page 98 undefined on input line 2285.
 
 
-LaTeX Warning: Citation `Yang2008' on page 96 undefined on input line 2256.
+LaTeX Warning: Citation `Yang2008' on page 98 undefined on input line 2285.
 
-[96]
+[98]
 
-LaTeX Warning: Citation `Wing1990' on page 97 undefined on input line 2260.
+LaTeX Warning: Citation `Wing1990' on page 99 undefined on input line 2289.
 
 
-LaTeX Warning: Citation `Peled2001' on page 97 undefined on input line 2260.
+LaTeX Warning: Citation `Peled2001' on page 99 undefined on input line 2289.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [97]
+ [99]
 
-LaTeX Warning: Reference `c4' on page 98 undefined on input line 2276.
+LaTeX Warning: Reference `c4' on page 100 undefined on input line 2305.
 
-) [98]
+) [100]
 \openout2 = `chapter5.aux'.
 
  (./chapter5.tex
 Chapter 5.
-) [99
+) [101
 
 
 
 
-] [100
+] [102
 
 
 ]
@@ -1845,14 +1818,14 @@ Chapter 5.
 
  (./Conclusions.tex
 Chapter 6.
-) [101
+) [103
 
 
 ]
 
-LaTeX Warning: Reference `c6' on page 102 undefined on input line 285.
+LaTeX Warning: Reference `c6' on page 104 undefined on input line 285.
 
-[102
+[104
 
 
 ] (./thesis.bbl
@@ -1878,13 +1851,13 @@ Missing character: There is no ¶ in font pbkl7t!
 Missing character: There is no â in font pbkl7t!
 Missing character: There is no € in font pbkl7t!
 Missing character: There is no “ in font pbkl7t!
-[103
+[105
 
 ]
 
-LaTeX Warning: Reference `c6' on page 104 undefined on input line 122.
+LaTeX Warning: Reference `c6' on page 106 undefined on input line 122.
 
-[104]
+[106]
 Underfull \hbox (badness 10000) in paragraph at lines 168--173
 []\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
  []
@@ -1905,17 +1878,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--173
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
-[105]
+[107]
 
-LaTeX Warning: Reference `c6' on page 106 undefined on input line 241.
+LaTeX Warning: Reference `c6' on page 108 undefined on input line 241.
 
-[106]
+[108]
 Underfull \hbox (badness 4846) in paragraph at lines 292--295
 []\OT1/pbk/l/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
 2004.
  []
 
-) (./thesis.bbl [107] [108
+) (./thesis.bbl [109] [110
 
 ]
 Underfull \hbox (badness 1377) in paragraph at lines 8--12
@@ -1937,7 +1910,7 @@ Missing character: There is no ¶ in font pbkl7t!
 Missing character: There is no â in font pbkl7t!
 Missing character: There is no € in font pbkl7t!
 Missing character: There is no “ in font pbkl7t!
-[109] [110]
+[111] [112]
 Underfull \hbox (badness 10000) in paragraph at lines 168--173
 []\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
  []
@@ -1958,13 +1931,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--173
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
-[111] [112]
+[113] [114]
 Underfull \hbox (badness 4846) in paragraph at lines 292--295
 []\OT1/pbk/l/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
 2004.
  []
 
-) [113] [114
+) [115] [116
 
 ] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
 (./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux)
@@ -1977,12 +1950,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17997 strings out of 495062
- 302839 string characters out of 1182644
- 414134 words of memory out of 3000000
- 20650 multiletter control sequences out of 15000+50000
- 32639 words of font info for 96 fonts, out of 3000000 for 9000
+ 18000 strings out of 495062
+ 302862 string characters out of 1182644
+ 405962 words of memory out of 3000000
+ 20652 multiletter control sequences out of 15000+50000
+ 33072 words of font info for 97 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,28n,92p,2750b,1825s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (126 pages, 582544 bytes).
+Output written on thesis.dvi (128 pages, 590336 bytes).

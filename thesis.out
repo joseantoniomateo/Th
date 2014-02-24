@@ -21,18 +21,15 @@
 \BOOKMARK [0][-]{chapter.4}{BPELRF}{}
 \BOOKMARK [1][-]{section.4.1}{Related Work}{chapter.4}
 \BOOKMARK [1][-]{section.4.2}{Syntax and semantics of BPEL+RF}{chapter.4}
-\BOOKMARK [1][-]{section.4.3}{Case Study: Automatic management system for stock market investments}{chapter.4}
-\BOOKMARK [2][-]{subsection.4.3.1}{Related Work}{section.4.3}
-\BOOKMARK [1][-]{section.4.4}{Prioritised-Timed Coloured Petri Nets}{chapter.4}
-\BOOKMARK [1][-]{section.4.5}{Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{chapter.4}
-\BOOKMARK [2][-]{subsection.4.5.1}{Prioritised-Timed Coloured Petri Nets}{section.4.5}
-\BOOKMARK [2][-]{subsection.4.5.2}{PTCPN Semantics for WSRF/BPEL}{section.4.5}
-\BOOKMARK [2][-]{subsection.4.5.3}{Basic activities}{section.4.5}
-\BOOKMARK [2][-]{subsection.4.5.4}{Ordering structures}{section.4.5}
-\BOOKMARK [2][-]{subsection.4.5.5}{WSRF-compliant}{section.4.5}
-\BOOKMARK [1][-]{section.4.6}{Case study: Online auction service}{chapter.4}
-\BOOKMARK [1][-]{section.4.7}{Formal Analysis of Web Service Compositions}{chapter.4}
-\BOOKMARK [1][-]{section.4.8}{Summary}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{Case study: Online auction service}{chapter.4}
+\BOOKMARK [1][-]{section.4.4}{Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.4.1}{PTCPN Semantics for WSRF/BPEL}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.2}{Basic activities}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.3}{Ordering structures}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.4}{WSRF-compliant}{section.4.4}
+\BOOKMARK [1][-]{section.4.5}{Case study: Online auction service}{chapter.4}
+\BOOKMARK [1][-]{section.4.6}{Formal Analysis of Web Service Compositions}{chapter.4}
+\BOOKMARK [1][-]{section.4.7}{Summary}{chapter.4}
 \BOOKMARK [0][-]{chapter.5}{Timed-arc workflow nets}{}
 \BOOKMARK [0][-]{chapter.6}{Conclusions, Contributions and Future Works}{}
-\BOOKMARK [0][-]{appendix*.45}{Bibliography}{}
+\BOOKMARK [0][-]{appendix*.47}{Bibliography}{}
