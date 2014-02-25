@@ -1415,321 +1415,324 @@ captures the integration of BPEL and WSRF.
 A system for our purposes consists of a set of orchestrators
 that run in parallel using a set of distributed resources.
 Orchestrators relate with one another by
-invoking the services they respectively provide.
-This set of orchestrators and resources is here called a {\em choreography}. We use the following notation: {\it ORCH} is the set of orchestrators in the system, {\it Var} is the set of integer variable names, {\it PL} is the set of partnerlinks, {\it OPS} is the set of operation names that can be performed, {\it EPRS} is the set of resource identifiers, and {\it A} is the set of basic or structured activities that can form the body of a process. 
+invoking the services they respectively provide. We will reuse the same syntax as in the operational semantics presented previously.
 
-An orchestrator $O$ is defined as a 
-tuple ${\it O = ({\it PL}, {\it Vars}, A, A_f, \mathcal{A}_e)}$, 
-where ${\it PL}$ are the partnerlinks this orchestrator 
-uses to communicate with others, ${\it Vars}$ is the set of
-local variables of this orchestrator,
-$A$ and $A_f$ are activities of WS-BPEL and WSRF, 
-and $\mathcal{A}_e$ is a set of activities. Specifically, $A$ 
-represents the normal workflow, $A_f$ is the orchestrator fault 
-handling activity and $\mathcal{A}_e=\{A_{e_{i}}\}_{i=1}^m$ are the 
-event handling activities. 
-{\renewcommand{\arraystretch}{0.8}
-\begin{table}%[!ht]
-{
-\tiny
-\begin{center}
-\begin{tabular}{|p{8.5cm}|p{4.5cm}|}
-\hline
-\cellcolor[gray]{.9}~ & \cellcolor[gray]{.9}~ \\
-%\rowcolor[gray]{.9}
-%\multicolumn{1}{>{\rowcolor[gray]{.9}}c|}{WS-CDL Syntax} & Metamodel\\
-\cellcolor[gray]{.9}\hspace*{3.3cm}WS-BPEL/WSRF Syntax & \cellcolor[gray]{.9}\hspace*{1.7cm}Model\\
-\cellcolor[gray]{.9}~ & \cellcolor[gray]{.9}~ \\
-\hline
+% Comentado pq ya está definido
 
-\begin{flushleft}
-\vspace{-0.2cm}
-$<$process ...$>$\\
-~~$<$partnerLinks$>$ ... $<$/partnerLinks$>$?\\
-~~$<$Variables$>$ ... $<$/Variables$>$?\\
-~~$<$faultHandlers$>$ ... $<$/faultHandlers$>$?\\
-~~$<$eventHandlers$>$ ... $<$/eventHandlers$>$?\\
-~~~~~(activities)*\\
-$<$/process$>$\\
+%This set of orchestrators and resources is here called a {\em choreography}. We use the following notation: {\it ORCH} is the set of orchestrators in the system, {\it Var} is the set of integer variable names, {\it PL} is the set of partnerlinks, {\it OPS} is the set of operation names that can be performed, {\it EPRS} is the set of resource identifiers, and {\it A} is the set of basic or structured activities that can form the body of a process. 
+
+%An orchestrator $O$ is defined as a 
+%tuple ${\it O = ({\it PL}, {\it Vars}, A, A_f, \mathcal{A}_e)}$, 
+%where ${\it PL}$ are the partnerlinks this orchestrator 
+%uses to communicate with others, ${\it Vars}$ is the set of
+%local variables of this orchestrator,
+%$A$ and $A_f$ are activities of WS-BPEL and WSRF, 
+%and $\mathcal{A}_e$ is a set of activities. Specifically, $A$ 
+%represents the normal workflow, $A_f$ is the orchestrator fault 
+%handling activity and $\mathcal{A}_e=\{A_{e_{i}}\}_{i=1}^m$ are the 
+%event handling activities. 
+%{\renewcommand{\arraystretch}{0.8}
+%\begin{table}%[!ht]
+%{
+%\tiny
+%\begin{center}
+%\begin{tabular}{|p{8.5cm}|p{4.5cm}|}
+%\hline
+%\cellcolor[gray]{.9}~ & \cellcolor[gray]{.9}~ \\
+%%\rowcolor[gray]{.9}
+%%\multicolumn{1}{>{\rowcolor[gray]{.9}}c|}{WS-CDL Syntax} & Metamodel\\
+%\cellcolor[gray]{.9}\hspace*{3.3cm}WS-BPEL/WSRF Syntax & \cellcolor[gray]{.9}\hspace*{1.7cm}Model\\
+%\cellcolor[gray]{.9}~ & \cellcolor[gray]{.9}~ \\
+%\hline
+%
+%\begin{flushleft}
+%\vspace{-0.2cm}
+%$<$process ...$>$\\
+%~~$<$partnerLinks$>$ ... $<$/partnerLinks$>$?\\
+%~~$<$Variables$>$ ... $<$/Variables$>$?\\
+%~~$<$faultHandlers$>$ ... $<$/faultHandlers$>$?\\
+%~~$<$eventHandlers$>$ ... $<$/eventHandlers$>$?\\
+%~~~~~(activities)*\\
+%$<$/process$>$\\
+%%~
+%\end{flushleft}
+%& 
+%\begin{center}
+%\vspace{0.2cm}
+%(PL,Var,A,A$_f$,$\mathcal{A}_e$)
+%\end{center}\\
+%\hline
+%
+%\begin{tabular}{l}
+%~\\
+%$<$throw/$>$/any fault
+%\end{tabular}
+%& \begin{center}
+%\vspace{-0.4cm}
+%throw
+%\end{center}\\
+%\hline
+%
+%
+%\begin{tabular}{l}
+%~\\
+%$<$receive partnerLink=``pl'' 
+%operation=``op''
+%variable=``v''
+%createInstance=``no''$>$\\
+%$<$/receive$>$\\
+%~\end{tabular}
+%& 
+%\begin{center}
+%\vspace{-0.5cm}
+%receive(pl,op,v)
+%\end{center}\\
+%\hline
+%
+%
+%\begin{tabular}{l}
+%~\\
+%$<$reply partnerLink=``pl'' variable=``v''$>$
+%$<$/reply$>$\\
+%~\end{tabular}
+%& 
+%\begin{center}
+%\vspace{-0.5cm}
+%reply(pl,v)
+%\end{center}\\
+%\hline
+%
+%
+%\begin{tabular}{l}
+%~\\
+%$<$invoke partnerLink=``pl'' \\ 
+%operation=``op''\\
+%inputVariable=``v$_{1}$''\\
+%outputVariable=``v$_{2}$''?$>$
+%$<$/invoke$>$\\
+%~\end{tabular}
+%&
+%
+%\begin{center}
+%\vspace{-0.5cm}
+%invoke(pl,op,v$_{1}$);
+%$[\overline{reply}$(pl,op,v$_2$)]\\
+%
+%\end{center}\\
+%\hline
+%
+%\begin{tabular}{l}
+%~\\
+%$<$empty$>$~\ldots~$<$/empty$>$\\
+%~\end{tabular}
+%& \begin{center}\vspace{-0.5cm}empty\end{center}\\
+%\hline
+%
+%\begin{tabular}{l}
+%~\\
+%$<$exit$>$~\ldots~$<$/exit$>$\\
+%~\end{tabular}
+%& \begin{center}\vspace{-0.5cm}exit \end{center}\\
+%\hline
+%
+%
+%\begin{tabular}{l}
+%~\\
+%$<$assign$>$$<$copy$>$$<$from$>$expr$<$/from$>$$<$to$>$v$_1$$<$/to$>$$<$/copy$>$$<$/assign$>$\\
+%~\\
+%\end{tabular}
+%& 
+%\begin{center}
+%\vspace{-0.5cm}
+%assign(expr,v$_{1}$)
+%\end{center}\\
+%\hline
+%
+%\begin{tabular}{l}
+%~\\
+%$<$wait$>$$<$from$>$a$<$/from$>$$<$to$>$b$<$/to$>$ $<$/wait$>$\\
+%~\end{tabular}
+%& 
+%\begin{center}
+%\vspace{-0.5cm}
+%wait(a,b)
+%\end{center}\\
+%\hline
+%
+%
+%% SEQUENCE AND PARALLEL
+%%
+%\begin{tabular}{c|c}
+%%
+%% SEQUENCE
+%\begin{tabular}{l}
+%~\\
+%$<$sequence$>$\\
+%~~~activity$_1$\\
+%~~~activity$_2$\\
+%$<$/sequence$>$\\
 %~
-\end{flushleft}
-& 
-\begin{center}
-\vspace{0.2cm}
-(PL,Var,A,A$_f$,$\mathcal{A}_e$)
-\end{center}\\
-\hline
-
-\begin{tabular}{l}
-~\\
-$<$throw/$>$/any fault
-\end{tabular}
-& \begin{center}
-\vspace{-0.4cm}
-throw
-\end{center}\\
-\hline
-
-
-\begin{tabular}{l}
-~\\
-$<$receive partnerLink=``pl'' 
-operation=``op''
-variable=``v''
-createInstance=``no''$>$\\
-$<$/receive$>$\\
-~\end{tabular}
-& 
-\begin{center}
-\vspace{-0.5cm}
-receive(pl,op,v)
-\end{center}\\
-\hline
-
-
-\begin{tabular}{l}
-~\\
-$<$reply partnerLink=``pl'' variable=``v''$>$
-$<$/reply$>$\\
-~\end{tabular}
-& 
-\begin{center}
-\vspace{-0.5cm}
-reply(pl,v)
-\end{center}\\
-\hline
-
-
-\begin{tabular}{l}
-~\\
-$<$invoke partnerLink=``pl'' \\ 
-operation=``op''\\
-inputVariable=``v$_{1}$''\\
-outputVariable=``v$_{2}$''?$>$
-$<$/invoke$>$\\
-~\end{tabular}
-&
-
-\begin{center}
-\vspace{-0.5cm}
-invoke(pl,op,v$_{1}$);
-$[\overline{reply}$(pl,op,v$_2$)]\\
-
-\end{center}\\
-\hline
-
-\begin{tabular}{l}
-~\\
-$<$empty$>$~\ldots~$<$/empty$>$\\
-~\end{tabular}
-& \begin{center}\vspace{-0.5cm}empty\end{center}\\
-\hline
-
-\begin{tabular}{l}
-~\\
-$<$exit$>$~\ldots~$<$/exit$>$\\
-~\end{tabular}
-& \begin{center}\vspace{-0.5cm}exit \end{center}\\
-\hline
-
-
-\begin{tabular}{l}
-~\\
-$<$assign$>$$<$copy$>$$<$from$>$expr$<$/from$>$$<$to$>$v$_1$$<$/to$>$$<$/copy$>$$<$/assign$>$\\
-~\\
-\end{tabular}
-& 
-\begin{center}
-\vspace{-0.5cm}
-assign(expr,v$_{1}$)
-\end{center}\\
-\hline
-
-\begin{tabular}{l}
-~\\
-$<$wait$>$$<$from$>$a$<$/from$>$$<$to$>$b$<$/to$>$ $<$/wait$>$\\
-~\end{tabular}
-& 
-\begin{center}
-\vspace{-0.5cm}
-wait(a,b)
-\end{center}\\
-\hline
-
-
-% SEQUENCE AND PARALLEL
+%\end{tabular}
+%&
+%% PARALLEL
+%%
+%~~\begin{tabular}{l}
+%~\\
+%$<$flow$>$\\
+%~~~activity$_1$\\
+%~~~activity$_2$\\
+%$<$/flow$>$\\
+%~
+%\end{tabular}~~
+%\end{tabular}
+%&
+%\begin{tabular}{c}
+%~\\
+%\hspace{1.5cm}A$_1 \,; \,$ A$_2$\\
+%~\\
+%\hspace{1.5cm}-----------------
+%~\\
+%\hspace{1.5cm}A$_1 \,\| \,$ A$_2$\\
+%~\\
+%\end{tabular}\\
+%\hline
 %
-\begin{tabular}{c|c}
 %
-% SEQUENCE
-\begin{tabular}{l}
-~\\
-$<$sequence$>$\\
-~~~activity$_1$\\
-~~~activity$_2$\\
-$<$/sequence$>$\\
-~
-\end{tabular}
-&
-% PARALLEL
 %
-~~\begin{tabular}{l}
-~\\
-$<$flow$>$\\
-~~~activity$_1$\\
-~~~activity$_2$\\
-$<$/flow$>$\\
-~
-\end{tabular}~~
-\end{tabular}
-&
-\begin{tabular}{c}
-~\\
-\hspace{1.5cm}A$_1 \,; \,$ A$_2$\\
-~\\
-\hspace{1.5cm}-----------------
-~\\
-\hspace{1.5cm}A$_1 \,\| \,$ A$_2$\\
-~\\
-\end{tabular}\\
-\hline
-
-
-
-\begin{tabular}{l}
-~\\
-$<$while$>$$<$condition$>$cond$<$/condition$>$activity$_1$$<$/while$>$\\
-~\end{tabular}
-& \begin{center}\vspace{-0.5cm}while(cond,A)\end{center}\\
-\hline
-
-
-\begin{tabular}{l}
-~\\
-$<$pick createInstance=``no''$>$\\
-~~$<$onMessage partnerLink=``pl'' operation=``op''variable=``v''$>$\\
-~~~~activity$_1$\\
-~~$<$/onMessage$>$\\
-~~$<$onAlarm$>$$<$for$>$timeout$<$/for$>$activity$_1$$<$/onAlarm$>$ \\
-$<$/pick$>$\\
-~\end{tabular}
-& \begin{center}\vspace{-0.5cm}pick($\{(pl_i,op_i,v_i,A_i)\}_{i=1}^n,A$,timeout)\end{center}\\
-\hline
-
-\begin{tabular}{l}
-~\\
-$<$invoke partnerLink=``Factory''operation=``CreateResource''\\
-inputVariable=``val,timeout'' outputVariable=``EPR''$>$\\
-$<$/invoke$>$$<$assign$>$$<$copy$>$$<$from variable=``EPR''$>$part=``ref''\\
-query=``/test:CreateOut/wsa:endpointreference''$<$/from$>$\\ 
-$<$to$>$ partnerlink=``Factory''$<$/to$>$$<$/copy$>$$<$/assign$>$\\
-~\end{tabular}
-& \begin{center}\vspace{-0.5cm}createResource(EPR,val,timeout,A)\end{center}\\
-\hline
-
-\begin{tabular}{l}
-~\\
-$<$wsrp:GetResourceProperty$>$\\
-~~$<$wsa:Address$>$EPR$</$wsa:Address$>$\\
-~~~~~~~~~~variable\_identifier\\
-$<$/wsrp:GetResourceProperty$>$\\
-\end{tabular}
-& \begin{center}\vspace{-0.48cm}getProp(EPR,v)\end{center}\\
-\hline
-
-\begin{tabular}{l}
-~\\
-$<$wsrp:SetResourceProperties$>$\\
-~~$<$wsa:Address$>$EPR$</$wsa:Address$>$\\
-~~$<$wsrp:Update$>$expression$<$/wsrp:Update$>$ \\
-$</$wsrp:SetResourceProperties$>$\\
-~
-\end{tabular}
-&
-\begin{center}\vspace{-0.5cm}setProp(EPR,expr)\end{center}\\
-\hline
-
-\begin{tabular}{l}
-~\\
-$<$wsrl:SetTerminationTime$>$\\
-~~$<$wsa:Address$>$EPR$</$wsa:Address$>$\\
-~~$<$wsrl:RequestedTerminationTime$>$\\
-~~~~timeout\\
-~~$<$/wsrl:RequestedTerminationTime$>$\\
-$<$/wsrl:SetTerminationTime$>$\\
-~
-\end{tabular}
-& \begin{center}\vspace{-0.5cm}setTimeout(EPR,timeout)\end{center}\\
-\hline
-
-\begin{tabular}{l}
-~\\
-$<$wsnt:Subscribe$>$\\
-%~~$<$wsnt:ConsumerReference$>$O$<$/wsnt: ConsumerReference$>$\\
-~~$<$wsnt:ProducerReference$>$EPR$<$/wsnt: ProducerReference$>$\\
-~~$<$wsnt:Precondition$>$cond$'$$<$/Precondition$>$\\
-%~~$<$wsnt:InitialTerminationTime$>$timeout$<$/wsnt:InitialTerminationTime$>$\\
-$<$/wsnt:Subscribe$>$\\
-~
-\end{tabular}
-& \begin{center}\vspace{-0.5cm}subscribe(EPR,cond$'$,A)\end{center}\\
-\hline
-
-% Notify esta dentro del metamodelo?¿?
-
-\begin{tabular}{l}
-~\\
-$<$wsnt:Notify$>$\\
-~$<$wsnt:NotificationMessage$>$\\
-~~$<$wsnt:ProducerReference$>$$EPR$$<$/wsnt:ProducerReference$>$\\ 
-~~$<$wsnt:Message$>$~~...~~$<$/wsnt:Message$>$\\
-~$<$/wsnt:NotificationMessage$>$\\
-$<$/wsnt:Notify$>$\\
-~
-\end{tabular}
-& \hspace{0.2cm}Executes the associated event handler activity\\
-\hline
-
-\end{tabular}
-\end{center}
-}
-\vspace{-0.2cm}
-\caption{\label{BPELsyntax}Conversion table}
-\vspace{-1cm}
-\end{table}}
-
-Activities in BPEL-WSRF follow the syntax defined by the following
-BNF expression (see Table \ref{BPELsyntax} for the
-equivalence with the XML syntax of BPEL and WSRF):
-\vspace{-0.2cm}  
-\[\begin{array}{l}
-  A ::=  {\it throw} \;|\;           % go to the exception block
-         {\it receive}(pl,op,v) \;|\;  % receive basic activity,
-         {\it invoke}(pl,op,v_1) \;|\;
-         {\it exit}\;|\;\\\
-         {\it reply}(pl,v)\;|\;  % reply basic activity
-         {\it \overline{reply}(pl,op,v_2)}\;|\; 
-         {\it assign}(expr,v_1) \;|\;
-                %~~~~~~~
-         {\it empty}\;|\;\\
-         \,\,A \,; A \,\, \;|\, % Sequence
-         \;A \,\| \, A \;\,|\,   % parallel
-         {\it while}(cond,A)\;|\
-         {\it wait}(a,b)\hspace{-0.1cm}\;|\;\\
-         {\it pick}(\{(pl_i,op_i,v_i,A_i)\}_{i=1}^n,A,timeout)\;|\;
-         {\it getProp}(EPR,v)\hspace{-0.1cm}\;|\;\\
-         {\it createResource}(EPR,val,timeout,A)\;|\;\\
-         {\it setProp}(EPR,expr)\;|\;
-         {\it setTimeout}(EPR,timeout)\;|\;\\
-         {\it subscribe}(EPR,cond',A)
-         %{\it notify}(EPR,A)
-\end{array}
-\]
-\vspace{-0.1cm}
-\noindent \hspace{0.4cm}where ${\it O \in ORCH, EPR \in EPRS , pl,pl_{i} \in PL, op,op_{i}}$ ${\it \in OPS, a,b \in \nnul,a\leq b,} \\ {\it  expr}$ is an arithmetic expression constructed by using the variables in {\it Var} and integers; ${\it v,v_1,v_2,v_i}$ range over {\it Var}, and ${\it val \in \entero}$. A condition ${\it cond}$ is a predicate constructed by using conjunctions, disjunctions, and negations over the set of variables ${\it Var}$ and integers, whereas ${\it cond'}$ is a predicate constructed by using the corresponding ${\it EPR}$ (as the resource value) and integers. Notice that \emph{setProp} and \emph{getProp} do not contain the property name since, for simplicity, 
-we are only considering a single property for each resource.
-We therefore use its EPR as representative of this property. It is worth noting that we have previously presented an operational semantics for this language in the previous
-work~\cite{wsfm2011}.
+%\begin{tabular}{l}
+%~\\
+%$<$while$>$$<$condition$>$cond$<$/condition$>$activity$_1$$<$/while$>$\\
+%~\end{tabular}
+%& \begin{center}\vspace{-0.5cm}while(cond,A)\end{center}\\
+%\hline
+%
+%
+%\begin{tabular}{l}
+%~\\
+%$<$pick createInstance=``no''$>$\\
+%~~$<$onMessage partnerLink=``pl'' operation=``op''variable=``v''$>$\\
+%~~~~activity$_1$\\
+%~~$<$/onMessage$>$\\
+%~~$<$onAlarm$>$$<$for$>$timeout$<$/for$>$activity$_1$$<$/onAlarm$>$ \\
+%$<$/pick$>$\\
+%~\end{tabular}
+%& \begin{center}\vspace{-0.5cm}pick($\{(pl_i,op_i,v_i,A_i)\}_{i=1}^n,A$,timeout)\end{center}\\
+%\hline
+%
+%\begin{tabular}{l}
+%~\\
+%$<$invoke partnerLink=``Factory''operation=``CreateResource''\\
+%inputVariable=``val,timeout'' outputVariable=``EPR''$>$\\
+%$<$/invoke$>$$<$assign$>$$<$copy$>$$<$from variable=``EPR''$>$part=``ref''\\
+%query=``/test:CreateOut/wsa:endpointreference''$<$/from$>$\\ 
+%$<$to$>$ partnerlink=``Factory''$<$/to$>$$<$/copy$>$$<$/assign$>$\\
+%~\end{tabular}
+%& \begin{center}\vspace{-0.5cm}createResource(EPR,val,timeout,A)\end{center}\\
+%\hline
+%
+%\begin{tabular}{l}
+%~\\
+%$<$wsrp:GetResourceProperty$>$\\
+%~~$<$wsa:Address$>$EPR$</$wsa:Address$>$\\
+%~~~~~~~~~~variable\_identifier\\
+%$<$/wsrp:GetResourceProperty$>$\\
+%\end{tabular}
+%& \begin{center}\vspace{-0.48cm}getProp(EPR,v)\end{center}\\
+%\hline
+%
+%\begin{tabular}{l}
+%~\\
+%$<$wsrp:SetResourceProperties$>$\\
+%~~$<$wsa:Address$>$EPR$</$wsa:Address$>$\\
+%~~$<$wsrp:Update$>$expression$<$/wsrp:Update$>$ \\
+%$</$wsrp:SetResourceProperties$>$\\
+%~
+%\end{tabular}
+%&
+%\begin{center}\vspace{-0.5cm}setProp(EPR,expr)\end{center}\\
+%\hline
+%
+%\begin{tabular}{l}
+%~\\
+%$<$wsrl:SetTerminationTime$>$\\
+%~~$<$wsa:Address$>$EPR$</$wsa:Address$>$\\
+%~~$<$wsrl:RequestedTerminationTime$>$\\
+%~~~~timeout\\
+%~~$<$/wsrl:RequestedTerminationTime$>$\\
+%$<$/wsrl:SetTerminationTime$>$\\
+%~
+%\end{tabular}
+%& \begin{center}\vspace{-0.5cm}setTimeout(EPR,timeout)\end{center}\\
+%\hline
+%
+%\begin{tabular}{l}
+%~\\
+%$<$wsnt:Subscribe$>$\\
+%%~~$<$wsnt:ConsumerReference$>$O$<$/wsnt: ConsumerReference$>$\\
+%~~$<$wsnt:ProducerReference$>$EPR$<$/wsnt: ProducerReference$>$\\
+%~~$<$wsnt:Precondition$>$cond$'$$<$/Precondition$>$\\
+%%~~$<$wsnt:InitialTerminationTime$>$timeout$<$/wsnt:InitialTerminationTime$>$\\
+%$<$/wsnt:Subscribe$>$\\
+%~
+%\end{tabular}
+%& \begin{center}\vspace{-0.5cm}subscribe(EPR,cond$'$,A)\end{center}\\
+%\hline
+%
+%% Notify esta dentro del metamodelo?¿?
+%
+%\begin{tabular}{l}
+%~\\
+%$<$wsnt:Notify$>$\\
+%~$<$wsnt:NotificationMessage$>$\\
+%~~$<$wsnt:ProducerReference$>$$EPR$$<$/wsnt:ProducerReference$>$\\ 
+%~~$<$wsnt:Message$>$~~...~~$<$/wsnt:Message$>$\\
+%~$<$/wsnt:NotificationMessage$>$\\
+%$<$/wsnt:Notify$>$\\
+%~
+%\end{tabular}
+%& \hspace{0.2cm}Executes the associated event handler activity\\
+%\hline
+%
+%\end{tabular}
+%\end{center}
+%}
+%\vspace{-0.2cm}
+%\caption{\label{BPELsyntax}Conversion table}
+%\vspace{-1cm}
+%\end{table}}
+%
+%Activities in BPEL-WSRF follow the syntax defined by the following
+%BNF expression (see Table \ref{BPELsyntax} for the
+%equivalence with the XML syntax of BPEL and WSRF):
+%\vspace{-0.2cm}  
+%\[\begin{array}{l}
+%  A ::=  {\it throw} \;|\;           % go to the exception block
+%         {\it receive}(pl,op,v) \;|\;  % receive basic activity,
+%         {\it invoke}(pl,op,v_1) \;|\;
+%         {\it exit}\;|\;\\\
+%         {\it reply}(pl,v)\;|\;  % reply basic activity
+%         {\it \overline{reply}(pl,op,v_2)}\;|\; 
+%         {\it assign}(expr,v_1) \;|\;
+%                %~~~~~~~
+%         {\it empty}\;|\;\\
+%         \,\,A \,; A \,\, \;|\, % Sequence
+%         \;A \,\| \, A \;\,|\,   % parallel
+%         {\it while}(cond,A)\;|\
+%         {\it wait}(a,b)\hspace{-0.1cm}\;|\;\\
+%         {\it pick}(\{(pl_i,op_i,v_i,A_i)\}_{i=1}^n,A,timeout)\;|\;
+%         {\it getProp}(EPR,v)\hspace{-0.1cm}\;|\;\\
+%         {\it createResource}(EPR,val,timeout,A)\;|\;\\
+%         {\it setProp}(EPR,expr)\;|\;
+%         {\it setTimeout}(EPR,timeout)\;|\;\\
+%         {\it subscribe}(EPR,cond',A)
+%         %{\it notify}(EPR,A)
+%\end{array}
+%\]
+%\vspace{-0.1cm}
+%\noindent \hspace{0.4cm}where ${\it O \in ORCH, EPR \in EPRS , pl,pl_{i} \in PL, op,op_{i}}$ ${\it \in OPS, a,b \in \nnul,a\leq b,} \\ {\it  expr}$ is an arithmetic expression constructed by using the variables in {\it Var} and integers; ${\it v,v_1,v_2,v_i}$ range over {\it Var}, and ${\it val \in \entero}$. A condition ${\it cond}$ is a predicate constructed by using conjunctions, disjunctions, and negations over the set of variables ${\it Var}$ and integers, whereas ${\it cond'}$ is a predicate constructed by using the corresponding ${\it EPR}$ (as the resource value) and integers. Notice that \emph{setProp} and \emph{getProp} do not contain the property name since, for simplicity, 
+%we are only considering a single property for each resource.
+%We therefore use its EPR as representative of this property. It is worth noting that we have previously presented an operational semantics for this language in the previous
+%work~\cite{wsfm2011}.
 
 Let us call $N_A$, $N_{f}$ and $N_{e_i}$ the PTCPNs that
 are obtained by applying the translation to each one of these
@@ -1779,14 +1782,12 @@ variables or resources. The other places are initially unmarked.
 The other places are initially unmarked.
 
 \begin{figure}[!ht]
-\vspace{-0.5cm}
 \begin{center}
 \fbox{ \parbox[t]{8cm}{ \center 
 \includegraphics[scale=0.5]{Figures/orchestration.eps}
 }}\end{center}
 \vspace{-0.65cm}
 \caption{Orchestration Translation}\label{orchestator}
-\vspace{-0.5cm}
 \end{figure}
 
 %where \mbox{$e \in \nat$} is a natural value reserved to 
@@ -1823,48 +1824,83 @@ in order to replace its previous value by the new one, being this new value obta
 activity, we have a time interval $[a,b]$ associated, so the delay is randomly selected
 inside this interval.\\
 Notice the use of a ``control'' place, to arrest all possible remaining activities in the system when either throw or exit are executed. Thus, the idea is that all transitions in the net must be connected with this place, as the different illustrations show.
-\vspace{-1.3cm}
-%\begin{figure}[!ht]
-%\hspace*{1.0cm}
-%\begin{center}
-%\fbox{ \parbox[t]{12cm}{ \center
-%\subfloat[Throw PTCPN]{\label{fig:throw}\includegraphics[scale=0.3]{Figures/throw.eps}}
-%\subfloat[Exit PTCPN]{\label{fig:exit}\includegraphics[scale=0.3]{Figures/exit.eps}}
-%\subfloat[Empty PTCPN]{\label{fig:empty}\includegraphics[scale=0.3]{Figures/empty.eps}}\\
-%\subfloat[Wait PTCPN]{\label{fig:wait}\includegraphics[scale=0.3]{Figures/wait.eps}}
-%\ \ \ \ \subfloat[Assign PTCPN]{\label{fig:assign}\includegraphics[scale=0.3]{Figures/assign.eps}}
-%}}
-%\end{center}
-%\vspace{-0.6cm}
-%\caption{\label{fig:basicas}Basic Activities
-%Translation}
-%\vspace{-0.5cm}
-%\end{figure}
-%\newpage
+
+
+\begin{figure}
+\centering
+\fbox{\parbox[h]{\textwidth}{
+\begin{minipage}[c]{0.32\textwidth}
+\centering
+    \includegraphics[scale=0.3]{Figures/throw.eps}
+    \caption*{a) Throw PTCPN}
+    \label{fig:throw}
+\end{minipage}
+\begin{minipage}[c]{0.33\textwidth}
+\centering
+    \includegraphics[scale=0.3]{Figures/exit.eps}
+    \caption*{b) Exit PTCPN}
+    \label{fig:exit}
+\end{minipage}
+\begin{minipage}[c]{0.33\textwidth}
+\centering
+    \includegraphics[scale=0.3]{Figures/empty.eps}
+    \vspace{-0.25cm}
+    \caption*{c) Empty PTCPN}
+    \label{fig:empty}
+\end{minipage}
+
+\begin{center}
+\begin{minipage}[c]{0.33\textwidth}
+\centering
+    \includegraphics[scale=0.3]{Figures/wait.eps}
+    \caption*{d) Wait PTCPN}
+    \label{fig:wait}
+\end{minipage}
+\hspace{-0cm}
+\begin{minipage}[c]{0.33\textwidth}
+\centering
+    \includegraphics[scale=0.3]{Figures/assign.eps}
+    \vspace{-0.6cm}
+    \caption*{e) Assign PTCPN}
+    \label{fig:assign}
+\end{minipage}
+\end{center}
+}}
+\caption{\label{fig:basicas}Basic Activities
+Translation}
+\end{figure}
 
 \item {\it Communication activities}:
 The model we use is based on the invoke and receive operations, 
 as well as the reply activity that uses a server to reply to a client. We have also added a barred version
 of reply to synchronise with the response from the client. We have therefore introduced 
 this last activity in our semantics to deal with the synchronous or asynchronous nature of invoke activity (one-way or request-response operation, respectively), so the $\overline{reply}$ activity is optional in the syntax depicted in Table \ref{BPELsyntax}. 
-\vspace{-0.7cm}
-%\begin{figure}[!ht]
-%\vspace{-0.5cm}
-%\hspace*{1.0cm}
-%\begin{center}
-%\fbox{ \parbox[t]{13cm}{ %\center 
-%\hspace{-0.2cm}\subfloat[Invoke/Receive PTCPN]{\label{fig:comm1}\includegraphics[scale=0.27]{Figures/communication.eps}}
-%\subfloat[$\overline{Reply}$/Reply PTCPN]{\label{fig:comm2}\includegraphics[scale=0.27]{Figures/communication_2.eps}}
-%}}
-%\end{center}
-%\vspace{-0.62cm}
-%\caption{\label{fig:comm}Invoke/Receive Activities
-%Translation}% \vspace{1cm}
-%\vspace{-0.5cm}
-%\end{figure}
+
+\begin{figure}
+\centering
+\fbox{\parbox[h]{\textwidth}{
+\begin{minipage}[c]{0.5\textwidth}
+\centering
+    \includegraphics[scale=0.27]{Figures/communication.eps}
+    \caption*{a) Invoke/Receive PTCPN}
+    \label{fig:comm1}
+\end{minipage}
+\hspace{0.0cm}
+\begin{minipage}[c]{0.5\textwidth}
+\centering
+    \includegraphics[scale=0.3]{Figures/communication_2.eps}
+    \caption*{b) $\overline{Reply}$/Reply PTCPN}
+    \label{fig:comm2}
+\end{minipage}
+}}
+\caption{\label{fig:comm}Invoke/Receive Activities
+Translation} 
+\end{figure}
+
+
 
 %In this case, we have added to our timed Petri net two specific places in order to manage the execution of invoke/receive and reply/$\overline{reply}$, $PLij\_s$ and $PLij\_r$. Thus, we only require two places to represent all the partnerlinks between two services since we will bind each one with its corresponding counterpart by using the colours of the tokens. Place $PLij\_s$ receives tokens with three parameters: $pl,op$ and $value$, whereas $PLij\_r$ is marked only when the activity has received the data, so this place is marked with the value 0. For the sake of simplicity, we exchange only the value of the variables, but this could be easily extended to any kind of data. We depict the Petri nets in Fig. \ref{fig:comm} that express the communication among partners. In Fig. \ref{fig:comm1}, the \emph{invoke} activity extracts the value to send from the variable place ${\it P_v}$ and mark the ``sending'' partnerlink with a token endowed with this information. Once this place is marked, the receive transition can be fired marking $PLij\_r$ to allow the invoke activity to continue, and storing directly the data exchanged in the corresponding variable place. The interpretation of Fig. \ref{fig:comm2} is analogous.  
-Fig.~\ref{fig:comm} shows the translation for both the invoke/receive and the reply/$\overline{reply}$ pairs of activities. Part \ref{fig:comm1} of the figure corresponds to the invoke/receive translation, in which the net of the invoke activity is depicted on the left-hand-side part, whereas the receive activity is depicted on the right-hand-side part. There are two shared places, $PL_{ij{_s}}$ and $PL_{ij{_r}}$, which are used to implement the synchronisation between the invocation and reception of services. Both places are associated to the partnerlink used for this communication, denoted here by $(i,j)$, where $i$ and $j$ are the orchestrator identifiers performing those activities. Notice that the value of a single variable is transmitted, which is obtained from the corresponding variable place, $p_v$. In the same way, the receive activity stores this value in its own variable. The interpretation of Fig.~\ref{fig:comm2} is analogous.  
+Fig.~\ref{fig:comm} shows the translation for both the invoke/receive and the reply/$\overline{reply}$ pairs of activities. Part a) of the figure corresponds to the invoke/receive translation, in which the net of the invoke activity is depicted on the left-hand-side part, whereas the receive activity is depicted on the right-hand-side part. There are two shared places, $PL_{ij{_s}}$ and $PL_{ij{_r}}$, which are used to implement the synchronisation between the invocation and reception of services. Both places are associated to the partnerlink used for this communication, denoted here by $(i,j)$, where $i$ and $j$ are the orchestrator identifiers performing those activities. Notice that the value of a single variable is transmitted, which is obtained from the corresponding variable place, $p_v$. In the same way, the receive activity stores this value in its own variable. The interpretation of Part b) Fig.~\ref{fig:comm} is analogous.  
 \end{itemize}
 %
 % ======================================================================
@@ -1885,7 +1921,7 @@ $<$repeatUntil$>$, and the serial variant of $<$forEach$>$.
 parallel variant of $<$forEach$>$.  
 \item Deferred choice controlled by external and internal events is provided by $<$pick$>$.  
 \end{itemize}
-The set of structured activities in WS-BPEL is not intended to be minimal \cite{BPEL4WS}, so there are cases where 
+The set of structured activities in WS-BPEL is not intended to be minimal \cite{Andrews2003WSBPEL}, so there are cases where 
 the semantics of one activity can be represented using another activity. Nevertheless, in order to reduce the complexity
 of our translation, our approach omits many derived activities only dealing with the most important ones from the modelling viewpoint,
 such as sequence, parallel and choice. For all these cases we provide the translation
@@ -1911,14 +1947,11 @@ of them.
 %\vspace{1cm}
 
 \begin{figure}[!ht]
-\vspace{-0.5cm}
 \begin{center}
 \fbox{\parbox[]{6cm}{\center
 \includegraphics[scale=0.5]{Figures/sequence.eps}}}
 \end{center}
-\vspace{-0.65cm}
 \caption{\label{seq} Sequence Translation}
-\vspace{-0.6cm}
 \end{figure}
 
 \item {\it Parallel}\,: The translation for a parallel activity is depicted
@@ -1948,28 +1981,24 @@ However, these tokens cannot cause
 any damage, since the control flow has been
 transferred either to the fault handling activity of the PTCPN, 
 once the place $p_{er}$ has become marked, or the whole system has terminated once 
-the place $p_{ex}$ is marked. %A similar reasoning is done with the {\em exit} places.
-%It is a need to remark we do not treat 
-%some BPEL flow construction attributes such as join conditions,
-%dead path elimination, etc., since is out of the scope of this paper.
+the place $p_{ex}$ is marked. A similar reasoning is done with the {\em exit} places.
+It is a must to remark we do not treat 
+some BPEL flow construction attributes such as join conditions,
+dead path elimination, etc., since there are out of the scope of the language BPELRF.
+
 \begin{figure}[!ht]
-\vspace{-0.75cm}
 \begin{center}
 \fbox{\parbox[t]{12cm}
 {\begin{center}\includegraphics[height=10cm,width=12cm]
 {Figures/paralelo.eps}\end{center}}}
 \end{center}
-\vspace{-0.7cm}
 \caption{\label{par} Parallel Activity Translation.}
-\vspace{-0.5cm}
 \end{figure}
 
 \item {\it Pick} $(\{(pl_i,op_i,v_i,A_i)\}_{i=1}^n,A,timeout)$: The $<$pick$>$ activity waits for the occurrence of exactly one event from a set of events, also establishing a
-time-out for this selection. The translation is depicted in Fig.~\ref{pick} where a timer is implemented on the place {\it p\_a} in order to enforce the firing of transition {\it ta} when the timeout has elapsed, thus activating {\it N$_{A}$}. Notice also the use of both timed and untimed places in this figure, respectively called {\it INT} and {\it UINT}.  %The $<$pick$>$ activity completes when the selected activity finishes.
-%, then 
-%executes the activity associated with that event. After an event has been selected, the other events 
-%are no longer accepted by that $<$pick$>$. The $<$pick$>$ activity is comprised of a set of branches, each containing an event-activity pair.  
- %The activities contained in this construction can come in two forms: 
+time-out for this selection. The translation is depicted in Fig.~\ref{pick} where a timer is implemented on the place {\it p\_a} in order to enforce the firing of transition {\it ta} when the timeout has elapsed, thus activating {\it N$_{A}$}. Notice also the use of both timed and untimed places in this figure, respectively called {\it INT} and {\it UINT}.  The $<$pick$>$ activity completes when the selected activity finishes, and, then, executes the activity associated with that event. After an event has been selected, the other events 
+are no longer accepted by that $<$pick$>$. The $<$pick$>$ activity is comprised of a set of branches, each containing an event-activity pair.  
+The activities contained in this construction can come in two forms: 
 
 %\begin{itemize}
 %\item The $<$onMessage$>$ is similar to a $<$receive$>$ activity, in that it waits for the receipt of an 
@@ -1986,11 +2015,11 @@ time-out for this selection. The translation is depicted in Fig.~\ref{pick} wher
 
 \item {\it While} (cond,A): The machinery needed to model this construction is fairly straightforward since we only must check if the repetition condition holds or not in order to execute the contained activity or skip it. Fig.~\ref{while} shows this translation.
 \end{itemize}
-%The $<$while$>$ activity provides for repeated execution of a contained activity. The contained 
-%activity is executed as long as the boolean condition evaluates to true at the beginning of 
-%each iteration. The meaning of the places and transitions of the net represented in Fig. \ref{while} is fairly straightforward, so, due to space limitations, we are going to omit any explanation of its elements. 
-%The meaning of the places and transitions are fairly straightforward, so, due to space limitations, we are going to omit any explanation of the elements contained in this net 
-%\newpage
+The $<$while$>$ activity provides for repeated execution of a contained activity. The contained 
+activity is executed as long as the boolean condition evaluates to true at the beginning of 
+each iteration. The meaning of the places and transitions of the net represented in Fig. \ref{while} is fairly straightforward, so, due to space limitations, we are going to omit any explanation of its elements. 
+The meaning of the places and transitions are fairly straightforward, so, due to space limitations, we are going to omit any explanation of the elements contained in this net 
+
 
 \begin{figure}[!ht]
 %\vspace{-0.5cm}
@@ -1998,7 +2027,6 @@ time-out for this selection. The translation is depicted in Fig.~\ref{pick} wher
 \fbox{\parbox[c]{12cm}{\begin{center}\includegraphics[scale=0.4]
 {Figures/pick.eps}\end{center}}}
 \end{center}
-\vspace{-0.6cm}
 \caption{\label{pick} Pick Activity Translation.}
 %\vspace{-0.4cm}
 \end{figure}
@@ -2011,7 +2039,6 @@ time-out for this selection. The translation is depicted in Fig.~\ref{pick} wher
 \fbox{\parbox[t]{11cm}{\begin{center}\includegraphics[scale=0.4]
 {Figures/while.eps}\end{center}}}
 \end{center}
-\vspace{-0.65cm}
 \caption{\label{while} While Activity Translation.}
 \vspace{-0.7cm}
 \end{figure}
@@ -2020,11 +2047,11 @@ time-out for this selection. The translation is depicted in Fig.~\ref{pick} wher
 %                            WSRF 
 %=======================================================================
 \subsection{WSRF-compliant}
-%In this section, we state the WSRF activities we have integrated with the BPEL activities in order to create a framework for modelling stateful workflows. It is worth noting that in recent years have appeared a new redefinition of workflow nets which deals with resources called Resource-Constrained Workflow Nets \ref{}. As commented in the Related Work section, this approach extends the well-known formalism, Workflow nets, with finite resources such as money, memory and so on, but the authors do not provide the machinery
-%to create and destroy such resources, so this extension of Workflow nets matches with the idea of WSRF standard, i.e., the creation and destruction of resources is out of the scope of the specification. Nevertheless, our approach was devised to manage the whole lifetime of the resource from its creation until its destruction.
+In this section, we state the WSRF activities we have integrated with the BPEL activities in order to create a framework for modelling stateful workflows. It is worth noting that in recent years have appeared a new redefinition of workflow nets which deals with resources called Resource-Constrained Workflow Nets \ref{}. As commented in the Related Work section, this approach extends the well-known formalism, Workflow nets, with finite resources such as money, memory and so on, but the authors do not provide the machinery
+to create and destroy such resources, so this extension of Workflow nets matches with the idea of WSRF standard, i.e., the creation and destruction of resources is out of the scope of the specification. Nevertheless, our approach was devised to manage the whole lifetime of the resource from its creation until its destruction.
 
 
-%To date, we have presented the activities corresponding to the ``BPEL'' activities part of our model. Next, we will state the counterpart of our approach, i.e., the activities, which permit the creation and modification of the resources as well as the management of the subscriptions to them following the indications of the standard WSRF. Notice that a novelty in our model is the creation of resources since WSRF does not specify how this creation is done.
+To date, we have presented the activities corresponding to the ``BPEL'' activities part of our model. Next, we will state the counterpart of our approach, i.e., the activities, which permit the creation and modification of the resources as well as the management of the subscriptions to them following the indications of the standard WSRF. Notice that a novelty in our model is the creation of resources since WSRF does not specify how this creation is done.
 %\begin{figure}[!ht]
 %\vspace{-0.5cm}
 %\begin{center}
@@ -2036,7 +2063,7 @@ time-out for this selection. The translation is depicted in Fig.~\ref{pick} wher
 %\vspace{-1.5cm}
 %\end{figure}
 
-%To begin with, we depict the creation of resources in Fig. \ref{createresource}. In order to guarantee our PTCPNs are 1-safe, we opted as commented above to model each resource with two dedicated places,  $p_{\it r_i}$, and $p_{\it r_a}$, which represent the possible state of the resources, instantiated or not instantiated, respectively. Thus, when an orchestrator wants to create a resource, the firing of the transition {\it createResource} moves the token from the ``inactive'' ($p_{\it r_i}$) to the ``active'' place ($p_{\it r_a}$) making available this resource to the subscribers. Once the place $p_{\it r_a}$ is marked and an orchestrator executes the activity {\em subscribe}, our translation can automatically build the subscriptions nets. Here, a subscription net is formed by a transition, whose guard is the subscription condition, and the subnet which corresponds to the translation of the activity that the subscriber wants to be executed just in case the subscription condition ${\it gc_i}$ holds. Notice that WSRF allows the creation of multiple subscriptions to the same resources by the same orchestrator, so we will allow this restriction. Despite the {\em subscribe} construction will be presented later, just comment here we have endowed each resource with a list that represents its subscribers with their {\em id} and an integer, $0$ or $1$, to denote whether the orchestrator with identifier {\em id} is subscribed or not. Finally, in the leftmost part of Fig. \ref{createresource}, we depict the net that will be fired in the event of the resource lifetime expires. In this situation, we return the token from the active place to the inactive place and immediately execute the activity {\em $Activity_timeisup$}, which will be passed as an argument of the {\em createResource} activity. This argument is not included in the WSRF specification, but we have incorporated it to show the benefits of the integration of both standards.       
+To begin with, we depict the creation of resources in Fig. \ref{createresource}. In order to guarantee our PTCPNs are 1-safe, we opted as commented above to model each resource with two dedicated places,  $p_{\it r_i}$, and $p_{\it r_a}$, which represent the possible state of the resources, instantiated or not instantiated, respectively. Thus, when an orchestrator wants to create a resource, the firing of the transition {\it createResource} moves the token from the ``inactive'' ($p_{\it r_i}$) to the ``active'' place ($p_{\it r_a}$) making available this resource to the subscribers. Once the place $p_{\it r_a}$ is marked and an orchestrator executes the activity {\em subscribe}, our translation can automatically build the subscriptions nets. Here, a subscription net is formed by a transition, whose guard is the subscription condition, and the subnet which corresponds to the translation of the activity that the subscriber wants to be executed just in case the subscription condition ${\it gc_i}$ holds. Notice that WSRF allows the creation of multiple subscriptions to the same resources by the same orchestrator, so we will allow this restriction. Despite the {\em subscribe} construction will be presented later, just comment here we have endowed each resource with a list that represents its subscribers with their {\em id} and an integer, $0$ or $1$, to denote whether the orchestrator with identifier {\em id} is subscribed or not. Finally, in the leftmost part of Fig. \ref{createresource}, we depict the net that will be fired in the event of the resource lifetime expires. In this situation, we return the token from the active place to the inactive place and immediately execute the activity {\em $Activity_timeisup$}, which will be passed as an argument of the {\em createResource} activity. This argument is not included in the WSRF specification, but we have incorporated it to show the benefits of the integration of both standards.       
 
 %Now, we describe the PTCPNs who corresponds to the manipulation of resource value and lifetime as well the subscription to a specific resource. On the left side of Fig. \ref{fig:getproperty},
 %the PTCPN for the activity {\em getProperty} is depicted. Here, the resource {\em value} obtained from $p_{\it r_a}$ is stored in the place of the corresponding variable. The reasoning done in the construction of the PTCPNs for the activities {\em setProperty} and {\em setTimeout} in Fig. \ref{fig:setproperty} is quite similar, but updating the resource value or its lifetime, respectively. Important to note that if an orchestrator is trying to access to a resource not instantiated, the fault place  $p_{\it er}$ will be marked starting the execution of the fault activity. 
@@ -2084,27 +2111,25 @@ time-out for this selection. The translation is depicted in Fig.~\ref{pick} wher
 %\caption{\label{settim} SetTimeout Activity Translation.}
 %\end{figure}
 
-%=============================Valentín================================
-Let us now see the WSRF activities, and their corresponding translations.
 
 \begin{itemize}
 \item {\it CreateResource (EPR,val,timeout,A)}:
 {\em EPR} is the resource identifier, for which we have two complementary places in Fig.~\ref{createresource}, ${\it p_{r_i}}$ and ${\it p_{r_a}}$, where the sub-index represents the state of the resource: $i$ when it is inactive and $a$ when it is active. The initial value is $val$, and $A$ is the activity that must be executed when the time-out indicated as third parameter has elapsed.
 
 We can see in Fig.~\ref{createresource} how the transition $createResource$ removes the token from the {\em inactive} place, and puts a new token on the active place, whose colour contains the following information: resource identifier (EPR), its lifetime (max), and its value (val). %the owner (O) and the list of subscribers (initially, empty).
+
 \begin{figure}[!ht]
-\vspace{-0.7cm}
 \begin{center}
 \fbox{\parbox[t]{12cm}{\begin{center}\includegraphics[scale=0.35]
 {Figures/createResource.eps}\end{center}}}
 \end{center}
-\vspace{-0.7cm}
 \caption{\label{createresource} CreateResource Activity Translation.}
-\vspace{-0.5cm}
 \end{figure}
+
 Transition ${\it t}$0 is executed when the lifetime of the resource has expired, thus removing the token from the {\em active} place, marking again the {\em inactive} place, and activating $N_A$. We can also see that the {\em active} place is linked with a number of transitions, which correspond to the subscribers (we know in advance these possible subscribers from the WS-BPEL/WSRF document). These transitions can only become enabled if the corresponding places $subs_{i}$ are marked by performing the corresponding  activity {\em subscribe}. The PTCPNs ${\it Ncond_i}$ are the nets for the activities passed as parameter in the invocation of a subscribe activity.   
 \item Subscribe (EPR,cond$'$,A):
 In this case, an orchestrator subscribes to the resource $EPR$, with the associated condition $cond'$, upon which the activity $A$ must be performed. Fig.~\ref{subscribe} shows this translation, where we can observe that the associated place $subs_{i}$ is marked in order to allow the execution of the PTCPN for the activity $A$ if the condition $g_{i}$ holds. On the contrary, if the resource is not active, we will throw the fault handling activity.
+
 %\begin{figure}[!ht]
 %\vspace{-0.5cm}
 %\hspace*{1.0cm}
@@ -2120,28 +2145,26 @@ In this case, an orchestrator subscribes to the resource $EPR$, with the associa
 %\vspace{-0.5cm}
 %\end{figure}
 \begin{figure}[!ht]
-\vspace{1cm}
 \begin{center}
 \fbox{\parbox[t]{10cm}{\begin{center}\includegraphics[scale=0.35]
 {Figures/subscribe.eps}\end{center}}}
 \end{center}
-\vspace{-0.7cm}
 \caption{\label{subscribe} Subscribe Activity Translation.}
-\vspace{-0.5cm}
 \end{figure}
-\newpage
+
+
 \item GetProp (EPR,v) and SetProp (EPR,expr):
 These are easily translated, as shown in Figs.~\ref{getp} and \ref{setp}, where the resource value is obtained and assigned to variable $v$ (GetProp), or a new value is assigned to the resource (SetProp).
-\vspace{-0.8cm}
+
+
 \begin{figure}[!ht]
 \begin{center}
 \fbox{\parbox[t]{8.5cm}{\begin{center}\includegraphics[scale=0.35]
 {Figures/getProp.eps}\end{center}}}
 \end{center}
-\vspace{-0.7cm}
 \caption{\label{getp} GetProperty Activity Translation.}
-\vspace{-0.7cm}
 \end{figure}
+
 %\begin{figure}[!ht]
 %\vspace{-0.5cm}
 %\hspace*{1.0cm}
@@ -2159,30 +2182,28 @@ These are easily translated, as shown in Figs.~\ref{getp} and \ref{setp}, where 
 %\end{figure}
 %
 %\newpage
+
 \begin{figure}[!ht]
 \begin{center}
 \fbox{\parbox[t]{10cm}{\begin{center}\includegraphics[scale=0.35]
 {Figures/setProp.eps}\end{center}}}
 \end{center}
-\vspace{-0.7cm}
 \caption{\label{setp} SetProperty Activity Translation.}
-\vspace{0.5cm}
 \end{figure}
 
 \item SetTimeout (EPR,timeout):
 This activity is analogous to {\em SetProp} activity. In this case, the resource lifetime is updated with a new value. Fig.~\ref{setp} shows this translation. 
+
 \begin{figure}[!ht]
 \begin{center}
-\vspace{-0.5cm}
 \fbox{\parbox[t]{8.5cm}{\begin{center}\includegraphics[scale=0.35]
 {Figures/setTime.eps}\end{center}}}
 \end{center}
-\vspace{-0.7cm}
 \caption{\label{settim} SetTimeout Activity Translation.}
-\vspace{-0.5cm}
 \end{figure}
 \end{itemize}
 
+\section{Tool Support}
 
 \section{Case study: Online auction service}\label{cs}
 
@@ -2279,27 +2300,6 @@ We have then simulated and analysed the system, and we have concluded that the s
 \caption{\label{casestudy} A simplified PTCPN for the online auction system.}
 \end{figure}
 
-%%%Formal Analysis of Web Service Compositions%%%
-\section{Formal Analysis of Web Service Compositions}\label{AnalysisWSC}
-
-In last years the formal analysis of Web Service compositions has been recognized as an important problem that needs to be solved \cite{Carbone2006,Dong2006,Foster2007,Yang2008}. A strict analysis is necessary to guarantee the correct composition of the services for multiple reasons: the integration of several independent applications, the possibility of having incomplete specifications of some services, the impossibility of using traditional evaluation techniques such as software testing, \ldots
-
-The analysis of Web Service compositions usually consists of checking its specification correctness by analysing if a set of functional and non-functional requirements are fulfilled. The behavioural requirements are especially interesting, as they specify the properties required to reach a concrete business goal. These requirements can include general properties such as deadlock freeness or correct termination, but they can also be defined explicitly, for example defining the conformance to a concrete model. This formal analysis is usually done by means of formal methods.
-
-Formal methods \cite{Wing1990} are a collection of notations and techniques for describing and analyzing systems \cite{Peled2001}. They are called \textit{formal} because they are based on mathematical theories (logics, automata, sets, \ldots). In formal methods we can distinguish between the \textit{formal specification}, which describes unambiguously a system or its properties, and the \textit{formal analysis} or \textit{formal verification}, which serves to verify if a system satisfies its specification.
-
-Formal methods usually cannot guarantee the correctness of the implementation and, if the specification is not correct, the verification results will also be wrong. Despite these and some other limitations, formal methods are still needed because they increase the confidence on system reliability, minimize the number of errors in the implementation and can find out errors impossible to find with other techniques such as testing.
-
-When we are going to apply a formal method it is very important to choose the right level of abstraction in the specification of the system depending on what we want to analyze or verify. An underspecification can lead to wrong verification results because the specification is incomplete, whereas an overspecification can lead to the \textit{state explosion problem}, making the intended analysis of the system infeasible.
-
-Formal methods can be applied in different stages of the computer system development process, providing different information about the system in each one of these stages. The application of these methods is usually complex, being impossible without some kind of tool support. For this purpose, the language syntax of the specification must be explicit and the language semantics of the specification must be restricted. In this way, formal specifications are amenable to automate analysis and verification.
-
-The choice of using one formal method or another depends on many factors: the problem we want to solve, the type of system, the properties we want to check, and so on. In the case of complex systems, such as distributed concurrent systems, it is needed a combination of several techniques for the analysis.
-
-
 \section{Summary}\label{sumWebServ}
 \markright{~\ref{sumWebServ} Summary}
 
-This chapter has described a methodology called \textit{Correct-WS} for the design and verification of Web Service compositions and a tool called WST supporting several phases of this methodology. As a proof of concept the tool has been apply to an Internet purchase process case study. The chapter ends with a brief description of some parallel works which aim is also the development of correct Web Service compositions.
-
-Although in this chapter sequence diagrams have been used to design the service composition behaviour in a proper way, sometimes we just have an electronic contract defining all the contractually correct behaviours of the system in a more general way. In these cases we would like to have a user-friendly representation of the e-contracts but having at the same time a formal background allowing us to verify the correctness of the e-contracts. That is what Chapter \ref{c4} is focused on.

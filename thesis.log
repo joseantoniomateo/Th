@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  24 FEB 2014 13:34
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  25 FEB 2014 13:49
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -801,9 +801,6 @@ LaTeX Info: Redefining \subref on input line 127.
 LaTeX Warning: Label `tran1' multiply defined.
 
 
-LaTeX Warning: Label `BPELsyntax' multiply defined.
-
-
 LaTeX Warning: Label `cs' multiply defined.
 
 ) (./chapter5.aux) (./Conclusions.aux)
@@ -969,39 +966,39 @@ LaTeX Warning: Label `Wan98' multiply defined.
 )
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 230.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 230.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 228.
+LaTeX Font Info:    ... okay on input line 228.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 228.
+LaTeX Font Info:    ... okay on input line 228.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 228.
+LaTeX Font Info:    ... okay on input line 228.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 228.
+LaTeX Font Info:    ... okay on input line 228.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 228.
+LaTeX Font Info:    ... okay on input line 228.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 228.
+LaTeX Font Info:    ... okay on input line 228.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 228.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 228.
 
  (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Try loading font information for OT1+pbk on input line 230.
+LaTeX Font Info:    ... okay on input line 228.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 228.
+LaTeX Font Info:    ... okay on input line 228.
+LaTeX Font Info:    Try loading font information for OT1+pbk on input line 228.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pbk.fd
 File: ot1pbk.fd 2001/06/04 font definitions for OT1/pbk.
 )
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 230.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 228.
 
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count164
-Package hyperref Info: Link coloring OFF on input line 230.
+Package hyperref Info: Link coloring OFF on input line 228.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -1011,8 +1008,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count165
 )
-LaTeX Info: Redefining \ref on input line 230.
-LaTeX Info: Redefining \pageref on input line 230.
+LaTeX Info: Redefining \ref on input line 228.
+LaTeX Info: Redefining \pageref on input line 228.
  (./thesis.out)
 (./thesis.out)
 \@outlinefile=\write4
@@ -1022,35 +1019,35 @@ LaTeX Info: Redefining \pageref on input line 230.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 239.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 237.
 LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 239.
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 237.
 LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 239.
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 237.
 File: logo.eps Graphic file (type eps)
  <logo.eps>
-Overfull \hbox (8.7384pt too wide) in paragraph at lines 239--239
+Overfull \hbox (8.7384pt too wide) in paragraph at lines 237--237
  [][] 
  []
 
 LaTeX Font Info:    Font shape `OT1/pbk/m/sc' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/sc' tried instead on input line 239.
+(Font)              Font shape `OT1/pbk/l/sc' tried instead on input line 237.
 
-Overfull \hbox (8.7384pt too wide) in paragraph at lines 239--239
+Overfull \hbox (8.7384pt too wide) in paragraph at lines 237--237
  [][] 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 239.
+LaTeX Font Info:    Try loading font information for U+msa on input line 237.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 239.
+LaTeX Font Info:    Try loading font information for U+msb on input line 237.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 239.
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 237.
  [1
 
 ] [2
@@ -1107,13 +1104,12 @@ Overfull \hbox (3.09982pt too wide) detected at line 33
  [7
 
 
-] [8
-
-] (./thesis.lot)
+] [8] (./thesis.lot)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
  [9
+
 
 ] [10
 
@@ -1674,140 +1670,129 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [83]
 [84] [85]
-Overfull \hbox (5.0858pt too wide) in paragraph at lines 1436--1694
- [] 
+File: Figures/orchestration.eps Graphic file (type eps)
+ <Figures/orchestration.eps> [86]
+File: Figures/throw.eps Graphic file (type eps)
+ <Figures/throw.eps>
+File: Figures/exit.eps Graphic file (type eps)
+
+<Figures/exit.eps>
+File: Figures/empty.eps Graphic file (type eps)
+ <Figures/empty.eps>
+File: Figures/wait.eps Graphic file (type eps)
+ <Figures/wait.eps>
+File: Figures/assign.eps Graphic file (type eps)
+ <Figures/assign.eps>
+Overfull \hbox (13.13058pt too wide) in paragraph at lines 1868--1868
+ [][] 
  []
 
 
-LaTeX Warning: Citation `wsfm2011' on page 86 undefined on input line 1732.
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1868--1870
+ [][] 
+ []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2600) has occurred while \output is active []
 
- [86]
-[87]
-File: Figures/orchestration.eps Graphic file (type eps)
- <Figures/orchestration.eps>
+ [87]
+File: Figures/communication.eps Graphic file (type eps)
 
-LaTeX Warning: Reference `fig:basicas' on page 88 undefined on input line 1813.
+<Figures/communication.eps>
+Overfull \hbox (5.2814pt too wide) in paragraph at lines 1895--1895
+ [][] 
+ []
+
+File: Figures/communication_2.eps Graphic file (type eps)
+<Figures/communication_2.eps>
+Overfull \hbox (4.8801pt too wide) in paragraph at lines 1895--1895
+[]$[]$   $[]$ 
+ []
 
 
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1895--1897
+ [][] 
+ []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Overfull \hbox (4.69629pt too wide) in paragraph at lines 1903--1904
+[]\OT1/pbk/l/n/10 Fig. [][]4.4[][][] shows the trans-la-tion for both the in-vo
+ke/re-ceive and the reply/$[]$
+ []
+
+
+Underfull \vbox (badness 1931) has occurred while \output is active []
 
  [88]
-
-LaTeX Warning: Reference `fig:comm' on page 89 undefined on input line 1867.
-
-
-LaTeX Warning: Reference `fig:comm1' on page 89 undefined on input line 1867.
-
-
-LaTeX Warning: Reference `fig:comm2' on page 89 undefined on input line 1867.
-
-
-Overfull \hbox (2.2964pt too wide) in paragraph at lines 1867--1868
-[]\OT1/pbk/l/n/10 Fig. [] shows the trans-la-tion for both the in-voke/re-ceive
- and the reply/$[]$
- []
-
-
-Underfull \vbox (badness 5519) has occurred while \output is active []
-
- [89]
-
-LaTeX Warning: Citation `BPEL4WS' on page 90 undefined on input line 1888.
-
 File: Figures/sequence.eps Graphic file (type eps)
-<Figures/sequence.eps> [90]
+
+<Figures/sequence.eps> [89]
 File: Figures/paralelo.eps Graphic file (type eps)
- <Figures/paralelo.eps>
+ <Figures/paralelo.eps> [90]
 File: Figures/pick.eps Graphic file (type eps)
  <Figures/pick.eps>
 File: Figures/while.eps Graphic file (type eps)
 
-<Figures/while.eps> [91]
+<Figures/while.eps>
 
-LaTeX Warning: Text page 92 contains only floats.
-
-
-Overfull \vbox (1.94916pt too high) has occurred while \output is active []
+LaTeX Warning: Reference `' on page 91 undefined on input line 2050.
 
 
-[92]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [91]
+Underfull \vbox (badness 1939) has occurred while \output is active []
+
+ [92]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [93]
 File: Figures/createResource.eps Graphic file (type eps)
- <Figures/createResource.eps> [93]
-File: Figures/subscribe.eps Graphic file (type eps)
- <Figures/subscribe.eps> [94]
-File: Figures/getProp.eps Graphic file (type eps)
 
-<Figures/getProp.eps>
+<Figures/createResource.eps>
+Underfull \vbox (badness 1137) has occurred while \output is active []
+
+ [94]
+File: Figures/subscribe.eps Graphic file (type eps)
+
+<Figures/subscribe.eps>
+File: Figures/getProp.eps Graphic file (type eps)
+ <Figures/getProp.eps>
 File: Figures/setProp.eps Graphic file (type eps)
  <Figures/setProp.eps>
 File: Figures/setTime.eps Graphic file (type eps)
- <Figures/setTime.eps>
-Overfull \hbox (1.11844pt too wide) in paragraph at lines 2189--2195
+
+<Figures/setTime.eps>
+Overfull \hbox (1.11844pt too wide) in paragraph at lines 2210--2216
 []$ \OT1/pbk/l/n/10 and $[]$. Vari-able $\OML/cmm/m/it/10 v[]$ \OT1/pbk/l/n/10 
 serves
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2189--2195
+Underfull \hbox (badness 10000) in paragraph at lines 2210--2216
+
+ []
+
+[95] [96]
+Underfull \hbox (badness 10000) in paragraph at lines 2218--2286
 
  []
 
 
-Underfull \vbox (badness 2608) has occurred while \output is active []
-
- [95]
-Underfull \hbox (badness 10000) in paragraph at lines 2197--2265
-
- []
-
-
-Underfull \vbox (badness 1953) has occurred while \output is active []
-
- [96]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [97]
 File: Figures/casestudy.eps Graphic file (type eps)
 
-<Figures/casestudy.eps>
-
-LaTeX Warning: Citation `Carbone2006' on page 98 undefined on input line 2285.
+<Figures/casestudy.eps>) [98] [99] [100
 
 
-LaTeX Warning: Citation `Dong2006' on page 98 undefined on input line 2285.
-
-
-LaTeX Warning: Citation `Foster2007' on page 98 undefined on input line 2285.
-
-
-LaTeX Warning: Citation `Yang2008' on page 98 undefined on input line 2285.
-
-[98]
-
-LaTeX Warning: Citation `Wing1990' on page 99 undefined on input line 2289.
-
-
-LaTeX Warning: Citation `Peled2001' on page 99 undefined on input line 2289.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [99]
-
-LaTeX Warning: Reference `c4' on page 100 undefined on input line 2305.
-
-) [100]
+]
 \openout2 = `chapter5.aux'.
 
  (./chapter5.tex
 Chapter 5.
 ) [101
-
-
 
 
 ] [102
@@ -1823,7 +1808,7 @@ Chapter 6.
 
 ]
 
-LaTeX Warning: Reference `c6' on page 104 undefined on input line 285.
+LaTeX Warning: Reference `c6' on page 104 undefined on input line 283.
 
 [104
 
@@ -1950,12 +1935,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18000 strings out of 495062
- 302862 string characters out of 1182644
- 405962 words of memory out of 3000000
- 20652 multiletter control sequences out of 15000+50000
+ 18010 strings out of 495062
+ 303040 string characters out of 1182644
+ 407707 words of memory out of 3000000
+ 20656 multiletter control sequences out of 15000+50000
  33072 words of font info for 97 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,28n,92p,2750b,1825s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (128 pages, 590336 bytes).
+Output written on thesis.dvi (128 pages, 584100 bytes).

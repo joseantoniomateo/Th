@@ -15,16 +15,18 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Graphical view of a PTCPN.\relax }}{61}{figure.caption.26}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces A piece of ${\it lts}(C)$ for the online auction service.\relax }}{82}{figure.caption.34}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Orchestration Translation\relax }}{88}{figure.caption.36}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Sequence Translation\relax }}{90}{figure.caption.37}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Parallel Activity Translation.\relax }}{92}{figure.caption.38}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Pick Activity Translation.\relax }}{92}{figure.caption.39}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces While Activity Translation.\relax }}{93}{figure.caption.40}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces CreateResource Activity Translation.\relax }}{93}{figure.caption.41}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Subscribe Activity Translation.\relax }}{94}{figure.caption.42}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces GetProperty Activity Translation.\relax }}{95}{figure.caption.43}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces SetProperty Activity Translation.\relax }}{95}{figure.caption.44}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces SetTimeout Activity Translation.\relax }}{95}{figure.caption.45}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces A simplified PTCPN for the online auction system.\relax }}{98}{figure.caption.46}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Orchestration Translation\relax }}{86}{figure.caption.35}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Basic Activities Translation\relax }}{87}{figure.caption.36}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Invoke/Receive Activities Translation\relax }}{88}{figure.caption.37}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Sequence Translation\relax }}{89}{figure.caption.38}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Parallel Activity Translation.\relax }}{91}{figure.caption.39}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Pick Activity Translation.\relax }}{92}{figure.caption.40}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces While Activity Translation.\relax }}{92}{figure.caption.41}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces CreateResource Activity Translation.\relax }}{94}{figure.caption.42}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Subscribe Activity Translation.\relax }}{95}{figure.caption.43}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces GetProperty Activity Translation.\relax }}{95}{figure.caption.44}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces SetProperty Activity Translation.\relax }}{96}{figure.caption.45}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces SetTimeout Activity Translation.\relax }}{96}{figure.caption.46}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces A simplified PTCPN for the online auction system.\relax }}{99}{figure.caption.47}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

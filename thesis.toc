@@ -25,12 +25,12 @@
 \contentsline {section}{\numberline {4.3}Case study: Online auction service}{79}{section.4.3}
 \contentsline {section}{\numberline {4.4}Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{81}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}PTCPN Semantics for WSRF/BPEL}{85}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Basic activities}{89}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Ordering structures}{90}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}WSRF-compliant}{91}{subsection.4.4.4}
-\contentsline {section}{\numberline {4.5}Case study: Online auction service}{96}{section.4.5}
-\contentsline {section}{\numberline {4.6}Formal Analysis of Web Service Compositions}{98}{section.4.6}
-\contentsline {section}{\numberline {4.7}Summary}{100}{section.4.7}
+\contentsline {subsection}{\numberline {4.4.2}Basic activities}{87}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Ordering structures}{88}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}WSRF-compliant}{92}{subsection.4.4.4}
+\contentsline {section}{\numberline {4.5}Tool Support}{96}{section.4.5}
+\contentsline {section}{\numberline {4.6}Case study: Online auction service}{96}{section.4.6}
+\contentsline {section}{\numberline {4.7}Summary}{98}{section.4.7}
 \contentsline {chapter}{\numberline {5}Timed-arc workflow nets}{101}{chapter.5}
 \contentsline {chapter}{\numberline {6}Conclusions, Contributions and Future Works}{103}{chapter.6}
-\contentsline {chapter}{Bibliography}{109}{appendix*.47}
+\contentsline {chapter}{Bibliography}{109}{appendix*.48}
