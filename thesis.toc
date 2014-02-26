@@ -21,9 +21,11 @@
 \contentsline {subsection}{\numberline {3.2.2}Extended Timed-Arc Petri Nets}{62}{subsection.3.2.2}
 \contentsline {chapter}{\numberline {4}BPELRF: A language for the specification of stateful web service compositions}{67}{chapter.4}
 \contentsline {section}{\numberline {4.1}Syntax and semantics of BPELRF}{71}{section.4.1}
-\contentsline {section}{\numberline {4.2}Prioritised-Timed Coloured Petri Nets Semantics for BPELRF}{83}{section.4.2}
+\contentsline {section}{\numberline {4.2}Prioritised-Timed Coloured Petri Nets Semantics for BPELRF}{84}{section.4.2}
 \contentsline {section}{\numberline {4.3}Tool Support}{96}{section.4.3}
-\contentsline {section}{\numberline {4.4}Summary}{98}{section.4.4}
-\contentsline {chapter}{\numberline {5}Timed-arc workflow nets}{101}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusions, Contributions and Future Works}{103}{chapter.6}
-\contentsline {chapter}{Bibliography}{109}{appendix*.55}
+\contentsline {section}{\numberline {4.4}Case Study 2}{102}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Analysis}{103}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}Summary}{106}{section.4.5}
+\contentsline {chapter}{\numberline {5}Timed-arc workflow nets}{107}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusions, Contributions and Future Works}{109}{chapter.6}
+\contentsline {chapter}{Bibliography}{115}{appendix*.62}

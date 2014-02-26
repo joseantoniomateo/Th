@@ -21,27 +21,89 @@ We split this chapter in two well differentiated parts. On the one hand, we pres
 
 \section*{Related Work}\label{rWork}
 WS-BPEL has been extensively studied with many formalisms, such as
-Petri nets, Finite State Machines and process algebras, but
-there are only a few works considering WS-BPEL enriched with
-WSRF, and they only show a description of this union,
+Petri nets, Finite State Machines and process algebras, but 
+there are only a few works considering WS-BPEL enriched with 
+WSRF, and they only show a description of this union, 
 without a formalization of the model.
 In \cite{Slomiski:2006} Slomiski uses BPEL4WS in Grid environments and discusses the
 benefits and challenges of extensibility in the particular case of OGSI workflows
-combined with WSRF-based Grids. Other two works centered around Grid environments are
-\cite{Leymann:2006} and \cite{Ezenwoye:2007}. The first justifies
-the use of BPEL extensibility to allow the combination of different GRIDs, whereas
-Ezenwoye et al.~\cite{Ezenwoye:2007} share their experience on BPEL to integrate,
+combined with WSRF-based Grids. Other two works centred around Grid environments are 
+\cite{Leymann:2006} and \cite{Ezenwoye:2007}. The first justifies 
+the use of WS-BPEL extensibility to allow the combination of different GRIDs, whereas
+Ezenwoye et al.~\cite{Ezenwoye:2007} share their experience on WS-BPEL to integrate,
 create and manage WS-Resources that implement the factory/instance pattern.
 
-Another extensive semantics for BPEL 2.0
-is presented in \cite{Dumas:2008} by Dumas et al, which introduces two new interesting improvements. They define several patterns to simplify some huge nets and introduce the semantics for the WS-BPEL 2.0 new patterns. Related to $\pi$-calculus semantics, Dragoni and Mazzara \cite{Dragoni:2009}
+On the other hand, an extensive semantics for WS-BPEL 2.0
+is presented in \cite{Dumas:2008} by Lohmann, which introduces two new interesting improvements. They define several patterns to simplify some huge nets and introduce the semantics for the WS-BPEL 2.0 new patterns. Related to $\pi$-calculus semantics, Dragoni and Mazzara \cite{Dragoni:2009} 
 propose a theoretical scheme focused on dependable composition for the  WS-BPEL recovery
 framework. In this approach, the recovery framework is simplified
 and analysed via a conservative extension of $\pi$-calculus. The
 aim of this approach clearly differs from ours, but it helps us to have
-a better understanding of the WS-BPEL recovery framework. Other work focused on the BPEL
+a better understanding of the WS-BPEL recovery framework. Other work focused on the WS-BPEL
 recovery framework is \cite{Qiu:2005}. Although this is more focused in the compensation handler, they describe the corresponding rules
-that manage a Web service composition. Our work is therefore quite complete as we define rules for nearly all possible activities. In addition, we also consider time constraints. Finally, we would like to highlight the works of Farahbod et al.~\cite{Farahbod:2005} and Busi et al. \cite{Busi:2005}. In the first one, the authors extract an abstract operational semantics for BPEL based on abstract state machines (ASM) defining the framework BPEL$_{AM}$ to manage the agents who perform the workflow activities. In this approach time constraints are considered, but they do not formalize the timed model. On the other hand, the goal of the latter one is fairly similar to ours. They also define a $\pi$-calculus operational semantics for BPEL and describe a conformance notion. They present all the machinery to model Web service compositions (choreographies and orchestrations). The main difference with our work is that we deal with distributed resources. In a similar fashion Luchi and Mazzara in \cite{Lucchi07} presents other $\pi$-calculus operational semantic, \textit{web}$\pi_{\infty}$, which is centred on the idea of event notification as the unique error handling mechanism. It is clear that this proposal differs from ours since they focus their attention in the error handling mechanism, however their claiming of simplifying the error handling using only the notification mechanism can be performed in our proposal since this is the mechanism used in the resource framework and therefore a technique shared by WS-BPEL and WS-RF.
+that manage a Web service composition. Our work is therefore more general as we define rules for nearly all possible activities instead of focusing only on the recovery framework. In addition, we also consider time constraints. Finally, we would like to highlight the works of Farahbod et al.~\cite{Farahbod:2005} and Busi et al. \cite{Busi:2005}. In the first one, the authors extract an abstract operational semantics for WS-BPEL based on abstract state machines (ASM) defining the framework BPEL$_{AM}$ to manage the agents who perform the workflow activities. In this approach time constraints are considered, but they do not formalize the timed model. On the other hand, the goal of the latter one is fairly similar to ours. They also define a $\pi$-calculus operational semantics for WS-BPEL and describe a conformance notion. They present all the machinery to model Web service compositions (choreographies and orchestrations). The main difference with our work is that we deal with distributed resources. In a similar fashion Luchi and Mazzara in \cite{Lucchi07} presents other $\pi$-calculus operational semantic, \textit{Web}$\pi_{\infty}$, which is focused on the idea of event notification as the unique error handling mechanism. It is clear that this proposal differs from ours since they focus their attention in the error handling mechanism, however their claiming of simplifying the error handling using only the notification mechanism can be performed in our proposal since this is the mechanism used in the resource framework and therefore a technique shared by WS-BPEL and WS-RF.
+
+Table \ref{table_rw_comparison} shows a brief comparison among all the works where, the columns show the WS-BPEL version considered, the coverage degree of the recovery framework, whether they use WSRF, the formalism they use, the focus area and if the work is supported by a tool.
+
+\begin{table}
+\centering
+\scriptsize{
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+
+\hline
+
+Author & WS-BPEL & Rec. & WSRF & Formalism & Focus & Tool \\
+
+
+\hline
+Slomiski\cite{Slomiski:2006} & 1.0 & $\times$ & $\checkmark$ & -- & Extensibility & $\times$ \\
+
+\hline
+
+Ezenwoye\cite{Ezenwoye:2007} & 1.0 & $\times$ & \checkmark & -- & Resource Management & $\times$ \\
+
+\hline
+
+Ouyang\cite{Ouyang:2007} & 1.0 & Part & $\times$ & Petri nets & BPEL analysis & \checkmark \\
+
+\hline
+
+Lohmann\cite{Dumas:2008} & 2.0 & \checkmark & $\times$ & Petri nets & BPEL analysis & \checkmark \\
+
+\hline
+
+Dragoni\cite{Dragoni:2009} & 2.0 & \checkmark & $\times$ & $\pi$-calculus & FCT & $\times$ \\
+
+\hline
+
+Qiu\cite{Qiu:2005} & 1.0 & Part & $\times$ & Proc. Algebra & FC & $\times$ \\
+
+\hline
+
+Farahbod\cite{Farahbod:2005} & 1.0 & Part & $\times$ & Finite State & Analysis & $\times$ \\
+
+&&&& Machines &&\\
+
+\hline
+
+Busi\cite{Busi:2005} & 1.0 & Part & $\times$ & Proc. Algebra & Conformance& $\times$ \\
+&&&&& Chor. vs Orch. & \\
+
+\hline
+
+Our work & 2.0 & Part & \checkmark & Petri nets & Resource Management & \checkmark \\
+
+\hline
+
+\end{tabular}
+
+}
+
+\caption{Bibliography comparison.} \label{table_rw_comparison}
+
+\end{table}
+
 For further details about the formalization of service oriented languages we would like to encourage the reader to review the works presented at the SENSORIA project in \cite{Wirsing2011bis}. Here, an extensive work is presented from different international research groups aimed by the common goal of providing a rigorous software engineering view point for service-oriented system using as a cornerstone the formal specification of Web Services and WS-BPEL in particular. Works such as SOCK \cite{Wirsing2011bis}, CaSPiS \cite{Bettini2008}, COWS \cite{Lapadula2007}, B-lite \cite{Lapadula2008} or Orc \cite{Kitchin2009} are either presented or reviewed. The first one, SOCK (Service Oriented Computing Kernel \cite{Wirsing2011bis}), is a formal calculus which aims at characterizing the basic features of Service Oriented Computing and takes its inspiration from WS-BPEL, considered by the authors as the ``de facto" standard for Web Service technology. The second one, CaSPiS (Calculus of Services with Pipelines and Sessions \cite{Bettini2008}) uses the Java framework IMC. Authors take advantage of the already built-in IMC features such us session oriented and pattern matching communication mechanisms easing the task of implementing in Java all CaSPiS abstractions. Other one, COWS (Calculus for Orchestration of Web Services \cite{Lapadula2007}), is a new foundational language for SOC whose design has been influenced by WS-BPEL. COWS combines a number of elements from process calculi, e.g. asynchronous communication, polyadic synchronization, pattern matching, protection, delimited receiving and killing activities. 
 Other one reviewed also in this book is B lite \cite{Lapadula2008}. This is a lightweight language for web services orchestration designed around some of WS-BPEL peculiar features like partner links, process termination, message correlation, long-running business transactions and compensation handlers aiding to clarify some ambiguous aspects of the WS-BPEL specification. The last one, Orc \cite{Kitchin2009}, is not influenced by any other language used for orchestration purposes like WS-BPEL. The authors define the language as a novel language for distributed and concurrent programming which provides uniform access to computational services, including distributed communication and data manipulation, through sites. Using four simple concurrency primitives, the programmer orchestrates the invocation of sites to achieve a goal, while managing timeouts, priorities, and failures. This language uses as a basic activity the information published by a site and therefore each site invocation always finishes with one or more either nested or parallel publications.
 
@@ -1283,33 +1345,13 @@ supported by the well-known toolbox CPNTools\cite{CPNTools}.
 %which belongs to the colour to which the token is
 %associated.
 
-\begin{definition} (Prioritised-Timed Coloured Petri Nets)\\
-We define a prioritised-timed coloured Petri net (PTCPN)
-as a tuple  
-$(P,T,A,V, \linebreak G,E,\lambda,D,\pi)$, where\footnote{
-We use the classical notation on Petri nets to denote the
-precondition and postcondition of both places and transitions:
-%
-\[ \forall x \in P\,\cup\,T\,:\,
-\precond{x} = \{ y \,|\, (y,x) \in A\}~~~~~
-   x^{\bullet} = \{ y \,|\, (x,y) \in A\}
-\]
-}:
-%
+\begin{definition} [(Prioritised-Timed Coloured Petri Nets)]
+We use here the Definition \ref{ptcpndef} of PTCPNs given in Section \ref{ptcpns} of Chapter \ref{chapter:c3}. 
+We extend this basic definition to deal with the particularities of the language BPELRF. Let us recall 
+that a prioritised-timed coloured Petri net (PTCPN) is a tuple $\ptcpntuple$ where:
+
 \begin{itemize}
-\item $P$ is a finite set of {\em coloured places}.
-Colours used in this semantics will be introduced progressively,
-as we define the PTCPNs corresponding to each activity. 
-We will use timed and untimed coloured tokens, so timed tokens will 
-have associated a time stamp, according to the CPNTools
-interpretation~\cite{Jensen2009}. 
-%
-\item $T$ is a finite set of {\em transitions} ($P\cap T = \emptyset$).
-%
-\item $A \subseteq (P\times T)\,\cup\,(T \times P)$ is a
-set of directed {\em arcs}.
-%
-%
+\item $P, T, A, \Sigma, D, \pi$ have the same meaning as in Definition \ref{ptcpndef}.
 \item $V$ is a finite set of {\em integer variables}
 i.e. ${\it Type}(v)$, for all $v \in V$.
 We will assume that all variables have $0$ as initial value.
@@ -1322,9 +1364,7 @@ ${\it EXPR}_V$ denotes the
 expressions constructed using the variables in $V$,
 with the same syntax admitted by CPN Tools.
 %
-\item $E\,:\, A \longrightarrow {\it EXPR}_V$ is the
-{\em arc expression function}, which assigns an expression
-to each arc.
+
 %
 \item $\lambda$ is the {\em labelling function}, defined
 both on places and transitions.
@@ -1354,17 +1394,14 @@ the occurrence of an internal fault in the system. Each PTCPN has also a single 
 which will become marked
 with one token of colour $0$ in the event of a failure, then starting the fault handling activity.
 In a similar way, the {\em exit place} will be marked when the {\em exit} is executed by an
-orchestrator.% Notice that this construction 
-%can cause two erroneous situations we need to manage. First, 
-%event handling activities run concurrently with the normal flow of the process, so, 
-%in the case of an {\em exit} activity is executed in one of them, the other branch
-%could continue executing its activities without stopping leading to a wrong behaviour.
-%According to this situation, we have endowed each transition
-%with a {\em entry control} place, whose aim is to prevent the execution of 
-%any activity in the system. LLL No me queda claro al final si necesitamos este place
-%de control porque como los event handlers se ejecutan en paralelo en nuesto sistema con
-%el flujo normal entonces se supone que se modelan con un paralelo y entonces no haria falta poner
-%a todos este place de control LLL
+orchestrator. Notice that this construction 
+can cause two erroneous situations we need to manage. First, 
+event handling activities run concurrently with the normal flow of the process, so, 
+in the case of an {\em exit} activity is executed in one of them, the other branch
+could continue executing its activities without stopping leading to a wrong behaviour.
+According to this situation, we have endowed each transition
+with a {\em entry control} place, whose aim is to prevent the execution of 
+any activity in the system. 
 
 Variable places are denoted by $p_{\it v}$, to mean that they 
 capture the value of variable $v$. They contain a single token, whose colour is the variable
@@ -1381,18 +1418,8 @@ lifetime, value, %owner,
 list of subscribers and activity to be executed upon
 the time-out expiration.
 All the remaining places will be considered as {\em internal}.
-%
-%
-%
-\item $D\,:\,T \longrightarrow \nnul \times \nnul${\em (delay function)}, which associates a time
-interval to each transition. For $D(t)=[d_1,d_2]$,
-this means that the time delay associated to ${\it t}$ can be any value in this interval, all of them with the same probability.
-%
-\item $\pi\,:\,T \longrightarrow \nnul$ is the
-{\em priority function}, which assigns a priority level
-to each transition.
-\end{itemize}
 \qed
+\end{itemize}
 \vspace{-0.5cm}
 \end{definition}
 %The obtained PTCPNs is 1-safe,  which means that for every
@@ -1402,10 +1429,10 @@ to each transition.
 %marked place.}, which activates the PTCPN when it is marked, and three
 %output places ($p_{\it ok}$, $p_{\it er}$, $p_{\it ex}$), which cannot be marked simultaneously.
 
-Markings of PTCPNs are defined in the same way supported by CPNTools,
-as well as the semantics of PTCPNs, so due to the lack of space
-we omit the formal definitions. The interested reader may
-see for instance \cite{Jensen2009}.%
+%Markings of PTCPNs are defined in the same way supported by CPNTools,
+%as well as the semantics of PTCPNs, so due to the lack of space
+%we omit the formal definitions. The interested reader may
+%see for instance \cite{Jensen2009}.%
 
 % ===============================================================
 %                          TRADUCCION
@@ -1414,7 +1441,7 @@ see for instance \cite{Jensen2009}.%
 \subsection*{PTCPN Semantics for WSRF/BPEL}
 
 Before introducing the PTCPN semantics, we 
-define the formal model that 
+recall the formal model that 
 captures the integration of BPEL and WSRF.
 %and afterwards we define the timed-coloured Petri net (PTCPN)
 %semantics for this model. 
@@ -2054,11 +2081,10 @@ The meaning of the places and transitions are fairly straightforward, so, due to
 %                            WSRF 
 %=======================================================================
 \subsection*{WSRF/WSN-compliant}
-In this section, we state the WSRF activities we have integrated with the BPEL activities in order to create a framework for modelling stateful workflows. It is worth noting that in recent years have appeared a new redefinition of workflow nets which deals with resources called Resource-Constrained Workflow Nets \ref{}. As commented in the Related Work section, this approach extends the well-known formalism, Workflow nets, with finite resources such as money, memory and so on, but the authors do not provide the machinery
-to create and destroy such resources, so this extension of Workflow nets matches with the idea of WSRF standard, i.e., the creation and destruction of resources is out of the scope of the specification. Nevertheless, our approach was devised to manage the whole lifetime of the resource from its creation until its destruction.
-
-
-To date, we have presented the activities corresponding to the ``BPEL'' activities part of our model. Next, we will state the counterpart of our approach, i.e., the activities, which permit the creation and modification of the resources as well as the management of the subscriptions to them following the indications of the standard WSRF. Notice that a novelty in our model is the creation of resources since WSRF does not specify how this creation is done.
+In this section, we state the WSRF activities we have integrated with the BPEL activities in order to create a framework for modelling stateful workflows. 
+%It is worth noting that in recent years have appeared a new redefinition of workflow nets which deals with resources called Resource-Constrained Workflow Nets \ref{}. As commented in the Related Work section, this approach extends the well-known formalism, Workflow nets, with finite resources such as money, memory and so on, but the authors do not provide the machinery
+%to create and destroy such resources, so this extension of Workflow nets matches with the idea of WSRF standard, i.e., the creation and destruction of resources is out of the scope of the specification. Nevertheless, our approach was devised to manage the whole lifetime of the resource from its creation until its destruction.
+To date, we have presented the activities corresponding to the \emph{BPEL part} of our model. Next, we will state the counterpart of our approach, i.e., the activities, which permit the creation and modification of the resources as well as the management of the subscriptions to them following the indications of the standard WSRF. Notice that a novelty in our model is the creation of resources since WSRF does not specify how this creation is done.
 %\begin{figure}[!ht]
 %\vspace{-0.5cm}
 %\begin{center}
@@ -2120,7 +2146,7 @@ To begin with, we depict the creation of resources in Fig. \ref{createresource}.
 
 
 \begin{itemize}
-\item {\it CreateResource (EPR,val,timeout,A)}:
+\item {\bf {\it CreateResource(EPR,val,timeout,A)}}:
 {\em EPR} is the resource identifier, for which we have two complementary places in Fig.~\ref{createresource}, ${\it p_{r_i}}$ and ${\it p_{r_a}}$, where the sub-index represents the state of the resource: $i$ when it is inactive and $a$ when it is active. The initial value is $val$, and $A$ is the activity that must be executed when the time-out indicated as third parameter has elapsed.
 
 We can see in Fig.~\ref{createresource} how the transition $createResource$ removes the token from the {\em inactive} place, and puts a new token on the active place, whose colour contains the following information: resource identifier (EPR), its lifetime (max), and its value (val). %the owner (O) and the list of subscribers (initially, empty).
@@ -2160,7 +2186,7 @@ In this case, an orchestrator subscribes to the resource $EPR$, with the associa
 \end{figure}
 
 
-\item GetProp (EPR,v) and SetProp (EPR,expr):
+\item {\bf {\it GetProp (EPR,v)}} and {\bf {\it SetProp (EPR,expr)}}:
 These are easily translated, as shown in Figs.~\ref{getp} and \ref{setp}, where the resource value is obtained and assigned to variable $v$ (GetProp), or a new value is assigned to the resource (SetProp).
 
 
@@ -2198,7 +2224,7 @@ These are easily translated, as shown in Figs.~\ref{getp} and \ref{setp}, where 
 \caption{\label{setp} SetProperty Activity Translation.}
 \end{figure}
 
-\item SetTimeout (EPR,timeout):
+\item {\bf {\it SetTimeout (EPR,timeout)}}:
 This activity is analogous to {\em SetProp} activity. In this case, the resource lifetime is updated with a new value. Fig.~\ref{setp} shows this translation. 
 
 \begin{figure}[!ht]
@@ -2212,7 +2238,168 @@ This activity is analogous to {\em SetProp} activity. In this case, the resource
 
 \section{Tool Support}
 
-Sacar del WODES
+As WS-BPEL and WSRF are XML-based languages, and the PTCPNs supported by CPNTools are also represented by XML files, we have used XSLT stylesheets to transform the BPEL-RF document into another XML document representing the PTCPN in a format supported by CPNTools. These XSL stylesheets are created using a XSLT editor. The obtained XML document can be visualized, simulated and verified with CPNTools. As the tool has been developed in Java, it is multi-platform, i.e., runs on Windows/Linux/Mac systems under the Java virtual machine$^{\textregistered}$ (the tool is available at \url{www.dsi.uclm.es/retics/bpelrf}).
+The XSLT transformation sheets (\textsl{eXtensible Stylesheets Language/Transform}) are a W3C declarative language to transform XML documents into other XML documents or to some other kind of documents. The XSLT stylesheets are widely used, as an easy way to apply transformation rules to a source document in order to obtain the corresponding output documents. Nowadays, XSLT is widely recommended in web edition area, due to its ability to generate HTML or XHTML sheets.
+
+For making that transformation, XSLT allows to convert the input in two ways: On the one hand, the programmer can manipulate the contents of the document to organize them without changing the document format, whereas, on the other hand, the programmer can use XSLT sheets to transform the contents into other  different formats.
+
+%\begin{figure}[!ht]
+%\begin{center}
+%\includegraphics[scale=0.4]{Images/maria2.eps}
+%\end{center}
+%\vspace{-0.3cm}
+%\caption{\label{TransformtreeXML}XML transformation by using XSLT} \label{figure}
+%\end{figure}
+
+We have then defined a number of rules to extract the PTCPN elements from the choreography defined as a composition of WS-BPEL documents. Thus, our tool, BPEL-RF, is used to achieve this transformation in an automatic way, presenting to the user a \textit{.cpn file}, which can be opened with CPNTools. After doing this, the user can analyse and verify the model by using the features of CPNTools. 
+        
+%\begin{figure}[!ht]
+%\begin{center}
+%\includegraphics[height=4cm,width=6cm]{Images/maria1.eps}
+%\end{center}
+%\vspace{-0.4cm}
+%\caption{\label{Diagram}Application of XSL rules to obtain the cpn file}\label{figure}
+%\end{figure}
+
+%In Figure \ref{example6}, we can see the Java code that we have used to transform the input XML document into the corresponding XML output document, by using four XSLT templates called \emph{cpn1, cpn2, cpn3 and cpn4}, and the output document is a file called ``final.xml''.\\   
+%	
+%\begin{figure}[H]
+%\begin{center}
+%\scriptsize
+%\begin{boxedverbatim}
+%TransformerFactory tFactory = TransformerFactory.newInstance();
+%Transformer transformer1 =
+%                              tFactory.newTransformer(new StreamSource(
+%                              "XSLFiles/cpn1.xsl"));
+%
+%transformer1.transform(new StreamSource(fichero),
+%                                       new StreamResult(new FileOutputStream(
+%                             "XSLFiles/salida1.xml")));
+%
+%TransformerFactory t2Factory = TransformerFactory.newInstance();
+%Transformer transformer2 =
+%                        t2Factory.newTransformer(new StreamSource(
+%                        "XSLFiles/cpn2.xsl"));
+%transformer2.transform(new StreamSource("XSLFiles/salida1.xml"),
+%                                       new StreamResult(new
+%                        FileOutputStream("XSLFiles/salida2.xml")));
+%TransformerFactory t3Factory = TransformerFactory.newInstance();
+%Transformer transformer3 =
+%                        t3Factory.newTransformer(new StreamSource(
+%                        "XSLFiles/cpn3.xsl"));
+%transformer3.transform(new StreamSource("XSLFiles/salida2.xml"),
+%                                       new StreamResult(new
+%                        FileOutputStream("XSLFiles/final.xml")));
+%
+%FileInputStream fr = new FileInputStream("XSLFiles/final.xml");
+%
+%\end{boxedverbatim}
+%\end{center}
+%\caption{Example of the XSLT template}\label{example6}
+%\end{figure}
+
+
+%\subsection{Rules}
+%From a Document Type Definition (DTD) file, one can describe the XML document structure: labels, data types, and so on. The XML document must be validated to check if it satisfies the DTD structure defined previously. Besides, the systems that exchange XML documents must agree in this DTD structure and validate DTD received documents based on the agreed structure.
+%
+%The technology used in this work is Documents Object Model (DOM). This specification is a W3C standard independent of programming language. This technology allows us to manipulate multiple sections of a document at the same time, and it is not necessary to read all the document again to work on a particular area of the document. This technology also transforms XML documents in a hierarchical tree. Thus, DOM allows us to  manipulate the XML document, for instance, to add items, to delete items, etc. The library that we have used in this work is org.w3c.dom.*; As mentioned in Section 5.2, the templates used to generate the output XML document have been XSLT. A stylesheet XSLT must be a well-formed XML document stored with the extension \emph{.xsl}.
+The XSLT stylesheet document starts with the instruction $\left <\ ? xml\ version ='1.0' ? \right >$. The element root is a stylesheet, which contains all other elements. In an XSLT stylesheet, the name of reserved elements by the specification comes from the same namespace, so they must be written preceded by the appropriate alias that must point to the URL: http://www.w3c.org/1999/XSL/Transform.\newline In Fig. \ref{example1}, we show a piece of the structure of the XSLT document.\\
+Once we have located the initial and final mark of the root element ``xsl:stylesheet'', we define the transformation rules:
+
+\begin{itemize}
+\item
+Each rule is defined by an ``xsl:template''.
+\item
+In the rules, we indicate those elements of the XML document that will be transformed.
+\item
+The rules also indicate how each element must be transformed.
+\item
+Each rule is applied to all elements of the XML document.
+\item
+In the XSLT rules, between their initial and final marks, one can include:
+\begin{itemize}
+\item
+Text to be written literally in the output document.
+\item
+Marks that are added to the XML output document.
+\item
+Reserved elements to perform an action such as retrieving the value of an item, sorting results, calling other rules of the stylesheet, etc.
+\end{itemize}
+\end{itemize} 
+
+\begin{figure}[!ht]
+\begin{center}
+\scriptsize
+\begin{boxedverbatim}
+<?xml version="1.0" ?>
+<xsl:stylesheet
+ xmlns:xsl="http://www.w3.org/1999/XSL/Transform 
+version="1.0">
+<xsl:output indent="yes" />
+<xsl:template match="/">
+<workspaceElements>
+<generator tool="CPN Tools" version="3.2.2" format="6" />
+<cpnet>
+...
+<page id="ID6">
+<template>
+<xsl:for-each select="//process">
+<xsl:for-each select="child::*">
+<xsl:if test="(name()='pick')">
+<xsl:call-template name="pick" />
+<xsl:call-template name="picktrans" />
+</xsl:if>
+....
+</template>
+</page>
+...
+</cpnet>
+</workspaceElements>
+</template>
+</stylesheet>
+	
+\end{boxedverbatim}
+\end{center}
+\vspace{-0.4cm}
+\caption{Illustration of an XSLT template}\label{example1}
+\end{figure}
+For the sake of simplicity, BPEL-RF Tool has a very simple and intuitive interface
+shown in Fig. \ref{main}. It consists of a main frame with separated elements such as a file menu and the transformation panel. The file menu has three different submenus, namely: \emph{File},  \emph{CPN Tools} and \emph{Help}. The \emph{File} submenu offers two options. The first one, \emph{Open WS-BPEL WSRF File}, opens a BPEL-RF document previously edited and saved with the tool; whereas the second one, \emph{Exit}, exits the program. The
+\emph{CPN Tools} submenu only offers one option, \emph{Save Coloured Petri Net}, which
+saves the translated XML code to a .cpn file. Finally, the last submenu, \emph{Help}, consists of two options \emph{Help} and \emph{About}. The option \emph{About} only informs users about the tool version, the option \emph{Help} offers users a wide user manual with the possibility of searching through the information using either a table of contents or a 
+search option. 
+
+\begin{center}
+\begin{figure}[h]
+\includegraphics[width=\columnwidth,height=7cm]{Figures/mainscreen.eps}
+\vspace{-0.8cm} 
+\caption{Main screen of the tool.}
+\label{main}
+\end{figure}
+\end{center}
+\vspace{-0.5cm} 
+%Thus, the user only needs to click on the appropriate tab in order to perform a specific %translation. Thus, we now have a new tab, called ``WS-CDL2CPNTools'', which is used to %transform the WS-CDL specification into a PTCPN. Figure \ref{WSTTools} shows a picture of %the WST Tool and the transformation from a WS-CDL document to a PTCPN.\\
+The main elements of the interface are:
+\begin{itemize}
+\item{The \textbf{WS-BPEL / WSRF Textbox} permits users to introduce
+XML code following the specification given by WS-BPEL and WSRF. This XML is
+used as the source code to be translated into PTCPN.
+This code can be introduced in two ways; either by writing the XML code by hand or
+by loading a previously saved document using the \emph{Open WS-BPEL WSRF File} submenu mentioned above. A dialog window will be shown to the user asking him to select the document to be opened. If the file is not valid, an error message will be displayed on the screen.}
+
+\item{In the \textbf{CPNTools Textbox}, after clicking on the button ``Transform'',
+the corresponding Petri Net XML specification is shown. To save this specification, the user must click on the \emph{Save Colored Petri Net File} option in the CPN Tools menu. A dialog window will be shown to the user to choose the destination folder.}
+\end{itemize}
+
+Moreover, we have another two buttons on the screen:
+
+\begin{itemize}
+\item{\textbf{The Transform button}
+generates the corresponding PTCPN. The result will be automatically displayed in the CPN Tools Textbox after a few seconds. If the WS-BPEL WSRF Textbox is empty, pressing the Transform button will have no effect.}
+
+\item{\textbf{The Clear button}
+is used to clean the contents of both text boxes. If both are empty, pressing on this button will have no effect.}
+\end{itemize}
 
 \section*{Case study: Online auction service}\label{cs}
 
@@ -2308,6 +2495,130 @@ We have then simulated and analysed the system, and we have concluded that the s
 \vspace{-0.6cm}
 \caption{\label{casestudy} A simplified PTCPN for the online auction system.}
 \end{figure}
+
+\section{Case Study 2}
+The case study concerns a typical automatic management system for stock market investments, which consists of {\em n+1} participants:
+the online stock market system and {\em n} investors, A$_i$, $i=1,\ldots, n$. Here, the resource will be the stocks of a company that the investors want to buy just in case the price falls below an established limit, which the investors fix previously by means of subscriptions, i.e., an investor subscribes to the resource (the stocks) with a certain guard (the value of the stocks he/she want to pay for it). The lifetime {\em lft} will be determined by the stock market system and the resource price will be fluctuating to simulate the rises/drops of the stock. Notice that we do not take into account the stock buy process since our aim is to model an investors' information system. Thus, the participants will be notified when their bids hold or the resource lifetime expires.  
+Let us consider the choreography ${\it C=(O_{sys},O_1,\ldots,O_n)}$, where 
+\mbox{${\it O_k=(PL_k,Var_k,A_k,A_{f{_k}},\mathcal{A}_{e{_k}})}$,~k=sys,~1,...,~n;}~\mbox{${\it Var_{sys}=}$} \\${\it \{at,vEPR\}, Var_i= \{v_i\},\ A_{f{_k}}=}$  ${\it exit}$. Variable $v{EPR}$ serves to temporarily store the value of the resource property before being sent; $v_i$ is the variable used for the interaction among participants, and, finally, $at$ controls the period of time in which the auction is active. Note that the value {\em x} indicates the resource value at the beginning, {\em at0} is the time that the ``auction'' is active, and, finally, {\em $x_i$} is the value of the stocks that he/she wants to pay for. Suppose that all the variables are initially $0$: 
+%\vspace{-0.3cm}
+\begin{flushleft}
+\small{ 
+${\it Asys=assign(x+1,vEPR);assign(at0,at);}$\\
+$\hspace{1cm}{\it  CreateResource(EPR,lft,x,empty);}$\\	
+$\hspace{1cm}{\it  while(actualTime()<=at,Abid)}$\\
+${\it Abid=getProp(EPR,vEPR);assign(vEPR+bid(),vEPR);}$\\	
+\hspace{1cm}${\it setProp(EPR,vEPR);wait(1,2)}$\\
+${\it A_i=wait(1,2);subscribe(O_i,EPR,EPR<x_i,Acond_i);}$\\
+\hspace{0.8cm}${\it pick((pl_i,buy,v_i,empty),empty,at0)}$\\
+${\it Acond_i=getProp(EPR,vEPR);invoke(pl_i,buy,vEPR)}$\\
+}
+\end{flushleft}
+
+Here, the function {\it bid} is used to increase/decrease the stocks value simulating the fluctuation of the stocks price.
+
+\begin{figure}[h]
+%\fbox{
+\includegraphics[width=\columnwidth, height=10cm]{Figures/sistema.eps}
+\vspace{-0.6cm}
+\caption{PTCPN of the online stock market.}\label{sistema}
+\end{figure}
+In Figs. \ref{sistema} and \ref{proceso}, the PTCPNs for one buyer and for the system are depicted.  These figures have been obtained automatically by using our tool. 
+\begin{figure}[h]
+%\fbox{
+\includegraphics[width=\columnwidth, height=10cm]{Figures/proceso.eps}
+\vspace{-0.8cm}
+\caption{PTCPN of one buyer.}\label{proceso}
+\end{figure}
+
+\subsection{Analysis}\label{analysis}
+CPNTools offers us two forms to check the correctness of our system: formal verification and simulation. 
+First, the simulation helps designers to understand how the system exactly works and it is a mean to
+detect possible errors in early stages of the development process in order to refine the model according the
+clients' requirements. Besides, formal verification through state space
+analysis could be done in order to ensure that our system achieves some formal properties such as liveness, deadlock-freeness and so on.
+In this way, Table \ref{state_space} shows the
+results obtained considering 1, 2, 3, 4 or 5 investors. Note that we have considered the following assumptions:
+
+\begin{itemize}
+ \item The ``auction'' time {\em at0} is limited to 10 time units.
+ \item The resource is active during 15 time units ({\em lft=15}).
+ \item The resource value {\em x} is 100 money units.
+ \item The value of subscription of each investor {\em i}, {\em $x_i$}, is $x-(9+i)$, that is, if the system has only one investor its subscription guard will be $x<90$, whereas with 5 investors, the last investor will have a subscription guard of $x<86$.
+ \item The function {\it bid} will fluctuate the stocks price between -2 and 1 in order to simulate that the price only can rise 1 and drop 2 at most each time unit. 
+\end{itemize}
+We will focus on deadlock-freeness to ensure that the
+system never gets stuck while the participants have activities to do
+in their workflow. We have leveraged the functions offered by CPNTools
+to demonstrate that in all dead markings of the system the final
+place is marked, which leads us to conclude the system has finished
+correctly. This final place, {\em Pokfinal0}, is marked by a transition when all the participants have finished their workflow. For the sake of clarity, we have not drawn this place in each figure. Thus, the next SML code checks when this situation
+occurs:\ \mbox{{\small{fun DesiredTerminal n =((Mark.PetriNet'Pokfinal0
+1 n) ==
+1'true)}}}, \\
+which returns {\em true} if the place {\it Pokfinal0} is marked. In
+addition, it is needed to evaluate the following predicate:
+\mbox{{\small{  PredAllNodes
+DesiredTerminal=ListDeadMarkings()}}}, to check \\that the list of
+dead marking contains the marking of the {\em Pokfinal0} place.
+
+\begin{table} [htp]
+\centering
+\footnotesize{
+\begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+     & \multicolumn{5}{c|}{Number of investors}\\\cline{2-6}%\hline
+  Properties     & 1 & 2 & 3 & 4 & 5 \\ \hline
+  State Space Nodes & 3561  & 7569 & 16983 & 50350 & 89879 \\
+  State Space Arcs & 5203 & 12843 & 33271  & 112101 &262215 \\
+  Time (s) & 2 & 7 & 23 & 146 &  1140\\
+  Dead Markings & 124 & 244  & 454  & 1108 &  874 \\
+  \hline
+\end{tabular}
+}
+\vspace{-0.2cm}
+\caption{State space analysis results}
+\label{state_space}
+\end{table}
+\vspace{-0.5cm}
+In Fig. \ref{queries}, we show the results offered by CPNTools to
+our queries for the case of {\bf three} investors. Here, it can be
+appreciated that all dead markings hold the predicate {\em DesiredTerminal}, and, therefore, when the system reaches a dead marking is because system has terminated, which demonstrates the absence of deadlocks in our case study. 
+%On the contrary, in Fig. \ref{RG} we can see a part of the reachability
+%graph from the initial marking to a dead marking. This trace can be used for the designer to follow the path from the initial marking to the final marking in order to inspect if the system behaves according to its specification.
+
+%In this subsection, we are going to show the experiments conducted for the case study. CPNTools offers two ways
+%to demonstrate the correctness of the system: formal verification and simulation. On the hand, the user can use
+%the state space analysis tool to do formal verification
+%in order to check some properties of the model such as liveness, deadlock-freeness, fairness and so on.
+ %It is worthwhile to mention we will obtain more
+%than one dead marking as we do not introduce in the model any
+%mechanism to clean the marking of the variables, the partnerlinks,
+%etc. when the final marking is reached. The solution is pretty
+%straightforward, but could be a little bit tedious to draw
+%transitions to reset the places when the final place is marked. As
+%opposed to this, w
+\begin{figure}[h]
+\begin{center}%\fbox{
+\includegraphics[width=\textwidth,height=3cm]{Figures/queries.eps}
+\vspace{-0.7cm}
+\caption{Result of the queries in CPNTools.}\label{queries}
+\end{center}
+\end{figure}
+\vspace{-0.7cm}
+%
+%\vspace{.3cm}
+%
+%\begin{figure}[h]
+%%\fbox{
+%\includegraphics[width=\columnwidth,height=6cm]{Figures/grafomarcadoscpn.eps}
+%\vspace{-0.6cm}
+%\caption{Partial reachability Graph (3 investors).}\label{RG}
+%\end{figure}
+
+
+
 
 \section{Summary}\label{sumWebServ}
 \markright{~\ref{sumWebServ} Summary}
