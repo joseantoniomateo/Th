@@ -19,18 +19,11 @@
 \contentsline {section}{\numberline {3.2}Timed extensions of Petri nets}{56}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Prioritized-Timed Colored Petri Nets}{57}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Extended Timed-Arc Petri Nets}{62}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}BPELRF}{67}{chapter.4}
-\contentsline {section}{\numberline {4.1}Related Work}{68}{section.4.1}
-\contentsline {section}{\numberline {4.2}Syntax and semantics of BPEL+RF}{70}{section.4.2}
-\contentsline {section}{\numberline {4.3}Case study: Online auction service}{79}{section.4.3}
-\contentsline {section}{\numberline {4.4}Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}{81}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}PTCPN Semantics for WSRF/BPEL}{85}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Basic activities}{87}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Ordering structures}{88}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}WSRF-compliant}{92}{subsection.4.4.4}
-\contentsline {section}{\numberline {4.5}Tool Support}{96}{section.4.5}
-\contentsline {section}{\numberline {4.6}Case study: Online auction service}{96}{section.4.6}
-\contentsline {section}{\numberline {4.7}Summary}{98}{section.4.7}
+\contentsline {chapter}{\numberline {4}BPELRF: A language for the specification of stateful web service compositions}{67}{chapter.4}
+\contentsline {section}{\numberline {4.1}Syntax and semantics of BPELRF}{71}{section.4.1}
+\contentsline {section}{\numberline {4.2}Prioritised-Timed Coloured Petri Nets Semantics for BPELRF}{83}{section.4.2}
+\contentsline {section}{\numberline {4.3}Tool Support}{96}{section.4.3}
+\contentsline {section}{\numberline {4.4}Summary}{98}{section.4.4}
 \contentsline {chapter}{\numberline {5}Timed-arc workflow nets}{101}{chapter.5}
 \contentsline {chapter}{\numberline {6}Conclusions, Contributions and Future Works}{103}{chapter.6}
-\contentsline {chapter}{Bibliography}{109}{appendix*.48}
+\contentsline {chapter}{Bibliography}{109}{appendix*.55}

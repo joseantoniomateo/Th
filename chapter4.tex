@@ -1,16 +1,25 @@
-\chapter{BPELRF}\label{chapter:c4}
-\markboth{Chapter~\ref{chapter:c4}. Design and Verification of Web Service Compositions}{}
+\chapter{BPELRF: A language for the specification of stateful web service compositions}\label{chapter:c4}
+\markboth{Chapter~\ref{chapter:c4}. BPELRF specification language}{BPELRF language}
 
-Poner de que va el capitulo y algo de rollo. Contribuciones y objetivos.
+In this chapter, we introduce the language BPELRF. This language is intended to be used in the specification of web services compositions in which the state
+of each participant is required to be stored. As commented previously, web services are usually ``stateless'', which means that when an operation is invoked, no 
+state is stored after performing it. Here, we introduce the concept of \emph{stateful web services compositions}. Obviously, in this kind of compositions,
+the services can use a set of distributed resources to save the state of some operations. To this end, we will use the standard WSRF since it is intended to be used 
+in conjunction with web services. Moreover, WS-BPEL language will be used to specify the interactions between web services. First, we provide the syntax and semantics of the language BPELRF. The syntax will be defined following the classical BNF notation, whereas the operational semantics is expressed following the Plotkin-style presented in \cite{Plotkin81}. The main concepts about it were introduced in Section \ref{formalmodels} of Chapter \ref{chapter:c2}. In the second part of the chapter, we will define a graphical model for this language by using Petri nets. Moreover, we present the tool we have developed in order to support the creation of stateful web services compositions. 
 
-After introducing the relevant concepts, let us remark the main contributions of this work. The integration of WS-BPEL and WSRF is not new, since, in the literature, one can find some works defining this integration from a technical point of view. Some of these works will be presented in the Related Work section. Surprisingly, to the best of our knowledge, this is the first work, which taking as a starting point WSRF and WS-BPEL, defines a complete and formal language to model and analyse stateful Web service compositions. In addition to this, the necessary formal machinery to build a publish-subscribe architecture is also provided here improving the expressiveness of the language, and a formal primitive to discover new services is defined. It is worthwhile to mention that the aim of this paper is not to provide yet another WS-BPEL semantics since WS-BPEL has received much attention in recent years when many operational semantics for it have arisen. As opposed to this, the main aim here is to gather the benefits of putting together WS-BPEL and WSRF to manage stateful Web services workflows by using existing formalisms in distributed systems. Additionally, in order to deal with WSRF in a proper way, we have realised that it would be better to consider a semantic model with the appropriate ``tools'' to cope with all the relevant aspects of WSRF such as notifications and resources time-outs. To particularise and motivate our approach, we introduce now an ideal scenario.
-The scenario, where our approach might be applicable, is a \textsl{group buying}, also known as collective buying.
-This scenario consists of a group of sellers and buyers, where offers are interpreted as resources created by sellers. Buyers subscribe to those offers, and they are notified when the offers/resources
-meet their expectations. This simple scenario will allow us to show readers how the situation can be managed
-with what we consider a very simple and succinct language.
-The rest of the paper is organised as follows. In Section \ref{rWork}, we present the basic concepts for a better understanding of this paper and some related works. In Section \ref{ops}, we define the language itself and its operational semantics, whereas, in Section \ref{cs}, we illustrate by means of a case study how it works. Finally, Section \ref{conclusions} presents some conclusions and possible future directions to improve the present work.
+After briefly introducing the content of the chapter, let us remark what are the main contributions of the language BPELRF. First, note that 
+the integration of WS-BPEL and WSRF is not new, since, in the literature, one can find some technical works illustrating this integration. Some of these works will be presented in the Related Works section. Surprisingly, to the best of our knowledge, this is the first work, which taking as a starting point WSRF/WSN and WS-BPEL, defines a complete and formal language to model and analyse stateful Web service compositions. In addition to this, the necessary formal machinery to build a publish-subscribe architecture (according to the standard WSN) is also provided here. This improves the expressiveness of the language BPELRF 
+as it does not only allow to model the interactions between services, but it also includes mechanisms to manage the notification methods between these services. Furthermore, we commented in the introduction that it is really important to discover the set of services that will conform the system if the designer does not know these services beforehand. To this end, we have enriched BPELRF with a formal primitive to discover these new services, increasing again the expressive power of the language. 
 
-\section{Related Work}\label{rWork}
+It is worthwhile to mention that our aim with BPELRF is not to provide yet another WS-BPEL semantics since WS-BPEL has received much attention in recent years when many operational semantics for it have arisen. As opposed to this, the main aim here is to gather the benefits of putting together WS-BPEL and WSRF/WSN to manage stateful web services compositions by using existing formalisms in distributed systems. Additionally, in order to deal with WSRF in a proper way, we have realised that it would be better to consider a semantic model with the appropriate ``tools'' to cope with all the relevant aspects of WSRF and WSN such as notifications and resources time-outs. %To particularise and motivate our approach, we introduce now an ideal scenario.
+%The scenario, where our approach might be applicable, is a \textsl{group buying}, also known as collective buying.
+%This scenario consists of a group of sellers and buyers, where offers are interpreted as resources created by sellers. Buyers subscribe to those offers, and they are notified when the offers/resources
+%meet their expectations. This simple scenario will allow us to show readers how the situation can be managed
+%with what we consider a very simple and succinct language.
+
+We split this chapter in two well differentiated parts. On the one hand, we present the syntax and semantics in Plotkin-style, whereas in the second part the Petri nets semantics of BPELRF is introduced. Thus, the rest of the chapter is organised as follows. Each part will be treated separately and, therefore, each of them will consist of the presentation of some related works, the semantics and a case study to illustrate how it works. Notice that the syntax will be the same for both parts and, therefore, it will be introduced only when defining the operational semantics in Plotkin-style.
+
+\section*{Related Work}\label{rWork}
 WS-BPEL has been extensively studied with many formalisms, such as
 Petri nets, Finite State Machines and process algebras, but
 there are only a few works considering WS-BPEL enriched with
@@ -24,9 +33,6 @@ the use of BPEL extensibility to allow the combination of different GRIDs, where
 Ezenwoye et al.~\cite{Ezenwoye:2007} share their experience on BPEL to integrate,
 create and manage WS-Resources that implement the factory/instance pattern.
 
-On the other hand, Ouyang et al. \cite{Ouyang:2007} define the necessary elements for translating BPEL processes into Petri nets. Thus, they
-cover all the important aspects in the standard such as exception handling, dead path elimination and so on. The model they consider differs from ours in that we formalize the whole
-system as a composition of orchestrators with resources associated, whereas they describe the system as a general scope with nested sub-scopes leaving aside the possibility of administering resources. Furthermore, we have also formalized the event handling and notification mechanisms.
 Another extensive semantics for BPEL 2.0
 is presented in \cite{Dumas:2008} by Dumas et al, which introduces two new interesting improvements. They define several patterns to simplify some huge nets and introduce the semantics for the WS-BPEL 2.0 new patterns. Related to $\pi$-calculus semantics, Dragoni and Mazzara \cite{Dragoni:2009}
 propose a theoretical scheme focused on dependable composition for the  WS-BPEL recovery
@@ -36,11 +42,11 @@ aim of this approach clearly differs from ours, but it helps us to have
 a better understanding of the WS-BPEL recovery framework. Other work focused on the BPEL
 recovery framework is \cite{Qiu:2005}. Although this is more focused in the compensation handler, they describe the corresponding rules
 that manage a Web service composition. Our work is therefore quite complete as we define rules for nearly all possible activities. In addition, we also consider time constraints. Finally, we would like to highlight the works of Farahbod et al.~\cite{Farahbod:2005} and Busi et al. \cite{Busi:2005}. In the first one, the authors extract an abstract operational semantics for BPEL based on abstract state machines (ASM) defining the framework BPEL$_{AM}$ to manage the agents who perform the workflow activities. In this approach time constraints are considered, but they do not formalize the timed model. On the other hand, the goal of the latter one is fairly similar to ours. They also define a $\pi$-calculus operational semantics for BPEL and describe a conformance notion. They present all the machinery to model Web service compositions (choreographies and orchestrations). The main difference with our work is that we deal with distributed resources. In a similar fashion Luchi and Mazzara in \cite{Lucchi07} presents other $\pi$-calculus operational semantic, \textit{web}$\pi_{\infty}$, which is centred on the idea of event notification as the unique error handling mechanism. It is clear that this proposal differs from ours since they focus their attention in the error handling mechanism, however their claiming of simplifying the error handling using only the notification mechanism can be performed in our proposal since this is the mechanism used in the resource framework and therefore a technique shared by WS-BPEL and WS-RF.
-% % % % DESDE AQUI HE CORTADOOOOOOOOOOOOOOOOOOOOOO
 For further details about the formalization of service oriented languages we would like to encourage the reader to review the works presented at the SENSORIA project in \cite{Wirsing2011bis}. Here, an extensive work is presented from different international research groups aimed by the common goal of providing a rigorous software engineering view point for service-oriented system using as a cornerstone the formal specification of Web Services and WS-BPEL in particular. Works such as SOCK \cite{Wirsing2011bis}, CaSPiS \cite{Bettini2008}, COWS \cite{Lapadula2007}, B-lite \cite{Lapadula2008} or Orc \cite{Kitchin2009} are either presented or reviewed. The first one, SOCK (Service Oriented Computing Kernel \cite{Wirsing2011bis}), is a formal calculus which aims at characterizing the basic features of Service Oriented Computing and takes its inspiration from WS-BPEL, considered by the authors as the ``de facto" standard for Web Service technology. The second one, CaSPiS (Calculus of Services with Pipelines and Sessions \cite{Bettini2008}) uses the Java framework IMC. Authors take advantage of the already built-in IMC features such us session oriented and pattern matching communication mechanisms easing the task of implementing in Java all CaSPiS abstractions. Other one, COWS (Calculus for Orchestration of Web Services \cite{Lapadula2007}), is a new foundational language for SOC whose design has been influenced by WS-BPEL. COWS combines a number of elements from process calculi, e.g. asynchronous communication, polyadic synchronization, pattern matching, protection, delimited receiving and killing activities. 
-%Other one reviewed also in this book is B lite \cite{Lapadula2008}. This is a lightweight language for web services orchestration designed around some of WS-BPEL peculiar features like partner links, process termination, message correlation, long-running business transactions and compensation handlers aiding to clarify some ambiguous aspects of the WS-BPEL specification. The last one, Orc \cite{Kitchin2009}, is not influenced by any other language used for orchestration purposes like WS-BPEL. The authors define the language as a novel language for distributed and concurrent programming which provides uniform access to computational services, including distributed communication and data manipulation, through sites. Using four simple concurrency primitives, the programmer orchestrates the invocation of sites to achieve a goal, while managing timeouts, priorities, and failures. This language uses as a basic activity the information published by a site and therefore each site invocation always finishes with one or more either nested or parallel publications.
+Other one reviewed also in this book is B lite \cite{Lapadula2008}. This is a lightweight language for web services orchestration designed around some of WS-BPEL peculiar features like partner links, process termination, message correlation, long-running business transactions and compensation handlers aiding to clarify some ambiguous aspects of the WS-BPEL specification. The last one, Orc \cite{Kitchin2009}, is not influenced by any other language used for orchestration purposes like WS-BPEL. The authors define the language as a novel language for distributed and concurrent programming which provides uniform access to computational services, including distributed communication and data manipulation, through sites. Using four simple concurrency primitives, the programmer orchestrates the invocation of sites to achieve a goal, while managing timeouts, priorities, and failures. This language uses as a basic activity the information published by a site and therefore each site invocation always finishes with one or more either nested or parallel publications.
 
-\section{Syntax and semantics of BPEL+RF}\label{ops}
+\section{Syntax and semantics of BPELRF}\label{ops}
+In this section, we present the syntax and semantics of BPELRF. First, we introduce some notation used only in this chapter.
 We use the following notation: {\it ORCH} is the set of orchestrators in the system, {\it VAR} is the set of integer variable names, {\it PL} is the set of necessary partnerlinks, {\it OPS} is the set of operations names that can be performed, {\it EPRS} is the set of resource identifiers (${\it EPRS\subseteq\nnul}$), and {\it A} is the set of basic or structured activities that can form the body of a process. The specific algebraic language that we use
 for the activities is defined by the following BNF-notation:
 %
@@ -69,7 +75,7 @@ for the activities is defined by the following BNF-notation:
 \end{array}
 \]
 
- \hspace{0.4cm}where ${\it O \in ORCH, pl,pl_{i} \in PL, op,op_{i}}$ ${\it \in OPS, timeout \in \nnul}$, {\it  expr} is an arithmetic expression constructed by using the variables in {\it VAR} and integers; ${\it v,v_1,v_2,v_i}$ range over {\it VAR}, {\it tag} is a string used to identify and discover resources that match a certain pattern, and $val \in \entero$. A variable $vEPR$ is used to store temporarily the resource identifier ({\it EPR}). A condition {\it cond} is a predicate constructed by using conjunctions, disjunctions, and negations over the set of variables {\it VAR} and integers, whereas {\it cond'} is a predicate constructed by using the variable {\it vEPR}, as representative of the resource value, and integers. \\%When in a condition or in an expression appears the variable {\it vEPR}, we suppose that the evaluation of this variable is not the resource identifier, but the value of this resource.\\
+\indent where ${\mathit O \in ORCH, pl,pl_{i} \in PL, op,op_{i} \in \ OPS, timeout \in \nnul}$, ${\mathit  expr}$ is an arithmetic expression constructed by using the variables in ${\it VAR}$ and integers; ${\mathit v,v_1,v_2,v_i}$ range over ${\it VAR}$, ${\mathit tag}$ is a string used to identify and discover resources that match a certain pattern, and ${\mathit val \in\ \entero}$. A variable ${\it vEPR}$ is used to store temporarily the resource identifier (${\it EPR}$). A condition ${\mathit cond}$ is a predicate constructed by using conjunctions, disjunctions, and negations over the set of variables ${\it VAR}$ and integers, whereas ${\mathit cond'}$ is a predicate constructed by using the variable ${\it vEPR}$, as representative of the resource value, and integers. When in a condition or in an expression appears the variable ${\it vEPR}$, we suppose that the evaluation of this variable is not the resource identifier, but the value of this resource.
 %Notice that \emph{getProp} contains a parameter {\it prop}, $prop \in \{\textrm{``value'',``timeout''}\}$, in order to distinguish between the two properties of the resource (its value and its termination time). On the contrary, the activity \emph{setProp} does not contain such a property since, as the WSRF specification says, the only way to change the termination time is by using the activity \emph{setTimeout}.
 %We therefore use its EPR as representative of this property, as
 %we already observed in the introduction.
@@ -272,7 +278,7 @@ $<$/pick$>$\\
 \caption{\label{BPELsyntax}WS-BPEL Syntax Conversion table}
 \end{table}}
 
-BPEL basic activities leveraged in our model are: \emph{invoke} to request services offered by service providers, \emph{receive} and \emph{reply} to provide services to partners, \emph{throw} to signal an internal fault explicitly, \emph{wait} to specify a delay, \emph{empty} to do nothing, \emph{exit} to end the business process and \emph{assign}, which is used to assign a variable value. The \emph{structured activities} are: \emph{sequence} (represented here as ;), which contains two activities that are performed sequentially, \emph{while} to provide a (conditional) repeated execution of one activity, \emph{pick} that waits for the occurrence of exactly one event from a set of events (including an alarm event) executing then the activity associated with that event, and, finally, \emph{flow} ($\|$ operator in our syntax) to express concurrency. Another family of control flow constructs in BPEL includes event, fault and compensation handlers. An event handler is enabled when
+BPEL basic activities included in our model are: \emph{invoke} to request services offered by service providers, \emph{receive} and \emph{reply} to provide services to partners, \emph{throw} to signal an internal fault explicitly, \emph{wait} to specify a delay, \emph{empty} to do nothing, \emph{exit} to end the business process and \emph{assign}, which is used to assign a variable value. The \emph{structured activities} are: \emph{sequence} (represented here as ;), which contains two activities that are performed sequentially, \emph{while} to provide a (conditional) repeated execution of one activity, \emph{pick} that waits for the occurrence of exactly one event from a set of events (including an alarm event) executing then the activity associated with that event, and, finally, \emph{flow} ($\|$ operator in our syntax) to express concurrency. Another family of control flow constructs in BPEL includes event, fault and compensation handlers. An event handler is enabled when
 its associated event occurs, being executed concurrently with the main orchestrator activity. Fault handlers are performed when some failure has occurred, so the control is transferred to them. In this work, we only cover the fault and event handling, leaving compensation as a matter of future research. Besides, we do not take into consideration other advanced constructions such as correlation sets, dynamic partnerlinks or instance creation. However, an important aspect in current services technology is that of publishing and discovering of resources, which is considered in our framework. The correspondence among the syntax of WS-BPEL 
 and our model is shown in Table \ref{BPELsyntax}, whereas the correspondence between our model and WSRF/WSN Notification syntax is depicted 
 in Table \ref{WSRFsyntax}.
@@ -407,14 +413,14 @@ discover(tag,vEPR)
 
 
 
-Before we begin, we introduce some notations and definitions needed to describe the operational semantics.
+Before we begin, we introduce some additional notation and definitions required to describe the operational semantics.
 \begin{definition}[State] %\label{states}
 We define a state as a pair s=($\sigma, \rho$), where $\sigma$ represents the variable values in the system and $\rho$ captures the global resource state. We characterise $\sigma$ as a global function in ${\it \entero^\textrm{VAR}}$, but, in practice, each orchestrator will manage its own local variables. Furthermore, $\it{ \rho=\{(O_i,EPR_i,v_i,Subs_i,}$ $\it{ t_i,tag_i,A_{e{_i}})\}_{i=1}^r}$, where $r$ is the number of resources in the system. Each resource has an owner (publisher), ${\it O_i}$, a unique identifier, ${\it EPR_i}$, and, at each state, a particular value, $v_i$, and a lifetime, $t_i$, initialized with the activity {\it publishResource}, which can be changed by using the function {\it setTimeout}. $A_{e{_i}}$ is the activity that must be run when it expires, whereas ${\it tag_i}$ is used as a textual description for discovery purposes. The resources in $\rho$ are therefore published by means of the {\em publishResource} activity, and potential subscribers must discover the resource identifier (EPR) by using the {\it discover} activity. %This identifier will be stored temporarily in a variable $v$ that will be used to access such a resource.  %whereas the resource information ($\rho$) will be shared by all the orchestrators, i.e., any change introduced in $\rho$ by any orchestrator will be visible to others.
 Moreover, $\it{Subs_i=\{(O_{i_{j}},cond'_{i_{j}},A_{e{_{_i{_{_j}}}}})\}_{j=1}^{{s_i}}}$, $i \in \{1,...,r\}$, is the set of resource subscribers, their associated delivery conditions and the event handling activity ${\it A_{e{_{_i{_{_j}}}}}}$ that must be thrown in the case that ${\it cond'_{i_{j}}}$ holds; $s_i$ is the number of orchestrators currently subscribed to this resource and ${\it O_{i_{j}} \in ORCH}$ are the subscriber identifiers.
 \qed
 \end{definition}
 
-{\bf Notation.} Along the following lines, we introduce some notation used only in the operational semantics. Given a state $s=(\sigma,\rho)$, a variable $v$ and an expression $e$, we denote by $s'=(\sigma[e/v],\rho)$ the state obtained from $s$
+Along the following lines, we introduce the additional notation used only in the operational semantics. Given a state $s=(\sigma,\rho)$, a variable $v$ and an expression $e$, we denote by $s'=(\sigma[e/v],\rho)$ the state obtained from $s$
 by changing the value of $v$ for the evaluation of $e$, and we denote the elapse of one time unit by ${\it s{^+}=(\sigma,\rho')}$, where ${\it \rho'=\{(O_i,EPR_i,v_i,Subs_i,t_i-1,tag_i,A_{e{_i}})|}$ ${\it t_i>1\}_{i=1}^r}$. Let the function {\it Subs(s)}, which return the state {\it s} removing from each ${\it Subs_i}$ those subscriptions whose associated condition has held at {\it s}. %, then $s''=s' \setminus Subs(N(O,s))$, being the operator $\setminus$ the typical set subtraction operator. Note that this function avoids infinite executions over the same subscription even though a service could subscribe again with the same condition. 
 We omit its formal definition since it is straightforward.
 
@@ -430,9 +436,6 @@ The operational semantics for this language is defined at three levels, the inte
 the transition rules which establish the orchestrator evolution, whereas the third level corresponds to the composition
 of different orchestrators and resources to conform a choreography.
 
-
-
-
 %\newpage
 \begin{definition}[Activity Operational semantics]
 We define the activity operational semantics by using two types of transition:
@@ -443,6 +446,7 @@ We define the activity operational semantics by using two types of transition:
 \end{enumerate}
 
 \noindent where Act is the set of actions that can be performed. This set can be easily deduced from the rules in Table \ref{tran1}.
+\qed
 \end{definition}
 %\vspace{-0.75cm}
 Notice that we have included a ${\it \tau}$-action that represents an empty movement in order to represent the unobservable behaviour. \emph{Action transitions} capture a state change by the execution of an action $a \in Act$, which can be empty ($\tau$). \emph{Delay transitions} capture how the system state changes when one time unit has elapsed. In Tables \ref{tran1},\ \ref{tran2} we show the rules for these transitions.
@@ -948,7 +952,6 @@ t>1
 \end{tabular}
 }
 }
-\vspace{-0.3cm}
 \caption{\label{tran2}Delay transition rules without notifications.}
 \end{table}
 
@@ -971,7 +974,7 @@ According to rules {\bf invoke}, {\bf receive}, {\bf reply} and {\bf $\overline{
 
 Rules for the sequence and parallel operators are straightforward, but notice that when one of the
 arguments performs either the \emph{throw} action or the \emph{exit} action, the composite
-activity also performs this action conducting the workflow to the empty activity (rules {\bf Seq3}, {\bf Par3} and {\bf Par4}). As regards resource, rule {\bf publishResource} states that the resource and its information is added to the resource set, whereas the resource identifier (e) for this newly created resource is stored in the variable vEPR. This results in the new state $\it{s'=(\sigma[e/vEPR], \rho \cup \{O,e,val,\emptyset,t,tag,A\})}$. Time elapsing is captured by rules in Table \ref{tran2}, notice that the activities for which the passage of time is allowed are {\em wait, empty, receive, invoke} and {\em pick}.
+activity also performs this action conducting the workflow to the empty activity (rules {\bf Seq3}, {\bf Par3} and {\bf Par4}). As regards resource management, rule {\bf publishResource} states that the resource and its information is added to the resource set, whereas the resource identifier (e) for this newly created resource is stored in the variable vEPR. This results in the new state $\it{s'=(\sigma[e/vEPR], \rho \cup \{O,e,val,\emptyset,t,tag,A\})}$. Time elapsing is captured by rules in Table \ref{tran2}, notice that the activities for which the passage of time is allowed are {\em wait, empty, receive, invoke} and {\em pick}.
 
 % but if $(A || (A_{ej1} ( \ldots || A_{ejm})))$ then, those event handling activities that were already in $A$ will not be spawned twice.
 %We therefore introduce the rules by using the following syntax for the activities in execution: $\it{(A,\mathcal{A}_e)}$, where ${\it A}$ represents the normal orchestrator workflow, and ${\it \mathcal{A}_e=\{A_{e_{i}}\}_{i=0}^m}$ are the handling activities in execution. Given any activity ${\it A}$, we write for short ${\it A||\mathcal{A}_e}$ to denote ${\it (A || (A_{e{_1}} ||( \ldots || A_{e{_m}})))}$. Important to note that when an event handling activity is executed the subscription condition is removed so as to avoid infinite executions on the same condition. This does not affect the expressiveness of the language since the orchestrator, which is notified, can subscribe again with the same condition
@@ -993,6 +996,7 @@ The transitions in this level have the following form:
 \end{enumerate}
 where ${\it O= (A,A_f)}$.
 \vspace{-0.4cm}
+\qed
 \end{definition}
 \vspace{0.2cm}
 %Below, we introduce the rules that govern the evolution of the system. Table \ref{tran1} contains the rules for a system without notifications, whereas Table \ref{tab:noti} defines the rules for notification semantics. Finally, Table \ref{tab:coreo} shows the operational semantics at the choreography level.
@@ -1067,6 +1071,7 @@ Finally, the outermost semantic level corresponds to the choreography level, whi
 A choreography is defined as a set of orchestrators that run in parallel exchanging messages: $C=\{O_i\}_{i=1}^c$, where $c$ is the number of orchestrators
 presented in the choreography. A {\it choreography state} is then defined as follows:
 $S_c=\{(O_i:(A_i, s)^{m_i})\}_{i=1}^c$, where $A_i$ is the activity being performed by $O_i$, $m_{i}$ its \emph{mode}, and $s$ is the current global state.
+\qed
 \vspace{0.1cm}
 \end{definition}
 
@@ -1171,20 +1176,19 @@ $\reglaa{ % Antecedente
 }{10}$\\[0.7cm]
 \hspace{2.cm}where  \it{if} $k\neq i,k\neq j, A'_k=A_k,m'_k=m_k$.
 \\[0.4cm]
-
 \end{tabular}
 }}
 \caption{\label{tab:coreo}Choreography transition rules.}
 \end{table*}
 As commented when we defined the types of transitions, our operational semantics evolves at three levels, the internal one corresponds to the evolution of one activity without notifications. In the second one, we state the transitions which yield the evolution of the system in the case that some notifications are triggered, whereas the third level corresponds to the composition of different orchestrators and resources. The former two parts have been covered with the operational semantics described above. Hereby, we are going to explain in the following lines how the system evolves as a whole. In the following we will denote choreography as a composition of orchestrations and their associated web services resources.
-he rule {\it Cor1}\ allows the passage of time on the
+The rule {\it Cor1}\ allows the passage of time on the
 orchestration activity in execution and in the event handling activity, whereas
 {\it Cor2-3}\, allow the evolution of the activity in execution,
 except in the case of failure. In that case, rule {\it Cor4}\,
 are used to activate the fault handling activity.
 
 
-\section{Case study: Online auction service}\label{cs}
+\section*{Case study: Online auction service}\label{cs}
 The case study concerns a typical online auction process, which consists of three participants:
 the online auction system and two buyers, A$_1$ and A$_2$. A seller owes a good that wants to sell to the highest possible price. Therefore, he introduces the product
 in an auction system for a certain time. Then, buyers (or bidders) may place bids for the product and, when time runs out, the highest bid wins. In our case, we suppose the resource is the product for auction, the value of the resource property is the current price (only the auction system can modify it), the resource subscribers will be the buyers, their subscription conditions hold when the current product value is higher than their bid, and the resource lifetime will be the time in which the auction is active. Finally, when the lifetime has expired, the auction system sends a notification to the buyers with the result of the process (the identifier of the winner, $v_w$) and, after that, all the processes finish. Let us consider the choreography ${\it C=(O_{sys},O_1,O_2)}$, where
@@ -1192,7 +1196,7 @@ ${\it O_i=(PL_i,Var_i,A_i,A_{f{_i}},\mathcal{A}_{e{_i}})}$,~i=1,2,~${\it Var_{sy
 ${\it end\_bid\}}$,~${\it Var_1=\{v_1,}$ ${\it v_{w{_1}}\},\ Var_2=\{v_2,v_{w_{2}}\},\ A_{f{_1}}=exit,}$ and
 ${\it A_{f{_2}}=exit}$. Variable $v_{EPR}$ serves to temporarily store the value of the resource property before being sent; $v_1$, $v_2$, $v_{w_{}}$, $v_{w_{1}}$, $v_{w_{2}}$ are variables used for the interaction among participants, and, finally, $end\_bid$ is used to terminate the auction. Suppose ${\it s_{0{_{sys}}}, s_{0{_1}}}$ and ${\it s_{0{_2}}}$ are the initial states of $O_{sys}$, $O_1$ and $O_2$, respectively, and all the variables are initially $0$: \\[-0.2cm]
 
-\vspace{-0.201cm}
+\vspace{-0.5cm}
 
 \small
 
@@ -1216,11 +1220,11 @@ ${\it(pl_4,bid\_finish_2,v_{w_2},empty),empty,48)}$\\
 \\
 
 \normalsize
-\vspace{-0.7cm}
+\vspace{-1.0cm}
 
 Let us note that the operations $bid\_up_{1}$ and $bid\_up_{2}$ are used to increase the current bid by means of a random function, the operations $bid\_finish_{1}$, $bid\_finish_{2}$ update the value of $v_w$ to finish both buyers. Finally, $cmp$ is an auction system operation that receives the bids, $v_i$, and if the variable value is greater than the current value of $v_{EPR}$, then $v_{EPR}$ is updated. As well, by means of the activity $setProp(EPR,v_{EPR})$, we update the resource property.
 
-In Fig. \ref{auct} shows a part of the labeled transition system of $C$. This figure shows a trace sample where after creating the resource EPR both bidders $O_1$ and $O_2$ subscribe to this resource. Afterwards, both bidders are able to increase theirs bids by means of $bid\_up_i$ operations and therefore the auction starts. The auction process is depicted here by the states $Chor_{5}^{+n}$, $Chor_{6}^{+n}$, $Chor_{7}^{+n}$, $Chor_{8}$, $Chor_{9}$ and $Chor_{10}$. In these states, there are several actions running in parallel: $A_{bid}$, $A_{pick1}$ and $A_{pick2}$ representing the communication over the partnerlinks, $A_{cond1}$ and $A_{cond2}$ representing the bidding and $A_{not}$ to finalize the auction. The states indexed by $+n$ have a self-loop to symbolize the passage of time, whereas the transitions labelled with condition expressions control whether the timeout has expired finishing the auction with $A_{not}$.
+In Fig. \ref{auct} shows a part of the labelled transition system of $C$. This figure shows a trace sample where after creating the resource EPR both bidders $O_1$ and $O_2$ subscribe to this resource. Afterwards, both bidders are able to increase theirs bids by means of $bid\_up_i$ operations and therefore the auction starts. The auction process is depicted here by the states $Chor_{5}^{+n}$, $Chor_{6}^{+n}$, $Chor_{7}^{+n}$, $Chor_{8}$, $Chor_{9}$ and $Chor_{10}$. In these states, there are several actions running in parallel: $A_{bid}$, $A_{pick1}$ and $A_{pick2}$ representing the communication over the partnerlinks, $A_{cond1}$ and $A_{cond2}$ representing the bidding and $A_{not}$ to finalize the auction. The states indexed by $+n$ have a self-loop to symbolize the passage of time, whereas the transitions labelled with condition expressions control whether the timeout has expired finishing the auction with $A_{not}$.
 
 \begin{figure}
 \begin{center}
@@ -1231,7 +1235,9 @@ In Fig. \ref{auct} shows a part of the labeled transition system of $C$. This fi
 \end{center}
 \end{figure}
 
-\section{Prioritised-Timed Coloured Petri Net Semantics for WS-BPEL+WSRF}\label{semantics}
+\newpage
+
+\section{Prioritised-Timed Coloured Petri Nets Semantics for BPELRF}\label{semantics}
 
 bla bla bla
 
@@ -1243,28 +1249,28 @@ Petri nets, Finite State Machines and process algebras, but
 there are only a few works considering WS-BPEL enriched with 
 WSRF, and they only show a description of this union, 
 without a formalization of the model.
-In \cite{Slomiski:2006} Slomiski uses BPEL4WS in Grid environments and discusses the
-benefits and challenges of extensibility in the particular case of OGSI workflows
-combined with WSRF-based Grids. Other two works centred around Grid environments are 
-\cite{Leymann:2006} and \cite{Ezenwoye:2007}. The first justifies 
-the use of BPEL extensibility to allow the combination of different GRIDs, whereas
-Ezenwoye et al.~\cite{Ezenwoye:2007} share their experience on BPEL to integrate,
-create and manage WS-Resources that implement the factory/instance pattern.
+%In \cite{Slomiski:2006} Slomiski uses BPEL4WS in Grid environments and discusses the
+%benefits and challenges of extensibility in the particular case of OGSI workflows
+%combined with WSRF-based Grids. Other two works centred around Grid environments are 
+%\cite{Leymann:2006} and \cite{Ezenwoye:2007}. The first justifies 
+%the use of BPEL extensibility to allow the combination of different GRIDs, whereas
+%Ezenwoye et al.~\cite{Ezenwoye:2007} share their experience on BPEL to integrate,
+%create and manage WS-Resources that implement the factory/instance pattern.
 
 On the other hand, Ouyang et al. \cite{Ouyang:2007} define the necessary elements for translating BPEL processes into Petri nets. Thus, they
 cover all the important aspects in the standard such as exception handling, dead path elimination and so on. The model they consider differs from ours in that we formalize the whole
 system as a composition of orchestrators with resources associated, whereas they describe the system as a general scope with nested sub-scopes leaving aside the possibility of administering resources. Furthermore, we have also formalized the event handling and notification mechanisms.  
 Another extensive semantics for BPEL 2.0
-is presented in \cite{Dumas:2008} by Dumas et al, which introduces two new interesting improvements. They define several patterns to simplify some huge nets and introduce the semantics for the WS-BPEL 2.0 new patterns. Related to $\pi$-calculus semantics, Dragoni and Mazzara \cite{Dragoni:2009} 
-propose a theoretical scheme focused on dependable composition for the  WS-BPEL recovery
-framework. In this approach, the recovery framework is simplified
-and analysed via a conservative extension of $\pi$-calculus. The
-aim of this approach clearly differs from ours, but it helps us to have
-a better understanding of the WS-BPEL recovery framework. Other work focused on the BPEL
-recovery framework is \cite{Qiu:2005}. Although this is more focused in the compensation handler, they describe the corresponding rules
-that manage a Web service composition. Our work is therefore quite complete as we define rules for nearly all possible activities. In addition, we also consider time constraints. Finally, we would like to highlight the works of Farahbod et al.~\cite{Farahbod:2005} and Busi et al. \cite{Busi:2005}. In the first one, the authors extract an abstract operational semantics for BPEL based on abstract state machines (ASM) defining the framework BPEL$_{AM}$ to manage the agents who perform the workflow activities. In this approach time constraints are considered, but they do not formalize the timed model. On the other hand, the goal of the latter one is fairly similar to ours. They also define a $\pi$-calculus operational semantics for BPEL and describe a conformance notion. They present all the machinery to model Web service compositions (choreographies and orchestrations). The main difference with our work is that we deal with distributed resources. %In a similar fashion Luchi and Mazzara in \cite{Lucchi07} presents other $\pi$-calculus operational semantic, \textit{Web}$\pi_{\infty}$, which is focused on the idea of event notification as the unique error handling mechanism. It is clear that this proposal differs from ours since they focus their attention in the error handling mechanism, however their claiming of simplifying the error handling using only the notification mechanism can be performed in our proposal since this is the mechanism used in the resource framework and therefore a technique shared by WS-BPEL and WS-RF.
+is presented in \cite{Dumas:2008} by Dumas et al, which introduces two new interesting improvements. They define several patterns to simplify some huge nets and introduce the semantics for the WS-BPEL 2.0 new patterns. 
 
-For further details about the formalization of service oriented languages we would like to encourage the reader to review the works presented at the SENSORIA project in \cite{Wirsing2011bis}. Here, an extensive work is presented from different international research groups aimed by the common goal of providing a rigorous software engineering view point for service-oriented system using as a cornerstone the formal specification of Web Services and WS-BPEL in particular.% Works such as SOCK \cite{Wirsing2011bis}, CaSPiS \cite{Bettini2008}, COWS \cite{Lapadula2007}, B-lite \cite{Lapadula2008} or Orc \cite{Kitchin2009} are either presented or reviewed. The first one, SOCK (Service Oriented Computing Kernel \cite{Wirsing2011bis}), is a formal calculus which aims at characterizing the basic features of Service Oriented Computing and takes its inspiration from WS-BPEL, considered by the authors as the ``de facto" standard for Web Service technology. The second one, CaSPiS (Calculus of Services with Pipelines and Sessions \cite{Bettini2008}) uses the Java framework IMC. Authors take advantage of the already built-in IMC features such us session oriented and pattern matching communication mechanisms easing the task of implementing in Java all CaSPiS abstractions. Other one, COWS (Calculus for Orchestration of Web Services \cite{Lapadula2007}), is a new foundational language for SOC whose design has been influenced by WS-BPEL. COWS combines a number of elements from process calculi, e.g. asynchronous communication, polyadic synchronization, pattern matching, protection, delimited receiving and killing activities. Other one reviewed also in this book is B lite \cite{Lapadula2008}. This is a lightweight language for Web services orchestration designed around some of WS-BPEL peculiar features like partner links, process termination, message correlation, long-running business transactions and compensation handlers aiding to clarify some ambiguous aspects of the WS-BPEL specification. The last one, Orc \cite{Kitchin2009}, is not influenced by any other language used for orchestration purposes like WS-BPEL. The authors define the language as a novel language for distributed and concurrent programming which provides uniform access to computational services, including distributed communication and data manipulation, through sites. Using four simple concurrency primitives, the programmer orchestrates the invocation of sites to achieve a goal, while managing timeouts, priorities, and failures. This language uses as a basic activity the information published by a site and therefore each site invocation always finishes with one or more either nested or parallel publications.
+%Related to $\pi$-calculus semantics, Dragoni and Mazzara \cite{Dragoni:2009} 
+%propose a theoretical scheme focused on dependable composition for the  WS-BPEL recovery
+%framework. In this approach, the recovery framework is simplified
+%and analysed via a conservative extension of $\pi$-calculus. The
+%aim of this approach clearly differs from ours, but it helps us to have
+%a better understanding of the WS-BPEL recovery framework. Other work focused on the BPEL
+%recovery framework is \cite{Qiu:2005}. Although this is more focused in the compensation handler, they describe the corresponding rules
+%that manage a Web service composition. Our work is therefore quite complete as we define rules for nearly all possible activities. In addition, we also consider time constraints. Finally, we would like to highlight the works of Farahbod et al.~\cite{Farahbod:2005} and Busi et al. \cite{Busi:2005}. In the first one, the authors extract an abstract operational semantics for BPEL based on abstract state machines (ASM) defining the framework BPEL$_{AM}$ to manage the agents who perform the workflow activities. In this approach time constraints are considered, but they do not formalize the timed model. On the other hand, the goal of the latter one is fairly similar to ours. They also define a $\pi$-calculus operational semantics for BPEL and describe a conformance notion. They present all the machinery to model Web service compositions (choreographies and orchestrations). The main difference with our work is that we deal with distributed resources. %In a similar fashion Luchi and Mazzara in \cite{Lucchi07} presents other $\pi$-calculus operational semantic, \textit{Web}$\pi_{\infty}$, which is focused on the idea of event notification as the unique error handling mechanism. It is clear that this proposal differs from ours since they focus their attention in the error handling mechanism, however their claiming of simplifying the error handling using only the notification mechanism can be performed in our proposal since this is the mechanism used in the resource framework and therefore a technique shared by WS-BPEL and WS-RF.
 
 
 
@@ -1386,6 +1392,7 @@ this means that the time delay associated to ${\it t}$ can be any value in this 
 {\em priority function}, which assigns a priority level
 to each transition.
 \end{itemize}
+\qed
 \vspace{-0.5cm}
 \end{definition}
 %The obtained PTCPNs is 1-safe,  which means that for every
@@ -1404,7 +1411,7 @@ see for instance \cite{Jensen2009}.%
 %                          TRADUCCION
 % ===============================================================
 
-\subsection{PTCPN Semantics for WSRF/BPEL}
+\subsection*{PTCPN Semantics for WSRF/BPEL}
 
 Before introducing the PTCPN semantics, we 
 define the formal model that 
@@ -1807,7 +1814,7 @@ any resource {\it r}, ${\it p_{r_a}}$ becomes marked when the orchestrator execu
 %                            BASICAS 
 %=======================================================================
 
-\subsection{Basic activities}
+\subsection*{Basic activities}
 \begin{itemize}
 \item {\it Throw, Empty, Assign, Exit} and  {\it Wait} activities:\\
 %
@@ -1906,7 +1913,7 @@ Fig.~\ref{fig:comm} shows the translation for both the invoke/receive and the re
 % ======================================================================
 %                            ORDERING 
 %=======================================================================
-\subsection{Ordering structures}
+\subsection*{Ordering structures}
 
 %Structured activities prescribe the order in which a collection of activities is executed. They 
 %describe how a business process is created; by composing the basic activities and the WSRF-compliant activities (presented previously)
@@ -2046,7 +2053,7 @@ The meaning of the places and transitions are fairly straightforward, so, due to
 % ======================================================================
 %                            WSRF 
 %=======================================================================
-\subsection{WSRF-compliant}
+\subsection*{WSRF/WSN-compliant}
 In this section, we state the WSRF activities we have integrated with the BPEL activities in order to create a framework for modelling stateful workflows. It is worth noting that in recent years have appeared a new redefinition of workflow nets which deals with resources called Resource-Constrained Workflow Nets \ref{}. As commented in the Related Work section, this approach extends the well-known formalism, Workflow nets, with finite resources such as money, memory and so on, but the authors do not provide the machinery
 to create and destroy such resources, so this extension of Workflow nets matches with the idea of WSRF standard, i.e., the creation and destruction of resources is out of the scope of the specification. Nevertheless, our approach was devised to manage the whole lifetime of the resource from its creation until its destruction.
 
@@ -2205,7 +2212,9 @@ This activity is analogous to {\em SetProp} activity. In this case, the resource
 
 \section{Tool Support}
 
-\section{Case study: Online auction service}\label{cs}
+Sacar del WODES
+
+\section*{Case study: Online auction service}\label{cs}
 
 The case study concerns a typical online auction process, which consists of three participants:
 the online auction system and two buyers, A$_1$ and A$_2$. A seller owes a good that wants to sell to the highest possible price. Therefore, he introduces the product
