@@ -1,0 +1,4 @@
+git add *
+git commmit -m "date"
+git push origin master
+git status

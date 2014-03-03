@@ -1,0 +1,917 @@
+%*----------------------------------------------------------------------*
+%|                                                                      |
+%| File Name            : Bibliography.bib                              |
+%| Author               : Jose Antonio Mateo                              |
+%|                                                                      |
+%*----------------------------------------------------------------------*
+
+
+@article{Clarke96,
+  title={{ Formal methods: State of the art
+and future directions.}},
+  author={E. Clarke and J. Wing },
+  journal={ ACM Computing Surveys},  
+  year={1996}
+}
+
+@article{Abrial80,
+  title={{ A Specification Language, in On the Construction of Programs}},
+  author={J. R. Abrial, S. Schuman and B. Meyer},
+  journal={ Cambridge University Press, eds. A. M. Macnaghten and R. M. McKeag},  
+  year={1980}
+}
+
+@article{Clarke94,
+  title={{Model checking and abstraction}},
+  author={E. Clarke, O. Grumberg, and D.E.  Long},
+  journal={ ACM Trans.Prog. Lang. Syst. (TOPLAS)},  
+  year={1994}
+}
+
+@book{Clarke99,
+  author={E. Clarke, O. Grumberg and D. Peled.},
+  title={{Model Checking}},
+  publisher={ MITPress, Cambridge, MA},
+  year={1999}
+}
+
+@article{Henzinger94,
+  author={T. Henzinger, X. Nicollin, J. Sifakis and S. Yovine},
+  title={{Symbolic model checking for real-time systems}},
+  journal={Information and Computation},
+  volume={111},
+  number={2},
+  pages={193-244},
+  year={1994}
+}
+
+@article{Pnueli77,
+  author={A. Pnueli},
+  title={{The temporal logic of programs}},
+  journal={Proc. 18th IEEE Symp. on Foundations of Computer Science},
+   year={1977}
+}
+
+@book{Holz04,
+  author={G. J. Holzmann},
+  title={{The SPIN Model Checker: Primer and Reference Manual}},
+  publisher={ Addison-Wesley},
+  year={2004}
+}
+
+@article{Larsen97,
+  title={{UPPAAL in a nutshell}},
+  author={K.G. Larsen, P. Pettersson, and W. Yi},
+  journal={ International Journal on Software Tools for Technology Transfer (STTT)},  
+  year={1997}
+}
+
+@article{Ban06,
+  title={{Web Services Resource Framework (WSRF) - Primer}},
+  author={T. Banks},
+  journal={OASIS},  
+  year={2006}
+}
+
+@article{Foster03,
+  title={{Open Grid Services Infrastructure (OGSI) Version 1.0. Global Grid Forum Recommendation}},
+  author={S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T.  Sandholm, P. Vanderbilt and D. Snelling},
+  journal={, Global Grid Forum},  
+  year={2003}
+}
+
+
+@ARTICLE{Alur94,
+    author = {R. Alur and D. Dill},
+    title = {A Theory of Timed Automata},
+    journal = {Theoretical Computer Science},
+    volume = {126},
+    pages = {183--235},
+    year = {1994}
+}
+
+@inproceedings{Yi94,
+   author = {W. Yi, P. Pettersson and M. Daniels},
+   booktitle = {Proc.\ of the 7{\em th} Int.\ Conf.\ on Formal Description Techniques},
+   key = {forte94},
+   title = {{Automatic Verification of Real-Time Communicating Systems By Constraint-Solving}},
+   pages = {223--238},
+   editor = "Dieter Hogrefe and Stefan Leue",
+   publisher = "North--Holland",
+   year = {1994}
+}
+
+@BOOK{Ros98,
+  title =    "The Theory and Practice of Concurrency",
+  publisher =   "Prentice Hall",
+  author =   "A.W. Roscoe",
+  year =     "1998" }
+
+
+@ARTICLE{Fost04,
+    author = {I. Foster, J. Frey, S. Graham, S. Tuecke, K.
+Czajkowski, D. Ferguson, F. Leymann, M.
+Nally, T. Storey, W. Vambenepe and S.
+Weerawarana.},
+    title = {Modeling Stateful Resources with Web Services},
+    journal = { http://www-106.ibm.com/developerworks/library/wsresource/
+ws-modelingresources.pdf, Tech. Rep., 2004.},
+}
+
+@inproceedings{Fran95,
+  author =   "F. Laroussinie and K. G. Larsen",
+  title =    "Compositional Model Checking of Real Time
+                  Systems",
+  pages =    "27--41",
+  month =    "",
+  note =     "RS-95-19",
+  series =     "LNCS-962",
+  year =     1995
+}
+
+@InProceedings{Wei89,
+  author =       {H. Huttel, K. G. Larsen and C. Weise},
+  title =        {The use of static sontructs in a modal process logic},
+  series =       {Lecture Notes in Computer Science},
+  number =       {363},
+  publisher =    {Springer-Verlag},
+  year =         1989,
+}
+
+@article{W3C2005WSCDL,
+  title={{Web Services Choreography Description Language Version 1.0}},
+  author={W3C},
+  journal={http://www.w3.org/TR/ws-cdl-10/},  
+  year={2005}
+}
+
+@article{Andrews2003WSBPEL,
+  title={{Business Process Execution Language for Web Services (version 2.0)}},
+  author={A. Alves,  
+  A. Arkin,   
+  S. Askary,  
+  C. Barreto,  
+  B. Bloch,   
+  F. Curbera,  
+  M. Ford,   
+  Y. Goland,  
+  A. Guízar,  
+  N. Kartha,  
+  C. K. Liu,  
+  R. Khalaf,  
+  D. König,   
+  M. Marin,  
+  V. Mehta, S. Thatte, D. van der Rijn,   
+P. Yendluri,A. Yiu},  
+  year={2007}
+}
+
+
+@TECHREPORT{Petri66,
+  author = "G. A. Petri",
+  title = "Communications with {A}utomata",
+  institution = "New York University",
+  number = "RADC-TR-65-377",
+  year = "1966",
+}
+
+@BOOK{TesisGrego,
+  author = "G. D\'{\i}az",
+  title = {{Applying and Developing Formal Techniques in the Design of E-Commerce Oriented 
+  Web Services with Strong Time Constraints}},
+  publisher = "PhD. Thesis, University of Castilla-La Mancha",
+  year = "2006",
+}
+
+
+@BOOK{TesisEmi,
+  author = "M. E. Cambronero",
+  title = {{Description and Verification of Multimedia Systems and Web Services with Time Constraints}},
+  publisher = "PhD. Thesis, University of Castilla-La Mancha",
+  year = "2007",
+}
+
+@inproceedings{versalles,
+  author    = {G. D\'{\i}az, J. J. Pardo,  M. E. Cambronero, V. Valero and
+               F. Cuartero},
+  title     = {{Automatic Translation of WS-CDL Choreographies to Timed
+               Automata.}},
+  booktitle = {EPEW/WS-FM},
+ pages     = {230-242},
+  year      = {2005}
+}
+
+
+@article{KAOS1,
+    author = "A. Dardenne, A.van Lamsweerde and S. Fickas",
+    title = "Goal-directed requirements acquisition",
+    journal = "Science of Computer Programming",
+    volume = "20",
+    number = "1-2",
+    pages = "3-50",
+   year = "1993"
+}
+%-----------------------------------------------------------------------------------------------------------
+
+@inproceedings{KAOS2,
+    author = "R. Darimont and A. van Lamsweerde",
+    title = "Formal Refinement Patterns for Goal-Driven Requirements Elaboration",
+    booktitle = "Foundations of Software Engineering",
+    pages = "179-190",
+    year = "1996",
+  }
+
+% -----------------------------------------------------------------------------------------------------------
+
+@InProceedings{KAOS3,
+    author = "A.van Lamsweerde",
+    title = "Requirements engineering in the year 00: a research perspective",
+    booktitle = "International Conference on Software Engineering",
+     pages = "5-19",
+  year = "2000"
+}
+
+% -----------------------------------------------------------------------------------------------------------
+
+@article{KAOS4,
+  author    = {C. Ponsard,  P. Massonet, A. Rifaut, J. Molderez, A. van Lamsweerde and H. Tran Van},
+  title     = {{Early Verification and Validation of Mission Critical Systems.}},
+  journal   = {Electr. Notes Theor. Comput. Sci.},
+  volume    = {133},
+  year      = {2005},
+  pages     = {237-254}
+}
+
+@inproceedings{Grego2009,
+  author    = {G.D\'{\i}az and I.  Rodr\'{\i}guez},
+  title     = {Checking the Conformance of Orchestrations with Respect
+               to Choreographies in Web Services: A Formal Approach},
+  booktitle = {FMOODS/FORTE},
+  year      = {2009},
+  pages     = {231-236},
+}
+
+@article{Emi10,
+  author    = {M. E. Cambronero, V. Valero Ruiz and
+               G. D\'{\i}az},
+  title     = {Verification of real-time systems design},
+  journal   = {Softw. Test., Verif. Reliab.},
+  volume    = {20},
+  number    = {1},
+  year      = {2010},
+  pages     = {3-37}
+}
+
+@inproceedings{Emi07,
+  author    = {M. E. Cambronero, J. J. Pardo, G. D\'{\i}az and
+               V. Valero},
+  title     = {Using RT-UML for modelling web services},
+  booktitle = {SAC},
+  year      = {2007},
+  pages     = {643-648}
+}
+
+@book{Thomas96,
+ author = {T. Erl},
+ title = {Service-Oriented Architecture: A Field Guide to Integrating XML and Web Services},
+ year = {2004},
+  publisher = {Prentice Hall PTR}
+ }
+
+
+@article{OuyangVABDH07,
+  author    = {Chun Ouyang and
+               Eric Verbeek and
+               Wil M. P. van der Aalst and
+               Stephan Breutel and
+               Marlon Dumas and
+               Arthur H. M. ter Hofstede},
+  title     = {Formal semantics and analysis of control flow in WS-BPEL},
+  journal   = {Sci. Comput. Program.},
+  volume    = {67},
+  number    = {2-3},
+  year      = {2007},
+  pages     = {162-198},
+  ee        = {http://dx.doi.org/10.1016/j.scico.2007.03.002},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@manual{wsbpelstandard,
+    abstract = {{This document defines a language for specifying business process behavior based on Web Services. This language is called Web Services Business Process Execution Language (abbreviated to WS-BPEL in the rest of this document). Processes in WS-BPEL export and import functionality by using Web Service interfaces exclusively. Business processes can be described in two ways. Executable business processes model actual behavior of a participant in a business interaction. Abstract business processes are partially specified processes that are not intended to be executed. An Abstract Process may hide some of the required concrete operational details. Abstract Processes serve a descriptive role, with more than one possible use case, including observable behavior and process template. WS-BPEL is meant to be used to model the behavior of both Executable and Abstract Processes. WS-BPEL provides a language for the specification of Executable and Abstract business processes. By doing so, it extends the Web Services interaction model and enables it to support business transactions. WS-BPEL defines an interoperable integration model that should facilitate the expansion of automated process integration in both the intra-corporate and the business-to-business spaces.}},
+    citeulike-article-id = {3465627},
+    citeulike-linkout-0 = {http://docs.oasis-open.org/wsbpel/2.0/OS/wsbpel-v2.0-OS.html},
+    day = {11},
+    editor = {{IBM} and Microsoft and {and others}},
+    howpublished = {http://docs.oasis-open.org/wsbpel/2.0/OS/wsbpel-v2.0-OS.html},
+    keywords = {bpel},
+    month = apr,
+    organization = {Organization for the Advancement of Structured Information Standards (OASIS)},
+    posted-at = {2008-10-30 14:56:28},
+    priority = {1},
+    title = {Web Services Business Process Execution Language ({WS-BPEL}) Version 2.0},
+    url = {http://docs.oasis-open.org/wsbpel/2.0/OS/wsbpel-v2.0-OS.html},
+    year = {2007}
+}
+
+@techreport{BPELsoftcare,
+     title = {What is BPEL and why is it so important to my business?},
+     author = {Michael Cobban},
+     group = {csg},
+     year = {2005},
+     institution = {SoftCare EC},
+     month = {01},
+     Date-Added = {2010-01-11 10:05:52},
+     Date-Modified = {2010-07-22 12:08:45},
+}
+
+@techreport{Armbrust2009,
+    Author = {Armbrust, Michael and Fox, Armando and Griffith, Rean and Joseph, Anthony D. and Katz, Randy H. and Konwinski, Andrew and Lee, Gunho and Patterson, David A. and Rabkin, Ariel and Stoica, Ion and Zaharia, Matei},
+    Title = {Above the Clouds: A Berkeley View of Cloud Computing},
+    Institution = {EECS Department, University of California, Berkeley},
+    Year = {2009},
+    Month = {Feb},
+    URL = {http://www.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-28.html},
+    Number = {UCB/EECS-2009-28},
+}
+
+@book{Buyya2011,
+ author = {Buyya, Rajkumar and Broberg, James and Goscinski, Andrzej M.},
+ title = {Cloud Computing Principles and Paradigms},
+ year = {2011},
+ isbn = {9780470887998},
+ publisher = {Wiley Publishing},
+} 
+
+@article{Vaquero2008,
+ author = {Vaquero, Luis M. and Rodero-Merino, Luis and Caceres, Juan and Lindner, Maik},
+ title = {A Break in the Clouds: Towards a Cloud Definition},
+ journal = {SIGCOMM Comput. Commun. Rev.},
+ issue_date = {January 2009},
+ volume = {39},
+ number = {1},
+ month = dec,
+ year = {2008},
+ issn = {0146-4833},
+ pages = {50--55},
+ numpages = {6},
+ url = {http://doi.acm.org/10.1145/1496091.1496100},
+ doi = {10.1145/1496091.1496100},
+ acmid = {1496100},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {cloud computing, cloud definition, grid},
+} 
+
+@book{DumasAalst2005,
+  author    = {Marlon Dumas and
+               Wil M. P. van der Aalst and
+               Arthur H. M. ter Hofstede},
+  title     = {Process-Aware Information Systems: Bridging People and Software
+               Through Process Technology},
+  publisher = {Wiley},
+  year      = {2005},
+  isbn      = {978-0-471-66306-5},
+  ee        = {http://eu.wiley.com/WileyCDA/WileyTitle/productCd-0471663069.html},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{EllisKeddara2000,
+ author = {Ellis, Clarence A. and Keddara, Karim},
+ title = {A Workflow Change Is a Workflow},
+ booktitle = {Business Process Management, Models, Techniques, and Empirical Studies},
+ year = {2000},
+ isbn = {3-540-67454-3},
+ pages = {201--217},
+ numpages = {17},
+ url = {http://dl.acm.org/citation.cfm?id=647778.734906},
+ acmid = {734906},
+ publisher = {Springer-Verlag},
+ address = {London, UK, UK},
+}
+
+@INPROCEEDINGS{Hollingsworth2004,
+    author = {David Hollingsworth and Fujitsu Services and United Kingdom},
+    title = {The Workflow Reference Model: 10 Years On},
+    booktitle = {Fujitsu Services, UK; Technical Committee Chair of WfMC},
+    year = {2004},
+    pages = {295--312}
+}
+
+@techreport{hollingsworth95,
+  added-at = {2006-10-20T06:52:21.000+0200},
+  author = {Hollingsworth, D.},
+  biburl = {http://www.bibsonomy.org/bibtex/236043efffa9939b3b1c45a80859207c2/mstrohm},
+  institution = {Workflow Management Coalition},
+  interhash = {ff1de9a18019ef396222c4cada2566c7},
+  intrahash = {36043efffa9939b3b1c45a80859207c2},
+  keywords = {standards workflows},
+  month = Jan,
+  status = {vorhanden (in elektronischer Form)},
+  timestamp = {2006-10-20T06:52:21.000+0200},
+  title = {Workflow Management Coalition - The Workflow Reference Model},
+  year = 1995
+}
+
+@inproceedings{Aalst97,
+  author    = {Wil M. P. van der Aalst},
+  title     = {Verification of Workflow Nets},
+  booktitle = {ICATPN},
+  year      = {1997},
+  pages     = {407-426},
+  ee        = {http://dx.doi.org/10.1007/3-540-63139-9_48},
+  crossref  = {DBLP:conf/apn/1997},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{Aalst98,
+  author    = {Wil M. P. van der Aalst},
+  title     = {The Application of Petri Nets to Workflow Management},
+  journal   = {Journal of Circuits, Systems, and Computers},
+  volume    = {8},
+  number    = {1},
+  year      = {1998},
+  pages     = {21-66},
+  ee        = {http://dx.doi.org/10.1142/S0218126698000043},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@book{Jensen97,
+  author    = {Kurt Jensen},
+  title     = {Coloured Petri Nets - Basic Concepts, Analysis Methods and
+               Practical Use - Volume 3},
+  publisher = {Springer},
+  series    = {Monographs in Theoretical Computer Science. An EATCS Series},
+  year      = {1997},
+  isbn      = {978-3-642-64556-3, 978-3-642-60794-3},
+  pages     = {I-IX, 1-268},
+  ee        = {http://dx.doi.org/10.1007/978-3-642-60794-3},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{Bau96,
+ author = {Bause, Falko},
+ journal = {Acta Informatica},
+  keywords = {dblp},
+  number = {7},
+  pages = {669-685},
+  title = {On the Analysis of Petri Nets with Static Priorities.},
+  url = {http://dblp.uni-trier.de/db/journals/acta/acta33.html#Bause96},
+  volume = {33},
+  year = {1996}
+}
+
+@article{BestK92,
+  author    = {Eike Best and
+               Maciej Koutny},
+  title     = {Petri Net Semantics of Priority Systems},
+  journal   = {Theor. Comput. Sci.},
+  volume    = {96},
+  number    = {1},
+  year      = {1992},
+  pages     = {175-174},
+  ee        = {http://dx.doi.org/10.1016/0304-3975(92)90184-H},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@book{Pet81,
+  added-at = {2012-11-22T19:17:38.000+0100},
+  author = {Peterson, {J.L.}},
+  biburl = {http://www.bibsonomy.org/bibtex/26fac0b64325b2f42aefce4acc5014be8/wvdaalst},
+  interhash = {a244cccfada5bb24c44a1e01439d4bb3},
+  intrahash = {6fac0b64325b2f42aefce4acc5014be8},
+  keywords = {BPM collection imported},
+  publisher = {Prentice-Hall, Englewood Cliffs},
+  timestamp = {2012-11-22T19:17:38.000+0100},
+  title = {{Petri net theory and the modeling of systems}},
+  year = 1981
+}
+
+@online{CPNTools,
+author = {},
+title = {CPNTools web site},
+month = April,
+year = {2013},
+url = {http://cpntools.org}
+}
+
+@techreport{Ram74,
+ author = {Ramchandani, C.},
+ title = {ANALYSIS OF ASYNCHRONOUS CONCURRENT SYSTEMS BY TIMED PETRI NETS},
+ year = {1974},
+ publisher = {Massachusetts Institute of Technology},
+ address = {Cambridge, MA, USA},
+} 
+
+@inproceedings{Sif77,
+  author    = {Joseph Sifakis},
+  title     = {Use of Petri Nets for Performance Evaluation},
+  booktitle = {Performance},
+  year      = {1977},
+  pages     = {75-93},
+  crossref  = {DBLP:conf/performance/1977},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{VFC93,
+author={Ruiz, V.V. and de Frutos Escrig, D. and Gomez, F.C.},
+booktitle={Petri Nets and Performance Models, 1993. Proceedings., 5th International Workshop on},
+title={Decidability of the strict reachability problem for TPN's with rational and real durations},
+year={1993},
+month={Oct},
+pages={56-65},
+doi={10.1109/PNPM.1993.393435}}
+
+@inproceedings{AjCh85,
+  author = {Marsan, M. Ajmone and Balbo, G. and Bobbio, A. and Chiola, G. and Conte, G. and Cumani, A.},
+  biburl = {http://www.bibsonomy.org/bibtex/25cace0a24c5be32b8d76a4eca07fd3fd/wvdaalst},
+  booktitle = {Proceedings of the International Workshop on Timed Petri Nets},
+  keywords = {BPM collection imported},
+  pages = {80--87},
+  publisher = {IEEE Computer Society Press},
+  title = {{On Petri Nets with Stochastic Timing}},
+  year = {1985}
+}
+
+@inproceedings{van93,
+  author    = {Wil M. P. van der Aalst},
+  title     = {Interval Timed Coloured Petri Nets and their Analysis},
+  booktitle = {Application and Theory of Petri Nets},
+  year      = {1993},
+  pages     = {453-472},
+  ee        = {http://dx.doi.org/10.1007/3-540-56863-8_61},
+  crossref  = {DBLP:conf/apn/1993},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{van95,
+  author    = {Wil M. P. van der Aalst and
+               Michiel A. Odijk},
+  title     = {Analysis of Railway Stations by Means of Interval Timed
+               Coloured Petri Nets},
+  journal   = {Real-Time Systems},
+  volume    = {9},
+  number    = {3},
+  year      = {1995},
+  pages     = {241-263},
+  ee        = {http://dx.doi.org/10.1007/BF01088807},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{BLT90,
+  author    = {Tommaso Bolognesi and
+               Ferdinando Lucidi and
+               Sebastiano Trigila},
+  title     = {From timed Petri nets to timed LOTOS},
+  booktitle = {PSTV},
+  year      = {1990},
+  pages     = {395-408},
+  crossref  = {DBLP:conf/pstv/1990},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{Bow96,
+author ={F. D. J. Bowden},
+  title ={Modelling Time in Petri Nets.},
+  booktitle = {Proceedings of the second Australia-Japan Workshop on
+               Stochastic Models in Engineering, Technology and
+               Management},
+  year ={Jul, 1996}
+}
+
+@PhdThesis{Mer74,
+title = {A Study of the Recoverability of
+Communication Protocols},
+author = {P. Merlin},
+school = {University of California},
+year = "1974",
+}
+
+@BOOK{Wan98,
+AUTHOR={J. Wang}, 
+TITLE     = {Timed Petri Nets: Theory and Application},
+PUBLISHER = {Springer},
+YEAR      = {1998},
+Volume    = {9},
+Series    = {The International Series on Discrete Event Dynamic Systems},
+}
+
+@ARTICLE{WSRFstandard, 
+author={}, 
+journal={\url{http://docs.oasis-open.org/wsrf/wsrf-primer-1.2-primer-cd-02.pdf}}, 
+title={OASIS Standard for Web Services Resource Framework (WSRF) v1.2}, 
+year={2006}, 
+month={April}, 
+volume={}, 
+number={}, 
+pages={}, 
+doi={}, 
+}
+
+@ARTICLE{WSNstandard, 
+author={}, 
+journal={\url{https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=wsn}}, 
+title={OASIS Standard for Web Services Notification (WSN) v1.3}, 
+year={2006}, 
+month={October}, 
+volume={}, 
+number={}, 
+pages={}, 
+doi={}, 
+}
+
+@article{AalstHHSVVW11,
+  author    = {Wil M. P. van der Aalst and
+               Kees M. van Hee and
+               Arthur H. M. ter Hofstede and
+               Natalia Sidorova and
+               H. M. W. Verbeek and
+               Marc Voorhoeve and
+               Moe Thandar Wynn},
+  title     = {Soundness of workflow nets: classification, decidability,
+               and analysis},
+  journal   = {Formal Asp. Comput.},
+  volume    = {23},
+  number    = {3},
+  year      = {2011},
+  pages     = {333-363},
+  ee        = {http://dx.doi.org/10.1007/s00165-010-0161-4},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@book{Jensen2009,
+  author    = {Kurt Jensen and
+               Lars Michael Kristensen},
+  title     = {Coloured Petri Nets - Modelling and Validation of Concurrent
+               Systems},
+  publisher = {Springer},
+  year      = {2009},
+  isbn      = {978-3-642-00283-0},
+  pages     = {I-XI, 1-384},
+  ee        = {http://dx.doi.org/10.1007/b95112},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+@MISC{Plotkin81,
+    author = {G. D. Plotkin},
+    title = {A Structural Approach to Operational Semantics, University of Aarhus},
+    year = {1981}
+}
+
+@book{aceto1999,
+  title={Structural operational semantics},
+  author={Aceto, Luca and Fokkink, Wan and Verhoef, Chris},
+  year={1999},
+  publisher={Citeseer}
+}
+
+@article{Baeten2005,
+title = "A brief history of process algebra ",
+journal = "Theoretical Computer Science ",
+volume = "335",
+number = "2–3",
+pages = "131 - 146",
+year = "2005",
+note = "Process Algebra ",
+issn = "0304-3975",
+doi = "http://dx.doi.org/10.1016/j.tcs.2004.07.036",
+url = "http://www.sciencedirect.com/science/article/pii/S0304397505000307",
+author = "J.C.M. Baeten",
+keywords = "Process algebra",
+keywords = "History "
+}
+
+@article{GreatSPN,
+ author = {Chiola, G. and Franceschinis, G. and Gaeta, R. and Ribaudo, M.},
+ title = {GreatSPN 1.7: Graphical Editor and Analyzer for Timed and Stochastic Petri Nets},
+ journal = {Perform. Eval.},
+ issue_date = {Nov. 1995},
+ volume = {24},
+ number = {1-2},
+ month = nov,
+ year = {1995},
+ issn = {0166-5316},
+ pages = {47--68},
+ numpages = {22},
+ url = {http://dx.doi.org/10.1016/0166-5316(95)00008-L},
+ doi = {10.1016/0166-5316(95)00008-L},
+ acmid = {219934},
+ publisher = {Elsevier Science Publishers B. V.},
+ address = {Amsterdam, The Netherlands, The Netherlands},
+ keywords = {CTMC, Petri nets, modeling tool},
+}
+
+@article{TINA,
+author = {Berthomieu, B. and Ribet, P.-O. and Vernadat, F.},
+title = {The tool TINA – Construction of abstract state spaces for petri nets and time petri nets},
+journal = {International Journal of Production Research},
+volume = {42},
+number = {14},
+pages = {2741-2756},
+year = {2004},
+doi = {10.1080/00207540412331312688},
+
+URL = {http://www.tandfonline.com/doi/abs/10.1080/00207540412331312688},
+eprint = {http://www.tandfonline.com/doi/pdf/10.1080/00207540412331312688}
+}
+
+@inproceedings{Snoopy,
+  author    = {Monika Heiner and
+               Mostafa Herajy and
+               Fei Liu and
+               Christian Rohr and
+               Martin Schwarick},
+  title     = {Snoopy - A Unifying Petri Net Tool},
+  booktitle = {Petri Nets},
+  year      = {2012},
+  pages     = {398-407},
+  ee        = {http://dx.doi.org/10.1007/978-3-642-31131-4_22},
+  crossref  = {DBLP:conf/apn/2012},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{foster2004,
+  title={Modeling stateful resources with web services},
+  author={Ian Foster et al.}
+}
+
+@article{Papazoglou2007,
+  author    = {Mike P. Papazoglou and
+               Paolo Traverso and
+               Schahram Dustdar and
+               Frank Leymann},
+  title     = {Service-Oriented Computing: State of the Art and Research
+               Challenges},
+  journal   = {IEEE Computer},
+  volume    = {40},
+  number    = {11},
+  year      = {2007},
+  pages     = {38-45},
+  ee        = {http://doi.ieeecomputersociety.org/10.1109/MC.2007.400},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@misc{wsdl,
+  abstract = {This document describes the Web Services Description Language Version 2.0 (WSDL 2.0), an XML language for describing Web services. This specification defines the core language which can be used to describe Web services based on an abstract model of what the service offers. It also defines criteria for a conformant processor of this language.},
+  added-at = {2009-01-14T00:43:43.000+0100},
+  author = {Chinnici, Roberto and Moreau, Jean-Jacques and Ryman, Arthur and Weerawarana, Sanjiva},
+  biburl = {http://www.bibsonomy.org/bibtex/2cfd5f8b25ffb28d7f19e0946b4817746/dret},
+  description = {dret'd bibliography},
+  howpublished = {World Wide Web Consortium, Recommendation REC-wsdl20-20070626},
+  interhash = {af3fc44271c4a31bfb4b5ac2e657dffc},
+  intrahash = {cfd5f8b25ffb28d7f19e0946b4817746},
+  keywords = {imported},
+  month = {June},
+  timestamp = {2009-01-14T00:43:43.000+0100},
+  title = {Web Services Description Language (WSDL) Version 2.0 Part 1: Core Language},
+  topic = {wsdl[1]},
+  updates = {wsdl12},
+  uri = {http://www.w3.org/TR/2007/REC-wsdl20-20070626},
+  year = 2007
+}
+
+@techreport{SOAP,
+  added-at = {2009-04-02T11:07:42.000+0200},
+  author = {Box, Don and Ehnebuske, David and Kakivaya, Gopal and Layman, Andrew and Mendelsohn, Noah and Nielsen, Henrik Frystyk and Thatte, Satish and Winer, Dave},
+  biburl = {http://www.bibsonomy.org/bibtex/264a001838b505f10190b4ef61588e252/jeenbroekstra},
+  institution = {World Wide Web Consortium},
+  interhash = {90c2e942a1e7306220f19ae56f7cff2f},
+  intrahash = {64a001838b505f10190b4ef61588e252},
+  keywords = {2000 soap w3c webservice xml},
+  month = May,
+  note = {See \url{http://www.w3.org/TR/SOAP/}},
+  timestamp = {2009-04-02T11:07:42.000+0200},
+  title = {{Simple Object Access Protocol (SOAP) 1.1}},
+  type = {W3C Note},
+  year = 2000
+}
+
+@techreport{UDDI,
+  added-at = {2007-06-13T22:31:39.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/2d95cd10f63b6ac9bf5b562c39721c0f5/thomas},
+  description = {UDDI specification 3.0.2},
+  editor = {Clement, Luc and Hately, Andrew and von Riegen, Claus and Rogers, Tony},
+  interhash = {ced9ecda5ca86a6d6c37c538c6a7513a},
+  intrahash = {d95cd10f63b6ac9bf5b562c39721c0f5},
+  keywords = {3.0.2 UDDI ct1 oasis specification uni version},
+  publisher = {OASIS},
+  timestamp = {2007-06-13T22:31:39.000+0200},
+  title = {UDDI Spec Technical Committee Draft 3.0.2},
+  type = {OASIS Committee Draft},
+  url = {http://uddi.org/pubs/uddi_v3.htm},
+  year = 2004
+}
+
+@misc{WSCDL,
+author="{W3C}",
+title="{W}eb {S}ervices {C}horeography {D}escription {L}anguage",
+year="2004",
+note="{\tt http://www.w3.org/TR/ws-cdl-10/}"
+}
+
+@article{Slomiski06,
+  author    = {Aleksander Slomiski},
+  title     = {On using BPEL extensibility to implement OGSI and WSRF Grid
+               workflows},
+  journal   = {Concurrency and Computation: Practice and Experience},
+  volume    = {18},
+  number    = {10},
+  year      = {2006},
+  pages     = {1229-1241},
+  ee        = {http://dx.doi.org/10.1002/cpe.1004},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{Leymann06,
+  author    = {Frank Leymann},
+  title     = {Choreography for the Grid: towards fitting BPEL to the resource
+               framework},
+  journal   = {Concurrency and Computation: Practice and Experience},
+  volume    = {18},
+  number    = {10},
+  year      = {2006},
+  pages     = {1201-1217},
+  ee        = {http://dx.doi.org/10.1002/cpe.996},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@MISC{Ezenwoye07,
+    author = {Onyeka Ezenwoye and S. Masoud Sadjadi and Ariel Cary and Michael Robinson},
+    title = {Grid Service Composition in BPEL for Scientific Applications},
+    year = {2007}
+}
+
+@inproceedings{Lohmann07,
+  author    = {Niels Lohmann},
+  title     = {A Feature-Complete Petri Net Semantics for WS-BPEL 2.0},
+  booktitle = {WS-FM},
+  year      = {2007},
+  pages     = {77-91},
+  ee        = {http://dx.doi.org/10.1007/978-3-540-79230-7_6},
+  crossref  = {DBLP:conf/wsfm/2007},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{LucchiM07,
+  author    = {Roberto Lucchi and
+               Manuel Mazzara},
+  title     = {A pi-calculus based semantics for WS-BPEL},
+  journal   = {J. Log. Algebr. Program.},
+  volume    = {70},
+  number    = {1},
+  year      = {2007},
+  pages     = {96-118},
+  ee        = {http://dx.doi.org/10.1016/j.jlap.2006.05.007},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{DragoniM09,
+  author    = {Nicola Dragoni and
+               Manuel Mazzara},
+  title     = {A Formal Semantics for the WS-BPEL Recovery Framework -
+               The {\it pi}-Calculus Way},
+  booktitle = {WS-FM},
+  year      = {2009},
+  pages     = {92-109},
+  ee        = {http://dx.doi.org/10.1007/978-3-642-14458-5_6},
+  crossref  = {DBLP:conf/wsfm/2009},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{Qiu05,
+  added-at = {2005-10-07T00:00:00.000+0200},
+  author = {Qiu, Zongyan and Wang, Shuling and Pu, Geguang and Zhao, Xiangpeng},
+  biburl = {http://www.bibsonomy.org/bibtex/2b38d0b79f19e7cb360307adb91a0805a/dblp},
+  booktitle = {FM},
+  crossref = {conf/fm/2005},
+  date = {2005-10-07},
+  description = {dblp},
+  editor = {Fitzgerald, John and Hayes, Ian J. and Tarlecki, Andrzej},
+  ee = {http://dx.doi.org/10.1007/11526841_24},
+  interhash = {5ac71a76d7e536df3b88ff113146485c},
+  intrahash = {b38d0b79f19e7cb360307adb91a0805a},
+  isbn = {3-540-27882-6},
+  keywords = {dblp},
+  pages = {350-365},
+  publisher = {Springer}
+  
+  @article{Farahbod05, 
+  title={Abstract Operational Semantics of the Business Process Execution Language for Web Services}, 
+  number={February 2005}, 
+  journal={Tech Report 2004}, 
+  author={Farahbod, Roozbeh and Gl, Uwe}
+  }
+  
+  @inproceedings{Busi05,
+    author    = {Nadia Busi and
+                 Roberto Gorrieri and
+                 Claudio Guidi and
+                 Roberto Lucchi and
+                 Gianluigi Zavattaro},
+    title     = {Choreography and Orchestration: A Synergic Approach for
+                 System Design},
+    booktitle = {ICSOC},
+    year      = {2005},
+    pages     = {228-240},
+    ee        = {http://dx.doi.org/10.1007/11596141_18},
+    crossref  = {DBLP:conf/icsoc/2005},
+    bibsource = {DBLP, http://dblp.uni-trier.de}
+  }

@@ -25,23 +25,23 @@ Petri nets, Finite State Machines and process algebras, but
 there are only a few works considering WS-BPEL enriched with 
 WSRF, and they only show a description of this union, 
 without a formalization of the model.
-In \cite{Slomiski:2006} Slomiski uses BPEL4WS in Grid environments and discusses the
+In \cite{Slomiski06} A. Slomiski uses BPEL4WS in Grid environments and discusses the
 benefits and challenges of extensibility in the particular case of OGSI workflows
 combined with WSRF-based Grids. Other two works centred around Grid environments are 
-\cite{Leymann:2006} and \cite{Ezenwoye:2007}. The first justifies 
+\cite{Leymann06} and \cite{Ezenwoye07}. The first justifies 
 the use of WS-BPEL extensibility to allow the combination of different GRIDs, whereas
-Ezenwoye et al.~\cite{Ezenwoye:2007} share their experience on WS-BPEL to integrate,
+Ezenwoye et al.~\cite{Ezenwoye07} share their experience on WS-BPEL to integrate,
 create and manage WS-Resources that implement the factory/instance pattern.
 
 On the other hand, an extensive semantics for WS-BPEL 2.0
-is presented in \cite{Dumas:2008} by Lohmann, which introduces two new interesting improvements. They define several patterns to simplify some huge nets and introduce the semantics for the WS-BPEL 2.0 new patterns. Related to $\pi$-calculus semantics, Dragoni and Mazzara \cite{Dragoni:2009} 
-propose a theoretical scheme focused on dependable composition for the  WS-BPEL recovery
+is presented in \cite{Lohmann07} by Lohmann, which introduces two new interesting improvements. They define several patterns to simplify some huge nets and introduce the semantics for the WS-BPEL 2.0 new patterns. Related to $\pi$-calculus semantics, Dragoni and Mazarra
+propose in \cite{DragoniM09} a theoretical scheme focused on dependable composition for the  WS-BPEL recovery
 framework. In this approach, the recovery framework is simplified
 and analysed via a conservative extension of $\pi$-calculus. The
 aim of this approach clearly differs from ours, but it helps us to have
 a better understanding of the WS-BPEL recovery framework. Other work focused on the WS-BPEL
-recovery framework is \cite{Qiu:2005}. Although this is more focused in the compensation handler, they describe the corresponding rules
-that manage a Web service composition. Our work is therefore more general as we define rules for nearly all possible activities instead of focusing only on the recovery framework. In addition, we also consider time constraints. Finally, we would like to highlight the works of Farahbod et al.~\cite{Farahbod:2005} and Busi et al. \cite{Busi:2005}. In the first one, the authors extract an abstract operational semantics for WS-BPEL based on abstract state machines (ASM) defining the framework BPEL$_{AM}$ to manage the agents who perform the workflow activities. In this approach time constraints are considered, but they do not formalize the timed model. On the other hand, the goal of the latter one is fairly similar to ours. They also define a $\pi$-calculus operational semantics for WS-BPEL and describe a conformance notion. They present all the machinery to model Web service compositions (choreographies and orchestrations). The main difference with our work is that we deal with distributed resources. In a similar fashion Luchi and Mazzara in \cite{Lucchi07} presents other $\pi$-calculus operational semantic, \textit{Web}$\pi_{\infty}$, which is focused on the idea of event notification as the unique error handling mechanism. It is clear that this proposal differs from ours since they focus their attention in the error handling mechanism, however their claiming of simplifying the error handling using only the notification mechanism can be performed in our proposal since this is the mechanism used in the resource framework and therefore a technique shared by WS-BPEL and WS-RF.
+recovery framework is \cite{Qiu05}. Although this is more focused in the compensation handler, they describe the corresponding rules
+that manage a Web service composition. Our work is therefore more general as we define rules for nearly all possible activities instead of focusing only on the recovery framework. In addition, we also consider time constraints. Finally, we would like to highlight the works of Farahbod et al.~\cite{Farahbod05} and Busi et al. \cite{Busi05}. In the first one, the authors extract an abstract operational semantics for WS-BPEL based on abstract state machines (ASM) defining the framework BPEL$_{AM}$ to manage the agents who perform the workflow activities. In this approach time constraints are considered, but they do not formalize the timed model. On the other hand, the goal of the latter one is fairly similar to ours. They also define a $\pi$-calculus operational semantics for WS-BPEL and describe a conformance notion. They present all the machinery to model Web service compositions (choreographies and orchestrations). The main difference with our work is that we deal with distributed resources. In a similar fashion Luchi and Mazzara in \cite{LucchiM07} presents other $\pi$-calculus operational semantic, \textit{Web}$\pi_{\infty}$, which is focused on the idea of event notification as the unique error handling mechanism. It is clear that this proposal differs from ours since they focus their attention in the error handling mechanism, however their claiming of simplifying the error handling using only the notification mechanism can be performed in our proposal since this is the mechanism used in the resource framework and therefore a technique shared by WS-BPEL and WS-RF.
 
 Table \ref{table_rw_comparison} shows a brief comparison among all the works where, the columns show the WS-BPEL version considered, the coverage degree of the recovery framework, whether they use WSRF, the formalism they use, the focus area and if the work is supported by a tool.
 
@@ -57,37 +57,33 @@ Author & WS-BPEL & Rec. & WSRF & Formalism & Focus & Tool \\
 
 
 \hline
-Slomiski\cite{Slomiski:2006} & 1.0 & $\times$ & $\checkmark$ & -- & Extensibility & $\times$ \\
+Slomiski\cite{Slomiski06} & 1.0 & $\times$ & $\checkmark$ & -- & Extensibility & $\times$ \\
 
 \hline
 
-Ezenwoye\cite{Ezenwoye:2007} & 1.0 & $\times$ & \checkmark & -- & Resource Management & $\times$ \\
+Ezenwoye\cite{Ezenwoye07} & 1.0 & $\times$ & \checkmark & -- & Resource Management & $\times$ \\
 
 \hline
 
-Ouyang\cite{Ouyang:2007} & 1.0 & Part & $\times$ & Petri nets & BPEL analysis & \checkmark \\
+Lohmann\cite{Lohmann07} & 2.0 & \checkmark & $\times$ & Petri nets & BPEL analysis & \checkmark \\
 
 \hline
 
-Lohmann\cite{Dumas:2008} & 2.0 & \checkmark & $\times$ & Petri nets & BPEL analysis & \checkmark \\
+Dragoni\cite{DragoniM09} & 2.0 & \checkmark & $\times$ & $\pi$-calculus & FCT & $\times$ \\
 
 \hline
 
-Dragoni\cite{Dragoni:2009} & 2.0 & \checkmark & $\times$ & $\pi$-calculus & FCT & $\times$ \\
+Qiu\cite{Qiu05} & 1.0 & Part & $\times$ & Proc. Algebra & FC & $\times$ \\
 
 \hline
 
-Qiu\cite{Qiu:2005} & 1.0 & Part & $\times$ & Proc. Algebra & FC & $\times$ \\
-
-\hline
-
-Farahbod\cite{Farahbod:2005} & 1.0 & Part & $\times$ & Finite State & Analysis & $\times$ \\
+Farahbod\cite{Farahbod05} & 1.0 & Part & $\times$ & Finite State & Analysis & $\times$ \\
 
 &&&& Machines &&\\
 
 \hline
 
-Busi\cite{Busi:2005} & 1.0 & Part & $\times$ & Proc. Algebra & Conformance& $\times$ \\
+Busi\cite{Busi05} & 1.0 & Part & $\times$ & Proc. Algebra & Conformance& $\times$ \\
 &&&&& Chor. vs Orch. & \\
 
 \hline
@@ -1310,7 +1306,10 @@ WS-BPEL has been extensively studied with many formalisms, such as
 Petri nets, Finite State Machines and process algebras, but 
 there are only a few works considering WS-BPEL enriched with 
 WSRF, and they only show a description of this union, 
-without a formalization of the model.
+without a formalization of the model. Previously, we have presented some technical papers about this integration.
+In addition to this, some operational semantics have been summarised in previous section. Nevertheless, 
+in this section we are going to focus on those works that use Petri nets as formalism as well as those that provide
+a tool to support the theory.
 %In \cite{Slomiski:2006} Slomiski uses BPEL4WS in Grid environments and discusses the
 %benefits and challenges of extensibility in the particular case of OGSI workflows
 %combined with WSRF-based Grids. Other two works centred around Grid environments are 
@@ -1319,11 +1318,74 @@ without a formalization of the model.
 %Ezenwoye et al.~\cite{Ezenwoye:2007} share their experience on BPEL to integrate,
 %create and manage WS-Resources that implement the factory/instance pattern.
 
-On the other hand, Ouyang et al. \cite{Ouyang:2007} define the necessary elements for translating BPEL processes into Petri nets. Thus, they
-cover all the important aspects in the standard such as exception handling, dead path elimination and so on. The model they consider differs from ours in that we formalize the whole
-system as a composition of orchestrators with resources associated, whereas they describe the system as a general scope with nested sub-scopes leaving aside the possibility of administering resources. Furthermore, we have also formalized the event handling and notification mechanisms.  
+Ouyang et al. \cite{Ouyang:2007} define a complete formalisation of all control-flow constructs of WS-BPEL in terms of a mapping to Petri nets.
+A complete formalisation of all control-flow constructs of BPEL in terms of a mapping to Petri nets.
+This formalisation served to unveil ambiguities in the WS-BPEL specification and, therefore, their goal was to provide a feature complete semantics of WS-BPEL.
+Thus, they cover all the important aspects in the standard such as exception handling, dead path elimination and so on. Nevertheless, our work uses WS-BPEl as a \emph{means} rather than as a target, that is, our aim is not to provide a formal semantics of it, but to use it as specification language to model web services compositions with distributed resources. It is important to note that we pay special attention to the management of resources in contrast to most of the works presented here. Moreover, one difference with the work of Ouyang et al. is that we formalise the whole
+system as a composition of orchestrators with resources associated, whereas they describe the system as a general scope with nested sub-scopes leaving aside the possibility of administering resources. Furthermore, we have also formalised the event handling and notification mechanisms using WSN standard. 
+They also developed a tool (WofBPEL) that employs the output of the above mapping to perform  the analysis of the process.  
 Another extensive semantics for BPEL 2.0
-is presented in \cite{Dumas:2008} by Dumas et al, which introduces two new interesting improvements. They define several patterns to simplify some huge nets and introduce the semantics for the WS-BPEL 2.0 new patterns. 
+is presented in \cite{Dumas:2008} by Lohmann, which introduces two new interesting improvements. They define several patterns to simplify some huge nets and introduce the semantics for the WS-BPEL 2.0 new patterns.
+
+In [109], Schmidt and Stahl discuss a mapping from BPEL to Petri nets by giving
+several examples. Each BPEL construct is mapped into a Petri net pattern. The
+complete transformation from BPEL to Petri nets is given by Stahl in [110].
+Hinz, Schmidt and Stahl [61] describe the tool BPEL2PN that implements the
+transformation when abstracting from data. The details of this tool are presented
+by Hinz in [60]. As shown in [61], the resulting Petri net can be verified using
+the tool LoLA [108]. LoLA, which stands for a Low Level Analyzer, supports the
+verification of standard properties of Petri nets, like, for example, determining
+if a Petri net contains a deadlock, and the verification of properties expressed in
+the logic CTL.
+In most of his work [75–82], Martens focuses on Petri nets rather than BPEL
+processes. However, since there is a mapping from BPEL processes to Petri nets,
+all his results are directly applicable to BPEL. Martens introduces several criteria
+for business processes and their compositions. Next, we will roughly capture
+them in terms of BPEL. A BPEL process is called usable (or controllable) if
+there exists an environment with which the process can interact such that the
+process terminates properly. Two BPEL processes are called compatible if their
+composition is usable. A BPEL is said to simulate another BPEL process if
+each environment that makes the latter usable makes the former usable as well.
+Two BPEL processes are called equivalent (or consistent) if the one simulates
+the other and vice versa. Martens also presents algorithms to check if BPEL
+processes satisfy these criteria. These algorithms have been implemented in the
+tool WOMBAT [83, 84].
+In [107], Schlingloff, Martens and Schmidt also consider the usability prob-
+lem. They show that usability can be expressed in alternating-time temporal
+logic. As a consequence, model checking algorithms for this logic can be exploited
+to check for usability. Reisig, Schmidt and Stahl [104] and Lohmann, Massuthe,
+Stahl and Weinberg [73] also consider the usability (or controllability) problem.
+In [103], Reisig proposes to model BPEL by means of a special type of Petri
+nets called business process nets.
+ 
+n [113], Verbeek and van der Aalst focus on the structured activities of BPEL.
+They present a mapping of these structured activities to a class of Petri nets
+called workflow nets. For this class of Petri nets, a verification tool named Wol-
+fan [114] has been developed. This tool can verify properties like, for example,
+termination of a workflow net and detection of nodes that can never be acti-
+vated. In their mapping from BPEL to workflow nets, they also consider links,
+join conditions and dead-path-elimination.
+In [95], Ouyang, van der Aalst, Breutel, Dumas, ter Hofstede and Verbeek
+provide a mapping of all control-flow constructs of BPEL into Petri nets. As
+a consequence, the authors provide a formal semantics of BPEL. In [94, 95],
+Ouyang et al. describe two tools that, if used in combination, allow for automated
+verification of BPEL processes. The BPEL2PNML tool is used to perform a
+translation from BPEL into the Petri Net Modeling Language (PNML). The
+resulting model is used as input for the WofBPEL tool. The latter tool has been
+built using the earlier mentioned Woflan tool. The following three analyses have
+been implemented in WofBPEL: detection of unreachable activities, detection
+of multiple simultaneously enabled activities that may consume the same type
+of message, and determination, for each possible state of a process execution,
+which types of messages may be consumed in the rest of the execution.
+Yang, Tan, Xiao, Yu and Liu [117–121] consider coloured Petri nets. They use
+coloured Petri nets as these provide a more compact way to model business
+processes than ordinary Petri nets. Yang et al. show how to map most of the basic
+and structured activities of BPEL and the Web Service Choreography Interface
+(WSCI), another language to describe web service composition, to coloured Petri
+nets.
+Also Yi and Kochut [122, 123] focus on coloured Petri nets. They sketch how
+to verify BPEL processes. Furthermore, they show how the skeleton of a BPEL
+process can be generated from a coloured Petri net.
 
 %Related to $\pi$-calculus semantics, Dragoni and Mazzara \cite{Dragoni:2009} 
 %propose a theoretical scheme focused on dependable composition for the  WS-BPEL recovery

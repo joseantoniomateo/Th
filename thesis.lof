@@ -15,23 +15,23 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Graphical view of a PTCPN.\relax }}{61}{figure.caption.26}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces A piece of ${\it lts}(C)$ for the online auction service.\relax }}{83}{figure.caption.37}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Orchestration Translation\relax }}{87}{figure.caption.39}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Basic Activities Translation\relax }}{88}{figure.caption.41}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Invoke/Receive Activities Translation\relax }}{88}{figure.caption.42}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Sequence Translation\relax }}{90}{figure.caption.44}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Parallel Activity Translation.\relax }}{91}{figure.caption.45}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Pick Activity Translation.\relax }}{92}{figure.caption.46}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces While Activity Translation.\relax }}{93}{figure.caption.47}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces CreateResource Activity Translation.\relax }}{94}{figure.caption.49}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Subscribe Activity Translation.\relax }}{95}{figure.caption.50}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces GetProperty Activity Translation.\relax }}{95}{figure.caption.51}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces SetProperty Activity Translation.\relax }}{96}{figure.caption.52}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces SetTimeout Activity Translation.\relax }}{96}{figure.caption.53}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Illustration of an XSLT template\relax }}{98}{figure.caption.54}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Main screen of the tool.\relax }}{99}{figure.caption.55}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces A simplified PTCPN for the online auction system.\relax }}{102}{figure.caption.57}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces PTCPN of the online stock market.\relax }}{104}{figure.caption.58}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces PTCPN of one buyer.\relax }}{105}{figure.caption.59}
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Result of the queries in CPNTools.\relax }}{106}{figure.caption.61}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Orchestration Translation\relax }}{89}{figure.caption.39}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Basic Activities Translation\relax }}{90}{figure.caption.41}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Invoke/Receive Activities Translation\relax }}{90}{figure.caption.42}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Sequence Translation\relax }}{92}{figure.caption.44}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Parallel Activity Translation.\relax }}{93}{figure.caption.45}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Pick Activity Translation.\relax }}{94}{figure.caption.46}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces While Activity Translation.\relax }}{95}{figure.caption.47}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces CreateResource Activity Translation.\relax }}{96}{figure.caption.49}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Subscribe Activity Translation.\relax }}{97}{figure.caption.50}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces GetProperty Activity Translation.\relax }}{97}{figure.caption.51}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces SetProperty Activity Translation.\relax }}{98}{figure.caption.52}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces SetTimeout Activity Translation.\relax }}{98}{figure.caption.53}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Illustration of an XSLT template\relax }}{100}{figure.caption.54}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Main screen of the tool.\relax }}{101}{figure.caption.55}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces A simplified PTCPN for the online auction system.\relax }}{104}{figure.caption.57}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces PTCPN of the online stock market.\relax }}{106}{figure.caption.58}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces PTCPN of one buyer.\relax }}{107}{figure.caption.59}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Result of the queries in CPNTools.\relax }}{108}{figure.caption.61}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -16,6 +16,11 @@ Oasis standard for web services resource framework (wsrf) v1.2.
   \url{http://docs.oasis-open.org/wsrf/wsrf-primer-1.2-primer-cd-02.pdf}},
   April 2006.
 
+\bibitem{Wirsing2011bis}
+Rigorous software engineering for service-oriented systems - results of the
+  sensoria project on software engineering for service-oriented computing.
+\newblock 6582, 2011.
+
 \bibitem{CPNTools}
 Cpntools web site, 2013.
 
@@ -61,6 +66,11 @@ Eike Best and Maciej Koutny.
 \newblock Petri net semantics of priority systems.
 \newblock {\em Theor. Comput. Sci.}, 96(1):175--174, 1992.
 
+\bibitem{Bettini2008}
+Lorenzo Bettini, Rocco {De Nicola}, and Michele Loreti.
+\newblock Implementing session centered calculi.
+\newblock In {\em COORDINATION}, pages 17--32, 2008.
+
 \bibitem{BLT:90}
 T.~Bolognesi, F.~Lucidi, and S.~Trigila.
 \newblock From timed {P}etri nets to timed {LOTOS}.
@@ -83,6 +93,13 @@ Don Box, David Ehnebuske, Gopal Kakivaya, Andrew Layman, Noah Mendelsohn,
 \newblock {Simple Object Access Protocol (SOAP) 1.1}.
 \newblock W3c note, World Wide Web Consortium, May 2000.
 \newblock See \url{http://www.w3.org/TR/SOAP/}.
+
+\bibitem{Busi05}
+Nadia Busi, Roberto Gorrieri, Claudio Guidi, Roberto Lucchi, and Gianluigi
+  Zavattaro.
+\newblock Choreography and orchestration: A synergic approach for system
+  design.
+\newblock In {\em ICSOC}, pages 228--240, 2005.
 
 \bibitem{Buyya2011}
 Rajkumar Buyya, James Broberg, and Andrzej~M. Goscinski.
@@ -120,6 +137,12 @@ A.~David, L.~Jacobsen, M.~Jacobsen, K.Y. J{\o}rgensen, M.H. M{\o}ller, and
 \newblock In {\em {TACAS}'12}, volume 7214 of {\em LNCS}, pages 492--497.
   Springer-Verlag, 2012.
 
+\bibitem{DragoniM09}
+Nicola Dragoni and Manuel Mazzara.
+\newblock A formal semantics for the ws-bpel recovery framework - the {\it
+  pi}-calculus way.
+\newblock In {\em WS-FM}, pages 92--109, 2009.
+
 \bibitem{DumasAalst2005}
 Marlon Dumas, Wil M.~P. van~der Aalst, and Arthur H.~M. ter Hofstede.
 \newblock {\em Process-Aware Information Systems: Bridging People and Software
@@ -140,6 +163,16 @@ Clarence~A. Ellis and Karim Keddara.
 \bibitem{foster2004}
 Ian~Foster et~al.
 \newblock Modeling stateful resources with web services.
+
+\bibitem{Ezenwoye07}
+Onyeka Ezenwoye, S.~Masoud Sadjadi, Ariel Cary, and Michael Robinson.
+\newblock Grid service composition in bpel for scientific applications, 2007.
+
+\bibitem{Farahbod05}
+Roozbeh Farahbod and Uwe Gl.
+\newblock Abstract operational semantics of the business process execution
+  language for web services.
+\newblock {\em Tech Report 2004}, (February 2005).
 
 \bibitem{Hanisch:93}
 H.M. Hanisch.
@@ -184,6 +217,38 @@ Kurt Jensen and Lars~Michael Kristensen.
   Systems}.
 \newblock Springer, 2009.
 
+\bibitem{Kitchin2009}
+David Kitchin, Adrian Quark, William~R. Cook, and Jayadev Misra.
+\newblock The orc programming language.
+\newblock In {\em FMOODS/FORTE}, pages 1--25, 2009.
+
+\bibitem{Lapadula2007}
+Alessandro Lapadula, Rosario Pugliese, and Francesco Tiezzi.
+\newblock A calculus for orchestration of web services.
+\newblock In {\em ESOP}, pages 33--47, 2007.
+
+\bibitem{Lapadula2008}
+Alessandro Lapadula, Rosario Pugliese, and Francesco Tiezzi.
+\newblock A formal account of ws-bpel.
+\newblock In {\em COORDINATION}, pages 199--215, 2008.
+
+\bibitem{Leymann06}
+Frank Leymann.
+\newblock Choreography for the grid: towards fitting bpel to the resource
+  framework.
+\newblock {\em Concurrency and Computation: Practice and Experience},
+  18(10):1201--1217, 2006.
+
+\bibitem{Lohmann07}
+Niels Lohmann.
+\newblock A feature-complete petri net semantics for ws-bpel 2.0.
+\newblock In {\em WS-FM}, pages 77--91, 2007.
+
+\bibitem{LucchiM07}
+Roberto Lucchi and Manuel Mazzara.
+\newblock A pi-calculus based semantics for ws-bpel.
+\newblock {\em J. Log. Algebr. Program.}, 70(1):96--118, 2007.
+
 \bibitem{AjCh85}
 M.~Ajmone Marsan, G.~Balbo, A.~Bobbio, G.~Chiola, G.~Conte, and A.~Cumani.
 \newblock {On Petri Nets with Stochastic Timing}.
@@ -226,6 +291,11 @@ A.~Pnueli.
 \newblock {The temporal logic of programs}.
 \newblock {\em Proc. 18th IEEE Symp. on Foundations of Computer Science}, 1977.
 
+\bibitem{Qiu05}
+Zongyan Qiu, Shuling Wang, Geguang Pu, and Xiangpeng Zhao.
+\newblock In John Fitzgerald, Ian~J. Hayes, and Andrzej Tarlecki, editors, {\em
+  FM}, pages 350--365. Springer.
+
 \bibitem{Ram74}
 C.~Ramchandani.
 \newblock Analysis of asynchronous concurrent systems by timed petri nets.
@@ -249,6 +319,13 @@ I.~Foster J. Frey S. Graham C. Kesselman T. Maguire T. Sandholm P.~Vanderbilt
 Joseph Sifakis.
 \newblock Use of petri nets for performance evaluation.
 \newblock In {\em Performance}, pages 75--93, 1977.
+
+\bibitem{Slomiski06}
+Aleksander Slomiski.
+\newblock On using bpel extensibility to implement ogsi and wsrf grid
+  workflows.
+\newblock {\em Concurrency and Computation: Practice and Experience},
+  18(10):1229--1241, 2006.
 
 \bibitem{Henzinger94}
 J.~Sifakis T.~Henzinger, X.~Nicollin and S.~Yovine.
