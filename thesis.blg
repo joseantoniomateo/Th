@@ -9,7 +9,7 @@ A level-1 auxiliary file: chapter4.aux
 A level-1 auxiliary file: chapter5.aux
 A level-1 auxiliary file: Conclusions.aux
 The style file: plain.bst
-Illegal, another \bibdata command---line 90 of file thesis.aux
+Illegal, another \bibdata command---line 104 of file thesis.aux
  : \bibdata
  :         {bibliography}
 I'm skipping whatever remains of this command
@@ -66,8 +66,10 @@ A bad cross reference---entry "Lapadula2008"
 refers to entry "DBLP:conf/coordination/2008", which doesn't exist
 A bad cross reference---entry "Kitchin2009"
 refers to entry "DBLP:conf/forte/2009", which doesn't exist
-Warning--I didn't find a database entry for "Ouyang:2007"
-Warning--I didn't find a database entry for "Dumas:2008"
+A bad cross reference---entry "Hinz2005"
+refers to entry "DBLP:conf/bpm/2005", which doesn't exist
+A bad cross reference---entry "Yang2006"
+refers to entry "DBLP:conf/apweb/2006", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/apn/1997"
 Warning--I didn't find a database entry for "DBLP:conf/performance/1977"
 Warning--I didn't find a database entry for "DBLP:conf/apn/1993"
@@ -80,6 +82,8 @@ Warning--I didn't find a database entry for "DBLP:conf/icsoc/2005"
 Warning--I didn't find a database entry for "DBLP:conf/esop/2007"
 Warning--I didn't find a database entry for "DBLP:conf/coordination/2008"
 Warning--I didn't find a database entry for "DBLP:conf/forte/2009"
+Warning--I didn't find a database entry for "DBLP:conf/bpm/2005"
+Warning--I didn't find a database entry for "DBLP:conf/apweb/2006"
 Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
@@ -216,45 +220,45 @@ Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Gr
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
 while executing---line 1090 of file plain.bst
-You've used 67 entries,
+You've used 76 entries,
             2118 wiz_defined-function locations,
-            946 strings with 15321 characters,
-and the built_in function-call counts, 21923 in all, are:
-= -- 2092
-> -- 987
-< -- 24
-+ -- 407
-- -- 327
-* -- 1437
-:= -- 3528
-add.period$ -- 198
-call.type$ -- 67
-change.case$ -- 358
+            994 strings with 16499 characters,
+and the built_in function-call counts, 25349 in all, are:
+= -- 2422
+> -- 1132
+< -- 30
++ -- 465
+- -- 375
+* -- 1645
+:= -- 4049
+add.period$ -- 224
+call.type$ -- 76
+change.case$ -- 409
 chr.to.int$ -- 0
-cite$ -- 87
-duplicate$ -- 916
-empty$ -- 1796
-format.name$ -- 327
-if$ -- 4724
+cite$ -- 96
+duplicate$ -- 1067
+empty$ -- 2084
+format.name$ -- 375
+if$ -- 5491
 int.to.chr$ -- 0
-int.to.str$ -- 67
-missing$ -- 62
-newline$ -- 328
-num.names$ -- 124
-pop$ -- 455
+int.to.str$ -- 76
+missing$ -- 69
+newline$ -- 372
+num.names$ -- 142
+pop$ -- 520
 preamble$ -- 1
-purify$ -- 297
+purify$ -- 339
 quote$ -- 0
-skip$ -- 675
+skip$ -- 805
 stack$ -- 0
-substring$ -- 1147
-swap$ -- 243
-text.length$ -- 24
+substring$ -- 1359
+swap$ -- 300
+text.length$ -- 30
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 252
+type$ -- 288
 warning$ -- 20
-while$ -- 185
-width$ -- 69
-write$ -- 699
-(There were 77 error messages)
+while$ -- 216
+width$ -- 78
+write$ -- 794
+(There were 79 error messages)

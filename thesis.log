@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  3 MAR 2014 13:21
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  3 MAR 2014 18:21
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -870,6 +870,9 @@ LaTeX Warning: Label `Bow96' multiply defined.
 LaTeX Warning: Label `SOAP' multiply defined.
 
 
+LaTeX Warning: Label `Breugel' multiply defined.
+
+
 LaTeX Warning: Label `Busi05' multiply defined.
 
 
@@ -918,6 +921,9 @@ LaTeX Warning: Label `Hanisch:93' multiply defined.
 LaTeX Warning: Label `Snoopy' multiply defined.
 
 
+LaTeX Warning: Label `Hinz2005' multiply defined.
+
+
 LaTeX Warning: Label `hollingsworth95' multiply defined.
 
 
@@ -963,6 +969,9 @@ LaTeX Warning: Label `wsbpelstandard' multiply defined.
 LaTeX Warning: Label `OuyangVABDH07' multiply defined.
 
 
+LaTeX Warning: Label `Ouyang2007' multiply defined.
+
+
 LaTeX Warning: Label `Papazoglou2007' multiply defined.
 
 
@@ -987,10 +996,16 @@ LaTeX Warning: Label `VFC93' multiply defined.
 LaTeX Warning: Label `Foster03' multiply defined.
 
 
+LaTeX Warning: Label `Schmidt2000' multiply defined.
+
+
 LaTeX Warning: Label `Sif77' multiply defined.
 
 
 LaTeX Warning: Label `Slomiski06' multiply defined.
+
+
+LaTeX Warning: Label `Stahl2005' multiply defined.
 
 
 LaTeX Warning: Label `Henzinger94' multiply defined.
@@ -1014,10 +1029,22 @@ LaTeX Warning: Label `AalstHHSVVW11' multiply defined.
 LaTeX Warning: Label `Vaquero2008' multiply defined.
 
 
+LaTeX Warning: Label `Verbeek2000' multiply defined.
+
+
+LaTeX Warning: Label `Verbeek2005' multiply defined.
+
+
 LaTeX Warning: Label `WSCDL' multiply defined.
 
 
 LaTeX Warning: Label `Wan98' multiply defined.
+
+
+LaTeX Warning: Label `Yang2006' multiply defined.
+
+
+LaTeX Warning: Label `Yi2004' multiply defined.
 
 )
 \openout1 = `thesis.aux'.
@@ -1072,10 +1099,6 @@ LaTeX Info: Redefining \pageref on input line 228.
 \openout5 = `thesis.out'.
 
 \AtBeginShipoutBox=\box70
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <17.28> not available
@@ -1085,7 +1108,7 @@ LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <17.28> not available
 LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <17.28> not available
 (Font)              Font shape `OT1/pbk/db/n' tried instead on input line 237.
 File: logo.eps Graphic file (type eps)
-<logo.eps>
+ <logo.eps>
 Overfull \hbox (8.7384pt too wide) in paragraph at lines 237--237
  [][] 
  []
@@ -1149,20 +1172,55 @@ LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <10> not available
 (Font)              Font shape `OT1/pbk/db/n' tried instead on input line 1.
  [5]
+Overfull \hbox (3.09982pt too wide) detected at line 26
+ [][]\OT1/pbk/l/n/10 105[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 27
+ [][]\OT1/pbk/l/n/10 106[][]
+ []
+
+
 Overfull \hbox (3.09982pt too wide) detected at line 28
- [][]\OT1/pbk/l/n/10 100[][]
+ [][]\OT1/pbk/l/n/10 108[][]
  []
 
 )
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
- [6] (./thesis.lof [7
+ [6] (./thesis.lof
+Overfull \hbox (3.09982pt too wide) detected at line 30
+ [][]\OT1/pbk/l/n/10 100[][]
+ []
+
+[7
 
 
 ]
+Overfull \hbox (3.09982pt too wide) detected at line 31
+ [][]\OT1/pbk/l/n/10 101[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 32
+ [][]\OT1/pbk/l/n/10 104[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 33
+ [][]\OT1/pbk/l/n/10 106[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 34
+ [][]\OT1/pbk/l/n/10 107[][]
+ []
+
+
 Overfull \hbox (3.09982pt too wide) detected at line 35
- [][]\OT1/pbk/l/n/10 100[][]
+ [][]\OT1/pbk/l/n/10 108[][]
  []
 
 )
@@ -1171,7 +1229,7 @@ Overfull \hbox (3.09982pt too wide) detected at line 35
 
  [8] (./thesis.lot
 Overfull \hbox (3.09982pt too wide) detected at line 13
- [][]\OT1/pbk/l/n/10 100[][]
+ [][]\OT1/pbk/l/n/10 108[][]
  []
 
 )
@@ -1631,89 +1689,88 @@ h[]$
 
 File: Figures/ecows.eps Graphic file (type eps)
 <Figures/ecows.eps> [82] [83]
-
-LaTeX Warning: Citation `Ouyang:2007' on page 84 undefined on input line 1321.
-
-
-LaTeX Warning: Citation `Dumas:2008' on page 84 undefined on input line 1328.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [84]
-Missing character: There is no â in font pbkl7t!
-Missing character: There is no € in font pbkl7t!
-Missing character: There is no “ in font pbkl7t!
-Missing character: There is no â in font pbkl7t!
-Missing character: There is no € in font pbkl7t!
-Missing character: There is no “ in font pbkl7t!
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [85]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [86]
-[87]
+[86] [87]
 File: Figures/orchestration.eps Graphic file (type eps)
- <Figures/orchestration.eps> [88]
+ <Figures/orchestration.eps>
+Underfull \vbox (badness 7944) has occurred while \output is active []
+
+ [88]
 File: Figures/throw.eps Graphic file (type eps)
- <Figures/throw.eps>
+
+<Figures/throw.eps>
 File: Figures/exit.eps Graphic file (type eps)
  <Figures/exit.eps>
 File: Figures/empty.eps Graphic file (type eps)
-
-<Figures/empty.eps>
+ <Figures/empty.eps>
 File: Figures/wait.eps Graphic file (type eps)
  <Figures/wait.eps>
 File: Figures/assign.eps Graphic file (type eps)
- <Figures/assign.eps>
-Overfull \hbox (13.13058pt too wide) in paragraph at lines 1964--1964
+
+<Figures/assign.eps>
+Overfull \hbox (13.13058pt too wide) in paragraph at lines 1949--1949
  [][] 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1964--1966
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1949--1951
  [][] 
  []
 
-[89]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 File: Figures/communication.eps Graphic file (type eps)
- <Figures/communication.eps>
-Overfull \hbox (5.2814pt too wide) in paragraph at lines 1991--1991
+<Figures/communication.eps>
+Overfull \hbox (5.2814pt too wide) in paragraph at lines 1976--1976
  [][] 
  []
 
 File: Figures/communication_2.eps Graphic file (type eps)
 <Figures/communication_2.eps>
-Overfull \hbox (4.8801pt too wide) in paragraph at lines 1991--1991
+Overfull \hbox (4.8801pt too wide) in paragraph at lines 1976--1976
 []$[]$   $[]$ 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1991--1993
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1976--1978
  [][] 
  []
 
 
-Overfull \hbox (4.69629pt too wide) in paragraph at lines 1999--2000
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (4.69629pt too wide) in paragraph at lines 1981--1982
 []\OT1/pbk/l/n/10 Fig. [][]4.4[][][] shows the trans-la-tion for both the in-vo
 ke/re-ceive and the reply/$[]$
  []
 
-[90]
-File: Figures/sequence.eps Graphic file (type eps)
- <Figures/sequence.eps> [91]
-File: Figures/paralelo.eps Graphic file (type eps)
- <Figures/paralelo.eps>
-Underfull \vbox (badness 2941) has occurred while \output is active []
 
- [92]
-[93]
+Underfull \vbox (badness 1803) has occurred while \output is active []
+
+ [89]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [90]
+File: Figures/sequence.eps Graphic file (type eps)
+
+<Figures/sequence.eps> [91]
+File: Figures/paralelo.eps Graphic file (type eps)
+ <Figures/paralelo.eps> [92]
 File: Figures/pick.eps Graphic file (type eps)
  <Figures/pick.eps>
+[93]
 File: Figures/while.eps Graphic file (type eps)
- <Figures/while.eps> [94]
+ <Figures/while.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [94]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [95]
@@ -1729,29 +1786,32 @@ File: Figures/setProp.eps Graphic file (type eps)
  <Figures/setProp.eps>
 File: Figures/setTime.eps Graphic file (type eps)
  <Figures/setTime.eps>
-Underfull \vbox (badness 2065) has occurred while \output is active []
 
- [97]
-
-LaTeX Warning: Command \textregistered invalid in math mode on input line 2303.
+LaTeX Warning: Command \textregistered invalid in math mode on input line 2281.
 
 
 
-LaTeX Warning: Command \textregistered invalid in math mode on input line 2303.
+LaTeX Warning: Command \textregistered invalid in math mode on input line 2281.
 
 
 Missing character: There is no ® in font cmr7!
 LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 2304.
+(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 2282.
 
-[98]
-Overfull \hbox (15.05092pt too wide) in paragraph at lines 2368--2370
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [97]
+Underfull \vbox (badness 4328) has occurred while \output is active []
+
+ [98]
+Overfull \hbox (15.05092pt too wide) in paragraph at lines 2346--2348
 []\OT1/pbk/l/n/10 The XSLT stylesheet doc-u-ment starts with the in-struc-tion 
 $[]$.
  []
 
 
-Overfull \hbox (6.19702pt too wide) in paragraph at lines 2368--2370
+Overfull \hbox (6.19702pt too wide) in paragraph at lines 2346--2348
 \OT1/pbk/l/n/10 Once we have lo-cated the ini-tial and fi-nal mark of the root 
 el-e-ment ``xsl:stylesheet'',
  []
@@ -1762,19 +1822,22 @@ File: Figures/mainscreen.eps Graphic file (type eps)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[100] [101]
-Overfull \hbox (1.11844pt too wide) in paragraph at lines 2468--2474
+[100]
+Underfull \vbox (badness 1024) has occurred while \output is active []
+
+ [101]
+Overfull \hbox (1.11844pt too wide) in paragraph at lines 2447--2453
 []$ \OT1/pbk/l/n/10 and $[]$. Vari-able $\OML/cmm/m/it/10 v[]$ \OT1/pbk/l/n/10 
 serves
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2468--2474
+Underfull \hbox (badness 10000) in paragraph at lines 2447--2453
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2476--2544
+Underfull \hbox (badness 10000) in paragraph at lines 2455--2523
 
  []
 
@@ -1784,10 +1847,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [103]
 File: Figures/casestudy.eps Graphic file (type eps)
 
-<Figures/casestudy.eps> [104]
+<Figures/casestudy.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [104]
 File: Figures/sistema.eps Graphic file (type eps)
- <Figures/sistema.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 2584--2586
+
+<Figures/sistema.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 2563--2565
 [][]
  []
 
@@ -1799,11 +1866,14 @@ File: Figures/proceso.eps Graphic file (type eps)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[105] [106]
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 2629.
+[105]
+Underfull \vbox (badness 1231) has occurred while \output is active []
 
-Underfull \vbox (badness 2875) has occurred while \output is active []
+ [106]
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 2608.
+
+Underfull \vbox (badness 1715) has occurred while \output is active []
 
  [107]
 File: Figures/queries.eps Graphic file (type eps)
@@ -1864,39 +1934,48 @@ Missing character: There is no € in font pbkl7t!
 Missing character: There is no “ in font pbkl7t!
 
 
-LaTeX Warning: Reference `c6' on page 114 undefined on input line 121.
+LaTeX Warning: Reference `c6' on page 114 undefined on input line 120.
 
 [114] [115]
-Underfull \hbox (badness 10000) in paragraph at lines 201--206
+Underfull \hbox (badness 10000) in paragraph at lines 210--215
 []\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 201--206
+Underfull \hbox (badness 3148) in paragraph at lines 210--215
 \OT1/pbk/l/n/10 mann M. Nally T. Storey W. Vam-benepe I. Fos-ter, J. Frey and
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 201--206
+Underfull \hbox (badness 3323) in paragraph at lines 210--215
 \OT1/pbk/l/n/10 S. Weer-awarana.  Mod-el-ing state-ful re-sources with web ser-
 vices.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--206
+Underfull \hbox (badness 10000) in paragraph at lines 210--215
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
 
-LaTeX Warning: Reference `c6' on page 116 undefined on input line 257.
+LaTeX Warning: Reference `c6' on page 116 undefined on input line 251.
 
 [116] [117]
-Underfull \hbox (badness 4846) in paragraph at lines 369--372
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no ¤ in font pbkl7t!
+
+
+LaTeX Warning: Reference `c6' on page 118 undefined on input line 380.
+
+[118]
+Underfull \hbox (badness 4846) in paragraph at lines 406--409
 []\OT1/pbk/l/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
 2004.
  []
 
-) (./thesis.bbl [118]
+) (./thesis.bbl [119] [120
+
+]
 Underfull \hbox (badness 1377) in paragraph at lines 8--12
 []\OT1/pbk/l/n/10 Oasis stan-dard for web ser-vices no-ti-fi-ca-tion (wsn) v1.3
 .  [][][][]$\OT1/pcr/m/sl/10 https : //$[][]
@@ -1913,40 +1992,43 @@ Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ­ in font pbkl7t!
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ¶ in font pbkl7t!
-[119
-
-]
+[121]
 Missing character: There is no â in font pbkl7t!
 Missing character: There is no € in font pbkl7t!
 Missing character: There is no “ in font pbkl7t!
- [120] [121]
-Underfull \hbox (badness 10000) in paragraph at lines 201--206
+ [122] [123]
+Underfull \hbox (badness 10000) in paragraph at lines 210--215
 []\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 201--206
+Underfull \hbox (badness 3148) in paragraph at lines 210--215
 \OT1/pbk/l/n/10 mann M. Nally T. Storey W. Vam-benepe I. Fos-ter, J. Frey and
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 201--206
+Underfull \hbox (badness 3323) in paragraph at lines 210--215
 \OT1/pbk/l/n/10 S. Weer-awarana.  Mod-el-ing state-ful re-sources with web ser-
 vices.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--206
+Underfull \hbox (badness 10000) in paragraph at lines 210--215
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
-[122] [123]
-Underfull \hbox (badness 4846) in paragraph at lines 369--372
+[124] [125]
+Missing character: There is no Ã in font pbkl7t!
+Missing character: There is no ¤ in font pbkl7t!
+ [126]
+Underfull \hbox (badness 4846) in paragraph at lines 406--409
 []\OT1/pbk/l/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
 2004.
  []
 
-) [124] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
+) [127] [128
+
+] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
 (./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux)
 (./Conclusions.aux))
 
@@ -1957,12 +2039,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18094 strings out of 495062
- 304338 string characters out of 1182644
- 410603 words of memory out of 3000000
- 20730 multiletter control sequences out of 15000+50000
+ 18103 strings out of 495062
+ 304428 string characters out of 1182644
+ 410926 words of memory out of 3000000
+ 20739 multiletter control sequences out of 15000+50000
  33288 words of font info for 98 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,28n,92p,2011b,1825s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (136 pages, 636100 bytes).
+Output written on thesis.dvi (140 pages, 647724 bytes).

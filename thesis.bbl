@@ -94,6 +94,10 @@ Don Box, David Ehnebuske, Gopal Kakivaya, Andrew Layman, Noah Mendelsohn,
 \newblock W3c note, World Wide Web Consortium, May 2000.
 \newblock See \url{http://www.w3.org/TR/SOAP/}.
 
+\bibitem{Breugel}
+Van Breugel and Maria Koshkina.
+\newblock Models and verification of bpel franck.
+
 \bibitem{Busi05}
 Nadia Busi, Roberto Gorrieri, Claudio Guidi, Roberto Lucchi, and Gianluigi
   Zavattaro.
@@ -186,6 +190,11 @@ Monika Heiner, Mostafa Herajy, Fei Liu, Christian Rohr, and Martin Schwarick.
 \newblock Snoopy - a unifying petri net tool.
 \newblock In {\em Petri Nets}, pages 398--407, 2012.
 
+\bibitem{Hinz2005}
+Sebastian Hinz, Karsten Schmidt, and Christian Stahl.
+\newblock Transforming bpel to petri nets.
+\newblock In {\em Business Process Management}, pages 220--235, 2005.
+
 \bibitem{hollingsworth95}
 D.~Hollingsworth.
 \newblock Workflow management coalition - the workflow reference model.
@@ -271,6 +280,12 @@ Chun Ouyang, Eric Verbeek, Wil M.~P. van~der Aalst, Stephan Breutel, Marlon
 \newblock Formal semantics and analysis of control flow in ws-bpel.
 \newblock {\em Sci. Comput. Program.}, 67(2-3):162--198, 2007.
 
+\bibitem{Ouyang2007}
+Chun Ouyang, Eric Verbeek, Wil M.~P. van~der Aalst, Stephan Breutel, Marlon
+  Dumas, and Arthur H.~M. ter Hofstede.
+\newblock Formal semantics and analysis of control flow in ws-bpel.
+\newblock {\em Sci. Comput. Program.}, 67(2-3):162--198, 2007.
+
 \bibitem{Papazoglou2007}
 Mike~P. Papazoglou, Paolo Traverso, Schahram Dustdar, and Frank Leymann.
 \newblock Service-oriented computing: State of the art and research challenges.
@@ -315,6 +330,11 @@ I.~Foster J. Frey S. Graham C. Kesselman T. Maguire T. Sandholm P.~Vanderbilt
   Forum Recommendation}.
 \newblock {\em , Global Grid Forum}, 2003.
 
+\bibitem{Schmidt2000}
+Karsten Schmidt.
+\newblock Lola: A low level analyser.
+\newblock In {\em ICATPN}, pages 465--474, 2000.
+
 \bibitem{Sif77}
 Joseph Sifakis.
 \newblock Use of petri nets for performance evaluation.
@@ -326,6 +346,11 @@ Aleksander Slomiski.
   workflows.
 \newblock {\em Concurrency and Computation: Practice and Experience},
   18(10):1229--1241, 2006.
+
+\bibitem{Stahl2005}
+Christian Stahl.
+\newblock {A Petri Net Semantics for BPEL}.
+\newblock Informatik-Berichte 188, Humboldt-Universität zu Berlin, July 2005.
 
 \bibitem{Henzinger94}
 J.~Sifakis T.~Henzinger, X.~Nicollin and S.~Yovine.
@@ -365,6 +390,18 @@ Luis~M. Vaquero, Luis Rodero-Merino, Juan Caceres, and Maik Lindner.
 \newblock A break in the clouds: Towards a cloud definition.
 \newblock {\em SIGCOMM Comput. Commun. Rev.}, 39(1):50--55, December 2008.
 
+\bibitem{Verbeek2000}
+H.~M.~W. Verbeek and Wil M.~P. van~der Aalst.
+\newblock Woflan 2.0: A petri-net-based workflow diagnosis tool.
+\newblock In {\em ICATPN}, pages 475--484, 2000.
+
+\bibitem{Verbeek2005}
+H.~M.~W. Verbeek and Wil M.~P. van~der Aalst.
+\newblock Analyzing bpel processes using petri nets.
+\newblock In {\em Second International Workshop on Applications of Petri Nets
+  to Coordination, Workflow and Business Process Management}, pages 59--78,
+  2005.
+
 \bibitem{WSCDL}
 {W3C}.
 \newblock {W}eb {S}ervices {C}horeography {D}escription {L}anguage, 2004.
@@ -375,5 +412,18 @@ J.~Wang.
 \newblock {\em Timed Petri Nets: Theory and Application}, volume~9 of {\em The
   International Series on Discrete Event Dynamic Systems}.
 \newblock Springer, 1998.
+
+\bibitem{Yang2006}
+Yanping Yang, QingPing Tan, Yong Xiao, Feng Liu, and Jinshan Yu.
+\newblock Transform bpel workflow into hierarchical cp-nets to make tool
+  support for verification.
+\newblock In {\em APWeb}, pages 275--284, 2006.
+
+\bibitem{Yi2004}
+Xiaochuan Yi and Krys~J. Kochut.
+\newblock A cp-nets-based design and verification framework for web services
+  composition.
+\newblock {\em 2013 IEEE 20th International Conference on Web Services}, 0:756,
+  2004.
 
 \end{thebibliography}

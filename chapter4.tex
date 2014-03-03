@@ -1297,11 +1297,13 @@ In Fig. \ref{auct} shows a part of the labelled transition system of $C$. This f
 
 \section{Prioritised-Timed Coloured Petri Nets Semantics for BPELRF}\label{semantics}
 
-bla bla bla
+Next, we present the Petri nets semantics for the language BPELRF. Thus, we will reuse the syntax used for the Plotkin-style operational semantics
+and we will translate each of the activities into a coloured Petri nets. Each net is provided with special places in order to ease the composability.
+
+{\bf Comentario para Valent\'in: He pensado poner aqu\'i la justificaci\'on de por qu\'e hicimos otra sem\'antica. Mi idea es decir que hicimos esta sem\'antica para ofrecer un formalismo visual y ofrecer soporte a la teoria reusando nuestra experiencia con CPNTools, aunque es un poco ponerles f\'acil la cr\'itica a los miembros del tribunal. Lo pongo?} 
 
 {\bf Related Work}
 
-%LLL PENDIENTE
 WS-BPEL has been extensively studied with many formalisms, such as
 Petri nets, Finite State Machines and process algebras, but 
 there are only a few works considering WS-BPEL enriched with 
@@ -1318,86 +1320,72 @@ a tool to support the theory.
 %Ezenwoye et al.~\cite{Ezenwoye:2007} share their experience on BPEL to integrate,
 %create and manage WS-Resources that implement the factory/instance pattern.
 
-Ouyang et al. \cite{Ouyang:2007} define a complete formalisation of all control-flow constructs of WS-BPEL in terms of a mapping to Petri nets.
+Ouyang et al. \cite{Ouyang2007} define a complete formalisation of all control-flow constructs of WS-BPEL in terms of a mapping to Petri nets.
 A complete formalisation of all control-flow constructs of BPEL in terms of a mapping to Petri nets.
 This formalisation served to unveil ambiguities in the WS-BPEL specification and, therefore, their goal was to provide a feature complete semantics of WS-BPEL.
-Thus, they cover all the important aspects in the standard such as exception handling, dead path elimination and so on. Nevertheless, our work uses WS-BPEl as a \emph{means} rather than as a target, that is, our aim is not to provide a formal semantics of it, but to use it as specification language to model web services compositions with distributed resources. It is important to note that we pay special attention to the management of resources in contrast to most of the works presented here. Moreover, one difference with the work of Ouyang et al. is that we formalise the whole
+Thus, they cover all the important aspects in the standard such as exception handling, dead path elimination and so on. Nevertheless, our work uses WS-BPEl as a \emph{means} rather than as a target, that is, our aim is not to provide a formal semantics of it, but to use it as specification language to model web services compositions with distributed resources. 
+Ouyang et al. describe also two tools. BPEL2PNML tool is used to perform a
+translation from BPEL into the Petri Net Modeling Language (PNML), where the
+resulting model is used as input for the WofBPEL tool. This tool allows to analyse the behaviour of the process (communication inconsistencies and the presence of deadlocks). It is important to note that we pay special attention to the management of resources in contrast to most of the works presented here. Moreover, one difference with the work of Ouyang et al. is that we formalise the whole
 system as a composition of orchestrators with resources associated, whereas they describe the system as a general scope with nested sub-scopes leaving aside the possibility of administering resources. Furthermore, we have also formalised the event handling and notification mechanisms using WSN standard. 
 They also developed a tool (WofBPEL) that employs the output of the above mapping to perform  the analysis of the process.  
 Another extensive semantics for BPEL 2.0
-is presented in \cite{Dumas:2008} by Lohmann, which introduces two new interesting improvements. They define several patterns to simplify some huge nets and introduce the semantics for the WS-BPEL 2.0 new patterns.
+is presented in \cite{Lohmann07} by Lohmann, which introduces two new interesting improvements. They define several patterns to simplify some huge nets and introduce the semantics for the WS-BPEL 2.0 new patterns.
 
-In [109], Schmidt and Stahl discuss a mapping from BPEL to Petri nets by giving
-several examples. Each BPEL construct is mapped into a Petri net pattern. The
-complete transformation from BPEL to Petri nets is given by Stahl in [110].
-Hinz, Schmidt and Stahl [61] describe the tool BPEL2PN that implements the
-transformation when abstracting from data. The details of this tool are presented
-by Hinz in [60]. As shown in [61], the resulting Petri net can be verified using
-the tool LoLA [108]. LoLA, which stands for a Low Level Analyzer, supports the
-verification of standard properties of Petri nets, like, for example, determining
-if a Petri net contains a deadlock, and the verification of properties expressed in
-the logic CTL.
-In most of his work [75–82], Martens focuses on Petri nets rather than BPEL
-processes. However, since there is a mapping from BPEL processes to Petri nets,
-all his results are directly applicable to BPEL. Martens introduces several criteria
-for business processes and their compositions. Next, we will roughly capture
-them in terms of BPEL. A BPEL process is called usable (or controllable) if
-there exists an environment with which the process can interact such that the
-process terminates properly. Two BPEL processes are called compatible if their
-composition is usable. A BPEL is said to simulate another BPEL process if
-each environment that makes the latter usable makes the former usable as well.
-Two BPEL processes are called equivalent (or consistent) if the one simulates
-the other and vice versa. Martens also presents algorithms to check if BPEL
-processes satisfy these criteria. These algorithms have been implemented in the
-tool WOMBAT [83, 84].
-In [107], Schlingloff, Martens and Schmidt also consider the usability prob-
-lem. They show that usability can be expressed in alternating-time temporal
-logic. As a consequence, model checking algorithms for this logic can be exploited
-to check for usability. Reisig, Schmidt and Stahl [104] and Lohmann, Massuthe,
-Stahl and Weinberg [73] also consider the usability (or controllability) problem.
-In [103], Reisig proposes to model BPEL by means of a special type of Petri
-nets called business process nets.
- 
-n [113], Verbeek and van der Aalst focus on the structured activities of BPEL.
-They present a mapping of these structured activities to a class of Petri nets
-called workflow nets. For this class of Petri nets, a verification tool named Wol-
-fan [114] has been developed. This tool can verify properties like, for example,
-termination of a workflow net and detection of nodes that can never be acti-
-vated. In their mapping from BPEL to workflow nets, they also consider links,
-join conditions and dead-path-elimination.
-In [95], Ouyang, van der Aalst, Breutel, Dumas, ter Hofstede and Verbeek
-provide a mapping of all control-flow constructs of BPEL into Petri nets. As
-a consequence, the authors provide a formal semantics of BPEL. In [94, 95],
-Ouyang et al. describe two tools that, if used in combination, allow for automated
-verification of BPEL processes. The BPEL2PNML tool is used to perform a
-translation from BPEL into the Petri Net Modeling Language (PNML). The
-resulting model is used as input for the WofBPEL tool. The latter tool has been
-built using the earlier mentioned Woflan tool. The following three analyses have
-been implemented in WofBPEL: detection of unreachable activities, detection
-of multiple simultaneously enabled activities that may consume the same type
-of message, and determination, for each possible state of a process execution,
-which types of messages may be consumed in the rest of the execution.
-Yang, Tan, Xiao, Yu and Liu [117–121] consider coloured Petri nets. They use
-coloured Petri nets as these provide a more compact way to model business
-processes than ordinary Petri nets. Yang et al. show how to map most of the basic
-and structured activities of BPEL and the Web Service Choreography Interface
-(WSCI), another language to describe web service composition, to coloured Petri
-nets.
-Also Yi and Kochut [122, 123] focus on coloured Petri nets. They sketch how
-to verify BPEL processes. Furthermore, they show how the skeleton of a BPEL
-process can be generated from a coloured Petri net.
+In \cite{Hinz2005}, Hinz et al. present a Petri net semantics for WS-BPEL, covering
+standard behaviour (basic and structured activities) as well as the exceptional behaviour (e.g.
+faults, events, compensation). The tool BPEL2PN is implemented as a parser
+that translates WS-BPEL specifications into the input language of the Petri
+net model checking tool LoLA \cite{Schmidt2000}. As in this Thesis, each BPEL construction is mapped into a Petri net pattern and 
+each pattern has an interface for joining it with other patterns as is done with BPEL constructs. In our case, we simplify it by defining two special places 
+modelling the start and end of the WS-BPEL activity. In \cite{Hinz2005}, only some examples of the transformation are presented, although the
+complete transformation (in German) is given by Stahl in \cite{Stahl2005}.
+LoLA, acronym of Low Level Analyzer, supports the
+verification of standard properties of Petri nets such as the presence of deadlocks, and the verification of properties expressed in
+the logic CTL. In \cite{Verbeek2005}, Verbeek and van der Aalst focus on the structured activities of BPEL.
+They present a mapping of these structured activities to workflow nets. For workflow nets, a verification tool named 
+Wolfan \cite{Verbeek2000} was developed. Since this tool has as input a workflow net, it allows to verify properties like, for example,
+the proper termination of the workflow net and the detection of nodes that can never be activated. 
+These properties are explained in Chapter \ref{chapter:c5}. 
+In their mapping from BPEL to workflow nets, they also consider links,
+join conditions and dead-path-elimination. 
 
-%Related to $\pi$-calculus semantics, Dragoni and Mazzara \cite{Dragoni:2009} 
-%propose a theoretical scheme focused on dependable composition for the  WS-BPEL recovery
-%framework. In this approach, the recovery framework is simplified
-%and analysed via a conservative extension of $\pi$-calculus. The
-%aim of this approach clearly differs from ours, but it helps us to have
-%a better understanding of the WS-BPEL recovery framework. Other work focused on the BPEL
-%recovery framework is \cite{Qiu:2005}. Although this is more focused in the compensation handler, they describe the corresponding rules
-%that manage a Web service composition. Our work is therefore quite complete as we define rules for nearly all possible activities. In addition, we also consider time constraints. Finally, we would like to highlight the works of Farahbod et al.~\cite{Farahbod:2005} and Busi et al. \cite{Busi:2005}. In the first one, the authors extract an abstract operational semantics for BPEL based on abstract state machines (ASM) defining the framework BPEL$_{AM}$ to manage the agents who perform the workflow activities. In this approach time constraints are considered, but they do not formalize the timed model. On the other hand, the goal of the latter one is fairly similar to ours. They also define a $\pi$-calculus operational semantics for BPEL and describe a conformance notion. They present all the machinery to model Web service compositions (choreographies and orchestrations). The main difference with our work is that we deal with distributed resources. %In a similar fashion Luchi and Mazzara in \cite{Lucchi07} presents other $\pi$-calculus operational semantic, \textit{Web}$\pi_{\infty}$, which is focused on the idea of event notification as the unique error handling mechanism. It is clear that this proposal differs from ours since they focus their attention in the error handling mechanism, however their claiming of simplifying the error handling using only the notification mechanism can be performed in our proposal since this is the mechanism used in the resource framework and therefore a technique shared by WS-BPEL and WS-RF.
+%In most of his work [75–82], Martens focuses on Petri nets rather than BPEL
+%processes. However, since there is a mapping from BPEL processes to Petri nets,
+%all his results are directly applicable to BPEL. Martens introduces several criteria
+%for business processes and their compositions. Next, we will roughly capture
+%them in terms of BPEL. A BPEL process is called usable (or controllable) if
+%there exists an environment with which the process can interact such that the
+%process terminates properly. Two BPEL processes are called compatible if their
+%composition is usable. A BPEL is said to simulate another BPEL process if
+%each environment that makes the latter usable makes the former usable as well.
+%Two BPEL processes are called equivalent (or consistent) if the one simulates
+%the other and vice versa. Martens also presents algorithms to check if BPEL
+%processes satisfy these criteria. These algorithms have been implemented in the
+%tool WOMBAT [83, 84].
+%In [107], Schlingloff, Martens and Schmidt also consider the usability prob-
+%lem. They show that usability can be expressed in alternating-time temporal
+%logic. As a consequence, model checking algorithms for this logic can be exploited
+%to check for usability. Reisig, Schmidt and Stahl [104] and Lohmann, Massuthe,
+%Stahl and Weinberg [73] also consider the usability (or controllability) problem.
+%In [103], Reisig proposes to model BPEL by means of a special type of Petri
+%nets called business process nets.
+Moreover, let us comment some related works that use coloured Petri nets as formal model. 
+Yang et. al \cite{Yang2006} propose a set of translation rules for web service compositions primitives
+into coloured Petri nets and a technique to analyse and verify
+effectively the net. The translation
+technique is essentially independent of which language is used to describe
+the composition, but they use WS-BPEL as a proof of the usability of the theory. Nevertheless, they do not provide a tool to
+transform automatically the processes into coloured Petri nets. Important to note that they use also CPNTools to verify the models.
+On the other hand, Yi and Kochut show in \cite{Yi2004} how the skeleton of a WS-BPEL
+process can be obtained from a given coloured Petri net. 
+
+Finally, we would like to remark a paper that summarises the main work done so far.
+In \cite{Breugel}, the authors collect all the relevant works presented to analyse WS-BPEL 
+independently of the formalism used either Petri nets, automata, Abstract machines and so on.
 
 
-
+\section*{Prioritised-Timed Coloured Petri Nets Semantics}
 As commented in Chapter~\ref{chapter:c3}, we use prioritised-timed coloured Petri nets, 
 a prioritised-timed extension of coloured Petri nets~\cite{Jensen2009},
 supported by the well-known toolbox CPNTools\cite{CPNTools}.
@@ -1918,11 +1906,8 @@ a self loop between the transition and the
 place associated with the variable ($p_{\it v}$)
 in order to replace its previous value by the new one, being this new value obtained from an expression (exp) consisting of variables $p_{v1},\ldots,p_{vn}$ and integers. For the {\it wait}
 activity, we have a time interval $[a,b]$ associated, so the delay is randomly selected
-inside this interval.\\
-Notice the use of a ``control'' place, to arrest all possible remaining activities in the system when either throw or exit are executed. Thus, the idea is that all transitions in the net must be connected with this place, as the different illustrations show.
-
-
-\begin{figure}
+inside this interval. Notice the use of a ``control'' place, to arrest all possible remaining activities in the system when either throw or exit are executed. Thus, the idea is that all transitions in the net must be connected with this place, as the different illustrations show.
+\begin{figure}[h]
 \centering
 \fbox{\parbox[h]{\textwidth}{
 \begin{minipage}[c]{0.32\textwidth}
@@ -1972,7 +1957,7 @@ as well as the reply activity that uses a server to reply to a client. We have a
 of reply to synchronise with the response from the client. We have therefore introduced 
 this last activity in our semantics to deal with the synchronous or asynchronous nature of invoke activity (one-way or request-response operation, respectively), so the $\overline{reply}$ activity is optional in the syntax depicted in Table \ref{BPELsyntax}. 
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \fbox{\parbox[h]{\textwidth}{
 \begin{minipage}[c]{0.5\textwidth}
@@ -1992,9 +1977,6 @@ this last activity in our semantics to deal with the synchronous or asynchronous
 \caption{\label{fig:comm}Invoke/Receive Activities
 Translation} 
 \end{figure}
-
-
-
 %In this case, we have added to our timed Petri net two specific places in order to manage the execution of invoke/receive and reply/$\overline{reply}$, $PLij\_s$ and $PLij\_r$. Thus, we only require two places to represent all the partnerlinks between two services since we will bind each one with its corresponding counterpart by using the colours of the tokens. Place $PLij\_s$ receives tokens with three parameters: $pl,op$ and $value$, whereas $PLij\_r$ is marked only when the activity has received the data, so this place is marked with the value 0. For the sake of simplicity, we exchange only the value of the variables, but this could be easily extended to any kind of data. We depict the Petri nets in Fig. \ref{fig:comm} that express the communication among partners. In Fig. \ref{fig:comm1}, the \emph{invoke} activity extracts the value to send from the variable place ${\it P_v}$ and mark the ``sending'' partnerlink with a token endowed with this information. Once this place is marked, the receive transition can be fired marking $PLij\_r$ to allow the invoke activity to continue, and storing directly the data exchanged in the corresponding variable place. The interpretation of Fig. \ref{fig:comm2} is analogous.  
 Fig.~\ref{fig:comm} shows the translation for both the invoke/receive and the reply/$\overline{reply}$ pairs of activities. Part a) of the figure corresponds to the invoke/receive translation, in which the net of the invoke activity is depicted on the left-hand-side part, whereas the receive activity is depicted on the right-hand-side part. There are two shared places, $PL_{ij{_s}}$ and $PL_{ij{_r}}$, which are used to implement the synchronisation between the invocation and reception of services. Both places are associated to the partnerlink used for this communication, denoted here by $(i,j)$, where $i$ and $j$ are the orchestrator identifiers performing those activities. Notice that the value of a single variable is transmitted, which is obtained from the corresponding variable place, $p_v$. In the same way, the receive activity stores this value in its own variable. The interpretation of Part b) Fig.~\ref{fig:comm} is analogous.  
 \end{itemize}
@@ -2108,15 +2090,6 @@ The activities contained in this construction can come in two forms:
 %it is impossible to execute more than one at the same {\em pick}. In our model, the place {\em PinA1..An} represents this behaviour. Finally, in the BPEL specification, 
 %is encouraged the use of time-outs with {\em pick} activity, so we have included a timed transition with its corresponding timed guard in order to manage the execution of 
 %an ``alarm activity'' only in the event the time-out expires. The meaning of the other places and transitions is the same as in the receive activity.  
-
-\item {\it While} (cond,A): The machinery needed to model this construction is fairly straightforward since we only must check if the repetition condition holds or not in order to execute the contained activity or skip it. Fig.~\ref{while} shows this translation.
-\end{itemize}
-The $<$while$>$ activity provides for repeated execution of a contained activity. The contained 
-activity is executed as long as the boolean condition evaluates to true at the beginning of 
-each iteration. The meaning of the places and transitions of the net represented in Fig. \ref{while} is fairly straightforward, so, due to space limitations, we are going to omit any explanation of its elements. 
-The meaning of the places and transitions are fairly straightforward, so, due to space limitations, we are going to omit any explanation of the elements contained in this net 
-
-
 \begin{figure}[!ht]
 %\vspace{-0.5cm}
 \begin{center}
@@ -2127,7 +2100,12 @@ The meaning of the places and transitions are fairly straightforward, so, due to
 %\vspace{-0.4cm}
 \end{figure}
 
-%\vspace{-1.3cm}
+\item {\it While} (cond,A): The machinery needed to model this construction is fairly straightforward since we only must check if the repetition condition holds or not in order to execute the contained activity or skip it. Fig.~\ref{while} shows this translation.
+\end{itemize}
+The $<$while$>$ activity provides for repeated execution of a contained activity. The contained 
+activity is executed as long as the boolean condition evaluates to true at the beginning of 
+each iteration. The meaning of the places and transitions of the net represented in Fig. \ref{while} is fairly straightforward, so, due to space limitations, we are going to omit any explanation of its elements. 
+The meaning of the places and transitions are fairly straightforward, so, due to space limitations, we are going to omit any explanation of the elements contained in this net 
 
 \begin{figure}[!ht]
 %\vspace{-0.7cm}
@@ -2463,6 +2441,7 @@ generates the corresponding PTCPN. The result will be automatically displayed in
 is used to clean the contents of both text boxes. If both are empty, pressing on this button will have no effect.}
 \end{itemize}
 
+{\bf Comentario para Valent\'in: Tengo los dos casos de estudio que vienen a continuaci\'on. Uno es m\'as complejo, pero no incluye un an\'alisis en CPNTools detallado, mientras que el otro es m\'as sencillo, pero tiene un an\'alisis detallado en CPNTools. Puedo dejar los dos aunque son muy parecidos. Si dejamos solo uno, cu\'al dejar\'ias?}
 \section*{Case study: Online auction service}\label{cs}
 
 The case study concerns a typical online auction process, which consists of three participants:
