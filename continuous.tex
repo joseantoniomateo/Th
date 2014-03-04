@@ -1,0 +1,246 @@
+\section{Soundness for Continuous Time Workflow Nets} \label{sec:cont}
+
+We have so far considered only discrete time workflow nets as this
+is often sufficient for the practical applications. Nevertheless,
+we shall now also discuss how the soundness
+notion changes under the assumption of continuous time. 
+For continuous time workflow nets,
+we have marking as a function $M : P \longrightarrow \mathcal{B}(\rnul)$ 
+where $\mathcal{B}(\rnul)$ is the set of all finite multisets over
+nonnegative real numbers. Hence for every place $p \in P$ and 
+every token $x \in M(p)$ we have $x \in \rnul$. We allow delay
+transitions not only for integers but for arbitrary real numbers.
+Otherwise the definition of continuous timed-arc workflow nets
+is the same as in the case of the discrete semantics given earlier.
+
+It is well-known that for closed 
+timed automata (without any strict inequalities in guards), 
+the location reachability problems for continuous and
+discrete time delays coincide (see e.g.~\cite{AMP:CONCUR:98,danny_VLiet}).
+We prove the same result also for extended timed-arc Petri
+nets, following the idea from~\cite{danny_VLiet} where
+the problem is reduced to an instance of 
+linear programming, though with additional technical challenges 
+for the Petri net case.
+The result also implies that
+%that the sets of untimed reachable markings
+%in the continuous and discrete semantics coincide. Moreover, 
+the discrete time semantics is sufficient for finding the minimum
+and maximum execution times.
+
+\begin{theorem}\label{thm:discvscont}
+Let $N$ be an ETAPN and let $M_0$ be a marking on $N$ with all tokens
+of integer ages. For any computation 
+$M_0 \trans{d_0,t_0} M_1 \trans{d_1,t_1} M_2 \trans{d_2,t_2} 
+\ldots \trans{d_{n-1},t_{n-1}} M_{n}$ in $N$ 
+with $d_i \in \rnul$ for all $i$, $0 \leq i < n$, there is a computation 
+$M_0 \trans{d^\prime_0,t_0} M^\prime_1 \trans{d^\prime_1,t_1} M^\prime_2 \trans{d^\prime_2,t_2} 
+\ldots \trans{d^\prime_{n-1},t_{n-1}} M^\prime_{n}$ in $N$ such that
+$d^\prime_i \in \nnul$ for all $i$, $0 \leq i < n$, and
+$|M_n(p)|=|M^\prime_n(p)|$ for all $p \in P$.
+Moreover if $N$ is a workflow net then there exists a computation with 
+integer delays that achieves
+the minimum, and if it exists also the maximum, execution time. 
+\end{theorem}
+\begin{proof}
+Given a computation with real-time delays, we construct a set of linear
+inequalities that describe all possible delays allowed for the execution
+of the given trace. We only need difference constraints
+for this purpose and hence the corresponding matrix 
+%in the linear programming 
+is totally unimodular~\cite{umodmatrix1}. As the instance 
+has a real solution, it has also an optimal integral 
+solution~\cite{umodmatrix2}. 
+%The optimality  means 
+%that maximising or minimising
+%the accumulated delay on such a computation can be achieved via integer delays
+%only. 
+\end{proof}
+
+As expected, continuous soundness now implies soundness in the discrete case.
+Moreover, the discrete and continuous soundness coincide for a subclass
+of workflow nets that do not enforce any urgent behaviour.
+
+\begin{theorem} \label{thm:implication}
+Let $N$ be an ETAWFN. If $N$ is sound in the continuous semantics
+then it is sound in the discrete semantics.
+\end{theorem}
+\begin{proof}
+Let $N$ be sound in the continuous semantics. Let $M$ be a marking
+reachable from the initial marking $M_\mathit{in}$ in the discrete semantics.
+As $M$ is clearly reachable also in the continuous semantics,
+condition $b)$ of Definition~\ref{def:soundness} is clearly satisfied.
+Regarding condition $a)$ of the definition of soundness, we know
+that some final marking $M_\mathit{out}$ is reachable from $M$ in the continuous
+semantics. However, using Theorem~\ref{thm:discvscont} we can conclude
+that a marking $M'_\mathit{out}$ that has the same distribution of tokens
+as $M_\mathit{out}$ is reachable from $M$ also in the discrete semantics,
+and hence $N$ is sound w.r.t. the discrete semantics.
+\end{proof}
+
+If we moreover consider only workflow nets where time delays are not restricted
+by neither age invariants nor urgency, then both the continuous and discrete
+semantics coincide with respect to soundness. 
+
+\begin{theorem} \label{thm:contdiscok}
+Let $N$ be an ETAWFN with no age invariants and no urgent transitions
+(inhibitor arcs are allowed). Then $N$ is sound in the
+continuous semantics if and only if $N$ is sound in the discrete semantics.
+\end{theorem}
+\begin{proof}
+``$\Rightarrow$'': Follows from Theorem~\ref{thm:implication}.\\
+\indent ``$\Leftarrow$'': Let $N$ be sound in the discrete semantics.
+Let $M$ be a marking
+reachable from the initial marking $M_\mathit{in}$ in the continuous
+semantics.
+%We can w.l.o.g. assume that $M_\mathit{in}$ is a marking
+%where the token in the place \itn{in} has an integer age (if not then
+%we start with the integer part of the token age and as the first
+%transition delay until the fractional part is achieved; this is always
+%possible as the net does not contain any age invariants or urgent transitions).
+Now we can use Theorem~\ref{thm:discvscont} to argue that a marking $M'$
+is reachable from $M_\mathit{in}$ in the discrete semantics (with integer
+delays only) such that $|M(p)|=|M'(p)|$ for all $p \in P$.
+As $M$ and $M'$ have the same number of tokens in all the places
+and $N$ is sound in the discrete semantics, it follows that condition $b)$
+in Definition~\ref{def:soundness} holds for $M'$ and hence also for $M$.
+Let us now argue for condition $a)$.
+Let $M \trans{d} M_1$ where $d$ is an integer
+greater than any constant used in any interval on any input arc.
+Such a delay is possible as the net does not contain
+any age invariants or urgent transitions. Clearly, $M' \trans{d} M'_1$
+is possible also in the discrete semantics. However, now
+all tokens in $M_1$ and $M'_1$ are greater than any constant appearing
+in the net and hence these two markings are timed bisimilar.
+Because $N$ is sound in the discrete semantics, we know that
+there is some final marking $M_\mathit{out}$ such that
+$M_\mathit{out} \in [M'_1\rangle$. As $M_1$ is timed bisimilar with
+$M'_1$, it can also reach a final marking (bisimilar to $M_\mathit{out}$)
+and so does $M$. Hence condition $a)$ of Definition~\ref{def:soundness}
+is established and we can conclude that
+$N$ is sound also in the continuous semantics.
+\end{proof}
+
+
+\begin{figure}[!t]
+%\subfloat[][Using invariants]{
+\begin{minipage}[c]{0.5\textwidth}
+\begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.6]
+  \tikzstyle{arc}=[->,>=stealth,thick]
+	\tikzstyle{transportArc}=[->,>=diamond,thick]
+  \tikzstyle{every place}=[minimum size=6mm,thick]
+  \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+  \tikzstyle{every token}=[fill=white,text=black]
+  \tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+%        \node[] at (0,-0.8) (space) { };
+	\tikzstyle{inhibArc}=[->,>=o,thick]
+\node[place,label=above:$\itn{in}$,structured tokens={0},] at (0.6,0) (in) {};
+\node[place,label=above:$\itn{out}$,] at (3.25,0) (out) {};
+\node[place,label=above:$\itn{waiting}$,] at (1.2,1) (waiting) {};
+\node[place,label=left:$\itn{deadline}$,label=below:inv: $\leq  1$,] at (1.2,-0.9) (deadline) {};
+\node[place,label=above:$\itn{finished}$,] at (2.25,1) (finished) {};
+\node[transition,label=right:$\itn{init}$] at (1.2,0) (init) {};
+\node[transition,label=below:$\itn{service}$] at (1.75,1) (service) {};
+\node[transition,label=below:$\itn{late}$] at (2.25,0) (late) {};
+\node[transition,label=below:$\itn{early}$] at (2.75,-0.9) (early) {};
+\draw[arc] (in) -- (init) node[midway,auto] {$$} {};
+\draw[arc] (init) -- (waiting)  {};
+\draw[arc] (init) -- (deadline)  {};
+\draw[arc] (waiting) -- (service) node[midway,auto] {$$} {};
+\draw[arc] (service) -- (finished)  {};
+\draw[arc] (finished) -- (late) node[midway,auto] {$[0,0]$} {};
+\draw[arc] (deadline) -- (late) node[midway,auto] {$$} {};
+\draw[arc] (late) -- (out)  {};
+\draw[arc] (deadline) -- (early) node[midway,auto] {$$} {};
+\draw[arc] (finished) -- (2.75,1) -- (early) node[very near start,auto] {$[1,1]$} {};
+\draw[arc] (early) -- (3.25,-0.9) -- (out)  {};
+\end{tikzpicture}
+\captionsetup{type=subfigure}
+\caption{Using invariants.}
+\label{fig:count1}
+\end{minipage}
+\hspace{0mm}
+%\subfloat[][Using urgency]{
+\begin{minipage}[c]{0.5\textwidth}
+\begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.6]
+  \tikzstyle{arc}=[->,>=stealth,thick]
+	\tikzstyle{transportArc}=[->,>=diamond,thick]
+  \tikzstyle{every place}=[minimum size=6mm,thick]
+  \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+  \tikzstyle{every token}=[fill=white,text=black]
+  \tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+	\tikzstyle{inhibArc}=[->,>=o,thick]
+	\tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+ \node at (0,0) {};
+\node[place,label=above:$\itn{in}$,structured tokens={0},] at (0,1) (in) {};
+\node[place,label=below:$\itn{idle}$,] at (1.25,1) (P1) {};
+\node[place,label=below:$\itn{out}$,] at (2.4,1) (out) {};
+\node[transition,label=above:$\itn{start}$] at (0.65,1) (start) {};
+\node[transition,label=above:$\itn{loop}$] at (1.25,2.55) (loop) {};
+\node[urgency] at (1.25,2.55) {};
+\node[transition,label=above:$\itn{end1}$] at (1.9,1) (end1) {};
+\node[transition,label=above:$\itn{end2}$] at (2.4,2.55) (end2) {};
+\draw[arc] (P1) -- (end1) node[midway,below,xshift=-1] {$[0,0]$} {};
+\draw[arc] (P1) -- (end2) node[midway,above] {} {};
+\draw[arc] (end1) -- (out)  {};
+\draw[arc] (end2) -- (out)  {};
+\draw[transportArc] (in) -- (start) node[midway,auto] {:1} {};
+\draw[transportArc] (start) -- (P1) node[midway,auto] {:1} {};
+\draw[transportArc] (P1) to [bend right=25] (loop) node[near start,auto] {};
+\draw[transportArc] (loop) to [bend right=25](P1) node[near end,auto] {};
+\node [] at (0.9,1.85) {:1};
+\node [] at (1.6,2) {:1};
+\node [] at (1.94,2.29) {$[1,\infty)$};
+\end{tikzpicture}
+\vspace{-0.4cm}
+\captionsetup{type=subfigure}
+\caption{Using urgency.}\label{fig:count2}
+\end{minipage}
+\caption{Sound nets in the discrete semantics and unsound in the continuous one}
+\label{fig:counts}
+\end{figure}
+
+%We know by Theorem~\ref{thm:discvscont} that the
+%same untimed markings are reachable both in the discrete and continuous
+%semantics, however, 
+For extended timed-arc 
+workflow nets the notion of soundness for the discrete and continuous 
+semantics are, perhaps surprisingly, different.
+Consider Figure~\ref{fig:counts} where both given workflow nets are sound
+in the discrete semantics but not in the continuous one.
+
+%. However, in the continuous semantics we can execute in the net
+%from Figure~\ref{fig:count1} the sequence
+%``\itn{init}, delay $0.5$, \itn{service}, delay $0.5$'', bringing us
+%into a deadlock situation. In the net from Figure~\ref{fig:count2},
+%we can perform the sequence ``delay $0.5$, \itn{start}'', ending up
+%in a situation where only the urgent transition
+%\itn{loop} is enabled. Hence the nets are not sound w.r.t. the continuous semantics.
+
+\begin{theorem} \label{thm:counterex}
+There is an ETAWFN (with either age invariants
+or urgent transitions) sound in the
+discrete semantics but unsound in the continuous one.
+\end{theorem}
+\begin{proof}
+Consider the nets in Figure~\ref{fig:counts} (as before we do not
+draw the $[0,\infty]$ intervals). It is easy to verify that
+both of them are sound w.r.t. the discrete semantics. Indeed,
+in Figure~\ref{fig:count1} the age of the token in the place
+\itn{finished} can be either $1$ or $0$, depending on whether the
+service was executed early or late, and then either the transition
+\itn{early} or \itn{late} will be enabled and allow us to reach a
+final marking. Similarly in Figure~\ref{fig:count2} the age of the token
+in the place \itn{idle} will be of integer age so even though the transition
+\itn{loop} disables any time delay, we can still terminate the workflow
+by firing either the transition \itn{end1} or \itn{end2}.
+
+However, in the continuous semantics we can execute in the net
+from Figure~\ref{fig:count1} the sequence
+``\itn{init}, delay $0.5$, \itn{service}, delay $0.5$'', bringing us
+into a deadlock situation. In the net from Figure~\ref{fig:count2},
+we can perform the sequence ``delay $0.5$, \itn{start}'', ending up
+in a situation where only the urgent transition
+\itn{loop} is enabled but at the same time disallows for any time delay.
+In both cases the nets are not sound w.r.t. the continuous semantics.
+\end{proof}

@@ -1,0 +1,351 @@
+\section{Strong Soundness} \label{sec:strong}
+Soundness 
+ensures the possibility of correct
+termination in a workflow net, however, it does not
+give any guarantee on a timely termination of the workflow.
+In untimed workflows, infinite behaviour
+can be used to model for instance repeated queries for further information
+until a decision can be taken. In a time setting,
+we usually have a deadline such that if the information
+is not acquired within the deadline, alternative behaviour in the net
+is executed (compensation).
+
+Consider the workflow nets presented in Figure~\ref{fig:soudnessnets}.
+They represent a simple customer-complaint workflow where,
+before a decision is made, the customer can be repeatedly requested
+to provide additional information.
+The net in Figure~\ref{fig:notstrongsoun}
+is sound but there is no time guarantee by when
+the decision is reached. On the other hand,
+the net in Figure~\ref{fig:strongsoundness}
+introduces additional timing, 
+requiring that the process starts within 5 days and the
+request/provide loop takes no more than 14 days, after which a decision
+is made. The use of
+transport arcs enables us to measure the accumulated time since the
+place $\mathit{pending}$ was entered the first time. It is clear that
+the workflow only permits behaviours up to 19 days in total.
+In fact, the net %in Figure~\ref{fig:strongsoundness}
+enables infinite executions never reaching any final marking,
+however, this only happens within a bounded time interval 
+(producing a so-called \emph{zeno run})
+and we postulate that such a scenario is unrealistic in
+a real-world workflow execution. After disregarding the zeno runs,
+we are guaranteed that the workflow finishes within 19 days
+and we can call it \emph{strongly sound}. 
+%A formal definition of strong soundness follows.
+
+\begin{definition}[Strong soundness of TAWFN] \label{def:strongsound}
+An (extended or monotonic) timed-arc workflow net $N$ %=\tapntuple$ 
+is \emph{strongly sound} if 
+\begin{description}
+\item{a)} $N$ is sound, 
+\item{b)} every divergent marking reachable in $N$ is a final marking, and
+\item{c)} there is no infinite computation starting from the initial marking \\
+$\{(\itn{in},0)\}=M_0 \trans{d_0,t_0} M_1 
+\trans{d_1,t_1} M_2 \trans{d_2,t_2} \cdots$ 
+where $\sum_{i \in \nnul}d_i = \infty$.
+\end{description}
+\end{definition}
+
+\begin{figure}[!t]
+\begin{minipage}[c]{0.5\textwidth}
+\centering
+\begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.1]
+  \tikzstyle{arc}=[->,>=stealth,thick]
+	\tikzstyle{transportArc}=[->,>=diamond,thick]
+  \tikzstyle{every place}=[minimum size=6mm,thick]
+  \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+  \tikzstyle{every token}=[fill=white,text=black]
+  \tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+        \node[] at (0,-0.8) (space) { };
+	\tikzstyle{inhibArc}=[->,>=o,thick]
+  \node at (0,0) {};
+	\node[place,label=above:$\mathit{in}$] at (0,0) (in) {};
+	\node[place,label=below:\itn{pending}] at (1.3,0) (pending) {};
+	\node[place,label=\itn{out}] at (2.65,0) (out) {};
+	\node[place,label=right:\itn{sending}] at (1.3,2) (sending) {};
+  \node[transition,label=below:\itn{start}] at (0.65,0) (start) {};
+	\draw[arc] (in) -- (start) {}; 
+	\draw[arc] (start) -- (pending) {}; 
+	\node[transition,label=above:\itn{req\_info},rotate=90] at (1.05,1) (request) {};
+	\draw[arc] (pending)--(request){};
+	\draw[arc] (request)--(sending){};
+	\node[transition,label=below:\itn{provide\_info},rotate=90] at (1.55,1) (provide) {};
+	\draw[arc] (provide)--(pending){};
+	\draw[arc] (sending)--(provide){};
+	\node[transition,label=below:\itn{decision}] at (1.95,0) (decision) {};
+	\draw[arc] (pending) -- (decision) {}; 
+	\draw[arc] (decision) -- (out) {}; 
+		
+\end{tikzpicture}
+\captionsetup{type=subfigure}
+\caption{Sound but strongly unsound workflow.}
+\label{fig:notstrongsoun}
+\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}
+\centering
+\vspace{-0.5cm}
+\begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.1]
+  \tikzstyle{arc}=[->,>=stealth,thick]
+	\tikzstyle{transportArc}=[->,>=diamond,thick]
+  \tikzstyle{every place}=[minimum size=6mm,thick]
+  \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+  \tikzstyle{every token}=[fill=white,text=black]
+  \tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+	\tikzstyle{inhibArc}=[->,>=o,thick]
+  \node at (0,0) {};
+	\node[place,label=below:{inv: $\leq 5$}] at (0,0) (in) {};
+	\node[above] at (0,0.25) {\itn{in}};
+	\node[place,label=below:{inv: $\leq 14$}] at (1.3,0) (pending) {};
+	\node[above] at (1.3,-1.1) {\itn{pending}};
+	\node[place,label=\itn{out}] at (2.65,0) (out) {};
+	\node[place,label=left:{inv: $\leq 14$},label=right:\itn{sending}] at (1.3,2) (sending) {};
+%	\node[above] at (1.3,2.5) {\itn{sending}};
+  \node[transition,label=below:\itn{start}] at (0.65,0) (start) {};
+	\draw[arc] (in) -- (start) {}; 
+	\draw[arc] (start) -- (pending) {}; 
+	\node[transition,label=above:\itn{req\_info},rotate=90] at (1.05,1) (request) {};
+	\draw[transportArc] (pending) -- (request)  node[midway,left,yshift=-2]{$:1$} {};
+	\draw[transportArc] (request) -- (sending)  node[midway,left]{$:1$} {};
+	\node[transition,label=below:\itn{provide\_info},rotate=90] at (1.55,1) (provide) {};
+	\draw[transportArc] (provide) -- (pending)  node[midway,right]{$:1$} {};
+	\draw[transportArc] (sending) -- (provide)  node[midway,right,yshift=2]{$:1$} {};
+	\node[transition,label=below:\itn{decision}] at (1.95,0) (decision) {};
+	\draw[arc] (pending) -- (decision) {}; 
+	\draw[arc] (decision) -- (out) {}; 
+\end{tikzpicture}
+\vspace{-0.2cm}
+\captionsetup{type=subfigure}
+\caption{Strongly sound workflow.}
+\label{fig:strongsoundness}
+\end{minipage}
+\caption{Fragment of customer complaint workflow ($[0,\infty]$ guards
+are omitted)}
+\label{fig:soudnessnets}
+\end{figure}
+
+Next lemma shows that strong soundness %of a workflow net $N$
+corresponds % to the finiteness of the set of execution times of $N$
+to the property that any execution of the workflow net is time bounded.
+
+%and hence to the possibility to define the maximum execution time of
+%the workflow.
+
+\begin{lemma} \label{lem:finite}
+A sound and bounded ETAWFN is strongly sound if and only if
+the set of its execution times $\mathcal{T}(N)$ is finite.
+\end{lemma}
+\begin{proof}
+``$\Leftarrow$'': By contradiction we assume that $\mathcal{T}(N)$
+is finite while $N$ is not strongly sound. This means that either
+(i) there is a reachable divergent marking of $N$ that is not a final marking
+or (ii) the net contains an infinite time-divergent computation.
+In case (i) we can reach the divergent marking and perform an
+arbitrarily long delay after which (thanks to soundness of $N$)
+we can still reach some final marking. Hence $\mathcal{T}(N)$ is
+clearly infinite, contradicting our assumption. In case (ii)
+we can again follow the infinite execution for a sufficiently long time so that
+an arbitrary accumulated delay is achieved and again (thanks to soundness
+of $N$) we can reach some final marking, implying that
+$\mathcal{T}(N)$ is again infinite, contradicting our assumption.
+
+``$\Rightarrow$'': Let $N$ be a strongly sound workflow net.
+From condition $b)$ of Definition~\ref{def:strongsound}
+we know that any reachable nonfinal marking
+in $N$ cannot diverge. Moreover, there is a global bound $B$ such
+that any reachable marking can delay at most $B$ time units but not more.
+This is due to the fact that nondivergent behaviour is guaranteed either
+by age invariants (that have a fixed upper-bound limiting the maximum
+delay) or by urgent transitions with input arcs having $[0,\infty]$ guards
+only (prohibiting time delay as soon as a marking enables some urgent
+transition).
+ Also, it is impossible to have a reachable marking with
+no tokens as the net cannot be sound in this case (Definition~\ref{defetawfn}
+requires that every transition has at least one input place).
+
+Let $S$ denote the number of reachable cut-markings
+in the net $N$.
+Hence any execution from the initial marking to some final one has either
+length of no more than $S$, meaning that its accumulated time duration
+is at most $S\cdot B$, or it contains the same cut marking twice, forming a loop
+on the execution.
+We know that there must be only zero delays on
+any such a loop as otherwise we would be able to repeat the cycle
+infinitely often, breaking condition $c)$ of Definition~\ref{def:strongsound}
+(of course, this loop is only on the cut markings but due to
+Theorem~\ref{thm:bisim} it can be found also in the real execution of the net
+with exactly the same delays).
+This implies that the loop can be omitted while preserving
+the accumulated execution time of the path.
+So we are guaranteed that the set $\mathcal{T}(N)$ is bounded by $S\cdot B$
+and hence it is finite.
+\end{proof}
+
+
+
+Lemma~\ref{lem:finite} implies that 
+for any strongly sound net $N$, the maximum execution
+time is well defined.
+Notice that for monotonic nets (even extended
+with inhibitor arcs), the answer to the strong soundness is always
+negative as all reachable markings are divergent. As expected,
+strong soundness is in general undecidable.
+%For general extended timed-arc workflow nets, 
+%strong soundness in undecidable.
+
+\begin{theorem} \label{thm:strong-undecid}
+Strong soundness of ETAWFN %extended timed-arc workflow nets
+is undecidable.
+\end{theorem}
+
+\begin{proof}
+Similarly as in Theorem~\ref{thm:undecid},
+we reduce the reachability problem for
+two-counter Minsky machines into checking strong soundness. We can use
+the same construction as in Figure~\ref{fig:cont} each place
+$p_i$ contains the age invariant $\leq 1$ and hence there are no divergent
+markings. At the same time, before executing any instruction we have to
+wait exactly one time unit, hence there is no infinite computation of the
+workflow net that happens during a fixed time bound. As a result,
+the workflow net constructed in Figure~\ref{fig:cont} is sound if and only
+if it is strongly sound and the undecidability result in 
+Theorem~\ref{thm:undecid} is valid also for strong soundness.
+\end{proof}
+
+We focus now on bounded ETAWFN where
+strong soundness is decidable and the maximum execution 
+time computable, relying on Lemma~\ref{lem:finite}. 
+We prove this by reducing strong soundness of a given bounded ETAWFN $N$
+into a reachability problem on a bounded ETAPN $N(c)$, 
+where $c$ is a nonnegative integer; the translation
+is given in Figure~\ref{fig:nprime}. 
+The token from the place \itn{timer} has to move to the place $\itn{ready}$
+exactly at the time $c$ from the start of the workflow.
+If the workflow can finish (by marking the place \itn{out})
+after at least $c$ time units passed, then we can fire the transition
+\itn{late} and mark the place \itn{after}. If %on the other hand
+a token is moved to \itn{out} earlier, then the urgent transition
+\itn{early} will have to fire immediately.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=2.0]
+  \tikzstyle{arc}=[->,>=stealth,thick]
+	\tikzstyle{transportArc}=[->,>=diamond,thick]
+  \tikzstyle{every place}=[minimum size=6mm,thick]
+  \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+  \tikzstyle{every token}=[fill=white,text=black]
+  \tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+	\tikzstyle{inhibArc}=[->,>=o,thick]
+  \node at (0,0) {};
+  \node[place,label=above:\itn{in}] at (0,0) (in) {0};
+  \node[place,label=above:\itn{out}] at (3.5,0) (out) {};
+	\node[place,label=below:\itn{timer}] at (3.5,-1) (timW) {0};
+	\node [above] at (3.5,-0.78) {inv: $\leq c$};
+	\node[place,label=below:\itn{ready}] at (5,-1) (timD) {};
+	\node[place,label=above:\itn{after},label=below:inv $\leq 0$] at (6,-1) (ok) {};
+	\node[place,label=above:\itn{before},label=below:inv $\leq 0$] at (6,0) (nok) {};
+	\draw[arc] (2.7,-0.3)-- (out){};
+	\draw[arc] (2.7,0)-- (out){};
+	\draw[arc] (2.7,0.3)-- (out){};
+	\draw [dotted] (0.5,-0.5) rectangle (3,0.5){};
+	\node at (1.8,0.0) (name) {workflow net $N$};
+	\node[transition, label=above:$\mathit{tick}$] at (4.35,-1) (wtod) {}
+	edge[pre,thick,>=stealth]node[midway,above] {[c,c]} (timW)
+	edge[post,thick,>=stealth](timD);
+	\node[transition, label=above:$\mathit{early}$] at (5,0) (tnok) {}
+	edge[pre,thick,>=stealth](out)
+	edge[pre,thick,>=o](timD)
+	edge[post,thick,>=stealth](nok);
+	\node[urgency] at (5,0) {};
+	\node[transition, label=above:$\mathit{late}$] at (5.5,-1) (tok) {}
+	edge[pre,thick,>=stealth, bend right=15](out)
+	edge[pre,thick,>=stealth](timD)
+	edge[post,thick,>=stealth](ok);
+	\node[urgency] at (5.5,-1) {};
+	\draw[arc] (in)-- (0.8,0.3){};
+	\draw[arc] (in)-- (0.8,0){};
+	\draw[arc] (in)-- (0.8,-0.3){};
+\end{tikzpicture}
+\caption{Transformation of an ETAWFN $N$ into an ETAPN $\mathit{N(c)}$}
+\label{fig:nprime}
+\end{figure}  
+
+\begin{lemma} \label{lem:Nc}
+Let $N$ be a sound ETAWFN. Let $M_\mathit{after} = \{(\itn{after},0)\}$
+be a marking in $N(c)$ with one token in the place \itn{after}.
+If $c \in \mathcal{T}(N)$ then
+$N(c)$ can reach the marking $M_\mathit{after}$.
+If $N(c)$ can reach the marking $M_\mathit{after}$ then
+$c' \in \mathcal{T}(N)$ for some $c'\geq c$.
+\end{lemma}
+\begin{proof}
+If $c \in \mathcal{T}(N)$ then we perform the execution lasting exactly
+$c$ time units in the net $N$ and at the moment $c$ we fire the transition
+$\itn{tick}$, enabling the transition \itn{late} and marking the
+place \itn{after}. If on the other hand the place \itn{after} can be
+marked then necessarily the token in the place \itn{out} arrived
+at time $c'$ such that $c' \geq c$, otherwise the urgent transition \itn{early}
+had to be fired instead.
+\end{proof}
+
+
+
+Let $N = \tapntuple$ be a given bounded ETAWFN.
+We can run Algorithm~\ref{algthm:1} to check for soundness of $N$.
+If it is not sound then $N$ cannot be strongly sound either.
+Otherwise, let $S$ be the number of non-final cut markings reachable in $N$
+(corresponding to the maximum cardinality of the set $\mathit{Reached}$
+in Algorithm~\ref{algthm:1}). 
+Let $B=\max\{ b \mid p \in P,\ \inv(p)=[0,b],\ b \not=\infty\}$
+be the maximum integer number used in any of the age invariants in $N$.
+
+\begin{lemma} \label{lem:mB1}
+A sound and bounded ETAWFN  $N$ is strongly sound if and only if
+$N(S\cdot B+1)$ cannot reach the marking $\{(\itn{after},0)\}$. 
+\end{lemma}
+\begin{proof}
+If the net $N$ is strongly sound then there is no
+reachable divergent marking with the possible exception of final markings.
+Hence any reachable marking either contains
+some enabled urgent transition (and so no delay is possible) or
+the divergent behaviour is avoided by some age invariant, giving us
+the guarantee that no reachable marking can delay more than $B$
+units of time. As there are $S$ reachable non-final cut markings,
+we know that any execution of $N$ using more than $S\cdot B$ units of time
+must contain a loop with a non-zero time delay somewhere on the loop.
+Hence if $N(S\cdot B+1)$ can mark the place \itn{after}, then either there
+is a reachable divergent marking (and the net is not strongly sound) or
+there exists an execution with a non-zero delay loop and by repeating
+the loop infinitely often, we get an execution breaking the condition $c)$
+of Definition~\ref{def:strongsound} and the net is not strongly sound either.
+
+On the other hand, if
+the place \itn{after} is not reachable in $N(S\cdot B+1)$ then it is surely
+not reachable also for any other $c \geq S\cdot B+1$, meaning that
+the set $\mathcal{T}(N)$ is finite by Lemma~\ref{lem:Nc}. Now
+Lemma~\ref{lem:finite} and the fact that $N$ is sound
+implies that $N$ is strongly sound.
+\end{proof}
+
+
+\begin{theorem} \label{thm:strong-max}
+Strong soundness of bounded extended timed-arc workflow nets
+is decidable and the maximum execution time is computable.
+\end{theorem}
+\begin{proof}
+Let $N$ be a given bounded ETAWFN.
+We first run Algorithm \ref{algthm:1} to check for soundness of $N$.
+If it is not sound, we terminate and announce that $N$ is not strongly sound.
+Otherwise,
+we check whether $N(S\cdot B+1)$ can reach a marking containing just one token
+in the place \itn{after} (this check is decidable for
+bounded ETAPN~\cite{ALSST:MEMICS:12}). If this is the case, we
+return that $N$ is not strongly sound due to Lemma~\ref{lem:mB1}.
+Otherwise the net is sound and we return the maximum accumulated delay
+in any marking discovered during the check as the maximum execution
+time (correctness follows from Lemma~\ref{lem:Nc},
+soundness of $N$ and the fact that once a token appears
+in the place \itn{out} in $N(S\cdot B+1)$, no further delay is possible).
+\end{proof}

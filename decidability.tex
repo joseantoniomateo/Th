@@ -1,0 +1,660 @@
+%!TEX root=main.tex
+%\section{Decidability of Soundness} \label{sec:decidability}
+
+Next we show that soundness for extended timed-arc workflow nets
+is undecidable.
+% In fact any of the additional 
+%features of inhibitor arcs, age invariants and urgent transition is
+%enough on its own to make the problem undecidable. 
+The result has been 
+known for the extension with inhibitor arcs~\cite{AalstHHSVVW11}, we prove it 
+also for urgent transitions and age invariants. 
+
+
+\begin{theorem}\label{thm:undecid}
+Soundness is undecidable for extended timed-arc workflow nets.
+This is the case also for MTAWFNs that contain additionally only
+inhibitor arcs, age invariants or urgent transitions but not necessarily
+all of them together.
+\end{theorem}
+
+\begin{proof}
+The proofs are by reduction from the Minsky machine.
+A \emph{Minsky machine} with two nonnegative counters $c_1$ and $c_2$ is
+a sequence of labelled instructions
+$$1:\mathsf{inst}_1;\ 2:\mathsf{inst}_2;\ \ldots, n:\mathsf{inst}_n$$
+where $\mathsf{inst}_n = \mathsf{HALT}$ 
+and each $\mathsf{inst}_i$, $1\le i < n$, is of one of the following forms
+\begin{itemize}
+\item
+{(Inc)} \hspace{5mm} {\tt $i$: $c_j$++; goto $k$}
+\item
+{(Dec)} \hspace{4mm} {\tt $i$: if $c_j$=$0$ then goto $k$ else 
+ ($c_j$--; goto $\ell$)}
+\end{itemize}
+for $j\in \{1,2\}$ and $1\le k,\ell \le n$.
+
+Instructions of type (Inc) are called \emph{increment} instructions and
+those of type (Dec) are called \emph{test and decrement} instructions.
+A configuration is a triple $(i, v_1, v_2)$ where $i$ is the current
+instruction and $v_1$ and $v_2$ are the values of the counters $c_1$
+and $c_2$, respectively. A computation step between configurations is
+defined in the natural way. If starting from the initial
+configuration $(1,0,0)$ the machine reaches the instruction $\mathsf{HALT}$
+then we say it \emph{halts}, otherwise it \emph{loops}.
+%
+The problem whether a given Minsky machine halts 
+is undecidable~\cite{Minsky:book}. W.l.o.g. we assume
+that the machine halts only when both counters are empty
+(we can add a few instructions that will always empty the counters
+before reaching the halting instruction).
+
+We shall now reduce reachability in Minsky machines into the soundness
+problem on ETAWFN. Counters $c_1$ and $c_2$ will be simulated
+by two places $p_{c_1}$ and $p_{c_2}$ such that the number of
+tokens in those places represents the value of the counters.
+For every instruction label $i$, $1 \leq i \leq n$, we
+add a new control place $p_i$. At any moment exactly one of the $p_i$
+places will be marked by a token, representing the instruction
+to be executed in the next step.
+
+If we allow urgent transitions, we can create for any given Minsky machine
+a workflow net constructed according to the patterns given in Figure~\ref{fig:urgent-reduction} (we only show
+the encoding of the instructions that manipulate the first counter;
+the encoding for the second counter is completely analogous).
+We also postulate that the input place is $in=p_1$ and the output place is
+$out=p_n$. Now, given the initial marking with one token in $p_1$,
+the net will faithfully simulate the (deterministic) computation of
+the Minsky machine. This is clear for the increment instruction
+as the control token moves from $p_i$ to $p_k$ and the number of tokens
+in $p_{c_1}$ is increased by one. For the test and decrement instruction,
+if $p_{c_1}$ contains at least one token then the transition
+$t_i^{\mathit{dec}}$ will be fired with no delay (the transition is urgent),
+decreasing the counter by one and moving the control token to $p_\ell$
+as required. Only if the counter $c_1$ is empty (there are no tokens
+in $p_{c_1}$), we are allowed to delay one time unit and fire the transition
+$t_i^{\mathit{zero}}$ such that the control token is moved to $p_k$.
+Hence the test and decrement instruction is also faithfully simulated
+and there is no possibility of any deadlock situation, meaning that
+either $t_i^{\mathit{dec}}$ or $t_i^{\mathit{zero}}$ can always fire.
+It is now an easy observation that the workflow net is sound if and only
+if the Minsky machine halts.
+
+
+\begin{figure}[!h]
+\begin{minipage}[c]{0.5\textwidth}
+\hspace{1.5cm}
+\begin{tikzpicture}[font=\scriptsize,xscale=1.5,yscale=1.5]
+   \tikzstyle{arc}=[->,>=stealth,thick]
+   \tikzstyle{transportArc}=[->,>=diamond,thick]
+   \tikzstyle{every place}=[minimum size=6mm,thick]
+   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+   \tikzstyle{every token}=[fill=white,text=black]
+  \node[place,label=above:$p_{i}$] at (0,0) (pi) {};
+  \node[place,label=above:$p_{k}$] at (2,0) (pk) {};
+  \node[place,label=above:$p_{c_1}$] at (1,1) (pc1) {};
+  \node[transition,label=60:$t_i$] at (1,0) (t) {};
+  \draw[arc] (pi) -- (t) node[midway,above]{$[0,\infty]$} {};
+  \draw[arc] (t) -- (pk) {};
+  \draw[arc] (t) -- (pc1) {};
+\end{tikzpicture}
+\captionsetup{type=subfigure}
+\caption{\tt $i$: $c_1$++; goto $k$}\label{fig:inc}
+\end{minipage}
+%\hspace{0mm}
+\begin{minipage}[c]{0.5\textwidth}
+\vspace{0.5cm}
+\begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.5]
+  \tikzstyle{arc}=[->,>=stealth,thick]
+  \tikzstyle{transportArc}=[->,>=diamond,thick]
+  \tikzstyle{every place}=[minimum size=6mm,thick]
+  \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+  \tikzstyle{every token}=[fill=white,text=black]
+  \tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+  \node at (-0.85,0) {};
+  \node at (2.8,0) {};
+  \node[place,label=above:$p_{i}$] at (0,0) (pi) {};
+  \node[place,label=above:$p_{k}$] at (2,0) (pk) {};
+  \node[place,label=above:$p_{\ell}$] at (2,1) (pl) {};
+  \node[place,label=above:$p_{c_1}$] at (0,1) (pc1) {};
+  \node[transition,label=60:$t_i^{\mathit{dec}}$] at (1,1) (tdec) {};
+  \node[urgency] at (1,1) {};
+  \node[transition,label=60:$t_i^{\mathit{zero}}$] at (1,0) (tzero1) {};
+ \draw[arc] (pi) -- (tdec) node[midway,left]{$[0,\infty]$} {};
+ \draw[arc] (pi) -- (tzero1) node[midway,above]{$[1,\infty]$} {};
+ \draw[arc] (pc1) -- (tdec) node[midway,above,pos=0.5]{$[0,\infty]$} {}; 
+ \draw[arc] (tdec) -- (pl) {};
+ \draw[arc] (tzero1) -- (pk) {};
+\end{tikzpicture}
+\vspace{-0.4cm}
+\captionsetup{type=subfigure}
+\caption{{\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell$)}}\label{fig:dec}
+\end{minipage}
+  \caption{Simulation of (Inc) and (Dec) instructions with urgent transitions}%
+  \label{fig:urgent-reduction}%
+\end{figure}
+
+\begin{figure}[!h]
+\begin{center}
+  \begin{minipage}[c]{\textwidth}
+\centering
+\begin{tikzpicture}[font=\scriptsize, xscale=.9,yscale=1.6]
+   \tikzstyle{arc}=[->,>=stealth,thick]
+   \tikzstyle{transportArc}=[->,>=diamond,thick]
+   \tikzstyle{every place}=[minimum size=6mm,thick]
+   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+   \tikzstyle{every token}=[fill=white,text=black]
+  \node[place,label=above:$p_{c_1}$,label=270:{inv: $\leq 2$}] at (0,0) (p1) {};
+  \node[place,label=above:$p^{\mathit{reset}}_{c_1}$](p2) at (4,0) {};
+  \node[transition] at (2,0)[label=above:$t^{\mathit{reset}}_{c_1}$] {} 
+    edge [pre,bend right=10]  node[above,xshift=0mm,pos=0.5]{$[2,2]$} (p1) 
+    edge [post,bend right=10] (p2)
+    edge [pre,bend left=10] node[above,xshift=0mm,pos=0.5]{$[0,\infty]$}(p2) 
+    edge [post,bend left=10] (p1);
+
+ \node[place,label=above:$p_{c_2}$,label=270:{inv: $\leq 2$}] at (6.5,0) (p1c) {};
+  \node[place,label=above:$p^{\mathit{reset}}_{c_2}$](p2c) at (10.5,0) {};
+  \node[transition] at (8.5,0)[label=above:$t^{\mathit{reset}}_{c_1}$] {}
+    edge [pre,bend right=10]  node[above,xshift=0mm,pos=0.5]{$[2,2]$} (p1c)
+    edge [post,bend right=10] (p2c)
+    edge [pre,bend left=10] node[above,xshift=0mm,pos=0.5]{$[0,\infty]$}(p2c)
+    edge [post,bend left=10] (p1c);
+\end{tikzpicture}
+    \captionsetup{type=subfigure}
+    \caption{Simulation of the counters $c_1$ and $c_2$.}
+    \label{fig:register_simulation}
+  \end{minipage}
+%\\
+%  \subfloat[][Simulation start]{
+%\begin{tikzpicture}[font=\scriptsize,scale=1.6]
+%   \tikzstyle{arc}=[->,>=stealth,thick]
+%   \tikzstyle{transportArc}=[->,>=diamond,thick]
+%   \tikzstyle{every place}=[minimum size=6mm,thick]
+%   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+%   \tikzstyle{every token}=[fill=white,text=black]
+  %\node[place, label=above:$in$] at (0,1) (pin) {};
+  %\node[place, label=above:$p_1$] at (2,1) (p1) {};
+  %\node[transition, label=80:$t_{\mathit{start}}$] at (1,1) {}
+  %  edge [pre] node[above] {$[0,\infty]$} (pin) {}
+  %  edge [post] (p1) {};
+%\end{tikzpicture}
+%    \label{fig:start}
+%  }
+  \begin{minipage}[c]{\textwidth}
+%    \input{figures/simu_increment}
+\centering
+\begin{tikzpicture}[font=\scriptsize,scale=.9]
+   \tikzstyle{arc}=[->,>=stealth,thick]
+   \tikzstyle{transportArc}=[->,>=diamond,thick]
+   \tikzstyle{every place}=[minimum size=6mm,thick]
+   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+   \tikzstyle{every token}=[fill=white,text=black]
+  \node[place,label=above:$p_{i}$,label=below:{inv: $\leq 1$}] at (0,0) (pj) {};
+  \node[place,label=-90:$p^{\mathit{reset}}_{c_1}$](presetri) at (5,-1.4) {};
+  \node[place,label=below:{inv: $\leq 1$},label={[label distance=-0mm]90:$q_{i}$}](q1) at (5,0) {};
+  \node[place,label=90:$p^{\mathit{reset}}_{c_2}$](presetr3i) at (5,1.4) {};
+  \node[place,label=above:$p_{c_1}$](pri) at (0,1.4) {};
+  \node[place,label=above:$p_k$,label=below:{inv: $\leq 1$}](pk) at (10,0) {};
+
+  \node[transition] at (2.5,0)[label=above:$t_i$] {}
+    edge [pre] node[above,pos=0.6]{$[1,1]$} (pj) 
+    edge [post] (q1) 
+    edge [post, bend right=20] (pri) 
+    edge [post, bend right] (presetri) 
+    edge [post, bend left] (presetr3i);
+  \node[transition] at (7.5,0)[label={[yshift=1mm,xshift=1mm]above:$t^{\mathit{goto}}_i$}] {}
+    edge [pre, bend left] node[above,sloped,pos=0.6] {$[0,\infty]$} (presetri) 
+    edge [pre] node[above,sloped,pos=0.55] {$[1,1]$} (q1) 
+    edge [pre, bend right] node[above,sloped,pos=0.7] {$[0,\infty]$} (presetr3i) 
+    edge [post] (pk) {};
+\end{tikzpicture}
+    \captionsetup{type=subfigure}
+    \caption{{\tt $i$: $c_1$++; goto $k$}}
+    \label{fig:increment_simulation}
+  \end{minipage} 
+  \begin{minipage}[c]{\textwidth}
+    %\input{figures/simu_test_decrement}
+\centering
+\begin{tikzpicture}[font=\scriptsize,xscale=0.9,yscale=1.5]
+   \tikzstyle{arc}=[->,>=stealth,thick]
+   \tikzstyle{transportArc}=[->,>=diamond,thick]
+   \tikzstyle{every place}=[minimum size=6mm,thick]
+   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+   \tikzstyle{every token}=[fill=white,text=black]
+
+  \node[place,label=above:$p_{i}$,label=below:{inv: $\leq 1$}] at (0,1) (pj) {};
+  \node[place,label=above:$p_{c_1}$,label=220:](pri) at (0,-1.5) {};
+  \node[place,label=below:{inv: $\leq 1$},label={[label distance=-1mm]60:$q_{i}$}](q1) at (5,0.3) {};
+  \node[place,label=below:{inv: $\leq 1$},label={[label distance=-1mm]60:$q'_{i}$}](q1p) at (5,-0.7) {};
+  \node[place,label=above:$p^{\mathit{reset}}_{c_{2}}$](presetr3i) at (5,1) {};  
+  \node[place,label=below:$p^{\mathit{reset}}_{c_{1}}$](prs) at (5,-1.5) {};  
+  \node[place,label=right:$p_k$,label=below:{inv: $\leq 1$}](pl) at (10,1) {};
+  \node[place,label=right:$p_\ell$,label=below:{inv: $\leq 1$}](pk) at (10,-1.5) {};
+
+  \node[transition, label=above:$t_i$] at (2.5,1) {}
+    edge [pre] node[auto,swap,yshift=0mm]{$[1,1]$} (pj)
+    edge [post,bend right=15] (q1)
+    edge [post] (presetr3i);
+  \node[transition, label=above:$t^{\mathit{zero}}_i$] at (7.5,1) {}
+    edge [pre, bend left=15] node[right,pos=0.4,xshift=0.9mm]{$[1,1]$} (q1)
+    edge [pre] node[auto,swap,xshift=-0mm,yshift=-.0mm]{$[0,\infty]$} (presetr3i)
+    edge [post] (pl);
+  \node[transition, label=below:$t^{\mathit{dec}}_i$] at (2.5,-1.5) {}
+    edge [pre] node[above,yshift=.0mm]{$[2,2]$} (pri)
+    edge [pre,bend left=22] node[auto,yshift=-1.4mm]{$[0,0]$} (q1)
+    edge [post,bend left=15] (q1p)
+    edge [post] (prs);
+\node[transition, label=below:$t^{\mathit{end}}_i$] at (7.5,-1.5) {}
+    edge [pre,bend left=0] node[below,yshift=.0mm]{$[0,\infty]$} (prs)
+    edge [pre,bend right=15] node[above,yshift=0.5mm]{$[1,1]$} (q1p)
+    edge [pre,bend right=30] node[right,yshift=.0mm,pos=0.3]{$[0,\infty]$} (presetr3i)
+    edge [post] (pk);
+\end{tikzpicture}
+   \captionsetup{type=subfigure}
+   \caption{{\tt $i$: if $c_1$=$0$ then goto $k$ else 
+           ($c_1$--; goto $\ell$)}.}
+    \label{fig:test_decrement_simulation}
+  \end{minipage}
+  \caption{Simulation of a Minsky machine by a workflow net with invariants}%
+  \label{fig:cont}%
+\end{center}
+\end{figure}
+
+%A very similar reduction can be done for workflow nets that can, instead
+%of urgent transitions, employ inhibitor arcs. In order to guarantee
+%that the simulation is fair, we simply add an inhibitor arc from the
+%counter place $p_{c_1}$ to the transition $t_i^{\mathit{zero}}$.
+%Otherwise the net is completely untimed and again, the workflow net is
+%sound if and only if the Minsky machine halts.
+
+The reduction for workflow nets that contain only age invariants
+is more complicated. The reduction idea is based on~\cite{memics_paper}, 
+however, it had to be nontrivially modified in order to avoid the
+large number of possible deadlocks introduced in the reduction.
+
+The counters are now modelled by two places that contain age invariants
+ensuring that no tokens can get older than $2$, see 
+Figure~\ref{fig:register_simulation}. The intuition is that
+before and after the simulation of any instruction, all tokens in
+the places $p_{c_1}$ and $p_{c_2}$ are exclusively of age $1$. 
+As before the input place is $\itn{in}=p_1$ and the output place
+is $\itn{out}=p_n$.
+
+Let us now observe
+that this invariant is preserved after simulating the 
+increment instruction (Figure~\ref{fig:increment_simulation}).
+Assume that all tokens in the counter places are of age $1$ and that
+the place $p_i$ contains one token of age $0$.
+%(initially created by the initialization transition in Figure~\ref{fig:start}
+%that just resets the token age to $0$). 
+Before $t_i$ can be fired, one time unit must pass and this guarantees
+that all tokens in the counter places will become of age $2$. After firing
+of $t_i$, we also add one token of age $0$ to $p_{c_1}$ 
+and moreover, a token of age $0$ in the place $q_i$ is created.
+Before we can proceed and delay one time unit 
+and then fire $t_i^{\mathit goto}$, we must fire the
+transitions $t_{c_1}^{\mathit reset}$ and $t_{c_2}^{\mathit reset}$ once
+for every token of age $2$ in the counter places in order to reset 
+them all to the age $0$, otherwise the age invariant $\leq 2$ in the token 
+places disables the delay of one time unit. Clearly, after the transition 
+$t_i^{\mathit goto}$ is fired, all counter tokens are again of age $1$
+(including the one added to $p_{c_1}$) and we argued for a faithful simulation
+of the increment instruction.
+
+Let us consider now the test and decrement instruction simulated by
+the net in Figure~\ref{fig:test_decrement_simulation}. Again, let us assume
+that all counter tokens are of age $1$ and that there is one token
+of age $0$ in $p_i$. First we wait one time unit and then fire $t_i$,
+meaning again that all counter tokens are of age $2$. Now all
+tokens in the place $p_{c_2}$ can be reset to $0$ and if $p_{c_1}$
+does not contain any tokens, we can wait one time unit and fire
+$t_i^{\mathit zero}$, implying that we place a token to $p_k$
+as expected and all counter tokens are again of age $1$.
+If on the other hand $p_{c_1}$ contains some tokens (all of age $2$
+as we already mentioned), we must without any delay fire
+$t_i^{\mathit dec}$ consuming one token from $p_{c_1}$ while marking
+the places $q'_i$ and $p^{\mathit reset}_{c_1}$, allowing
+now all counter tokens to be reset to $0$. After this we can wait
+one time unit and fire the transition $t_i^{\mathit end}$, while
+continuing with the execution of the instruction with label $\ell$.
+All tokens in the counter places are now again of age $1$.
+Notice that these two scenarios are deterministically determined
+by the presence or absence of tokens in $p_{c_1}$ and that there are
+no deadlock situations possible during the simulation.
+
+As a result
+%, and assuming that the output place of the workflow net is $out = p_n$, 
+we can see that the net is sound if and only if
+the Minsky machine halts. This completes the undecidability proof
+also for the situation where we use only age invariants.
+\end{proof}
+
+\begin{algorithm}[th!]
+\caption{Soundness checking for timed-arc workflow nets\label{algthm:1}}
+%\dontprintsemicolon
+\SetKwInOut{Input}{Input}
+\SetKwInOut{Output}{Output}
+
+\Input{An MTAWFN or an ETAWFN with a positive integer bound $k$
+       $N=\tapntuple$ where $\mathit{in}, \mathit{out} \in P$.}
+\Output{``Not $k$-bounded'' if the workflow net is not monotonic 
+         and not $k$-bounded;
+        ``true'' and the minimum execution time if $N$ is sound; 
+         ``false'' if $N$ is not sound.}
+\Begin{
+A marking $M$ has an (initially empty) set of its parents
+$M.\mathit{parents}$ and a minimum execution time $M.min$ (initially $\infty$); \label{initially}
+%$\mathit{Waiting}:= \{ cut(M) \mid \text{ $M$ is a marking s.t. }
+% |M|=1 \text{ and } |M(\mathit{in})|=1 \}$\; 
+$M_\mathit{in}:=\{(\mathit{in},0)\}$\;
+$\mathit{Waiting}:= \{M_\mathit{in}\}$; $M_\mathit{in}.\mathit{min}=0$;
+\label{waitinit1} \label{waitinit2}
+% \textbf{foreach} $M \in \mathit{Waiting}$ \textbf{do} $M.min = 0$\; 
+$\mathit{Reached}:=\mathit{Waiting}$; \label{Reachedinit}
+$\mathit{Final}:= \emptyset$\; \label{Finalinit}
+\While{$\mathit{Waiting} \neq \emptyset$ \label{initWhile}}{ 
+Remove some marking $M$ from $\mathit{Waiting}$ with the smallest $M.min$\; \label{takeminmarking}
+\ForEach{$M^\prime \mbox{s.t.}\, M \trans{1} M' \mbox{ or }
+ M \trans{t} M' \mbox{ for some } t \in T$ \label{foreach}}{
+\textbf{if} {$N$ is not monotonic and $|M'|>k$} \textbf{then} {\Return ``Not $k$-bounded''\; \label{monoandnotkbounded}} 
+$M'_c:=cut(M^\prime)$;  \label{cut}
+$M'_{c}.\mathit{parents}:=M'_{c}.\mathit{parents} \cup \{M\}$\; \label{addtoparents}
+\textbf{if} $M \trans{1} M'$ \textbf{then} $M'_c.min := \mathtt{MIN}(M'_c.min, M.min+1)$\label{updateMin1}\;
+%\hspace{18mm}
+\textbf{else} $M'_c.min = \mathtt{MIN}(M'_c.min, M.min)$\label{updateMin2}\;
+\eIf{$|M'_c(out)| \geq 1$}
+{ \textbf{if} {$M'_c \text{ is a final marking}$} \textbf{then}
+ {$\mathit{Final}:=\mathit{Final} \cup \{M'_c\}$\;\label{addtoFinal}} 
+ %\hspace{35mm}
+\textbf{else} {\Return false\;\label{notproper}} 
+}
+{
+\If{$M'_c  \notin \mathit{Reached}$\label{notinReached}} 
+{
+\textbf{if} {$M'_c$ is a deadlock \label{isDeadlock}} \textbf{then} {\Return false\label{deadlock}\;}
+\If{$N$ is monotonic and $\exists M'' \in \mathit{Reached}.\ M'' \sqsubseteq_{cut} M'_c$ \label{ifmonoandunbounded}}
+{\Return false\;\label{monoandunbounded}} 
+$\mathit{Reached}:= \mathit{Reached} \cup \{M'_c\}$; \label{addtoReached} $\mathit{Waiting}:= \mathit{Waiting} \cup \{M'_c\}$\; \label{addtoWaiting}
+}
+}
+}
+}
+$\mathit{Waiting}:= \mathit{Final}$\; \label{endphase1}
+\While{$\mathit{Waiting} \neq \emptyset$}{ \label{initphase2}
+Remove some marking $M$ from $\mathit{Waiting}$\;
+$\mathit{Waiting}:= \mathit{Waiting} \cup (M.\mathit{parents} \cap \mathit{Reached})$\;
+$\mathit{Reached}:= \mathit{Reached} \smallsetminus M.\mathit{parents}$\;
+\label{endwhile2}} 
+\eIf{$\mathit{Reached} = \emptyset$}{
+$\mathit{time} := \infty$; \textbf{foreach} $M \in \mathit{Final}$ \textbf{do} $\mathit{time} = \mathtt{MIN}(\mathit{time}, M.min)$\; \label{minexectime}
+\Return true and $\mathit{time}$\label{returnTrue}\;\label{Nissound}} 
+{\Return false;\label{endphase2}} 
+}
+\end{algorithm}
+
+We now prove decidability of soundness for workflow nets without 
+any inhibitor arcs, age invariants and urgency. This contrasts to
+undecidability of reachability 
+for this subclass~\cite{RGE:reachability}. 
+%Ruiz:1999:NRT:826035.826838}.
+Algorithm~\ref{algthm:1} shows how to efficiently check soundness
+on this subclass and on the subclass of bounded nets.
+The correctness proof is presented next. We will refer 
+to phase 1 (lines \ref{initially}-\ref{endphase1}) 
+and phase 2 (lines \ref{initphase2}-\ref{endphase2}) of Algorithm \ref{algthm:1}.
+
+\begin{lemma}[Termination]
+	\label{algthm:1:termination}
+	Algorithm \ref{algthm:1} terminates on any legal input.
+\end{lemma}
+
+\begin{proof}%[Lemma \ref{algthm:1:termination}]
+	 There is one while-loop in each phase of the algorithm. The loop in the first phase is executed as long as \itn{Waiting} is not empty. 
+	We notice that initially \itn{Waiting} and \itn{Reached} are initialised to the same value.
+	For each iteration of the loop, we remove a marking from \itn{Waiting} 
+        and newly discovered cut markings are always added to both 
+        \itn{Waiting} and \itn{Reached}
+        (line \ref{addtoReached}) but only if they 
+        are not already in \itn{Reached} (line \ref{notinReached}).
+        Markings are never removed from the set \itn{Reached} and
+        each canonical marking can appear in \itn{Waiting} at most once.
+
+	For non-monotonic nets, only canonical markings with at most
+        $k$ tokens are added (line~\ref{monoandnotkbounded}) 
+        and therefore the set of canonical markings is finite. 
+        Thus the algorithm will terminate as the set \itn{Waiting} 
+        eventually becomes empty.
+
+        For monotonic nets, the net
+        could be unbounded and, therefore, the set \itn{Reached} would grow above any
+        bound. In this case, we know by similar arguments 
+        like in the proof of Theorem~\ref{thm:soundness} that must 
+        exist $M$, $M^\prime \in [ M_{in}\rangle$ such that 
+        \cutsqrel{M}{M^\prime} and $|M| < |M^\prime|$. However,
+        the algorithm will detect such a situation 
+        at line~\ref{ifmonoandunbounded} and terminate.
+
+	For the loop in the second phase, 
+        notice that $\mathit{Waiting} = \mathit{Final}$. 
+	For each iteration, a marking is removed from \itn{Waiting} and 
+        the intersection of the set of parents of the marking $M$, 
+        \emph{M.parents} and the set \itn{Reached} is then added to 
+        \itn{Waiting}. In addition, the set \emph{M.parents} is removed 
+        from \itn{Reached}. Thus, any marking can only be added to 
+        \itn{Waiting} once, and as the set \itn{Reached}
+        is finite when entering the loop and a marking is removed from 
+        \itn{Waiting} in each iteration, 
+        eventually $\itn{Waiting} = \emptyset$ and the algorithm terminates.	
+\qed
+\end{proof}
+
+
+
+\begin{lemma}[Invariant]
+	\label{lemma:invariants}
+	The while-loop in lines \ref{initWhile}-\ref{addtoWaiting} of Algorithm \ref{algthm:1} satisfies the following loop-invariants:
+	\begin{description}
+		\item[a)] $\itn{Waiting} \subseteq \itn{Reached}$, 
+		\item[b)] for all marking $M^\prime_c \in \itn{Reached} \cup \itn{Final}$, there exists a computation of the net $M_{in} \rightarrow^* M^\prime$ such that $M^\prime_c=cut(M^\prime)$ and the accumulated delay
+on the computation $M_{in} \rightarrow^* M^\prime$ 
+is equal to $M'_c.\itn{min}$, and
+		\item[c)] for any marking $M'_c \in \itn{Reached} \cup \itn{Final}$ and any $M \in M'_c.\itn{parents}$ there is a transition 
+   $M \rightarrow M'$ such that $M^\prime_c=cut(M^\prime)$.
+		%\item[c)] For all reachable marking $M^\prime$ in $N$, there exists a one-step computation $M \rightarrow M^\prime$ such that $M \in \itn{Reached}$.
+	\end{description}
+\end{lemma}
+
+\begin{proof}%[Lemma \ref{algthm:1:invariant}]
+	The claims a), b) and c) of the invariant are trivially satisfied the first time the while-loop is entered. 
+	Let us assume the invariant holds before the execution of the body of the while-loop. 
+	
+	The claim a) is easily proved, as markings are only added to \emph{Waiting} in line \ref{addtoWaiting} of the loop body, 
+	and the same marking is also added to \emph{Reached} in line \ref{addtoReached} and no markings are removed from \itn{Reached} in the body of the loop.
+	
+	For claim b) notice that in line~\ref{takeminmarking} we remove 
+        a marking $M$ from \itn{Waiting} and for any successor $M^\prime$ of 
+        $M$, the marking $M$ is added to the set of parents of 
+        $M^\prime_c = \cut(M^\prime)$ (line~\ref{addtoparents}). 
+	Due to the first invariant, $M$ was already in \itn{Reached} 
+        in the previous iteration of the loop.
+	Hence there exists a computation $M_{in} \rightarrow^* M_1$
+        such that $M = \cut(M_1)$ and the accumulated delay of this
+        computation is $M.\itn{min}$.
+        Because $M \rightarrow M^\prime$ (line~\ref{foreach}) then 
+        also $M_1 \rightarrow M_2$ 
+	such that $M^\prime_c=cut(M_2)$ (line \ref{cut}).
+        Hence $M_\itn{in} \rightarrow^* M_2$  and $M^\prime_c=cut(M_2)$
+        as required. The accumulated delay is updated according to the
+        type of the transition $M_1 \rightarrow M_2$ at
+        lines~\ref{updateMin1} and~\ref{updateMin2}. If the value
+        $M'_c.\itn{min}$ changed after this update then the computation
+        $M_\itn{in} \rightarrow^* M_2$ achieves this accumulated delay,
+        otherwise the minimum delay was achieved in some previous
+        run of the body of the while-loop and it is hence valid due 
+        to the loop invariant.  
+	%Finally, this marking $M^\prime_c$ is added to the set of 
+        %final markings (line~\ref{addtoFinal}) or to the set of reached 
+        %markings (line \ref{addtoReached}).	
+
+Finally, the claim c) follows from the fact that markings
+to $M'_c.\itn{parents}$ are only added at line~\ref{addtoparents} and
+such markings clearly satisfy the invariant claim.
+\qed
+\end{proof}
+
+\begin{lemma}[Not k-bounded]
+	\label{algthm:1:notkbounded}
+	Let $N$ be a MTAWFN or an ETAWFN and $k > 0$. If Algorithm \ref{algthm:1} returns ``Not k-bounded'' then  $N$ is not k-bounded. 
+\end{lemma}
+
+\begin{proof}%[Lemma \ref{algthm:1:soundness}]
+The algorithm returns ``Not k-bounded''  only at line~\ref{monoandnotkbounded},
+provided that the net is not monotonic and there is a 
+  marking $M^\prime$ reachable from $M \in \itn{Waiting}$ such
+	that $|M^\prime| > k$. 
+	By claim b) of Lemma~\ref{lemma:invariants}, we know 
+	that there is a computation from $M_{in}$ to $M_1$
+    such that  $M=\cut(M_1)$ and we also know that 
+		$M \rightarrow M'$ (line~\ref{foreach}). 
+              Therefore also $M_1 \rightarrow M_2$ and $M_2$ 
+         is reachable from $M_{in}$ and at the same time $|M_2| > k$
+    as cut preservers the number of tokens in a marking.
+     Hence if the algorithm returns ``Not k-bounded'' then 
+     the net is not $k$-bounded.
+\qed
+\end{proof}
+
+\begin{lemma}[Cut markings]
+	\label{alg1:reachcutmarkings}
+	After the first while loop (lines \ref{initWhile}-\ref{addtoWaiting}) of Algorithm~\ref{algthm:1} is finished, we have at line~\ref{endphase1} 
+that $\itn{Reached} \cup \itn{Final}=\{cut(M^\prime) \mid M_\itn{in} \rightarrow^* M^\prime\}$. Moreover, if $M_\itn{in} \rightarrow^* M'$ then the accumulated delay
+of this computation is greater or equal to $\cut(M').\itn{min}$ and there
+is at least one such a computation where the accumulated delay is
+equal to $\cut(M').\itn{min}$. 
+\end{lemma}
+\begin{proof}%[Lemma \ref{algthm:1:invariant}] 
+Let us first argue for the fact  $\itn{Reached} \cup \itn{Final}=\{cut(M^\prime) \mid M_\itn{in} \rightarrow^* M^\prime\}$.
+``$\subseteq$'': follows directly from the proof of claim b) 
+of Lemma~\ref{lemma:invariants}. ``$\supseteq$'': follows from the fact
+that we search all possible successors of $M_\itn{in}$; we do not provide 
+further arguments as this is the standard graph searching algorithm.
+The optimality of the computation of the minimum delay follows from the fact
+that we explore the graph from the nodes with the smallest \itn{min} value
+(line~\ref{takeminmarking}) and this is (up to the cut-equivalence) essentially 
+the Dijkstra's algorithm for shortest path in the graph. The fact
+that $\cut(M').\itn{min}$ can be realized follows from
+claim b) of Lemma~\ref{lemma:invariants}.
+\qed
+\end{proof}
+
+\begin{lemma}[Return value false]\label{algthm:1:false}
+	Let $N$ be a MTAWFN or ETAWFN and $k > 0$. If Algorithm \ref{algthm:1} returns false then $N$ is not sound. 
+\end{lemma}
+\begin{proof}%[Lemma \ref{algthm:1:soundness}]
+	Reading the algorithm, one can notice that it returns false in four lines (lines \ref{notproper}, \ref{deadlock}, \ref{monoandunbounded} and \ref{endphase2}). 
+	Therefore, we have to demonstrate that the net is not sound in any
+of those cases.
+	\begin{itemize}
+	\item Starting with line \ref{notproper}, the algorithm returns false if it finds a marking $M^\prime$ 
+	from the initial marking of $N$ such that $M^\prime_c=cut(M^\prime)$ and  $M^\prime_c$ has at least one token in the output place \itn{out} while
+  it is not a final marking (contains some additional tokens in other places 
+  too). Clearly, it is possible to reach from $M_\itn{in}$ 
+ this marking (up to cut-equivalence) by claim b) of 
+ Lemma~\ref{lemma:invariants} and it breaks condition b) of the definition
+ of soundness (Definition~\ref{def:soundness}). Therefore the net is not sound. 
+
+  \item In line \ref{deadlock}, the algorithm returns false if we have found a marking  $M^\prime$ reachable from $M_\itn{in}$ (here we use implicitly
+claim b) of Lemma~\ref{lemma:invariants})
+        such that $M^\prime_c=cut(M^\prime)$
+        and  $M^\prime_c$ is a deadlock. As $M'_c$ is a deadlock, 
+				$M'$ is also a deadlock (by Theorem~\ref{thm:bisim}).  
+							The marking $M'$ is not a final marking and hence 
+        breaks condition a) of Definition \ref{def:soundness}.
+        Therefore the net is not sound.
+
+	\item Let us continue with line \ref{monoandunbounded}. Here, we have reached a marking  $M^\prime$ 
+	from the initial marking of the monotonic net $N$  such that $M^\prime_c=cut(M^\prime)$  
+	and there exists a marking $M^{\prime\prime} \in \itn{Reached}$
+	such that \cutsqrel{M^{\prime\prime}}{M^\prime_c} and $|M^{\prime\prime}| < |M^{\prime}_c|$. Important to remark here that 
+	this situation $|M^{\prime\prime}| = |M^{\prime}_c|$ cannot happen since it is avoided due to the if-condition at line \ref{notinReached}.
+	Let us suppose that N is sound. We know due to condition a) of Definition~\ref{def:soundness} that
+	there is path from $M^{\prime\prime}$ to the final marking of N ($M_{out}$). However, by applying Lemma~\ref{lem:mono} repeatedly (again we reason up to the cut-equivalence), we can follow the same
+	path from $M^\prime_c$ to a marking $M^\prime_{out}$ such that $|M^\prime_c|-|M^{\prime\prime}|=|M^\prime_{out}|-|M_{out}|$. As $|M^{\prime\prime}| < |M^{\prime}_c|$, we also know
+	that $|M_{out}| < |M^\prime_{out}|$, which breaks condition b) of Definition \ref{def:soundness}, and contradicts that $N$ is sound.
+	
+	\item Finally, we take a look to line \ref{endphase2}. Let us recall that \itn{Reached} contains the set of cut markings of the reachable markings 
+	that are not final (Lemma \ref{alg1:reachcutmarkings}). Moreover, in the second while-loop, we 
+	remove from \itn{Reached} the parents of all the cut markings in \itn{Waiting} until \itn{Waiting} is empty, running a backward search from the set
+\itn{Final}. Thus, if \itn{Reached} is not empty after this backward search 
+terminates means that there is $M^\prime_c \in \itn{Reached}$ 
+such that $M^\prime_c=cut(M^\prime)$ for some reachable marking
+$M'$ from $M_\itn{in}$ and there is no path from $M^\prime$ to any
+final marking. This breaks condition a) of Definition \ref{def:soundness} and
+the net is not sound.\qed
+	\end{itemize}	
+\end{proof}
+
+\begin{lemma}[Return value true]\label{algthm:1:true}
+	Let $N$ be a MTAWFN or ETAWFN and $k > 0$. If Algorithm \ref{algthm:1} returns true then $N$ is sound and the return value is the minimum execution
+time of $N$.
+\end{lemma}
+\begin{proof}
+Assume that the algorithm returned true at line~\ref{returnTrue} 
+and we shall argue
+that $N$ satisfies conditions a) and b) of Definition \ref{def:soundness}.
+Condition b) is straightforward as by Lemma~\ref{alg1:reachcutmarkings}
+we know that $\itn{Reached} \cup \itn{Final}$ is the set of cut-markings 
+of all the reachable markings of $N$ and if some of them
+marks the place \itn{out} then this must be a final marking, otherwise
+the algorithm would return false at line~\ref{notproper}.
+For condition a) we realise that the set \itn{Final} contains
+all final markings reachable from $M_\itn{in}$ and 
+in the second-phase of the algorithm we run a backward search
+and remove from the reachable state-space all markings that have
+a computation leading to one of the final markings. We
+return true only if \itn{Reached} is empty, meaning that all reachable markings
+have a computation to some final marking. This corresponds to
+condition a).
+Correctness of the minimum execution time follows from Lemma~\ref{alg1:reachcutmarkings}.
+\end{proof}
+
+
+\begin{theorem}\label{thm:decid}
+Soundness is decidable for monotonic timed-arc workflow nets and
+for bounded extended timed-arc workflow nets.
+\end{theorem}
+
+%\subsection{Minimum execution time} \label{subsec:minmax}
+Given a sound ETAWFN $N=\tapntuple$, we can reason about its
+execution times (the accumulated time that is used to
+move a token from the place $\mathit{in}$ into the place $\mathit{out}$).
+Let $M_\itn{in}$ be the initial marking of $N$ and
+$\mathcal{F}(N)$ be the set of all final markings of $N$.
+Let $\mathcal{T}(N)$ be the set of all execution times by which we can 
+get from the initial marking to some final marking. Formally,
+$$\mathcal{T}(N)\eqdef 
+ \{ \sum_{i=0}^{n-1}{d_i} \mid
+M_\itn{in}= M_0 
+\trans{d_0,t_0} M_1 \trans{d_1,t_1} M_2 \trans{d_2,t_2} \cdots 
+\trans{d_{n-1},t_{n-1}} M_n \in \mathcal{F}(N) \} \ .$$
+%M_\itn{in}= M_0 
+%\trans{d_0} M'_0 \trans{t_0} M_1 \trans{d_1} M'_1 \trans{t_1} M_2
+%\trans{d_2} \cdots \trans{t_{n-1}} M_n \in \mathcal{F}(N) \} \ .$$
+
+The set $\mathcal{T}(N)$ is nonempty for any sound net $N$
+and the \emph{minimum execution time} of $N$, defined by $\min \mathcal{T}(N)$,
+is computable by Algorithm~\ref{algthm:1}.
+
+\begin{theorem}
+Let $N$ be a sound MTAWFN or a sound and bounded ETAWFN.
+The minimum execution time of $N$ is computable.
+\end{theorem}
+
+Notice that 
+the set $\mathcal{T}(N)$ can be infinite for general timed-arc
+workflow nets, meaning that the \emph{maximum
+execution time} of $N$, given by $\max \mathcal{T}(N)$, is not
+always well defined. This issue is discussed in the next section.
+%In the next section, we shall introduce
+%the notion of strong soundness that will guarantee also the existence
+%of the maximum execution time. 

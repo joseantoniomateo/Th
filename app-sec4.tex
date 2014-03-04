@@ -1,0 +1,21 @@
+\section{Proofs from Section~\ref{sec:strong}} \label{app:undecid2}
+
+\noindent {\bf Theorem~\ref{thm:strong-undecid}.}
+{\em Strong soundness of ETAWFN is undecidable.}
+\begin{proof}
+Similarly as in Theorem~\ref{thm:undecid},
+we reduce the reachability problem for
+two-counter Minsky machines into checking strong soundness. We can use
+the same construction as in Figure~\ref{fig:cont} each place
+$p_i$ contains the age invariant $\leq 1$ and hence there are no divergent
+markings. At the same time, before executing any instruction we have to
+wait exactly one time unit, hence there is no infinite computation of the
+workflow net that happens during a fixed time bound. As a result,
+the workflow net constructed in Figure~\ref{fig:cont} is sound if and only
+if it is strongly sound and the undecidability result in 
+Theorem~\ref{thm:undecid} is valid also for strong soundness.
+\qed
+\end{proof}
+
+
+

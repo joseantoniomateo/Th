@@ -1,0 +1,312 @@
+\section{Proofs from Section~\ref{sec:tawfn}} \label{app:undecid}
+%s~\ref{sec:def} and~\ref{sec:tawfn}}
+
+\noindent {\bf Theorem~\ref{thm:undecid}.}
+{\em
+Soundness is undecidable for extended timed-arc workflow nets.
+This is the case also for MTAWFNs that contain additionally only
+inhibitor arcs, age invariants or urgent transitions but not necessarily
+all of them together.
+}
+\begin{proof}
+The proofs are by reduction from the Minsky machine.
+A \emph{Minsky machine} with two nonnegative counters $c_1$ and $c_2$ is
+a sequence of labelled instructions
+$$1:\mathsf{inst}_1;\ 2:\mathsf{inst}_2;\ \ldots, n:\mathsf{inst}_n$$
+where $\mathsf{inst}_n = \mathsf{HALT}$ 
+and each $\mathsf{inst}_i$, $1\le i < n$, is of one of the following forms
+\begin{itemize}
+\item
+{(Inc)} \hspace{5mm} {\tt $i$: $c_j$++; goto $k$}
+\item
+{(Dec)} \hspace{4mm} {\tt $i$: if $c_j$=$0$ then goto $k$ else 
+ ($c_j$--; goto $\ell$)}
+\end{itemize}
+for $j\in \{1,2\}$ and $1\le k,\ell \le n$.
+
+Instructions of type (Inc) are called \emph{increment} instructions and
+those of type (Dec) are called \emph{test and decrement} instructions.
+A configuration is a triple $(i, v_1, v_2)$ where $i$ is the current
+instruction and $v_1$ and $v_2$ are the values of the counters $c_1$
+and $c_2$, respectively. A computation step between configurations is
+defined in the natural way. If starting from the initial
+configuration $(1,0,0)$ the machine reaches the instruction $\mathsf{HALT}$
+then we say it \emph{halts}, otherwise it \emph{loops}.
+%
+The problem whether a given Minsky machine halts 
+is undecidable~\cite{Minsky:book}. W.l.o.g. we assume
+that the machine halts only when both counters are empty
+(we can add a few instructions that will always empty the counters
+before reaching the halting instruction).
+
+We shall now reduce reachability in Minsky machines into the soundness
+problem on ETAWFN. Counters $c_1$ and $c_2$ will be simulated
+by two places $p_{c_1}$ and $p_{c_2}$ such that the number of
+tokens in those places represents the value of the counters.
+For every instruction label $i$, $1 \leq i \leq n$, we
+add a new control place $p_i$. At any moment exactly one of the $p_i$
+places will be marked by a token, representing the instruction
+to be executed in the next step.
+
+If we allow urgent transitions, we can create for any given Minsky machine
+a workflow net constructed according to the patterns given in Figure~\ref{fig:urgent-reduction} (we only show
+the encoding of the instructions that manipulate the first counter;
+the encoding for the second counter is completely analogous).
+We also postulate that the input place is $in=p_1$ and the output place is
+$out=p_n$. Now, given the initial marking with one token in $p_1$,
+the net will faithfully simulate the (deterministic) computation of
+the Minsky machine. This is clear for the increment instruction
+as the control token moves from $p_i$ to $p_k$ and the number of tokens
+in $p_{c_1}$ is increased by one. For the test and decrement instruction,
+if $p_{c_1}$ contains at least one token then the transition
+$t_i^{\mathit{dec}}$ will be fired with no delay (the transition is urgent),
+decreasing the counter by one and moving the control token to $p_\ell$
+as required. Only if the counter $c_1$ is empty (there are no tokens
+in $p_{c_1}$), we are allowed to delay one time unit and fire the transition
+$t_i^{\mathit{zero}}$ such that the control token is moved to $p_k$.
+Hence the test and decrement instruction is also faithfully simulated
+and there is no possibility of any deadlock situation, meaning that
+either $t_i^{\mathit{dec}}$ or $t_i^{\mathit{zero}}$ can always fire.
+It is now an easy observation that the workflow net is sound if and only
+if the Minsky machine halts.
+
+
+\begin{figure}[!t]
+\centering
+\subfloat[][{\tt $i$: $c_1$++; goto $k$}]{
+\begin{tikzpicture}[font=\scriptsize,xscale=1.5,yscale=1.5]
+   \tikzstyle{arc}=[->,>=stealth,thick]
+   \tikzstyle{transportArc}=[->,>=diamond,thick]
+   \tikzstyle{every place}=[minimum size=6mm,thick]
+   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+   \tikzstyle{every token}=[fill=white,text=black]
+  \node[place,label=above:$p_{i}$] at (0,0) (pi) {};
+  \node[place,label=above:$p_{k}$] at (2,0) (pk) {};
+  \node[place,label=above:$p_{c_1}$] at (1,1) (pc1) {};
+  \node[transition,label=60:$t_i$] at (1,0) (t) {};
+  \draw[arc] (pi) -- (t) node[midway,above]{$[0,\infty]$} {};
+  \draw[arc] (t) -- (pk) {};
+  \draw[arc] (t) -- (pc1) {};
+\end{tikzpicture}
+    \label{fig:inc}} 
+\hspace{4mm}
+\subfloat[][{\tt $i$: if $c_1$=$0$ then goto $k$ else 
+   ($c_1$--; goto $\ell$)}]{
+\begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.5]
+  \tikzstyle{arc}=[->,>=stealth,thick]
+  \tikzstyle{transportArc}=[->,>=diamond,thick]
+  \tikzstyle{every place}=[minimum size=6mm,thick]
+  \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+  \tikzstyle{every token}=[fill=white,text=black]
+  \tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+  \node at (-0.85,0) {};
+  \node at (2.8,0) {};
+  \node[place,label=above:$p_{i}$] at (0,0) (pi) {};
+  \node[place,label=above:$p_{k}$] at (2,0) (pk) {};
+  \node[place,label=above:$p_{\ell}$] at (2,1) (pl) {};
+  \node[place,label=above:$p_{c_1}$] at (0,1) (pc1) {};
+  \node[transition,label=60:$t_i^{\mathit{dec}}$] at (1,1) (tdec) {};
+  \node[urgency] at (1,1) {};
+  \node[transition,label=60:$t_i^{\mathit{zero}}$] at (1,0) (tzero1) {};
+ \draw[arc] (pi) -- (tdec) node[midway,left]{$[0,\infty]$} {};
+ \draw[arc] (pi) -- (tzero1) node[midway,above]{$[1,\infty]$} {};
+ \draw[arc] (pc1) -- (tdec) node[midway,above,pos=0.5]{$[0,\infty]$} {}; 
+ \draw[arc] (tdec) -- (pl) {};
+ \draw[arc] (tzero1) -- (pk) {};
+\end{tikzpicture}
+   \label{fig:dec}}
+  \caption{Simulation of (Inc) and (Dec) instructions with urgent transitions}%
+  \label{fig:urgent-reduction}%
+\end{figure}
+
+\begin{figure}[t!]
+  \centering
+  \subfloat[][Simulation of the counters $c_1$ and $c_2$]{
+    %\input{figures/simu_register}
+\begin{tikzpicture}[font=\scriptsize, xscale=.9,yscale=1.6]
+   \tikzstyle{arc}=[->,>=stealth,thick]
+   \tikzstyle{transportArc}=[->,>=diamond,thick]
+   \tikzstyle{every place}=[minimum size=6mm,thick]
+   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+   \tikzstyle{every token}=[fill=white,text=black]
+  \node[place,label=above:$p_{c_1}$,label=270:{inv: $\leq 2$}] at (0,0) (p1) {};
+  \node[place,label=above:$p^{\mathit{reset}}_{c_1}$](p2) at (4,0) {};
+  \node[transition] at (2,0)[label=above:$t^{\mathit{reset}}_{c_1}$] {} 
+    edge [pre,bend right=10]  node[above,xshift=0mm,pos=0.5]{$[2,2]$} (p1) 
+    edge [post,bend right=10] (p2)
+    edge [pre,bend left=10] node[above,xshift=0mm,pos=0.5]{$[0,\infty]$}(p2) 
+    edge [post,bend left=10] (p1);
+
+ \node[place,label=above:$p_{c_2}$,label=270:{inv: $\leq 2$}] at (6.5,0) (p1c) {};
+  \node[place,label=above:$p^{\mathit{reset}}_{c_2}$](p2c) at (10.5,0) {};
+  \node[transition] at (8.5,0)[label=above:$t^{\mathit{reset}}_{c_1}$] {}
+    edge [pre,bend right=10]  node[above,xshift=0mm,pos=0.5]{$[2,2]$} (p1c)
+    edge [post,bend right=10] (p2c)
+    edge [pre,bend left=10] node[above,xshift=0mm,pos=0.5]{$[0,\infty]$}(p2c)
+    edge [post,bend left=10] (p1c);
+\end{tikzpicture}
+    \label{fig:register_simulation}
+  }%
+%  \qquad\qquad
+%\\
+%  \subfloat[][Simulation start]{
+%\begin{tikzpicture}[font=\scriptsize,scale=1.6]
+%   \tikzstyle{arc}=[->,>=stealth,thick]
+%   \tikzstyle{transportArc}=[->,>=diamond,thick]
+%   \tikzstyle{every place}=[minimum size=6mm,thick]
+%   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+%   \tikzstyle{every token}=[fill=white,text=black]
+  %\node[place, label=above:$in$] at (0,1) (pin) {};
+  %\node[place, label=above:$p_1$] at (2,1) (p1) {};
+  %\node[transition, label=80:$t_{\mathit{start}}$] at (1,1) {}
+  %  edge [pre] node[above] {$[0,\infty]$} (pin) {}
+  %  edge [post] (p1) {};
+%\end{tikzpicture}
+%    \label{fig:start}
+%  }
+  \\
+  \subfloat[][{\tt $i$: $c_1$++; goto $k$}]{
+%    \input{figures/simu_increment}
+\begin{tikzpicture}[font=\scriptsize,scale=.9]
+   \tikzstyle{arc}=[->,>=stealth,thick]
+   \tikzstyle{transportArc}=[->,>=diamond,thick]
+   \tikzstyle{every place}=[minimum size=6mm,thick]
+   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+   \tikzstyle{every token}=[fill=white,text=black]
+  \node[place,label=above:$p_{i}$,label=below:{inv: $\leq 1$}] at (0,0) (pj) {};
+  \node[place,label=-90:$p^{\mathit{reset}}_{c_1}$](presetri) at (5,-1.4) {};
+  \node[place,label=below:{inv: $\leq 1$},label={[label distance=-0mm]90:$q_{i}$}](q1) at (5,0) {};
+  \node[place,label=90:$p^{\mathit{reset}}_{c_2}$](presetr3i) at (5,1.4) {};
+  \node[place,label=above:$p_{c_1}$](pri) at (0,1.4) {};
+  \node[place,label=above:$p_k$,label=below:{inv: $\leq 1$}](pk) at (10,0) {};
+
+  \node[transition] at (2.5,0)[label=above:$t_i$] {}
+    edge [pre] node[above,pos=0.6]{$[1,1]$} (pj) 
+    edge [post] (q1) 
+    edge [post, bend right=20] (pri) 
+    edge [post, bend right] (presetri) 
+    edge [post, bend left] (presetr3i);
+  \node[transition] at (7.5,0)[label={[yshift=1mm,xshift=1mm]above:$t^{\mathit{goto}}_i$}] {}
+    edge [pre, bend left] node[above,sloped,pos=0.6] {$[0,\infty]$} (presetri) 
+    edge [pre] node[above,sloped,pos=0.55] {$[1,1]$} (q1) 
+    edge [pre, bend right] node[above,sloped,pos=0.7] {$[0,\infty]$} (presetr3i) 
+    edge [post] (pk) {};
+\end{tikzpicture}
+    \label{fig:increment_simulation}
+  } 
+  \\
+  \subfloat[][{\tt $i$: if $c_1$=$0$ then goto $k$ else 
+        ($c_1$--; goto $\ell$)}.]{
+    %\input{figures/simu_test_decrement}
+\begin{tikzpicture}[font=\scriptsize,xscale=0.9,yscale=1.5]
+   \tikzstyle{arc}=[->,>=stealth,thick]
+   \tikzstyle{transportArc}=[->,>=diamond,thick]
+   \tikzstyle{every place}=[minimum size=6mm,thick]
+   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+   \tikzstyle{every token}=[fill=white,text=black]
+
+  \node[place,label=above:$p_{i}$,label=below:{inv: $\leq 1$}] at (0,1) (pj) {};
+  \node[place,label=above:$p_{c_1}$,label=220:$$](pri) at (0,-1.5) {};
+  \node[place,label=below:{inv: $\leq 1$},label={[label distance=-1mm]60:$q_{i}$}](q1) at (5,0.3) {};
+  \node[place,label=below:{inv: $\leq 1$},label={[label distance=-1mm]60:$q'_{i}$}](q1p) at (5,-0.7) {};
+  \node[place,label=above:$p^{\mathit{reset}}_{c_{2}}$](presetr3i) at (5,1) {};  
+  \node[place,label=below:$p^{\mathit{reset}}_{c_{1}}$](prs) at (5,-1.5) {};  
+  \node[place,label=right:$p_k$,label=below:{inv: $\leq 1$}](pl) at (10,1) {};
+  \node[place,label=right:$p_\ell$,label=below:{inv: $\leq 1$}](pk) at (10,-1.5) {};
+
+  \node[transition, label=above:$t_i$] at (2.5,1) {}
+    edge [pre] node[auto,swap,yshift=0mm]{$[1,1]$} (pj)
+    edge [post,bend right=15] (q1)
+    edge [post] (presetr3i);
+  \node[transition, label=above:$t^{\mathit{zero}}_i$] at (7.5,1) {}
+    edge [pre, bend left=15] node[right,pos=0.4,xshift=0.9mm]{$[1,1]$} (q1)
+    edge [pre] node[auto,swap,xshift=-0mm,yshift=-.0mm]{$[0,\infty]$} (presetr3i)
+    edge [post] (pl);
+  \node[transition, label=below:$t^{\mathit{dec}}_i$] at (2.5,-1.5) {}
+    edge [pre] node[above,yshift=.0mm]{$[2,2]$} (pri)
+    edge [pre,bend left=22] node[auto,yshift=-1.4mm]{$[0,0]$} (q1)
+    edge [post,bend left=15] (q1p)
+    edge [post] (prs);
+\node[transition, label=below:$t^{\mathit{end}}_i$] at (7.5,-1.5) {}
+    edge [pre,bend left=0] node[below,yshift=.0mm]{$[0,\infty]$} (prs)
+    edge [pre,bend right=15] node[above,yshift=0.5mm]{$[1,1]$} (q1p)
+    edge [pre,bend right=30] node[right,yshift=.0mm,pos=0.3]{$[0,\infty]$} (presetr3i)
+    edge [post] (pk);
+\end{tikzpicture}
+    \label{fig:test_decrement_simulation}
+  }
+
+  \caption{Simulation of a Minsky machine by a workflow net with invariants}%
+  \label{fig:cont}%
+\end{figure}
+
+%A very similar reduction can be done for workflow nets that can, instead
+%of urgent transitions, employ inhibitor arcs. In order to guarantee
+%that the simulation is fair, we simply add an inhibitor arc from the
+%counter place $p_{c_1}$ to the transition $t_i^{\mathit{zero}}$.
+%Otherwise the net is completely untimed and again, the workflow net is
+%sound if and only if the Minsky machine halts.
+
+The reduction for workflow nets that contain only age invariants
+is more complicated. The reduction idea is based on~\cite{memics_paper}, 
+however, it had to be nontrivially modified in order to avoid the
+large number of possible deadlocks introduced in the reduction.
+
+The counters are now modelled by two places that contain age invariants
+ensuring that no tokens can get older than $2$, see 
+Figure~\ref{fig:register_simulation}. The intuition is that
+before and after the simulation of any instruction, all tokens in
+the places $p_{c_1}$ and $p_{c_2}$ are exclusively of age $1$. 
+As before the input place is $\itn{in}=p_1$ and the output place
+is $\itn{out}=p_n$.
+
+Let us now observe
+that this invariant is preserved after simulating the 
+increment instruction (Figure~\ref{fig:increment_simulation}).
+Assume that all tokens in the counter places are of age $1$ and that
+the place $p_i$ contains one token of age $0$.
+%(initially created by the initialization transition in Figure~\ref{fig:start}
+%that just resets the token age to $0$). 
+Before $t_i$ can be fired, one time unit must pass and this guarantees
+that all tokens in the counter places will become of age $2$. After firing
+of $t_i$, we also add one token of age $0$ to $p_{c_1}$ 
+and moreover, a token of age $0$ in the place $q_i$ is created.
+Before we can proceed and delay one time unit 
+and then fire $t_i^{\mathit goto}$, we must fire the
+transitions $t_{c_1}^{\mathit reset}$ and $t_{c_2}^{\mathit reset}$ once
+for every token of age $2$ in the counter places in order to reset 
+them all to the age $0$, otherwise the age invariant $\leq 2$ in the token 
+places disables the delay of one time unit. Clearly, after the transition 
+$t_i^{\mathit goto}$ is fired, all counter tokens are again of age $1$
+(including the one added to $p_{c_1}$) and we argued for a faithful simulation
+of the increment instruction.
+
+Let us consider now the test and decrement instruction simulated by
+the net in Figure~\ref{fig:test_decrement_simulation}. Again, let us assume
+that all counter tokens are of age $1$ and that there is one token
+of age $0$ in $p_i$. First we wait one time unit and then fire $t_i$,
+meaning again that all counter tokens are of age $2$. Now all
+tokens in the place $p_{c_2}$ can be reset to $0$ and if $p_{c_1}$
+does not contain any tokens, we can wait one time unit and fire
+$t_i^{\mathit zero}$, implying that we place a token to $p_k$
+as expected and all counter tokens are again of age $1$.
+If on the other hand $p_{c_1}$ contains some tokens (all of age $2$
+as we already mentioned), we must without any delay fire
+$t_i^{\mathit dec}$ consuming one token from $p_{c_1}$ while marking
+the places $q'_i$ and $p^{\mathit reset}_{c_1}$, allowing
+now all counter tokens to be reset to $0$. After this we can wait
+one time unit and fire the transition $t_i^{\mathit end}$, while
+continuing with the execution of the instruction with label $\ell$.
+All tokens in the counter places are now again of age $1$.
+Notice that these two scenarios are deterministically determined
+by the presence or absence of tokens in $p_{c_1}$ and that there are
+no deadlock situations possible during the simulation.
+
+As a result
+%, and assuming that the output place of the workflow net is $out = p_n$, 
+we can see that the net is sound if and only if
+the Minsky machine halts. This completes the undecidability proof
+also for the situation where we use only age invariants.
+\qed
+\end{proof}
+

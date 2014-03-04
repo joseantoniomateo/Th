@@ -2,3 +2,29 @@
 \markboth{Chapter~\ref{chapter:c5}.}{}
 
 Recordar incluir los challenges of workflow modelling (resaltar el tiempo y la tool).
+
+Analysis of workflow processes with quantitative aspects
+like timing is of interest in numerous time-critical applications. 
+We suggest a workflow model based on timed-arc Petri nets and study
+the foundational problems of soundness and strong (time-bounded) soundness.
+We explore the decidability of these problems
+and show, among others, that soundness is decidable for monotonic 
+workflow nets while reachability is undecidable.
+For general timed-arc workflow nets soundness and
+strong soundness become undecidable, though we can design efficient
+verification algorithms for the subclass of bounded nets. 
+Finally, we compare the discrete and continuous semantics of timed-arc
+workflow nets and demonstrate the usability of our theory on
+the case studies of a Brake System Control Unit used in aircraft certification,
+the MPEG2 encoding algorithm, and 
+a blood transfusion workflow.
+%, the benchmarking case study of the little-JIL language. 
+The implementation of the algorithms is  
+freely available as a part of the model checker TAPAAL.
+
+\input{introduction}
+\input{definitions}
+\input{soundness}
+\input{decidability}
+\input{strong-soundness}
+\input{continuous}

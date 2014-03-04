@@ -1,0 +1,220 @@
+%!TEX root=main.tex
+\section{Proofs Related to Algorithm~\ref{algthm:1}}\label{algthm:1:proofs}
+
+We will refer to phase 1 (lines \ref{initially}-\ref{endphase1}) and phase 2 (lines \ref{initphase2}-\ref{endphase2}) of Algorithm \ref{algthm:1}.
+
+\begin{lemma}[Termination]
+	\label{algthm:1:termination}
+	Algorithm \ref{algthm:1} terminates on any legal input.
+\end{lemma}
+
+\begin{proof}%[Lemma \ref{algthm:1:termination}]
+	 There is one while-loop in each phase of the algorithm. The loop in the first phase is executed as long as \itn{Waiting} is not empty. 
+	We notice that initially \itn{Waiting} and \itn{Reached} are initialised to the same value.
+	For each iteration of the loop, we remove a marking from \itn{Waiting} 
+        and newly discovered cut markings are always added to both 
+        \itn{Waiting} and \itn{Reached}
+        (line \ref{addtoReached}) but only if they 
+        are not already in \itn{Reached} (line \ref{notinReached}).
+        Markings are never removed from the set \itn{Reached} and
+        each canonical marking can appear in \itn{Waiting} at most once.
+
+	For non-monotonic nets, only canonical markings with at most
+        $k$ tokens are added (line~\ref{monoandnotkbounded}) 
+        and therefore the set of canonical markings is finite. 
+        Thus the algorithm will terminate as the set \itn{Waiting} 
+        eventually becomes empty.
+
+        For monotonic nets, the net
+        could be unbounded and, therefore, the set \itn{Reached} would grow above any
+        bound. In this case, we know by similar arguments 
+        like in the proof of Theorem~\ref{thm:soundness} that must 
+        exist $M$, $M^\prime \in [ M_{in}\rangle$ such that 
+        \cutsqrel{M}{M^\prime} and $|M| < |M^\prime|$. However,
+        the algorithm will detect such a situation 
+        at line~\ref{ifmonoandunbounded} and terminate.
+
+	For the loop in the second phase, 
+        notice that $\mathit{Waiting} = \mathit{Final}$. 
+	For each iteration, a marking is removed from \itn{Waiting} and 
+        the intersection of the set of parents of the marking $M$, 
+        \emph{M.parents} and the set \itn{Reached} is then added to 
+        \itn{Waiting}. In addition, the set \emph{M.parents} is removed 
+        from \itn{Reached}. Thus, any marking can only be added to 
+        \itn{Waiting} once, and as the set \itn{Reached}
+        is finite when entering the loop and a marking is removed from 
+        \itn{Waiting} in each iteration, 
+        eventually $\itn{Waiting} = \emptyset$ and the algorithm terminates.	
+\qed
+\end{proof}
+
+
+
+\begin{lemma}[Invariant]
+	\label{lemma:invariants}
+	The while-loop in lines \ref{initWhile}-\ref{addtoWaiting} of Algorithm \ref{algthm:1} satisfies the following loop-invariants:
+	\begin{description}
+		\item[a)] $\itn{Waiting} \subseteq \itn{Reached}$, 
+		\item[b)] for all marking $M^\prime_c \in \itn{Reached} \cup \itn{Final}$, there exists a computation of the net $M_{in} \rightarrow^* M^\prime$ such that $M^\prime_c=cut(M^\prime)$ and the accumulated delay
+on the computation $M_{in} \rightarrow^* M^\prime$ 
+is equal to $M'_c.\itn{min}$, and
+		\item[c)] for any marking $M'_c \in \itn{Reached} \cup \itn{Final}$ and any $M \in M'_c.\itn{parents}$ there is a transition 
+   $M \rightarrow M'$ such that $M^\prime_c=cut(M^\prime)$.
+		%\item[c)] For all reachable marking $M^\prime$ in $N$, there exists a one-step computation $M \rightarrow M^\prime$ such that $M \in \itn{Reached}$.
+	\end{description}
+\end{lemma}
+
+\begin{proof}%[Lemma \ref{algthm:1:invariant}]
+	The claims a), b) and c) of the invariant are trivially satisfied the first time the while-loop is entered. 
+	Let us assume the invariant holds before the execution of the body of the while-loop. 
+	
+	The claim a) is easily proved, as markings are only added to \emph{Waiting} in line \ref{addtoWaiting} of the loop body, 
+	and the same marking is also added to \emph{Reached} in line \ref{addtoReached} and no markings are removed from \itn{Reached} in the body of the loop.
+	
+	For claim b) notice that in line~\ref{takeminmarking} we remove 
+        a marking $M$ from \itn{Waiting} and for any successor $M^\prime$ of 
+        $M$, the marking $M$ is added to the set of parents of 
+        $M^\prime_c = \cut(M^\prime)$ (line~\ref{addtoparents}). 
+	Due to the first invariant, $M$ was already in \itn{Reached} 
+        in the previous iteration of the loop.
+	Hence there exists a computation $M_{in} \rightarrow^* M_1$
+        such that $M = \cut(M_1)$ and the accumulated delay of this
+        computation is $M.\itn{min}$.
+        Because $M \rightarrow M^\prime$ (line~\ref{foreach}) then 
+        also $M_1 \rightarrow M_2$ 
+	such that $M^\prime_c=cut(M_2)$ (line \ref{cut}).
+        Hence $M_\itn{in} \rightarrow^* M_2$  and $M^\prime_c=cut(M_2)$
+        as required. The accumulated delay is updated according to the
+        type of the transition $M_1 \rightarrow M_2$ at
+        lines~\ref{updateMin1} and~\ref{updateMin2}. If the value
+        $M'_c.\itn{min}$ changed after this update then the computation
+        $M_\itn{in} \rightarrow^* M_2$ achieves this accumulated delay,
+        otherwise the minimum delay was achieved in some previous
+        run of the body of the while-loop and it is hence valid due 
+        to the loop invariant.  
+	%Finally, this marking $M^\prime_c$ is added to the set of 
+        %final markings (line~\ref{addtoFinal}) or to the set of reached 
+        %markings (line \ref{addtoReached}).	
+
+Finally, the claim c) follows from the fact that markings
+to $M'_c.\itn{parents}$ are only added at line~\ref{addtoparents} and
+such markings clearly satisfy the invariant claim.
+\qed
+\end{proof}
+
+\begin{lemma}[Not k-bounded]
+	\label{algthm:1:notkbounded}
+	Let $N$ be a MTAWFN or an ETAWFN and $k > 0$. If Algorithm \ref{algthm:1} returns ``Not k-bounded'' then  $N$ is not k-bounded. 
+\end{lemma}
+
+\begin{proof}%[Lemma \ref{algthm:1:soundness}]
+The algorithm returns ``Not k-bounded''  only at line~\ref{monoandnotkbounded},
+provided that the net is not monotonic and there is a 
+  marking $M^\prime$ reachable from $M \in \itn{Waiting}$ such
+	that $|M^\prime| > k$. 
+	By claim b) of Lemma~\ref{lemma:invariants}, we know 
+	that there is a computation from $M_{in}$ to $M_1$
+    such that  $M=\cut(M_1)$ and we also know that 
+		$M \rightarrow M'$ (line~\ref{foreach}). 
+              Therefore also $M_1 \rightarrow M_2$ and $M_2$ 
+         is reachable from $M_{in}$ and at the same time $|M_2| > k$
+    as cut preservers the number of tokens in a marking.
+     Hence if the algorithm returns ``Not k-bounded'' then 
+     the net is not $k$-bounded.
+\qed
+\end{proof}
+
+\begin{lemma}[Cut markings]
+	\label{alg1:reachcutmarkings}
+	After the first while loop (lines \ref{initWhile}-\ref{addtoWaiting}) of Algorithm~\ref{algthm:1} is finished, we have at line~\ref{endphase1} 
+that $\itn{Reached} \cup \itn{Final}=\{cut(M^\prime) \mid M_\itn{in} \rightarrow^* M^\prime\}$. Moreover, if $M_\itn{in} \rightarrow^* M'$ then the accumulated delay
+of this computation is greater or equal to $\cut(M').\itn{min}$ and there
+is at least one such a computation where the accumulated delay is
+equal to $\cut(M').\itn{min}$. 
+\end{lemma}
+\begin{proof}%[Lemma \ref{algthm:1:invariant}] 
+Let us first argue for the fact  $\itn{Reached} \cup \itn{Final}=\{cut(M^\prime) \mid M_\itn{in} \rightarrow^* M^\prime\}$.
+``$\subseteq$'': follows directly from the proof of claim b) 
+of Lemma~\ref{lemma:invariants}. ``$\supseteq$'': follows from the fact
+that we search all possible successors of $M_\itn{in}$; we do not provide 
+further arguments as this is the standard graph searching algorithm.
+The optimality of the computation of the minimum delay follows from the fact
+that we explore the graph from the nodes with the smallest \itn{min} value
+(line~\ref{takeminmarking}) and this is (up to the cut-equivalence) essentially 
+the Dijkstra's algorithm for shortest path in the graph. The fact
+that $\cut(M').\itn{min}$ can be realized follows from
+claim b) of Lemma~\ref{lemma:invariants}.
+\qed
+\end{proof}
+
+\begin{lemma}[Return value false]\label{algthm:1:false}
+	Let $N$ be a MTAWFN or ETAWFN and $k > 0$. If Algorithm \ref{algthm:1} returns false then $N$ is not sound. 
+\end{lemma}
+\begin{proof}%[Lemma \ref{algthm:1:soundness}]
+	Reading the algorithm, one can notice that it returns false in four lines (lines \ref{notproper}, \ref{deadlock}, \ref{monoandunbounded} and \ref{endphase2}). 
+	Therefore, we have to demonstrate that the net is not sound in any
+of those cases.
+	\begin{itemize}
+	\item Starting with line \ref{notproper}, the algorithm returns false if it finds a marking $M^\prime$ 
+	from the initial marking of $N$ such that $M^\prime_c=cut(M^\prime)$ and  $M^\prime_c$ has at least one token in the output place \itn{out} while
+  it is not a final marking (contains some additional tokens in other places 
+  too). Clearly, it is possible to reach from $M_\itn{in}$ 
+ this marking (up to cut-equivalence) by claim b) of 
+ Lemma~\ref{lemma:invariants} and it breaks condition b) of the definition
+ of soundness (Definition~\ref{def:soundness}). Therefore the net is not sound. 
+
+  \item In line \ref{deadlock}, the algorithm returns false if we have found a marking  $M^\prime$ reachable from $M_\itn{in}$ (here we use implicitly
+claim b) of Lemma~\ref{lemma:invariants})
+        such that $M^\prime_c=cut(M^\prime)$
+        and  $M^\prime_c$ is a deadlock. As $M'_c$ is a deadlock, 
+				$M'$ is also a deadlock (by Theorem~\ref{thm:bisim}).  
+							The marking $M'$ is not a final marking and hence 
+        breaks condition a) of Definition \ref{def:soundness}.
+        Therefore the net is not sound.
+
+	\item Let us continue with line \ref{monoandunbounded}. Here, we have reached a marking  $M^\prime$ 
+	from the initial marking of the monotonic net $N$  such that $M^\prime_c=cut(M^\prime)$  
+	and there exists a marking $M^{\prime\prime} \in \itn{Reached}$
+	such that \cutsqrel{M^{\prime\prime}}{M^\prime_c} and $|M^{\prime\prime}| < |M^{\prime}_c|$. Important to remark here that 
+	this situation $|M^{\prime\prime}| = |M^{\prime}_c|$ cannot happen since it is avoided due to the if-condition at line \ref{notinReached}.
+	Let us suppose that N is sound. We know due to condition a) of Definition~\ref{def:soundness} that
+	there is path from $M^{\prime\prime}$ to the final marking of N ($M_{out}$). However, by applying Lemma~\ref{lem:mono} repeatedly (again we reason up to the cut-equivalence), we can follow the same
+	path from $M^\prime_c$ to a marking $M^\prime_{out}$ such that $|M^\prime_c|-|M^{\prime\prime}|=|M^\prime_{out}|-|M_{out}|$. As $|M^{\prime\prime}| < |M^{\prime}_c|$, we also know
+	that $|M_{out}| < |M^\prime_{out}|$, which breaks condition b) of Definition \ref{def:soundness}, and contradicts that $N$ is sound.
+	
+	\item Finally, we take a look to line \ref{endphase2}. Let us recall that \itn{Reached} contains the set of cut markings of the reachable markings 
+	that are not final (Lemma \ref{alg1:reachcutmarkings}). Moreover, in the second while-loop, we 
+	remove from \itn{Reached} the parents of all the cut markings in \itn{Waiting} until \itn{Waiting} is empty, running a backward search from the set
+\itn{Final}. Thus, if \itn{Reached} is not empty after this backward search 
+terminates means that there is $M^\prime_c \in \itn{Reached}$ 
+such that $M^\prime_c=cut(M^\prime)$ for some reachable marking
+$M'$ from $M_\itn{in}$ and there is no path from $M^\prime$ to any
+final marking. This breaks condition a) of Definition \ref{def:soundness} and
+the net is not sound.\qed
+	\end{itemize}	
+\end{proof}
+
+\begin{lemma}[Return value true]\label{algthm:1:true}
+	Let $N$ be a MTAWFN or ETAWFN and $k > 0$. If Algorithm \ref{algthm:1} returns true then $N$ is sound and the return value is the minimum execution
+time of $N$.
+\end{lemma}
+\begin{proof}
+Assume that the algorithm returned true at line~\ref{returnTrue} 
+and we shall argue
+that $N$ satisfies conditions a) and b) of Definition \ref{def:soundness}.
+Condition b) is straightforward as by Lemma~\ref{alg1:reachcutmarkings}
+we know that $\itn{Reached} \cup \itn{Final}$ is the set of cut-markings 
+of all the reachable markings of $N$ and if some of them
+marks the place \itn{out} then this must be a final marking, otherwise
+the algorithm would return false at line~\ref{notproper}.
+For condition a) we realise that the set \itn{Final} contains
+all final markings reachable from $M_\itn{in}$ and 
+in the second-phase of the algorithm we run a backward search
+and remove from the reachable state-space all markings that have
+a computation leading to one of the final markings. We
+return true only if \itn{Reached} is empty, meaning that all reachable markings
+have a computation to some final marking. This corresponds to
+condition a).
+Correctness of the minimum execution time follows from Lemma~\ref{alg1:reachcutmarkings}.
+\qed
+\end{proof}

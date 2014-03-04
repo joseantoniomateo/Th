@@ -36,6 +36,12 @@ Luca Aceto, Wan Fokkink, and Chris Verhoef.
 \newblock {\em Structural operational semantics}.
 \newblock Citeseer, 1999.
 
+\bibitem{ALSST:MEMICS:12}
+M.~Andersen, H.G. Larsen, J.~Srba, M.G. S{\o}rensen, and J.H. Taankvist.
+\newblock Verification of liveness properties on closed timed-arc {P}etri nets.
+\newblock In {\em {MEMICS}'12}, volume 7721 of {\em LNCS}, pages 69--81.
+  Springer-Verlag, 2013.
+
 \bibitem{Armbrust2009}
 Michael Armbrust, Armando Fox, Rean Griffith, Anthony~D. Joseph, Randy~H. Katz,
   Andrew Konwinski, Gunho Lee, David~A. Patterson, Ariel Rabkin, Ion Stoica,
@@ -43,6 +49,12 @@ Michael Armbrust, Armando Fox, Rean Griffith, Anthony~D. Joseph, Randy~H. Katz,
 \newblock Above the clouds: A berkeley view of cloud computing.
 \newblock Technical Report UCB/EECS-2009-28, EECS Department, University of
   California, Berkeley, Feb 2009.
+
+\bibitem{AMP:CONCUR:98}
+E.~Asarin, O.~Maler, and A.~Pnueli.
+\newblock On discretization of delays in timed automata and digital circuits.
+\newblock In {\em {CONCUR}'98}, volume 1466 of {\em LNCS}, pages 470--484.
+  Springer, 1998.
 
 \bibitem{Ban06}
 T.~Banks.
@@ -133,6 +145,11 @@ Michael Cobban.
 \newblock What is bpel and why is it so important to my business?
 \newblock Technical report, SoftCare EC, 01 2005.
 
+\bibitem{umodmatrix1}
+J.~Cong, B.~Liu, and Z.~Zhang.
+\newblock Scheduling with soft constraints.
+\newblock In {\em {ICCAD}'09}, pages 47--54. ACM, 2009.
+
 \bibitem{DJJJMS:TACAS:12}
 A.~David, L.~Jacobsen, M.~Jacobsen, K.Y. J{\o}rgensen, M.H. M{\o}ller, and
   J.~Srba.
@@ -141,11 +158,28 @@ A.~David, L.~Jacobsen, M.~Jacobsen, K.Y. J{\o}rgensen, M.H. M{\o}ller, and
 \newblock In {\em {TACAS}'12}, volume 7214 of {\em LNCS}, pages 492--497.
   Springer-Verlag, 2012.
 
+\bibitem{danny_VLiet}
+J.~van~Vliet D.B.~Poulsen.
+\newblock Concrete traces for {UPPAAL}.
+\newblock 3rd Semester Report at Aalborg University, 2010.
+
+\bibitem{dickson}
+L.E. Dickson.
+\newblock Finiteness of the odd perfect and primitive abundant numbers with
+  distinct factors.
+\newblock {\em American Journal of Mathematics}, 35:413--422, 1913.
+
 \bibitem{DragoniM09}
 Nicola Dragoni and Manuel Mazzara.
 \newblock A formal semantics for the ws-bpel recovery framework - the {\it
   pi}-calculus way.
 \newblock In {\em WS-FM}, pages 92--109, 2009.
+
+\bibitem{DuJ03}
+Y.~Du and C.~Jiang.
+\newblock Towards a workflow model of real-time cooperative systems.
+\newblock In {\em ICFEM'03}, volume 2885 of {\em LNCS}, pages 452--470.
+  Springer, 2003.
 
 \bibitem{DumasAalst2005}
 Marlon Dumas, Wil M.~P. van~der Aalst, and Arthur H.~M. ter Hofstede.
@@ -178,6 +212,12 @@ Roozbeh Farahbod and Uwe Gl.
   language for web services.
 \newblock {\em Tech Report 2004}, (February 2005).
 
+\bibitem{FF:AWPN:06}
+C.~Flender and T.~Freytag.
+\newblock Visualizing the soundness of workflow nets.
+\newblock In {\em {AWPN}'06}, volume 267. Department Informatics, University of
+  Hamburg, 2006.
+
 \bibitem{Hanisch:93}
 H.M. Hanisch.
 \newblock Analysis of place/transition nets with timed-arcs and its application
@@ -194,6 +234,12 @@ Monika Heiner, Mostafa Herajy, Fei Liu, Christian Rohr, and Martin Schwarick.
 Sebastian Hinz, Karsten Schmidt, and Christian Stahl.
 \newblock Transforming bpel to petri nets.
 \newblock In {\em Business Process Management}, pages 220--235, 2005.
+
+\bibitem{umodmatrix2}
+A.~J. Hoffman and J.~B. Kruskal.
+\newblock Integral boundary points of convex polyhedra.
+\newblock {\em Linear Inequalities and Related Systems, Princeton Univ. Press},
+  38:22--46, 1956.
 
 \bibitem{hollingsworth95}
 D.~Hollingsworth.
@@ -212,6 +258,13 @@ S.~Graham S. Tuecke K. Czajkowski D. Ferguson F. Leymann M. Nally T. Storey
 \newblock Modeling stateful resources with web services.
 \newblock {\em http://www-106.ibm.com/developerworks/library/wsresource/
   ws-modelingresources.pdf, Tech. Rep., 2004.}
+
+\bibitem{memics_paper}
+L.~Jacobsen, M.~Jacobsen, and M.~H. M\o{}ller.
+\newblock {Undecidability of Coverability and Boundedness for Timed-Arc {P}etri
+  Nets with Invariants}.
+\newblock In {\em {MEMICS}'09}, volume~13 of {\em OASICS}. Schloss Dagstuhl -
+  Leibniz-Zentrum fuer Informatik, Germany, 2009.
 
 \bibitem{Jensen97}
 Kurt Jensen.
@@ -248,6 +301,11 @@ Frank Leymann.
 \newblock {\em Concurrency and Computation: Practice and Experience},
   18(10):1201--1217, 2006.
 
+\bibitem{LS2000}
+S.~Ling and H.~Schmidt.
+\newblock Time {P}etri nets for workflow modelling and analysis.
+\newblock In {\em {SMC}'00}, volume~4, pages 3039--3044. IEEE, 2000.
+
 \bibitem{Lohmann07}
 Niels Lohmann.
 \newblock A feature-complete petri net semantics for ws-bpel 2.0.
@@ -268,6 +326,11 @@ M.~Ajmone Marsan, G.~Balbo, A.~Bobbio, G.~Chiola, G.~Conte, and A.~Cumani.
 P.~Merlin.
 \newblock {\em A Study of the Recoverability of Communication Protocols}.
 \newblock PhD thesis, University of California, 1974.
+
+\bibitem{Minsky:book}
+M.L. Minsky.
+\newblock {\em Computation: Finite and Infinite Machines}.
+\newblock Prentice, 1967.
 
 \bibitem{wsbpelstandard}
 Organization for the Advancement of Structured Information Standards (OASIS).
@@ -357,6 +420,22 @@ J.~Sifakis T.~Henzinger, X.~Nicollin and S.~Yovine.
 \newblock {Symbolic model checking for real-time systems}.
 \newblock {\em Information and Computation}, 111(2):193--244, 1994.
 
+\bibitem{TipleaM05}
+F.L. Tiplea and G.~Macovei.
+\newblock Timed workflow nets.
+\newblock In {\em SYNASC'05}, pages 361--366. IEEE Computer Society, 2005.
+
+\bibitem{TipleaM06}
+F.L. Tiplea and G.~Macovei.
+\newblock E-timed workflow nets.
+\newblock In {\em SYNASC'06}, pages 423--429. IEEE Computer Society, 2006.
+
+\bibitem{TipleaM09}
+F.L. Tiplea and G.~Macovei.
+\newblock Soundness for s- and a-timed workflow nets is undecidable.
+\newblock {\em IEEE Trans. on Systems, Man, and Cybernetics}, 39(4):924--932,
+  2009.
+
 \bibitem{van93}
 Wil M.~P. van~der Aalst.
 \newblock Interval timed coloured petri nets and their analysis.
@@ -401,6 +480,11 @@ H.~M.~W. Verbeek and Wil M.~P. van~der Aalst.
 \newblock In {\em Second International Workshop on Applications of Petri Nets
   to Coordination, Workflow and Business Process Management}, pages 59--78,
   2005.
+
+\bibitem{RGE:reachability}
+V.Valero, F.~Cuartero, and D.~de~Frutos-Escrig.
+\newblock On non-decidability of reachability for timed-arc {P}etri nets.
+\newblock In {\em PNPM'99}, pages 188--196. IEEE, 1999.
 
 \bibitem{WSCDL}
 {W3C}.

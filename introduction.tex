@@ -1,0 +1,251 @@
+\section{Introduction}
+Workflow nets~\cite{Aalst97,Aalst98} were introduced 
+by Wil van der Aalst as a formalism
+for modelling, analysis and verification of business workflow processes.
+%to model, validate and verify business process, \emph{workflow nets} (wf-nets) \cite{Aalst97,Aalst98}. 
+The formalism is based on Petri nets abstracting away most of the data 
+while focusing on the possible flow in the system. 
+Its intended use is in finding design errors 
+like the presence of deadlocks, livelocks 
+and other anomalies in workflow processes. Such correctness criteria can
+be described via the notion of \emph{soundness} (see~\cite{AalstHHSVVW11}) that
+requires the option to complete the workflow, guarantees proper termination
+and optionally also the absence of redundant tasks. 
+
+After the seminal work on workflow nets, researchers have 
+invested much effort in defining new soundness criteria and/or 
+improving the expressive power of the original model by adding new features 
+and studying the related decidability and 
+complexity questions
+(it is not in the scope of this paper to list all these works but we
+refer to~\cite{AalstHHSVVW11} for a recent overview).
+%such as reset or inhibitor arcs, resources, time or multiple instances. 
+%It is impossible and is also out of the scope of this paper to summarise here all
+%of these works, and, therefore, we refer the interested reader to \cite{AalstHHSVVW11} for further information. 
+%Nevertheless, it is worthwhile to
+%mention that there is a common characteristic in all of this extended models: undecidability. Thus, soundness (or its different variants)
+%is decidable for classical workflow nets \cite{Aalst97}, but, for instance, it is undecidable when we add reset or inhibitor arcs \cite{AalstHHSVVW11}.
+In the present paper we consider a quantitative extension of workflow 
+nets with timing features, allowing us to argue, among others, 
+about the execution intervals of tasks, deadlines and urgent behaviour of workflow processes. Our workflow
+model is based on timed-arc Petri nets~\cite{BLT:90,Hanisch:93} 
+where tokens carry timing information
+and arcs are labelled with time intervals restricting the available
+ages of tokens used for transition firing. %We use an extended version
+%of the model that allows us to capture advanced timing restrictions
+%in a convenient and direct way. 
+Let us first informally introduce 
+the model on our running example.
+
+The timed-arc workflow net in Figure~\ref{fig:example} 
+describes a simple booking-payment workflow
+where a web-service provides a booking form followed by online payment.
+The whole booking-payment procedure cannot last for more than 10 mi\-nutes
+and the booking phase takes at least 2 minutes and 
+must be finished within the first 5 minutes. The process can
+fail at any moment and the service allows for three additional attempts
+before it will terminate with failure. The workflow net 
+%in Figure~\ref{fig:example}
+consists of six places drawn as circles and nine transitions
+drawn as rectangles. Places can contain timed tokens, like the one
+of age $0$ in the place $\mathit{in}$ (input place of the workflow).
+The tokens present in the net form a marking. 
+Places and transitions are connected by arcs
+such that arcs from places to transitions contain time intervals restricting
+the possible ages of tokens that can be consumed by transition firing.
+For simplicity we do not draw time intervals of the form $[0,\infty]$
+as they do not restrict the ages of tokens in any way.
+
+\begin{figure}[t]
+\begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.4]
+  \tikzstyle{arc}=[->,>=stealth,thick]
+	\tikzstyle{transportArc}=[->,>=diamond,thick]
+  \tikzstyle{every place}=[minimum size=6mm,thick]
+  \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+  \tikzstyle{every token}=[fill=white,text=black]
+  \tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+	\tikzstyle{inhibArc}=[->,>=o,thick]
+  \node at (0,0) {};
+  \node[place,label=above:$\mathit{in}$] at (0.5,0) (in) {$0$};
+	\node[place,label=above:inv: $\leq 5$,] at (1,1.6) (booking) {};
+	\node [above] at (1,2.15) {$\mathit{booking}$};
+	\node[place,label=above:inv: $\leq 10$] at (3,1.6) (payment) {};
+	\node [above] at (3,2.15) {$\mathit{payment}$};
+	\node[place,label=above:$\mathit{successful}$] at (5,1.6) (successful) {};
+	\node[place,label=above:$\mathit{out}$] at (6,0) (out) {};
+	\node[place,label=left:$\mathit{attempts}$] at (2,-1) (attempts) {};
+  \node[transition,,rotate=90,] at (1,0) (start) {};
+	\node [above] at (0.95,-0.4) {$\mathit{start}$};
+  \node[urgency] at (1,0) {};
+	\node [above] at (1.55,-0.5) {$3\times$};
+  \node[transition,label=$\mathit{book}$] at (2,1.6) (book) {};
+  \node[transition,label=$\mathit{pay}$] at (4,1.6) (pay) {}; 
+  \node[transition,rotate=90,] at (2,0) (restart1) {}
+	 edge [pre, bend right=10, thick,,>=stealth] (booking)
+	 edge [pre, thick,>=stealth] (attempts);
+ 	\draw [->, thick,>=stealth] (restart1) to [bend left=10] (booking);
+	\node [above] at (2.35,-0.4) {$\mathit{restart1}$};
+	\node[transition,rotate=90,] at (3,0) (restart2) {}
+	 edge [pre, thick,>=stealth] (payment)
+	 edge [pre, thick,>=stealth] (attempts)
+	 edge[post, bend right=10, thick,>=stealth] (booking);
+	\node [above] at (3.25,-0.4) {$\mathit{restart2}$};
+	\node[transition,rotate=90,] at (4,0) (empty) {}
+	 edge [pre, bend left=15, thick,>=stealth] (successful)
+	 edge [pre, bend left, thick,>=stealth] (attempts)
+	 edge[post, bend right=15, thick,>=stealth] (successful);
+	\node[urgency] at (4,0) {};
+	\node [above] at (4.25,-0.45) {$\mathit{empty}$};
+	\node[transition,rotate=90,] at (5,0) (success) {}
+	edge[pre, bend left, >=o, thick](attempts);
+  \node[urgency] at (5,0) {};
+	\node [above] at (5.25,-0.4) {$\mathit{success}$};
+	\node[transition,rotate=90,yshift=0, label=right:$\mathit{fail1\ }$] at (1,-1.5) (fail1) {}
+	 edge[pre,>=o, thick](attempts)
+	 edge[post, bend right, thick,>=stealth](out);
+	\draw[arc] (booking) .. controls (0,1.5) and (0,-1.5) .. (fail1) {};
+	\node [above] at (0.05,-0.25) {[5,5]};
+	\node[transition,rotate=90,yshift=-0.5, label=right:$\mathit{fail2}$] at (5,-1.5) (fail2) {}
+	 edge[pre, bend left=25, thick,>=stealth](payment)
+	 edge[pre,>=o, bend left=20, thick](attempts)
+	 edge[post, bend right=25, thick,>=stealth](out);
+	\node [above] at (3.45,0.52) {[10,10]};
+	\draw[arc] (in) -- (start) {};
+	\draw[arc] (start) -- (booking) {};
+	\draw[transportArc] (booking) -- (book) node[midway,above]{$[2,5]$:1}{};
+	\draw[transportArc] (book) -- (payment)  node[midway,above]{:1} {};
+	\draw[arc] (payment) -- (pay)  node[midway,above]{$[0,10]$} {};
+	\draw[arc] (pay) -- (successful) {};
+	\draw[arc] (successful) -- (success) {};
+	\draw[arc] (success) -- (out) {};
+	\draw[arc] (start) -- (attempts) {};
+	%\draw[inhibArc] (attempts) .. controls +(right:3.95cm) and +(-0.2,-1) .. (5,-0.15) {};
+		
+\end{tikzpicture}
+\caption{Booking-payment workflow with timing constraints}
+\label{fig:example}
+\end{figure}
+
+In the initial marking of the net, the transition $\mathit{start}$
+is enabled as it has a token %of an appropriate age 
+in its input place.
+The transition is urgent (marked with a filled circle), so no time
+delay is possible once it gets enabled.
+After the $\mathit{start}$ transition is fired, a new token of age 
+$0$ arrives to the place $\mathit{booking}$ (initiating the booking phase) 
+and three new tokens of age $0$ arrive to the place $\mathit{attempts}$
+(in order to count the number of attempts we have before the service fails).
+The transition $\mathit{fail1}$ is not enabled as 
+the place $\mathit{attempts}$, connected to $\mathit{fail1}$
+via the so-called inhibitor arc, contains tokens, inhibiting
+$\mathit{fail1}$ from firing. The transition $\mathit{book}$ is not enabled
+either as the token's age in the place \itn{booking} 
+does not belong to the interval $[2,5]$.
+However, after waiting for example $3$ minutes, $\mathit{book}$ %transition 
+can fire.  This consumes the token of age $3$ from $\mathit{booking}$ and 
+transports it to the place $\mathit{payment}$, preserving its age. This
+is signalled by the use of transport arcs that contain the diamond-shaped
+tips with index :$1$ (denoting how these arcs are paired). 
+%The index is 
+%important in a situation when more that one pair of transport arcs is 
+%connected to the same transition. If two normal arcs (with standard arrow-shaped tips)
+%are used instead of transport arcs, the age of the
+%token would be reset to $0$ after being it transported to the place
+%$\mathit{payment}$. As we, however, used transport arcs,
+%we know that the transition $\mathit{pay}$ can be fired within 
+%at most $10$ minutes since the whole booking-payment service started.
+
+At any moment, the booking-payment part of the workflow can be
+restarted by firing the transitions $\mathit{restart1}$ or
+$\mathit{restart2}$. This will bring the token back to the place
+$\mathit{booking}$, reset its age to $0$, and consume one attempt from
+the place $\mathit{attempts}$. Once no more attempts are available
+and the age of the token in the place $\mathit{booking}$ or
+$\mathit{payment}$ reaches $5$ resp. $10$, we can fire
+the transition $\mathit{fail1}$ resp. $\mathit{fail2}$ and terminate the
+workflow by placing a token into the output place $\mathit{out}$.
+Note that the places $\mathit{booking}$ and $\mathit{payment}$ contain
+age invariants $\leq 5$ resp. $\leq 10$, meaning that the ages of tokens in 
+these places should be at most $5$ resp. $10$. Hence if the service
+did not succeed within the given time bound, the workflow will necessarily
+fail.
+Finally, if the payment transition was executed within 10 minutes
+from the service initialization, the transition
+$\mathit{empty}$ can now repeatedly remove any remaining tokens in the place
+$\mathit{attempts}$ and the transition $\mathit{success}$ terminates 
+the whole workflow. As both the transitions
+$\mathit{empty}$ and $\mathit{success}$ are urgent, no further time delay
+is allowed in this termination phase.
+%after the execution of the transition $\mathit{pay}$.
+
+We are concerned with the study of
+soundness and strong soundness, intuitively meaning that from any
+marking reachable from the initial one, it is always possible
+to reach a marking (in case of strong soundness additionally within a fixed
+amount of time), having just one token in the place $\itn{out}$.
+Moreover, once a token appears in the place $\itn{out}$, it is mandatory
+that the rest of the workflow net does not contain any remaining tokens.
+One can verify (either manually or using our tool mentioned later)
+that the workflow net of our running example is both sound and strongly sound.
+
+\paragraph{Our contribution.}
+We define a workflow theory based on timed-arc Petri nets,
+extend the notion of soundness from~\cite{Aalst97} to deal with 
+timing features and introduce a new notion of strong soundness
+that guarantees time-bounded workflow termination. We study
+the decidability/undecidability of soundness and strong soundness
+and conclude that even though they are in general undecidable,
+we can still design efficient verification algorithms for two important
+subclasses: monotonic workflow nets 
+(not using any inhibitor arcs, age invariants and urgent transitions)
+and for the subclass of bounded nets. 
+This contrasts to the fact that for example the reachability
+question for monotonic workflow nets is already 
+undecidable~\cite{RGE:reachability}. 
+Moreover, our algorithms 
+allow us to compute the minimum and maximum execution times of the
+workflow. The theory is developed for
+discrete-time semantics but in Section~\ref{sec:cont} we discuss its
+relationship to the continuous-time semantics. Finally, we implement
+the algorithms given in this paper within the open-source tool 
+TAPAAL~\cite{DJJJMS:TACAS:12} and successfully demonstrate on a number of 
+case studies the applicability of the theory in real-world scenarios.
+
+\section*{Related Work}
+
+Soundness for different extensions of Petri nets with e.g. 
+inhibitor arcs, reset arcs and other features have been studied before,
+leading often to undecidability results (for a detailed overview 
+see~\cite{AalstHHSVVW11}). We shall now focus mainly on 
+time extensions of Petri net workflow models.
+%nets as modelling tool. On the one hand, there are a bunch of works 
+%defining timed workflows nets in terms of time Petri nets, that is, 
+%an interval is associated to the firing of a transition.
+Ling and Schmidt~\cite{LS2000} defined timed workflow nets in terms 
+of Time Elementary Nets (TENs). These nets are 1-bounded by definition 
+and a net is sound iff it is live and the initial marking is a
+home marking in a net that connects the output place of the workflow with
+the input one. Du and Jiang~\cite{DuJ03} suggested Logical Time Workflow Nets 
+(LTWN) and their compositional semantics. Here liveness together with 
+boundedness is a necessary and sufficient condition for soundness.
+Moreover, the soundness of a well-structured LTWN can be verified 
+in polynomial time. Tiplea et al.~\cite{TipleaM05} 
+introduced a variant of timed workflow nets in terms of timed Petri nets 
+and showed the decidability of soundness for the bounded subclass.
+In subsequent work~\cite{TipleaM06,TipleaM09} they studied the decidability 
+of soundness under different firing strategies. The papers listed above
+rely on the model of time Petri nets where timing information is
+associated to transitions and not to tokens like in our case.
+The two models are significantly different, in particular the 
+number of timing parameters for time Petri nets is fixed, contrary
+to the dynamic creation of tokens with their private clocks in
+timed-arc Petri nets. We also see several modelling advantages
+of having ages associated to tokens as we can for example track
+the duration of sequentially composed tasks (via transport arcs) 
+as demonstrated in our running example. We are not aware of other
+works developing a workflow theory and the corresponding notions
+of soundness based on timed-arc Petri nets. Finally, we
+implement the soundness checks within a user-friendly tool
+that permits easy GUI-based debugging of issues in workflows---something 
+that is not that common for other workflow analysis tools 
+(see~\cite{FF:AWPN:06} for more discussion).

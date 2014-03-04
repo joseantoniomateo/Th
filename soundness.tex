@@ -1,0 +1,313 @@
+%%%%%%%%%%%%%%%%%%%%%% Section%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Timed-Arc Workflow Nets}\label{sec:tawfn}
+
+Timed-arc workflow nets are defined similarly as untimed 
+workflow nets~\cite{Aalst97}. Every workflow nets has a unique
+input place and a unique output place. After initializing such a 
+net by placing a token into the input place, it should be
+guaranteed that any possible workflow execution can be always 
+extended such that the workflow terminates with just one token
+in the output place (also known as the soundness property).
+
+% with the notion of time associated to the tokens in the net.
+
+\begin{definition}[Extended timed-arc workflow net] \label{defetawfn}
+An \itn{ETAPN} $N=\tapntuple$ is called an 
+\emph{Extended Timed-Arc WorkFlow Net} (ETAWFN) 
+if
+\begin{itemize}
+\item there exists a unique place $in \in P$ such that $^\bullet in= \emptyset$ and $in^\bullet \neq \emptyset$,
+\item there exists a unique place $out \in P$ such that $out^\bullet=\emptyset$ and $^\bullet out \neq \emptyset$,
+%\item $\forall t \in T$, there is a path from {\it in} to {\it t} and from {\it t} to {\it out}. % Jiri selected the item 3 instead of this
+\item for all $p \in P \setminus \{in,out\}$ we have $^\bullet p \neq \emptyset$ and $p^\bullet \neq \emptyset$, and
+\item for all $t \in T$ we have $^\bullet t \neq \emptyset.$
+\end{itemize} 
+\end{definition}
+
+%Let us also present a short remark regarding Definition~\ref{defetawfn}.
+\begin{remark}
+Notice that the conditions $^\bullet in= \emptyset$ and
+$^\bullet out \neq \emptyset$ necessarily imply that $in \not= out$.
+Moreover, we allow the postset of a transition to be empty 
+($t^\bullet=\emptyset$). This is just a technical detail and
+an equivalent workflow net where all transitions satisfy
+$t^\bullet \not= \emptyset$ can be constructed
+by introducing a new place $p_\mathit{new}$ so that any outgoing transition
+from the start place $in$ puts a token into $p_\mathit{new}$ and every
+incoming transition to the final place $out$  consumes the token
+from $p_\mathit{new}$. Now for any transition $t$ with 
+$t^\bullet=\emptyset$ we add the pair of arcs $(p_\mathit{new},t)$
+and $(t,p_\mathit{new})$ without influencing the behaviour of the net.
+\end{remark}
+
+Decidability of soundness crucially depends on the modelling
+features allowed in the net. Hence we define a subclass
+of so-called monotonic workflow nets.
+
+\begin{definition}[Monotonic timed-arc workflow net] \label{deftawfn}
+A monotonic timed-arc workflow net (MTAWFN) is an ETAWFN 
+with no urgent transitions, no age invariants and no inhibitor arcs.
+\end{definition}
+
+The marking $M_\itn{in}=\{(\mathit{in},0)\}$
+ of a timed-arc workflow net is called
+\emph{initial}. 
+%if $|M(in)|=1$ and for all
+%$p \in P\smallsetminus\{in\}$ we have $|M(p)|=0$, i.e. it contains just
+%one token (of some age) in the place $in$.
+A marking $M$ is \emph{final} if 
+$|M(\itn{out})|= 1$ and for all $p \in P\smallsetminus\{\itn{out}\}$ 
+we have $|M(p)|=0$,
+i.e. it contains just one token in the place \itn{out}. There may
+be several final markings with different ages of the token in the 
+place \itn{out}.
+
+We now provide the formal definition of soundness that formulates 
+the standard requirement on proper termination of workflow
+nets~\cite{Aalst98,AalstHHSVVW11}.
+%nets~\cite{Aalst98,JKJ:ATPN:10,AalstHHSVVW11}.
+
+\begin{definition}[Soundness of timed-arc workflow nets] \label{def:soundness}
+An (extended or monotonic) timed-arc workflow net $N=\tapntuple$ is 
+sound if for %any initial marking $M_\mathit{in}$ and 
+any marking $M \in [M_\mathit{in}\rangle$ reachable from the initial
+marking $M_\mathit{in}$:
+\begin{description}
+\item{a)}  there exists some final marking $M_\mathit{out}$ such that 
+           $M_\mathit{out} \in [M\rangle$, and 
+% (option to complete), and
+\item{b)} if $|M(\itn{out})|\geq 1$ then M is a final marking.
+% (proper completion).
+\end{description}
+\end{definition}
+
+A workflow is sound if once it is initiated by placing a token of age $0$ in
+the place \itn{in}, it has always the possibility to terminate by moving 
+a token to the place \itn{out} (option to complete)
+%condition a) of soundness definition)
+and moreover it is guaranteed that the rest of the workflow net is free 
+of any remaining tokens as soon as the place \itn{out} is marked 
+(proper completion).
+%(condition b) of the definition).
+We now define a subclass of bounded workflow nets.
+% where the number
+%of tokens in any reachable marking is a priori bounded by some given constant.
+
+\begin{definition}[Boundedness]
+\label{boundedness}
+A %n (extended or monotonic) 
+timed-arc workflow net $N$ is \emph{$k$-bounded}
+for some $k \in \nnul$ if %for any initial marking $M_{in}$ and any
+any marking $M$ reachable from the initial marking $M_{in}$
+%($M \in [M_{in}\rangle$) 
+satisfies $|M| \leq k$.
+A net is \emph{bounded} if it is $k$-bounded for some $k$.
+\end{definition}
+
+A classical result states that any untimed sound net is bounded~\cite{Aalst97}.
+This is not in general the case for extended timed-arc
+workflow nets 
+%as inhibitor arcs, age invariants and urgent transitions
+%can model sound but unbounded workflows 
+as demonstrated in Figure~\ref{fig:unsound}. Nevertheless, we recover the boundedness
+result for the subclass of monotonic timed-arc workflow nets.
+
+\begin{theorem}\label{thm:soundness}
+Let $N$ an MTAWFN. If $N$ is sound then $N$ is bounded. 
+\end{theorem}
+\begin{proof}
+By contradiction assume that $N$ is a sound and unbounded MTAWFN.
+Let $M_{in}$ be the initial workflow marking.
+Now we can argue that there must exist two
+reachable markings $M, M' \in [M_{in}\rangle$
+such that
+\begin{itemize}
+\item[i)] $M \sqsubseteq_{\cut} M'$, and
+\item[ii)] $|M| < |M'|$.
+\end{itemize}
+
+This follows from the fact that $M \sqsubseteq_{\cut} M'$ iff
+$\cut(M) \sqsubseteq \cut(M')$ and from Definition~\ref{def:cut}
+where the cut function is given such that each token is placed
+into one of the finitely many places, say $p$, and its age is bounded
+by $\cmax(p)+1$. Thanks to Dickson's Lemma~\cite{dickson}, saying
+that every set of $n$-tuples of natural numbers has only finitely
+many minimal elements, we are
+guaranteed that conditions i) and ii) are satisfied for some
+reachable markings $M$ and $M'$.
+
+Since $N$ is a sound workflow net, we now use condition $a)$
+of Definition~\ref{def:soundness}, implying that
+from $M$ we reach some final marking $M_{out}$. Assume that this is achieved
+w.l.o.g.  by the following sequence of transitions:
+ $$M \trans{d_1} M_1 \trans{t_1}
+  M_2 \trans{d_2} M_3 \trans{t_2}
+  M_4 \ldots \trans{t_n} M_{out} \ . $$
+We know that $M \sqsubseteq_{\cut} M'$ and hence by repeatedly applying
+Lemma~\ref{lem:mono}
+also
+ $$M' \trans{d_1} M'_1 \trans{t_1}
+  M'_2 \trans{d_2} M'_3 \trans{t_2}
+  M'_4 \ldots \trans{t_n} M'_{out}  $$
+such that at the end $M_{out} \sqsubseteq_{\cut} M'_{out}$. The facts that
+$M_{out} \sqsubseteq_{\cut} M'_{out}$ and $M_{out}$ is a final marking
+imply that $|M'_{out}(out)| \geq 1$.
+By a repeated application of Lemma~\ref{lem:mono}
+we also get $|M'|-|M|=|M'_{out}|-|M_{out}|$.
+By condition ii) of this lemma we know that $|M| < |M'|$,
+this implies that also $|M_{out}| < |M'_{out}|$.
+However, now the place
+$out$ in $M'_{out}$ is marked and there is at least one more token
+somewhere else in the marking $M'_{out}$. This contradicts
+condition $b)$ of Definition~\ref{def:soundness}.
+\end{proof}
+
+\begin{figure}[!t]
+\centering
+%\fbox{ \parbox[t]{14cm}{ 
+
+%\subfloat[Sound and unbounded net with inhibitor arcs]{\label{fig:inhun}
+\begin{minipage}[c]{0.32\textwidth}
+\centering
+\begin{tikzpicture}[font=\scriptsize,xscale=.6,yscale=0.7]
+\tikzstyle{arc}=[->,>=stealth,thick]
+\tikzstyle{darc}=[<->,>=stealth,thick]
+\tikzstyle{transportArc}=[->,>=diamond,thick]
+\tikzstyle{inhibArc}=[->,>=o,thick]
+\tikzstyle{every place}=[minimum size=6mm,thick]
+\tikzstyle{every transition} = [fill=black,minimum width=2mm,minimum height=5mm]
+\tikzstyle{every token}=[fill=white,text=black]
+\tikzstyle{sharedplace}=[place,minimum size=7.5mm,dashed,thin]
+\tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+\tikzstyle{sharedtransition}=[transition, fill opacity=0, minimum width=3.5mm, minimum height=6.5mm,dashed]
+
+%%%%%%%%%%%%%%%% Places %%%%%%%%%%%%%%%%%%%%%
+\node[] at (0,0){};
+\node[place,label=above:$in$] (in) at (0,1.5) {}; % Place in
+\node[place]  (p1) at (2,1) {}; % Place p1
+\node[place]  (p2) at (2,-2) {}; % Place p2
+\node[place,label=above:$out$] (out) at (4,1.5) {}; % Place out
+
+%%%%%%%%%%%%%%%% Transitions %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\node[transition, rotate=90] (a) at (0,0) {} % 
+edge[pre] node[above] {} (in)
+edge[post] (p1);
+
+\node[transition,rotate=90] (b) at (2,-.7) {} % 
+edge[pre, bend left=15] node[midway, left] {} (p1)
+edge[post] (p2)
+edge[post, bend right=15] (p1);
+
+\node[transition, rotate=90] (c) at (4,0) {} % 
+edge[pre] node[above] {} (p1)
+edge[post] (out);
+
+\node[transition] (d) at (0,-2) {} % 
+edge[pre] node[auto] {$$} (p2);
+
+\draw [-o] (p2) -- (4,-2) -- (c) ;
+\end{tikzpicture}
+\captionsetup{type=subfigure}
+\label{fig:inhun}
+\caption*{Inhibitor arcs.}
+\end{minipage}
+%\hspace{9mm}
+%\subfloat[Sound and unbounded net with invariants]{\label{fig:invun}
+\begin{minipage}[c]{0.32\textwidth}
+\centering
+\begin{tikzpicture}[font=\scriptsize,xscale=0.7,yscale=0.7]
+\tikzstyle{arc}=[->,>=stealth,thick]
+\tikzstyle{darc}=[<->,>=stealth,thick]
+\tikzstyle{transportArc}=[->,>=diamond,thick]
+\tikzstyle{inhibArc}=[->,>=o,thick]
+\tikzstyle{every place}=[minimum size=6mm,thick]
+\tikzstyle{every transition} = [fill=black,minimum width=2mm,minimum height=5mm]
+\tikzstyle{every token}=[fill=white,text=black]
+\tikzstyle{sharedplace}=[place,minimum size=7.5mm,dashed,thin]
+\tikzstyle{sharedtransition}=[transition, fill opacity=0, minimum width=3.5mm, minimum height=6.5mm,dashed]
+
+%%%%%%%%%%%%%%%% Places %%%%%%%%%%%%%%%%%%%%%
+
+\node[place,label=above:$in$] (in) at (0.2,1.5) {}; % Place in
+\node[place]  (p1) at (2,1) {}; % Place p1
+\node[place, label=right:inv: $\leq 0$]  (p2) at (2,-2) {}; % Place p2
+%\node[place]  (p3) at (-2,-3) {}; % Place p3
+\node[place,label=above:$out$] (out) at (4,1.5) {}; % Place out
+
+%%%%%%%%%%%%%%%% Transitions %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\node[transition, rotate=90] (a) at (0.2,0) {} % 
+edge[pre] node[above] {} (in)
+edge[post] (p1);
+
+\node[transition,rotate=90] (b) at (2,-.7) {} % 
+edge[pre, bend left=15] node[midway, left,xshift=1.5] {$[0,0]$} (p1)
+edge[post] (p2)
+edge[post, bend right=15] (p1);
+
+\node[transition, rotate=90] (c) at (4,0) {} % 
+edge[pre] node[midway, above] {$[1,\infty]$} (p1)
+edge[post] (out);
+
+\node[transition] (d) at (0.2,-2) {} % 
+edge[pre] node[auto] {$$} (p2);
+\end{tikzpicture}
+\captionsetup{type=subfigure}
+\caption*{Age invariants.}
+\label{fig:invun}
+\end{minipage}
+%\hspace{9mm}
+%\center
+%\subfloat[Sound and unbounded net with urgent transitions]{\label{fig:urgun}
+\begin{minipage}[c]{0.32\textwidth}
+\centering
+\begin{tikzpicture}[font=\scriptsize,xscale=0.95, yscale=0.7]
+\tikzstyle{arc}=[->,>=stealth,thick]
+\tikzstyle{darc}=[<->,>=stealth,thick]
+\tikzstyle{transportArc}=[->,>=diamond,thick]
+\tikzstyle{inhibArc}=[->,>=o,thick]
+\tikzstyle{every place}=[minimum size=6mm,thick]
+\tikzstyle{every transition} = [fill=black,minimum width=2mm,minimum height=5mm]
+\tikzstyle{every token}=[fill=white,text=black]
+\tikzstyle{sharedplace}=[place,minimum size=7.5mm,dashed,thin]
+\tikzstyle{sharedtransition}=[transition, fill opacity=0, minimum width=3.5mm, minimum height=6.5mm,dashed]
+\tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+
+%%%%%%%%%%%%%%%% Places %%%%%%%%%%%%%%%%%%%%%
+
+\node[place,label=above:$in$] (in) at (0.2,1.5) {}; % Place in
+\node[place]  (p1) at (1.5,1) {}; % Place p1
+\node[place]  (p2) at (1.5,-2) {}; % Place p2
+\node[place,label=above:$out$] (out) at (3,1.5) {}; % Place out
+
+%%%%%%%%%%%%%%%% Transitions %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\node[transition, rotate=90] (a) at (0.2,0) {} % 
+edge[pre] node[above] {} (in)
+edge[post] (p1);
+
+\node[transition,rotate=90] (b) at (1.5,-.7) {} % 
+edge[pre, bend left=15] node[midway, left,xshift=1.5] {$[0,0]$} (p1)
+edge[post] (p2)
+edge[post, bend right=15] (p1);
+
+\node[transition, rotate=90] (c) at (3,0) {} % 
+edge[pre] node[midway, above] {$[1,\infty]$} (p1)
+edge[post] (out);
+
+\node[transition] (d) at (0.2,-2) {} % 
+edge[pre] node[auto] {$$} (p2);
+\node[urgency] at (0.2,-2){};
+\end{tikzpicture}
+\captionsetup{type=subfigure}
+\caption*{Urgent transitions.}
+\label{fig:urgun}
+\end{minipage}
+%}}
+%\vspace{-0.25cm}
+\caption{\label{fig:unsound}Sound and unbounded extended timed-arc workflow nets}
+%\vspace{-0.3cm}
+\end{figure}
+
+

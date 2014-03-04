@@ -34,4 +34,20 @@
 \contentsline {figure}{\numberline {4.18}{\ignorespaces PTCPN of one buyer.\relax }}{107}{figure.caption.60}
 \contentsline {figure}{\numberline {4.19}{\ignorespaces Result of the queries in CPNTools.\relax }}{108}{figure.caption.62}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Booking-payment workflow with timing constraints\relax }}{111}{figure.caption.63}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Sound and unbounded extended timed-arc workflow nets\relax }}{118}{figure.caption.66}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces \tt $i$: $c_1$++; goto $k$\relax }}{120}{subfigure.caption.71}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces {\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell $)}\relax }}{120}{subfigure.caption.72}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Simulation of (Inc) and (Dec) instructions with urgent transitions\relax }}{120}{figure.caption.70}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces Simulation of the counters $c_1$ and $c_2$.\relax }}{121}{subfigure.caption.74}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces {\tt $i$: $c_1$++; goto $k$}\relax }}{121}{subfigure.caption.75}
+\contentsline {subfigure}{\numberline {c}{\ignorespaces {\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell $)}.\relax }}{121}{subfigure.caption.76}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Simulation of a Minsky machine by a workflow net with invariants\relax }}{121}{figure.caption.73}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces Sound but strongly unsound workflow.\relax }}{129}{subfigure.caption.79}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces Strongly sound workflow.\relax }}{129}{subfigure.caption.80}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Fragment of customer complaint workflow ($[0,\infty ]$ guards are omitted)\relax }}{129}{figure.caption.78}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Transformation of an ETAWFN $N$ into an ETAPN $\mathit {N(c)}$\relax }}{131}{figure.caption.81}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces Using invariants.\relax }}{135}{subfigure.caption.83}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces Using urgency.\relax }}{135}{subfigure.caption.84}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Sound nets in the discrete semantics and unsound in the continuous one\relax }}{135}{figure.caption.82}
 \addvspace {10\p@ }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  3 MAR 2014 18:21
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  4 MAR 2014 12:59
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -467,26 +467,60 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \tab@position=\count132
 \tab@size=\count133
 \listing@line=\count134
-) (./algorithmicx.sty
-Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+)
+(/usr/share/texmf-texlive/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2005/10/04 v3.9 algorithms environments
+\c@AlgoLine=\count135
 
 (/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count135
-\c@ALG@rem=\count136
-\c@ALG@nested=\count137
-\ALG@tlm=\skip58
-\ALG@thistlm=\skip59
-\c@ALG@Lnr=\count138
-\c@ALG@blocknr=\count139
-\c@ALG@storecount=\count140
-\c@ALG@tmpcounter=\count141
-\ALG@tmplength=\skip60
+(/usr/share/texmf-texlive/tex/latex/tools/xspace.sty
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+********************************************************
+Package `algorithm2e' Release 3.9 -- october 04 2005 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (fiorio@lirmm.fr)
+********************************************************
+\skiptotal=\skip58
+\skiprule=\skip59
+\skiphlne=\skip60
+\skiptext=\skip61
+\skiplength=\skip62
+\algomargin=\skip63
+\skipalgocfslide=\skip64
+\algowidth=\dimen167
+\inoutsize=\dimen168
+\inoutline=\dimen169
+\algocf@inoutbox=\box41
+\algocf@inputbox=\box42
+\AlCapSkip=\skip65
+\AlCapHSkip=\skip66
+\algocf@capbox=\box43
+\c@algocfline=\count136
+\c@algocf=\count137
+\algocf@algoframe=\box44
+\algocf@algobox=\box45
 ) (./algpseudocode.sty
 Package: algpseudocode 
+ (./algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count138
+\c@ALG@rem=\count139
+\c@ALG@nested=\count140
+\ALG@tlm=\skip67
+\ALG@thistlm=\skip68
+\c@ALG@Lnr=\count141
+\c@ALG@blocknr=\count142
+\c@ALG@storecount=\count143
+\c@ALG@tmpcounter=\count144
+\ALG@tmplength=\skip69
+)
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
@@ -568,11 +602,11 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 )
 (/usr/share/texmf-texlive/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count142
+\c@float@type=\count145
 \float@exts=\toks41
-\float@box=\box41
+\float@box=\box46
 \@float@everytoks=\toks42
-\@floatcapt=\box42
+\@floatcapt=\box47
 )
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
@@ -595,9 +629,9 @@ O)
 (/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
-\@linkdim=\dimen167
-\Hy@linkcounter=\count143
-\Hy@pagecounter=\count144
+\@linkdim=\dimen170
+\Hy@linkcounter=\count146
+\Hy@pagecounter=\count147
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -661,9 +695,9 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count145
-\Field@Width=\dimen168
-\Fld@charsize=\dimen169
+\Fld@menulength=\count148
+\Field@Width=\dimen171
+\Fld@charsize=\dimen172
 \Field@toks=\toks43
 Package hyperref Info: Hyper figures OFF on input line 4377.
 Package hyperref Info: Link nesting OFF on input line 4382.
@@ -676,9 +710,9 @@ Package hyperref Info: PDF/A mode OFF on input line 4407.
 (/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count146
-\c@Item=\count147
-\c@Hfootnote=\count148
+\Hy@abspage=\count149
+\c@Item=\count150
+\c@Hfootnote=\count151
 )
 *hyperref using driver hdvips*
 (/usr/share/texmf-texlive/tex/latex/hyperref/hdvips.def
@@ -693,10 +727,10 @@ Package hyperref Warning: You have enabled option `breaklinks'.
 (hyperref)                Expect trouble with the link areas of broken links.
 
 \pdf@docset=\toks44
-\pdf@box=\box43
+\pdf@box=\box48
 \pdf@toks=\toks45
 \pdf@defaulttoks=\toks46
-\Fld@listcount=\count149
+\Fld@listcount=\count152
 )) (/usr/share/texmf-texlive/tex/latex/breakurl/breakurl.sty
 Package: breakurl 2009/01/24 v1.30 Breakable hyperref URLs
 
@@ -706,51 +740,41 @@ Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
 (/usr/share/texmf-texlive/tex/generic/xkeyval/xkeyval.tex
 \XKV@toks=\toks47
 \XKV@tempa@toks=\toks48
-\XKV@depth=\count150
+\XKV@depth=\count153
 File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
 ))
 \burl@toks=\toks49
-) (./algorithm.sty
-Package: algorithm 
-
-Document Style `algorithm' - floating environment
-\@float@every@algorithm=\toks50
-\c@algorithm=\count151
-) (/usr/share/texmf-texlive/tex/latex/tabulary/tabulary.sty
+)
+(/usr/share/texmf-texlive/tex/latex/tabulary/tabulary.sty
 Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
-\TY@count=\count152
-\TY@linewidth=\dimen170
-\tymin=\dimen171
-\tymax=\dimen172
-\TY@tablewidth=\dimen173
+\TY@count=\count154
+\TY@linewidth=\dimen173
+\tymin=\dimen174
+\tymax=\dimen175
+\TY@tablewidth=\dimen176
 )
 (/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
 Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
-\c@tracingmulticols=\count153
-\mult@box=\box44
-\multicol@leftmargin=\dimen174
-\c@unbalance=\count154
-\c@collectmore=\count155
-\doublecol@number=\count156
-\multicoltolerance=\count157
-\multicolpretolerance=\count158
-\full@width=\dimen175
-\page@free=\dimen176
-\premulticols=\dimen177
-\postmulticols=\dimen178
-\multicolsep=\skip61
-\multicolbaselineskip=\skip62
-\partial@page=\box45
-\last@line=\box46
-\mult@rightbox=\box47
-\mult@grightbox=\box48
-\mult@gfirstbox=\box49
-\mult@firstbox=\box50
-\@tempa=\box51
-\@tempa=\box52
-\@tempa=\box53
-\@tempa=\box54
-\@tempa=\box55
+\c@tracingmulticols=\count155
+\mult@box=\box49
+\multicol@leftmargin=\dimen177
+\c@unbalance=\count156
+\c@collectmore=\count157
+\doublecol@number=\count158
+\multicoltolerance=\count159
+\multicolpretolerance=\count160
+\full@width=\dimen178
+\page@free=\dimen179
+\premulticols=\dimen180
+\postmulticols=\dimen181
+\multicolsep=\skip70
+\multicolbaselineskip=\skip71
+\partial@page=\box50
+\last@line=\box51
+\mult@rightbox=\box52
+\mult@grightbox=\box53
+\mult@gfirstbox=\box54
+\mult@firstbox=\box55
 \@tempa=\box56
 \@tempa=\box57
 \@tempa=\box58
@@ -763,25 +787,30 @@ Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
 \@tempa=\box65
 \@tempa=\box66
 \@tempa=\box67
-\c@columnbadness=\count159
-\c@finalcolumnbadness=\count160
-\last@try=\dimen179
-\multicolovershoot=\dimen180
-\multicolundershoot=\dimen181
-\mult@nat@firstbox=\box68
-\colbreak@box=\box69
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\c@columnbadness=\count161
+\c@finalcolumnbadness=\count162
+\last@try=\dimen182
+\multicolovershoot=\dimen183
+\multicolundershoot=\dimen184
+\mult@nat@firstbox=\box73
+\colbreak@box=\box74
 )
 (/usr/share/texmf-texlive/tex/latex/caption/caption.sty
 Package: caption 2009/10/09 v3.1k Customizing captions (AR)
 
 (/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
 Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
-\captionmargin=\dimen182
-\captionmargin@=\dimen183
-\captionwidth=\dimen184
-\caption@indent=\dimen185
-\caption@parindent=\dimen186
-\caption@hangindent=\dimen187
+\captionmargin=\dimen185
+\captionmargin@=\dimen186
+\captionwidth=\dimen187
+\caption@indent=\dimen188
+\caption@parindent=\dimen189
+\caption@hangindent=\dimen190
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used on input line 1068.
 )
@@ -794,7 +823,7 @@ Package caption Info: \@makecaption = \long macro:#1#2->\vspace {\abovecaptions
 kip } \sbox {\@tempboxa }{\sffamily {#1}. #2}\ifdim \wd \@tempboxa >\linewidth 
 \sffamily {#1}. #2\par \else \global \@minipagefalse \makebox [\linewidth ]{\hf
 il \usebox {\@tempboxa }\hfil }\fi \vspace {\belowcaptionskip }.
-\c@ContinuedFloat=\count161
+\c@ContinuedFloat=\count163
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -803,21 +832,37 @@ Package caption Info: subfigure package is loaded.
 Package: subcaption 2008/08/31 v1.0b Adding subcaptions (AR)
 LaTeX Info: Redefining \subref on input line 127.
 )
-\c@example=\count162
-\c@definition=\count163
-\c@theorem=\count164
-\c@lemma=\count165
-\c@remark=\count166
- (./macros.tex)
-(./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux) (./chapter2.aux)
-(./chapter3.aux) (./chapter4.aux
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypetri
+.code.tex
+File: tikzlibrarypetri.code.tex 2008/06/18 v2.10 (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrow
+s.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
+\arrowsize=\dimen191
+))
+\c@example=\count164
+\c@definition=\count165
+\c@theorem=\count166
+\c@lemma=\count167
+\c@remark=\count168
+
+(./macros.tex) (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
+(./chapter2.aux) (./chapter3.aux) (./chapter4.aux
 
 LaTeX Warning: Label `tran1' multiply defined.
 
 
 LaTeX Warning: Label `cs' multiply defined.
 
-) (./chapter5.aux) (./Conclusions.aux)
+) (./chapter5.aux
+
+LaTeX Warning: Label `sec:def' multiply defined.
+
+) (./Conclusions.aux)
 
 LaTeX Warning: Label `UDDI' multiply defined.
 
@@ -840,7 +885,13 @@ LaTeX Warning: Label `Andrews2003WSBPEL' multiply defined.
 LaTeX Warning: Label `aceto1999' multiply defined.
 
 
+LaTeX Warning: Label `ALSST:MEMICS:12' multiply defined.
+
+
 LaTeX Warning: Label `Armbrust2009' multiply defined.
+
+
+LaTeX Warning: Label `AMP:CONCUR:98' multiply defined.
 
 
 LaTeX Warning: Label `Ban06' multiply defined.
@@ -891,10 +942,22 @@ LaTeX Warning: Label `Clarke96' multiply defined.
 LaTeX Warning: Label `bpelsoftcare' multiply defined.
 
 
+LaTeX Warning: Label `umodmatrix1' multiply defined.
+
+
 LaTeX Warning: Label `DJJJMS:TACAS:12' multiply defined.
 
 
+LaTeX Warning: Label `danny_VLiet' multiply defined.
+
+
+LaTeX Warning: Label `dickson' multiply defined.
+
+
 LaTeX Warning: Label `DragoniM09' multiply defined.
+
+
+LaTeX Warning: Label `DuJ03' multiply defined.
 
 
 LaTeX Warning: Label `DumasAalst2005' multiply defined.
@@ -915,6 +978,9 @@ LaTeX Warning: Label `Ezenwoye07' multiply defined.
 LaTeX Warning: Label `Farahbod05' multiply defined.
 
 
+LaTeX Warning: Label `FF:AWPN:06' multiply defined.
+
+
 LaTeX Warning: Label `Hanisch:93' multiply defined.
 
 
@@ -924,6 +990,9 @@ LaTeX Warning: Label `Snoopy' multiply defined.
 LaTeX Warning: Label `Hinz2005' multiply defined.
 
 
+LaTeX Warning: Label `umodmatrix2' multiply defined.
+
+
 LaTeX Warning: Label `hollingsworth95' multiply defined.
 
 
@@ -931,6 +1000,9 @@ LaTeX Warning: Label `Hollingsworth2004' multiply defined.
 
 
 LaTeX Warning: Label `Fost04' multiply defined.
+
+
+LaTeX Warning: Label `memics_paper' multiply defined.
 
 
 LaTeX Warning: Label `Jensen97' multiply defined.
@@ -951,6 +1023,9 @@ LaTeX Warning: Label `Lapadula2008' multiply defined.
 LaTeX Warning: Label `Leymann06' multiply defined.
 
 
+LaTeX Warning: Label `LS2000' multiply defined.
+
+
 LaTeX Warning: Label `Lohmann07' multiply defined.
 
 
@@ -961,6 +1036,9 @@ LaTeX Warning: Label `AjCh85' multiply defined.
 
 
 LaTeX Warning: Label `Mer74' multiply defined.
+
+
+LaTeX Warning: Label `Minsky:book' multiply defined.
 
 
 LaTeX Warning: Label `wsbpelstandard' multiply defined.
@@ -1011,6 +1089,15 @@ LaTeX Warning: Label `Stahl2005' multiply defined.
 LaTeX Warning: Label `Henzinger94' multiply defined.
 
 
+LaTeX Warning: Label `TipleaM05' multiply defined.
+
+
+LaTeX Warning: Label `TipleaM06' multiply defined.
+
+
+LaTeX Warning: Label `TipleaM09' multiply defined.
+
+
 LaTeX Warning: Label `van93' multiply defined.
 
 
@@ -1035,6 +1122,9 @@ LaTeX Warning: Label `Verbeek2000' multiply defined.
 LaTeX Warning: Label `Verbeek2005' multiply defined.
 
 
+LaTeX Warning: Label `RGE:reachability' multiply defined.
+
+
 LaTeX Warning: Label `WSCDL' multiply defined.
 
 
@@ -1049,39 +1139,39 @@ LaTeX Warning: Label `Yi2004' multiply defined.
 )
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 228.
-LaTeX Font Info:    ... okay on input line 228.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 228.
-LaTeX Font Info:    ... okay on input line 228.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 228.
-LaTeX Font Info:    ... okay on input line 228.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 228.
-LaTeX Font Info:    ... okay on input line 228.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 228.
-LaTeX Font Info:    ... okay on input line 228.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 228.
-LaTeX Font Info:    ... okay on input line 228.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 228.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 228.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 229.
+LaTeX Font Info:    ... okay on input line 229.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 229.
+LaTeX Font Info:    ... okay on input line 229.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 229.
+LaTeX Font Info:    ... okay on input line 229.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 229.
+LaTeX Font Info:    ... okay on input line 229.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 229.
+LaTeX Font Info:    ... okay on input line 229.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 229.
+LaTeX Font Info:    ... okay on input line 229.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 229.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 229.
 
  (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 228.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 228.
-LaTeX Font Info:    ... okay on input line 228.
-LaTeX Font Info:    Try loading font information for OT1+pbk on input line 228.
+LaTeX Font Info:    ... okay on input line 229.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 229.
+LaTeX Font Info:    ... okay on input line 229.
+LaTeX Font Info:    Try loading font information for OT1+pbk on input line 229.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pbk.fd
 File: ot1pbk.fd 2001/06/04 font definitions for OT1/pbk.
 )
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 228.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 229.
 
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count167
-Package hyperref Info: Link coloring OFF on input line 228.
+\c@lstlisting=\count169
+Package hyperref Info: Link coloring OFF on input line 229.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -1089,48 +1179,48 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count168
+\c@section@level=\count170
 )
-LaTeX Info: Redefining \ref on input line 228.
-LaTeX Info: Redefining \pageref on input line 228.
+LaTeX Info: Redefining \ref on input line 229.
+LaTeX Info: Redefining \pageref on input line 229.
  (./thesis.out)
 (./thesis.out)
 \@outlinefile=\write5
 \openout5 = `thesis.out'.
 
-\AtBeginShipoutBox=\box70
+\AtBeginShipoutBox=\box75
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 237.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 238.
 LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 237.
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 238.
 LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 237.
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 238.
 File: logo.eps Graphic file (type eps)
  <logo.eps>
-Overfull \hbox (8.7384pt too wide) in paragraph at lines 237--237
+Overfull \hbox (8.7384pt too wide) in paragraph at lines 238--238
  [][] 
  []
 
 LaTeX Font Info:    Font shape `OT1/pbk/m/sc' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/sc' tried instead on input line 237.
+(Font)              Font shape `OT1/pbk/l/sc' tried instead on input line 238.
 
-Overfull \hbox (8.7384pt too wide) in paragraph at lines 237--237
+Overfull \hbox (8.7384pt too wide) in paragraph at lines 238--238
  [][] 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 237.
+LaTeX Font Info:    Try loading font information for U+msa on input line 238.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 237.
+LaTeX Font Info:    Try loading font information for U+msb on input line 238.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 237.
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 238.
  [1
 
 ] [2
@@ -1173,17 +1263,42 @@ LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <10> not available
 (Font)              Font shape `OT1/pbk/db/n' tried instead on input line 1.
  [5]
 Overfull \hbox (3.09982pt too wide) detected at line 26
- [][]\OT1/pbk/l/n/10 105[][]
+ [][]\OT1/pbk/l/n/10 104[][]
  []
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 27
- [][]\OT1/pbk/l/n/10 106[][]
+ [][]\OT1/pbk/l/n/10 105[][]
  []
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 28
  [][]\OT1/pbk/l/n/10 108[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 30
+ [][]\OT1/pbk/l/n/10 109[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 32
+ [][]\OT1/pbk/l/n/10 113[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 33
+ [][]\OT1/pbk/l/n/10 115[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 34
+ [][]\OT1/pbk/l/n/10 128[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 35
+ [][]\OT1/pbk/l/n/10 132[][]
  []
 
 )
@@ -1223,13 +1338,48 @@ Overfull \hbox (3.09982pt too wide) detected at line 35
  [][]\OT1/pbk/l/n/10 108[][]
  []
 
+
+Overfull \hbox (3.09982pt too wide) detected at line 37
+ [][]\OT1/pbk/l/n/10 111[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 38
+ [][]\OT1/pbk/l/n/10 118[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 41
+ [][]\OT1/pbk/l/n/10 120[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 45
+ [][]\OT1/pbk/l/n/10 120[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 48
+ [][]\OT1/pbk/l/n/10 129[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 49
+ [][]\OT1/pbk/l/n/10 131[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 52
+ [][]\OT1/pbk/l/n/10 135[][]
+ []
+
 )
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
  [8] (./thesis.lot
 Overfull \hbox (3.09982pt too wide) detected at line 13
- [][]\OT1/pbk/l/n/10 108[][]
+ [][]\OT1/pbk/l/n/10 107[][]
  []
 
 )
@@ -1767,10 +1917,7 @@ File: Figures/pick.eps Graphic file (type eps)
  <Figures/pick.eps>
 [93]
 File: Figures/while.eps Graphic file (type eps)
- <Figures/while.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [94]
+ <Figures/while.eps> [94]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [95]
@@ -1787,31 +1934,28 @@ File: Figures/setProp.eps Graphic file (type eps)
 File: Figures/setTime.eps Graphic file (type eps)
  <Figures/setTime.eps>
 
-LaTeX Warning: Command \textregistered invalid in math mode on input line 2281.
+LaTeX Warning: Command \textregistered invalid in math mode on input line 2284.
 
 
 
-LaTeX Warning: Command \textregistered invalid in math mode on input line 2281.
+LaTeX Warning: Command \textregistered invalid in math mode on input line 2284.
 
 
 Missing character: There is no ® in font cmr7!
 LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 2282.
+(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 2285.
 
-
+[97]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [97]
-Underfull \vbox (badness 4328) has occurred while \output is active []
-
  [98]
-Overfull \hbox (15.05092pt too wide) in paragraph at lines 2346--2348
+Overfull \hbox (15.05092pt too wide) in paragraph at lines 2349--2351
 []\OT1/pbk/l/n/10 The XSLT stylesheet doc-u-ment starts with the in-struc-tion 
 $[]$.
  []
 
 
-Overfull \hbox (6.19702pt too wide) in paragraph at lines 2346--2348
+Overfull \hbox (6.19702pt too wide) in paragraph at lines 2349--2351
 \OT1/pbk/l/n/10 Once we have lo-cated the ini-tial and fi-nal mark of the root 
 el-e-ment ``xsl:stylesheet'',
  []
@@ -1823,38 +1967,34 @@ File: Figures/mainscreen.eps Graphic file (type eps)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [100]
-Underfull \vbox (badness 1024) has occurred while \output is active []
-
- [101]
-Overfull \hbox (1.11844pt too wide) in paragraph at lines 2447--2453
+Overfull \hbox (1.11844pt too wide) in paragraph at lines 2450--2456
 []$ \OT1/pbk/l/n/10 and $[]$. Vari-able $\OML/cmm/m/it/10 v[]$ \OT1/pbk/l/n/10 
 serves
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2447--2453
+Underfull \hbox (badness 10000) in paragraph at lines 2450--2456
+
+ []
+
+[101]
+Underfull \hbox (badness 10000) in paragraph at lines 2458--2526
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2455--2523
+Underfull \vbox (badness 1953) has occurred while \output is active []
 
- []
-
-[102]
+ [102]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [103]
 File: Figures/casestudy.eps Graphic file (type eps)
 
-<Figures/casestudy.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [104]
+<Figures/casestudy.eps> [104]
 File: Figures/sistema.eps Graphic file (type eps)
-
-<Figures/sistema.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 2563--2565
+ <Figures/sistema.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 2566--2568
 [][]
  []
 
@@ -1866,29 +2006,97 @@ File: Figures/proceso.eps Graphic file (type eps)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[105]
-Underfull \vbox (badness 1231) has occurred while \output is active []
-
- [106]
+[105] [106]
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 2608.
-
-Underfull \vbox (badness 1715) has occurred while \output is active []
-
- [107]
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 2611.
 File: Figures/queries.eps Graphic file (type eps)
+ <Figures/queries.eps>
 
-<Figures/queries.eps>) [108]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [107] [108]
 \openout2 = `chapter5.aux'.
 
  (./chapter5.tex
 Chapter 5.
-) [109
+(./introduction.tex [109
 
 
 
 
-] [110
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [110]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [111])
+(./definitions.tex [112] [113] [114]) (./soundness.tex [115]
+Overfull \hbox (21.55852pt too wide) in paragraph at lines 71--75
+[]\OT1/pbk/l/n/10 An (ex-tended or mono-tonic) timed-arc work-flow net $\OML/cm
+m/m/it/10 N \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 P; T; T[]; []; []; \OT1/cmr/m/i
+t/10 g\OML/cmm/m/it/10 ; \OT1/cmr/m/it/10 w\OML/cmm/m/it/10 ; []; \OT1/cmr/m/it
+/10 I\OT1/cmr/m/n/10 )$
+ []
+
+[116] [117]) (./decidability.tex [118]
+Overfull \hbox (8.98553pt too wide) in paragraph at lines 128--131
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+[]\OT1/pbk/l/n/10 b: |$\OML/cmm/m/it/10 i$\OT1/pcr/m/n/10 : if $\OML/cmm/m/it/1
+0 c[]$\OT1/pcr/m/n/10 =$\OT1/cmr/m/n/10 0$ \OT1/pcr/m/n/10 then goto $\OML/cmm/
+m/it/10 k$ \OT1/pcr/m/n/10 else
+ []
+
+
+Overfull \hbox (2.44005pt too wide) in paragraph at lines 85--133
+[]$[]$ $[]$ 
+ []
+
+
+Underfull \vbox (badness 4279) has occurred while \output is active []
+
+ [119]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[120]
+Underfull \vbox (badness 5711) has occurred while \output is active []
+
+ [121]
+Package hyperref Info: bookmark level for unknown algocf defaults to 0 on input
+ line 333.
+
+Underfull \hbox (badness 10000) detected at line 393
+[][]
+ []
+
+[122] [123] [124] [125] [126]) (./strong-soundness.tex [127]
+Overfull \hbox (2.44005pt too wide) in paragraph at lines 52--124
+[]$[]$ $[]$ 
+ []
+
+[128]
+Overfull \hbox (0.65312pt too wide) in paragraph at lines 140--152
+[]\OT1/pbk/l/n/10 ``$\OMS/cmsy/m/n/10 ($\OT1/pbk/l/n/10 '': By con-tra-dic-tion
+ we as-sume that $\OMS/cmsy/m/n/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 N\OT1/cmr
+/m/n/10 )$ \OT1/pbk/l/n/10 is fi-nite while $\OML/cmm/m/it/10 N$ \OT1/pbk/l/n/1
+0 is not strongly
+ []
+
+
+Underfull \vbox (badness 1688) has occurred while \output is active []
+
+ [129]
+[130] [131]) (./continuous.tex [132] [133]
+Overfull \hbox (4.8801pt too wide) in paragraph at lines 127--199
+[]$[]$   $[]$ 
+ []
+
+[134])) [135] [136
 
 
 ]
@@ -1896,14 +2104,14 @@ Chapter 5.
 
  (./Conclusions.tex
 Chapter 6.
-) [111
+) [137
 
 
 ]
 
-LaTeX Warning: Reference `c6' on page 112 undefined on input line 283.
+LaTeX Warning: Reference `c6' on page 138 undefined on input line 284.
 
-[112
+[138
 
 
 ] (./thesis.bbl
@@ -1926,7 +2134,7 @@ Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ­ in font pbkl7t!
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ¶ in font pbkl7t!
-[113
+[139
 
 ]
 Missing character: There is no â in font pbkl7t!
@@ -1934,46 +2142,50 @@ Missing character: There is no € in font pbkl7t!
 Missing character: There is no “ in font pbkl7t!
 
 
-LaTeX Warning: Reference `c6' on page 114 undefined on input line 120.
+LaTeX Warning: Reference `c6' on page 140 undefined on input line 120.
 
-[114] [115]
-Underfull \hbox (badness 10000) in paragraph at lines 210--215
+[140] [141]
+
+LaTeX Warning: Reference `c6' on page 142 undefined on input line 248.
+
+[142]
+Underfull \hbox (badness 10000) in paragraph at lines 256--261
 []\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 210--215
+Underfull \hbox (badness 3148) in paragraph at lines 256--261
 \OT1/pbk/l/n/10 mann M. Nally T. Storey W. Vam-benepe I. Fos-ter, J. Frey and
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 210--215
+Underfull \hbox (badness 3323) in paragraph at lines 256--261
 \OT1/pbk/l/n/10 S. Weer-awarana.  Mod-el-ing state-ful re-sources with web ser-
 vices.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--215
+Underfull \hbox (badness 10000) in paragraph at lines 256--261
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
+[143]
 
-LaTeX Warning: Reference `c6' on page 116 undefined on input line 251.
+LaTeX Warning: Reference `c6' on page 144 undefined on input line 377.
 
-[116] [117]
+[144]
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ¤ in font pbkl7t!
-
-
-LaTeX Warning: Reference `c6' on page 118 undefined on input line 380.
-
-[118]
-Underfull \hbox (badness 4846) in paragraph at lines 406--409
+ [145]
+Underfull \hbox (badness 4846) in paragraph at lines 490--493
 []\OT1/pbk/l/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
 2004.
  []
 
-) (./thesis.bbl [119] [120
+
+LaTeX Warning: Reference `c6' on page 146 undefined on input line 506.
+
+[146]) (./thesis.bbl [147] [148
 
 ]
 Underfull \hbox (badness 1377) in paragraph at lines 8--12
@@ -1992,41 +2204,41 @@ Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ­ in font pbkl7t!
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ¶ in font pbkl7t!
-[121]
+[149]
 Missing character: There is no â in font pbkl7t!
 Missing character: There is no € in font pbkl7t!
 Missing character: There is no “ in font pbkl7t!
- [122] [123]
-Underfull \hbox (badness 10000) in paragraph at lines 210--215
+ [150] [151] [152]
+Underfull \hbox (badness 10000) in paragraph at lines 256--261
 []\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 210--215
+Underfull \hbox (badness 3148) in paragraph at lines 256--261
 \OT1/pbk/l/n/10 mann M. Nally T. Storey W. Vam-benepe I. Fos-ter, J. Frey and
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 210--215
+Underfull \hbox (badness 3323) in paragraph at lines 256--261
 \OT1/pbk/l/n/10 S. Weer-awarana.  Mod-el-ing state-ful re-sources with web ser-
 vices.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--215
+Underfull \hbox (badness 10000) in paragraph at lines 256--261
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
-[124] [125]
+[153] [154]
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ¤ in font pbkl7t!
- [126]
-Underfull \hbox (badness 4846) in paragraph at lines 406--409
+ [155]
+Underfull \hbox (badness 4846) in paragraph at lines 490--493
 []\OT1/pbk/l/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
 2004.
  []
 
-) [127] [128
+[156]) [157] [158
 
 ] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
 (./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux)
@@ -2039,12 +2251,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18103 strings out of 495062
- 304428 string characters out of 1182644
- 410926 words of memory out of 3000000
- 20739 multiletter control sequences out of 15000+50000
- 33288 words of font info for 98 fonts, out of 3000000 for 9000
+ 20257 strings out of 495062
+ 340908 string characters out of 1182644
+ 487933 words of memory out of 3000000
+ 22858 multiletter control sequences out of 15000+50000
+ 34697 words of font info for 104 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 63i,28n,92p,2011b,1825s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,28n,92p,1682b,1825s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (140 pages, 647724 bytes).
+Output written on thesis.dvi (170 pages, 976600 bytes).
