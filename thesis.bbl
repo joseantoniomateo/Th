@@ -73,6 +73,13 @@ B.~Berthomieu, P.-O. Ribet, and F.~Vernadat.
 \newblock {\em International Journal of Production Research},
   42(14):2741--2756, 2004.
 
+\bibitem{BLS:FHIES:12}
+C.~Bertolini, Zh. Liu, and J.~Srba.
+\newblock Verification of timed healthcare workflows using component timed-arc
+  {P}etri nets.
+\newblock In {\em FHIES'12}, volume 7789 of {\em LNCS}, pages 19--36.
+  Springer-Verlag, 2013.
+
 \bibitem{BestK92}
 Eike Best and Maciej Koutny.
 \newblock Petri net semantics of priority systems.
@@ -134,6 +141,12 @@ G.~Chiola, G.~Franceschinis, R.~Gaeta, and M.~Ribaudo.
 \newblock Greatspn 1.7: Graphical editor and analyzer for timed and stochastic
   petri nets.
 \newblock {\em Perform. Eval.}, 24(1-2):47--68, November 1995.
+
+\bibitem{blood-benchmark}
+S.C. Christov, G.S. Avrunin, A.L. Clarke, L.J. Osterweil, and E.A. Henneman.
+\newblock A benchmark for evaluating software engineering techniques for
+  improving medical processes.
+\newblock In {\em {SEHC}'10}, pages 50--56. ACM, 2010.
 
 \bibitem{Clarke96}
 E.~Clarke and J.~Wing.
@@ -354,6 +367,12 @@ Mike~P. Papazoglou, Paolo Traverso, Schahram Dustdar, and Frank Leymann.
 \newblock Service-oriented computing: State of the art and research challenges.
 \newblock {\em IEEE Computer}, 40(11):38--45, 2007.
 
+\bibitem{PCVMP:MMM:04}
+F.L. Pelayo, F.~Cuartero, V.~Valero, H.~Macia, and M.L. Pelayo.
+\newblock Applying timed-arc {P}etri nets to improve the performance of the
+  {MPEG-2} encoding algorithm.
+\newblock In {\em {MMM}'04}, pages 49--56. IEEE, 2004.
+
 \bibitem{Pet81}
 {J.L.} Peterson.
 \newblock {\em {Petri net theory and the modeling of systems}}.
@@ -397,6 +416,12 @@ I.~Foster J. Frey S. Graham C. Kesselman T. Maguire T. Sandholm P.~Vanderbilt
 Karsten Schmidt.
 \newblock Lola: A low level analyser.
 \newblock In {\em ICATPN}, pages 465--474, 2000.
+
+\bibitem{SEB:FESCA:13}
+S.~Sieverding, Ch. Ellen, and P.~Battram.
+\newblock Sequence diagram test case specification and virtual integration
+  analysis using timed-arc {P}etri nets.
+\newblock In {\em {FESCA}'13}, volume 108 of {\em EPTCS}, pages 17--31, 2013.
 
 \bibitem{Sif77}
 Joseph Sifakis.

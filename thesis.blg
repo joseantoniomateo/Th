@@ -9,7 +9,7 @@ A level-1 auxiliary file: chapter4.aux
 A level-1 auxiliary file: chapter5.aux
 A level-1 auxiliary file: Conclusions.aux
 The style file: plain.bst
-Illegal, another \bibdata command---line 119 of file thesis.aux
+Illegal, another \bibdata command---line 123 of file thesis.aux
  : \bibdata
  :         {bibliography}
 I'm skipping whatever remains of this command
@@ -220,45 +220,45 @@ Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Gr
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
 while executing---line 1090 of file plain.bst
-You've used 91 entries,
+You've used 95 entries,
             2118 wiz_defined-function locations,
-            1089 strings with 18451 characters,
-and the built_in function-call counts, 31192 in all, are:
-= -- 3024
-> -- 1344
-< -- 44
-+ -- 548
-- -- 443
-* -- 2010
-:= -- 4924
-add.period$ -- 279
-call.type$ -- 91
-change.case$ -- 487
+            1115 strings with 19205 characters,
+and the built_in function-call counts, 33162 in all, are:
+= -- 3222
+> -- 1436
+< -- 50
++ -- 585
+- -- 475
+* -- 2150
+:= -- 5214
+add.period$ -- 294
+call.type$ -- 95
+change.case$ -- 515
 chr.to.int$ -- 0
-cite$ -- 111
-duplicate$ -- 1333
-empty$ -- 2590
-format.name$ -- 443
-if$ -- 6831
+cite$ -- 115
+duplicate$ -- 1419
+empty$ -- 2744
+format.name$ -- 475
+if$ -- 7276
 int.to.chr$ -- 0
-int.to.str$ -- 91
-missing$ -- 84
-newline$ -- 447
-num.names$ -- 172
-pop$ -- 617
+int.to.str$ -- 95
+missing$ -- 88
+newline$ -- 467
+num.names$ -- 180
+pop$ -- 652
 preamble$ -- 1
-purify$ -- 403
+purify$ -- 427
 quote$ -- 0
-skip$ -- 1009
+skip$ -- 1074
 stack$ -- 0
-substring$ -- 1719
-swap$ -- 405
-text.length$ -- 44
+substring$ -- 1832
+swap$ -- 445
+text.length$ -- 50
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 346
+type$ -- 362
 warning$ -- 20
-while$ -- 268
-width$ -- 93
-write$ -- 971
+while$ -- 287
+width$ -- 97
+write$ -- 1020
 (There were 79 error messages)

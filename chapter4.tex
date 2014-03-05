@@ -2664,6 +2664,14 @@ appreciated that all dead markings hold the predicate {\em DesiredTerminal}, and
 
 
 
-\section{Summary}\label{sumWebServ}
-\markright{~\ref{sumWebServ} Summary}
+\section{Summary}\label{sumBPELRF}
+\markright{~\ref{sumBPELRF} Summary}
+In this chapter, we have integrated two complementary approaches in order to improve the definition of business processes models on BPEL by adding
+the capability of storing their state. We have thus transformed {\em stateless} business processes into {\em stateful} business processes. 
+First, we have presented a formal model for the description of composite Web services with resources associated, and orchestrated
+by a well-know business process language (BPEL). The main contribution has therefore been the integration of WSRF, a resource management language, with BPEL, taking into
+account the main structural elements of BPEL, as its basic and structured activities, notifications, event handling and fault handling. Furthermore, special attention has been given to timed constraints, as WSRF consider that resources can only exist for a certain time (lifetime). Thus, resource leasing is considered in this work, which is a concept that has become increasingly popular in the field of distributed systems. To deal with notifications, event handling and fault handling, the operational semantics has been defined at three levels, the outermost one corresponding to the choreographic view of the composite Web services.
+
+
+Second, we have defined a prioritised-timed coloured Petri net model and presented its corresponding semantics to represent the constructions of WS-BPEL and the standard selected for the definition of resources, namely WSRF. Apart from including the notion of state in business processes, our work also includes a publish-subscribe notification system based on WS-BaseNotification, presenting a TCPN model and its semantics. Thus, an orchestrator can show interest of being notified when a condition holds, e.g, the load of a server exceeds a certain limit. Our approach is based on the one used in CPNTools, allowing us to take advantage of its capability of analysis and verification systems. Moreover, our work in progress is the development of a tool\footnote{The beta version can be accessed at: \url{http://www.dsi.uclm.es/retics/bpelrf/}} to transform automatically WS-BPEL and WSRF specifications into CPNTools nets. As future work, we plan to study some interesting properties such as safeness, soundness and so on. As well, it is interesting to define a complete semantics of WS-BPEL and WSRF. Finally, as commented above, we defined an operational semantics in a previous work, so we will demonstrate in a future work the equivalence between both semantics.
 

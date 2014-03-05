@@ -28,3 +28,99 @@ freely available as a part of the model checker TAPAAL.
 \input{decidability}
 \input{strong-soundness}
 \input{continuous}
+
+\section{Implementation and Experiments}
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=1\textwidth]{Figures/screenshot-combined.eps}
+\end{center}
+\caption{Screenshot of the workflow analysis tool}
+\label{fig:screenshot}
+\end{figure}
+
+%\begin{figure}[t]
+%\begin{center}
+%\includegraphics[height=0.34\textheight]{screenshot1.pdf}
+%\includegraphics[height=0.34\textheight]{screenshot2.pdf}
+%\end{center}
+%\vspace{-4mm}
+%\caption{Screenshots of the workflow analysis tool}
+%\label{fig:screenshot}
+%\end{figure}
+
+We demonstrate the usability of our framework on three case studies.
+The studied workflows were modelled and verified with the help of 
+a publicly available\footnote{Workflow extension is currently available 
+as a beta-release at the bottom of the download section at www.tapaal.net.},
+open-source tool TAPAAL~\cite{DJJJMS:TACAS:12}, where
+the algorithms presented in this paper are efficiently implemented
+in C++. The tool provides a convenient GUI support and
+one of the main advantages of our tool is the visualization of traces
+disproving soundness (see~\cite{FF:AWPN:06} for more discussion on 
+this topic).
+
+In the Brake System Control Unit (BSCU) case study, a part of a 
+Wheel Braking System (WBS) used for the certification of civil aircrafts 
+in the SAE standard ARP4761~\cite{SEB:FESCA:13}, we discovered  
+in less than 1 second that the workflow is not sound due to 
+unexpected deadlocks. The authors of~\cite{SEB:FESCA:13} 
+were able to detect these problems asking a reachability query,
+however, the error traces contradicting soundness were constructed
+manually. Our implementation allows a fully automatic detection and
+visualization of such situations.
+
+In the second case study describing the workflow of MPEG2 encoding algorithm
+run on a multicore processor (Petri net model was taken 
+from~\cite{PCVMP:MMM:04}), we verified in about 10 seconds 
+both soundness and strong soundness, and computed 
+the minimum and maximum encoding time for the IBBP frame sequence.
+
+In the third case study, we checked the soundness 
+of a larger blood transfusion workflow~\cite{blood-benchmark},
+the benchmarking case study of the little-JIL language. 
+The Petri net model was suggested in~\cite{BLS:FHIES:12} but we discovered 
+several issues with improper workflow termination that were fixed
+and then both soundness and strong soundness was confirmed
+in about 1 second, including the information about the minimum 
+and maximum execution times. 
+
+TAPAAL models of all case studies can be obtained from www.tapaal.net
+and Figure~\ref{fig:screenshot} shows a screenshot of the GUI in the
+trace debugging mode for workflow analysis of the brake system control 
+unit mentioned above.
+
+\section{Summary}\label{sumWorkflow}
+\markright{~\ref{sumWorkflow} Summary}
+
+We presented a framework for modelling of timed workflow processes
+via timed-arc workflow nets and studied the classical problem of
+soundness and its extension to time-bounded (strong) soundness.
+We provided a comprehensive analysis of decidability/undecidability
+of soundness and strong soundness on different subclasses of timed-arc
+workflow nets. We also suggested efficient algorithms for computing
+minimum and maximum execution times of a given workflow and implemented
+all algorithms within the tool TAPAAL~\cite{DJJJMS:TACAS:12}. 
+As a result we have a complete theory for checking soundness on
+timed workflow nets and contrary to many other papers studying
+different variants of workflow processes, we took a step further
+by providing efficient implementation of the algorithms, including
+a platform independent GUI support for modular design of timed
+workflow nets and visual error trace debugging. The tool is open-source
+and freely available at \url{www.tapaal.net}.
+The practical usability of 
+the approach was documented on three industry-inspired case studies,
+demonstrating a very promising potential for verification of larger
+timed workflows.
+
+In the study we focused on the discrete semantics 
+of workflow nets that is often sufficient and allows for modelling
+of workflows where events can happen in discrete steps.
+Nevertheless, we argued that many of the results
+are valid also for the continuous semantics. In fact, once we
+know that a given net is sound in the continuous semantics,
+it is enough to check for strong soundness and minimum/maximum
+execution times in the discrete semantics and these answers
+are valid also for the continuous case. As a future work, we 
+are developing efficient algorithms to decide soundness 
+of bounded timed-arc workflow nets in the continuous semantics.
