@@ -80,63 +80,107 @@ either $t_i^{\mathit{dec}}$ or $t_i^{\mathit{zero}}$ can always fire.
 It is now an easy observation that the workflow net is sound if and only
 if the Minsky machine halts.
 
+%A very similar reduction can be done for workflow nets that can, instead
+%of urgent transitions, employ inhibitor arcs. In order to guarantee
+%that the simulation is fair, we simply add an inhibitor arc from the
+%counter place $p_{c_1}$ to the transition $t_i^{\mathit{zero}}$.
+%Otherwise the net is completely untimed and again, the workflow net is
+%sound if and only if the Minsky machine halts.
 
-\begin{figure}[!h]
-\begin{minipage}[c]{0.5\textwidth}
-\hspace{1.5cm}
-\begin{tikzpicture}[font=\scriptsize,xscale=1.5,yscale=1.5]
-   \tikzstyle{arc}=[->,>=stealth,thick]
-   \tikzstyle{transportArc}=[->,>=diamond,thick]
-   \tikzstyle{every place}=[minimum size=6mm,thick]
-   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
-   \tikzstyle{every token}=[fill=white,text=black]
-  \node[place,label=above:$p_{i}$] at (0,0) (pi) {};
-  \node[place,label=above:$p_{k}$] at (2,0) (pk) {};
-  \node[place,label=above:$p_{c_1}$] at (1,1) (pc1) {};
-  \node[transition,label=60:$t_i$] at (1,0) (t) {};
-  \draw[arc] (pi) -- (t) node[midway,above]{$[0,\infty]$} {};
-  \draw[arc] (t) -- (pk) {};
-  \draw[arc] (t) -- (pc1) {};
-\end{tikzpicture}
-\captionsetup{type=subfigure}
-\caption{\tt $i$: $c_1$++; goto $k$}\label{fig:inc}
-\end{minipage}
-%\hspace{0mm}
-\begin{minipage}[c]{0.5\textwidth}
-\vspace{0.5cm}
-\begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.5]
-  \tikzstyle{arc}=[->,>=stealth,thick]
-  \tikzstyle{transportArc}=[->,>=diamond,thick]
-  \tikzstyle{every place}=[minimum size=6mm,thick]
-  \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
-  \tikzstyle{every token}=[fill=white,text=black]
-  \tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
-  \node at (-0.85,0) {};
-  \node at (2.8,0) {};
-  \node[place,label=above:$p_{i}$] at (0,0) (pi) {};
-  \node[place,label=above:$p_{k}$] at (2,0) (pk) {};
-  \node[place,label=above:$p_{\ell}$] at (2,1) (pl) {};
-  \node[place,label=above:$p_{c_1}$] at (0,1) (pc1) {};
-  \node[transition,label=60:$t_i^{\mathit{dec}}$] at (1,1) (tdec) {};
-  \node[urgency] at (1,1) {};
-  \node[transition,label=60:$t_i^{\mathit{zero}}$] at (1,0) (tzero1) {};
- \draw[arc] (pi) -- (tdec) node[midway,left]{$[0,\infty]$} {};
- \draw[arc] (pi) -- (tzero1) node[midway,above]{$[1,\infty]$} {};
- \draw[arc] (pc1) -- (tdec) node[midway,above,pos=0.5]{$[0,\infty]$} {}; 
- \draw[arc] (tdec) -- (pl) {};
- \draw[arc] (tzero1) -- (pk) {};
-\end{tikzpicture}
-\vspace{-0.4cm}
-\captionsetup{type=subfigure}
-\caption{{\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell$)}}\label{fig:dec}
-\end{minipage}
-  \caption{Simulation of (Inc) and (Dec) instructions with urgent transitions}%
-  \label{fig:urgent-reduction}%
-\end{figure}
+The reduction for workflow nets that contain only age invariants
+is more complicated. The reduction idea is based on~\cite{memics_paper}, 
+however, it had to be nontrivially modified in order to avoid the
+large number of possible deadlocks introduced in the reduction.
 
-\begin{figure}[!h]
+The counters are now modelled by two places that contain age invariants
+ensuring that no tokens can get older than $2$, see 
+Figure~\ref{fig:register_simulation}. The intuition is that
+before and after the simulation of any instruction, all tokens in
+the places $p_{c_1}$ and $p_{c_2}$ are exclusively of age $1$. 
+As before the input place is $\itn{in}=p_1$ and the output place
+is $\itn{out}=p_n$.
+
+%\begin{figure}[!h]
+%  
+%\begin{minipage}[c]{0.5\textwidth}
+%\hspace{1.5cm}
+%\begin{tikzpicture}[font=\scriptsize,xscale=1.5,yscale=1.5]
+%   \tikzstyle{arc}=[->,>=stealth,thick]
+%   \tikzstyle{transportArc}=[->,>=diamond,thick]
+%   \tikzstyle{every place}=[minimum size=6mm,thick]
+%   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+%   \tikzstyle{every token}=[fill=white,text=black]
+%  \node[place,label=above:$p_{i}$] at (0,0) (pi) {};
+%  \node[place,label=above:$p_{k}$] at (2,0) (pk) {};
+%  \node[place,label=above:$p_{c_1}$] at (1,1) (pc1) {};
+%  \node[transition,label=60:$t_i$] at (1,0) (t) {};
+%  \draw[arc] (pi) -- (t) node[midway,above]{$[0,\infty]$} {};
+%  \draw[arc] (t) -- (pk) {};
+%  \draw[arc] (t) -- (pc1) {};
+%\end{tikzpicture}
+%\label{fig:inc}
+%\captionsetup{type=subfigure}
+%\caption{\tt $i$: $c_1$++; goto $k$}
+%\end{minipage}
+%%\hspace{0mm}
+%\begin{minipage}[c]{0.5\textwidth}
+%\vspace{0.5cm}
+%\begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.5]
+%  \tikzstyle{arc}=[->,>=stealth,thick]
+%  \tikzstyle{transportArc}=[->,>=diamond,thick]
+%  \tikzstyle{every place}=[minimum size=6mm,thick]
+%  \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+%  \tikzstyle{every token}=[fill=white,text=black]
+%  \tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+%  \node at (-0.85,0) {};
+%  \node at (2.8,0) {};
+%  \node[place,label=above:$p_{i}$] at (0,0) (pi) {};
+%  \node[place,label=above:$p_{k}$] at (2,0) (pk) {};
+%  \node[place,label=above:$p_{\ell}$] at (2,1) (pl) {};
+%  \node[place,label=above:$p_{c_1}$] at (0,1) (pc1) {};
+%  \node[transition,label=60:$t_i^{\mathit{dec}}$] at (1,1) (tdec) {};
+%  \node[urgency] at (1,1) {};
+%  \node[transition,label=60:$t_i^{\mathit{zero}}$] at (1,0) (tzero1) {};
+% \draw[arc] (pi) -- (tdec) node[midway,left]{$[0,\infty]$} {};
+% \draw[arc] (pi) -- (tzero1) node[midway,above]{$[1,\infty]$} {};
+% \draw[arc] (pc1) -- (tdec) node[midway,above,pos=0.5]{$[0,\infty]$} {}; 
+% \draw[arc] (tdec) -- (pl) {};
+% \draw[arc] (tzero1) -- (pk) {};
+%\end{tikzpicture}
+%\vspace{-0.4cm}
+%\label{fig:dec}
+%\captionsetup{type=subfigure}
+%\caption{{\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell$)}}
+%\end{minipage}
+%\caption{Simulation of (Inc) and (Dec) instructions with urgent transitions\label{fig:urgent-reduction}}
+%\end{figure}
+
+Let us now observe
+that this invariant is preserved after simulating the 
+increment instruction (Figure~\ref{fig:increment_simulation}).
+Assume that all tokens in the counter places are of age $1$ and that
+the place $p_i$ contains one token of age $0$.
+%(initially created by the initialization transition in Figure~\ref{fig:start}
+%that just resets the token age to $0$). 
+Before $t_i$ can be fired, one time unit must pass and this guarantees
+that all tokens in the counter places will become of age $2$. After firing
+of $t_i$, we also add one token of age $0$ to $p_{c_1}$ 
+and moreover, a token of age $0$ in the place $q_i$ is created.
+Before we can proceed and delay one time unit 
+and then fire $t_i^{\mathit goto}$, we must fire the
+transitions $t_{c_1}^{\mathit reset}$ and $t_{c_2}^{\mathit reset}$ once
+for every token of age $2$ in the counter places in order to reset 
+them all to the age $0$, otherwise the age invariant $\leq 2$ in the token 
+places disables the delay of one time unit. Clearly, after the transition 
+$t_i^{\mathit goto}$ is fired, all counter tokens are again of age $1$
+(including the one added to $p_{c_1}$) and we argued for a faithful simulation
+of the increment instruction.
+
+\begin{figure}[h]
+\captionsetup[figure]{position=above}
+\caption{Simulation of a Minsky machine by a workflow net with invariants.}
 \begin{center}
-  \begin{minipage}[c]{\textwidth}
+\begin{minipage}[c]{\textwidth}
 \centering
 \begin{tikzpicture}[font=\scriptsize, xscale=.9,yscale=1.6]
    \tikzstyle{arc}=[->,>=stealth,thick]
@@ -160,26 +204,9 @@ if the Minsky machine halts.
     edge [pre,bend left=10] node[above,xshift=0mm,pos=0.5]{$[0,\infty]$}(p2c)
     edge [post,bend left=10] (p1c);
 \end{tikzpicture}
-    \captionsetup{type=subfigure}
-    \caption{Simulation of the counters $c_1$ and $c_2$.}
-    \label{fig:register_simulation}
+    \captionof{subfigure}{Simulation of the counters $c_1$ and $c_2$.\label{fig:register_simulation}}
   \end{minipage}
-%\\
-%  \subfloat[][Simulation start]{
-%\begin{tikzpicture}[font=\scriptsize,scale=1.6]
-%   \tikzstyle{arc}=[->,>=stealth,thick]
-%   \tikzstyle{transportArc}=[->,>=diamond,thick]
-%   \tikzstyle{every place}=[minimum size=6mm,thick]
-%   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
-%   \tikzstyle{every token}=[fill=white,text=black]
-  %\node[place, label=above:$in$] at (0,1) (pin) {};
-  %\node[place, label=above:$p_1$] at (2,1) (p1) {};
-  %\node[transition, label=80:$t_{\mathit{start}}$] at (1,1) {}
-  %  edge [pre] node[above] {$[0,\infty]$} (pin) {}
-  %  edge [post] (p1) {};
-%\end{tikzpicture}
-%    \label{fig:start}
-%  }
+
   \begin{minipage}[c]{\textwidth}
 %    \input{figures/simu_increment}
 \centering
@@ -208,9 +235,8 @@ if the Minsky machine halts.
     edge [pre, bend right] node[above,sloped,pos=0.7] {$[0,\infty]$} (presetr3i) 
     edge [post] (pk) {};
 \end{tikzpicture}
-    \captionsetup{type=subfigure}
-    \caption{{\tt $i$: $c_1$++; goto $k$}}
-    \label{fig:increment_simulation}
+    \captionof{subfigure}{{\tt $i$: $c_1$++; goto $k$}\label{fig:increment_simulation}}
+      
   \end{minipage} 
   \begin{minipage}[c]{\textwidth}
     %\input{figures/simu_test_decrement}
@@ -250,56 +276,11 @@ if the Minsky machine halts.
     edge [pre,bend right=30] node[right,yshift=.0mm,pos=0.3]{$[0,\infty]$} (presetr3i)
     edge [post] (pk);
 \end{tikzpicture}
-   \captionsetup{type=subfigure}
-   \caption{{\tt $i$: if $c_1$=$0$ then goto $k$ else 
-           ($c_1$--; goto $\ell$)}.}
-    \label{fig:test_decrement_simulation}
+      \captionof{subfigure}{{\tt $i$: if $c_1$=$0$ then goto $k$ else 
+           ($c_1$--; goto $\ell$)}.\label{fig:test_decrement_simulation}}
   \end{minipage}
-  \caption{Simulation of a Minsky machine by a workflow net with invariants}%
-  \label{fig:cont}%
 \end{center}
 \end{figure}
-
-%A very similar reduction can be done for workflow nets that can, instead
-%of urgent transitions, employ inhibitor arcs. In order to guarantee
-%that the simulation is fair, we simply add an inhibitor arc from the
-%counter place $p_{c_1}$ to the transition $t_i^{\mathit{zero}}$.
-%Otherwise the net is completely untimed and again, the workflow net is
-%sound if and only if the Minsky machine halts.
-
-The reduction for workflow nets that contain only age invariants
-is more complicated. The reduction idea is based on~\cite{memics_paper}, 
-however, it had to be nontrivially modified in order to avoid the
-large number of possible deadlocks introduced in the reduction.
-
-The counters are now modelled by two places that contain age invariants
-ensuring that no tokens can get older than $2$, see 
-Figure~\ref{fig:register_simulation}. The intuition is that
-before and after the simulation of any instruction, all tokens in
-the places $p_{c_1}$ and $p_{c_2}$ are exclusively of age $1$. 
-As before the input place is $\itn{in}=p_1$ and the output place
-is $\itn{out}=p_n$.
-
-Let us now observe
-that this invariant is preserved after simulating the 
-increment instruction (Figure~\ref{fig:increment_simulation}).
-Assume that all tokens in the counter places are of age $1$ and that
-the place $p_i$ contains one token of age $0$.
-%(initially created by the initialization transition in Figure~\ref{fig:start}
-%that just resets the token age to $0$). 
-Before $t_i$ can be fired, one time unit must pass and this guarantees
-that all tokens in the counter places will become of age $2$. After firing
-of $t_i$, we also add one token of age $0$ to $p_{c_1}$ 
-and moreover, a token of age $0$ in the place $q_i$ is created.
-Before we can proceed and delay one time unit 
-and then fire $t_i^{\mathit goto}$, we must fire the
-transitions $t_{c_1}^{\mathit reset}$ and $t_{c_2}^{\mathit reset}$ once
-for every token of age $2$ in the counter places in order to reset 
-them all to the age $0$, otherwise the age invariant $\leq 2$ in the token 
-places disables the delay of one time unit. Clearly, after the transition 
-$t_i^{\mathit goto}$ is fired, all counter tokens are again of age $1$
-(including the one added to $p_{c_1}$) and we argued for a faithful simulation
-of the increment instruction.
 
 Let us consider now the test and decrement instruction simulated by
 the net in Figure~\ref{fig:test_decrement_simulation}. Again, let us assume

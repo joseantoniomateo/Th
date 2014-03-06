@@ -162,11 +162,7 @@ somewhere else in the marking $M'_{out}$. This contradicts
 condition $b)$ of Definition~\ref{def:soundness}.
 \end{proof}
 
-\begin{figure}[!t]
-\centering
-%\fbox{ \parbox[t]{14cm}{ 
 
-%\subfloat[Sound and unbounded net with inhibitor arcs]{\label{fig:inhun}
 \begin{minipage}[c]{0.32\textwidth}
 \centering
 \begin{tikzpicture}[font=\scriptsize,xscale=.6,yscale=0.7]
@@ -208,9 +204,8 @@ edge[pre] node[auto] {$$} (p2);
 
 \draw [-o] (p2) -- (4,-2) -- (c) ;
 \end{tikzpicture}
-\captionsetup{type=subfigure}
+\captionof{subfigure}{Inhibitor arcs.}
 \label{fig:inhun}
-\caption*{Inhibitor arcs.}
 \end{minipage}
 %\hspace{9mm}
 %\subfloat[Sound and unbounded net with invariants]{\label{fig:invun}
@@ -253,8 +248,7 @@ edge[post] (out);
 \node[transition] (d) at (0.2,-2) {} % 
 edge[pre] node[auto] {$$} (p2);
 \end{tikzpicture}
-\captionsetup{type=subfigure}
-\caption*{Age invariants.}
+\captionof{subfigure}{Age invariants.}
 \label{fig:invun}
 \end{minipage}
 %\hspace{9mm}
@@ -300,14 +294,13 @@ edge[post] (out);
 edge[pre] node[auto] {$$} (p2);
 \node[urgency] at (0.2,-2){};
 \end{tikzpicture}
-\captionsetup{type=subfigure}
-\caption*{Urgent transitions.}
+\captionof{subfigure}{Urgent transitions.}
 \label{fig:urgun}
 \end{minipage}
 %}}
 %\vspace{-0.25cm}
-\caption{\label{fig:unsound}Sound and unbounded extended timed-arc workflow nets}
-%\vspace{-0.3cm}
-\end{figure}
+\captionof{figure}{Sound and unbounded extended timed-arc workflow nets.\label{fig:unsound}}
+
+
 
 

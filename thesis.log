@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  5 MAR 2014 17:17
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  6 MAR 2014 13:36
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -1290,27 +1290,27 @@ Overfull \hbox (3.09982pt too wide) detected at line 28
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 30
- [][]\OT1/pbk/l/n/10 109[][]
+ [][]\OT1/pbk/l/n/10 111[][]
  []
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 32
- [][]\OT1/pbk/l/n/10 113[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 33
  [][]\OT1/pbk/l/n/10 115[][]
  []
 
 
+Overfull \hbox (3.09982pt too wide) detected at line 33
+ [][]\OT1/pbk/l/n/10 117[][]
+ []
+
+
 Overfull \hbox (3.09982pt too wide) detected at line 34
- [][]\OT1/pbk/l/n/10 128[][]
+ [][]\OT1/pbk/l/n/10 129[][]
  []
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 35
- [][]\OT1/pbk/l/n/10 132[][]
+ [][]\OT1/pbk/l/n/10 133[][]
  []
 
 
@@ -1362,12 +1362,7 @@ Overfull \hbox (3.09982pt too wide) detected at line 35
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 37
- [][]\OT1/pbk/l/n/10 111[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 38
- [][]\OT1/pbk/l/n/10 118[][]
+ [][]\OT1/pbk/l/n/10 113[][]
  []
 
 
@@ -1376,28 +1371,28 @@ Overfull \hbox (3.09982pt too wide) detected at line 41
  []
 
 
-Overfull \hbox (3.09982pt too wide) detected at line 45
- [][]\OT1/pbk/l/n/10 121[][]
+Overfull \hbox (3.09982pt too wide) detected at line 42
+ [][]\OT1/pbk/l/n/10 139[][]
  []
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 48
- [][]\OT1/pbk/l/n/10 129[][]
+ [][]\OT1/pbk/l/n/10 139[][]
  []
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 49
- [][]\OT1/pbk/l/n/10 131[][]
+ [][]\OT1/pbk/l/n/10 140[][]
  []
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 52
- [][]\OT1/pbk/l/n/10 135[][]
+ [][]\OT1/pbk/l/n/10 140[][]
  []
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 53
- [][]\OT1/pbk/l/n/10 136[][]
+ [][]\OT1/pbk/l/n/10 141[][]
  []
 
 )
@@ -2071,42 +2066,74 @@ t/10 g\OML/cmm/m/it/10 ; \OT1/cmr/m/it/10 w\OML/cmm/m/it/10 ; []; \OT1/cmr/m/it
 /10 I\OT1/cmr/m/n/10 )$
  []
 
-[118] [119]) (./decidability.tex [120]
-Overfull \hbox (8.98553pt too wide) in paragraph at lines 128--131
-[][]
+[118] [119]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 207.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 251.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 297.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: \captionsetup{type*=...} or \captionof
+(caption)                outside box or environment on input line 302.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 302.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (4.28867pt too wide) in paragraph at lines 166--302
+[]$[]$ $[]$ $[]$ 
  []
 
+) (./decidability.tex [120]
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--131
-[]\OT1/pbk/l/n/10 b: |$\OML/cmm/m/it/10 i$\OT1/pcr/m/n/10 : if $\OML/cmm/m/it/1
-0 c[]$\OT1/pcr/m/n/10 =$\OT1/cmr/m/n/10 0$ \OT1/pcr/m/n/10 then goto $\OML/cmm/
-m/it/10 k$ \OT1/pcr/m/n/10 else
- []
-
-
-Overfull \hbox (2.44005pt too wide) in paragraph at lines 85--133
-[]$[]$ $[]$ 
- []
+LaTeX Warning: Reference `fig:urgent-reduction' on page 121 undefined on input 
+line 62.
 
 
 Underfull \vbox (badness 4279) has occurred while \output is active []
 
  [121]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[122]
-Underfull \vbox (badness 5711) has occurred while \output is active []
 
- [123]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [122]
 Package hyperref Info: bookmark level for unknown algocf defaults to 0 on input
- line 333.
+ line 314.
 
-Underfull \hbox (badness 10000) detected at line 393
+Underfull \hbox (badness 10000) detected at line 374
 [][]
  []
 
-[124] [125] [126] [127] [128]) (./strong-soundness.tex [129]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [123]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [124]
+Underfull \vbox (badness 2012) has occurred while \output is active []
+
+ [125]
+[126] [127] [128]) (./strong-soundness.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [129]
 Overfull \hbox (2.44005pt too wide) in paragraph at lines 52--124
 []$[]$ $[]$ 
  []
@@ -2123,6 +2150,12 @@ Overfull \hbox (0.65312pt too wide) in paragraph at lines 140--152
 Underfull \vbox (badness 1688) has occurred while \output is active []
 
  [131]
+
+LaTeX Warning: Reference `fig:cont' on page 132 undefined on input line 206.
+
+
+LaTeX Warning: Reference `fig:cont' on page 132 undefined on input line 211.
+
 [132] [133]) (./continuous.tex [134] [135]
 Overfull \hbox (4.8801pt too wide) in paragraph at lines 127--199
 []$[]$   $[]$ 
@@ -2278,9 +2311,13 @@ Underfull \hbox (badness 4846) in paragraph at lines 515--518
 
 ) [161] [162
 
-] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
-(./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux)
-(./Conclusions.aux))
+]
+
+Package caption Warning: Unused \captionsetup[figure] on input line 180.
+See the caption package documentation for explanation.
+
+(./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux) (./chapter2.aux)
+(./chapter3.aux) (./chapter4.aux) (./chapter5.aux) (./Conclusions.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -2289,12 +2326,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20272 strings out of 495062
- 341144 string characters out of 1182644
- 488233 words of memory out of 3000000
- 22872 multiletter control sequences out of 15000+50000
+ 20236 strings out of 495062
+ 340656 string characters out of 1182644
+ 490218 words of memory out of 3000000
+ 22836 multiletter control sequences out of 15000+50000
  35849 words of font info for 109 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,28n,92p,1682b,1825s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (174 pages, 998828 bytes).
+Output written on thesis.dvi (174 pages, 984904 bytes).
