@@ -1,12 +1,12 @@
-\section{Introduction}
-Workflow nets~\cite{Aalst97,Aalst98} were introduced 
+%\section{Introduction}
+As commented in the introduction, Workflow nets~\cite{Aalst97,Aalst98} were introduced 
 by Wil van der Aalst as a formalism
 for modelling, analysis and verification of business workflow processes.
 %to model, validate and verify business process, \emph{workflow nets} (wf-nets) \cite{Aalst97,Aalst98}. 
 The formalism is based on Petri nets abstracting away most of the data 
 while focusing on the possible flow in the system. 
 Its intended use is in finding design errors 
-like the presence of deadlocks, livelocks 
+such as the presence of deadlocks, livelocks 
 and other anomalies in workflow processes. Such correctness criteria can
 be described via the notion of \emph{soundness} (see~\cite{AalstHHSVVW11}) that
 requires the option to complete the workflow, guarantees proper termination
@@ -17,15 +17,14 @@ invested much effort in defining new soundness criteria and/or
 improving the expressive power of the original model by adding new features 
 and studying the related decidability and 
 complexity questions
-(it is not in the scope of this paper to list all these works but we
-refer to~\cite{AalstHHSVVW11} for a recent overview).
+(see~\cite{AalstHHSVVW11} for a recent overview).
 %such as reset or inhibitor arcs, resources, time or multiple instances. 
 %It is impossible and is also out of the scope of this paper to summarise here all
 %of these works, and, therefore, we refer the interested reader to \cite{AalstHHSVVW11} for further information. 
 %Nevertheless, it is worthwhile to
 %mention that there is a common characteristic in all of this extended models: undecidability. Thus, soundness (or its different variants)
 %is decidable for classical workflow nets \cite{Aalst97}, but, for instance, it is undecidable when we add reset or inhibitor arcs \cite{AalstHHSVVW11}.
-In the present paper we consider a quantitative extension of workflow 
+In this Thesis we consider a quantitative extension of workflow 
 nets with timing features, allowing us to argue, among others, 
 about the execution intervals of tasks, deadlines and urgent behaviour of workflow processes. Our workflow
 model is based on timed-arc Petri nets~\cite{BLT:90,Hanisch:93} 
@@ -35,7 +34,7 @@ ages of tokens used for transition firing. %We use an extended version
 %of the model that allows us to capture advanced timing restrictions
 %in a convenient and direct way. 
 Let us first informally introduce 
-the model on our running example.
+our workflow model on a running example that will be used throughout this chapter.
 
 The timed-arc workflow net in Figure~\ref{fig:example} 
 describes a simple booking-payment workflow
@@ -56,7 +55,7 @@ the possible ages of tokens that can be consumed by transition firing.
 For simplicity we do not draw time intervals of the form $[0,\infty]$
 as they do not restrict the ages of tokens in any way.
 
-\begin{figure}[t]
+\begin{figure}[!h]
 \begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.4]
   \tikzstyle{arc}=[->,>=stealth,thick]
 	\tikzstyle{transportArc}=[->,>=diamond,thick]
@@ -187,29 +186,6 @@ Moreover, once a token appears in the place $\itn{out}$, it is mandatory
 that the rest of the workflow net does not contain any remaining tokens.
 One can verify (either manually or using our tool mentioned later)
 that the workflow net of our running example is both sound and strongly sound.
-
-\paragraph{Our contribution.}
-We define a workflow theory based on timed-arc Petri nets,
-extend the notion of soundness from~\cite{Aalst97} to deal with 
-timing features and introduce a new notion of strong soundness
-that guarantees time-bounded workflow termination. We study
-the decidability/undecidability of soundness and strong soundness
-and conclude that even though they are in general undecidable,
-we can still design efficient verification algorithms for two important
-subclasses: monotonic workflow nets 
-(not using any inhibitor arcs, age invariants and urgent transitions)
-and for the subclass of bounded nets. 
-This contrasts to the fact that for example the reachability
-question for monotonic workflow nets is already 
-undecidable~\cite{RGE:reachability}. 
-Moreover, our algorithms 
-allow us to compute the minimum and maximum execution times of the
-workflow. The theory is developed for
-discrete-time semantics but in Section~\ref{sec:cont} we discuss its
-relationship to the continuous-time semantics. Finally, we implement
-the algorithms given in this paper within the open-source tool 
-TAPAAL~\cite{DJJJMS:TACAS:12} and successfully demonstrate on a number of 
-case studies the applicability of the theory in real-world scenarios.
 
 \section*{Related Work}
 

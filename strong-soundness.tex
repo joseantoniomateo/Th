@@ -48,7 +48,7 @@ where $\sum_{i \in \nnul}d_i = \infty$.
 \end{description}
 \end{definition}
 
-\begin{figure}[!t]
+\begin{figure}[!h]
 \begin{minipage}[c]{0.5\textwidth}
 \centering
 \begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.1]
@@ -218,7 +218,7 @@ strong soundness is decidable and the maximum execution
 time computable, relying on Lemma~\ref{lem:finite}. 
 We prove this by reducing strong soundness of a given bounded ETAWFN $N$
 into a reachability problem on a bounded ETAPN $N(c)$, 
-where $c$ is a nonnegative integer; the translation
+where $c$ is a nonnegative integer. The translation
 is given in Figure~\ref{fig:nprime}. 
 The token from the place \itn{timer} has to move to the place $\itn{ready}$
 exactly at the time $c$ from the start of the workflow.
@@ -228,7 +228,7 @@ after at least $c$ time units passed, then we can fire the transition
 a token is moved to \itn{out} earlier, then the urgent transition
 \itn{early} will have to fire immediately.
 
-\begin{figure}[t]
+\begin{figure}[h]
 \centering
 \begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=2.0]
   \tikzstyle{arc}=[->,>=stealth,thick]

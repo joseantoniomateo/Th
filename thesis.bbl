@@ -129,6 +129,13 @@ Rajkumar Buyya, James Broberg, and Andrzej~M. Goscinski.
 \newblock {\em Cloud Computing Principles and Paradigms}.
 \newblock Wiley Publishing, 2011.
 
+\bibitem{tapaal}
+Joakim Byg, Kenneth~Yrke J{\o}rgensen, and Ji\v{r}\'{\i} Srba.
+\newblock {TAPAAL}: Editor, simulator and verifier of timed-arc {P}etri nets.
+\newblock In {\em Proceedings of the 7th International Symposium on Automated
+  Technology for Verification and Analysis}, ATVA '09, pages 84--89, Berlin,
+  Heidelberg, 2009. Springer-Verlag.
+
 \bibitem{wsdl}
 Roberto Chinnici, Jean-Jacques Moreau, Arthur Ryman, and Sanjiva Weerawarana.
 \newblock Web services description language (wsdl) version 2.0 part 1: Core
@@ -324,6 +331,12 @@ Niels Lohmann.
 \newblock A feature-complete petri net semantics for ws-bpel 2.0.
 \newblock In {\em WS-FM}, pages 77--91, 2007.
 
+\bibitem{LohmannK08}
+Niels Lohmann and Jens Kleine.
+\newblock Fully-automatic translation of open workflow net models into simple
+  abstract bpel processes.
+\newblock In {\em Modellierung}, pages 57--72, 2008.
+
 \bibitem{LucchiM07}
 Roberto Lucchi and Manuel Mazzara.
 \newblock A pi-calculus based semantics for ws-bpel.
@@ -475,6 +488,19 @@ Wil M.~P. van~der Aalst.
 Wil M.~P. van~der Aalst.
 \newblock The application of petri nets to workflow management.
 \newblock {\em Journal of Circuits, Systems, and Computers}, 8(1):21--66, 1998.
+
+\bibitem{AalstJL05}
+Wil M.~P. van~der Aalst, Jens~B{\ae}k J{\o}rgensen, and Kristian~Bisgaard
+  Lassen.
+\newblock Let's go all the way: From requirements via colored workflow nets to
+  a bpel implementation of a new bank system.
+\newblock In {\em OTM Conferences (1)}, pages 22--39, 2005.
+
+\bibitem{AalstL08}
+Wil M.~P. van~der Aalst and Kristian~Bisgaard Lassen.
+\newblock Translating unstructured workflow processes to readable bpel: Theory
+  and implementation.
+\newblock {\em Information {\&} Software Technology}, 50(3):131--159, 2008.
 
 \bibitem{van95}
 Wil M.~P. van~der Aalst and Michiel~A. Odijk.

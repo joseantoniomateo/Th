@@ -43,18 +43,308 @@ integer delays that achieves
 the minimum, and if it exists also the maximum, execution time. 
 \end{theorem}
 \begin{proof}
-Given a computation with real-time delays, we construct a set of linear
-inequalities that describe all possible delays allowed for the execution
-of the given trace. We only need difference constraints
-for this purpose and hence the corresponding matrix 
-%in the linear programming 
-is totally unimodular~\cite{umodmatrix1}. As the instance 
-has a real solution, it has also an optimal integral 
-solution~\cite{umodmatrix2}. 
-%The optimality  means 
-%that maximising or minimising
-%the accumulated delay on such a computation can be achieved via integer delays
-%only. 
+Let $N$ be an extended timed-arc Petri net and let $M_0$ be its marking
+with integer ages of tokens only.
+
+Let $r$ be an execution 
+\begin{equation}\label{eq:execution}
+M_0 \trans{d_0,t_0} M_1 \trans{d_1,t_1} M_2 \trans{d_2,t_2} 
+\ldots \trans{d_{n-1},t_{n-1}} M_{n}
+\end{equation}
+where $d_i \in \rnul$ for all $i$, $0 \leq i <n$.
+Let $m=max\{|M_i| \text{ s.t. } 0 \leq i \leq n\}$ be the maximum number of
+tokens in any of the intermediate markings.
+
+In order to prove that the same sequence of transitions can be executed
+also with integer time delays, we will first define a table
+with $m$ rows and $n+1$ columns that represents how the tokens
+in the net (rows) are moved around in the net by each transition firing
+(column $i$ represents the marking $M_i$ that enables the firing of
+transition $t_i$ and column $i+1$ the marking $M_{i+1}$ reached after its firing). 
+The timing information is forgotten in the table, it merely represents
+the consumption of tokens and whether they were produced by normal or
+transport arcs. Based on such a table we will later define a difference
+constraint system describing all possible delays that enable the firing
+of the given transition sequence.
+
+A table \itn{T} for the execution $r$ is a matrix with $m$ rows and
+$n+1$ columns such that each element \tai \ of the table, where 
+$1 \leq y \leq m$ and $0 \leq i \leq n$, contains either the value 
+$\bot$ (unused token) or the pair $(p,f)$ where $p \in P$ represents the location of the token
+and $f \in \nnul \cup \{\bullet\}$ is a flag signalling whether
+the age of the given token was reset to some given value from $\nnul$
+or whether it has not changed (the flag value $\bullet$).
+We denote by \taip and \taif
+the elements $p$ and $f$ of the pair of \tai, respectively.
+If one element of the pair $(p,f)$ is not relevant for our considerations,
+we simply write $(p,-)$ or $(-,f)$. We let $y$ to range over
+the rows in the table (tokens) and $i$ over the columns in the table
+(transition firing steps).
+
+\begin{definition}[Valid table for run $r$] 
+A table $T$ for the run $r$ is \emph{valid} if the following conditions
+are met.
+\begin{description}
+\item[a)] Given the initial marking 
+$M_0=\{(p_1,x_1),(p_2,x_2),\ldots,(p_k,x_k)\}$, 
+the zero column of \itn{T} is defined as
+%consists of \itn{T} includes a column \taj{y}{0} such that 
+$\taj{y}{0}\eqdef(p_y,x_y)$ if $1\leq y \leq k$, and 
+$\taj{y}{0}\eqdef\bot$ if $k <  y \leq m$.
+\item[b)] For each column \itn{i} in the table:
+\begin{itemize}
+\item there is a set $\consumei\subseteq \jindex$ representing 
+the $y$-indexes of the tokens  in column $i$
+consumed by firing the transition $t_i$ such that for all 
+$p \in {^\bullet}t_i$ we have 
+$w(p,t_i)=|\{y \in \consumei \mid \taip=p\}|$,
+and for all $p \in P \setminus \!^\bullet{t_i}$ we have 
+$|\{y \in \consumei \mid \taip=p\}|=0$, 
+\item there is a set $\producei\subseteq \jindex$ representing
+the $y$-indexes of the tokens in column $i+1$ produced by firing 
+the transition $t_i$ such that for all 
+$p \in t_i^\bullet$ we have 
+$w(t_i,p)=|\{y \in \producei \mid \tajp{y}{i+1}=p\}|$ 
+and for all $p \in P\,\setminus\, t_i^\bullet$ we have 
+$|\{y \in \producei \mid \tajp{y}{i+1}=p\}|=0$, and
+\item there is a bijection 
+$\itn{\mathscr{P}}:\jindex\rightarrow\jindex$ that relates the indexes 
+of column $i$ with 
+those presented in column $i+1$ such that
+\begin{enumerate}[i)]
+\item if $|\consumei| \leq |\producei|$ and $y \in \consumei$ then $\mathscr{P}(y) \in \producei$,
+\item if $|\consumei| \geq |\producei|$ and $\mathscr{P}(y) \in \producei$ then $y \in \consumei$,
+\item if $y \in \consumei$ and 
+$\type((\taip,t_i))=\transporti= \type((t_i,p'))$ 
+then $\mathscr{P}(y)=y$ and $\tajp{y}{i+1}=p'$,
+\item if $y \in \jindex \setminus \consumei$ and $\tai\neq\bot$ then $\mathscr{P}(y)=y$ and $\tajp{y}{i+1}=\taip$,
+\item if  $y \in \jindex\setminus \consumei$ and $\tai=\bot$ then either $\mathscr{P}(y) \in \producei$, or $\mathscr{P}(y)=y$ and $\taj{y}{i+1}=\bot$, and
+
+%\item if $a \in \producei$ and $\type(t_i,\taip)=Transport_l$ and $\type(p^\prime,t_i)=Transport_l$ for some l then $\mathscr{P}(a)=a$,
+\item if $T_{\mathscr{P}(y),i+1}=\bot$ then $y \in \consumei$ or $\tai=\bot$.
+\end{enumerate}
+\end{itemize}
+
+\item[c)] For each column $i$ in the table:
+\begin{itemize}
+\item if $\type((p,t_i))=\inhib$ for some $p \in P$ 
+then for all $y \in \jindex$, $\taip\neq p$,
+\item for all $y \in \producei$, if
+${\mathit \type((t_i,T^{place}_{y,i+1}))=\normal}$ 
+then ${\mathit T^{flag}_{y,i+1}=0}$ else ${\mathit T^{flag}_{y,i+1}=\bullet}$,
+and
+%(${\mathit \type((t_i,T^{place}_{y,i+1}))=Transport_\ell}$ for some $\ell$), 
+\item if $y \notin \producei$ and $\taj{y}{i+1} \neq \bot$ then ${\mathit T^{flag}_{y,i+1}=\bullet}$.
+\end{itemize}
+\end{description}
+\end{definition}
+Let us now assume a  computation 
+$$M_0 \trans{0,start} M_1 \trans{3.5,book} M_2 \trans{4.6,pay}  
+M_3 \trans{0,empty} M_4 \trans{0,empty}  M_5 \trans{0,empty} 
+M_6 \trans{0,success}M_7$$ 
+in our running example from Figure~\ref{fig:example}, where $M_0=\{(in,0)\}$.
+One possible valid table $T$ for this computation is given
+in Table~\ref{validtable}.
+
+\begin{table}
+\scriptsize
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+ \hline
+ & $M_0$ & $M_1$ & $M_2$ & $M_3$ & $M_4$ & $M_5$ & $M_6$ & $M_7$\\
+\hline
+1 & (in,0) & (booking,0)   & (payment,$\bullet$) & (successful,0) & (successful,0) & (successful,0) & (successful,0) & (out,0)\\\hline
+2 & $\bot$   & (attempts,0) & (attempts,$\bullet$) & (attempts,$\bullet$) & (attempts,$\bullet$) & (attempts,$\bullet$) & $\bot$ & $\bot$\\\hline
+3 & $\bot$   & (attempts,0) & (attempts,$\bullet$) & (attempts,$\bullet$) & (attempts,$\bullet$) & $\bot$ & $\bot$ & $\bot$\\\hline
+4 & $\bot$   & (attempts,0) & (attempts,$\bullet$) & (attempts,$\bullet$) & $\bot$ & $\bot$ & $\bot$ & $\bot$\\
+\hline
+\end{tabular}
+\vspace{3mm}
+\caption{A valid table for this run.}
+\vspace{-3mm}
+\label{validtable}
+\end{table}
+
+One can verify that there is a valid table for any computation of the
+given net $N$. On the other hand, any valid table defines a legal computation 
+on untimed markings represented by each column.
+
+\begin{definition}[Untimed marking given by column $i$] \label{def:untmark}
+Let $T$ be a valid table and let $0 \leq i < n$.
+We define the untimed marking $M_i^u \eqdef \{ \tajp{y}{i} \in P \mid
+1 \leq y \leq m  \}$  as a multiset of all places where a token is present
+in the column $i$ of the table $T$.
+\end{definition}
+
+By the way a valid table is constructed, the reader can easily verify
+the validity of the following lemma.
+\begin{lemma}[Untimed consistency of a valid table $T$]\label{lemma:untmarking}
+Let \itn{T} be a valid table.
+Then $M^u_i \trans{t_i} M^{u}_{i+1}$ for all $i$, $0 \leq i < n$,
+in the classical (untimed) Petri net semantics.
+\end{lemma}
+
+We shall now proceed with defining a set of difference constraint 
+inequalities encoding in a sound and complete way 
+the timings aspects of the computation given in Equation~(\ref{eq:execution}).
+
+Let the \emph{execution time} of a transition $t_i$
+in Equation~(\ref{eq:execution}) be denoted by the variable $e_i$
+representing the total time elapsed from the 
+initialization until the transition $t_{i}$ is fired. 
+In order to construct the system of inequalities over the variables
+$e_0, \ldots, e_{n-1}$, we need to define an expression describing
+the age of a token $y$ just at the moment the transition $t_i$ is fired.
+
+\begin{definition}[Token-age expression]\label{def:age}
+Let $T$ be a valid table.
+We define \agexi{y}{i} where $1 \leq y \leq m$ and $0 \leq i < n$
+as the expression 
+\begin{center}
+``$e_i -e_{j-1} +d$'' 
+\end{center}
+where $j$, $j\leq i$,
+is the largest number not greater than $i$
+% entry time of the marking that contains the first element of T 
+such that $\tajf{y}{j}=d\in \nnul$. 
+%By definition, $e_{-1}=\agexi{y}{-1}=0$ for all $y \in \jindex$.
+\end{definition}
+
+The intuition is that $\agexi{y}{i}$ expresses, in terms of
+the execution time variables, the current age
+of token $y$ after the time delay $d_i$ and exactly when 
+firing the transition $t_i$.
+The correctness of the definition follows from the
+requirements on a valid table and the fact that the first column (i=0) of 
+any valid table contains only pairs $(p,f)$ where $f \not= \bullet$.
+
+For example, in our running example in Table~\ref{validtable},
+the age of token $1$ at the moment the transition \itn{pay} is fired
+can be expressed as $e_2 - e_0 + 0$.
+
+
+%{\bf Remark.} It is important to note that $\agexi{y}{i}$ always exists for all $y \in \jindex$ 
+%and $i \in \{-1,0,\ldots,n\}$ since if $\type((t_{i-1}\taip))=\normal$  then
+%$\taj{y}{i}=(-,0)$ and, therefore, $j=i$, whereas if $\type((t_{i-1}\taip))=Transport_\ell$ for some $\ell$,
+%we will always find such a $j$ since, according to the definition of the bijective function $\mathscr{P}$ (condition iii)) and
+%the fact that the multiplicity of the output arc of this transport arc is by definition 1, one can always search backward in the same
+%row and find, at least, one element such that $\taif\neq \bullet$.   
+
+We are now ready to define, for a given valid table, a system of inequalities
+over the variables $e_i$ that expresses all the timing constraints on the 
+firing of transitions, age invariants and urgency.
+ 
+\begin{definition}[Constraint system]\label{def:consys}
+Let \itn{T} be a valid table for a run $r$ from
+Equation~(\ref{eq:execution}). The constraint system $\mathscr{C}$ for $T$ 
+is the set of inequations over the variables
+$e_0, e_1, \ldots, e_{n-1}$, containing the constraints 
+$\{ e_0 \leq e_1,\ e_1 \leq e_2, \ldots, e_{n-2} \leq e_{n-1}\}$, 
+and constructed 
+such that for all $p \in P$, $y \in \jindex$ and $i \in \iindex$:
+\begin{description}
+\item[a)] if $\taip=p$ and $\inv(p)=[0,u]$ where $u \in \nnul$, 
+we add the inequality $\itn{age(y,i)\leq u}$ to $\mathscr{C}$,
+\item[b)] if $\taip=p$ and $y \in \consumei$ and $(p,t_i) \in \ia$ and $\cfunction((p,t_i))=[a,b]$, we add $a \leq \agexi{y}{i}$ and if $b \not=\infty$ also 
+$\agexi{y}{i}\leq b$ to $\mathscr{C}$, and
+\item[c)] if $M^u_i$ enables some $t \in \Turg$
+then we add $e_i - e_{i-1} = 0$ to $\mathscr{C}$
+where by definition $e_{-1}$ is replaced with $0$.
+\end{description}
+\end{definition}
+
+In our running example (Figure \ref{fig:example}), the constraint system for the valid table
+depicted in Table~\ref{validtable} is the following.
+\begin{itemize}
+\item We add the inequalities
+$$e_0 \leq e_1,\ \ \  e_1 \leq e_2,\ \ \ \ldots,\ \ \ e_5 \leq e_6\ .$$
+\item For the two nontrivial age invariants, we add
+$\agexi{1}{1} \leq 5$ and $\agexi{1}{2} \leq 10$, in other words
+we add the constraints
+$$e_1-e_0 \leq 5,\ \ \  e_2-e_0 \leq 10 \ . $$
+\item Regarding the guards on input arcs, we add for column $0$
+the constraint $0 \leq\agexi{1}{0}$, for column $1$ the constraints
+$2 \leq \agexi{1}{1}$ and
+$\agexi{1}{1} \leq 5$, for column $2$ the constraints
+$0 \leq \agexi{1}{2}$ and
+$\agexi{1}{2} \leq 10$ and so on for the remaining columns (producing
+only trivial constrains that are always satisfied). Hence the following
+constraints (listing only the nontrivial ones) are added to the systems:
+$$2 \leq e_1 - e_0,\ \ \ e_1 - e_0 \leq 5,\ \ \ e_2-e_0 \leq 10\ .$$
+\item Finally, for each column that enables some urgent transition 
+(columns $0$, $3$, $4$, $5$ and $6$), we add (recall that $e_{-1}=0$):
+$$e_0=0, \ \ \ e_3=e_2, \ \ \ e_4=e_3, \ \ \ e_5=e_4, \ \ \ e_6=e_5\ .$$
+\end{itemize}
+
+Observe that the original delays in the trace from Equation~(\ref{eq:execution})
+form a solution of the constructed constraint system: 
+$e_0=0$,
+$e_1=3.5$,
+$e_2=8.1$,
+$e_3=8.1$,
+$e_4=8.1$,
+$e_5=8.1$,
+$e_6=8.1$.
+In fact, there is also an integer solution to the constraint system
+(this is not only a coincidence),
+e.g.
+$e_0=0$,
+$e_1=2$,
+$e_2=3$,
+$e_3=3$,
+$e_4=3$,
+$e_5=3$,
+$e_6=3$,
+and such a sequence is executable in our running workflow example.
+
+\begin{lemma} \label{lem:correct}
+Let $r$ be a run $M_0 \trans{d_0,t_0} M_1 \trans{d_1,t_1} M_2 \trans{d_2,t_2} 
+\ldots \trans{d_{n-1},t_{n-1}} M_{n}$ with $d_i \in \rnul$ in a workflow
+net $N$. Then there is a valid table $T$ for $r$
+and the corresponding constraint system $\mathscr{C}$ such that
+$e_i= \sum_{j=0 \ldots i} d_j$ is a solution of $\mathscr{C}$. 
+Moreover, $e_0, e_1, \ldots, e_{n-1}$ is a (real) solution of 
+$\mathscr{C}$ if and only if
+$M_0 \trans{e_0,t_0} M_1 \trans{e_1-e_0,t_1} M_2 \trans{e_2-e_1,t_2} 
+\ldots \trans{e_{n-1}-e_{n-2},t_{n-1}} M_{n}$.
+\end{lemma}
+\begin{proof}[sketch]
+By analysing the requirements for a valid table, we can see that if
+a run $r$ can be performed in the net $N$ then we are able to 
+design a table that satisfies all the requirements for the untimed
+part of the run execution and uses the right tokens in the pairing
+bijection such that the corresponding constraint system $\mathscr{C}$
+gives the sufficient and necessary
+conditions for the execution time variables $e_i$ to produce a valid
+computation of the net $N$ with the given sequence of transitions firing. 
+Hence the original execution times in the given run are one possible solution of 
+the system but any such a solution actually provides a possible
+timed execution of the run (note that if a transition $t_i$ is performed 
+at time $e_i$ and transition $t_{i+1}$ is performed at time $e_{i+1}$ then
+the delay between the execution of these two transitions is $e_{i+1}-e_{i}$).
+\qed
+\end{proof}
+
+We can now summarise and conclude the proof of Theorem~\ref{thm:discvscont}. 
+We assumed a run of the net with real delays as in Equation~(\ref{eq:execution}).
+Based on this we know that there exists a valid table $T$ for such a run such that 
+the constraint system $\mathscr{C}$ for the run, representing all possible 
+delays that can execute the transition sequence in~(\ref{eq:execution}), has
+a solution corresponding to the delays in (\ref{eq:execution}). This is due
+to Lemma~\ref{lem:correct}. 
+
+The constraint system $\mathscr{C}$ is an instance of linear programming 
+problem where we used difference constraints only and we are therefore 
+guaranteed that the matrix in the linear programming problem is totally
+unimodular~\cite{umodmatrix1}. As the system has a solution, it also
+has an optimal integral solutions---a general result guaranteed
+for any linear programming problem with totally unimodular 
+matrix~\cite{umodmatrix2}.
+Hence using Lemma~\ref{lem:correct} we know that there is also an execution
+of $N$ following the same transitions as in Equation~(\ref{eq:execution})
+but with integral delays only. Moreover, the minimum and maximum
+execution times can be also achieved by integral delays only. Hence
+the proof of Theorem~\ref{thm:discvscont} is completed.
+
 \end{proof}
 
 As expected, continuous soundness now implies soundness in the discrete case.
@@ -122,7 +412,7 @@ $N$ is sound also in the continuous semantics.
 \end{proof}
 
 
-\begin{figure}[!t]
+\begin{figure}[!h]
 %\subfloat[][Using invariants]{
 \begin{minipage}[c]{0.5\textwidth}
 \begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.6]

@@ -39,16 +39,19 @@
 \contentsline {subfigure}{\numberline {b}{\ignorespaces Age invariants.\relax }}{120}{subfigure.5.1.2}
 \contentsline {subfigure}{\numberline {c}{\ignorespaces Urgent transitions.\relax }}{120}{subfigure.5.1.3}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Sound and unbounded extended timed-arc workflow nets.\relax }}{120}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Simulation of a Minsky machine by a workflow net with invariants.\relax }}{123}{figure.caption.66}
-\contentsline {subfigure}{\numberline {a}{\ignorespaces Simulation of the counters $c_1$ and $c_2$.\relax }}{123}{figure.caption.66}
-\contentsline {subfigure}{\numberline {b}{\ignorespaces {\tt $i$: $c_1$++; goto $k$}\relax }}{123}{figure.caption.66}
-\contentsline {subfigure}{\numberline {c}{\ignorespaces {\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell $)}.\relax }}{123}{figure.caption.66}
-\contentsline {subfigure}{\numberline {d}{\ignorespaces Sound but strongly unsound workflow.\relax }}{131}{subfigure.caption.69}
-\contentsline {subfigure}{\numberline {e}{\ignorespaces Strongly sound workflow.\relax }}{131}{subfigure.caption.70}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Fragment of customer complaint workflow ($[0,\infty ]$ guards are omitted)\relax }}{131}{figure.caption.68}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Transformation of an ETAWFN $N$ into an ETAPN $\mathit {N(c)}$\relax }}{133}{figure.caption.71}
-\contentsline {subfigure}{\numberline {a}{\ignorespaces Using invariants.\relax }}{137}{subfigure.caption.73}
-\contentsline {subfigure}{\numberline {b}{\ignorespaces Using urgency.\relax }}{137}{subfigure.caption.74}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Sound nets in the discrete semantics and unsound in the continuous one\relax }}{137}{figure.caption.72}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Screenshot of the workflow analysis tool\relax }}{138}{figure.caption.75}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces \tt $i$: $c_1$++; goto $k$\relax }}{122}{subfigure.caption.66}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces {\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell $)}\relax }}{122}{subfigure.caption.67}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Simulation of (Inc) and (Dec) instructions with urgent transitions\relax }}{122}{figure.caption.65}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Simulation of a Minsky machine by a workflow net with invariants.\relax }}{123}{figure.caption.68}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces Simulation of the counters $c_1$ and $c_2$.\relax }}{123}{figure.caption.68}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces {\tt $i$: $c_1$++; goto $k$}\relax }}{123}{figure.caption.68}
+\contentsline {subfigure}{\numberline {c}{\ignorespaces {\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell $)}.\relax }}{123}{figure.caption.68}
+\contentsline {subfigure}{\numberline {d}{\ignorespaces Sound but strongly unsound workflow.\relax }}{131}{subfigure.caption.71}
+\contentsline {subfigure}{\numberline {e}{\ignorespaces Strongly sound workflow.\relax }}{131}{subfigure.caption.72}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Fragment of customer complaint workflow ($[0,\infty ]$ guards are omitted)\relax }}{131}{figure.caption.70}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Transformation of an ETAWFN $N$ into an ETAPN $\mathit {N(c)}$\relax }}{133}{figure.caption.73}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces Using invariants.\relax }}{142}{subfigure.caption.76}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces Using urgency.\relax }}{142}{subfigure.caption.77}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Sound nets in the discrete semantics and unsound in the continuous one\relax }}{142}{figure.caption.75}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Screenshot of the workflow analysis tool\relax }}{143}{figure.caption.78}
 \addvspace {10\p@ }

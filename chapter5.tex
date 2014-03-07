@@ -1,11 +1,34 @@
 \chapter{Timed-arc workflow nets}\label{chapter:c5}
 \markboth{Chapter~\ref{chapter:c5}.}{}
 
-Recordar incluir los challenges of workflow modelling (resaltar el tiempo y la tool).
+In this chapter, we define a framework for modelling business process in terms of timed-arc workflow nets. Here, 
+we present a workflow theory based on timed-arc Petri nets,
+extend the notion of soundness from~\cite{Aalst97} to deal with 
+timing features and introduce a new notion of strong soundness
+that guarantees time-bounded workflow termination. We study
+the decidability/undecidability of soundness and strong soundness
+and conclude that even though they are in general undecidable,
+we can still design efficient verification algorithms for two important
+subclasses: monotonic workflow nets 
+(not using any inhibitor arcs, age invariants and urgent transitions)
+and for the subclass of bounded nets. 
+This contrasts to the fact that for example the reachability
+question for monotonic workflow nets is already 
+undecidable~\cite{RGE:reachability}. 
+Moreover, our algorithms 
+allow us to compute the minimum and maximum execution times of the
+workflow. The theory is developed for
+discrete-time semantics but in Section~\ref{sec:cont} we discuss its
+relationship to the continuous-time semantics. Finally, we implement
+the algorithms given here within the open-source tool 
+TAPAAL~\cite{DJJJMS:TACAS:12} and successfully demonstrate on a number of 
+case studies the applicability of the theory in real-world scenarios.
 
 Analysis of workflow processes with quantitative aspects
 like timing is of interest in numerous time-critical applications. 
-We suggest a workflow model based on timed-arc Petri nets and study
+For instance, workflow nets have been used in various works to provide a formal
+model for some WS-BPEL constructions e.g. \cite{AalstJL05,Ouyang2007,AalstL08,LohmannK08,Lohmann07}.
+We suggest in this chapter a workflow model based on timed-arc Petri nets and study
 the foundational problems of soundness and strong (time-bounded) soundness.
 We explore the decidability of these problems
 and show, among others, that soundness is decidable for monotonic 
@@ -20,7 +43,7 @@ the MPEG2 encoding algorithm, and
 a blood transfusion workflow.
 %, the benchmarking case study of the little-JIL language. 
 The implementation of the algorithms is  
-freely available as a part of the model checker TAPAAL.
+freely available as a part of the model checker TAPAAL \cite{tapaal}.
 
 \input{introduction}
 \input{definitions}
@@ -31,7 +54,7 @@ freely available as a part of the model checker TAPAAL.
 
 \section{Implementation and Experiments}
 
-\begin{figure}[t]
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=1\textwidth]{Figures/screenshot-combined.eps}
 \end{center}

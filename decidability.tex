@@ -100,60 +100,60 @@ the places $p_{c_1}$ and $p_{c_2}$ are exclusively of age $1$.
 As before the input place is $\itn{in}=p_1$ and the output place
 is $\itn{out}=p_n$.
 
-%\begin{figure}[!h]
-%  
-%\begin{minipage}[c]{0.5\textwidth}
-%\hspace{1.5cm}
-%\begin{tikzpicture}[font=\scriptsize,xscale=1.5,yscale=1.5]
-%   \tikzstyle{arc}=[->,>=stealth,thick]
-%   \tikzstyle{transportArc}=[->,>=diamond,thick]
-%   \tikzstyle{every place}=[minimum size=6mm,thick]
-%   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
-%   \tikzstyle{every token}=[fill=white,text=black]
-%  \node[place,label=above:$p_{i}$] at (0,0) (pi) {};
-%  \node[place,label=above:$p_{k}$] at (2,0) (pk) {};
-%  \node[place,label=above:$p_{c_1}$] at (1,1) (pc1) {};
-%  \node[transition,label=60:$t_i$] at (1,0) (t) {};
-%  \draw[arc] (pi) -- (t) node[midway,above]{$[0,\infty]$} {};
-%  \draw[arc] (t) -- (pk) {};
-%  \draw[arc] (t) -- (pc1) {};
-%\end{tikzpicture}
-%\label{fig:inc}
-%\captionsetup{type=subfigure}
-%\caption{\tt $i$: $c_1$++; goto $k$}
-%\end{minipage}
-%%\hspace{0mm}
-%\begin{minipage}[c]{0.5\textwidth}
-%\vspace{0.5cm}
-%\begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.5]
-%  \tikzstyle{arc}=[->,>=stealth,thick]
-%  \tikzstyle{transportArc}=[->,>=diamond,thick]
-%  \tikzstyle{every place}=[minimum size=6mm,thick]
-%  \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
-%  \tikzstyle{every token}=[fill=white,text=black]
-%  \tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
-%  \node at (-0.85,0) {};
-%  \node at (2.8,0) {};
-%  \node[place,label=above:$p_{i}$] at (0,0) (pi) {};
-%  \node[place,label=above:$p_{k}$] at (2,0) (pk) {};
-%  \node[place,label=above:$p_{\ell}$] at (2,1) (pl) {};
-%  \node[place,label=above:$p_{c_1}$] at (0,1) (pc1) {};
-%  \node[transition,label=60:$t_i^{\mathit{dec}}$] at (1,1) (tdec) {};
-%  \node[urgency] at (1,1) {};
-%  \node[transition,label=60:$t_i^{\mathit{zero}}$] at (1,0) (tzero1) {};
-% \draw[arc] (pi) -- (tdec) node[midway,left]{$[0,\infty]$} {};
-% \draw[arc] (pi) -- (tzero1) node[midway,above]{$[1,\infty]$} {};
-% \draw[arc] (pc1) -- (tdec) node[midway,above,pos=0.5]{$[0,\infty]$} {}; 
-% \draw[arc] (tdec) -- (pl) {};
-% \draw[arc] (tzero1) -- (pk) {};
-%\end{tikzpicture}
-%\vspace{-0.4cm}
-%\label{fig:dec}
-%\captionsetup{type=subfigure}
-%\caption{{\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell$)}}
-%\end{minipage}
-%\caption{Simulation of (Inc) and (Dec) instructions with urgent transitions\label{fig:urgent-reduction}}
-%\end{figure}
+\begin{figure}[!h]
+  
+\begin{minipage}[c]{0.5\textwidth}
+\hspace{1.5cm}
+\begin{tikzpicture}[font=\scriptsize,xscale=1.5,yscale=1.5]
+   \tikzstyle{arc}=[->,>=stealth,thick]
+   \tikzstyle{transportArc}=[->,>=diamond,thick]
+   \tikzstyle{every place}=[minimum size=6mm,thick]
+   \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+   \tikzstyle{every token}=[fill=white,text=black]
+  \node[place,label=above:$p_{i}$] at (0,0) (pi) {};
+  \node[place,label=above:$p_{k}$] at (2,0) (pk) {};
+  \node[place,label=above:$p_{c_1}$] at (1,1) (pc1) {};
+  \node[transition,label=60:$t_i$] at (1,0) (t) {};
+  \draw[arc] (pi) -- (t) node[midway,above]{$[0,\infty]$} {};
+  \draw[arc] (t) -- (pk) {};
+  \draw[arc] (t) -- (pc1) {};
+\end{tikzpicture}
+\label{fig:inc}
+\captionsetup{type=subfigure}
+\caption{\tt $i$: $c_1$++; goto $k$}
+\end{minipage}
+%\hspace{0mm}
+\begin{minipage}[c]{0.5\textwidth}
+\vspace{0.5cm}
+\begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.5]
+  \tikzstyle{arc}=[->,>=stealth,thick]
+  \tikzstyle{transportArc}=[->,>=diamond,thick]
+  \tikzstyle{every place}=[minimum size=6mm,thick]
+  \tikzstyle{every transition}=[fill=black,minimum width=2mm,minimum height=5mm]
+  \tikzstyle{every token}=[fill=white,text=black]
+  \tikzstyle{urgency}=[place,fill=white,minimum size=2.0mm,thin]
+  \node at (-0.85,0) {};
+  \node at (2.8,0) {};
+  \node[place,label=above:$p_{i}$] at (0,0) (pi) {};
+  \node[place,label=above:$p_{k}$] at (2,0) (pk) {};
+  \node[place,label=above:$p_{\ell}$] at (2,1) (pl) {};
+  \node[place,label=above:$p_{c_1}$] at (0,1) (pc1) {};
+  \node[transition,label=60:$t_i^{\mathit{dec}}$] at (1,1) (tdec) {};
+  \node[urgency] at (1,1) {};
+  \node[transition,label=60:$t_i^{\mathit{zero}}$] at (1,0) (tzero1) {};
+ \draw[arc] (pi) -- (tdec) node[midway,left]{$[0,\infty]$} {};
+ \draw[arc] (pi) -- (tzero1) node[midway,above]{$[1,\infty]$} {};
+ \draw[arc] (pc1) -- (tdec) node[midway,above,pos=0.5]{$[0,\infty]$} {}; 
+ \draw[arc] (tdec) -- (pl) {};
+ \draw[arc] (tzero1) -- (pk) {};
+\end{tikzpicture}
+\vspace{-0.4cm}
+\label{fig:dec}
+\captionsetup{type=subfigure}
+\caption{{\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell$)}}
+\end{minipage}
+\caption{Simulation of (Inc) and (Dec) instructions with urgent transitions\label{fig:urgent-reduction}}
+\end{figure}
 
 Let us now observe
 that this invariant is preserved after simulating the 
@@ -178,7 +178,7 @@ of the increment instruction.
 
 \begin{figure}[h]
 \captionsetup[figure]{position=above}
-\caption{Simulation of a Minsky machine by a workflow net with invariants.}
+\caption{Simulation of a Minsky machine by a workflow net with invariants.\label{fig:cont}}
 \begin{center}
 \begin{minipage}[c]{\textwidth}
 \centering

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  6 MAR 2014 13:36
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  7 MAR 2014 13:59
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -844,14 +844,23 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
 \arrowsize=\dimen191
 ))
+(/usr/share/texmf-texlive/tex/latex/amsfonts/euscript.sty
+Package: euscript 2009/06/22 v3.00 Euler Script fonts
+LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
+(Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
+)
+(/usr/share/texmf-texlive/tex/latex/tools/enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks50
+)
 \c@example=\count164
 \c@definition=\count165
 \c@theorem=\count166
 \c@lemma=\count167
 \c@remark=\count168
-
-(./macros.tex) (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
-(./chapter2.aux) (./chapter3.aux) (./chapter4.aux
+ (./macros.tex)
+(./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux) (./chapter2.aux)
+(./chapter3.aux) (./chapter4.aux
 
 LaTeX Warning: Label `tran1' multiply defined.
 
@@ -931,6 +940,9 @@ LaTeX Warning: Label `Busi05' multiply defined.
 
 
 LaTeX Warning: Label `Buyya2011' multiply defined.
+
+
+LaTeX Warning: Label `tapaal' multiply defined.
 
 
 LaTeX Warning: Label `wsdl' multiply defined.
@@ -1035,6 +1047,9 @@ LaTeX Warning: Label `LS2000' multiply defined.
 LaTeX Warning: Label `Lohmann07' multiply defined.
 
 
+LaTeX Warning: Label `LohmannK08' multiply defined.
+
+
 LaTeX Warning: Label `LucchiM07' multiply defined.
 
 
@@ -1119,6 +1134,12 @@ LaTeX Warning: Label `Aalst97' multiply defined.
 LaTeX Warning: Label `Aalst98' multiply defined.
 
 
+LaTeX Warning: Label `AalstJL05' multiply defined.
+
+
+LaTeX Warning: Label `AalstL08' multiply defined.
+
+
 LaTeX Warning: Label `van95' multiply defined.
 
 
@@ -1151,39 +1172,39 @@ LaTeX Warning: Label `Yi2004' multiply defined.
 )
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 229.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 229.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 231.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 231.
 
  (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Try loading font information for OT1+pbk on input line 229.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 231.
+LaTeX Font Info:    ... okay on input line 231.
+LaTeX Font Info:    Try loading font information for OT1+pbk on input line 231.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pbk.fd
 File: ot1pbk.fd 2001/06/04 font definitions for OT1/pbk.
 )
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 229.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 231.
 
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count169
-Package hyperref Info: Link coloring OFF on input line 229.
+Package hyperref Info: Link coloring OFF on input line 231.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -1193,8 +1214,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count170
 )
-LaTeX Info: Redefining \ref on input line 229.
-LaTeX Info: Redefining \pageref on input line 229.
+LaTeX Info: Redefining \ref on input line 231.
+LaTeX Info: Redefining \pageref on input line 231.
  (./thesis.out)
 (./thesis.out)
 \@outlinefile=\write5
@@ -1204,35 +1225,35 @@ LaTeX Info: Redefining \pageref on input line 229.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 238.
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 240.
 LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 238.
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 240.
 LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 238.
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 240.
 File: logo.eps Graphic file (type eps)
  <logo.eps>
-Overfull \hbox (8.7384pt too wide) in paragraph at lines 238--238
+Overfull \hbox (8.7384pt too wide) in paragraph at lines 240--240
  [][] 
  []
 
 LaTeX Font Info:    Font shape `OT1/pbk/m/sc' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/sc' tried instead on input line 238.
+(Font)              Font shape `OT1/pbk/l/sc' tried instead on input line 240.
 
-Overfull \hbox (8.7384pt too wide) in paragraph at lines 238--238
+Overfull \hbox (8.7384pt too wide) in paragraph at lines 240--240
  [][] 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 238.
+LaTeX Font Info:    Try loading font information for U+msa on input line 240.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 238.
+LaTeX Font Info:    Try loading font information for U+msb on input line 240.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 238.
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 240.
  [1
 
 ] [2
@@ -1290,37 +1311,27 @@ Overfull \hbox (3.09982pt too wide) detected at line 28
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 30
- [][]\OT1/pbk/l/n/10 111[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 32
  [][]\OT1/pbk/l/n/10 115[][]
  []
 
 
+Overfull \hbox (3.09982pt too wide) detected at line 31
+ [][]\OT1/pbk/l/n/10 130[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 32
+ [][]\OT1/pbk/l/n/10 134[][]
+ []
+
+
 Overfull \hbox (3.09982pt too wide) detected at line 33
- [][]\OT1/pbk/l/n/10 117[][]
+ [][]\OT1/pbk/l/n/10 143[][]
  []
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 34
- [][]\OT1/pbk/l/n/10 129[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 35
- [][]\OT1/pbk/l/n/10 133[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 36
- [][]\OT1/pbk/l/n/10 136[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 37
- [][]\OT1/pbk/l/n/10 137[][]
+ [][]\OT1/pbk/l/n/10 144[][]
  []
 
 )
@@ -1371,28 +1382,33 @@ Overfull \hbox (3.09982pt too wide) detected at line 41
  []
 
 
-Overfull \hbox (3.09982pt too wide) detected at line 42
- [][]\OT1/pbk/l/n/10 139[][]
+Overfull \hbox (3.09982pt too wide) detected at line 44
+ [][]\OT1/pbk/l/n/10 122[][]
  []
 
 
-Overfull \hbox (3.09982pt too wide) detected at line 48
- [][]\OT1/pbk/l/n/10 139[][]
+Overfull \hbox (3.09982pt too wide) detected at line 45
+ [][]\OT1/pbk/l/n/10 123[][]
  []
 
 
-Overfull \hbox (3.09982pt too wide) detected at line 49
- [][]\OT1/pbk/l/n/10 140[][]
+Overfull \hbox (3.09982pt too wide) detected at line 51
+ [][]\OT1/pbk/l/n/10 131[][]
  []
 
 
 Overfull \hbox (3.09982pt too wide) detected at line 52
- [][]\OT1/pbk/l/n/10 140[][]
+ [][]\OT1/pbk/l/n/10 133[][]
  []
 
 
-Overfull \hbox (3.09982pt too wide) detected at line 53
- [][]\OT1/pbk/l/n/10 141[][]
+Overfull \hbox (3.09982pt too wide) detected at line 55
+ [][]\OT1/pbk/l/n/10 142[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 56
+ [][]\OT1/pbk/l/n/10 143[][]
  []
 
 )
@@ -1402,6 +1418,11 @@ Overfull \hbox (3.09982pt too wide) detected at line 53
  [8] (./thesis.lot
 Overfull \hbox (3.09982pt too wide) detected at line 13
  [][]\OT1/pbk/l/n/10 107[][]
+ []
+
+
+Overfull \hbox (3.09982pt too wide) detected at line 15
+ [][]\OT1/pbk/l/n/10 137[][]
  []
 
 )
@@ -2048,18 +2069,26 @@ Underfull \vbox (badness 5771) has occurred while \output is active []
 
  (./chapter5.tex
 Chapter 5.
-(./introduction.tex [111
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [111
 
 
 ]
+(./introduction.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [112]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3229) has occurred while \output is active []
 
  [113])
-(./definitions.tex [114] [115] [116]) (./soundness.tex [117]
-Overfull \hbox (21.55852pt too wide) in paragraph at lines 71--75
+(./definitions.tex [114]
+Underfull \vbox (badness 1377) has occurred while \output is active []
+
+ [115]
+[116]) (./soundness.tex [117]
+Overfull \hbox (21.55852pt too wide) in paragraph at lines 69--73
 []\OT1/pbk/l/n/10 An (ex-tended or mono-tonic) timed-arc work-flow net $\OML/cm
 m/m/it/10 N \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 P; T; T[]; []; []; \OT1/cmr/m/i
 t/10 g\OML/cmm/m/it/10 ; \OT1/cmr/m/it/10 w\OML/cmm/m/it/10 ; []; \OT1/cmr/m/it
@@ -2069,50 +2098,61 @@ t/10 g\OML/cmm/m/it/10 ; \OT1/cmr/m/it/10 w\OML/cmm/m/it/10 ; []; \OT1/cmr/m/it
 [118] [119]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 207.
+(caption)                particular \caption on input line 205.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 251.
+(caption)                particular \caption on input line 249.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 297.
+(caption)                particular \caption on input line 295.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 302.
+(caption)                outside box or environment on input line 300.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 302.
+(caption)                particular \caption on input line 300.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (4.28867pt too wide) in paragraph at lines 166--302
+Overfull \hbox (4.28867pt too wide) in paragraph at lines 164--300
 []$[]$ $[]$ $[]$ 
  []
 
 ) (./decidability.tex [120]
-
-LaTeX Warning: Reference `fig:urgent-reduction' on page 121 undefined on input 
-line 62.
-
-
 Underfull \vbox (badness 4279) has occurred while \output is active []
 
  [121]
+Overfull \hbox (8.98553pt too wide) in paragraph at lines 149--153
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+[]\OT1/pbk/l/n/10 b: |$\OML/cmm/m/it/10 i$\OT1/pcr/m/n/10 : if $\OML/cmm/m/it/1
+0 c[]$\OT1/pcr/m/n/10 =$\OT1/cmr/m/n/10 0$ \OT1/pcr/m/n/10 then goto $\OML/cmm/
+m/it/10 k$ \OT1/pcr/m/n/10 else
+ []
+
+
+Overfull \hbox (2.44005pt too wide) in paragraph at lines 105--155
+[]$[]$ $[]$ 
+ []
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
+[122]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [122]
+ [123]
 Package hyperref Info: bookmark level for unknown algocf defaults to 0 on input
  line 314.
 
@@ -2120,23 +2160,13 @@ Underfull \hbox (badness 10000) detected at line 374
 [][]
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [123]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [124]
-Underfull \vbox (badness 2012) has occurred while \output is active []
-
- [125]
-[126] [127] [128]) (./strong-soundness.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [129]
+[124] [125] [126] [127] [128]) (./strong-soundness.tex [129]
 Overfull \hbox (2.44005pt too wide) in paragraph at lines 52--124
 []$[]$ $[]$ 
  []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [130]
 Overfull \hbox (0.65312pt too wide) in paragraph at lines 140--152
@@ -2150,38 +2180,40 @@ Overfull \hbox (0.65312pt too wide) in paragraph at lines 140--152
 Underfull \vbox (badness 1688) has occurred while \output is active []
 
  [131]
-
-LaTeX Warning: Reference `fig:cont' on page 132 undefined on input line 206.
-
-
-LaTeX Warning: Reference `fig:cont' on page 132 undefined on input line 211.
-
 [132] [133]) (./continuous.tex [134] [135]
-Overfull \hbox (4.8801pt too wide) in paragraph at lines 127--199
+LaTeX Font Info:    Try loading font information for U+eus on input line 111.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/ueus.fd
+File: ueus.fd 2009/06/22 v3.00 Euler Script
+) [136]
+Overfull \hbox (33.6737pt too wide) in paragraph at lines 151--162
+[][]
+ []
+
+[137] [138] [139] [140] [141]
+Overfull \hbox (4.8801pt too wide) in paragraph at lines 417--489
 []$[]$   $[]$ 
  []
 
-[136])
+[142])
 File: Figures/screenshot-combined.eps Graphic file (type eps)
- <Figures/screenshot-combined.eps> [137]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ <Figures/screenshot-combined.eps> [143] [144]) [145] [146
 
- [138])
-[139] [140]
+
+]
 \openout2 = `Conclusions.aux'.
 
- (./Conclusions.tex
+
+(./Conclusions.tex
 Chapter 6.
-) [141
-
-
+) [147
 
 
 ]
 
-LaTeX Warning: Reference `c6' on page 142 undefined on input line 284.
+LaTeX Warning: Reference `c6' on page 148 undefined on input line 286.
 
-[142
+[148
 
 
 ] (./thesis.bbl
@@ -2204,7 +2236,7 @@ Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ­ in font pbkl7t!
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ¶ in font pbkl7t!
-[143
+[149
 
 ]
 Missing character: There is no â in font pbkl7t!
@@ -2212,51 +2244,51 @@ Missing character: There is no € in font pbkl7t!
 Missing character: There is no “ in font pbkl7t!
 
 
-LaTeX Warning: Reference `c6' on page 144 undefined on input line 120.
+LaTeX Warning: Reference `c6' on page 150 undefined on input line 120.
 
-[144] [145]
+[150] [151]
 
-LaTeX Warning: Reference `c6' on page 146 undefined on input line 256.
+LaTeX Warning: Reference `c6' on page 152 undefined on input line 252.
 
-[146]
-Underfull \hbox (badness 10000) in paragraph at lines 269--274
+[152]
+Underfull \hbox (badness 10000) in paragraph at lines 276--281
 []\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 269--274
+Underfull \hbox (badness 3148) in paragraph at lines 276--281
 \OT1/pbk/l/n/10 mann M. Nally T. Storey W. Vam-benepe I. Fos-ter, J. Frey and
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 269--274
+Underfull \hbox (badness 3323) in paragraph at lines 276--281
 \OT1/pbk/l/n/10 S. Weer-awarana.  Mod-el-ing state-ful re-sources with web ser-
 vices.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--274
+Underfull \hbox (badness 10000) in paragraph at lines 276--281
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
-[147]
+[153]
 
-LaTeX Warning: Reference `c6' on page 148 undefined on input line 386.
+LaTeX Warning: Reference `c6' on page 154 undefined on input line 382.
 
-[148]
+[154] [155]
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ¤ in font pbkl7t!
- [149]
 
-LaTeX Warning: Reference `c6' on page 150 undefined on input line 514.
 
-[150]
-Underfull \hbox (badness 4846) in paragraph at lines 515--518
+LaTeX Warning: Reference `c6' on page 156 undefined on input line 511.
+
+[156]
+Underfull \hbox (badness 4846) in paragraph at lines 541--544
 []\OT1/pbk/l/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
 2004.
  []
 
-) (./thesis.bbl [151] [152
+) (./thesis.bbl [157] [158
 
 ]
 Underfull \hbox (badness 1377) in paragraph at lines 8--12
@@ -2275,41 +2307,41 @@ Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ­ in font pbkl7t!
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ¶ in font pbkl7t!
-[153]
+[159]
 Missing character: There is no â in font pbkl7t!
 Missing character: There is no € in font pbkl7t!
 Missing character: There is no “ in font pbkl7t!
- [154] [155] [156]
-Underfull \hbox (badness 10000) in paragraph at lines 269--274
+ [160] [161] [162]
+Underfull \hbox (badness 10000) in paragraph at lines 276--281
 []\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 269--274
+Underfull \hbox (badness 3148) in paragraph at lines 276--281
 \OT1/pbk/l/n/10 mann M. Nally T. Storey W. Vam-benepe I. Fos-ter, J. Frey and
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 269--274
+Underfull \hbox (badness 3323) in paragraph at lines 276--281
 \OT1/pbk/l/n/10 S. Weer-awarana.  Mod-el-ing state-ful re-sources with web ser-
 vices.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--274
+Underfull \hbox (badness 10000) in paragraph at lines 276--281
 \OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
  []
 
-[157] [158]
+[163] [164] [165]
 Missing character: There is no Ã in font pbkl7t!
 Missing character: There is no ¤ in font pbkl7t!
- [159] [160]
-Underfull \hbox (badness 4846) in paragraph at lines 515--518
+ [166]
+Underfull \hbox (badness 4846) in paragraph at lines 541--544
 []\OT1/pbk/l/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
 2004.
  []
 
-) [161] [162
+) [167] [168
 
 ]
 
@@ -2326,12 +2358,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20236 strings out of 495062
- 340656 string characters out of 1182644
- 490218 words of memory out of 3000000
- 22836 multiletter control sequences out of 15000+50000
- 35849 words of font info for 109 fonts, out of 3000000 for 9000
+ 20328 strings out of 495062
+ 342007 string characters out of 1182644
+ 490867 words of memory out of 3000000
+ 22917 multiletter control sequences out of 15000+50000
+ 36849 words of font info for 114 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,28n,92p,1682b,1825s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (174 pages, 984904 bytes).
+Output written on thesis.dvi (180 pages, 1035388 bytes).

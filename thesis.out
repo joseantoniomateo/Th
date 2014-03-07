@@ -26,12 +26,10 @@
 \BOOKMARK [2][-]{subsection.4.4.1}{Analysis}{section.4.4}
 \BOOKMARK [1][-]{section.4.5}{Summary}{chapter.4}
 \BOOKMARK [0][-]{chapter.5}{Timed-arc workflow nets}{}
-\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}
-\BOOKMARK [1][-]{section.5.2}{Extended Timed-Arc Petri Nets}{chapter.5}
-\BOOKMARK [1][-]{section.5.3}{Timed-Arc Workflow Nets}{chapter.5}
-\BOOKMARK [1][-]{section.5.4}{Strong Soundness}{chapter.5}
-\BOOKMARK [1][-]{section.5.5}{Soundness for Continuous Time Workflow Nets}{chapter.5}
-\BOOKMARK [1][-]{section.5.6}{Implementation and Experiments}{chapter.5}
-\BOOKMARK [1][-]{section.5.7}{Summary}{chapter.5}
+\BOOKMARK [1][-]{section.5.1}{Timed-Arc Workflow Petri Nets}{chapter.5}
+\BOOKMARK [1][-]{section.5.2}{Strong Soundness}{chapter.5}
+\BOOKMARK [1][-]{section.5.3}{Soundness for Continuous Time Workflow Nets}{chapter.5}
+\BOOKMARK [1][-]{section.5.4}{Implementation and Experiments}{chapter.5}
+\BOOKMARK [1][-]{section.5.5}{Summary}{chapter.5}
 \BOOKMARK [0][-]{chapter.6}{Conclusions, Contributions and Future Works}{}
-\BOOKMARK [0][-]{appendix*.76}{Bibliography}{}
+\BOOKMARK [0][-]{appendix*.79}{Bibliography}{}
