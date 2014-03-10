@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  7 MAR 2014 13:59
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.26)  10 MAR 2014 13:44
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -25,291 +25,19 @@ File: bk10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-)
-(/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
-Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
-
-(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks14
-)
-(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-)
-(/etc/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
-)
-Package graphics Info: Driver file: dvips.def on input line 91.
-
-(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
-)
-\epsfxsize=\dimen105
-\epsfysize=\dimen106
-)
-(/usr/share/texmf-texlive/tex/latex/psnfss/bookman.sty
-Package: bookman 2005/04/12 PSNFSS-v9.2a (SPQR) 
-)
-(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks15
-)
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box26
-
-(/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
-Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
-))
-Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
-
-(/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texmf/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
-
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks16
-\pgfkeys@temptoks=\toks17
-
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks18
-))
-\pgf@x=\dimen107
-\pgf@y=\dimen108
-\pgf@xa=\dimen109
-\pgf@ya=\dimen110
-\pgf@xb=\dimen111
-\pgf@yb=\dimen112
-\pgf@xc=\dimen113
-\pgf@yc=\dimen114
-\w@pgf@writea=\write3
-\r@pgf@reada=\read1
-\c@pgf@counta=\count88
-\c@pgf@countb=\count89
-\c@pgf@countc=\count90
-\c@pgf@countd=\count91
-
-(/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
-File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
-)
-Package pgfsys Info: Driver file for pgf: pgfsys-dvips.def on input line 900.
-
-(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-dvips.def
-File: pgfsys-dvips.def 2008/04/03  (rcs-revision 1.20)
-
-(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-common-postscript.def
-File: pgfsys-common-postscript.def 2008/10/01  (rcs-revision 1.22)
-\pgf@objectcount=\count92
-)))
-(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
-File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count93
-\pgfsyssoftpath@bigbuffer@items=\count94
-)
-(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
-File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
-))
-(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
-
-(/etc/texmf/tex/latex/config/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package xcolor Info: Driver file: dvips.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
-
-(/usr/share/texmf/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen115
-\pgfmath@count=\count95
-\pgfmath@box=\box27
-\pgfmath@toks=\toks19
-\pgfmath@stack@operand=\toks20
-\pgfmath@stack@operation=\toks21
-)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count96
-))
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
-File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen116
-\pgf@picmaxx=\dimen117
-\pgf@picminy=\dimen118
-\pgf@picmaxy=\dimen119
-\pgf@pathminx=\dimen120
-\pgf@pathmaxx=\dimen121
-\pgf@pathminy=\dimen122
-\pgf@pathmaxy=\dimen123
-\pgf@xx=\dimen124
-\pgf@xy=\dimen125
-\pgf@yx=\dimen126
-\pgf@yy=\dimen127
-\pgf@zx=\dimen128
-\pgf@zy=\dimen129
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
-File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen130
-\pgf@path@lasty=\dimen131
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
-File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen132
-\pgf@shorten@start@additional=\dimen133
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
-File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
-\pgfpic=\box28
-\pgf@hbox=\box29
-\pgf@layerbox@main=\box30
-\pgf@picture@serial@count=\count97
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
-File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen134
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
-File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen135
-\pgf@pt@y=\dimen136
-\pgf@pt@temp=\dimen137
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
-File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
-File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
-File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
-File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
-File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen138
-\pgf@sys@shading@range@num=\count98
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
-File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
-
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
-File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
-\pgfexternal@startupbox=\box31
-))
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
-File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
-File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
-)
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
-File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
-)))
-(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
-File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
-\pgfnodeparttextbox=\box32
-)
-(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
-File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
-)
-(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
-Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen139
-\pgf@nodesepend=\dimen140
-)
-(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
-Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
-))
-(/usr/share/texmf/tex/latex/pgf/utilities/pgffor.sty
-(/usr/share/texmf/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
-(/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-\pgffor@iter=\dimen141
-\pgffor@skip=\dimen142
-\pgffor@stack=\toks22
-\pgffor@toks=\toks23
-))
-(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
-Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
-
-(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
-File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count99
-\pgfplotmarksize=\dimen143
-)
-\tikz@lastx=\dimen144
-\tikz@lasty=\dimen145
-\tikz@lastxsaved=\dimen146
-\tikz@lastysaved=\dimen147
-\tikzleveldistance=\dimen148
-\tikzsiblingdistance=\dimen149
-\tikz@figbox=\box33
-\tikz@tempbox=\box34
-\tikztreelevel=\count100
-\tikznumberofchildren=\count101
-\tikznumberofcurrentchild=\count102
-\tikz@fig@count=\count103
-
-(/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
-File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count104
-\pgfmatrixcurrentcolumn=\count105
-\pgf@matrix@numberofcolumns=\count106
-)
-\tikz@expandcount=\count107
-
-(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
-hs.code.tex
-File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
-)))) (/usr/share/texmf-texlive/tex/latex/subfigure/subfigure.sty
+(/usr/share/texmf-texlive/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip43
 \subfigcapskip=\skip44
-\subfigcaptopadj=\dimen150
+\subfigcaptopadj=\dimen103
 \subfigbottomskip=\skip45
-\subfigcapmargin=\dimen151
+\subfigcapmargin=\dimen104
 \subfiglabelskip=\skip46
-\c@subfigure=\count108
-\c@lofdepth=\count109
-\c@subtable=\count110
-\c@lotdepth=\count111
+\c@subfigure=\count88
+\c@lofdepth=\count89
+\c@subtable=\count90
+\c@lotdepth=\count91
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -324,9 +52,9 @@ Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
 (/usr/share/texmf-texlive/tex/latex/tools/afterpage.sty
 Package: afterpage 1995/10/27 v1.08 After-Page Package (DPC)
-\AP@output=\toks24
-\AP@partial=\box35
-\AP@footins=\box36
+\AP@output=\toks14
+\AP@partial=\box26
+\AP@footins=\box27
 )
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
@@ -338,65 +66,65 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks25
-\ex@=\dimen152
+\@emptytoks=\toks15
+\ex@=\dimen105
 ))
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen153
+\pmbraise@=\dimen106
 )
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count112
+\inf@bad=\count92
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count113
-\leftroot@=\count114
+\uproot@=\count93
+\leftroot@=\count94
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count115
-\DOTSCASE@=\count116
+\classnum@=\count95
+\DOTSCASE@=\count96
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box37
-\strutbox@=\box38
-\big@size=\dimen154
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen107
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count117
-\c@MaxMatrixCols=\count118
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
 \dotsspace@=\muskip11
-\c@parentequation=\count119
-\dspbrk@lvl=\count120
-\tag@help=\toks26
-\row@=\count121
-\column@=\count122
-\maxfields@=\count123
-\andhelp@=\toks27
-\eqnshift@=\dimen155
-\alignsep@=\dimen156
-\tagshift@=\dimen157
-\tagwidth@=\dimen158
-\totwidth@=\dimen159
-\lineht@=\dimen160
-\@envbody=\toks28
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks16
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks17
+\eqnshift@=\dimen108
+\alignsep@=\dimen109
+\tagshift@=\dimen110
+\tagwidth@=\dimen111
+\totwidth@=\dimen112
+\lineht@=\dimen113
+\@envbody=\toks18
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks29
+\mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
 (/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
 Package: amsthm 2004/08/06 v2.20
-\thm@style=\toks30
-\thm@bodyfont=\toks31
-\thm@headfont=\toks32
-\thm@notefont=\toks33
-\thm@headpunct=\toks34
+\thm@style=\toks20
+\thm@bodyfont=\toks21
+\thm@headfont=\toks22
+\thm@notefont=\toks23
+\thm@headpunct=\toks24
 \thm@preskip=\skip52
 \thm@postskip=\skip53
 \thm@headsep=\skip54
-\dth@everypar=\toks35
+\dth@everypar=\toks25
 )
 (/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2009/06/22 v3.00
@@ -409,24 +137,28 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
 (/usr/share/texmf-texlive/tex/latex/listings/listings.sty
-\lst@mode=\count124
-\lst@gtempboxa=\box39
-\lst@token=\toks36
-\lst@length=\count125
-\lst@currlwidth=\dimen161
-\lst@column=\count126
-\lst@pos=\count127
-\lst@lostspace=\dimen162
-\lst@width=\dimen163
-\lst@newlines=\count128
-\lst@lineno=\count129
-\lst@maxwidth=\dimen164
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks26
+)
+\lst@mode=\count104
+\lst@gtempboxa=\box30
+\lst@token=\toks27
+\lst@length=\count105
+\lst@currlwidth=\dimen114
+\lst@column=\count106
+\lst@pos=\count107
+\lst@lostspace=\dimen115
+\lst@width=\dimen116
+\lst@newlines=\count108
+\lst@lineno=\count109
+\lst@maxwidth=\dimen117
 
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count130
-\lst@skipnumbers=\count131
-\lst@framebox=\box40
+\c@lstnumber=\count110
+\lst@skipnumbers=\count111
+\lst@framebox=\box31
 )
 (/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
@@ -441,13 +173,27 @@ Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
 
 (/usr/share/texmf-texlive/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen165
-\extrarowheight=\dimen166
-\NC@list=\toks37
+\col@sep=\dimen118
+\extrarowheight=\dimen119
+\NC@list=\toks28
 \extratabsurround=\skip55
 \backup@length=\skip56
 )
-\everycr=\toks38
+(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\everycr=\toks29
 \minrowclearance=\skip57
 )
 (/usr/share/texmf-texlive/tex/latex/setspace/setspace.sty
@@ -459,70 +205,39 @@ Package: moreverb 2008/06/03 v2.3 `more' verbatim facilities
 
 (/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks39
-\verbatim@line=\toks40
-\verbatim@in@stream=\read2
+\every@verbatim=\toks30
+\verbatim@line=\toks31
+\verbatim@in@stream=\read1
 )
-\verbatim@out=\write4
-\tab@position=\count132
-\tab@size=\count133
-\listing@line=\count134
+\verbatim@out=\write3
+\tab@position=\count112
+\tab@size=\count113
+\listing@line=\count114
 )
-(/usr/share/texmf-texlive/tex/latex/algorithm2e/algorithm2e.sty
-Package: algorithm2e 2005/10/04 v3.9 algorithms environments
-\c@AlgoLine=\count135
+(/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
-)
-(/usr/share/texmf-texlive/tex/latex/tools/xspace.sty
-Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
-)
-********************************************************
-Package `algorithm2e' Release 3.9 -- october 04 2005 --
-- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
-- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
-subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
-- Author: Christophe Fiorio (fiorio@lirmm.fr)
-********************************************************
-\skiptotal=\skip58
-\skiprule=\skip59
-\skiphlne=\skip60
-\skiptext=\skip61
-\skiplength=\skip62
-\algomargin=\skip63
-\skipalgocfslide=\skip64
-\algowidth=\dimen167
-\inoutsize=\dimen168
-\inoutline=\dimen169
-\algocf@inoutbox=\box41
-\algocf@inputbox=\box42
-\AlCapSkip=\skip65
-\AlCapHSkip=\skip66
-\algocf@capbox=\box43
-\c@algocfline=\count136
-\c@algocf=\count137
-\algocf@algoframe=\box44
-\algocf@algobox=\box45
-) (./algpseudocode.sty
-Package: algpseudocode 
- (./algorithmicx.sty
-Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count138
-\c@ALG@rem=\count139
-\c@ALG@nested=\count140
-\ALG@tlm=\skip67
-\ALG@thistlm=\skip68
-\c@ALG@Lnr=\count141
-\c@ALG@blocknr=\count142
-\c@ALG@storecount=\count143
-\c@ALG@tmpcounter=\count144
-\ALG@tmplength=\skip69
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-Document Style - pseudocode environments for use with the `algorithmicx' style
-) (/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+)
+\Gin@req@height=\dimen120
+\Gin@req@width=\dimen121
+)
+\epsfxsize=\dimen122
+\epsfysize=\dimen123
+)
+(/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -602,11 +317,364 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 )
 (/usr/share/texmf-texlive/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count145
-\float@exts=\toks41
-\float@box=\box46
-\@float@everytoks=\toks42
-\@floatcapt=\box47
+\c@float@type=\count115
+\float@exts=\toks32
+\float@box=\box32
+\@float@everytoks=\toks33
+\@floatcapt=\box33
+)
+(/usr/share/texmf-texlive/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2005/10/04 v3.9 algorithms environments
+\c@AlgoLine=\count116
+
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-texlive/tex/latex/tools/xspace.sty
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+********************************************************
+Package `algorithm2e' Release 3.9 -- october 04 2005 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (fiorio@lirmm.fr)
+********************************************************
+\skiptotal=\skip58
+\skiprule=\skip59
+\skiphlne=\skip60
+\skiptext=\skip61
+\skiplength=\skip62
+\algomargin=\skip63
+\skipalgocfslide=\skip64
+\algowidth=\dimen124
+\inoutsize=\dimen125
+\inoutline=\dimen126
+\algocf@inoutbox=\box34
+\algocf@inputbox=\box35
+\AlCapSkip=\skip65
+\AlCapHSkip=\skip66
+\algocf@capbox=\box36
+\c@algocfline=\count117
+\c@algocf=\count118
+\algocf@algoframe=\box37
+\algocf@algobox=\box38
+) (/usr/share/texmf-texlive/tex/latex/tabulary/tabulary.sty
+Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
+\TY@count=\count119
+\TY@linewidth=\dimen127
+\tymin=\dimen128
+\tymax=\dimen129
+\TY@tablewidth=\dimen130
+)
+(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
+Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
+\c@tracingmulticols=\count120
+\mult@box=\box39
+\multicol@leftmargin=\dimen131
+\c@unbalance=\count121
+\c@collectmore=\count122
+\doublecol@number=\count123
+\multicoltolerance=\count124
+\multicolpretolerance=\count125
+\full@width=\dimen132
+\page@free=\dimen133
+\premulticols=\dimen134
+\postmulticols=\dimen135
+\multicolsep=\skip67
+\multicolbaselineskip=\skip68
+\partial@page=\box40
+\last@line=\box41
+\mult@rightbox=\box42
+\mult@grightbox=\box43
+\mult@gfirstbox=\box44
+\mult@firstbox=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\c@columnbadness=\count126
+\c@finalcolumnbadness=\count127
+\last@try=\dimen136
+\multicolovershoot=\dimen137
+\multicolundershoot=\dimen138
+\mult@nat@firstbox=\box63
+\colbreak@box=\box64
+)
+(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks34
+)
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box65
+
+(/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+))
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texmf/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks35
+\pgfkeys@temptoks=\toks36
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks37
+))
+\pgf@x=\dimen139
+\pgf@y=\dimen140
+\pgf@xa=\dimen141
+\pgf@ya=\dimen142
+\pgf@xb=\dimen143
+\pgf@yb=\dimen144
+\pgf@xc=\dimen145
+\pgf@yc=\dimen146
+\w@pgf@writea=\write4
+\r@pgf@reada=\read2
+\c@pgf@counta=\count128
+\c@pgf@countb=\count129
+\c@pgf@countc=\count130
+\c@pgf@countd=\count131
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Package pgfsys Info: Driver file for pgf: pgfsys-dvips.def on input line 900.
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-dvips.def
+File: pgfsys-dvips.def 2008/04/03  (rcs-revision 1.20)
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-common-postscript.def
+File: pgfsys-common-postscript.def 2008/10/01  (rcs-revision 1.22)
+\pgf@objectcount=\count132
+)))
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+\pgfsyssoftpath@smallbuffer@items=\count133
+\pgfsyssoftpath@bigbuffer@items=\count134
+)
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: dvips.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+
+(/usr/share/texmf/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen147
+\pgfmath@count=\count135
+\pgfmath@box=\box66
+\pgfmath@toks=\toks38
+\pgfmath@stack@operand=\toks39
+\pgfmath@stack@operation=\toks40
+)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count136
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
+\pgf@picminx=\dimen148
+\pgf@picmaxx=\dimen149
+\pgf@picminy=\dimen150
+\pgf@picmaxy=\dimen151
+\pgf@pathminx=\dimen152
+\pgf@pathmaxx=\dimen153
+\pgf@pathminy=\dimen154
+\pgf@pathmaxy=\dimen155
+\pgf@xx=\dimen156
+\pgf@xy=\dimen157
+\pgf@yx=\dimen158
+\pgf@yy=\dimen159
+\pgf@zx=\dimen160
+\pgf@zy=\dimen161
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
+\pgf@path@lastx=\dimen162
+\pgf@path@lasty=\dimen163
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
+\pgf@shorten@end@additional=\dimen164
+\pgf@shorten@start@additional=\dimen165
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+\pgfpic=\box67
+\pgf@hbox=\box68
+\pgf@layerbox@main=\box69
+\pgf@picture@serial@count=\count137
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
+\pgflinewidth=\dimen166
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
+\pgf@pt@x=\dimen167
+\pgf@pt@y=\dimen168
+\pgf@pt@temp=\dimen169
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
+\pgf@max=\dimen170
+\pgf@sys@shading@range@num=\count138
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+\pgfexternal@startupbox=\box70
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+)))
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+\pgfnodeparttextbox=\box71
+)
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen171
+\pgf@nodesepend=\dimen172
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+))
+(/usr/share/texmf/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen173
+\pgffor@skip=\dimen174
+\pgffor@stack=\toks41
+\pgffor@toks=\toks42
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+\pgf@plot@mark@count=\count139
+\pgfplotmarksize=\dimen175
+)
+\tikz@lastx=\dimen176
+\tikz@lasty=\dimen177
+\tikz@lastxsaved=\dimen178
+\tikz@lastysaved=\dimen179
+\tikzleveldistance=\dimen180
+\tikzsiblingdistance=\dimen181
+\tikz@figbox=\box72
+\tikz@tempbox=\box73
+\tikztreelevel=\count140
+\tikznumberofchildren=\count141
+\tikznumberofcurrentchild=\count142
+\tikz@fig@count=\count143
+
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+\pgfmatrixcurrentrow=\count144
+\pgfmatrixcurrentcolumn=\count145
+\pgf@matrix@numberofcolumns=\count146
+)
+\tikz@expandcount=\count147
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
+hs.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+)))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypetri
+.code.tex
+File: tikzlibrarypetri.code.tex 2008/06/18 v2.10 (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrow
+s.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
+\arrowsize=\dimen182
+))
+(/usr/share/texmf-texlive/tex/latex/amsfonts/euscript.sty
+Package: euscript 2009/06/22 v3.00 Euler Script fonts
+LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
+(Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
+)
+(/usr/share/texmf-texlive/tex/latex/tools/enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks43
 )
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
@@ -629,9 +697,9 @@ O)
 (/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
-\@linkdim=\dimen170
-\Hy@linkcounter=\count146
-\Hy@pagecounter=\count147
+\@linkdim=\dimen183
+\Hy@linkcounter=\count148
+\Hy@pagecounter=\count149
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -657,10 +725,9 @@ Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
 Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
 t (HO)
 ))
-Package hyperref Info: Option `hyperindex' set `true' on input line 2864.
-Package hyperref Info: Option `bookmarks' set `true' on input line 2864.
 Package hyperref Info: Option `breaklinks' set `true' on input line 2864.
 Package hyperref Info: Option `linktocpage' set `true' on input line 2864.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 2864.
 Package hyperref Info: Hyper figures OFF on input line 2975.
 Package hyperref Info: Link nesting OFF on input line 2980.
 Package hyperref Info: Hyper index ON on input line 2983.
@@ -695,10 +762,10 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count148
-\Field@Width=\dimen171
-\Fld@charsize=\dimen172
-\Field@toks=\toks43
+\Fld@menulength=\count150
+\Field@Width=\dimen184
+\Fld@charsize=\dimen185
+\Field@toks=\toks44
 Package hyperref Info: Hyper figures OFF on input line 4377.
 Package hyperref Info: Link nesting OFF on input line 4382.
 Package hyperref Info: Hyper index ON on input line 4385.
@@ -710,9 +777,9 @@ Package hyperref Info: PDF/A mode OFF on input line 4407.
 (/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count149
-\c@Item=\count150
-\c@Hfootnote=\count151
+\Hy@abspage=\count151
+\c@Item=\count152
+\c@Hfootnote=\count153
 )
 *hyperref using driver hdvips*
 (/usr/share/texmf-texlive/tex/latex/hyperref/hdvips.def
@@ -726,11 +793,11 @@ Package hyperref Warning: You have enabled option `breaklinks'.
 (hyperref)                But driver `hdvips.def' does not suppport this.
 (hyperref)                Expect trouble with the link areas of broken links.
 
-\pdf@docset=\toks44
-\pdf@box=\box48
-\pdf@toks=\toks45
-\pdf@defaulttoks=\toks46
-\Fld@listcount=\count152
+\pdf@docset=\toks45
+\pdf@box=\box74
+\pdf@toks=\toks46
+\pdf@defaulttoks=\toks47
+\Fld@listcount=\count154
 )) (/usr/share/texmf-texlive/tex/latex/breakurl/breakurl.sty
 Package: breakurl 2009/01/24 v1.30 Breakable hyperref URLs
 
@@ -738,126 +805,18 @@ Package: breakurl 2009/01/24 v1.30 Breakable hyperref URLs
 Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
 
 (/usr/share/texmf-texlive/tex/generic/xkeyval/xkeyval.tex
-\XKV@toks=\toks47
-\XKV@tempa@toks=\toks48
-\XKV@depth=\count153
+\XKV@toks=\toks48
+\XKV@tempa@toks=\toks49
+\XKV@depth=\count155
 File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
 ))
-\burl@toks=\toks49
+\burl@toks=\toks50
 )
-(/usr/share/texmf-texlive/tex/latex/tabulary/tabulary.sty
-Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
-\TY@count=\count154
-\TY@linewidth=\dimen173
-\tymin=\dimen174
-\tymax=\dimen175
-\TY@tablewidth=\dimen176
-)
-(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
-Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
-\c@tracingmulticols=\count155
-\mult@box=\box49
-\multicol@leftmargin=\dimen177
-\c@unbalance=\count156
-\c@collectmore=\count157
-\doublecol@number=\count158
-\multicoltolerance=\count159
-\multicolpretolerance=\count160
-\full@width=\dimen178
-\page@free=\dimen179
-\premulticols=\dimen180
-\postmulticols=\dimen181
-\multicolsep=\skip70
-\multicolbaselineskip=\skip71
-\partial@page=\box50
-\last@line=\box51
-\mult@rightbox=\box52
-\mult@grightbox=\box53
-\mult@gfirstbox=\box54
-\mult@firstbox=\box55
-\@tempa=\box56
-\@tempa=\box57
-\@tempa=\box58
-\@tempa=\box59
-\@tempa=\box60
-\@tempa=\box61
-\@tempa=\box62
-\@tempa=\box63
-\@tempa=\box64
-\@tempa=\box65
-\@tempa=\box66
-\@tempa=\box67
-\@tempa=\box68
-\@tempa=\box69
-\@tempa=\box70
-\@tempa=\box71
-\@tempa=\box72
-\c@columnbadness=\count161
-\c@finalcolumnbadness=\count162
-\last@try=\dimen182
-\multicolovershoot=\dimen183
-\multicolundershoot=\dimen184
-\mult@nat@firstbox=\box73
-\colbreak@box=\box74
-)
-(/usr/share/texmf-texlive/tex/latex/caption/caption.sty
-Package: caption 2009/10/09 v3.1k Customizing captions (AR)
-
-(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
-Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
-\captionmargin=\dimen185
-\captionmargin@=\dimen186
-\captionwidth=\dimen187
-\caption@indent=\dimen188
-\caption@parindent=\dimen189
-\caption@hangindent=\dimen190
-Package caption Info: Unknown document class (or package),
-(caption)             standard defaults will be used on input line 1068.
-)
-
-Package caption Warning: Unsupported document class (or package) detected,
-(caption)                usage of the caption package is not recommended.
-See the caption package documentation for explanation.
-
-Package caption Info: \@makecaption = \long macro:#1#2->\vspace {\abovecaptions
-kip } \sbox {\@tempboxa }{\sffamily {#1}. #2}\ifdim \wd \@tempboxa >\linewidth 
-\sffamily {#1}. #2\par \else \global \@minipagefalse \makebox [\linewidth ]{\hf
-il \usebox {\@tempboxa }\hfil }\fi \vspace {\belowcaptionskip }.
-\c@ContinuedFloat=\count163
-Package caption Info: float package is loaded.
-Package caption Info: hyperref package is loaded.
-Package caption Info: listings package is loaded.
-Package caption Info: subfigure package is loaded.
-) (/usr/share/texmf-texlive/tex/latex/caption/subcaption.sty
-Package: subcaption 2008/08/31 v1.0b Adding subcaptions (AR)
-LaTeX Info: Redefining \subref on input line 127.
-)
-(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypetri
-.code.tex
-File: tikzlibrarypetri.code.tex 2008/06/18 v2.10 (rcs-revision 1.2)
-)
-(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrow
-s.code.tex
-File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
-
-(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
-File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
-\arrowsize=\dimen191
-))
-(/usr/share/texmf-texlive/tex/latex/amsfonts/euscript.sty
-Package: euscript 2009/06/22 v3.00 Euler Script fonts
-LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
-(Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
-)
-(/usr/share/texmf-texlive/tex/latex/tools/enumerate.sty
-Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
-\@enLab=\toks50
-)
-\c@example=\count164
-\c@definition=\count165
-\c@theorem=\count166
-\c@lemma=\count167
-\c@remark=\count168
+\c@example=\count156
+\c@definition=\count157
+\c@theorem=\count158
+\c@lemma=\count159
+\c@remark=\count160
  (./macros.tex)
 (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux) (./chapter2.aux)
 (./chapter3.aux) (./chapter4.aux
@@ -1172,39 +1131,31 @@ LaTeX Warning: Label `Yi2004' multiply defined.
 )
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 231.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 231.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 232.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 232.
 
  (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 231.
-LaTeX Font Info:    ... okay on input line 231.
-LaTeX Font Info:    Try loading font information for OT1+pbk on input line 231.
-
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pbk.fd
-File: ot1pbk.fd 2001/06/04 font definitions for OT1/pbk.
-)
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 231.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+\c@lstlisting=\count161
 
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count169
-Package hyperref Info: Link coloring OFF on input line 231.
+Package hyperref Info: Link coloring OFF on input line 232.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -1212,49 +1163,36 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count170
+\c@section@level=\count162
 )
-LaTeX Info: Redefining \ref on input line 231.
-LaTeX Info: Redefining \pageref on input line 231.
+LaTeX Info: Redefining \ref on input line 232.
+LaTeX Info: Redefining \pageref on input line 232.
  (./thesis.out)
 (./thesis.out)
 \@outlinefile=\write5
 \openout5 = `thesis.out'.
 
 \AtBeginShipoutBox=\box75
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 240.
-LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 240.
-LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 240.
 File: logo.eps Graphic file (type eps)
  <logo.eps>
-Overfull \hbox (8.7384pt too wide) in paragraph at lines 240--240
+Overfull \hbox (8.7384pt too wide) in paragraph at lines 241--241
  [][] 
  []
 
-LaTeX Font Info:    Font shape `OT1/pbk/m/sc' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/sc' tried instead on input line 240.
 
-Overfull \hbox (8.7384pt too wide) in paragraph at lines 240--240
+Overfull \hbox (8.7384pt too wide) in paragraph at lines 241--241
  [][] 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 240.
+LaTeX Font Info:    Try loading font information for U+msa on input line 241.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 240.
+LaTeX Font Info:    Try loading font information for U+msb on input line 241.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 240.
- [1
+) [1
 
 ] [2
 
@@ -1266,17 +1204,6 @@ No file ack.tex.
 \openout2 = `abstract.aux'.
 
 (./abstract.tex
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <24.88> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for OT1+pag on input line 1.
- (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pag.fd
-File: ot1pag.fd 2001/06/04 font definitions for OT1/pag.
-)
-LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/pag/b/n' tried instead on input line 1.
-LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <24.88> not available
-(Font)              Font shape `OT1/pag/db/n' tried instead on input line 1.
-
 Underfull \vbox (badness 2343) has occurred while \output is active []
 
  [1
@@ -1285,166 +1212,36 @@ Underfull \vbox (badness 2343) has occurred while \output is active []
 
 
 
-]
-[2]) [3] [4
+])
+[2] (./thesis.toc [3
 
 
-] (./thesis.toc
-LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 1.
-LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <10> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 1.
- [5]
-Overfull \hbox (3.09982pt too wide) detected at line 26
- [][]\OT1/pbk/l/n/10 104[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 27
- [][]\OT1/pbk/l/n/10 105[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 28
- [][]\OT1/pbk/l/n/10 108[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 30
- [][]\OT1/pbk/l/n/10 115[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 31
- [][]\OT1/pbk/l/n/10 130[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 32
- [][]\OT1/pbk/l/n/10 134[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 33
- [][]\OT1/pbk/l/n/10 143[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 34
- [][]\OT1/pbk/l/n/10 144[][]
- []
-
-)
+])
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
- [6] (./thesis.lof
-Overfull \hbox (3.09982pt too wide) detected at line 30
- [][]\OT1/pbk/l/n/10 100[][]
- []
-
-[7
+ [4] (./thesis.lof [5
 
 
-]
-Overfull \hbox (3.09982pt too wide) detected at line 31
- [][]\OT1/pbk/l/n/10 101[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 32
- [][]\OT1/pbk/l/n/10 104[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 33
- [][]\OT1/pbk/l/n/10 106[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 34
- [][]\OT1/pbk/l/n/10 107[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 35
- [][]\OT1/pbk/l/n/10 108[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 37
- [][]\OT1/pbk/l/n/10 113[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 41
- [][]\OT1/pbk/l/n/10 120[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 44
- [][]\OT1/pbk/l/n/10 122[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 45
- [][]\OT1/pbk/l/n/10 123[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 51
- [][]\OT1/pbk/l/n/10 131[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 52
- [][]\OT1/pbk/l/n/10 133[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 55
- [][]\OT1/pbk/l/n/10 142[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 56
- [][]\OT1/pbk/l/n/10 143[][]
- []
-
-)
+])
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
- [8] (./thesis.lot
-Overfull \hbox (3.09982pt too wide) detected at line 13
- [][]\OT1/pbk/l/n/10 107[][]
- []
-
-
-Overfull \hbox (3.09982pt too wide) detected at line 15
- [][]\OT1/pbk/l/n/10 137[][]
- []
-
-)
+ [6] (./thesis.lot)
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
- [9
+ [7
 
 
-] [10
+] [8
 
 ]
 \openout2 = `chapter1.aux'.
 
- (./chapter1.tex
+
+(./chapter1.tex
 Chapter 1.
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <20.74> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1.
-LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/pag/b/n' tried instead on input line 4.
-LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/pag/db/n' tried instead on input line 4.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1456,30 +1253,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <12> not available
-(Font)              Font shape `OT1/pag/b/n' tried instead on input line 70.
-LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <12> not available
-(Font)              Font shape `OT1/pag/db/n' tried instead on input line 70.
-LaTeX Font Info:    Try loading font information for TS1+pbk on input line 87.
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/ts1pbk.fd
-File: ts1pbk.fd 2001/06/04 font definitions for TS1/pbk.
-)
-LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <10> not available
-(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 87.
- [3]
-Overfull \hbox (9.70715pt too wide) in paragraph at lines 128--129
-[]\OT1/pbk/l/n/10 Demonstrate the ap-pli-ca-bil-ity of this work by ap-ply-ing 
-it to real (industry-
- []
-
-[4]
-Overfull \hbox (12.70876pt too wide) in paragraph at lines 150--155
-\OT1/pbk/l/n/10 nets, and study the foun-da-tional prob-lems of sound-ness and 
-strong (time-bounded)
- []
-
-) [5] [6
+[3] [4]) [5] [6
 
 
 ]
@@ -1487,73 +1261,53 @@ strong (time-bounded)
 
  (./chapter2.tex
 Chapter 2.
-
-Underfull \vbox (badness 1902) has occurred while \output is active []
-
- [7
+[7
 
 
 ]
 File: Figures/usos.eps Graphic file (type eps)
-
-<Figures/usos.eps>
+ <Figures/usos.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
 [9]
 File: Figures/coste.eps Graphic file (type eps)
- <Figures/coste.eps> [10]
-Underfull \vbox (badness 6978) has occurred while \output is active []
+ <Figures/coste.eps>
+Underfull \vbox (badness 3108) has occurred while \output is active []
+
+ [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
 File: Figures/clientserver.eps Graphic file (type eps)
 
-<Figures/clientserver.eps> [12]
-Overfull \hbox (5.06921pt too wide) in paragraph at lines 191--193
-\OT1/pbk/l/n/10 by its de-scrip-tion us-ing SOAP-messages, typ-i-cally con-veye
-d us-ing HTTP
- []
+<Figures/clientserver.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 2846) has occurred while \output is active []
-
- [13]
+ [12]
+[13]
 File: Figures/ws-stack.eps Graphic file (type eps)
-
-<Figures/ws-stack.eps>
+ <Figures/ws-stack.eps>
+File: Figures/orchestra.eps Graphic file (type eps)
+ <Figures/orchestra.eps>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-File: Figures/orchestra.eps Graphic file (type eps)
-<Figures/orchestra.eps>
-Underfull \vbox (badness 4927) has occurred while \output is active []
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
-[16]
-Overfull \hbox (5.53105pt too wide) in paragraph at lines 317--335
-\OT1/pbk/l/n/10 for short BPEL, was first con-ceived in July, 2002, with the re
--lease of the BPEL4WS
- []
+Underfull \vbox (badness 2717) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
+ [16]
 File: Figures/bpelhistory.eps Graphic file (type eps)
 
-<Figures/bpelhistory.eps> [18] [19]
+<Figures/bpelhistory.eps> [17] [18]
 File: Figures/bpelexample.eps Graphic file (type eps)
- <Figures/bpelexample.eps>
-Underfull \vbox (badness 1048) has occurred while \output is active []
-
- [20]
+ <Figures/bpelexample.eps> [19]
 File: Figures/bpelcode.eps Graphic file (type eps)
 
 <Figures/bpelcode.eps>
@@ -1563,117 +1317,93 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
-[22] [23]
-Overfull \hbox (17.19106pt too wide) in paragraph at lines 545--545
-[]\OT1/pag/db/n/14.4 Heterogeneous Dis-tributed Sys-tems: Grid/-Cloud Com-
+ [20]
+[21] [22]
+Overfull \hbox (1.80956pt too wide) in paragraph at lines 545--545
+[]\OT1/cmss/bx/n/14.4 Heterogeneous Dis-tributed Sys-tems: Grid/-Cloud Com-
  []
 
-[24] [25] [26]
-Underfull \vbox (badness 1377) has occurred while \output is active []
+[23] [24]
+Underfull \vbox (badness 3568) has occurred while \output is active []
 
- [27]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [25]
+Underfull \vbox (badness 3568) has occurred while \output is active []
 
- [28]
-Overfull \hbox (1.62701pt too wide) in paragraph at lines 700--703
-\OT1/pbk/l/n/10 prop-er-ties may be used to in-spect and mon-i-tor the life-tim
-e of a WS-Resource
- []
-
-(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
+ [26]
+[27] (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 724.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 764.
 
 
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [29]
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <7> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 762.
-LaTeX Font Info:    Try loading font information for OML+pbk on input line 764.
-
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/omlpbk.fd
-File: omlpbk.fd 
+(/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OML/pbk/m/n' in size <7> not available
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <7> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 764.
- [30]
+ [28]
 Underfull \hbox (badness 10000) in paragraph at lines 822--825
 
  []
 
-[31] [32] [33] [34] [35]
-Underfull \vbox (badness 4242) has occurred while \output is active []
+[29] [30] [31] [32]
+Underfull \vbox (badness 1490) has occurred while \output is active []
 
- [36]
+ [33]
+[34] [35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
+ [36]
 File: Figures/wfmsarquitectura.eps Graphic file (type eps)
 
-<Figures/wfmsarquitectura.eps> [38] [39]
-Missing character: There is no â in font pbkl7t!
-Missing character: There is no € in font pbkl7t!
-Missing character: There is no ™ in font pbkl7t!
+<Figures/wfmsarquitectura.eps> [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \vbox (badness 2237) has occurred while \output is active []
+ [38]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+
+[39]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40]
-[41]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [44]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [45]
 (./basicdefinitions.tex
-LaTeX Font Info:    Font shape `OT1/pag/m/it' in size <10> not available
-(Font)              Font shape `OT1/pag/m/sl' tried instead on input line 11.
- [46]
-LaTeX Font Info:    Try loading font information for OMS+pbk on input line 24.
 
-(/usr/share/texmf-texlive/tex/latex/psnfss/omspbk.fd
-File: omspbk.fd 
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 11.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 24.
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <10> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
-
-Overfull \hbox (28.54219pt too wide) in paragraph at lines 65--73
-\OT1/pbk/l/n/10 such that $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; m[]\OT1/cmr/m/n
-/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 C$\OT1/pbk/l/n/10 , $\OMS/cmsy/m/n/10
- 8\OML/cmm/m/it/10 i \OT1/cmr/m/n/10 = 1\OML/cmm/m/it/10 ; [] ; \OT1/cmr/m/n/10
- ^^E[](\OML/cmm/m/it/10 C\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 )$
- \OT1/pbk/l/n/10 and $\OML/cmm/m/it/10 m[] \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/1
-0 m[]$\OT1/pbk/l/n/10 , $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 i \OT1/cmr/m/n/10 =
- 1\OML/cmm/m/it/10 ; [] ; \OT1/cmr/m/n/10 ^^E[](\OML/cmm/m/it/10 C\OT1/cmr/m/n/
-10 )(\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@
+ [44]
+Underfull \hbox (badness 10000) in paragraph at lines 79--85
+[][]\OT1/cmr/m/n/10 , tak-ing [] and []
  []
 
 
-Underfull \hbox (badness 3375) in paragraph at lines 79--85
-[][]\OT1/pbk/l/n/10 , tak-ing [] and []
- []
-
-[47]
-Overfull \hbox (5.37164pt too wide) in paragraph at lines 101--107
+Overfull \hbox (4.9495pt too wide) in paragraph at lines 101--107
 $\OML/cmm/m/it/10 C[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 r[]:
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n[]; m[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; [
 ] ; r[]:\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n[]; m[]\OT1/cmr/m/n/10 )\OML/cmm/m/i
 t/10 ; [] ; r[]:\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n[]; m[]\OT1/cmr/m/n/10 )\OML
 /cmm/m/it/10 ; [] ; r[]:\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n[]; m[]\OT1/cmr/m/n/
-10 )\OMS/cmsy/m/n/10 g$\OT1/pbk/l/n/10 ,
+10 )\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 ,
  []
 
 
@@ -1689,68 +1419,58 @@ T1/cmr/m/n/10 (\OML/cmm/m/it/10 n[]; m[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; []
  []
 
 
-Overfull \hbox (6.219pt too wide) in paragraph at lines 112--124
+Overfull \hbox (5.79684pt too wide) in paragraph at lines 112--124
 [] \OML/cmm/m/it/10 ; r[]:\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n[]; m[]\OT1/cmr/m/
 n/10 )\OML/cmm/m/it/10 ; [] ; r[]:\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n[]; m[]\OT
 1/cmr/m/n/10 )\OML/cmm/m/it/10 ; [] ; r[]:\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n[]
 ; m[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 	 \O
 T1/cmr/m/n/10 (\OML/cmm/m/it/10 C[] \OMS/cmsy/m/n/10 ^^@ f\OT1/cmr/m/n/10 1\OML
 /cmm/m/it/10 :\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n[]; m\OT1/cmr/m/n/10 )\OMS/cms
-y/m/n/10 g\OT1/cmr/m/n/10 )$\OT1/pbk/l/n/10 . 
+y/m/n/10 g\OT1/cmr/m/n/10 )$. 
  []
 
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <5> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 156.
-[48] (./fig26.tex) [49] (./fig27.tex) [50]
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <14.4> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 281.
-))
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[45] [46] (./fig26.tex) [47] (./fig27.tex)
+Underfull \vbox (badness 1484) has occurred while \output is active []
 
- [51]
-[52]
+ [48]))
+[49] [50
+
+
+]
 \openout2 = `chapter3.aux'.
 
  (./chapter3.tex
 Chapter 3.
-[53
+[51
 
 
-
-
-] [54]
-Underfull \vbox (badness 2443) has occurred while \output is active []
+] [52] [53] (./ptcpn.tex [54]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [55]
-[56] (./ptcpn.tex
-Overfull \hbox (0.19876pt too wide) in paragraph at lines 6--18
-[]\OT1/pbk/l/n/10 We use prioritised-timed coloured Petri nets (PTCPNs), which 
-are a prioritised-
+[56] [57]
+File: Figures/figure2_scp.eps Graphic file (type eps)
+ <Figures/figure2_scp.eps> [58]
+Overfull \hbox (7.24081pt too wide) in paragraph at lines 284--300
+\OT1/cmr/m/n/10 straints of this model. As a re-sult we may ob-tain in $\OML/cm
+m/m/it/10 p[]$ \OT1/cmr/m/n/10 the fol-low-ing mark-ing $\OMS/cmsy/m/n/10 f\OT1
+/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 (4\OML/cmm/m/it/10 ; \OT1/cmr/m/
+n/10 3)\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 (6
+\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1)\OML/cmm/m/it/10 ;$
  []
 
-
+) (./dtapn.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57]
-[58] [59]
-File: Figures/figure2_scp.eps Graphic file (type eps)
- <Figures/figure2_scp.eps> [60]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [61])
-(./dtapn.tex
-Overfull \hbox (23.52707pt too wide) in paragraph at lines 27--29
-[]\OT1/pbk/l/n/10 An \OT1/pbk/l/it/10 ex-tended timed-arc Petri net \OT1/pbk/l/
+ [59]
+Overfull \hbox (6.85715pt too wide) in paragraph at lines 27--29
+[]\OT1/cmr/m/n/10 An \OT1/cmr/m/it/10 ex-tended timed-arc Petri net \OT1/cmr/m/
 n/10 (ETAPN) is a 9-tuple $\OML/cmm/m/it/10 N \OT1/cmr/m/n/10 = (\OML/cmm/m/it/
 10 P; T; T[]; []; []; \OT1/cmr/m/it/10 g\OML/cmm/m/it/10 ; \OT1/cmr/m/it/10 w\O
 ML/cmm/m/it/10 ; []; \OT1/cmr/m/it/10 I\OT1/cmr/m/n/10 )$
  []
 
-[62] [63]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [64]))
-[65] [66
+[60] [61] [62])) [63] [64
 
 
 ]
@@ -1761,62 +1481,82 @@ Chapter 4.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [67
+ [65
 
 
 ]
+Underfull \vbox (badness 3568) has occurred while \output is active []
+
+ [66]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [68]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [69]
-[70]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [71]
-Overfull \hbox (1.94142pt too wide) in paragraph at lines 136--140
-[]\OT1/pbk/l/n/10 where $[]$, $[]$ is an arith-metic
+Overfull \hbox (55.3271pt too wide) in paragraph at lines 185--193
+[]|[]| 
  []
 
 
-Overfull \hbox (1.23213pt too wide) in paragraph at lines 185--193
+Overfull \hbox (17.40302pt too wide) in paragraph at lines 201--206
+[]|[]| 
+ []
+
+
+Overfull \hbox (2.70145pt too wide) in paragraph at lines 214--220
+[]|[]| 
+ []
+
+
+Overfull \hbox (4.51376pt too wide) in paragraph at lines 245--251
+[]|[]| 
+ []
+
+
+Overfull \hbox (4.45845pt too wide) in paragraph at lines 317--326
 []|[]| 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 1292) has occurred while \output is active []
+
+ [69]
+Underfull \vbox (badness 3482) has occurred while \output is active []
+
+ [70]
+Overfull \hbox (8.06943pt too wide) in paragraph at lines 365--373
+[]|[]| 
+ []
+
+
+Overfull \hbox (6.52068pt too wide) in paragraph at lines 423--433
+[]|[]| 
+ []
+
+
+Overfull \hbox (11.76389pt too wide) in paragraph at lines 438--449
+[]|[]| 
+ []
+
+
+Overfull \hbox (144.70332pt too wide) in paragraph at lines 452--458
+[]|[]| 
+ []
+
+[71]
+Overfull \hbox (21.2856pt too wide) in paragraph at lines 485--489
+[]$ $[]$\OT1/cmr/m/n/10 , with $\OML/cmm/m/it/10 j \OMS/cmsy/m/n/10 2 f\OT1/cmr
+/m/n/10 1\OML/cmm/m/it/10 ; :::; s[]\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 . 
+ []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [72]
-Overfull \hbox (75.00528pt too wide) in paragraph at lines 452--458
-[]|[]| 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [73]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [74]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [75]
-LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <7> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 721.
-LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <7> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 721.
-LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <5> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 721.
-LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <5> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 721.
-
 Underfull \hbox (badness 10000) in paragraph at lines 721--723
 
  []
@@ -1832,34 +1572,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 1011--1013
 
  []
 
+[73] [74]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [75]
 [76]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [77]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [78]
-[79]
-LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <7> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1238.
-
-LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <5> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1238.
-
-
 Overfull \hbox (8.33858pt too wide) in paragraph at lines 1238--1239
  [][] 
  []
 
-[80]
+[77]
 Underfull \hbox (badness 10000) in paragraph at lines 1250--1256
 
  []
 
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <9> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1259.
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1261.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1261--1279
 
@@ -1870,103 +1596,86 @@ Underfull \hbox (badness 10000) in paragraph at lines 1261--1279
 
  []
 
-
-Underfull \vbox (badness 1502) has occurred while \output is active []
+[78]
+File: Figures/ecows.eps Graphic file (type eps)
+ <Figures/ecows.eps> [79] [80]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [81]
-Overfull \hbox (0.29509pt too wide) in paragraph at lines 1283--1284
-\OT1/pbk/l/n/10 cur-rent bid by means of a ran-dom func-tion, the op-er-a-tions
- $\OML/cmm/m/it/10 bid[]finish[]$\OT1/pbk/l/n/10 , $\OML/cmm/m/it/10 bid[]finis
-h[]$
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [82]
+Overfull \hbox (13.02853pt too wide) in paragraph at lines 1389--1397
+\OT1/cmr/m/n/10 timed ex-ten-sion of coloured Petri nets [[]], sup-ported by th
+e well-known tool-box CPNTools[[]]. 
  []
 
-File: Figures/ecows.eps Graphic file (type eps)
-<Figures/ecows.eps> [82] [83]
+[83]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [84]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [85]
-[86] [87]
 File: Figures/orchestration.eps Graphic file (type eps)
- <Figures/orchestration.eps>
-Underfull \vbox (badness 7944) has occurred while \output is active []
 
- [88]
+<Figures/orchestration.eps>
 File: Figures/throw.eps Graphic file (type eps)
-
-<Figures/throw.eps>
+ <Figures/throw.eps>
 File: Figures/exit.eps Graphic file (type eps)
  <Figures/exit.eps>
 File: Figures/empty.eps Graphic file (type eps)
- <Figures/empty.eps>
+
+<Figures/empty.eps>
 File: Figures/wait.eps Graphic file (type eps)
  <Figures/wait.eps>
 File: Figures/assign.eps Graphic file (type eps)
-
-<Figures/assign.eps>
-Overfull \hbox (13.13058pt too wide) in paragraph at lines 1949--1949
+ <Figures/assign.eps>
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1933--1935
  [][] 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1949--1951
- [][] 
- []
+Underfull \vbox (badness 3291) has occurred while \output is active []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+ [85]
 File: Figures/communication.eps Graphic file (type eps)
+
 <Figures/communication.eps>
-Overfull \hbox (5.2814pt too wide) in paragraph at lines 1976--1976
- [][] 
- []
-
 File: Figures/communication_2.eps Graphic file (type eps)
-<Figures/communication_2.eps>
-Overfull \hbox (4.8801pt too wide) in paragraph at lines 1976--1976
-[]$[]$   $[]$ 
+ <Figures/communication_2.eps>
+Overfull \hbox (16.7521pt too wide) in paragraph at lines 1954--1954
+[][]  [][][][] 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1976--1978
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1954--1956
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Overfull \hbox (4.69629pt too wide) in paragraph at lines 1981--1982
-[]\OT1/pbk/l/n/10 Fig. [][]4.4[][][] shows the trans-la-tion for both the in-vo
-ke/re-ceive and the reply/$[]$
+[86]
+Underfull \hbox (badness 5667) in paragraph at lines 1974--1976
+[]\OT1/cmr/m/n/10 Sequential con-trol be-tween ac-tiv-i-ties is pro-vided by $\
+OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 sequence$\OML/cmm/m/it/10 >$\OT1/cmr/m/n/10 ,
+ $\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 if$\OML/cmm/m/it/10 >$\OT1/cmr/m/n/10 ,
  []
 
-
-Underfull \vbox (badness 1803) has occurred while \output is active []
-
- [89]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [90]
+[87]
 File: Figures/sequence.eps Graphic file (type eps)
-
-<Figures/sequence.eps> [91]
+ <Figures/sequence.eps> [88]
 File: Figures/paralelo.eps Graphic file (type eps)
- <Figures/paralelo.eps> [92]
+ <Figures/paralelo.eps> [89]
 File: Figures/pick.eps Graphic file (type eps)
- <Figures/pick.eps>
-[93]
-File: Figures/while.eps Graphic file (type eps)
- <Figures/while.eps> [94]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [95]
+<Figures/pick.eps>
+File: Figures/while.eps Graphic file (type eps)
+ <Figures/while.eps> [90]
+Underfull \vbox (badness 8189) has occurred while \output is active []
+
+ [91]
 File: Figures/createResource.eps Graphic file (type eps)
 
-<Figures/createResource.eps> [96]
+<Figures/createResource.eps> [92]
 File: Figures/subscribe.eps Graphic file (type eps)
  <Figures/subscribe.eps>
 File: Figures/getProp.eps Graphic file (type eps)
@@ -1977,94 +1686,67 @@ File: Figures/setProp.eps Graphic file (type eps)
 File: Figures/setTime.eps Graphic file (type eps)
  <Figures/setTime.eps>
 
-LaTeX Warning: Command \textregistered invalid in math mode on input line 2284.
+LaTeX Warning: Command \textregistered invalid in math mode on input line 2262.
 
 
 
-LaTeX Warning: Command \textregistered invalid in math mode on input line 2284.
+LaTeX Warning: Command \textregistered invalid in math mode on input line 2262.
 
 
 Missing character: There is no ® in font cmr7!
-LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 2285.
-
-[97]
+[93]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [98]
-Overfull \hbox (15.05092pt too wide) in paragraph at lines 2349--2351
-[]\OT1/pbk/l/n/10 The XSLT stylesheet doc-u-ment starts with the in-struc-tion 
-$[]$.
- []
-
-
-Overfull \hbox (6.19702pt too wide) in paragraph at lines 2349--2351
-\OT1/pbk/l/n/10 Once we have lo-cated the ini-tial and fi-nal mark of the root 
-el-e-ment ``xsl:stylesheet'',
- []
-
-[99]
+ [94]
+[95]
 File: Figures/mainscreen.eps Graphic file (type eps)
  <Figures/mainscreen.eps>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[100]
-Overfull \hbox (1.11844pt too wide) in paragraph at lines 2450--2456
-[]$ \OT1/pbk/l/n/10 and $[]$. Vari-able $\OML/cmm/m/it/10 v[]$ \OT1/pbk/l/n/10 
-serves
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2450--2456
+[96]
+Underfull \hbox (badness 10000) in paragraph at lines 2428--2434
 
  []
 
-[101]
-Underfull \hbox (badness 10000) in paragraph at lines 2458--2526
+[97]
+Underfull \hbox (badness 10000) in paragraph at lines 2436--2504
 
  []
 
 
-Underfull \vbox (badness 1953) has occurred while \output is active []
-
- [102]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [103]
+ [98]
 File: Figures/casestudy.eps Graphic file (type eps)
 
-<Figures/casestudy.eps> [104]
+<Figures/casestudy.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [99]
+[100]
 File: Figures/sistema.eps Graphic file (type eps)
  <Figures/sistema.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 2566--2568
+Underfull \hbox (badness 10000) in paragraph at lines 2544--2546
 [][]
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: Figures/proceso.eps Graphic file (type eps)
 <Figures/proceso.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+ [101]
+[102]
+Overfull \hbox (4.07602pt too wide) in paragraph at lines 2572--2586
+\OT1/cmr/m/n/10 when this sit-u-a-tion oc-curs: [], 
+ []
 
-[105] [106]
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 2611.
 File: Figures/queries.eps Graphic file (type eps)
- <Figures/queries.eps>
+<Figures/queries.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[107]
-Underfull \vbox (badness 5771) has occurred while \output is active []
-
- [108])
-[109] [110
-
-
-]
+ [103])
+[104]
 \openout2 = `chapter5.aux'.
 
  (./chapter5.tex
@@ -2072,284 +1754,166 @@ Chapter 5.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [111
+ [105
+
+
 
 
 ]
 (./introduction.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [112]
-Underfull \vbox (badness 3229) has occurred while \output is active []
+ [106]
+[107]) (./definitions.tex [108]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [113])
-(./definitions.tex [114]
-Underfull \vbox (badness 1377) has occurred while \output is active []
-
- [115]
-[116]) (./soundness.tex [117]
-Overfull \hbox (21.55852pt too wide) in paragraph at lines 69--73
-[]\OT1/pbk/l/n/10 An (ex-tended or mono-tonic) timed-arc work-flow net $\OML/cm
-m/m/it/10 N \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 P; T; T[]; []; []; \OT1/cmr/m/i
-t/10 g\OML/cmm/m/it/10 ; \OT1/cmr/m/it/10 w\OML/cmm/m/it/10 ; []; \OT1/cmr/m/it
-/10 I\OT1/cmr/m/n/10 )$
- []
-
-[118] [119]
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 205.
-See the caption package documentation for explanation.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 249.
-See the caption package documentation for explanation.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 295.
-See the caption package documentation for explanation.
-
-
-Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 300.
-See the caption package documentation for explanation.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 300.
-See the caption package documentation for explanation.
-
-
-Overfull \hbox (4.28867pt too wide) in paragraph at lines 164--300
-[]$[]$ $[]$ $[]$ 
- []
-
-) (./decidability.tex [120]
-Underfull \vbox (badness 4279) has occurred while \output is active []
-
- [121]
-Overfull \hbox (8.98553pt too wide) in paragraph at lines 149--153
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--153
-[]\OT1/pbk/l/n/10 b: |$\OML/cmm/m/it/10 i$\OT1/pcr/m/n/10 : if $\OML/cmm/m/it/1
-0 c[]$\OT1/pcr/m/n/10 =$\OT1/cmr/m/n/10 0$ \OT1/pcr/m/n/10 then goto $\OML/cmm/
-m/it/10 k$ \OT1/pcr/m/n/10 else
- []
-
-
-Overfull \hbox (2.44005pt too wide) in paragraph at lines 105--155
-[]$[]$ $[]$ 
- []
-
+ [109]
+[110]) (./soundness.tex [111] [112]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[122]
+) (./decidability.tex [113] [114]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [123]
+ [115]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [116]
 Package hyperref Info: bookmark level for unknown algocf defaults to 0 on input
- line 314.
+ line 351.
 
-Underfull \hbox (badness 10000) detected at line 374
+Underfull \hbox (badness 10000) detected at line 352
 [][]
- []
-
-[124] [125] [126] [127] [128]) (./strong-soundness.tex [129]
-Overfull \hbox (2.44005pt too wide) in paragraph at lines 52--124
-[]$[]$ $[]$ 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[130]
-Overfull \hbox (0.65312pt too wide) in paragraph at lines 140--152
-[]\OT1/pbk/l/n/10 ``$\OMS/cmsy/m/n/10 ($\OT1/pbk/l/n/10 '': By con-tra-dic-tion
- we as-sume that $\OMS/cmsy/m/n/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 N\OT1/cmr
-/m/n/10 )$ \OT1/pbk/l/n/10 is fi-nite while $\OML/cmm/m/it/10 N$ \OT1/pbk/l/n/1
-0 is not strongly
- []
 
+Underfull \vbox (badness 3229) has occurred while \output is active []
 
-Underfull \vbox (badness 1688) has occurred while \output is active []
+ [117]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [131]
-[132] [133]) (./continuous.tex [134] [135]
+ [118]
+[119] [120] [121]) (./strong-soundness.tex
+Underfull \vbox (badness 1337) has occurred while \output is active []
+
+ [122]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[123]
+Underfull \vbox (badness 1205) has occurred while \output is active []
+
+ [124]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[125] [126]) (./continuous.tex [127] [128]
 LaTeX Font Info:    Try loading font information for U+eus on input line 111.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2009/06/22 v3.00 Euler Script
-) [136]
-Overfull \hbox (33.6737pt too wide) in paragraph at lines 151--162
+)
+Overfull \hbox (11.89546pt too wide) in paragraph at lines 132--137
+[]\OT1/cmr/m/n/10 for all $\OML/cmm/m/it/10 y \OMS/cmsy/m/n/10 2 []$\OT1/cmr/m/
+n/10 , if $[]$ then $[]$ else $[]$,
+ []
+
+[129]
+Overfull \hbox (41.43767pt too wide) in paragraph at lines 151--162
 [][]
  []
 
-[137] [138] [139] [140] [141]
-Overfull \hbox (4.8801pt too wide) in paragraph at lines 417--489
-[]$[]$   $[]$ 
- []
+[130] [131] [132] [133]
 
-[142])
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[134]) [135]
 File: Figures/screenshot-combined.eps Graphic file (type eps)
- <Figures/screenshot-combined.eps> [143] [144]) [145] [146
+ <Figures/screenshot-combined.eps>
+Underfull \vbox (badness 7631) has occurred while \output is active []
+
+ [136])
+[137] [138
 
 
 ]
 \openout2 = `Conclusions.aux'.
 
-
-(./Conclusions.tex
+ (./Conclusions.tex
 Chapter 6.
-) [147
+) [139
 
 
 ]
 
-LaTeX Warning: Reference `c6' on page 148 undefined on input line 286.
+LaTeX Warning: Reference `c6' on page 140 undefined on input line 287.
 
-[148
+[140
 
 
 ] (./thesis.bbl
-LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <10> not available
-(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 10.
-
-Underfull \hbox (badness 1377) in paragraph at lines 8--12
-[]\OT1/pbk/l/n/10 Oasis stan-dard for web ser-vices no-ti-fi-ca-tion (wsn) v1.3
-.  [][][][]$\OT1/pcr/m/sl/10 https : //$[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--18
-[][][][]$\OT1/pcr/m/sl/10 docs.$[][][][][][]$oasis-[]open.$[][][][][][]$org/$[]
-[][][][][]$wsrf/$[][][][][][]$wsrf-[]primer-[]1.$[][][][][][]$2-[]primer-[]cd-[
-]02.$[][][][][][]$pdf$[][][]\OT1/pbk/l/n/10 ,
- []
-
-Missing character: There is no Ã in font pbkl7t!
-Missing character: There is no ­ in font pbkl7t!
-Missing character: There is no Ã in font pbkl7t!
-Missing character: There is no ¶ in font pbkl7t!
-[149
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ­ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+ [141
 
 ]
-Missing character: There is no â in font pbkl7t!
-Missing character: There is no € in font pbkl7t!
-Missing character: There is no “ in font pbkl7t!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
 
 
-LaTeX Warning: Reference `c6' on page 150 undefined on input line 120.
+LaTeX Warning: Reference `c6' on page 142 undefined on input line 131.
 
-[150] [151]
+[142] [143]
 
-LaTeX Warning: Reference `c6' on page 152 undefined on input line 252.
+LaTeX Warning: Reference `c6' on page 144 undefined on input line 275.
 
-[152]
-Underfull \hbox (badness 10000) in paragraph at lines 276--281
-[]\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
- []
+[144] [145]
 
+LaTeX Warning: Reference `c6' on page 146 undefined on input line 413.
 
-Underfull \hbox (badness 3148) in paragraph at lines 276--281
-\OT1/pbk/l/n/10 mann M. Nally T. Storey W. Vam-benepe I. Fos-ter, J. Frey and
- []
-
-
-Underfull \hbox (badness 3323) in paragraph at lines 276--281
-\OT1/pbk/l/n/10 S. Weer-awarana.  Mod-el-ing state-ful re-sources with web ser-
-vices.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 276--281
-\OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
- []
-
-[153]
-
-LaTeX Warning: Reference `c6' on page 154 undefined on input line 382.
-
-[154] [155]
-Missing character: There is no Ã in font pbkl7t!
-Missing character: There is no ¤ in font pbkl7t!
-
-
-LaTeX Warning: Reference `c6' on page 156 undefined on input line 511.
-
-[156]
-Underfull \hbox (badness 4846) in paragraph at lines 541--544
-[]\OT1/pbk/l/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
+[146]
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¤ in font cmr10!
+ [147]
+Underfull \hbox (badness 10000) in paragraph at lines 541--544
+[]\OT1/cmr/m/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
 2004.
  []
 
-) (./thesis.bbl [157] [158
+
+LaTeX Warning: Reference `c6' on page 148 undefined on input line 551.
+
+[148]) (./thesis.bbl [149] [150
 
 ]
-Underfull \hbox (badness 1377) in paragraph at lines 8--12
-[]\OT1/pbk/l/n/10 Oasis stan-dard for web ser-vices no-ti-fi-ca-tion (wsn) v1.3
-.  [][][][]$\OT1/pcr/m/sl/10 https : //$[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--18
-[][][][]$\OT1/pcr/m/sl/10 docs.$[][][][][][]$oasis-[]open.$[][][][][][]$org/$[]
-[][][][][]$wsrf/$[][][][][][]$wsrf-[]primer-[]1.$[][][][][][]$2-[]primer-[]cd-[
-]02.$[][][][][][]$pdf$[][][]\OT1/pbk/l/n/10 ,
- []
-
-Missing character: There is no Ã in font pbkl7t!
-Missing character: There is no ­ in font pbkl7t!
-Missing character: There is no Ã in font pbkl7t!
-Missing character: There is no ¶ in font pbkl7t!
-[159]
-Missing character: There is no â in font pbkl7t!
-Missing character: There is no € in font pbkl7t!
-Missing character: There is no “ in font pbkl7t!
- [160] [161] [162]
-Underfull \hbox (badness 10000) in paragraph at lines 276--281
-[]\OT1/pbk/l/n/10 S. Gra-ham S. Tuecke K. Cza-jkowski D. Fer-gu-son F. Ley-
- []
-
-
-Underfull \hbox (badness 3148) in paragraph at lines 276--281
-\OT1/pbk/l/n/10 mann M. Nally T. Storey W. Vam-benepe I. Fos-ter, J. Frey and
- []
-
-
-Underfull \hbox (badness 3323) in paragraph at lines 276--281
-\OT1/pbk/l/n/10 S. Weer-awarana.  Mod-el-ing state-ful re-sources with web ser-
-vices.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 276--281
-\OT1/pbk/l/it/10 http://www-106.ibm.com/developerworks/library/wsresource/ ws-
- []
-
-[163] [164] [165]
-Missing character: There is no Ã in font pbkl7t!
-Missing character: There is no ¤ in font pbkl7t!
- [166]
-Underfull \hbox (badness 4846) in paragraph at lines 541--544
-[]\OT1/pbk/l/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ­ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+ [151]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+ [152] [153] [154] [155] [156]
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¤ in font cmr10!
+ [157]
+Underfull \hbox (badness 10000) in paragraph at lines 541--544
+[]\OT1/cmr/m/n/10 W3C.  Web Ser-vices Chore-og-ra-phy De-scrip-tion Lan-guage, 
 2004.
  []
 
-) [167] [168
+[158]) [159] [160
 
-]
-
-Package caption Warning: Unused \captionsetup[figure] on input line 180.
-See the caption package documentation for explanation.
-
-(./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux) (./chapter2.aux)
-(./chapter3.aux) (./chapter4.aux) (./chapter5.aux) (./Conclusions.aux))
+] (./thesis.aux (./ack.aux) (./abstract.aux) (./chapter1.aux)
+(./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux)
+(./Conclusions.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -2358,12 +1922,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20328 strings out of 495062
- 342007 string characters out of 1182644
- 490867 words of memory out of 3000000
- 22917 multiletter control sequences out of 15000+50000
- 36849 words of font info for 114 fonts, out of 3000000 for 9000
+ 18936 strings out of 495062
+ 319044 string characters out of 1182644
+ 458439 words of memory out of 3000000
+ 21552 multiletter control sequences out of 15000+50000
+ 25457 words of font info for 93 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 63i,28n,92p,1682b,1825s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,28n,82p,1682b,1832s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (180 pages, 1035388 bytes).
+Output written on thesis.dvi (170 pages, 1041660 bytes).

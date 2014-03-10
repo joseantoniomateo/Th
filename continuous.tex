@@ -413,8 +413,8 @@ $N$ is sound also in the continuous semantics.
 
 
 \begin{figure}[!h]
-%\subfloat[][Using invariants]{
-\begin{minipage}[c]{0.5\textwidth}
+\centering
+\subfigure[Using invariants\label{fig:count1}]{
 \begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.6]
   \tikzstyle{arc}=[->,>=stealth,thick]
 	\tikzstyle{transportArc}=[->,>=diamond,thick]
@@ -445,13 +445,8 @@ $N$ is sound also in the continuous semantics.
 \draw[arc] (finished) -- (2.75,1) -- (early) node[very near start,auto] {$[1,1]$} {};
 \draw[arc] (early) -- (3.25,-0.9) -- (out)  {};
 \end{tikzpicture}
-\captionsetup{type=subfigure}
-\caption{Using invariants.}
-\label{fig:count1}
-\end{minipage}
-\hspace{0mm}
-%\subfloat[][Using urgency]{
-\begin{minipage}[c]{0.5\textwidth}
+}
+\subfigure[Using urgency\label{fig:count2}]{
 \begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.6]
   \tikzstyle{arc}=[->,>=stealth,thick]
 	\tikzstyle{transportArc}=[->,>=diamond,thick]
@@ -482,10 +477,7 @@ $N$ is sound also in the continuous semantics.
 \node [] at (1.6,2) {:1};
 \node [] at (1.94,2.29) {$[1,\infty)$};
 \end{tikzpicture}
-\vspace{-0.4cm}
-\captionsetup{type=subfigure}
-\caption{Using urgency.}\label{fig:count2}
-\end{minipage}
+}
 \caption{Sound nets in the discrete semantics and unsound in the continuous one}
 \label{fig:counts}
 \end{figure}
@@ -496,7 +488,7 @@ $N$ is sound also in the continuous semantics.
 For extended timed-arc 
 workflow nets the notion of soundness for the discrete and continuous 
 semantics are, perhaps surprisingly, different.
-Consider Figure~\ref{fig:counts} where both given workflow nets are sound
+Consider Figure~\ref{fig:counts} where both workflow nets are sound
 in the discrete semantics but not in the continuous one.
 
 %. However, in the continuous semantics we can execute in the net

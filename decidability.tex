@@ -101,9 +101,8 @@ As before the input place is $\itn{in}=p_1$ and the output place
 is $\itn{out}=p_n$.
 
 \begin{figure}[!h]
-  
-\begin{minipage}[c]{0.5\textwidth}
-\hspace{1.5cm}
+\subfigure[{\tt $i$: $c_1$++; goto $k$}\label{fig:inc}]{%
+\hspace{1cm}
 \begin{tikzpicture}[font=\scriptsize,xscale=1.5,yscale=1.5]
    \tikzstyle{arc}=[->,>=stealth,thick]
    \tikzstyle{transportArc}=[->,>=diamond,thick]
@@ -118,13 +117,8 @@ is $\itn{out}=p_n$.
   \draw[arc] (t) -- (pk) {};
   \draw[arc] (t) -- (pc1) {};
 \end{tikzpicture}
-\label{fig:inc}
-\captionsetup{type=subfigure}
-\caption{\tt $i$: $c_1$++; goto $k$}
-\end{minipage}
-%\hspace{0mm}
-\begin{minipage}[c]{0.5\textwidth}
-\vspace{0.5cm}
+}
+\subfigure[{\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell$)} \label{fig:dec}]{
 \begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.5]
   \tikzstyle{arc}=[->,>=stealth,thick]
   \tikzstyle{transportArc}=[->,>=diamond,thick]
@@ -147,11 +141,7 @@ is $\itn{out}=p_n$.
  \draw[arc] (tdec) -- (pl) {};
  \draw[arc] (tzero1) -- (pk) {};
 \end{tikzpicture}
-\vspace{-0.4cm}
-\label{fig:dec}
-\captionsetup{type=subfigure}
-\caption{{\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell$)}}
-\end{minipage}
+}
 \caption{Simulation of (Inc) and (Dec) instructions with urgent transitions\label{fig:urgent-reduction}}
 \end{figure}
 
@@ -177,11 +167,8 @@ $t_i^{\mathit goto}$ is fired, all counter tokens are again of age $1$
 of the increment instruction.
 
 \begin{figure}[h]
-\captionsetup[figure]{position=above}
-\caption{Simulation of a Minsky machine by a workflow net with invariants.\label{fig:cont}}
-\begin{center}
-\begin{minipage}[c]{\textwidth}
 \centering
+\subfigure[Simulation of the counters $c_1$ and $c_2$.\label{fig:register_simulation}]{
 \begin{tikzpicture}[font=\scriptsize, xscale=.9,yscale=1.6]
    \tikzstyle{arc}=[->,>=stealth,thick]
    \tikzstyle{transportArc}=[->,>=diamond,thick]
@@ -204,12 +191,8 @@ of the increment instruction.
     edge [pre,bend left=10] node[above,xshift=0mm,pos=0.5]{$[0,\infty]$}(p2c)
     edge [post,bend left=10] (p1c);
 \end{tikzpicture}
-    \captionof{subfigure}{Simulation of the counters $c_1$ and $c_2$.\label{fig:register_simulation}}
-  \end{minipage}
-
-  \begin{minipage}[c]{\textwidth}
-%    \input{figures/simu_increment}
-\centering
+}
+\subfigure[{\tt $i$: $c_1$++; goto $k$}\label{fig:increment_simulation}]{
 \begin{tikzpicture}[font=\scriptsize,scale=.9]
    \tikzstyle{arc}=[->,>=stealth,thick]
    \tikzstyle{transportArc}=[->,>=diamond,thick]
@@ -235,12 +218,9 @@ of the increment instruction.
     edge [pre, bend right] node[above,sloped,pos=0.7] {$[0,\infty]$} (presetr3i) 
     edge [post] (pk) {};
 \end{tikzpicture}
-    \captionof{subfigure}{{\tt $i$: $c_1$++; goto $k$}\label{fig:increment_simulation}}
-      
-  \end{minipage} 
-  \begin{minipage}[c]{\textwidth}
-    %\input{figures/simu_test_decrement}
-\centering
+}
+
+\subfigure[{\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell$)}.\label{fig:test_decrement_simulation}]{
 \begin{tikzpicture}[font=\scriptsize,xscale=0.9,yscale=1.5]
    \tikzstyle{arc}=[->,>=stealth,thick]
    \tikzstyle{transportArc}=[->,>=diamond,thick]
@@ -276,10 +256,8 @@ of the increment instruction.
     edge [pre,bend right=30] node[right,yshift=.0mm,pos=0.3]{$[0,\infty]$} (presetr3i)
     edge [post] (pk);
 \end{tikzpicture}
-      \captionof{subfigure}{{\tt $i$: if $c_1$=$0$ then goto $k$ else 
-           ($c_1$--; goto $\ell$)}.\label{fig:test_decrement_simulation}}
-  \end{minipage}
-\end{center}
+}
+\caption{Simulation of a Minsky machine by a workflow net with invariants.\label{fig:cont}}
 \end{figure}
 
 Let us consider now the test and decrement instruction simulated by
@@ -310,8 +288,7 @@ the Minsky machine halts. This completes the undecidability proof
 also for the situation where we use only age invariants.
 \end{proof}
 
-\begin{algorithm}[th!]
-\caption{Soundness checking for timed-arc workflow nets\label{algthm:1}}
+\begin{algorithm}[h!]
 %\dontprintsemicolon
 \SetKwInOut{Input}{Input}
 \SetKwInOut{Output}{Output}
@@ -329,48 +306,49 @@ $M.\mathit{parents}$ and a minimum execution time $M.min$ (initially $\infty$); 
 % |M|=1 \text{ and } |M(\mathit{in})|=1 \}$\; 
 $M_\mathit{in}:=\{(\mathit{in},0)\}$\;
 $\mathit{Waiting}:= \{M_\mathit{in}\}$; $M_\mathit{in}.\mathit{min}=0$;
-\label{waitinit1} \label{waitinit2}
+\label{waitinit1} \nllabel{waitinit2}
 % \textbf{foreach} $M \in \mathit{Waiting}$ \textbf{do} $M.min = 0$\; 
-$\mathit{Reached}:=\mathit{Waiting}$; \label{Reachedinit}
-$\mathit{Final}:= \emptyset$\; \label{Finalinit}
-\While{$\mathit{Waiting} \neq \emptyset$ \label{initWhile}}{ 
-Remove some marking $M$ from $\mathit{Waiting}$ with the smallest $M.min$\; \label{takeminmarking}
+$\mathit{Reached}:=\mathit{Waiting}$; \nllabel{Reachedinit}
+$\mathit{Final}:= \emptyset$\; \nllabel{Finalinit}
+\While{$\mathit{Waiting} \neq \emptyset$ \nllabel{initWhile}}{ 
+Remove some marking $M$ from $\mathit{Waiting}$ with the smallest $M.min$\; \nllabel{takeminmarking}
 \ForEach{$M^\prime \mbox{s.t.}\, M \trans{1} M' \mbox{ or }
  M \trans{t} M' \mbox{ for some } t \in T$ \label{foreach}}{
-\textbf{if} {$N$ is not monotonic and $|M'|>k$} \textbf{then} {\Return ``Not $k$-bounded''\; \label{monoandnotkbounded}} 
-$M'_c:=cut(M^\prime)$;  \label{cut}
-$M'_{c}.\mathit{parents}:=M'_{c}.\mathit{parents} \cup \{M\}$\; \label{addtoparents}
-\textbf{if} $M \trans{1} M'$ \textbf{then} $M'_c.min := \mathtt{MIN}(M'_c.min, M.min+1)$\label{updateMin1}\;
+\textbf{if} {$N$ is not monotonic and $|M'|>k$} \textbf{then} {\Return ``Not $k$-bounded''\; \nllabel{monoandnotkbounded}} 
+$M'_c:=cut(M^\prime)$;  \nllabel{cut}
+$M'_{c}.\mathit{parents}:=M'_{c}.\mathit{parents} \cup \{M\}$\; \nllabel{addtoparents}
+\textbf{if} $M \trans{1} M'$ \textbf{then} $M'_c.min := \mathtt{MIN}(M'_c.min, M.min+1)$\nllabel{updateMin1}\;
 %\hspace{18mm}
-\textbf{else} $M'_c.min = \mathtt{MIN}(M'_c.min, M.min)$\label{updateMin2}\;
+\textbf{else} $M'_c.min = \mathtt{MIN}(M'_c.min, M.min)$\nllabel{updateMin2}\;
 \eIf{$|M'_c(out)| \geq 1$}
 { \textbf{if} {$M'_c \text{ is a final marking}$} \textbf{then}
- {$\mathit{Final}:=\mathit{Final} \cup \{M'_c\}$\;\label{addtoFinal}} 
+ {$\mathit{Final}:=\mathit{Final} \cup \{M'_c\}$\;\nllabel{addtoFinal}} 
  %\hspace{35mm}
-\textbf{else} {\Return false\;\label{notproper}} 
+\textbf{else} {\Return false\;\nllabel{notproper}} 
 }
 {
-\If{$M'_c  \notin \mathit{Reached}$\label{notinReached}} 
+\If{$M'_c  \notin \mathit{Reached}$\nllabel{notinReached}} 
 {
-\textbf{if} {$M'_c$ is a deadlock \label{isDeadlock}} \textbf{then} {\Return false\label{deadlock}\;}
-\If{$N$ is monotonic and $\exists M'' \in \mathit{Reached}.\ M'' \sqsubseteq_{cut} M'_c$ \label{ifmonoandunbounded}}
-{\Return false\;\label{monoandunbounded}} 
-$\mathit{Reached}:= \mathit{Reached} \cup \{M'_c\}$; \label{addtoReached} $\mathit{Waiting}:= \mathit{Waiting} \cup \{M'_c\}$\; \label{addtoWaiting}
+\textbf{if} {$M'_c$ is a deadlock \nllabel{isDeadlock}} \textbf{then} {\Return false\nllabel{deadlock}\;}
+\If{$N$ is monotonic and $\exists M'' \in \mathit{Reached}.\ M'' \sqsubseteq_{cut} M'_c$ \nllabel{ifmonoandunbounded}}
+{\Return false\;\nllabel{monoandunbounded}} 
+$\mathit{Reached}:= \mathit{Reached} \cup \{M'_c\}$; \nllabel{addtoReached} $\mathit{Waiting}:= \mathit{Waiting} \cup \{M'_c\}$\; \nllabel{addtoWaiting}
 }
 }
 }
 }
-$\mathit{Waiting}:= \mathit{Final}$\; \label{endphase1}
-\While{$\mathit{Waiting} \neq \emptyset$}{ \label{initphase2}
+$\mathit{Waiting}:= \mathit{Final}$\; \nllabel{endphase1}
+\While{$\mathit{Waiting} \neq \emptyset$}{ \nllabel{initphase2}
 Remove some marking $M$ from $\mathit{Waiting}$\;
 $\mathit{Waiting}:= \mathit{Waiting} \cup (M.\mathit{parents} \cap \mathit{Reached})$\;
 $\mathit{Reached}:= \mathit{Reached} \smallsetminus M.\mathit{parents}$\;
-\label{endwhile2}} 
+\nllabel{endwhile2}} 
 \eIf{$\mathit{Reached} = \emptyset$}{
-$\mathit{time} := \infty$; \textbf{foreach} $M \in \mathit{Final}$ \textbf{do} $\mathit{time} = \mathtt{MIN}(\mathit{time}, M.min)$\; \label{minexectime}
-\Return true and $\mathit{time}$\label{returnTrue}\;\label{Nissound}} 
-{\Return false;\label{endphase2}} 
+$\mathit{time} := \infty$; \textbf{foreach} $M \in \mathit{Final}$ \textbf{do} $\mathit{time} = \mathtt{MIN}(\mathit{time}, M.min)$\; \nllabel{minexectime}
+\Return true and $\mathit{time}$\label{returnTrue}\;\nllabel{Nissound}} 
+{\Return false;\nllabel{endphase2}} 
 }
+\caption{Soundness checking for timed-arc workflow nets\label{algthm:1}}
 \end{algorithm}
 
 We now prove decidability of soundness for workflow nets without 

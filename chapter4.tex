@@ -1910,42 +1910,26 @@ inside this interval. Notice the use of a ``control'' place, to arrest all possi
 \begin{figure}[h]
 \centering
 \fbox{\parbox[h]{\textwidth}{
-\begin{minipage}[c]{0.32\textwidth}
-\centering
+\subfigure[Throw PTCPN.\label{fig:throw}]{
     \includegraphics[scale=0.3]{Figures/throw.eps}
-    \caption*{a) Throw PTCPN}
-    \label{fig:throw}
-\end{minipage}
-\begin{minipage}[c]{0.33\textwidth}
-\centering
+}
+\hfill
+\subfigure[Exit PTCPN.\label{fig:exit}]{
     \includegraphics[scale=0.3]{Figures/exit.eps}
-    \caption*{b) Exit PTCPN}
-    \label{fig:exit}
-\end{minipage}
-\begin{minipage}[c]{0.33\textwidth}
-\centering
+}
+\hfill
+\subfigure[Empty PTCPN.\label{fig:empty}]{
     \includegraphics[scale=0.3]{Figures/empty.eps}
-    \vspace{-0.25cm}
-    \caption*{c) Empty PTCPN}
-    \label{fig:empty}
-\end{minipage}
-
-\begin{center}
-\begin{minipage}[c]{0.33\textwidth}
-\centering
+}
+\vfill
+\hspace{1cm}
+\subfigure[Wait PTCPN. \label{fig:wait}]{
     \includegraphics[scale=0.3]{Figures/wait.eps}
-    \caption*{d) Wait PTCPN}
-    \label{fig:wait}
-\end{minipage}
-\hspace{-0cm}
-\begin{minipage}[c]{0.33\textwidth}
-\centering
-    \includegraphics[scale=0.3]{Figures/assign.eps}
-    \vspace{-0.6cm}
-    \caption*{e) Assign PTCPN}
-    \label{fig:assign}
-\end{minipage}
-\end{center}
+}
+\hspace{1cm}
+\subfigure[Assign PTCPN.\label{fig:assign}]{
+   \includegraphics[scale=0.3]{Figures/assign.eps}
+}
 }}
 \caption{\label{fig:basicas}Basic Activities
 Translation}
@@ -1960,19 +1944,13 @@ this last activity in our semantics to deal with the synchronous or asynchronous
 \begin{figure}[h]
 \centering
 \fbox{\parbox[h]{\textwidth}{
-\begin{minipage}[c]{0.5\textwidth}
-\centering
+\subfigure[Invoke/Receive PTCPN.\label{fig:comm1}]{
     \includegraphics[scale=0.27]{Figures/communication.eps}
-    \caption*{a) Invoke/Receive PTCPN}
-    \label{fig:comm1}
-\end{minipage}
-\hspace{0.0cm}
-\begin{minipage}[c]{0.5\textwidth}
-\centering
+}
+\hfill
+\subfigure[$\overline{Reply}$/Reply PTCPN.\label{fig:comm2}]{
     \includegraphics[scale=0.3]{Figures/communication_2.eps}
-    \caption*{b) $\overline{Reply}$/Reply PTCPN}
-    \label{fig:comm2}
-\end{minipage}
+}
 }}
 \caption{\label{fig:comm}Invoke/Receive Activities
 Translation} 

@@ -49,8 +49,8 @@ where $\sum_{i \in \nnul}d_i = \infty$.
 \end{definition}
 
 \begin{figure}[!h]
-\begin{minipage}[c]{0.5\textwidth}
 \centering
+\subfigure[Sound but strongly unsound workflow.\label{fig:notstrongsoun}]{
 \begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.1]
   \tikzstyle{arc}=[->,>=stealth,thick]
 	\tikzstyle{transportArc}=[->,>=diamond,thick]
@@ -79,13 +79,8 @@ where $\sum_{i \in \nnul}d_i = \infty$.
 	\draw[arc] (decision) -- (out) {}; 
 		
 \end{tikzpicture}
-\captionsetup{type=subfigure}
-\caption{Sound but strongly unsound workflow.}
-\label{fig:notstrongsoun}
-\end{minipage}
-\begin{minipage}[c]{0.5\textwidth}
-\centering
-\vspace{-0.5cm}
+}
+\subfigure[Strongly sound workflow.\label{fig:strongsoundness}]{
 \begin{tikzpicture}[font=\scriptsize,xscale=1.9,yscale=1.1]
   \tikzstyle{arc}=[->,>=stealth,thick]
 	\tikzstyle{transportArc}=[->,>=diamond,thick]
@@ -115,14 +110,9 @@ where $\sum_{i \in \nnul}d_i = \infty$.
 	\draw[arc] (pending) -- (decision) {}; 
 	\draw[arc] (decision) -- (out) {}; 
 \end{tikzpicture}
-\vspace{-0.2cm}
-\captionsetup{type=subfigure}
-\caption{Strongly sound workflow.}
-\label{fig:strongsoundness}
-\end{minipage}
+}
 \caption{Fragment of customer complaint workflow ($[0,\infty]$ guards
-are omitted)}
-\label{fig:soudnessnets}
+are omitted).\label{fig:soudnessnets}}
 \end{figure}
 
 Next lemma shows that strong soundness %of a workflow net $N$

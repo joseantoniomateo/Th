@@ -10,9 +10,9 @@
 
 
 %% OPCIONES DE LA CLASE
-\RequirePackage{epsfig}
-\RequirePackage{bookman}
-\RequirePackage{tikz}
+%\RequirePackage{epsfig}
+%\RequirePackage{bookman}
+%\RequirePackage{tikz}
 
 %%DIMENSIONES
 \setlength{\textheight}{625pt}

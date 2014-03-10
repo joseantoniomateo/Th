@@ -54,14 +54,6 @@ freely available as a part of the model checker TAPAAL \cite{tapaal}.
 
 \section{Implementation and Experiments}
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=1\textwidth]{Figures/screenshot-combined.eps}
-\end{center}
-\caption{Screenshot of the workflow analysis tool}
-\label{fig:screenshot}
-\end{figure}
-
 %\begin{figure}[t]
 %\begin{center}
 %\includegraphics[height=0.34\textheight]{screenshot1.pdf}
@@ -74,14 +66,22 @@ freely available as a part of the model checker TAPAAL \cite{tapaal}.
 
 We demonstrate the usability of our framework on three case studies.
 The studied workflows were modelled and verified with the help of 
-a publicly available\footnote{Workflow extension is currently available 
-as a beta-release at the bottom of the download section at www.tapaal.net.},
-open-source tool TAPAAL~\cite{DJJJMS:TACAS:12}, where
+a publicly available open-source tool TAPAAL~\cite{DJJJMS:TACAS:12}, where
 the algorithms presented in this paper are efficiently implemented
-in C++. The tool provides a convenient GUI support and
+in C++. Workflow extension is currently available 
+as a beta-release at the bottom of the download section at www.tapaal.net. 
+The tool provides a convenient GUI support and
 one of the main advantages of our tool is the visualization of traces
 disproving soundness (see~\cite{FF:AWPN:06} for more discussion on 
 this topic).
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\textwidth]{Figures/screenshot-combined.eps}
+\end{center}
+\caption{Screenshot of the workflow analysis tool}
+\label{fig:screenshot}
+\end{figure}
 
 In the Brake System Control Unit (BSCU) case study, a part of a 
 Wheel Braking System (WBS) used for the certification of civil aircrafts 
@@ -116,16 +116,16 @@ unit mentioned above.
 \section{Summary}\label{sumWorkflow}
 \markright{~\ref{sumWorkflow} Summary}
 
-We presented a framework for modelling of timed workflow processes
+We have presented in this chapter a framework for modelling timed workflow processes
 via timed-arc workflow nets and studied the classical problem of
 soundness and its extension to time-bounded (strong) soundness.
 We provided a comprehensive analysis of decidability/undecidability
 of soundness and strong soundness on different subclasses of timed-arc
 workflow nets. We also suggested efficient algorithms for computing
 minimum and maximum execution times of a given workflow and implemented
-all algorithms within the tool TAPAAL~\cite{DJJJMS:TACAS:12}. 
+all algorithms within the tool TAPAAL. 
 As a result we have a complete theory for checking soundness on
-timed workflow nets and contrary to many other papers studying
+timed workflow nets and contrary to many other works studying
 different variants of workflow processes, we took a step further
 by providing efficient implementation of the algorithms, including
 a platform independent GUI support for modular design of timed
