@@ -1,64 +1,64 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Example of systems where formal methods are (can be) used .}}{8}{figure.25}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Cost evolution of fixing a bug.}}{10}{figure.26}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Client-server web architecture}}{12}{figure.28}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Web Service architecture stack.}}{14}{figure.29}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Choreography vs. Orchestration}}{15}{figure.30}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces WS-BPEL evolution.}}{17}{figure.32}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Example of a business process workflow.}}{19}{figure.33}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces WS-BPEL code.}}{21}{figure.34}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Workflow System Characteristics.}}{38}{figure.167}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Example of a basic Petri net.}}{47}{figure.180}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Example of a marked Petri net.}}{48}{figure.183}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Example of systems where formal methods are (can be) used .}}{8}{figure.26}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Cost evolution of fixing a bug.}}{10}{figure.27}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Client-server web architecture}}{12}{figure.29}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Web Service architecture stack.}}{14}{figure.30}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Choreography vs. Orchestration}}{15}{figure.31}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces WS-BPEL evolution.}}{17}{figure.33}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Example of a business process workflow.}}{19}{figure.34}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces WS-BPEL code.}}{21}{figure.35}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Workflow System Characteristics.}}{37}{figure.171}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Example of a basic Petri net.}}{46}{figure.184}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Example of a marked Petri net.}}{47}{figure.187}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Graphical view of a PTCPN.}}{58}{figure.224}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Graphical view of a PTCPN.}}{58}{figure.228}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces A piece of ${\it lts}(C)$ for the online auction service.}}{80}{figure.252}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Orchestration Translation}}{85}{figure.257}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Basic Activities Translation}}{86}{figure.264}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Throw PTCPN.}}}{86}{figure.264}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Exit PTCPN.}}}{86}{figure.264}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Empty PTCPN.}}}{86}{figure.264}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Wait PTCPN. }}}{86}{figure.264}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Assign PTCPN.}}}{86}{figure.264}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Invoke/Receive Activities Translation}}{87}{figure.267}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Invoke/Receive PTCPN.}}}{87}{figure.267}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\overline {Reply}$/Reply PTCPN.}}}{87}{figure.267}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Sequence Translation}}{88}{figure.269}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Parallel Activity Translation.}}{89}{figure.270}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Pick Activity Translation.}}{90}{figure.271}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces While Activity Translation.}}{91}{figure.272}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces CreateResource Activity Translation.}}{92}{figure.274}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Subscribe Activity Translation.}}{93}{figure.275}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces GetProperty Activity Translation.}}{93}{figure.276}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces SetProperty Activity Translation.}}{94}{figure.277}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces SetTimeout Activity Translation.}}{94}{figure.278}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Illustration of an XSLT template}}{96}{figure.280}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Main screen of the tool.}}{97}{figure.281}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces A simplified PTCPN for the online auction system.}}{100}{figure.283}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces PTCPN of the online stock market.}}{101}{figure.285}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces PTCPN of one buyer.}}{102}{figure.286}
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Result of the queries in CPNTools.}}{103}{figure.289}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces A piece of ${\it lts}(C)$ for the online auction service.}}{80}{figure.256}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Orchestration Translation}}{85}{figure.262}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Basic Activity Translation}}{86}{figure.269}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Throw PTCPN.}}}{86}{figure.269}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Exit PTCPN.}}}{86}{figure.269}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Empty PTCPN.}}}{86}{figure.269}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Wait PTCPN. }}}{86}{figure.269}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Assign PTCPN.}}}{86}{figure.269}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Invoke/Receive Activity Translation}}{87}{figure.272}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Invoke/Receive PTCPN.}}}{87}{figure.272}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\overline {Reply}$/Reply PTCPN.}}}{87}{figure.272}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Sequence Translation}}{88}{figure.274}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Parallel Activity Translation.}}{89}{figure.275}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Pick Activity Translation.}}{90}{figure.276}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces While Activity Translation.}}{91}{figure.277}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces CreateResource Activity Translation.}}{92}{figure.279}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Subscribe Activity Translation.}}{93}{figure.280}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces GetProperty Activity Translation.}}{93}{figure.281}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces SetProperty Activity Translation.}}{94}{figure.282}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces SetTimeout Activity Translation.}}{94}{figure.283}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Illustration of an XSLT template}}{96}{figure.285}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Main screen of the tool.}}{97}{figure.286}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces A simplified PTCPN for the online auction system.}}{99}{figure.288}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces PTCPN of the online stock market.}}{101}{figure.290}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces PTCPN of one buyer.}}{102}{figure.291}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Result of the queries in CPNTools.}}{103}{figure.294}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Booking-payment workflow with timing constraints}}{107}{figure.293}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Sound and unbounded extended timed-arc workflow nets.}}{114}{figure.309}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Inhibitor arcs.}}}{114}{figure.309}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Age invariants.}}}{114}{figure.309}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Urgent transitions.}}}{114}{figure.309}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Simulation of (Inc) and (Dec) instructions with urgent transitions}}{115}{figure.313}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {{\tt $i$: $c_1$++; goto $k$}}}}{115}{figure.313}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell $)} }}}{115}{figure.313}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Simulation of a Minsky machine by a workflow net with invariants.}}{116}{figure.317}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Simulation of the counters $c_1$ and $c_2$.}}}{116}{figure.317}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{\tt $i$: $c_1$++; goto $k$}}}}{116}{figure.317}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {{\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell $)}.}}}{116}{figure.317}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Fragment of customer complaint workflow ($[0,\infty ]$ guards are omitted).}}{124}{figure.331}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sound but strongly unsound workflow.}}}{124}{figure.331}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Strongly sound workflow.}}}{124}{figure.331}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Transformation of an ETAWFN $N$ into an ETAPN $\mathit {N(c)}$}}{126}{figure.334}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Sound nets in the discrete semantics and unsound in the continuous one}}{135}{figure.358}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Using invariants}}}{135}{figure.358}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Using urgency}}}{135}{figure.358}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Screenshot of the workflow analysis tool}}{136}{figure.361}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Booking-payment workflow with timing constraints}}{107}{figure.297}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Sound and unbounded extended timed-arc workflow nets.}}{114}{figure.314}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Inhibitor arcs.}}}{114}{figure.314}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Age invariants.}}}{114}{figure.314}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Urgent transitions.}}}{114}{figure.314}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Simulation of (Inc) and (Dec) instructions with urgent transitions}}{115}{figure.318}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {{\tt $i$: $c_1$++; goto $k$}}}}{115}{figure.318}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell $)} }}}{115}{figure.318}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Simulation of a Minsky machine by a workflow net with invariants.}}{116}{figure.322}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Simulation of the counters $c_1$ and $c_2$.}}}{116}{figure.322}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {{\tt $i$: $c_1$++; goto $k$}}}}{116}{figure.322}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {{\tt $i$: if $c_1$=$0$ then goto $k$ else ($c_1$--; goto $\ell $)}.}}}{116}{figure.322}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Fragment of customer complaint workflow ($[0,\infty ]$ guards are omitted).}}{124}{figure.336}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sound but strongly unsound workflow.}}}{124}{figure.336}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Strongly sound workflow.}}}{124}{figure.336}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Transformation of an ETAWFN $N$ into an ETAPN $\mathit {N(c)}$}}{126}{figure.339}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Sound nets in the discrete semantics and unsound in the continuous one}}{135}{figure.363}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Using invariants}}}{135}{figure.363}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Using urgency}}}{135}{figure.363}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Screenshot of the workflow analysis tool}}{136}{figure.366}
 \addvspace {10\p@ }

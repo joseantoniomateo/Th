@@ -1,21 +1,3 @@
-\subsection{Prioritized-Timed Colored Petri Nets}\label{ptcpns}
-
-Next we introduce the particular model of prioritised-timed
-coloured Petri net considered as the graphical formalism for the language BPELRF. 
- 
-We use prioritised-timed coloured Petri nets (PTCPNs), 
-which are
-a prioritised-timed extension of coloured Petri nets \cite{Jensen97}. PTCPNs 
-are supported by CPN Tools \cite{CPNTools}, which is a toolbox
-developed originally by the \emph{CPN group} at the University of Aarhus. The maintenance and extension of CPNTools are now in charge
-of the group \emph{Architecture of Information Systems}, chaired by Wil van der Aalst, at Technische Universiteit Eindhoven.
-Priorities were also introduced in Petri nets to extend the descriptive 
-power of the model \cite{Bau96,BestK92,Pet81}, usually by
-associating priority levels with transitions and modifying the firing
-rule to prevent the firing of a transition when another one with
-higher priority is enabled. Note that this feature is really useful  for describing some activities
-in the language BPELRF.
-
 In PTCPNs, places have an associated colour set (data types). 
 Each token has then an attached data value
 ({\em token colour}),

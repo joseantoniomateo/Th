@@ -7,11 +7,11 @@ state is stored after performing it. Here, we introduce the concept of \emph{sta
 the services can use a set of distributed resources to save the state of some operations. To this end, we will use the standard WSRF since it is intended to be used 
 in conjunction with web services. Moreover, WS-BPEL language will be used to specify the interactions between web services. First, we provide the syntax and semantics of the language BPELRF. The syntax will be defined following the classical BNF notation, whereas the operational semantics is expressed following the Plotkin-style presented in \cite{Plotkin81}. The main concepts about it were introduced in Section \ref{formalmodels} of Chapter \ref{chapter:c2}. In the second part of the chapter, we will define a graphical model for this language by using Petri nets. Moreover, we present the tool we have developed in order to support the creation of stateful web services compositions. 
 
-After briefly introducing the content of the chapter, let us remark what are the main contributions of the language BPELRF. First, note that 
+After briefly introducing the contents of the chapter, let us remark which are the main contributions of the language BPELRF. First, note that 
 the integration of WS-BPEL and WSRF is not new, since, in the literature, one can find some technical works illustrating this integration. Some of these works will be presented in the Related Works section. Surprisingly, to the best of our knowledge, this is the first work, which taking as a starting point WSRF/WSN and WS-BPEL, defines a complete and formal language to model and analyse stateful Web service compositions. In addition to this, the necessary formal machinery to build a publish-subscribe architecture (according to the standard WSN) is also provided here. This improves the expressiveness of the language BPELRF 
 as it does not only allow to model the interactions between services, but it also includes mechanisms to manage the notification methods between these services. Furthermore, we commented in the introduction that it is really important to discover the set of services that will conform the system if the designer does not know these services beforehand. To this end, we have enriched BPELRF with a formal primitive to discover these new services, increasing again the expressive power of the language. 
 
-It is worthwhile to mention that our aim with BPELRF is not to provide yet another WS-BPEL semantics since WS-BPEL has received much attention in recent years when many operational semantics for it have arisen. As opposed to this, the main aim here is to gather the benefits of putting together WS-BPEL and WSRF/WSN to manage stateful web services compositions by using existing formalisms in distributed systems. Additionally, in order to deal with WSRF in a proper way, we have realised that it would be better to consider a semantic model with the appropriate ``tools'' to cope with all the relevant aspects of WSRF and WSN such as notifications and resources time-outs. %To particularise and motivate our approach, we introduce now an ideal scenario.
+It is worthwhile to mention that our aim with BPELRF is not to provide yet another WS-BPEL semantics since WS-BPEL has received much attention in recent years when many operational semantics for it have arisen. As opposed to this, the main aim here is to gather the benefits of putting together WS-BPEL and WSRF/WSN to manage stateful web services compositions by using existing formalisms in distributed systems. Additionally, in order to deal with WSRF in a proper way, we have realised that it would be better to consider a semantic model with the appropriate ``tools'' to cope with all the relevant aspects of WSRF and WSN such as notifications and resource time-outs. %To particularise and motivate our approach, we introduce now an ideal scenario.
 %The scenario, where our approach might be applicable, is a \textsl{group buying}, also known as collective buying.
 %This scenario consists of a group of sellers and buyers, where offers are interpreted as resources created by sellers. Buyers subscribe to those offers, and they are notified when the offers/resources
 %meet their expectations. This simple scenario will allow us to show readers how the situation can be managed
@@ -101,10 +101,10 @@ Our work & 2.0 & Part & \checkmark & Petri nets & Resource Management & \checkma
 \end{table}
 
 For further details about the formalization of service oriented languages we would like to encourage the reader to review the works presented at the SENSORIA project in \cite{Wirsing2011bis}. Here, an extensive work is presented from different international research groups aimed by the common goal of providing a rigorous software engineering view point for service-oriented system using as a cornerstone the formal specification of Web Services and WS-BPEL in particular. Works such as SOCK \cite{Wirsing2011bis}, CaSPiS \cite{Bettini2008}, COWS \cite{Lapadula2007}, B-lite \cite{Lapadula2008} or Orc \cite{Kitchin2009} are either presented or reviewed. The first one, SOCK (Service Oriented Computing Kernel \cite{Wirsing2011bis}), is a formal calculus which aims at characterizing the basic features of Service Oriented Computing and takes its inspiration from WS-BPEL, considered by the authors as the ``de facto" standard for Web Service technology. The second one, CaSPiS (Calculus of Services with Pipelines and Sessions \cite{Bettini2008}) uses the Java framework IMC. Authors take advantage of the already built-in IMC features such us session oriented and pattern matching communication mechanisms easing the task of implementing in Java all CaSPiS abstractions. Other one, COWS (Calculus for Orchestration of Web Services \cite{Lapadula2007}), is a new foundational language for SOC whose design has been influenced by WS-BPEL. COWS combines a number of elements from process calculi, e.g. asynchronous communication, polyadic synchronization, pattern matching, protection, delimited receiving and killing activities. 
-Other one reviewed also in this book is B lite \cite{Lapadula2008}. This is a lightweight language for web services orchestration designed around some of WS-BPEL peculiar features like partner links, process termination, message correlation, long-running business transactions and compensation handlers aiding to clarify some ambiguous aspects of the WS-BPEL specification. The last one, Orc \cite{Kitchin2009}, is not influenced by any other language used for orchestration purposes like WS-BPEL. The authors define the language as a novel language for distributed and concurrent programming which provides uniform access to computational services, including distributed communication and data manipulation, through sites. Using four simple concurrency primitives, the programmer orchestrates the invocation of sites to achieve a goal, while managing timeouts, priorities, and failures. This language uses as a basic activity the information published by a site and therefore each site invocation always finishes with one or more either nested or parallel publications.
+Another one also reviewed in this book is B lite \cite{Lapadula2008}. This is a lightweight language for web services orchestration designed around some of WS-BPEL peculiar features like partner links, process termination, message correlation, long-running business transactions and compensation handlers aiding to clarify some ambiguous aspects of the WS-BPEL specification. The last one, Orc \cite{Kitchin2009}, is not influenced by any other language used for orchestration purposes like WS-BPEL. The authors define the language as a novel language for distributed and concurrent programming which provides uniform access to computational services, including distributed communication and data manipulation, through sites. Using four simple concurrency primitives, the programmer orchestrates the invocation of sites to achieve a goal, while managing timeouts, priorities, and failures. This language uses as a basic activity the information published by a site and therefore each site invocation always finishes with one or more either nested or parallel publications.
 
 \section{Syntax and semantics of BPELRF}\label{ops}
-In this section, we present the syntax and semantics of BPELRF. First, we introduce some notation used only in this chapter.
+In this section, we present the syntax and semantics of BPELRF. First, we introduce some notation.
 We use the following notation: {\it ORCH} is the set of orchestrators in the system, {\it VAR} is the set of integer variable names, {\it PL} is the set of necessary partnerlinks, {\it OPS} is the set of operations names that can be performed, {\it EPRS} is the set of resource identifiers (${\it EPRS\subseteq\nnul}$), and {\it A} is the set of basic or structured activities that can form the body of a process. The specific algebraic language that we use
 for the activities is defined by the following BNF-notation:
 %
@@ -469,20 +469,17 @@ discover(tag,vEPR)
 \caption{\label{WSRFsyntax}WSRF/WSN Notification Conversion table}
 \end{table}}
 
-
-
 Before we begin, we introduce some additional notation and definitions required to describe the operational semantics.
 \begin{definition}[State] %\label{states}
 We define a state as a pair s=($\sigma, \rho$), where $\sigma$ represents the variable values in the system and $\rho$ captures the global resource state. We characterise $\sigma$ as a global function in ${\it \entero^\textrm{VAR}}$, but, in practice, each orchestrator will manage its own local variables. Furthermore, $\it{ \rho=\{(O_i,EPR_i,v_i,Subs_i,}$ $\it{ t_i,tag_i,A_{e{_i}})\}_{i=1}^r}$, where $r$ is the number of resources in the system. Each resource has an owner (publisher), ${\it O_i}$, a unique identifier, ${\it EPR_i}$, and, at each state, a particular value, $v_i$, and a lifetime, $t_i$, initialized with the activity {\it publishResource}, which can be changed by using the function {\it setTimeout}. $A_{e{_i}}$ is the activity that must be run when it expires, whereas ${\it tag_i}$ is used as a textual description for discovery purposes. The resources in $\rho$ are therefore published by means of the {\em publishResource} activity, and potential subscribers must discover the resource identifier (EPR) by using the {\it discover} activity. %This identifier will be stored temporarily in a variable $v$ that will be used to access such a resource.  %whereas the resource information ($\rho$) will be shared by all the orchestrators, i.e., any change introduced in $\rho$ by any orchestrator will be visible to others.
 Moreover, $\it{Subs_i=\{(O_{i_{j}},cond'_{i_{j}},A_{e{_{_i{_{_j}}}}})\}_{j=1}^{{s_i}}}$, $i \in \{1,...,r\}$, is the set of resource subscribers, their associated delivery conditions and the event handling activity ${\it A_{e{_{_i{_{_j}}}}}}$ that must be thrown in the case that ${\it cond'_{i_{j}}}$ holds; $s_i$ is the number of orchestrators currently subscribed to this resource and ${\it O_{i_{j}} \in ORCH}$ are the subscriber identifiers.
-\qed
 \end{definition}
-
+\vspace{-0.5cm}
 Along the following lines, we introduce the additional notation used only in the operational semantics. Given a state $s=(\sigma,\rho)$, a variable $v$ and an expression $e$, we denote by $s'=(\sigma[e/v],\rho)$ the state obtained from $s$
-by changing the value of $v$ for the evaluation of $e$, and we denote the elapse of one time unit by ${\it s{^+}=(\sigma,\rho')}$, where ${\it \rho'=\{(O_i,EPR_i,v_i,Subs_i,t_i-1,tag_i,A_{e{_i}})|}$ ${\it t_i>1\}_{i=1}^r}$. Let the function {\it Subs(s)}, which return the state {\it s} removing from each ${\it Subs_i}$ those subscriptions whose associated condition has held at {\it s}. %, then $s''=s' \setminus Subs(N(O,s))$, being the operator $\setminus$ the typical set subtraction operator. Note that this function avoids infinite executions over the same subscription even though a service could subscribe again with the same condition. 
+by changing the value of $v$ for the evaluation of $e$, and we denote the passage of one time unit by ${\it s{^+}=(\sigma,\rho')}$, where ${\it \rho'=\{(O_i,EPR_i,v_i,Subs_i,t_i-1,tag_i,A_{e{_i}})|}$ ${\it t_i>1\}_{i=1}^r}$. Let the function {\it Subs(s)} be, which returns the state {\it s} removing from each ${\it Subs_i}$ those subscriptions whose associated condition has held at {\it s}. %, then $s''=s' \setminus Subs(N(O,s))$, being the operator $\setminus$ the typical set subtraction operator. Note that this function avoids infinite executions over the same subscription even though a service could subscribe again with the same condition. 
 We omit its formal definition since it is straightforward.
 
-A partnerlink is here considered as a pair $(O_i,O_j)$ representing the two roles in communication: sender and receiver. Furthermore, $\it{\sigma(vEPR_i) \in \rho}$ and $\it{tag_i \in \rho}$ will denote that there is a tuple $\it{(O_i,EPR_i,}$ ${\it v_i,Subs_i,t_i,tag_i,A_{e{_i}}) \in \rho}$ such that $\it{\sigma(vEPR_i)=EPR_i}$. Given a predicate $\it{cond}$, we use the function $\it{cond(s)}$ to mean the resulting value of this predicate at the current state {\it s}, {\it $sel(\rho,tag)$} to return a randomly selected ${\it EPR \in \rho}$ among those whose tag attribute is {\em tag} , ${\it val(\rho,tag)}$ to return the current value of the resource, ${\it time(\rho,vEPR)}$ to return its lifetime and, finally, {\it getEPR()} to generate non-repeated resource identifiers. Let ${\it \sigma(vEPR)=EPR}$, ${\it \rho[w/vEPR]_1}$ is used to denote that the new value in $\rho$ of the resource $\it{EPR}$ is $\it{w}$, $\it{\rho[t/vEPR]_2}$ denotes a change of the resource lifetime, and the function $\it{Add\_subs(\rho,vEPR_i,O_{i_{j}},cond'_{i_{j}},A_{e{_i{_{_j}}}})}$ denotes that $\it{(O_{i_{j}},cond'_{i_{j}},A_{e{_i{_{_j}}}})}$ is added to the subscribers of the resource $\it{EPR_i \in \rho}$ or ${\it cond'=cond'_{i_{j}}}$ in the case that $\it{O_{i_{j}}}$ was already in ${\it Subs_i}$.
+A partnerlink is here considered as a pair $(O_i,O_j)$ representing the two roles in communication: sender and receiver. Furthermore, $\it{\sigma(vEPR_i) \in \rho}$ and $\it{tag_i \in \rho}$ will denote that there is a tuple $\it{(O_i,EPR_i,}$ ${\it v_i,Subs_i,t_i,tag_i,A_{e{_i}}) \in \rho}$ such that $\it{\sigma(vEPR_i)=EPR_i}$. Given a predicate $\it{cond}$, we use the function $\it{cond(s)}$ to mean the resulting value of this predicate at the current state {\it s}, {\it $sel(\rho,tag)$} to return a randomly selected ${\it EPR \in \rho}$ among those whose tag attribute is {\em tag}, ${\it val(\rho,tag)}$ to return the current value of the resource, ${\it time(\rho,vEPR)}$ to return its lifetime and, finally, {\it getEPR()} to generate non-repeated resource identifiers. ${\it \sigma(vEPR)=EPR}$, ${\it \rho[w/vEPR]_1}$ is used to denote that the new value in $\rho$ of the resource $\it{EPR}$ is $\it{w}$, $\it{\rho[t/vEPR]_2}$ denotes a change of the resource lifetime, and the function $\it{Add\_subs(\rho,vEPR_i,O_{i_{j}},cond'_{i_{j}},A_{e{_i{_{_j}}}})}$ denotes that $\it{(O_{i_{j}},cond'_{i_{j}},A_{e{_i{_{_j}}}})}$ is added to the subscribers of the resource $\it{EPR_i \in \rho}$ or ${\it cond'=cond'_{i_{j}}}$ in the case that $\it{O_{i_{j}}}$ was already in ${\it Subs_i}$.
 At the same time, we need an additional function to launch the corresponding activities %in parallel with the normal workflow
 when the subscriber condition holds at the current state ${\it s}$. Let s=($\sigma, \rho$) with $\it{ \rho=\{(O,EPR_i,v_i,Subs_i,t_i,tag_i,A_{e{_i}})\}_{i=1}^r}$, we define the function ${\it N(O,s)=||\{A_{e{_i{_{_j}}}}|(O_{i{_j}},cond'_{i_{j}},A_{e{_i{_{_j}}}}) \in Subs_i,}$
 ${\it O_{i}=O, cond'_{i_{j}}(s)=true\}_{i=1}^r}$, with $j \in \{1,...,s_i\}$.
@@ -504,7 +501,6 @@ We define the activity operational semantics by using two types of transition:
 \end{enumerate}
 
 \noindent where Act is the set of actions that can be performed. This set can be easily deduced from the rules in Table \ref{tran1}.
-\qed
 \end{definition}
 %\vspace{-0.75cm}
 Notice that we have included a ${\it \tau}$-action that represents an empty movement in order to represent the unobservable behaviour. \emph{Action transitions} capture a state change by the execution of an action $a \in Act$, which can be empty ($\tau$). \emph{Delay transitions} capture how the system state changes when one time unit has elapsed. In Tables \ref{tran1},\ \ref{tran2} we show the rules for these transitions.
@@ -520,7 +516,7 @@ the response from the client.
 
 \begin{table}[!h]
 {\scriptsize
-\framebox[\textwidth]{
+\framebox[14.25cm]{
 \begin{tabular}{c}
 
 \hspace{0cm}\textbf{(Throw)}
@@ -598,7 +594,7 @@ $\reglaa{ % Antecedente
 (A'_1;A_2,s')
 }{5}$
 \\[-0.3cm]
-\hspace{-6.5cm}{\tiny where ${\it v_1 \in VAR, expr}$ is an arithmetic expression, and ${\it s'=(\sigma[expr/v_1],\rho)}$.}
+\hspace{-6.2cm}{\tiny where ${\it v_1 \in VAR, expr}$ is an arithmetic expression, and ${\it s'=(\sigma[expr/v_1],\rho)}$.}
 
 
 \\[0.2cm]
@@ -918,7 +914,7 @@ where ${\it vEPR \in VAR, s'=(\sigma[-1/vEPR],\rho))}$
 \begin{table}[!ht]
 {\scriptsize
 
-\framebox[\textwidth]{
+\framebox[14.25cm]{
 \begin{tabular}{cc}
 
 \textbf{(Wait1D)}
@@ -1017,10 +1013,10 @@ We have therefore introduced this last activity
 in our semantics to deal with the synchronous or asynchronous nature of
 the invoke activity (one-way or request-response operation, respectively), and, therefore, the
 reply activity is optional in the syntax depicted in Table \ref{BPELsyntax}. Below, a toy example 
-is depicted to explain how it works.
+is presented to explain how it works.
 \begin{example}\label{ex1} 
 In this example, there are two actors: a customer and a
-seller. The customer contacts a seller in order to gather information about a specific product identified by \emph{id1}. The seller checks the stock and send the requested information to the customer. Let the orchestrations ${\it O_{c}= (A_{c},empty)}$ and ${\it O_{s}= (A_{s},empty)}$ , the BPEL-RF code for the primary activity of both participants is:
+seller. The customer contacts a seller in order to gather information about a specific product identified by \emph{id1}. The seller checks the stock and sends the requested information to the customer. Let the orchestrations ${\it O_{c}= (A_{c},empty)}$ and ${\it O_{s}= (A_{s},empty)}$ be. The BPELRF code for the primary activity of both participants is:
 \vspace{0.3cm}
 \begin{flushleft}
 \hspace{1cm}${\it A_{c}= invoke(pl_1,info,id1);\overline{reply}(pl_1,info,id3)}$\\
@@ -1028,11 +1024,11 @@ seller. The customer contacts a seller in order to gather information about a sp
 \end{flushleft}
 \end{example}
 
-According to rules {\bf invoke}, {\bf receive}, {\bf reply} and {\bf $\overline{{\bf reply}}$} in Table \ref{tran1},  the customer sends ${\it \sigma(id1)}$, which represents the product identifier, and starts the activity ${\it \overline{reply}}$ to receive the response in {\it id3}. Seller stores product identifier in its variable {\it id2}, and, therefore, ${\it s'=(\sigma[m/id2],\rho)}$, with ${\it m=\sigma(id1)}$. Finally, seller sends the product information ${\it \sigma(id4)}$ to the customer, which stores it in {\it id3}, leading to ${\it s''=(\sigma[m/id3],\rho)}$.
+According to rules {\bf invoke}, {\bf receive}, {\bf reply} and {\bf $\overline{{\bf reply}}$} in Table \ref{tran1},  the customer sends ${\it \sigma(id1)}$, which represents the product identifier, and starts the activity ${\it \overline{reply}}$ to receive the response in {\it id3}. The seller stores the product identifier in its variable {\it id2}, and, therefore, ${\it s'=(\sigma[m/id2],\rho)}$, with ${\it m=\sigma(id1)}$. Finally, the seller sends the product information ${\it \sigma(id4)}$ to the customer, which stores it in {\it id3}, leading to ${\it s''=(\sigma[m/id3],\rho)}$.
 
 Rules for the sequence and parallel operators are straightforward, but notice that when one of the
 arguments performs either the \emph{throw} action or the \emph{exit} action, the composite
-activity also performs this action conducting the workflow to the empty activity (rules {\bf Seq3}, {\bf Par3} and {\bf Par4}). As regards resource management, rule {\bf publishResource} states that the resource and its information is added to the resource set, whereas the resource identifier (e) for this newly created resource is stored in the variable vEPR. This results in the new state $\it{s'=(\sigma[e/vEPR], \rho \cup \{O,e,val,\emptyset,t,tag,A\})}$. Time elapsing is captured by rules in Table \ref{tran2}, notice that the activities for which the passage of time is allowed are {\em wait, empty, receive, invoke} and {\em pick}.
+activity also performs this action conducting the workflow to the empty activity (rules {\bf Seq3}, {\bf Par3} and {\bf Par4}). As regards resource management, the rule {\bf publishResource} states that the resource and its information is added to the resource set, whereas the resource identifier (e) for this newly created resource is stored in the variable vEPR. This results in the new state $\it{s'=(\sigma[e/vEPR], \rho \cup \{O,e,val,\emptyset,t,tag,A\})}$. Time elapsing is captured by the rules in Table \ref{tran2}, notice that the activities for which the passage of time is allowed are {\em wait, empty, receive, invoke} and {\em pick}.
 
 % but if $(A || (A_{ej1} ( \ldots || A_{ejm})))$ then, those event handling activities that were already in $A$ will not be spawned twice.
 %We therefore introduce the rules by using the following syntax for the activities in execution: $\it{(A,\mathcal{A}_e)}$, where ${\it A}$ represents the normal orchestrator workflow, and ${\it \mathcal{A}_e=\{A_{e_{i}}\}_{i=0}^m}$ are the handling activities in execution. Given any activity ${\it A}$, we write for short ${\it A||\mathcal{A}_e}$ to denote ${\it (A || (A_{e{_1}} ||( \ldots || A_{e{_m}})))}$. Important to note that when an event handling activity is executed the subscription condition is removed so as to avoid infinite executions on the same condition. This does not affect the expressiveness of the language since the orchestrator, which is notified, can subscribe again with the same condition
@@ -1043,7 +1039,7 @@ activity also performs this action conducting the workflow to the empty activity
 %Initially, s=($A, \emptyset$), where $A$ is the initial activity of the orchestration and the set of event handling activities is empty.
 %\newpage
 
-At the orchestrator level (Table \ref{tab:noti}), we will require to identify the orchestrator that executes the activity as well as its mode of operation, which can be normal or failure. A superscript {\it m} is used to indicate the current operation mode, which can be either empty (normal) or 'f' (failure). An orchestrator enters into the failure mode when an exception has occurred. In the case of a double exception, the orchestrator terminates its execution as rule {\bf ORCH3} in Table \ref{tab:noti} captures.
+At the orchestrator level (Table \ref{tab:noti}), we require to identify the orchestrator that executes the activity as well as its mode of operation, which can be normal or failure. A superscript {\it m} is used to indicate the current operation mode, which can be either empty (normal) or 'f' (failure). An orchestrator enters into the failure mode when an exception has occurred. In the case of a double exception, the orchestrator terminates its execution as rule {\bf ORCH3} in Table \ref{tab:noti} captures.
 \begin{definition}[Orchestration Operational semantics]
 The transitions in this level have the following form:
 
@@ -1054,7 +1050,6 @@ The transitions in this level have the following form:
 \end{enumerate}
 where ${\it O= (A,A_f)}$.
 \vspace{-0.4cm}
-\qed
 \end{definition}
 \vspace{0.2cm}
 %Below, we introduce the rules that govern the evolution of the system. Table \ref{tran1} contains the rules for a system without notifications, whereas Table \ref{tab:noti} defines the rules for notification semantics. Finally, Table \ref{tab:coreo} shows the operational semantics at the choreography level.
@@ -1129,7 +1124,6 @@ Finally, the outermost semantic level corresponds to the choreography level, whi
 A choreography is defined as a set of orchestrators that run in parallel exchanging messages: $C=\{O_i\}_{i=1}^c$, where $c$ is the number of orchestrators
 presented in the choreography. A {\it choreography state} is then defined as follows:
 $S_c=\{(O_i:(A_i, s)^{m_i})\}_{i=1}^c$, where $A_i$ is the activity being performed by $O_i$, $m_{i}$ its \emph{mode}, and $s$ is the current global state.
-\qed
 \vspace{0.1cm}
 \end{definition}
 
@@ -1238,7 +1232,7 @@ $\reglaa{ % Antecedente
 }}
 \caption{\label{tab:coreo}Choreography transition rules.}
 \end{table*}
-As commented when we defined the types of transitions, our operational semantics evolves at three levels, the internal one corresponds to the evolution of one activity without notifications. In the second one, we state the transitions which yield the evolution of the system in the case that some notifications are triggered, whereas the third level corresponds to the composition of different orchestrators and resources. The former two parts have been covered with the operational semantics described above. Hereby, we are going to explain in the following lines how the system evolves as a whole. In the following we will denote choreography as a composition of orchestrations and their associated web services resources.
+As commented when we defined the types of transitions, our operational semantics evolves at three levels, the internal one corresponds to the evolution of one activity without notifications. In the second one, we state the transitions which yield the evolution of the system in the case that some notifications are triggered, whereas the third level corresponds to the composition of different orchestrators and resources. The former two parts have been covered with the operational semantics described above. Hereby, we are going to explain in the following lines how the system evolves as a whole. In the following we will consider a choreography as a composition of orchestrations and their associated web services resources.
 The rule {\it Cor1}\ allows the passage of time on the
 orchestration activity in execution and in the event handling activity, whereas
 {\it Cor2-3}\, allow the evolution of the activity in execution,
@@ -1280,13 +1274,13 @@ ${\it(pl_4,bid\_finish_2,v_{w_2},empty),empty,48)}$\\
 \normalsize
 \vspace{-1.0cm}
 
-Let us note that the operations $bid\_up_{1}$ and $bid\_up_{2}$ are used to increase the current bid by means of a random function, the operations $bid\_finish_{1}$, $bid\_finish_{2}$ update the value of $v_w$ to finish both buyers. Finally, $cmp$ is an auction system operation that receives the bids, $v_i$, and if the variable value is greater than the current value of $v_{EPR}$, then $v_{EPR}$ is updated. As well, by means of the activity $setProp(EPR,v_{EPR})$, we update the resource property.
+Let us note that the operations $bid\_up_{1}$ and $bid\_up_{2}$ are used to increase the current bid by means of a random function, the operations $bid\_finish_{1}$, $bid\_finish_{2}$ update the value of $v_w$ to finish both buyers. Finally, $cmp$ is an auction system operation that receives the bids, $v_i$, and if the variable value is greater than the current value of $v_{EPR}$, then $v_{EPR}$ is updated. Furthermore, we update the resource property by means of the activity $setProp(EPR,v_{EPR})$.
 
-In Fig. \ref{auct} shows a part of the labelled transition system of $C$. This figure shows a trace sample where after creating the resource EPR both bidders $O_1$ and $O_2$ subscribe to this resource. Afterwards, both bidders are able to increase theirs bids by means of $bid\_up_i$ operations and therefore the auction starts. The auction process is depicted here by the states $Chor_{5}^{+n}$, $Chor_{6}^{+n}$, $Chor_{7}^{+n}$, $Chor_{8}$, $Chor_{9}$ and $Chor_{10}$. In these states, there are several actions running in parallel: $A_{bid}$, $A_{pick1}$ and $A_{pick2}$ representing the communication over the partnerlinks, $A_{cond1}$ and $A_{cond2}$ representing the bidding and $A_{not}$ to finalize the auction. The states indexed by $+n$ have a self-loop to symbolize the passage of time, whereas the transitions labelled with condition expressions control whether the timeout has expired finishing the auction with $A_{not}$.
+Fig. \ref{auct} shows a part of the labelled transition system of $C$. This figure shows a trace sample where after creating the resource EPR both bidders $O_1$ and $O_2$ subscribe to this resource. Afterwards, both bidders are able to increase theirs bids by means of $bid\_up_i$ operations and therefore the auction starts. The auction process is depicted here by the states $Chor_{5}^{+n}$, $Chor_{6}^{+n}$, $Chor_{7}^{+n}$, $Chor_{8}$, $Chor_{9}$ and $Chor_{10}$. In these states, there are several actions running in parallel: $A_{bid}$, $A_{pick1}$ and $A_{pick2}$ representing the communication over the partnerlinks, $A_{cond1}$ and $A_{cond2}$ representing the bidding and $A_{not}$ to finalize the auction. The states indexed by $+n$ have a self-loop to symbolize the passage of time, whereas the transitions labelled with condition expressions control whether the timeout has expired finishing the auction with $A_{not}$.
 
 \begin{figure}
 \begin{center}
-    \includegraphics[angle=-90,scale=0.7]{Figures/ecows.eps}
+    \includegraphics[angle=90,scale=0.7]{Figures/ecows.eps}
  %\hspace{2cm}
   \caption{A piece of ${\it lts}(C)$ for the online auction service.}
   \label{auct}
@@ -1297,20 +1291,17 @@ In Fig. \ref{auct} shows a part of the labelled transition system of $C$. This f
 
 \section{Prioritised-Timed Coloured Petri Nets Semantics for BPELRF}\label{semantics}
 
-Next, we present the Petri nets semantics for the language BPELRF. Thus, we will reuse the syntax used for the Plotkin-style operational semantics
-and we will translate each of the activities into a coloured Petri nets. Each net is provided with special places in order to ease the composability.
+Next, we present the Petri nets semantics for the language BPELRF. Thus, we will translate each of the activities into a coloured Petri nets. 
+Each net is provided with special places in order to ease the composability.
 
-{\bf Comentario para Valent\'in: He pensado poner aqu\'i la justificaci\'on de por qu\'e hicimos otra sem\'antica. Mi idea es decir que hicimos esta sem\'antica para ofrecer un formalismo visual y ofrecer soporte a la teoria reusando nuestra experiencia con CPNTools, aunque es un poco ponerles f\'acil la cr\'itica a los miembros del tribunal. Lo pongo?} 
-
-{\bf Related Work}
+\section*{Related Work}\label{rWork}
 
 WS-BPEL has been extensively studied with many formalisms, such as
-Petri nets, Finite State Machines and process algebras, but 
+Petri nets and process algebras, but 
 there are only a few works considering WS-BPEL enriched with 
 WSRF, and they only show a description of this union, 
-without a formalization of the model. Previously, we have presented some technical papers about this integration.
-In addition to this, some operational semantics have been summarised in previous section. Nevertheless, 
-in this section we are going to focus on those works that use Petri nets as formalism as well as those that provide
+without a formalization of the model. Here, we are going to focus 
+on those works that use Petri nets as formalism as well as those that provide
 a tool to support the theory.
 %In \cite{Slomiski:2006} Slomiski uses BPEL4WS in Grid environments and discusses the
 %benefits and challenges of extensibility in the particular case of OGSI workflows
@@ -1321,14 +1312,14 @@ a tool to support the theory.
 %create and manage WS-Resources that implement the factory/instance pattern.
 
 Ouyang et al. \cite{Ouyang2007} define a complete formalisation of all control-flow constructs of WS-BPEL in terms of a mapping to Petri nets.
-A complete formalisation of all control-flow constructs of BPEL in terms of a mapping to Petri nets.
+%A complete formalisation of all control-flow constructs of BPEL in terms of a mapping to Petri nets.
 This formalisation served to unveil ambiguities in the WS-BPEL specification and, therefore, their goal was to provide a feature complete semantics of WS-BPEL.
 Thus, they cover all the important aspects in the standard such as exception handling, dead path elimination and so on. Nevertheless, our work uses WS-BPEl as a \emph{means} rather than as a target, that is, our aim is not to provide a formal semantics of it, but to use it as specification language to model web services compositions with distributed resources. 
-Ouyang et al. describe also two tools. BPEL2PNML tool is used to perform a
-translation from BPEL into the Petri Net Modeling Language (PNML), where the
-resulting model is used as input for the WofBPEL tool. This tool allows to analyse the behaviour of the process (communication inconsistencies and the presence of deadlocks). It is important to note that we pay special attention to the management of resources in contrast to most of the works presented here. Moreover, one difference with the work of Ouyang et al. is that we formalise the whole
+Ouyang et al. describe also two tools: BPEL2PNML is used to perform a
+translation from WS-BPEL into the Petri Net Modeling Language (PNML), where the
+resulting model is used as input for the WofBPEL tool. This tool allows users to analyse the behaviour of the process (communication inconsistencies and the presence of deadlocks). It is important to note that we pay special attention to the management of resources in contrast to most of the works presented here. Moreover, one difference with the work of Ouyang et al. is that we formalise the whole
 system as a composition of orchestrators with resources associated, whereas they describe the system as a general scope with nested sub-scopes leaving aside the possibility of administering resources. Furthermore, we have also formalised the event handling and notification mechanisms using WSN standard. 
-They also developed a tool (WofBPEL) that employs the output of the above mapping to perform  the analysis of the process.  
+They also developed a tool (WofBPEL) that employs the output of the above mapping to perform  the analysis of the process. Finally, as they use workflow nets without timing features, it is not possible to analyse time constraints using both tools, whereas this is possible using our tool. This offers a lot of possibilities to the designers. 
 Another extensive semantics for BPEL 2.0
 is presented in \cite{Lohmann07} by Lohmann, which introduces two new interesting improvements. They define several patterns to simplify some huge nets and introduce the semantics for the WS-BPEL 2.0 new patterns.
 
@@ -1376,7 +1367,7 @@ into coloured Petri nets and a technique to analyse and verify
 effectively the net. The translation
 technique is essentially independent of which language is used to describe
 the composition, but they use WS-BPEL as a proof of the usability of the theory. Nevertheless, they do not provide a tool to
-transform automatically the processes into coloured Petri nets. Important to note that they use also CPNTools to verify the models.
+transform automatically the processes into coloured Petri nets. Let us note that they also use CPNTools to verify the models.
 On the other hand, Yi and Kochut show in \cite{Yi2004} how the skeleton of a WS-BPEL
 process can be obtained from a given coloured Petri net. 
 
@@ -1445,13 +1436,13 @@ which will become marked
 with one token of colour $0$ in the event of a failure, then starting the fault handling activity.
 In a similar way, the {\em exit place} will be marked when the {\em exit} is executed by an
 orchestrator. Notice that this construction 
-can cause two erroneous situations we need to manage. First, 
-event handling activities run concurrently with the normal flow of the process, so, 
-in the case of an {\em exit} activity is executed in one of them, the other branch
-could continue executing its activities without stopping leading to a wrong behaviour.
-According to this situation, we have endowed each transition
-with a {\em entry control} place, whose aim is to prevent the execution of 
-any activity in the system. 
+could produce two erroneous situations we need to manage. First, 
+event handling activities run concurrently with the normal flow of the process and, therefore,  
+in the case of an {\em exit} activity is executed in one of them, we have to enforce the termination of all the event handling activities
+that were running in parallel.
+For this purpose, we have provided each transition
+with an {\em entry control} place, whose aim is to allow us to stop any activity in the system when it was required. This place is unique in the system, 
+that is, all the activities share it so that when the token in this place is consumed of the activities become disable.
 
 Variable places are denoted by $p_{\it v}$, to mean that they 
 capture the value of variable $v$. They contain a single token, whose colour is the variable
@@ -1468,7 +1459,6 @@ lifetime, value, %owner,
 list of subscribers and activity to be executed upon
 the time-out expiration.
 All the remaining places will be considered as {\em internal}.
-\qed
 \end{itemize}
 \vspace{-0.5cm}
 \end{definition}
@@ -1818,7 +1808,7 @@ invoking the services they respectively provide. We will reuse the same syntax a
 %We therefore use its EPR as representative of this property. It is worth noting that we have previously presented an operational semantics for this language in the previous
 %work~\cite{wsfm2011}.
 
-Let us call $N_A$, $N_{f}$ and $N_{e_i}$ the PTCPNs that
+We proceed in a compositional way and, therefore, let us call $N_A$, $N_{f}$ and $N_{e_i}$ the PTCPNs that
 are obtained by applying the translation to each one of these
 activities $A$, $A_f$, $A_{e_{i}},$ with $i\in\{1,m\}$:
 %
@@ -1841,7 +1831,7 @@ er}}$ and $p_{{e_i}_{\it er}}$ their {\em error}\, places and, finally, $p_{a_{\
 orchestrator is then constructed as indicated in Fig. \ref{orchestator}. This PTCPN is then activated by putting one token
 $0$ on $p_{a_{\it in}}$. However, we can have other marked places, 
 for instance, those associated with integer
-variables or resources. The other places are initially unmarked.
+variables or resources. 
 %where we are joining the following places:
 %
 %\[\begin{array}{ l l l}
@@ -1931,7 +1921,7 @@ inside this interval. Notice the use of a ``control'' place, to arrest all possi
    \includegraphics[scale=0.3]{Figures/assign.eps}
 }
 }}
-\caption{\label{fig:basicas}Basic Activities
+\caption{\label{fig:basicas}Basic Activity
 Translation}
 \end{figure}
 
@@ -1947,12 +1937,12 @@ this last activity in our semantics to deal with the synchronous or asynchronous
 \subfigure[Invoke/Receive PTCPN.\label{fig:comm1}]{
     \includegraphics[scale=0.27]{Figures/communication.eps}
 }
-\hfill
+%\hfill
 \subfigure[$\overline{Reply}$/Reply PTCPN.\label{fig:comm2}]{
-    \includegraphics[scale=0.3]{Figures/communication_2.eps}
+    \includegraphics[scale=0.27]{Figures/communication_2.eps}
 }
 }}
-\caption{\label{fig:comm}Invoke/Receive Activities
+\caption{\label{fig:comm}Invoke/Receive Activity
 Translation} 
 \end{figure}
 %In this case, we have added to our timed Petri net two specific places in order to manage the execution of invoke/receive and reply/$\overline{reply}$, $PLij\_s$ and $PLij\_r$. Thus, we only require two places to represent all the partnerlinks between two services since we will bind each one with its corresponding counterpart by using the colours of the tokens. Place $PLij\_s$ receives tokens with three parameters: $pl,op$ and $value$, whereas $PLij\_r$ is marked only when the activity has received the data, so this place is marked with the value 0. For the sake of simplicity, we exchange only the value of the variables, but this could be easily extended to any kind of data. We depict the Petri nets in Fig. \ref{fig:comm} that express the communication among partners. In Fig. \ref{fig:comm1}, the \emph{invoke} activity extracts the value to send from the variable place ${\it P_v}$ and mark the ``sending'' partnerlink with a token endowed with this information. Once this place is marked, the receive transition can be fired marking $PLij\_r$ to allow the invoke activity to continue, and storing directly the data exchanged in the corresponding variable place. The interpretation of Fig. \ref{fig:comm2} is analogous.  
@@ -1971,14 +1961,14 @@ Fig.~\ref{fig:comm} shows the translation for both the invoke/receive and the re
 %involved in a business protocol.  
 WS-BPEL defines structured activities for various control-flow patterns:
 \begin{itemize} 
-\item Sequential control between activities is provided by $<$sequence$>$, $<$if$>$, \linebreak $<$while$>$, 
+\item Basic control structures are $<$sequence$>$, $<$if$>$, $<$while$>$, 
 $<$repeatUntil$>$, and the serial variant of $<$forEach$>$. 
-\item Concurrency and synchronization between activities is provided by $<$flow$>$ and the 
+\item Concurrency between activities is provided by $<$flow$>$ and the 
 parallel variant of $<$forEach$>$.  
-\item Deferred choice controlled by external and internal events is provided by $<$pick$>$.  
+\item A choice controlled by external and internal events is provided by $<$pick$>$.  
 \end{itemize}
 The set of structured activities in WS-BPEL is not intended to be minimal \cite{Andrews2003WSBPEL}, so there are cases where 
-the semantics of one activity can be represented using another activity. Nevertheless, in order to reduce the complexity
+the semantics of one activity can be represented by using another activity. Nevertheless, in order to reduce the complexity
 of our translation, our approach omits many derived activities only dealing with the most important ones from the modelling viewpoint,
 such as sequence, parallel and choice. For all these cases we provide the translation
 by only considering two activities. However, the generalization
@@ -1992,7 +1982,7 @@ of them.
       way (Fig.\,\ref{seq}), by just collapsing in a 
       single place (this will be
       an internal place of the new PTCPN)
-      the {\it output} place ${\it Pok}$ of $N_{A_1}$, and the
+      the {\it output} place ${\it Pok}$ of $N_{A_1}$ and the
       {\it entry} place of $N_{A_2}$.  The {\it entry} place
       of the new PTCPN will
       be the {\it entry} place of $N_{A_1}$. The
@@ -2038,9 +2028,9 @@ any damage, since the control flow has been
 transferred either to the fault handling activity of the PTCPN, 
 once the place $p_{er}$ has become marked, or the whole system has terminated once 
 the place $p_{ex}$ is marked. A similar reasoning is done with the {\em exit} places.
-It is a must to remark we do not treat 
-some BPEL flow construction attributes such as join conditions,
-dead path elimination, etc., since there are out of the scope of the language BPELRF.
+%It is a must to remark we do not treat 
+%some BPEL flow construction attributes such as join conditions,
+%dead path elimination, etc., since there are out of the scope of the language BPELRF.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -2053,8 +2043,8 @@ dead path elimination, etc., since there are out of the scope of the language BP
 
 \item {\it Pick} $(\{(pl_i,op_i,v_i,A_i)\}_{i=1}^n,A,timeout)$: The $<$pick$>$ activity waits for the occurrence of exactly one event from a set of events, also establishing a
 time-out for this selection. The translation is depicted in Fig.~\ref{pick} where a timer is implemented on the place {\it p\_a} in order to enforce the firing of transition {\it ta} when the timeout has elapsed, thus activating {\it N$_{A}$}. Notice also the use of both timed and untimed places in this figure, respectively called {\it INT} and {\it UINT}.  The $<$pick$>$ activity completes when the selected activity finishes, and, then, executes the activity associated with that event. After an event has been selected, the other events 
-are no longer accepted by that $<$pick$>$. The $<$pick$>$ activity is comprised of a set of branches, each containing an event-activity pair.  
-The activities contained in this construction can come in two forms: 
+are no longer accepted by that $<$pick$>$. The $<$pick$>$ activity consists of a set of branches, each containing an event-activity pair.  
+
 
 %\begin{itemize}
 %\item The $<$onMessage$>$ is similar to a $<$receive$>$ activity, in that it waits for the receipt of an 
@@ -2078,12 +2068,13 @@ The activities contained in this construction can come in two forms:
 %\vspace{-0.4cm}
 \end{figure}
 
-\item {\it While} (cond,A): The machinery needed to model this construction is fairly straightforward since we only must check if the repetition condition holds or not in order to execute the contained activity or skip it. Fig.~\ref{while} shows this translation.
+\item {\it While} (cond,A): The machinery needed to model this construction is fairly straightforward since we only must check the repetition condition
+in order to execute the contained activity or skip it. Fig.~\ref{while} shows this translation.
 \end{itemize}
 The $<$while$>$ activity provides for repeated execution of a contained activity. The contained 
 activity is executed as long as the boolean condition evaluates to true at the beginning of 
 each iteration. The meaning of the places and transitions of the net represented in Fig. \ref{while} is fairly straightforward, so, due to space limitations, we are going to omit any explanation of its elements. 
-The meaning of the places and transitions are fairly straightforward, so, due to space limitations, we are going to omit any explanation of the elements contained in this net 
+The meaning of the places and transitions are fairly straightforward, so we omit any further explanation.
 
 \begin{figure}[!ht]
 %\vspace{-0.7cm}
@@ -2100,10 +2091,10 @@ The meaning of the places and transitions are fairly straightforward, so, due to
 %                            WSRF 
 %=======================================================================
 \subsection*{WSRF/WSN-compliant}
-In this section, we state the WSRF activities we have integrated with the BPEL activities in order to create a framework for modelling stateful workflows. 
+In this section, we introduce the WSRF activities we have integrated with the BPEL activities in order to create a framework for modelling stateful workflows. 
 %It is worth noting that in recent years have appeared a new redefinition of workflow nets which deals with resources called Resource-Constrained Workflow Nets \ref{}. As commented in the Related Work section, this approach extends the well-known formalism, Workflow nets, with finite resources such as money, memory and so on, but the authors do not provide the machinery
 %to create and destroy such resources, so this extension of Workflow nets matches with the idea of WSRF standard, i.e., the creation and destruction of resources is out of the scope of the specification. Nevertheless, our approach was devised to manage the whole lifetime of the resource from its creation until its destruction.
-To date, we have presented the activities corresponding to the \emph{BPEL part} of our model. Next, we will state the counterpart of our approach, i.e., the activities, which permit the creation and modification of the resources as well as the management of the subscriptions to them following the indications of the standard WSRF. Notice that a novelty in our model is the creation of resources since WSRF does not specify how this creation is done.
+These activities include the creation and modification of the resources, as well as the management of the subscriptions to them, following the indications of the standard WSRF and WSN. Notice that a novelty in our model is the creation of resources since WSRF does not specify how this creation is done.
 %\begin{figure}[!ht]
 %\vspace{-0.5cm}
 %\begin{center}
@@ -2115,9 +2106,9 @@ To date, we have presented the activities corresponding to the \emph{BPEL part} 
 %\vspace{-1.5cm}
 %\end{figure}
 
-To begin with, we depict the creation of resources in Fig. \ref{createresource}. In order to guarantee our PTCPNs are 1-safe, we opted as commented above to model each resource with two dedicated places,  $p_{\it r_i}$, and $p_{\it r_a}$, which represent the possible state of the resources, instantiated or not instantiated, respectively. Thus, when an orchestrator wants to create a resource, the firing of the transition {\it createResource} moves the token from the ``inactive'' ($p_{\it r_i}$) to the ``active'' place ($p_{\it r_a}$) making available this resource to the subscribers. Once the place $p_{\it r_a}$ is marked and an orchestrator executes the activity {\em subscribe}, our translation can automatically build the subscriptions nets. 
+To begin with, the creation of resources is shown in Fig. \ref{createresource}. In order to guarantee our PTCPNs are 1-safe, we model each resource with two dedicated places,  $p_{\it r_i}$, and $p_{\it r_a}$, which represent the possible state of the resources, instantiated or not instantiated, respectively. Thus, when an orchestrator wants to create a resource, the firing of the transition {\it createResource} moves the token from the ``inactive'' ($p_{\it r_i}$) to the ``active'' place ($p_{\it r_a}$) making available this resource to the subscribers. Once the place $p_{\it r_a}$ is marked and an orchestrator executes the activity {\em subscribe}, our translation can automatically build the subscriptions nets. 
 
-Here, a subscription net is formed by a transition, whose guard is the subscription condition, and the subnet which corresponds to the translation of the activity that the subscriber wants to be executed just in case the subscription condition ${\it gc_i}$ holds. Notice that WSRF allows the creation of multiple subscriptions to the same resources by the same orchestrator, so we will allow this restriction. Despite the {\em subscribe} construction will be presented later, just comment here we have endowed each resource with a list that represents its subscribers with their {\em id} and an integer, $0$ or $1$, to denote whether the orchestrator with identifier {\em id} is subscribed or not. Finally, in the leftmost part of Fig. \ref{createresource}, we depict the net that will be fired in the event of the resource lifetime expires. In this situation, we return the token from the active place to the inactive place and immediately execute the activity {\em $Activity_timeisup$}, which will be passed as an argument of the {\em createResource} activity. This argument is not included in the WSRF specification, but we have incorporated it to show the benefits of the integration of both standards.       
+Here, a subscription net is formed by a transition, whose guard is the subscription condition, and the subnet which corresponds to the translation of the activity that the subscriber wants to be executed just in case the subscription condition ${\it gc_i}$ holds. Notice that WSRF allows us the creation of multiple subscriptions to the same resources by the same orchestrator, so we will allow this restriction. Despite the {\em subscribe} construction will be presented later, just comment here we have endowed each resource with a list that represents its subscribers with their {\em id} and an integer, $0$ or $1$, to denote whether the orchestrator with identifier {\em id} is subscribed or not. Finally, in the leftmost part of Fig. \ref{createresource}, we depict the net that will be fired in the event that the resource lifetime expires. In this situation, we return the token from the active place to the inactive place and immediately execute the activity $A$, which will be passed as an argument of the {\em createResource} activity. This argument is not included in the WSRF specification, but we have incorporated it to show the benefits of the integration of both standards.       
 
 %Now, we describe the PTCPNs who corresponds to the manipulation of resource value and lifetime as well the subscription to a specific resource. On the left side of Fig. \ref{fig:getproperty},
 %the PTCPN for the activity {\em getProperty} is depicted. Here, the resource {\em value} obtained from $p_{\it r_a}$ is stored in the place of the corresponding variable. The reasoning done in the construction of the PTCPNs for the activities {\em setProperty} and {\em setTimeout} in Fig. \ref{fig:setproperty} is quite similar, but updating the resource value or its lifetime, respectively. Important to note that if an orchestrator is trying to access to a resource not instantiated, the fault place  $p_{\it er}$ will be marked starting the execution of the fault activity. 
@@ -2178,7 +2169,7 @@ We can see in Fig.~\ref{createresource} how the transition $createResource$ remo
 \caption{\label{createresource} CreateResource Activity Translation.}
 \end{figure}
 
-Transition ${\it t}$0 is executed when the lifetime of the resource has expired, thus removing the token from the {\em active} place, marking again the {\em inactive} place, and activating $N_A$. We can also see that the {\em active} place is linked with a number of transitions, which correspond to the subscribers (we know in advance these possible subscribers from the WS-BPEL/WSRF document). These transitions can only become enabled if the corresponding places $subs_{i}$ are marked by performing the corresponding  activity {\em subscribe}. The PTCPNs ${\it Ncond_i}$ are the nets for the activities passed as parameter in the invocation of a subscribe activity.   
+Transition $t0$ is executed when the lifetime of the resource has expired, thus removing the token from the {\em active} place, marking again the {\em inactive} place, and activating $N_A$. We can also see that the {\em active} place is linked with a number of transitions, which correspond to the subscribers (we know in advance these possible subscribers from the WS-BPEL/WSRF document). These transitions can only become enabled if the corresponding places $subs_{i}$ are marked by performing the corresponding  activity {\em subscribe}. The PTCPNs ${\it Ncond_i}$ are the nets for the activities passed as parameter in the invocation of a subscribe activity.   
 
 \item Subscribe (EPR,cond$'$,A):
 In this case, an orchestrator subscribes to the resource $EPR$, with the associated condition $cond'$, upon which the activity $A$ must be performed. Fig.~\ref{subscribe} shows this translation, where we can observe that the associated place $subs_{i}$ is marked in order to allow the execution of the PTCPN for the activity $A$ if the condition $g_{i}$ holds. On the contrary, if the resource is not active, we will throw the fault handling activity.
@@ -2259,7 +2250,7 @@ This activity is analogous to {\em SetProp} activity. In this case, the resource
 
 \section{Tool Support}
 
-As WS-BPEL and WSRF are XML-based languages, and the PTCPNs supported by CPNTools are also represented by XML files, we have used XSLT stylesheets to transform the BPEL-RF document into another XML document representing the PTCPN in a format supported by CPNTools. These XSL stylesheets are created using a XSLT editor. The obtained XML document can be visualized, simulated and verified with CPNTools. As the tool has been developed in Java, it is multi-platform, i.e., runs on Windows/Linux/Mac systems under the Java virtual machine$^{\textregistered}$ (the tool is available at \url{www.dsi.uclm.es/retics/bpelrf}).
+As WS-BPEL and WSRF/WSN are XML-based languages, and the PTCPNs supported by CPNTools are also represented by XML files, we have used XSLT stylesheets to transform the BPELRF document into another XML document representing the PTCPN in a format supported by CPNTools. These XSL stylesheets are created using a XSLT editor. The obtained XML document can be visualized, simulated and verified with CPNTools. As the tool has been developed in Java, it is multi-platform, i.e., runs on Windows/Linux/Mac systems under the Java virtual machine$^{\textregistered}$ (the tool is available at \url{www.dsi.uclm.es/retics/bpelrf}).
 The XSLT transformation sheets (\textsl{eXtensible Stylesheets Language/Transform}) are a W3C declarative language to transform XML documents into other XML documents or to some other kind of documents. The XSLT stylesheets are widely used, as an easy way to apply transformation rules to a source document in order to obtain the corresponding output documents. Nowadays, XSLT is widely recommended in web edition area, due to its ability to generate HTML or XHTML sheets.
 
 For making that transformation, XSLT allows to convert the input in two ways: On the one hand, the programmer can manipulate the contents of the document to organize them without changing the document format, whereas, on the other hand, the programmer can use XSLT sheets to transform the contents into other  different formats.
@@ -2272,7 +2263,7 @@ For making that transformation, XSLT allows to convert the input in two ways: On
 %\caption{\label{TransformtreeXML}XML transformation by using XSLT} \label{figure}
 %\end{figure}
 
-We have then defined a number of rules to extract the PTCPN elements from the choreography defined as a composition of WS-BPEL documents. Thus, our tool, BPEL-RF, is used to achieve this transformation in an automatic way, presenting to the user a \textit{.cpn file}, which can be opened with CPNTools. After doing this, the user can analyse and verify the model by using the features of CPNTools. 
+We have then defined a number of rules to extract the PTCPN elements from the choreography defined as a composition of WS-BPEL documents. Thus, our application, BPELRF tool, is used to achieve this transformation in an automatic way, presenting to the user a \textit{.cpn file}, which can be opened with CPNTools. After doing this, the user can analyse and verify the model by using the features of CPNTools. 
         
 %\begin{figure}[!ht]
 %\begin{center}
@@ -2348,7 +2339,7 @@ Reserved elements to perform an action such as retrieving the value of an item, 
 \end{itemize}
 \end{itemize} 
 
-\begin{figure}[!ht]
+\begin{figure}[!h]
 \begin{center}
 \scriptsize
 \begin{boxedverbatim}
@@ -2384,26 +2375,17 @@ version="1.0">
 \vspace{-0.4cm}
 \caption{Illustration of an XSLT template}\label{example1}
 \end{figure}
-For the sake of simplicity, BPEL-RF Tool has a very simple and intuitive interface
-shown in Fig. \ref{main}. It consists of a main frame with separated elements such as a file menu and the transformation panel. The file menu has three different submenus, namely: \emph{File},  \emph{CPN Tools} and \emph{Help}. The \emph{File} submenu offers two options. The first one, \emph{Open WS-BPEL WSRF File}, opens a BPEL-RF document previously edited and saved with the tool; whereas the second one, \emph{Exit}, exits the program. The
-\emph{CPN Tools} submenu only offers one option, \emph{Save Coloured Petri Net}, which
-saves the translated XML code to a .cpn file. Finally, the last submenu, \emph{Help}, consists of two options \emph{Help} and \emph{About}. The option \emph{About} only informs users about the tool version, the option \emph{Help} offers users a wide user manual with the possibility of searching through the information using either a table of contents or a 
+For the sake of simplicity, BPELRF Tool has a very simple and intuitive interface
+shown in Fig. \ref{main}. It consists of a main frame with separated elements such as a file menu and the transformation panel. The file menu has three different sub-menus, namely: \emph{File},  \emph{CPN Tools} and \emph{Help}. The \emph{File} sub-menu offers two options. The first one, \emph{Open WS-BPEL WSRF File}, opens a BPELRF document previously edited and saved with the tool; whereas the second one, \emph{Exit}, exits the program. The
+\emph{CPN Tools} sub-menu only offers one option, \emph{Save Coloured Petri Net}, which
+saves the translated XML code to a .cpn file. Finally, the last sub-menu, \emph{Help}, consists of two options \emph{Help} and \emph{About}. The option \emph{About} only informs users about the tool version, the option \emph{Help} offers users a wide user manual with the possibility of searching through the information using either a table of contents or a 
 search option. 
 
-\begin{center}
-\begin{figure}[h]
-\includegraphics[width=\columnwidth,height=7cm]{Figures/mainscreen.eps}
-\vspace{-0.8cm} 
-\caption{Main screen of the tool.}
-\label{main}
-\end{figure}
-\end{center}
-\vspace{-0.5cm} 
 %Thus, the user only needs to click on the appropriate tab in order to perform a specific %translation. Thus, we now have a new tab, called ``WS-CDL2CPNTools'', which is used to %transform the WS-CDL specification into a PTCPN. Figure \ref{WSTTools} shows a picture of %the WST Tool and the transformation from a WS-CDL document to a PTCPN.\\
 The main elements of the interface are:
 \begin{itemize}
 \item{The \textbf{WS-BPEL / WSRF Textbox} permits users to introduce
-XML code following the specification given by WS-BPEL and WSRF. This XML is
+XML code following the specification given by WS-BPEL and WSRF/WSN. This XML is
 used as the source code to be translated into PTCPN.
 This code can be introduced in two ways; either by writing the XML code by hand or
 by loading a previously saved document using the \emph{Open WS-BPEL WSRF File} submenu mentioned above. A dialog window will be shown to the user asking him to select the document to be opened. If the file is not valid, an error message will be displayed on the screen.}
@@ -2422,15 +2404,24 @@ generates the corresponding PTCPN. The result will be automatically displayed in
 is used to clean the contents of both text boxes. If both are empty, pressing on this button will have no effect.}
 \end{itemize}
 
-{\bf Comentario para Valent\'in: Tengo los dos casos de estudio que vienen a continuaci\'on. Uno es m\'as complejo, pero no incluye un an\'alisis en CPNTools detallado, mientras que el otro es m\'as sencillo, pero tiene un an\'alisis detallado en CPNTools. Puedo dejar los dos aunque son muy parecidos. Si dejamos solo uno, cu\'al dejar\'ias?}
-\section*{Case study: Online auction service}\label{cs}
-
-The case study concerns a typical online auction process, which consists of three participants:
-the online auction system and two buyers, A$_1$ and A$_2$. A seller owes a good that wants to sell to the highest possible price. Therefore, he introduces the product
-in an auction system for a certain time. Then, buyers (or bidders) may place bids for the product and, when time runs out, the highest bid wins. In our case, we suppose the resource is the product for auction, the value of the resource property is the current price (only the auction system can modify it), the resource subscribers will be the buyers, their subscription conditions hold when the current product value is higher than their bid, and the resource lifetime will be the time in which the auction is active. Finally, when the lifetime has expired, the auction system sends a notification to the buyers with the result of the process (the identifier of the winner, $v_w$) and, after that, all the processes finish. Let us consider the choreography ${\it C=(O_{sys},O_1,O_2)}$, where 
-${\it O_i=(PL_i,Var_i,A_i,A_{f{_i}},\mathcal{A}_{e{_i}})}$,~i=1,2,~${\it Var_{sys}=\{v_w,v_1,v_2,v_{EPR},}$
-${\it at,t\}}$,~${\it Var_1= }$ \\ ${\it \{at_1,v_1,v_{w{_1}}\},\ Var_2=\{at_2,v_2,v_{w_{2}}\},\ A_{f{_1}}=exit,}$ and
-${\it A_{f{_2}}=exit}$. Variable $v_{EPR}$ serves to temporarily store the value of the resource property before being sent; $v_1$, $v_2$, $v_{w_{}}$, $v_{w_{1}}$, $v_{w_{2}}$ are variables used for the interaction among participants, and, finally, $at$, $at_1$ and $at_2$ are used to control the period of time in which the auction is active. In this example, we consider a period of 10 time units. Suppose ${\it s_{0{_{sys}}}, s_{0{_1}}}$ and ${\it s_{0{_2}}}$ are the initial states of $O_{sys}$, $O_1$ and $O_2$, respectively, and all the variables are initially $0$: \\[-0.2cm]
+\begin{center}
+\begin{figure}[!h]
+\includegraphics[width=\columnwidth,height=7cm]{Figures/mainscreen.eps}
+\caption{Main screen of the tool.}
+\label{main}
+\end{figure}
+\end{center}
+\vspace{-2cm}
+\section*{Case study 1: Online auction service}\label{cspetri}
+We recall here the case study presented for the operational semantics. We have modified some parts in order to show some technical details related to
+the use of coloured Petri nets. The definition of the case study can be found in Section \ref{cs}.
+%The case study concerns a typical online auction process, which consists of three participants:
+%the online auction system and two buyers, A$_1$ and A$_2$. A seller owes a good that wants to sell to the highest possible price. Therefore, he introduces the product
+%in an auction system for a certain time. Then, buyers (or bidders) may place bids for the product and, when time runs out, the highest bid wins. In our case, we suppose the resource is the product for auction, the value of the resource property is the current price (only the auction system can modify it), the resource subscribers will be the buyers, their subscription conditions hold when the current product value is higher than their bid, and the resource lifetime will be the time in which the auction is active. Finally, when the lifetime has expired, the auction system sends a notification to the buyers with the result of the process (the identifier of the winner, $v_w$) and, after that, all the processes finish.
+Let us consider the choreography ${\it C=(O_{sys},O_1,O_2)}$, where 
+${\it O_i=(PL_i,Var_i,A_i,A_{f{_i}},\mathcal{A}_{e{_i}})}$,~i=1,2,~${\it Var_{sys}=\{v_w,v_1,v_2,}$
+${\it v_{EPR},at,t\}}$,~${\it Var_1=\{at_1,v_1,v_{w{_1}}\},\ Var_2=\{at_2,v_2,v_{w_{2}}\},\ A_{f{_1}}=exit,}$ and
+${\it A_{f{_2}}=exit}$. The variable $v_{EPR}$ serves to temporarily store the value of the resource property before being sent; $v_1$, $v_2$, $v_{w_{}}$, $v_{w_{1}}$, $v_{w_{2}}$ are variables used for the interaction among participants, and, finally, $at$, $at_1$ and $at_2$ are used to control the period of time in which the auction is active. In this example, we consider a period of 10 time units. Suppose ${\it s_{0{_{sys}}}, s_{0{_1}}}$ and ${\it s_{0{_2}}}$ are the initial states of $O_{sys}$, $O_1$ and $O_2$, respectively, and all the variables are initially $0$: \\[-0.2cm]
 
 
 \noindent 
@@ -2518,8 +2509,8 @@ We have then simulated and analysed the system, and we have concluded that the s
 \caption{\label{casestudy} A simplified PTCPN for the online auction system.}
 \end{figure}
 
-\section{Case Study 2}
-The case study concerns a typical automatic management system for stock market investments, which consists of {\em n+1} participants:
+\section*{Case Study 2: Stock market system}\label{cspetri2}
+The second case study concerns a typical automatic management system for stock market investments, which consists of {\em n+1} participants:
 the online stock market system and {\em n} investors, A$_i$, $i=1,\ldots, n$. Here, the resource will be the stocks of a company that the investors want to buy just in case the price falls below an established limit, which the investors fix previously by means of subscriptions, i.e., an investor subscribes to the resource (the stocks) with a certain guard (the value of the stocks he/she want to pay for it). The lifetime {\em lft} will be determined by the stock market system and the resource price will be fluctuating to simulate the rises/drops of the stock. Notice that we do not take into account the stock buy process since our aim is to model an investors' information system. Thus, the participants will be notified when their bids hold or the resource lifetime expires.  
 Let us consider the choreography ${\it C=(O_{sys},O_1,\ldots,O_n)}$, where 
 \mbox{${\it O_k=(PL_k,Var_k,A_k,A_{f{_k}},\mathcal{A}_{e{_k}})}$,~k=sys,~1,...,~n;}~\mbox{${\it Var_{sys}=}$} \\${\it \{at,vEPR\}, Var_i= \{v_i\},\ A_{f{_k}}=}$  ${\it exit}$. Variable $v{EPR}$ serves to temporarily store the value of the resource property before being sent; $v_i$ is the variable used for the interaction among participants, and, finally, $at$ controls the period of time in which the auction is active. Note that the value {\em x} indicates the resource value at the beginning, {\em at0} is the time that the ``auction'' is active, and, finally, {\em $x_i$} is the value of the stocks that he/she wants to pay for. Suppose that all the variables are initially $0$: 
@@ -2553,7 +2544,7 @@ In Figs. \ref{sistema} and \ref{proceso}, the PTCPNs for one buyer and for the s
 \caption{PTCPN of one buyer.}\label{proceso}
 \end{figure}
 
-\subsection{Analysis}\label{analysis}
+\subsection*{Analysis}\label{analysis}
 CPNTools offers us two forms to check the correctness of our system: formal verification and simulation. 
 First, the simulation helps designers to understand how the system exactly works and it is a mean to
 detect possible errors in early stages of the development process in order to refine the model according the
@@ -2581,7 +2572,7 @@ occurs:\ \mbox{{\small{fun DesiredTerminal n =((Mark.PetriNet'Pokfinal0
 which returns {\em true} if the place {\it Pokfinal0} is marked. In
 addition, it is needed to evaluate the following predicate:
 \mbox{{\small{  PredAllNodes
-DesiredTerminal=ListDeadMarkings()}}}, to check \\that the list of
+DesiredTerminal=ListDeadMarkings()}}}, to check that the list of
 dead marking contains the marking of the {\em Pokfinal0} place.
 
 \begin{table} [htp]
@@ -2603,7 +2594,7 @@ dead marking contains the marking of the {\em Pokfinal0} place.
 \caption{State space analysis results}
 \label{state_space}
 \end{table}
-\vspace{-0.5cm}
+
 In Fig. \ref{queries}, we show the results offered by CPNTools to
 our queries for the case of {\bf three} investors. Here, it can be
 appreciated that all dead markings hold the predicate {\em DesiredTerminal}, and, therefore, when the system reaches a dead marking is because system has terminated, which demonstrates the absence of deadlocks in our case study. 
@@ -2644,12 +2635,12 @@ appreciated that all dead markings hold the predicate {\em DesiredTerminal}, and
 
 \section{Summary}\label{sumBPELRF}
 \markright{~\ref{sumBPELRF} Summary}
-In this chapter, we have integrated two complementary approaches in order to improve the definition of business processes models on BPEL by adding
-the capability of storing their state. We have thus transformed {\em stateless} business processes into {\em stateful} business processes. 
-First, we have presented a formal model for the description of composite Web services with resources associated, and orchestrated
-by a well-know business process language (BPEL). The main contribution has therefore been the integration of WSRF, a resource management language, with BPEL, taking into
-account the main structural elements of BPEL, as its basic and structured activities, notifications, event handling and fault handling. Furthermore, special attention has been given to timed constraints, as WSRF consider that resources can only exist for a certain time (lifetime). Thus, resource leasing is considered in this work, which is a concept that has become increasingly popular in the field of distributed systems. To deal with notifications, event handling and fault handling, the operational semantics has been defined at three levels, the outermost one corresponding to the choreographic view of the composite Web services.
+In this chapter, we have integrated two complementary approaches in order to improve the definition of business processes models on WS-BPEL by adding
+the capability of storing permanently their state. We have thus transformed {\em stateless} business processes into {\em stateful} business processes. 
+First, we have presented a formal model in Plotkin-style for the description of composite web services with distributed resources associated. These services are orchestrated by using a well-know business process definition language (BPEL). In the second part, we have defined a prioritised-timed coloured Petri net semantics for the language BPELRF as well as a tool to derive automatically these nets. These PTCPNs can be easily analysed by using the well-known toolbox CPNTools. 
 
+Apart from including the notion of state in business processes, our work also includes a publish-subscribe notification system based on WS-Notification. 
+Thus, an orchestrator can show interest of being notified when a condition holds, e.g, the load of a server exceeds a certain limit. The main contribution of this chapter has therefore been the integration of WSRF, a resource management language, with WS-BPEL, taking into
+account the main structural elements of BPEL, as its basic and structured activities, notifications, event handling and fault handling. Furthermore, special attention has been given to timed constraints, as WSRF consider that resources can only exist for a certain time (lifetime). Thus, resource leasing is considered in our work, which is a concept that has become increasingly popular in the field of distributed systems. To deal with notifications, event handling and fault handling, the operational semantics was defined at three levels, the outermost one corresponding to the choreographic view of the composite Web services, whereas the PTCPN semantics made use of the token colours to model the subscriptions.
 
-Second, we have defined a prioritised-timed coloured Petri net model and presented its corresponding semantics to represent the constructions of WS-BPEL and the standard selected for the definition of resources, namely WSRF. Apart from including the notion of state in business processes, our work also includes a publish-subscribe notification system based on WS-BaseNotification, presenting a TCPN model and its semantics. Thus, an orchestrator can show interest of being notified when a condition holds, e.g, the load of a server exceeds a certain limit. Our approach is based on the one used in CPNTools, allowing us to take advantage of its capability of analysis and verification systems. Moreover, our work in progress is the development of a tool\footnote{The beta version can be accessed at: \url{http://www.dsi.uclm.es/retics/bpelrf/}} to transform automatically WS-BPEL and WSRF specifications into CPNTools nets. As future work, we plan to study some interesting properties such as safeness, soundness and so on. As well, it is interesting to define a complete semantics of WS-BPEL and WSRF. Finally, as commented above, we defined an operational semantics in a previous work, so we will demonstrate in a future work the equivalence between both semantics.
 

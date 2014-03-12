@@ -19,7 +19,7 @@ of this chapter. Next, in Chapter \ref{chapter:c3}, we extend Petri nets with ti
 
 \section{Motivation}
 
-Throughout the history of computing , engineers and researchers have used different formal methods to improve the quality of hardware and software. These systems with continuous technological progress in integration techniques and programming methodologies inevitably grow in scale and complexity. Because of this complexity, the probability of error is higher and, in addition, some of these errors can cause incalculable economic losses, time or even the loss of human lives. Therefore, the main aim of designers should be to provide developers with the required tools to build systems with a negligible error rate and with the lowest cost. However, this task is far from trivial since one needs to ensure the correctness of the specifications and needs to provide techniques that ease error detection and the verification of the developed models without consuming so much time of the development process. One of the ways that engineers have to achieve this goal is the use of formal techniques to ensure the correctness of the development process as well as the product under construction. These formal methods can be defined as the set of procedures and tools based on mathematical languages that virtually ensure the correctness of a system \cite{Clarke96} since they increase the level of knowledge that the participants have about the system, revealing inconsistencies and ambiguities that could not be detected using other techniques, i.e., the use of formal methods provides a greater degree of refinement of the model than other methods.
+Throughout the history of computing, engineers and researchers have used different formal methods to improve the quality of hardware and software. These systems with continuous technological progress in integration techniques and programming methodologies inevitably grow in scale and complexity. Because of this complexity, the probability of error is higher and, in addition, some of these errors can cause incalculable economic losses, time or even the loss of human lives. Therefore, the main aim of designers should be to provide developers with the required tools to build systems with a negligible error rate and with the lowest cost. However, this task is far from trivial since one needs to ensure the correctness of the specifications and needs to provide techniques that ease error detection and the verification of the developed models without consuming so much time of the development process. One of the ways that engineers have to achieve this goal is the use of formal techniques to ensure the correctness of the development process as well as the product under construction. These formal methods can be defined as the set of procedures and tools based on mathematical languages that virtually ensure the correctness of a system \cite{Clarke96} since they increase the level of knowledge that the participants have about the system, revealing inconsistencies and ambiguities that could not be detected using other techniques, i.e., the use of formal methods provides a greater degree of refinement of the model than other methods.
 
 
 \begin{figure}
@@ -66,8 +66,7 @@ The main disadvantages (or beliefs) that slow the progress of this area are:
 \begin{itemize}
 \item It is believed that the use of formal methods slows the development process.
 \item Many developers think it is difficult to work with formal specifications.
-\item It does not guarantee the correctness of the implemented code (only the model
-it is based).
+\item It does not guarantee the correctness of the implemented code (only the model).
 \item The increasing system complexity makes formal verification very difficult to apply, as the number of states grows exponentially.
 \end{itemize}
 
@@ -228,7 +227,7 @@ The former describes the individual business process followed by
 each one of the participants in the composition, 
 while the latter describes the composition from a global viewpoint, 
 defining the interactions (exchange of messages) taking place between the parties, that is, 
-how they collaborate in the composition. In Figure \ref{orch}, it is depicted graphically what it the role
+how they collaborate in the composition. In Figure \ref{orch}, it is depicted graphically what is the role
 of each of them if they are compared with the musicians in an orchestra. Despite these differences, the ideal solution would 
 be fusing both approaches in a single language and environment \cite{Papazoglou2007}.
 
@@ -535,9 +534,9 @@ executes the activity associated with that event. After an event has been select
 are no longer accepted by that ``pick''. Moreover, a deadline for the occurrence of such events can be established,
 and if it expires the activity ends. This structure has some similarity with the guarded choice operator in
 a process algebra although with a predefined timeout. 
-In WS-BPEL, it can be compared with a set of receive activities that run in parallel, where just only one can be executed,
-and a common deadline is set (to this end, the wait activity can be used).
-\item Lastly, the standard offers an activity (forEach) to execute the contained activity a predefined number of times. This number
+%In WS-BPEL, it can be compared with a set of receive activities that run in parallel, where just only one can be executed,
+%and a common deadline is set (to this end, the wait activity can be used).
+\item The standard also offers an activity ``forEach'' to execute an activity a predefined number of times. This number
  is expressed in the definition of the activity.
 \end{itemize}
 
@@ -750,7 +749,8 @@ For instance, a possible request can be:
     xmlns:tns=``http://example.com/diskDrive''>
      tns:NumberOfBlocks
   </wsrp: GetResourceProperty>
-</s12:Body>...
+</s12:Body>
+...
 \end{lstlisting}
 
 \item[GetMultipleResourceProperties]
@@ -758,13 +758,15 @@ This method is equivalent to the last one, but it is intended to retrieve
 more than one property of the document. 
 It can be used to prevent network congestion. The message would be:
 
-\lstset{language=XML, numbersep=5pt,basicstyle=\scriptsize ,frame=single}
+\lstset{language=XML, numbersep=5pt,basicstyle=\small ,frame=single,basicstyle=\linespread{.94}\ttfamily}
 \begin{lstlisting}
 ...
 <wsrp:GetMultipleResourceProperties
  xmlns:tns=``http://example.com/diskdrive''>
- <wsrp:ResourceProperty>tns:NumberOfBlock</wsrp:ResourceProperty>
- <wsrp:ResourceProperty>tns:BlockSize</wsrp:ResourceProperty>
+ <wsrp:ResourceProperty>tns:NumberOfBlock
+ </wsrp:ResourceProperty>
+ <wsrp:ResourceProperty>tns:BlockSize
+ </wsrp:ResourceProperty>
 </wsrp:GetMultipleResourceProperties>
 ...
 \end{lstlisting}
@@ -822,6 +824,7 @@ After processing this request, we get the following document:
 This method is used for querying resource properties. 
 For example, to know if the number of blocks is greater than 20 and the block size is 1024,
 we use the following query: \\
+\newpage 
 
 \lstset{language=XML, numbersep=5pt, frame=single, basicstyle=\linespread{.94}\ttfamily}
 \begin{lstlisting}
@@ -836,7 +839,6 @@ we use the following query: \\
 </s12:Body>
 ...
 \end{lstlisting}
-\newpage
 
 The response must look like this:
 
@@ -896,11 +898,11 @@ is not specified. The reason is that WSRF is intended to be used in the interact
 internal details of each participant are hidden. Thus, WSRF meets the requirements of SOC
 architecture presented previously and the transition from service-oriented architecture to resource-oriented
 architecture is short. For technical reasons, we have included in our language
-BPELRF a primitive to create the resource. 
+BPELRF a primitive to create the resources. 
 
 Generally, in distributed systems, clients just want to use a resource for a given time interval.
 For instance, in subscription systems, users decide normally the duration of the subscription.
-Nevertheless, in some scenarios is most appropriate to provide a manner to immediately destroy 
+Nevertheless, in some scenarios it is most appropriate to provide a manner to immediately destroy 
 the resource. Following the last example, it could happen that the client wants to interrupt its subscription 
 and hence the immediate destruction must be provided. 
 As discussed above, WSRF gives two ways to destroy a 
@@ -994,8 +996,8 @@ In the notification process, there are three different steps \cite{WSNstandard}:
 \item First, the observation of the situation and its characteristics. This situation represents an event of
 interest for some services.
 \item Second, the creation of notification messages that capture 
-the characteristics of the situation; and
-\item finally, the distribution of these messages to zero or more interested parties (notification consumers).
+the characteristics of the situation.
+\item Finally, the distribution of these messages to zero or more interested parties (notification consumers).
 \end{enumerate}
 In WS-Notification, steps 1 and 2 are not taken into account 
 since WSRF designers did not want to restrict the means by which
@@ -1283,26 +1285,26 @@ leads inevitably to the loss of some information that could be
 relevant for the interesting aspects we want to capture.
 Thus, it can be observed that in every specification language 
 that includes special interest in modelling the communications between concurrent processes must deal
-with uncertainty. Specifically , communication choices
+with uncertainty. Specifically, communication choices
 occurring internally in the process result in the appearance of indeterminacy. Normally, most of the process
 algebras provide a special operator to deal with these choices.
 
-As in Chapter \ref{chapter:c4} we define a specification language for web service composition, we introduce next
-the most relevant \emph{ingredients} that these language must include. 
-Despite the differences between them, the fundamental concepts
-are very similar, and, therefore, the basic ingredients
-in all of them are more or less the same. This allows us to provide a more general description
-in this section, although sometimes we will pay more attention to
-some relevant concepts.
+In Chapter \ref{chapter:c4} we define a specification language for web service composition, but now we introduce
+the most relevant \emph{ingredients} that such a language should include. 
+%Despite the differences between them, the fundamental concepts
+%are very similar, and, therefore, the basic ingredients
+%in all of them are more or less the same. This allows us to provide a more general description
+%in this section, although sometimes we will pay more attention to
+%some relevant concepts.
 In general, every language has, at least, its syntax and its operational semantics. 
 The first one describes the set of expressions that are permitted by the 
 language and, as a consequence, they are susceptible to have a specific meaning. On the other hand, the
 operational semantics gives us the set of rules that determine how these expressions, defined according to the syntax, 
 evolve to other expressions. In the case of specification languages
 for concurrent systems, this evolution must be interpreted as a change of state
-due to the execution of the system, that is, the application of a
+due to the execution of the system, that is, the application of an
 operational semantics rule represents the evolution of the system over the time.
-Thus, system behaviour is represented by the 
+Thus, the system behaviour is represented by the 
 state evolutions that may occur in it, where these evolutions 
 are the result of the application of the rules given by the operational semantics.
 
@@ -1371,7 +1373,7 @@ if we want the message $a$ to be sent before the message $b$, then the first pro
 the sending of the message $b$ by the second service, and, then, both actions would occur
 necessarily at the same time, disappearing the freedom commented above. 
 Nondeterminism is usually provided in process algebras by means of
-one (or several) specific syntactic operators, generally called parallel operators. 
+one (or several) specific syntactic operators, like parallel or choice operators. 
 In this case, the same operator governs both nondeterminism (due to the asynchronous evolution
 of the processes) and the synchronous evolution of processes (usually due to the interactions between them).
 In the case of finite state machines or labelled
@@ -1461,28 +1463,15 @@ can be partially achieved through the introduction of cycles.
 
 \section{Summary}\label{sumArt}
 \markright{~\ref{sumArt} Summary}
+In this chapter, it has been presented the state-of-the-art of formal methods and web service compositions. Thus,
+we started presenting the benefits of using formal methods for the specification of web service compositions as in Chapter
+\ref{chapter:c4} a language to this end is presented. Then, we introduced the reader in the different ways these compositions can be
+defined: orchestration and choreography. Nevertheless, the standards in this area lack of formal syntax and semantics to deal with the 
+management of distributed resources either presented as a Grid or as a Cloud. Therefore, it is of great interest to provide languages, which
+present all the advantages presented in this chapter, to model and analyse these emerging compositions.
 
-To be added.
+Finally, let us remark that the aim of this chapter is to offer the reader the basic (not formal) notions to understand this Thesis, whereas
+the technical details are presented in the following sections. Thus, we hope the reader has now a clear picture of the content of this work before going
+into the technicalities.  
+ 
 
-%Lately, the research group Real Time and Concurrent Systems (ReTiCS) of the University of Castilla-La Mancha,
-%in which I am a member, focused its research on developing a methodology 
-%to build and test systems with hard time constraints using formal techniques. 
-%In recent years, this methodology has been applied to web services, more specifically, 
-%in the area of web service compositions. The problem here is that the study of web services 
-%using formal techniques experienced a boom a few years ago and, therefore, many research groups focused their studies 
-%in this field, meaning that WS-BPEL or WS -CDL are quite studied. 
-%As commented previously, industry is migrating its business from a web service-oriented architecture to
-%a cloud/grid-oriented architecturee and, here, we can benefit from our vast experience formalizing web systems. 
-%In addition , many governments are interested in migrating 
-%services to the cloud to reduce costs and enable scalability when they needed. 
-%For example , one must ask if it is necessary for the Tax Agency have large data 
-%centers where demand for services by citizens grows only at the time of the statement of income.
-%Probably the answer is yes because you do need to store all that data and give 
-%some confidence that your tax data will not fall into the hands of people with no good intentions, 
-%but all need to calculate whether you can outsource to save costs equipment or 
-%could even create a private cloud between all agencies that work with the public agency 
-%to share resources and information . In this sense, these systems where security, 
-%privacy and availability are a nonnegotiable requirement is where we focus part 
-%of our investigations and try to improve any component of the cloud architecture 
-%presented in the previous section. For example , most research groups 
-%develop tools, but the test phase does not exist or is devoted little time. 

@@ -1,35 +1,34 @@
-\BOOKMARK [0][-]{chapter.5}{Introduction}{}
-\BOOKMARK [1][-]{section.6}{Motivation}{chapter.5}
-\BOOKMARK [1][-]{section.7}{Objectives}{chapter.5}
-\BOOKMARK [1][-]{section.22}{Dissertation Structure}{chapter.5}
-\BOOKMARK [0][-]{chapter.23}{State of the Art}{}
-\BOOKMARK [1][-]{section.24}{Motivation}{chapter.23}
-\BOOKMARK [1][-]{section.27}{Web Services Modelling}{chapter.23}
-\BOOKMARK [2][-]{subsection.31}{WS-BPEL}{section.27}
-\BOOKMARK [1][-]{section.35}{Heterogeneous Distributed Systems: Grid/Cloud Computing}{chapter.23}
-\BOOKMARK [1][-]{section.37}{Web Services Resource Framework}{chapter.23}
-\BOOKMARK [1][-]{section.166}{Workflow management}{chapter.23}
-\BOOKMARK [1][-]{section.168}{Formal models of concurrency}{chapter.23}
-\BOOKMARK [1][-]{section.188}{Summary}{chapter.23}
-\BOOKMARK [0][-]{chapter.189}{Extended Petri nets}{}
-\BOOKMARK [1][-]{section.201}{Petri nets analysis}{chapter.189}
-\BOOKMARK [2][-]{subsection.202}{Safety properties}{section.201}
-\BOOKMARK [2][-]{subsection.207}{Liveness properties}{section.201}
-\BOOKMARK [1][-]{section.212}{Timed extensions of Petri nets}{chapter.189}
-\BOOKMARK [2][-]{subsection.213}{Prioritized-Timed Colored Petri Nets}{section.212}
-\BOOKMARK [2][-]{subsection.226}{Extended Timed-Arc Petri Nets}{section.212}
-\BOOKMARK [0][-]{chapter.231}{BPELRF: A language for the specification of stateful web service compositions}{}
-\BOOKMARK [1][-]{section.234}{Syntax and semantics of BPELRF}{chapter.231}
-\BOOKMARK [1][-]{section.253}{Prioritised-Timed Coloured Petri Nets Semantics for BPELRF}{chapter.231}
-\BOOKMARK [1][-]{section.279}{Tool Support}{chapter.231}
-\BOOKMARK [1][-]{section.284}{Case Study 2}{chapter.231}
-\BOOKMARK [2][-]{subsection.287}{Analysis}{section.284}
-\BOOKMARK [1][-]{section.290}{Summary}{chapter.231}
-\BOOKMARK [0][-]{chapter.292}{Timed-arc workflow nets}{}
-\BOOKMARK [1][-]{section.295}{Timed-Arc Workflow Petri Nets}{chapter.292}
-\BOOKMARK [1][-]{section.327}{Strong Soundness}{chapter.292}
-\BOOKMARK [1][-]{section.338}{Soundness for Continuous Time Workflow Nets}{chapter.292}
-\BOOKMARK [1][-]{section.360}{Implementation and Experiments}{chapter.292}
-\BOOKMARK [1][-]{section.362}{Summary}{chapter.292}
-\BOOKMARK [0][-]{chapter.363}{Conclusions, Contributions and Future Works}{}
-\BOOKMARK [0][-]{appendix*.364}{Bibliography}{}
+\BOOKMARK [0][-]{chapter.6}{Introduction}{}
+\BOOKMARK [1][-]{section.7}{Motivation}{chapter.6}
+\BOOKMARK [1][-]{section.8}{Objectives}{chapter.6}
+\BOOKMARK [1][-]{section.23}{Dissertation Structure}{chapter.6}
+\BOOKMARK [0][-]{chapter.24}{State of the Art}{}
+\BOOKMARK [1][-]{section.25}{Motivation}{chapter.24}
+\BOOKMARK [1][-]{section.28}{Web Services Modelling}{chapter.24}
+\BOOKMARK [2][-]{subsection.32}{WS-BPEL}{section.28}
+\BOOKMARK [1][-]{section.36}{Heterogeneous Distributed Systems: Grid/Cloud Computing}{chapter.24}
+\BOOKMARK [1][-]{section.38}{Web Services Resource Framework}{chapter.24}
+\BOOKMARK [1][-]{section.170}{Workflow management}{chapter.24}
+\BOOKMARK [1][-]{section.172}{Formal models of concurrency}{chapter.24}
+\BOOKMARK [1][-]{section.192}{Summary}{chapter.24}
+\BOOKMARK [0][-]{chapter.193}{Extended Petri nets}{}
+\BOOKMARK [1][-]{section.205}{Petri nets analysis}{chapter.193}
+\BOOKMARK [2][-]{subsection.206}{Safety properties}{section.205}
+\BOOKMARK [2][-]{subsection.211}{Liveness properties}{section.205}
+\BOOKMARK [1][-]{section.216}{Timed extensions of Petri nets}{chapter.193}
+\BOOKMARK [2][-]{subsection.217}{Prioritized-Timed Coloured Petri Nets}{section.216}
+\BOOKMARK [2][-]{subsection.230}{Extended Timed-Arc Petri Nets}{section.216}
+\BOOKMARK [0][-]{chapter.235}{BPELRF: A language for the specification of stateful web service compositions}{}
+\BOOKMARK [1][-]{section.238}{Syntax and semantics of BPELRF}{chapter.235}
+\BOOKMARK [1][-]{section.257}{Prioritised-Timed Coloured Petri Nets Semantics for BPELRF}{chapter.235}
+\BOOKMARK [1][-]{section.284}{Tool Support}{chapter.235}
+\BOOKMARK [1][-]{section.295}{Summary}{chapter.235}
+\BOOKMARK [0][-]{chapter.296}{Timed-arc workflow nets}{}
+\BOOKMARK [1][-]{section.299}{Timed-Arc Workflow Petri Nets}{chapter.296}
+\BOOKMARK [1][-]{section.307}{Soundness of Timed-arc Workflow Nets}{chapter.296}
+\BOOKMARK [1][-]{section.332}{Strong Soundness}{chapter.296}
+\BOOKMARK [1][-]{section.343}{Soundness for Continuous Time Workflow Nets}{chapter.296}
+\BOOKMARK [1][-]{section.365}{Implementation and Experiments}{chapter.296}
+\BOOKMARK [1][-]{section.367}{Summary}{chapter.296}
+\BOOKMARK [0][-]{chapter.368}{Conclusions, Contributions and Future Works}{}
+\BOOKMARK [0][-]{appendix*.369}{Bibliography}{}

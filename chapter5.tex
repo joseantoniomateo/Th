@@ -21,7 +21,7 @@ workflow. The theory is developed for
 discrete-time semantics but in Section~\ref{sec:cont} we discuss its
 relationship to the continuous-time semantics. Finally, we implement
 the algorithms given here within the open-source tool 
-TAPAAL~\cite{DJJJMS:TACAS:12} and successfully demonstrate on a number of 
+Tapaal~\cite{DJJJMS:TACAS:12} and successfully demonstrate on a number of 
 case studies the applicability of the theory in real-world scenarios.
 
 Analysis of workflow processes with quantitative aspects
@@ -43,9 +43,40 @@ the MPEG2 encoding algorithm, and
 a blood transfusion workflow.
 %, the benchmarking case study of the little-JIL language. 
 The implementation of the algorithms is  
-freely available as a part of the model checker TAPAAL \cite{tapaal}.
+freely available as a part of the model checker Tapaal.
 
 \input{introduction}
+\section{Timed-Arc Workflow Petri Nets} \label{sec:def}
+In this section, we provide the formal definition of timed-arc workflow nets. This model is based on the 
+timed-arc Petri nets defined in Chapter \ref{chapter:c3}. After that, we recall the soundness definition, extending it
+to the time setting. Moreover, we present some important definitions (cut markings, maximum constant,etc) 
+to completely understand the theory presented here.
+
+In general, ETAPNs are infinite in two dimensions. The number of tokens
+in reachable markings can be unbounded and even for bounded nets
+the ages of tokens can be arbitrarily large. We shall now recall a 
+few results that allow us to make finite abstractions for bounded
+ETAPNs, i.e. for nets where the maximum number of tokens in any
+reachable marking is bounded by a constant.
+
+Let $N=\tapntuple$ be a given ETAPN.
+In~\cite{ALSST:MEMICS:12} 
+the authors provide an algorithm for computing 
+a function $\cmax: P \rightarrow (\nnul \cup \{ -1 \})$ 
+returning for each place $p \in P$ the maximum constant associated
+to this place, meaning that the ages of tokens in place $p$ that
+are strictly greater than $\cmax(p)$ are irrelevant. In particular,
+places where $\cmax(p)=-1$ are the so-called \emph{untimed} places
+where the age of tokens is not relevant at all, implying that all
+the intervals on their ongoing arcs are $[0,\infty]$.
+
+Let $M$ be a marking of $N$. We split it into 
+two markings $\mold$ and $\myoung$ where 
+$\mold (p)=\left\{ x\in M(p) \mid x>\cmax(p) \right\}$ 
+and $\myoung (p)=\allowbreak\left\{ x\in M(p) \mid 
+x\allowbreak\leq\allowbreak \cmax(p) \right\}$
+for all places $p \in P$. Clearly,
+$M = \mold \uplus \myoung$.
 \input{definitions}
 \input{soundness}
 \input{decidability}
