@@ -32,4 +32,14 @@
 \contentsline {section}{\numberline {5.5}Implementation and Experiments}{135}{section.365}
 \contentsline {section}{\numberline {5.6}Summary}{137}{section.367}
 \contentsline {chapter}{\numberline {6}Conclusions, Contributions and Future Works}{139}{chapter.368}
-\contentsline {chapter}{Bibliography}{149}{appendix*.369}
+\contentsline {section}{\numberline {6.1}Contributions}{140}{section.369}
+\contentsline {section}{\numberline {6.2}Future Works}{141}{section.370}
+\contentsline {section}{\numberline {6.3}Publications and Collaborations}{142}{section.371}
+\contentsline {subsection}{\numberline {6.3.1}Journal Papers}{142}{subsection.372}
+\contentsline {subsection}{\numberline {6.3.2}International Conference Papers}{142}{subsection.373}
+\contentsline {subsection}{\numberline {6.3.3}National Conference Papers}{143}{subsection.374}
+\contentsline {subsection}{\numberline {6.3.4}Technical Reports}{143}{subsection.375}
+\contentsline {subsection}{\numberline {6.3.5}Submitted Works}{143}{subsection.376}
+\contentsline {subsection}{\numberline {6.3.6}Collaborations}{143}{subsection.377}
+\contentsline {section}{\numberline {6.4}Funds and Grants}{144}{section.378}
+\contentsline {chapter}{Bibliography}{153}{appendix*.379}

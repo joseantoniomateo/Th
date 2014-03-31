@@ -74,6 +74,10 @@ A bad cross reference---entry "AalstJL05"
 refers to entry "DBLP:conf/otm/2005-3", which doesn't exist
 A bad cross reference---entry "LohmannK08"
 refers to entry "DBLP:conf/modellierung/2008", which doesn't exist
+A bad cross reference---entry "Hee05"
+refers to entry "DBLP:conf/apn/2005", which doesn't exist
+A bad cross reference---entry "Juhas10"
+refers to entry "DBLP:conf/apn/2010", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/apn/1997"
 Warning--I didn't find a database entry for "DBLP:conf/performance/1977"
 Warning--I didn't find a database entry for "DBLP:conf/apn/1993"
@@ -90,6 +94,8 @@ Warning--I didn't find a database entry for "DBLP:conf/bpm/2005"
 Warning--I didn't find a database entry for "DBLP:conf/apweb/2006"
 Warning--I didn't find a database entry for "DBLP:conf/otm/2005-3"
 Warning--I didn't find a database entry for "DBLP:conf/modellierung/2008"
+Warning--I didn't find a database entry for "DBLP:conf/apn/2010"
+Warning--I didn't find a database entry for "DBLP:conf/apn/2005"
 Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "A. Alves, A. Arkin, S. Askary, C. Barreto, B. Bloch, F. Curbera, M. Ford, Y. Goland, A. Guízar, N. Kartha, C. K. Liu, R. Khalaf, D. König, M. Marin, V. Mehta, S. Thatte, D. van der Rijn, P. Yendluri,A. Yiu" for entry Andrews2003WSBPEL
@@ -226,45 +232,45 @@ Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Gr
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "S. Tuecke, K. Czajkowsk, I. Foster, J. Frey, S. Graham, C. Kesselman, T. Maguire, T. Sandholm, P. Vanderbilt and D. Snelling" for entry Foster03
 while executing---line 1090 of file plain.bst
-You've used 99 entries,
+You've used 101 entries,
             2118 wiz_defined-function locations,
-            1145 strings with 20161 characters,
-and the built_in function-call counts, 34783 in all, are:
-= -- 3385
-> -- 1498
-< -- 53
-+ -- 609
-- -- 495
-* -- 2252
-:= -- 5457
-add.period$ -- 307
-call.type$ -- 99
-change.case$ -- 537
+            1159 strings with 20504 characters,
+and the built_in function-call counts, 35693 in all, are:
+= -- 3470
+> -- 1539
+< -- 55
++ -- 625
+- -- 509
+* -- 2309
+:= -- 5592
+add.period$ -- 313
+call.type$ -- 101
+change.case$ -- 550
 chr.to.int$ -- 0
-cite$ -- 119
-duplicate$ -- 1493
-empty$ -- 2883
-format.name$ -- 495
-if$ -- 7647
+cite$ -- 121
+duplicate$ -- 1535
+empty$ -- 2960
+format.name$ -- 509
+if$ -- 7856
 int.to.chr$ -- 0
-int.to.str$ -- 99
-missing$ -- 92
-newline$ -- 487
-num.names$ -- 188
-pop$ -- 678
+int.to.str$ -- 101
+missing$ -- 94
+newline$ -- 497
+num.names$ -- 192
+pop$ -- 697
 preamble$ -- 1
-purify$ -- 445
+purify$ -- 456
 quote$ -- 0
-skip$ -- 1133
+skip$ -- 1166
 stack$ -- 0
-substring$ -- 1937
-swap$ -- 472
-text.length$ -- 53
+substring$ -- 1990
+swap$ -- 490
+text.length$ -- 55
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 378
+type$ -- 386
 warning$ -- 20
-while$ -- 303
-width$ -- 101
-write$ -- 1067
-(There were 81 error messages)
+while$ -- 311
+width$ -- 104
+write$ -- 1089
+(There were 83 error messages)

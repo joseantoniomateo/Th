@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{UDDI}
 Uddi spec technical committee draft 3.0.2.
@@ -299,6 +299,11 @@ Kurt Jensen and Lars~Michael Kristensen.
   Systems}.
 \newblock Springer, 2009.
 
+\bibitem{Juhas10}
+Gabriel Juh{\'a}s, Igor Kazlov, and Ana Juh{\'a}sov{\'a}.
+\newblock Instance deadlock: A mystery behind frozen programs.
+\newblock In {\em Petri Nets}, pages 1--17, 2010.
+
 \bibitem{Kitchin2009}
 David Kitchin, Adrian Quark, William~R. Cook, and Jayadev Misra.
 \newblock The orc programming language.
@@ -514,6 +519,11 @@ Wil M.~P. van~der Aalst, Kees~M. van Hee, Arthur H.~M. ter Hofstede, Natalia
 \newblock Soundness of workflow nets: classification, decidability, and
   analysis.
 \newblock {\em Formal Asp. Comput.}, 23(3):333--363, 2011.
+
+\bibitem{Hee05}
+Kees~M. van Hee, Alexander Serebrenik, Natalia Sidorova, and Marc Voorhoeve.
+\newblock Soundness of resource-constrained workflow nets.
+\newblock In {\em ICATPN}, pages 250--267, 2005.
 
 \bibitem{Vaquero2008}
 Luis~M. Vaquero, Luis Rodero-Merino, Juan Caceres, and Maik Lindner.
